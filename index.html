@@ -63,7 +63,7 @@
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.20</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.20</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.21</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.21</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="viewer-info" aria-label="3D表示の状態">
@@ -86,7 +86,8 @@
 <div class="zoom-inputs"><button id="zoomOut" type="button" aria-label="縮小">－</button><input id="zoomLevel" type="range" min="65" max="240" step="5" value="100" aria-label="表示倍率"><button id="zoomIn" type="button" aria-label="拡大">＋</button></div>
 <div class="ends"><span>小さく 65%</span><span>大きく 240%</span></div></div>
 <label class="switch"><input id="cameraAuto" type="checkbox" checked>姿勢変更時に自動で中央に収める</label>
-<div class="detail">倍率バー・＋−ボタン・ピンチ操作で手動変更できます。手動ズームを使うと自動追従はOFFになり、必要なら再度ONにできます。全体表示で100%に戻ります。</div></div>
+<div class="control"><label>3D画面の操作モード <output id="camModeLabel">回転</output></label><div class="btnrow" role="group" aria-label="指1本で行う操作"><button id="camRotate" type="button" class="active" aria-pressed="true">↻ 1本指で回転</button><button id="camPan" type="button" aria-pressed="false">✥ 1本指で移動</button></div><div class="detail">2本指で上下左右に移動・ピンチで拡大縮小。移動中は自動中央合わせを解除し、移動位置を維持します。</div></div>
+<div class="detail">倍率バー・＋−ボタン・ピンチでズーム。1本指で回転／移動を切り替え、2本指では常に移動＋ピンチできます。手動操作で自動中央合わせはOFFになります。「全体を表示」でリセット。</div></div>
 <div class="panel"><div class="panelhead"><h2>姿勢プリセット</h2><span class="sectioncap">POSTURE</span></div><div class="btnrow"><button class="preset active" data-preset="neutral">基本肢位</button><button class="preset" data-preset="abduct">外転90°</button><button class="preset" data-preset="overhead">挙上180°</button><button class="preset" data-preset="elbow">肘屈曲120°</button></div><div class="btnrow" style="margin-top:7px"><button class="preset" data-preset="bow">弓道の姿勢（概形）</button><button class="preset" id="resetCam">全体表示</button></div><div class="btnrow" style="margin-top:7px"><button class="preset" id="sideView">側面で前後を確認</button><button class="preset" id="frontView">正面から見る</button><button class="preset" id="backView">背面から見る</button></div></div>
 <div class="panel"><div class="panelhead"><h2>関節を動かす</h2><span class="sectioncap">JOINT CONTROL</span></div>
 <div class="control"><label for="elev">上肢の挙上 <output id="elevV">0°</output></label><input id="elev" type="range" min="0" max="180" value="0"><div class="ends"><span>下垂 0°</span><span>頭上 180°</span></div></div>
@@ -96,7 +97,7 @@
 <div class="control"><label for="pronation">前腕の回内・回外 <output id="pronationV">0°</output></label><input id="pronation" type="range" min="-90" max="90" value="0"><div class="ends"><span>回外 −90°</span><span>回内 +90°</span></div></div>
 </div>
 <div class="panel" id="handPanel"><div class="panelhead"><h2>手首・手の操作</h2><span class="sectioncap">HAND / WRIST</span></div>
-<div class="detail">手首は前腕の回内・回外に追従します。手根骨8個は一体として扱い、4本指は連動、親指だけ別操作です。</div>
+<div class="detail">手首は前腕の回内・回外に追従します。手根骨8個は一体として扱い、4本指は連動、親指はCM関節の対立とMCP/IPの屈曲を別操作します。</div>
 <div class="control"><label for="wristFlex">手首の掌屈・背屈 <output id="wristFlexV">0°</output></label><input id="wristFlex" type="range" min="-70" max="80" step="1" value="0"><div class="ends"><span>背屈 −70°</span><span>掌屈 ＋80°</span></div></div>
 <div class="control"><label for="wristDeviation">手首の橈屈・尺屈 <output id="wristDeviationV">0°</output></label><input id="wristDeviation" type="range" min="-20" max="35" step="1" value="0"><div class="ends"><span>橈屈 −20°</span><span>尺屈 ＋35°</span></div></div>
 <div class="control"><label for="fingerCurl">4本指の屈曲 <output id="fingerCurlV">0%</output></label><input id="fingerCurl" type="range" min="0" max="100" step="1" value="0"><div class="ends"><span>伸展・開く</span><span>屈曲・握る</span></div></div>
@@ -110,7 +111,7 @@
 <div class="detail" id="muscleModeNote">上腕筋群と三角筋は別々に切り替えできます。三角筋は実骨の読み込み後に表示します（付着位置は推定）。</div>
 <div class="detail" id="deltoidStatus" role="status" aria-live="polite">三角筋：実骨データを読み込み中…</div><div class="detail" id="brachioradialisStatus" role="status" aria-live="polite">腕橈骨筋：実骨データを読み込み中…</div><div class="detail" id="pronatorTeresStatus" role="status" aria-live="polite">円回内筋：実骨データを読み込み中…</div><div class="detail" id="supinatorStatus" role="status" aria-live="polite">回外筋：実骨データを読み込み中…</div>
 <div class="muscle-feedback" id="muscleFeedback" aria-live="off"><div class="muscle-feedback-row"><span>上腕二頭筋のふくらみ（基準比）</span><output id="muscleBulgeValue">1.00倍</output></div><div class="muscle-meter"><span id="muscleBulgeMeter"></span></div><label class="switch muscle-emphasis"><input type="checkbox" id="muscleEmphasis" checked>筋腹の変形を強調（動きの観察用）</label></div><div class="sectioncap" style="margin:14px 0 8px">骨を個別に表示 / 非表示</div><div class="key"><button data-bone="scapula">肩甲骨</button><button data-bone="clavicle">鎖骨</button><button data-bone="humerus">上腕骨</button><button data-bone="radius">橈骨</button><button data-bone="ulna">尺骨</button></div>
-<div class="detail" id="boneModeNote">実骨形状を優先します。手首・指の回転中心、可動域と連動は教育用の近似です。</div><div class="detail" id="modelNote">連動あり：挙上180°で肩甲骨が約60°上方回旋する教育用の近似を使用。鎖骨の挙上・後退、肩甲骨の傾きを近似します（鎖骨の軸回旋は未実装）。</div></div>
+<div class="detail" id="boneModeNote">実骨形状を優先します。手首・指の回転中心は実骨形状から推定した教育用の近似です。橈尺関節面の接触判定は未実装です。</div><div class="detail" id="modelNote">連動あり：挙上180°で肩甲骨が約60°上方回旋する教育用の近似を使用。鎖骨の挙上・後退、肩甲骨の傾きを近似します（鎖骨の軸回旋は未実装）。</div></div>
 <div class="panel"><div class="panelhead"><h2>このモデルの正確さ</h2><span class="sectioncap">MODEL LIMITATIONS</span></div><div class="note"><strong>動作を観察するための試作です。</strong> 手首の掌屈・背屈、橈屈・尺屈、指の屈曲、親指の対立は教育用の連動近似で、関節面の接触や腱による拘束は計算していません。 骨の形状はBodyParts3Dの公開解剖学的3Dメッシュを優先して読み込みます（通信に失敗した場合は旧近似モデルに切替）。元データの骨同士の位置を保持しつつ、関節回転の中心は骨表面の推定目印に基づく近似値です。関節運動は運動学的に連動しますが、靱帯・関節包・筋張力による拘束や衝突判定、個人差は未実装です。肘の屈曲は上腕骨遠位の推定軸まわりの回転です。標準設定では骨格データの胸側に前腕が移動する符号を座標計算で選びます。「側面で前後を確認」で背側・胸側を表示できます。反対向きは比較専用です。関節面の適合は保証しません。回外筋は上腕骨外側・尺骨近位部から橈骨近位3分の1を包む2層の模式的な筋束です。円回内筋と別々に表示できますが、どちらも推定付着点・走行を用いており筋活動や張力は再現していません。「筋肉・腱」は上腕骨表面に沿う簡易経路を使った教育用の推定形状です。肘角度に応じて二頭筋・上腕筋が短く太く、三頭筋が長くやや細くなる簡易変形を加えていますが、筋活動・腱の滑走・関節包・厳密な筋体積保存は再現していません。正面・背面ボタンは骨の前後関係の確認用です。スマホではスクロール中も3D表示を画面上部に固定します。</div></div>
 </section></main>
 <footer class="sources">参考：<a href="https://www.ncbi.nlm.nih.gov/books/NBK526110/" target="_blank" rel="noopener">腕橈骨筋の起始・停止</a> ／ <a href="https://www.ncbi.nlm.nih.gov/books/NBK537056/" target="_blank" rel="noopener">三角筋の解剖学的付着部</a> ／ <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3042752/" target="_blank" rel="noopener">三角筋の機能分節</a> ／ <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8111677/" target="_blank" rel="noopener">肩甲上腕リズムの概説</a> ／ <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10078813/" target="_blank" rel="noopener">胸鎖・肩鎖・肩甲胸郭の運動</a> ／ <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12398250/" target="_blank" rel="noopener">個人差と非線形性（2025）</a><br>個人の診断や関節可動域の安全性判定には使わないでください。実骨形状の読み込みにはインターネット接続が必要です。外部ライブラリは不要です。回外筋の参考：<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3552760/" target="_blank" rel="noopener">前腕背側筋の解剖学</a>。</footer>
@@ -172,9 +173,12 @@ const anchorFor={scapula:'AC',clavicle:'SC',humerus:'GH',ulna:'EL',radius:'EL'};
 // Hinge approximately passes through the distal humeral trochlea/capitellum.
 // BodyParts3D is a static pose atlas; these landmarks are estimated, NOT measured articular axes.
 const ELBOW_HINGE_LOCAL=norm([1,.018,-.035]);
-const RADIAL_HEAD_ATLAS=[-236,-78,1041],DISTAL_ULNAR_HEAD_ATLAS=[-214,-76,832];
+// Atlas mesh surface slices: radial head z=1025..1045 (centre ~[-232,-68,1039]);
+// distal ulnar head z=815..835 (centre ~[-240,-110,824]). These replace the
+// former axis endpoints, which missed the actual bone by roughly 3–4 cm.
+const RADIAL_HEAD_ATLAS=[-232,-68,1039],DISTAL_ULNAR_HEAD_ATLAS=[-240,-110,825];
 const ANATOMICAL_ANTERIOR=norm([0,0,-1]);
-const ULNAR_DISTAL_REF=atlasToWorld([-236,-78,838]);
+const ULNAR_DISTAL_REF=atlasToWorld([-239,-109,840]);
 const WRIST_VECTOR=sub(ULNAR_DISTAL_REF,realAnchors.EL);
 // For positive flexion, distal ulna must move toward the anatomical anterior.
 // Automatically infer the hinge axis sign from the source-atlas landmarks.
@@ -201,7 +205,7 @@ const HAND_FMA={
 const HAND_CARPALS=['scaphoid','lunate','triquetral','pisiform','trapezium','trapezoid','capitate','hamate'];
 const HAND_MC=['mc1','mc2','mc3','mc4','mc5'];
 const HAND_FINGERS={i:['iProx','iMid','iDist'],m:['mProx','mMid','mDist'],r:['rProx','rMid','rDist'],l:['lProx','lMid','lDist']};
-const HAND_NAMES=Object.keys(HAND_FMA),HAND_WR_ATLAS=[-245,-86,804];
+const HAND_NAMES=Object.keys(HAND_FMA),HAND_WR_ATLAS=[-254,-113,819];
 realAnchors.WR=atlasToWorld(HAND_WR_ATLAS);
 for(const name of HAND_NAMES)anchorFor[name]='WR';
 let handReady=false,handModelWarning='',handMesh={},handPose={},handFallbackMesh={},handFallbackCenters={},handPivot={},handSource='approximate',handLoadCount=0;
@@ -220,6 +224,9 @@ function boneEndCenter(g,end){
  return count?mul(sum,1/count):[(b[0][0]+b[1][0])/2,end==='prox'?max:min,(b[0][2]+b[1][2])/2];
 }
 function midPoint(a,b){return mul(add(a,b),.5)}
+// Rest-mesh-derived joint centres and axes. They are educational proxies;
+// separate rotations always preserve their shared joint point rather than
+// using a global Cartesian hinge unrelated to the thumb orientation.
 function calculateHandPivots(){
  const g=handMeshSet();const ep=(id,end)=>boneEndCenter(g[id],end);
  const pivot={thumbCMC:ep('mc1','prox')};
@@ -227,10 +234,44 @@ function calculateHandPivots(){
   const [p,m,d]=HAND_FINGERS[digit];
   pivot[digit]={MCP:midPoint(ep(mc,'dist'),ep(p,'prox')),PIP:midPoint(ep(p,'dist'),ep(m,'prox')),DIP:midPoint(ep(m,'dist'),ep(d,'prox'))};
  }
+ // CMC sits on the trapezium, not in the middle of the thumb metacarpal.
+ const tBase=ep('mc1','prox');
+ pivot.thumbCMC=tBase;
  pivot.thumbMCP=midPoint(ep('mc1','dist'),ep('tProx','prox'));
  pivot.thumbIP=midPoint(ep('tProx','dist'),ep('tDist','prox'));
+ const thumbV=norm(sub(ep('tProx','dist'),ep('tProx','prox')));
+ const longitudinal=norm(sub(ep('mc3','dist'),ep('mc3','prox')));
+ const across=norm(sub(ep('mc5','dist'),ep('mc2','dist')));
+ const palmNormal=norm(cross(longitudinal,across));
+ const palmUnit=dot(palmNormal,ANATOMICAL_ANTERIOR)>=0?palmNormal:mul(palmNormal,-1);
+ const flexAxis=norm(cross(thumbV,palmUnit));
+ // Thumb MCP/IP have angled flexion axes, unlike the four long fingers.
+ pivot.thumbFlexAxis=len(flexAxis)>.5?flexAxis:[1,0,0];
+ pivot.thumbPalmNormal=palmUnit;
+ pivot.thumbMetacarpalAxis=norm(sub(ep('mc1','dist'),tBase));
+ // Target an index-finger metacarpal region for opposition, not an arbitrary 3-axis twist.
+ const opposeTarget=midPoint(ep('mc2','dist'),ep('mc3','dist'));
+ pivot.thumbOppAxisA=palmUnit;
+ pivot.thumbOppAxisB=norm(cross(pivot.thumbMetacarpalAxis,palmUnit));
+ const thumbTip=ep('tDist','dist');
+ // Determine sign once from atlas orientation so that thumb moves towards the palm.
+ const testFlex=q=>add(pivot.thumbMCP,qr(q,sub(thumbTip,pivot.thumbMCP)));
+ const plus=dot(sub(testFlex(qa(pivot.thumbFlexAxis,rad(22))),thumbTip),palmUnit);
+ const minus=dot(sub(testFlex(qa(pivot.thumbFlexAxis,rad(-22))),thumbTip),palmUnit);
+ pivot.thumbFlexSign=plus>=minus?1:-1;
+ function thumbOppScore(signA,signB){
+  const q=qm(qa(pivot.thumbOppAxisA,rad(37*signA)),qa(pivot.thumbOppAxisB,rad(26*signB)));
+  const candidate=add(tBase,qr(q,sub(thumbTip,tBase)));
+  return len(sub(candidate,opposeTarget)) + Math.max(0,-dot(sub(candidate,thumbTip),palmUnit))*.6;
+ }
+ let best=Infinity;
+ for(const signA of [-1,1])for(const signB of [-1,1]){
+  const score=thumbOppScore(signA,signB);
+  if(score<best){best=score;pivot.thumbOppSignA=signA;pivot.thumbOppSignB=signB;}
+ }
  handPivot=pivot;
 }
+
 function afterJoint(pose,pivot,rotation){const oldQ=pose[0],oldP=pose[1];const wp=transform(oldQ,oldP,pivot),nq=qm(oldQ,rotation);return [nq,sub(wp,qr(nq,pivot))]}
 function makeHandPose(){
  if(!settings.hand)return;
@@ -248,12 +289,13 @@ function makeHandPose(){
  }
  const o=clamp(settings.thumbOpposition/100,0,1),t=clamp(settings.thumbCurl/100,0,1);
  // Thumb CMC is a saddle joint: this is an intentionally reduced 2-axis proxy.
- const qOpp=qm(qa([0,0,1],rad(-29*o)),qa([0,1,0],rad(24*o)));
+ const qOpp=qm(qa(handPivot.thumbOppAxisA,rad(37*o*handPivot.thumbOppSignA)),qa(handPivot.thumbOppAxisB,rad(26*o*handPivot.thumbOppSignB)));
  const mc1=afterJoint(main,handPivot.thumbCMC,qOpp);
  poses.mc1=mc1;
- const thumbProx=afterJoint(mc1,handPivot.thumbMCP,qa([1,0,0],rad(48*t)));
+ const flexAngle=handPivot.thumbFlexSign;
+ const thumbProx=afterJoint(mc1,handPivot.thumbMCP,qa(handPivot.thumbFlexAxis,rad(45*t*flexAngle)));
  poses.tProx=thumbProx;
- poses.tDist=afterJoint(thumbProx,handPivot.thumbIP,qa([1,0,0],rad(52*t)));
+ poses.tDist=afterJoint(thumbProx,handPivot.thumbIP,qa(handPivot.thumbFlexAxis,rad(55*t*flexAngle)));
  handPose=poses;
 }
 function makeFallbackHand(){
@@ -295,10 +337,10 @@ async function loadRealHand(){
  if(settings.hand){makeHandPose();if($('cameraAuto').checked){autoFit=true;fitPose()}request()}
  updateHandStatus();
  const stateLabel=$('modelLoadState');
- if(stateLabel&&realReady)stateLabel.innerHTML=(handReady?'BodyParts3D 上肢5骨＋右手27骨':'BodyParts3D 上肢5骨＋手の近似形状')+'<br>手首と指の動きを操作できます（v0.20）';
+ if(stateLabel&&realReady)stateLabel.innerHTML=(handReady?'BodyParts3D 上肢5骨＋右手27骨':'BodyParts3D 上肢5骨＋手の近似形状')+'<br>手首・指の関節位置と回旋を調整しました（v0.21）';
 }
 function updateHandStatus(){const n=$('handStatus');if(!n)return;
- n.textContent=!settings.hand?'手の骨格：非表示':handReady?'手の実骨27個を表示中。手根骨・中手骨は連動し、指は簡易関節で可動します。':handModelWarning?handModelWarning+'。現在は近似形状です。':'手の実骨データを読み込み中。読み込み前は近似形状で操作できます。';
+ n.textContent=!settings.hand?'手の骨格：非表示':handReady?'手の実骨27個を表示中。手首の回転中心と親指軸を骨格基準で調整した近似です。':handModelWarning?handModelWarning+'。現在は近似形状です。':'手の実骨データを読み込み中。読み込み前は近似形状で操作できます。';
 }
 function parseBinaryBone(buffer,name){
  const d=new DataView(buffer),total=d.getUint32(80,true);if(84+50*total>buffer.byteLength)throw Error(name+' のSTLデータが不正です');
@@ -347,9 +389,16 @@ function makeRealPose(){
  const radOrigin=sub(radialHeadNow,qr(qR,sub(RADIAL_HEAD_REF,realAnchors.EL)));
  realPose={scapula:[qS,AC],clavicle:[qC,realAnchors.SC],humerus:[qH,GH],ulna:[qU,EL],radius:[qR,radOrigin]};
  const ulnaHeadNow=transform(qU,EL,sub(DISTAL_ULNA_REF,realAnchors.EL));
- const radialWrist0=atlasToWorld([-266,-78,835]);
+ const radialWrist0=atlasToWorld([-264,-111,825]);
  const radialWristNow=transform(qR,radOrigin,sub(radialWrist0,realAnchors.EL));
- poseCheck={SC:realAnchors.SC,AC,GH,EL,radialHeadNow,ulnaHeadNow,radialWristNow,
+ // The DRUJ radial-side reference moves on an arc around the distal ulnar head.
+ // A stable ulna-to-radius reference distance is a simplified dislocation check,
+ // not an anatomically measured dynamic joint-contact calculation.
+ const distalRadiusRef=atlasToWorld([-264,-112,825]);
+ const distalRadiusNow=transform(qR,radOrigin,sub(distalRadiusRef,realAnchors.EL));
+ const distalGapMm=len(sub(distalRadiusNow,ulnaHeadNow))/atlasScale;
+ const distalNeutralGapMm=len(sub(distalRadiusRef,DISTAL_ULNA_REF))/atlasScale;
+ poseCheck={SC:realAnchors.SC,AC,GH,EL,radialHeadNow,ulnaHeadNow,radialWristNow,distalGapMm,distalNeutralGapMm,distalGapDeltaMm:distalGapMm-distalNeutralGapMm,
    radialHeadError:len(sub(transform(qR,radOrigin,sub(RADIAL_HEAD_REF,realAnchors.EL)),radialHeadNow)),
    elbow:settings.elbow,pronation:settings.pronation};
  for(const id of ids){const box=realMesh[id]?.box,pose=realPose[id];if(!box||!pose)continue;
@@ -673,7 +722,7 @@ async function loadRealBones(){
  try{
    const result=await Promise.all(ids.map(x=>loadOneBone(x,REAL_MODELS[x])));
    ids.forEach((x,i)=>realMesh[x]=result[i]);realReady=true;makeRealPose();makeHandPose();loadRealHand().catch(e=>{handModelWarning=String(e);updateHandStatus()});updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateAnteriorStatus();autoFit=true;fitPose();request();
-   if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.20）';
+   if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.21）';
    const n=$('boneModeNote');if(n)n.textContent='骨の形はBodyParts3Dの公開解剖学的メッシュに変更しました。関節の回転中心・肩甲上腕リズムは推定値です。前腕の回内回外は橈骨頭から尺骨遠位部への斜め軸を用いた近似です。関節面の衝突や靱帯による拘束は未実装です。上腕二頭筋・三頭筋・上腕筋は骨表面に沿う近似経路を使い、肘角度に応じた簡易収縮・伸長を追加しました。三角筋は他の筋肉とは独立にON/OFFでき、3つの束を推定付着点に結び付けた近似表示です。腕橈骨筋も独立ON/OFFができ、上腕骨外側から橈骨遠位部までを推定経路で結び、肘屈曲・前腕回内回外に追従します。回外筋は上腕骨外側・尺骨近位部から橈骨近位部を包む概形として追加し、円回内筋と比較できます。筋・腱の正確な形状や付着点、筋張力は未検証です。腱の滑走や厳密な筋体積保存は未実装です。';
  }catch(e){modelWarning=String(e);console.warn('Showing safe procedural fallback because real bones did not load:',e);
    if(loading)loading.innerHTML='近似モデルを表示中<br>実骨データの取得に失敗しました';updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();
@@ -824,7 +873,7 @@ function updateSupinatorStatus(){
  else el.textContent=modelWarning?'回外筋：実骨データを取得できず非表示です':'回外筋：実骨データを読み込み中…';
 }
 const angleFields=['elev','plane','axial','elbow','pronation'];const handFields=['wristFlex','wristDeviation','fingerCurl','thumbCurl','thumbOpposition'];function update(){for(let f of angleFields){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+'°'}for(let f of handFields){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+(f.endsWith('Curl')||f==='thumbOpposition'?'%':'°')}for(let f of ['hand','sync','muscles','deltoid','brachioradialis','pronatorTeres','supinator','rib','showlabels','showDirection','reverseElbow','muscleEmphasis'])settings[f]=$(f).checked;
- $('muscleModeNote').textContent=realReady?'v0.20：上腕・前腕の筋肉を維持。手首と指は骨格のみに可動を追加しました。筋活動・収縮力は計算していません。':'骨データ読み込み中／代替表示：筋肉は旧モデルによる概形です。';
+ $('muscleModeNote').textContent=realReady?'v0.21：上腕・前腕の筋肉を維持。手首の回転中心と親指の屈曲軸を見直しました。筋活動・収縮力は計算していません。':'骨データ読み込み中／代替表示：筋肉は旧モデルによる概形です。';
  const f=clamp(settings.elbow/150,0,1), contractionRate=f*f*(3-2*f), exaggeration=settings.muscleEmphasis?1:.45;
  const bulge=1+.72*contractionRate*exaggeration;
  $('muscleBulgeValue').textContent=bulge.toFixed(2)+'倍';
@@ -857,10 +906,77 @@ $('zoomOut').addEventListener('click',()=>setZoomPercent(Math.max(65,Math.round(
 $('cameraAuto').addEventListener('change',()=>{if($('cameraAuto').checked){autoFit=true;fitPose()}else autoFit=false;request()});
 $('showDirection').addEventListener('change',()=>{if($('showDirection').checked)pingDirectionGuide(2400);else directionGuideUntil=0;request()});
 $('elbow').addEventListener('input',()=>{if($('showDirection').checked)pingDirectionGuide(1600)});
-let pointers=new Map(),prevDistance=0,prevCenter=null;canvas.addEventListener('pointerdown',e=>{canvas.setPointerCapture(e.pointerId);pointers.set(e.pointerId,[e.clientX,e.clientY]);prevCenter=null});canvas.addEventListener('pointermove',e=>{if(!pointers.has(e.pointerId))return;let old=pointers.get(e.pointerId);pointers.set(e.pointerId,[e.clientX,e.clientY]);if(pointers.size===1){state.yaw+=(e.clientX-old[0])*.008;state.pitch=clamp(state.pitch+(e.clientY-old[1])*.008,-1.46,1.46);if($('cameraAuto').checked){autoFit=true;fitPose()}else autoFit=false;}else if(pointers.size===2){disableCameraAuto();let pts=[...pointers.values()],d=Math.hypot(pts[0][0]-pts[1][0],pts[0][1]-pts[1][1]);if(prevDistance>0)state.zoom=clamp(state.zoom*prevDistance/d,2.0,65);prevDistance=d}request()});function up(e){pointers.delete(e.pointerId);prevDistance=0}canvas.addEventListener('pointerup',up);canvas.addEventListener('pointercancel',up);canvas.addEventListener('wheel',e=>{e.preventDefault();disableCameraAuto();state.zoom=clamp(state.zoom*Math.exp(e.deltaY*.0012),2.0,65);request()},{passive:false});window.addEventListener('resize',()=>{if($('cameraAuto').checked){autoFit=true;fitPose()}request()});
+let cameraGesture='rotate';
+function chooseCameraGesture(mode){cameraGesture=mode;
+ $('camRotate').classList.toggle('active',mode==='rotate');$('camPan').classList.toggle('active',mode==='pan');
+ $('camRotate').setAttribute('aria-pressed',String(mode==='rotate'));
+ $('camPan').setAttribute('aria-pressed',String(mode==='pan'));
+ $('camModeLabel').textContent=mode==='rotate'?'回転':'移動';
+ canvas.style.cursor=mode==='rotate'?'grab':'move';
+}
+$('camRotate').addEventListener('click',()=>chooseCameraGesture('rotate'));
+$('camPan').addEventListener('click',()=>chooseCameraGesture('pan'));
+function panCamera(dx,dy){
+ disableCameraAuto();
+ const outward=[Math.sin(state.yaw)*Math.cos(state.pitch),Math.sin(state.pitch),Math.cos(state.yaw)*Math.cos(state.pitch)];
+ const right=norm(cross([0,1,0],outward)),up=cross(outward,right);
+ const unit=state.zoom/Math.max(1,canvas.clientHeight);
+ state.target=add(state.target,add(mul(right,-dx*unit),mul(up,dy*unit)));
+}
+let pointers=new Map(),prevDistance=0,prevCenter=null;
+function touchPair(){const a=[...pointers.values()];if(a.length<2)return null;
+ return {center:[(a[0][0]+a[1][0])/2,(a[0][1]+a[1][1])/2],distance:Math.hypot(a[0][0]-a[1][0],a[0][1]-a[1][1])};}
+canvas.addEventListener('pointerdown',e=>{
+ try{canvas.setPointerCapture(e.pointerId)}catch(_){}
+ pointers.set(e.pointerId,[e.clientX,e.clientY]);
+ const pair=touchPair();prevCenter=pair?.center||null;prevDistance=pair?.distance||0;
+});
+canvas.addEventListener('pointermove',e=>{
+ if(!pointers.has(e.pointerId))return;
+ const old=pointers.get(e.pointerId),before=touchPair();
+ pointers.set(e.pointerId,[e.clientX,e.clientY]);
+ if(pointers.size===1){
+  const dx=e.clientX-old[0],dy=e.clientY-old[1];
+  if(cameraGesture==='pan')panCamera(dx,dy);
+  else {state.yaw+=dx*.008;state.pitch=clamp(state.pitch+dy*.008,-1.46,1.46);
+   if($('cameraAuto').checked){autoFit=true;fitPose()}else autoFit=false;}
+ }else if(pointers.size===2){
+  const after=touchPair();
+  if(before&&after){
+   const dx=after.center[0]-before.center[0],dy=after.center[1]-before.center[1];
+   if(Math.abs(dx)+Math.abs(dy)>.01)panCamera(dx,dy);
+   if(before.distance>6&&after.distance>6){
+    const f=before.distance/after.distance;
+    if(Math.abs(f-1)>.0001){disableCameraAuto();state.zoom=clamp(state.zoom*f,.75,65);}
+   }
+  }
+ }
+ request();
+});
+function releasePointer(e){pointers.delete(e.pointerId);const pair=touchPair();prevCenter=pair?.center||null;prevDistance=pair?.distance||0;}
+canvas.addEventListener('pointerup',releasePointer);
+canvas.addEventListener('pointercancel',releasePointer);
+canvas.addEventListener('lostpointercapture',releasePointer);
+canvas.addEventListener('wheel',e=>{e.preventDefault();
+ if(e.shiftKey){panCamera(-e.deltaX,-e.deltaY);}
+ else {disableCameraAuto();state.zoom=clamp(state.zoom*Math.exp(e.deltaY*.0012),.75,65)}
+ request();},{passive:false});
+window.addEventListener('resize',()=>{if($('cameraAuto').checked){autoFit=true;fitPose()}request()});
+
 window.__labHand=()=>({enabled:settings.hand,source:handSource,ready:handReady,loaded:handLoadCount,rendered:HAND_NAMES.filter(n=>Boolean(handPose[n]&&handMeshSet()[n])).length,settings:Object.fromEntries(handFields.map(n=>[n,settings[n]])),wrist:handPose.mc3,thumb:handPose.tDist,indexTip:handPose.iDist,handPivot,handModelWarning});
+window.__labJointErrors=()=>{
+ if(!realReady||!handReady)return {ready:false};
+ const main=handPose.scaphoid,mc1=handPose.mc1,pProx=handPose.tProx,pDist=handPose.tDist;
+ const joint=(pose,p)=>transform(pose[0],pose[1],p);
+ const thumbCMCErrorMm=len(sub(joint(main,handPivot.thumbCMC),joint(mc1,handPivot.thumbCMC)))/atlasScale;
+ const thumbMCPErrorMm=len(sub(joint(mc1,handPivot.thumbMCP),joint(pProx,handPivot.thumbMCP)))/atlasScale;
+ const thumbIPErrorMm=len(sub(joint(pProx,handPivot.thumbIP),joint(pDist,handPivot.thumbIP)))/atlasScale;
+ const handWristErrorMm=len(sub(handBase(),joint(main,[0,0,0])))/atlasScale;
+ return {ready:true,wristErrorMm:handWristErrorMm,thumbCMCErrorMm,thumbMCPErrorMm,thumbIPErrorMm,distalGapDeltaMm:poseCheck.distalGapDeltaMm,
+   palmNormal:handPivot.thumbPalmNormal,thumbFlexAxis:handPivot.thumbFlexAxis,thumbFlexSign:handPivot.thumbFlexSign};
+};
 window.__labMuscles=()=>({...muscleDiagnostics,enabled:settings.muscles,deltoidEnabled:settings.deltoid,deltoidGeometryCount:['deltoidAnterior','deltoidMiddle','deltoidPosterior'].filter(n=>Boolean(geomDynamic[n])).length,brachioradialisEnabled:settings.brachioradialis,brachioradialisGeometryCount:['brachioradialis','tendonBR'].filter(n=>Boolean(geomDynamic[n])).length,pronatorTeresEnabled:settings.pronatorTeres,pronatorTeresGeometryCount:['pronatorTeresHumeral','pronatorTeresUlnar','tendonPT'].filter(n=>Boolean(geomDynamic[n])).length,supinatorEnabled:settings.supinator,supinatorGeometryCount:['supinatorSuperficial','supinatorDeep','tendonSupinator'].filter(n=>Boolean(geomDynamic[n])).length,realReady,exaggerated:settings.muscleEmphasis});
-window.__labCamera=()=>({zoom:state.zoom,zoomScale,cameraAuto:$('cameraAuto').checked,target:state.target,yaw:state.yaw,pitch:state.pitch,autoFit,canvas:[canvas.clientWidth,canvas.clientHeight]});
+window.__labCamera=()=>({gesture:cameraGesture,zoom:state.zoom,zoomScale,cameraAuto:$('cameraAuto').checked,target:state.target,yaw:state.yaw,pitch:state.pitch,autoFit,canvas:[canvas.clientWidth,canvas.clientHeight]});
 window.__labJoints=()=>({...poseCheck,realReady,frontDirection:realReady?'world -Z':'world +Z',elbowHingeSign:realReady?ELBOW_FLEX_SIGN*(settings.reverseElbow?-1:1):-(settings.reverseElbow?-1:1),elbowCheck:window.__elbowVerification});
 window.__labBounds=()=>{const pts=poseBoundingPoints();let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;for(const p of pts){const q=[...p,1],o=[0,0,0,0];for(let r=0;r<4;r++)o[r]=pv[r]*q[0]+pv[r+4]*q[1]+pv[r+8]*q[2]+pv[r+12]*q[3];const x=(.5+.5*o[0]/o[3])*lastW,y=(.5-.5*o[1]/o[3])*lastH;minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxY=Math.max(maxY,y)}return {minX,maxX,minY,maxY,width:lastW,height:lastH}};try{makeFallbackHand();gl.enable(gl.DEPTH_TEST);update();frame();loadRealBones()}catch(e){$('err').style.display='block';$('err').textContent='3D描画エラー: '+String(e);console.error(e)}
 })();
