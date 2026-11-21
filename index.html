@@ -63,7 +63,7 @@
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.22</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.22</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.23</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.23</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="viewer-info" aria-label="3D表示の状態">
@@ -107,7 +107,7 @@
 <div class="detail" id="handStatus" role="status" aria-live="polite">手の骨を準備しています…</div>
 </div>
 <div class="panel"><div class="panelhead"><h2>モデル表示</h2><span class="sectioncap">DISPLAY</span></div>
-<div class="toggles"><label class="switch"><input id="hand" type="checkbox" checked>手首・手の骨格を表示（27骨）</label><label class="switch"><input id="sync" type="checkbox" checked>肩甲骨・鎖骨を連動</label><label class="switch"><input id="muscles" type="checkbox">上腕の筋肉・腱（二頭筋ほか）</label><label class="switch"><input id="deltoid" type="checkbox" checked>三角筋（前・中・後部）</label><label class="switch"><input id="brachioradialis" type="checkbox" checked>腕橈骨筋（前腕・単独表示可）</label><label class="switch"><input id="pronatorTeres" type="checkbox" checked>円回内筋（前腕・単独表示可）</label><label class="switch"><input id="supinator" type="checkbox" checked>回外筋（橈骨近位部・単独表示可）</label><label class="switch"><input id="flexorCarpiRadialis" type="checkbox" checked>橈側手根屈筋（手首の掌屈・橈屈）</label><label class="switch"><input id="rib" type="checkbox">胸郭の参照表示</label><label class="switch"><input id="showlabels" type="checkbox">骨の名称ラベル</label><label class="switch"><input id="showDirection" type="checkbox">側面の胸側・背側ガイド（短時間表示）</label></div>
+<div class="toggles"><label class="switch"><input id="hand" type="checkbox" checked>手首・手の骨格を表示（27骨）</label><label class="switch"><input id="sync" type="checkbox" checked>肩甲骨・鎖骨を連動</label><label class="switch"><input id="muscles" type="checkbox">上腕の筋肉・腱（二頭筋ほか）</label><label class="switch"><input id="deltoid" type="checkbox" checked>三角筋（前・中・後部）</label><label class="switch"><input id="brachioradialis" type="checkbox" checked>腕橈骨筋（前腕・単独表示可）</label><label class="switch"><input id="pronatorTeres" type="checkbox" checked>円回内筋（前腕・単独表示可）</label><label class="switch"><input id="supinator" type="checkbox" checked>回外筋（橈骨近位部・単独表示可）</label><label class="switch"><input id="flexorCarpiRadialis" type="checkbox" checked>橈側手根屈筋＋乳白色の腱（掌屈・橈屈）</label><label class="switch"><input id="rib" type="checkbox">胸郭の参照表示</label><label class="switch"><input id="showlabels" type="checkbox">骨の名称ラベル</label><label class="switch"><input id="showDirection" type="checkbox">側面の胸側・背側ガイド（短時間表示）</label></div>
 <div class="detail" id="muscleModeNote">上腕筋群と三角筋は別々に切り替えできます。三角筋は実骨の読み込み後に表示します（付着位置は推定）。</div>
 <div class="detail" id="deltoidStatus" role="status" aria-live="polite">三角筋：実骨データを読み込み中…</div><div class="detail" id="brachioradialisStatus" role="status" aria-live="polite">腕橈骨筋：実骨データを読み込み中…</div><div class="detail" id="pronatorTeresStatus" role="status" aria-live="polite">円回内筋：実骨データを読み込み中…</div><div class="detail" id="supinatorStatus" role="status" aria-live="polite">回外筋：実骨データを読み込み中…</div><div class="detail" id="flexorCarpiRadialisStatus" role="status" aria-live="polite">橈側手根屈筋：実骨データを読み込み中…</div>
 <div class="muscle-feedback" id="muscleFeedback" aria-live="off"><div class="muscle-feedback-row"><span>上腕二頭筋のふくらみ（基準比）</span><output id="muscleBulgeValue">1.00倍</output></div><div class="muscle-meter"><span id="muscleBulgeMeter"></span></div><label class="switch muscle-emphasis"><input type="checkbox" id="muscleEmphasis" checked>筋腹の変形を強調（動きの観察用）</label></div><div class="sectioncap" style="margin:14px 0 8px">骨を個別に表示 / 非表示</div><div class="key"><button data-bone="scapula">肩甲骨</button><button data-bone="clavicle">鎖骨</button><button data-bone="humerus">上腕骨</button><button data-bone="radius">橈骨</button><button data-bone="ulna">尺骨</button></div>
@@ -150,7 +150,7 @@ function gpu(m){let mn=[Infinity,Infinity,Infinity],mx=[-Infinity,-Infinity,-Inf
 const shape={scapula:gpu(scapula()),scapSpine:gpu(tube([[-.67,-.38,-.12,.045],[-.39,-.33,-.025,.069],[-.18,-.25,.08,.083],[.04,-.075,.10,.066]],{sides:13,rough:.018})),acromion:gpu(tube([[-.03,-.14,.09,.078],[.05,-.01,.09,.11],[.16,.055,.025,.11],[.17,-.09,-.02,.067]],{rough:.018})),coracoid:gpu(tube([[-.10,-.16,.06,.075],[-.02,-.11,.22,.095],[.14,-.16,.32,.059]],{rough:.015})),glenoid:gpu(ball([.095,-.302,.047],[.112,.156,.042])),humerus:gpu(tube([[.07,-.10,-.015,.105],[.095,-.22,-.015,.113],[.072,-.43,-.02,.098],[.02,-.75,-.03,.080],[.012,-1.07,-.013,.074],[.025,-1.31,.018,.095],[.008,-1.46,.040,.137]],{sides:22,steps:12,ellipticity:.78,rough:.015})),head:gpu(ball([-.117,-.015,-.006],[.183,.186,.176],24,32)),neck:gpu(tube([[-.11,-.035,-.015,.105],[.012,-.15,-.013,.108],[.076,-.27,-.019,.092]],{rough:.012})),gt:gpu(ball([.142,.008,-.033],[.104,.116,.103])),lt:gpu(ball([.070,-.055,.145],[.066,.093,.070])),deltoidBump:gpu(tube([[.085,-.50,.00,.026],[.139,-.64,.014,.043],[.067,-.75,.015,.023]],{rough:.012})),condyleL:gpu(ball([-.115,-1.462,.045],[.133,.100,.130])),condyleR:gpu(ball([.128,-1.458,.040],[.120,.103,.130])),trochlea:gpu(ball([-.038,-1.502,.050],[.122,.088,.127])),ulna:gpu(tube([[-.13,-.075,-.03,.075],[-.135,-.22,-.02,.087],[-.11,-.48,-.018,.067],[-.105,-.77,-.013,.051],[-.11,-1.04,-.022,.048],[-.13,-1.28,-.015,.063]],{sides:18,steps:12,ellipticity:.74,rough:.012})),olecranon:gpu(ball([-.12,.005,-.090],[.099,.120,.113])),ulnaDistal:gpu(ball([-.12,-1.29,-.015],[.082,.086,.079])),radialHead:gpu(ball([.135,-.092,.06],[.087,.051,.092])),torso:gpu(ball([-.34,.72,-.08],[.92,1.16,.41],28,36)),sternum:gpu(tube([[.0,1.78,.30,.09],[.0,1.44,.35,.095],[.0,1.1,.36,.085],[.0,.87,.32,.065]],{sides:12}))};
 let ribShapes=[];for(let side of [-1,1])for(let i=0;i<6;i++){let y=1.53-i*.24,radx=(.42+i*.055),points=[];for(let j=0;j<=10;j++){let t=j/10, x=side*(.13+radx*Math.sin(t*Math.PI*.78)),z=.18-.44*t+.02*Math.sin(t*Math.PI), yy=y-.12*Math.sin(t*Math.PI);points.push([x,yy,z,.025+i*.001])}ribShapes.push(gpu(tube(points,{sides:7,steps:3}))) }
 const ids=['scapula','clavicle','humerus','radius','ulna'],boneShown=Object.fromEntries(ids.map(x=>[x,true]));
-const cBone=[.97,.86,.73],cBone2=[.89,.78,.65],cCart=[.68,.68,.64],cMuscle=[.77,.30,.31],cMuscleDeep=[.60,.24,.28],cTendon=[.85,.77,.60];
+const cBone=[.97,.86,.73],cBone2=[.89,.78,.65],cCart=[.68,.68,.64],cMuscle=[.77,.30,.31],cMuscleDeep=[.60,.24,.28],cTendon=[.85,.77,.60],cTendonFCR=[.93,.97,.94];
 const settings={elev:0,plane:0,axial:0,elbow:0,pronation:0,wristFlex:0,wristDeviation:0,fingerCurl:0,thumbCurl:0,thumbOpposition:0,hand:true,sync:true,muscles:false,deltoid:true,brachioradialis:true,pronatorTeres:true,supinator:true,flexorCarpiRadialis:true,rib:false,showlabels:false,showDirection:false,reverseElbow:false,muscleEmphasis:true};
 const state={yaw:Math.PI/2,pitch:.10,zoom:5.4,target:[.49,.31,-.02]};let proj,view,pv,geomDynamic={},posPoints={},lastW=0,lastH=0;let directionGuideUntil=0;
 function gdynamic(name,geom){if(geomDynamic[name]){let b=geomDynamic[name];gl.deleteBuffer(b.vbo);gl.deleteBuffer(b.nbo);gl.deleteBuffer(b.ibo)}geomDynamic[name]=gpu(geom)}
@@ -337,7 +337,7 @@ async function loadRealHand(){
  if(settings.hand){makeHandPose();if(realReady&&(settings.muscles||settings.deltoid||settings.brachioradialis||settings.pronatorTeres||settings.supinator||settings.flexorCarpiRadialis))updateRealMuscles();if($('cameraAuto').checked){autoFit=true;fitPose()}request()}
  updateHandStatus();updateFlexorCarpiRadialisStatus();
  const stateLabel=$('modelLoadState');
- if(stateLabel&&realReady)stateLabel.innerHTML=(handReady?'BodyParts3D 上肢5骨＋右手27骨':'BodyParts3D 上肢5骨＋手の近似形状')+'<br>手首・指の関節位置と回旋を調整しました（v0.22）';
+ if(stateLabel&&realReady)stateLabel.innerHTML=(handReady?'BodyParts3D 上肢5骨＋右手27骨':'BodyParts3D 上肢5骨＋手の近似形状')+'<br>橈側手根屈筋の腱を乳白色で強調しました（v0.23）';
 }
 function updateHandStatus(){const n=$('handStatus');if(!n)return;
  n.textContent=!settings.hand?'手の骨格：非表示':handReady?'手の実骨27個を表示中。手首の回転中心と親指軸を骨格基準で調整した近似です。':handModelWarning?handModelWarning+'。現在は近似形状です。':'手の実骨データを読み込み中。読み込み前は近似形状で操作できます。';
@@ -404,7 +404,7 @@ function makeRealPose(){
  for(const id of ids){const box=realMesh[id]?.box,pose=realPose[id];if(!box||!pose)continue;
  const center=mul(add(box[0],box[1]),.5);posPoints[id]=transform(pose[0],pose[1],center)}
  if(settings.hand)makeHandPose();
- if(settings.muscles||settings.deltoid||settings.brachioradialis||settings.pronatorTeres||settings.supinator||settings.flexorCarpiRadialis)updateRealMuscles();
+ updateRealMuscles();
 }
 
 // Muscle attachments: approximate atlas landmarks, snapped to the nearest actual
@@ -468,7 +468,18 @@ function humerusBand(frac,side='anterior'){
  humeralBandCache.set(key,pt);return pt;
 }
 function updateRealMuscles(){
- if(!realReady||(!settings.muscles&&!settings.deltoid&&!settings.brachioradialis&&!settings.pronatorTeres&&!settings.supinator&&!settings.flexorCarpiRadialis))return;
+ if(!realReady)return;
+ if(!settings.muscles&&!settings.deltoid&&!settings.brachioradialis&&!settings.pronatorTeres&&!settings.supinator&&!settings.flexorCarpiRadialis){
+  // Clear stale buffers immediately when the last muscle is switched OFF.
+  // This also prevents old tendon geometry resurfacing on later toggles.
+  for(const id of [...MUSCLE_PARTS,...TENDON_PARTS]){
+   const g=geomDynamic[id];if(!g)continue;
+   if(!SOFTWARE){gl.deleteBuffer(g.vbo);gl.deleteBuffer(g.nbo);gl.deleteBuffer(g.ibo)}
+   delete geomDynamic[id];
+  }
+  muscleDiagnostics={mode:'v0.23: muscles hidden',flexorCarpiRadialis:{visible:false}};
+  return;
+ }
  const bone=(name,pt,r)=>[...attachedAtlas(name,pt,true),r];
  const hg=(f,side,r,offset=.018,dx=0)=>{
   const pt=humerusBand(clamp(f,.06,.97),side);
@@ -698,7 +709,7 @@ function updateRealMuscles(){
  }else for(const id of ['supinatorSuperficial','supinatorDeep','tendonSupinator']){
   if(geomDynamic[id]){const old=geomDynamic[id];if(!SOFTWARE){gl.deleteBuffer(old.vbo);gl.deleteBuffer(old.nbo);gl.deleteBuffer(old.ibo);}delete geomDynamic[id];}
  }
- // v0.22: Flexor carpi radialis (橈側手根屈筋) in the superficial
+ // v0.23: Flexor carpi radialis (橈側手根屈筋) in the superficial
  // volar forearm. The belly remains proximal to the wrist while the distal
  // tendon crosses the moving wrist and attaches to metacarpal II. Atlas
  // landmarks are approximations; no tendon sheath / excursion mechanics.
@@ -714,7 +725,7 @@ function updateRealMuscles(){
    const v=attachedAtlas('radius',xyz,true);
    return [...add(v,anterior('radius',[0,0,-gap])),r];
   };
-  function handAttached(id,atlas,fallback){
+  function handAttached(id,atlas,fallback,volarGap=.02){
    const p=handPose[id];if(!p)throw Error('hand pose missing: '+id);
    let loc;
    if(handReady){
@@ -725,11 +736,18 @@ function updateRealMuscles(){
      loc=closest;
     }
    }else loc=fallback;
-   return transform(p[0],p[1],loc);
+   // Tendon guides are on the PALMAR side of each moving hand bone,
+   // not at its centre/surface. The visual gap is a soft-tissue proxy.
+   return transform(p[0],p[1],add(loc,[0,0,-volarGap]));
   }
-  // Medial epicondyle -> volar forearm -> radial wrist -> 2nd MC base.
-  const end=handAttached('mc2',[-275,-122,796],[.07,-.17,-.013]);
-  const wristPath=handAttached('trapezoid',[-260,-116,805],[.05,-.12,-.028]);
+  // Atlas-guided volar course: medial epicondyle -> superficial distal
+  // forearm -> fibro-osseous wrist tunnel -> MC II base. Guiding points
+  // follow the radius until the wrist, then follow the carpal/MC hierarchy.
+  // These are approximate exterior soft-tissue paths, not tendon forces.
+  const insertionOnBone=handAttached('mc2',[-275,-122,796],[.07,-.17,-.013],0);
+  const end=handAttached('mc2',[-275,-122,796],[.07,-.17,-.013],.006);
+  const wristEntry=handAttached('scaphoid',[-263,-114,814],[.063,-.042,-.015],.035);
+  const wristPath=handAttached('trapezoid',[-260,-116,805],[.05,-.12,-.028],.034);
   const wristFlex=clamp(settings.wristFlex/80,0,1);
   const radialDeviation=clamp(-settings.wristDeviation/20,0,1);
   const bulge=1+(.32*smooth(wristFlex)+.08*smooth(radialDeviation))*(settings.muscleEmphasis?1:.65);
@@ -738,20 +756,24 @@ function updateRealMuscles(){
   const b2=U([-228,-111,974],.060*bulge,.044);
   const b3=U([-231,-114,941],.054*bulge,.040);
   const b4=U([-235,-112,912],.023,.024);
-  const tendon1=R([-263,-114,864],.011,.022);
-  const tendon2=R([-263,-118,830],.009,.021);
+  const tendon1=R([-257,-112,884],.017,.029);
+  const tendon2=R([-262,-116,850],.016,.031);
+  const tendon3=R([-263,-119,830],.015,.034);
   makeM('flexorCarpiRadialis',[H,elbowGuide,b1,b2,b3,b4]);
-  // Include both radius-tracking and hand-tracking points to represent a
-  // tendon that bends over the volar wrist, not a rigid bone-to-bone rod.
-  makeT('tendonFCR',[b4,tendon1,tendon2,[...wristPath,.010],[...end,.008]]);
-  fcrInfo={visible:true,origin:H.slice(0,3),insertion:end,
-   wristGuide:wristPath,radialGuide:tendon2.slice(0,3),wristFlex:settings.wristFlex,
+  const tendonRoute=[b4,tendon1,tendon2,tendon3,[...wristEntry,.014],[...wristPath,.013],[...end,.009]];
+  // Widened, ivory-white FCR tendon: visible from the muscle-tendon
+  // junction past the palmar wrist even against similarly colored bones.
+  makeT('tendonFCR',tendonRoute);
+  fcrInfo={visible:true,origin:H.slice(0,3),insertion:end,insertionBone:insertionOnBone,
+   wristGuide:wristPath,wristEntry,radialGuide:tendon3.slice(0,3),wristFlex:settings.wristFlex,
    wristDeviation:settings.wristDeviation,bulge,followedHand:handReady?'BodyParts3D':'fallback',
+   tendonColor:'ivory-white',tendonPath:tendonRoute.map(p=>p.slice(0,3)),
+   tendonRadii:tendonRoute.map(p=>p[3]),tendonSections:6,
    insertionParent:'mc2',originParent:'humerus',length:len(sub(end,H.slice(0,3)))};
  }else for(const id of ['flexorCarpiRadialis','tendonFCR']){
   if(geomDynamic[id]){const old=geomDynamic[id];if(!SOFTWARE){gl.deleteBuffer(old.vbo);gl.deleteBuffer(old.nbo);gl.deleteBuffer(old.ibo)}delete geomDynamic[id]}
  }
- muscleDiagnostics={mode:'v0.22: added flexor carpi radialis; approximate origin and distal tendon',flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
+ muscleDiagnostics={mode:'v0.23: ivory-white wrist-crossing FCR tendon with carpal and MC anchors',flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
   biceps:{origin:bicepsLongOrigin.slice(0,3),insertion:bicepsRadiusEnd.slice(0,3),bellyBulge:bBulge},
   triceps:{origin:tricepsOrigin.slice(0,3),insertion:tricepsEnd.slice(0,3),bellyScale:tBulge},
   brachialis:{origin:brachialisOrigin.slice(0,3),insertion:brachialisEnd.slice(0,3),bellyBulge:braBulge},
@@ -776,8 +798,8 @@ async function loadRealBones(){
  try{
    const result=await Promise.all(ids.map(x=>loadOneBone(x,REAL_MODELS[x])));
    ids.forEach((x,i)=>realMesh[x]=result[i]);realReady=true;makeRealPose();makeHandPose();loadRealHand().catch(e=>{handModelWarning=String(e);updateHandStatus()});updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateAnteriorStatus();autoFit=true;fitPose();request();
-   if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.22）';
-   const n=$('boneModeNote');if(n)n.textContent='骨の形はBodyParts3Dの公開解剖学的メッシュに変更しました。関節の回転中心・肩甲上腕リズムは推定値です。前腕の回内回外は橈骨頭から尺骨遠位部への斜め軸を用いた近似です。関節面の衝突や靱帯による拘束は未実装です。上腕二頭筋・三頭筋・上腕筋は骨表面に沿う近似経路を使い、肘角度に応じた簡易収縮・伸長を追加しました。三角筋は他の筋肉とは独立にON/OFFでき、3つの束を推定付着点に結び付けた近似表示です。腕橈骨筋も独立ON/OFFができ、上腕骨外側から橈骨遠位部までを推定経路で結び、肘屈曲・前腕回内回外に追従します。回外筋は上腕骨外側・尺骨近位部から橈骨近位部を包む概形として追加し、円回内筋と比較できます。筋・腱の正確な形状や付着点、筋張力は未検証です。腱の滑走や厳密な筋体積保存は未実装です。';
+   if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.23）';
+   const n=$('boneModeNote');if(n)n.textContent='骨の形はBodyParts3Dの公開解剖学的メッシュに変更しました。関節の回転中心・肩甲上腕リズムは推定値です。前腕の回内回外は橈骨頭から尺骨遠位部への斜め軸を用いた近似です。関節面の衝突や靱帯による拘束は未実装です。上腕二頭筋・三頭筋・上腕筋は骨表面に沿う近似経路を使い、肘角度に応じた簡易収縮・伸長を追加しました。三角筋は他の筋肉とは独立にON/OFFでき、3つの束を推定付着点に結び付けた近似表示です。腕橈骨筋も独立ON/OFFができ、上腕骨外側から橈骨遠位部までを推定経路で結び、肘屈曲・前腕回内回外に追従します。回外筋は上腕骨外側・尺骨近位部から橈骨近位部を包む概形として追加し、円回内筋と比較できます。橈側手根屈筋の腱は視認性のため乳白色で強調し、掌側の手首を横断する推定経路で表示します。筋・腱の正確な形状や付着点、筋張力は未検証です。腱の滑走や厳密な筋体積保存は未実装です。';
  }catch(e){modelWarning=String(e);console.warn('Showing safe procedural fallback because real bones did not load:',e);
    if(loading)loading.innerHTML='近似モデルを表示中<br>実骨データの取得に失敗しました';updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();
    const n=$('boneModeNote');if(n)n.textContent='実骨格データの取得に失敗したため、旧近似モデルを表示しています。ネット接続と外部CDNの利用可否を確認して再読み込みしてください。';
@@ -819,7 +841,7 @@ if(settings.muscles||settings.deltoid||settings.brachioradialis||settings.pronat
   if(!muscleVisible(name))continue;
   drawPart(geomDynamic[name],ID,OR,name==='brachialis'?cMuscleDeep:name==='brachioradialis'?[.81,.36,.32]:name.startsWith('pronatorTeres')?[.86,.32,.40]:name.startsWith('supinator')?[.55,.40,.76]:name==='flexorCarpiRadialis'?[.76,.27,.45]:cMuscle,.94,1);
  }
- for(const name of TENDON_PARTS)if(muscleVisible(name))drawPart(geomDynamic[name],ID,OR,cTendon,.95,2);
+ for(const name of TENDON_PARTS)if(muscleVisible(name))drawPart(geomDynamic[name],ID,OR,name==='tendonFCR'?cTendonFCR:cTendon,name==='tendonFCR'?1:.95,2);
  gl.depthMask(true);gl.disable(gl.BLEND);
 }
 if(settings.rib){gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);drawPart(shape.torso,ID,OR,[.37,.54,.65],.08,4);drawPart(shape.sternum,ID,OR,[.53,.64,.66],.20,4);for(let g of ribShapes)drawPart(g,ID,OR,[.48,.64,.7],.23,4);gl.depthMask(true);gl.disable(gl.BLEND)}
@@ -932,11 +954,11 @@ function updateFlexorCarpiRadialisStatus(){
  if(!settings.hand){el.textContent='橈側手根屈筋：手骨モデルをONにすると第2中手骨への腱を表示できます';return;}
  if(!realReady){el.textContent=modelWarning?'橈側手根屈筋：実骨データを取得できず非表示です':'橈側手根屈筋：実骨データを読み込み中…';return;}
  el.textContent=geomDynamic.flexorCarpiRadialis&&geomDynamic.tendonFCR
-  ?'橈側手根屈筋：前腕の筋腹から第2中手骨までの腱を表示中。手首の動きに追従（推定走行）'
+  ?'橈側手根屈筋：乳白色の腱を筋腹から掌側の手首を越え第2中手骨まで表示中（推定走行）'
   :'橈側手根屈筋：骨は読み込み済み。形状生成を確認してください';
 }
 const angleFields=['elev','plane','axial','elbow','pronation'];const handFields=['wristFlex','wristDeviation','fingerCurl','thumbCurl','thumbOpposition'];function update(){for(let f of angleFields){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+'°'}for(let f of handFields){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+(f.endsWith('Curl')||f==='thumbOpposition'?'%':'°')}for(let f of ['hand','sync','muscles','deltoid','brachioradialis','pronatorTeres','supinator','flexorCarpiRadialis','rib','showlabels','showDirection','reverseElbow','muscleEmphasis'])settings[f]=$(f).checked;
- $('muscleModeNote').textContent=realReady?'v0.22：橈側手根屈筋を追加。上腕骨内側から手首を越えて第2中手骨へ向かう腱が、手首の操作に追従します。筋腹の膨隆は教育用の視覚表現で、筋力は計算していません。':'骨データ読み込み中／代替表示：筋肉は旧モデルによる概形です。';
+ $('muscleModeNote').textContent=realReady?'v0.23：橈側手根屈筋の腱を乳白色で強調。前腕から掌側の手首を越えて第2中手骨に付着する推定経路を表示し、手首の操作に追従します。骨表面との距離は視認性のために調整した教育用の近似です。':'骨データ読み込み中／代替表示：筋肉は旧モデルによる概形です。';
  const f=clamp(settings.elbow/150,0,1), contractionRate=f*f*(3-2*f), exaggeration=settings.muscleEmphasis?1:.45;
  const bulge=1+.72*contractionRate*exaggeration;
  $('muscleBulgeValue').textContent=bulge.toFixed(2)+'倍';
