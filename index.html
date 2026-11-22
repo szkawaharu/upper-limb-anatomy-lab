@@ -126,7 +126,7 @@ body.full-3d.controls-open .joint-feedback{bottom:calc(min(64dvh,650px) + 12px)}
 @media(max-width:370px){.viewer-toolbar{gap:4px}.viewer-toolbar button,.viewer-toolbar select{font-size:10px;padding:6px 6px}.viewer-toolbar select{max-width:116px;flex-basis:116px}}
 
 
-/* v0.32: Geographica-inspired edge-drawer mobile workspace.
+/* v0.33: Geographica-inspired edge-drawer mobile workspace.
    Keep the existing WebGL canvas and all joint/camera controls intact. */
 .edge-rail,.edge-scrim,.edge-drawer-head,.edge-standard-button{display:none}
 body.edge-ui{height:100dvh;overflow:hidden;overscroll-behavior:none}
@@ -141,6 +141,8 @@ body.edge-ui .edge-rail button,
 body.edge-ui #edgeMenuButton{display:flex;align-items:center;justify-content:center;pointer-events:auto;width:45px;height:45px;border-radius:50%;padding:0;background:#102a37e8;border:1.5px solid #5f8c95;color:#e2faf4;box-shadow:0 5px 18px #0009;font-size:20px;line-height:1;font-weight:650;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);touch-action:manipulation}
 body.edge-ui #edgeMenuButton{position:fixed;z-index:93;top:max(14px,env(safe-area-inset-top));left:max(10px,env(safe-area-inset-left));background:#b98526eb;border-color:#edc36a;color:white}
 body.edge-ui #edgeQuickGrab[aria-pressed="true"]{background:#13675fef;border-color:#80e1d4;color:#e5fff8}
+body.edge-ui #edgeQuickTwist[aria-pressed="true"]{background:#14696aef;border-color:#9ce6dd;color:#f1fffa;box-shadow:0 0 0 2px #65ddcd33,0 5px 18px #0009}
+body.edge-ui #edgeQuickTwist{font-size:25px;font-weight:750}
 body.edge-ui #edgeQuickPan[aria-pressed="true"]{background:#13675fef;border-color:#80e1d4;color:#e5fff8}
 body.edge-ui .edge-rail .edge-rail-separator{display:block;width:24px;height:1px;background:#91b7bd50;margin:1px auto}
 body.edge-ui #edgeBrand{display:block;position:fixed;top:max(18px,env(safe-area-inset-top));left:69px;right:68px;z-index:91;pointer-events:none;color:#b8d4dc;font-size:12px;text-align:center;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;padding:9px 6px;text-shadow:0 2px 9px #07111e}
@@ -180,7 +182,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.32</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.32</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.33</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.33</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
@@ -190,9 +192,10 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.32</div>
-<nav class="edge-rail" aria-label="3Dモデルのクイック操作">
- <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで操作" aria-pressed="false" title="つかむ／回転">✋</button>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.33</div>
+<nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
+ <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
+ <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
  <button type="button" id="edgeQuickPan" aria-label="1本指の視点移動に切り替える" aria-pressed="false" title="視点移動">✥</button>
  <button type="button" id="edgeQuickFit" aria-label="モデル全体を画面に収める" title="全体を表示">⌗</button>
  <span class="edge-rail-separator" aria-hidden="true"></span>
@@ -204,8 +207,8 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 
 </div>
 <section class="side" id="labTools">
-<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.32</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
-<details class="edge-help control-fold"><summary>操作方法<span class="fold-note">ヘルプ</span></summary><div class="fold-body"><div class="immersive-tips">操作：1本指ドラッグで視点回転（初期設定は逆方向）。<strong>骨を約0.4秒長押し → ドラッグで関節操作。iPhoneで選択メニューが出る場合は、上部の「✋ つかむ」をONにして直接ドラッグ</strong>。2本指は視点移動・ピンチ。選びにくい関節は上部メニューで指定できます。</div></div></details><div class="note" id="launchTip"><strong>iPhoneでモデルが表示されない場合</strong>：HTMLファイルのプレビューではJavaScriptが実行されない場合があります。HTMLファイルをWebサイトとして公開し、SafariでURLを開いてください。下の操作ボタンはブラウザ版で機能します。</div>
+<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.33</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
+<details class="edge-help control-fold"><summary>操作方法<span class="fold-note">ヘルプ</span></summary><div class="fold-body"><div class="immersive-tips">操作：1本指ドラッグで視点回転（初期設定は逆方向）。<strong>骨を約0.4秒長押し → ドラッグで関節操作。右端の「✋」は曲げ伸ばし、「↻」は前腕の回内・回外と上腕の内旋・外旋。↻では骨を左右にドラッグするか、2本指でひねって調整できます。iPhoneで選択メニューが出る場合は「✋」または「↻」をONにして直接ドラッグ</strong>。2本指は視点移動・ピンチ。選びにくい関節は上部メニューで指定できます。</div></div></details><div class="note" id="launchTip"><strong>iPhoneでモデルが表示されない場合</strong>：HTMLファイルのプレビューではJavaScriptが実行されない場合があります。HTMLファイルをWebサイトとして公開し、SafariでURLを開いてください。下の操作ボタンはブラウザ版で機能します。</div>
 <details class="control-fold"><summary>表示倍率・視点操作<span class="fold-note">カメラ</span></summary><div class="fold-body"><div class="panel zoom-panel"><div class="panelhead"><h2>表示倍率</h2><span class="sectioncap">CAMERA</span></div>
 <div class="control zoom-control"><label for="zoomLevel">拡大・縮小 <output id="zoomValue">100%</output></label>
 <div class="zoom-inputs"><button id="zoomOut" type="button" aria-label="縮小">－</button><input id="zoomLevel" type="range" min="65" max="240" step="5" value="100" aria-label="表示倍率"><button id="zoomIn" type="button" aria-label="拡大">＋</button></div>
@@ -477,7 +480,7 @@ async function loadRealHand(){
  if(settings.hand){makeHandPose();if(realReady&&(settings.muscles||settings.deltoid||settings.brachioradialis||settings.pronatorTeres||settings.supinator||settings.flexorCarpiRadialis||settings.flexorCarpiUlnaris||settings.palmarisLongus))updateRealMuscles();if($('cameraAuto').checked){autoFit=true;fitPose()}request()}
  updateHandStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();refreshModelStatus();
  const stateLabel=$('modelLoadState');
- if(stateLabel&&realReady)stateLabel.innerHTML=(handReady?'BodyParts3D 上肢5骨＋右手27骨':'BodyParts3D 上肢5骨＋手の近似形状')+'<br>長掌筋と手掌腱膜の簡易表示を追加しました（v0.32）';
+ if(stateLabel&&realReady)stateLabel.innerHTML=(handReady?'BodyParts3D 上肢5骨＋右手27骨':'BodyParts3D 上肢5骨＋手の近似形状')+'<br>長掌筋と手掌腱膜の簡易表示を追加しました（v0.33）';
 }
 
 function refreshModelStatus(){
@@ -1014,7 +1017,7 @@ function updateRealMuscles(){
  }else for(const id of fcuNames){
   if(geomDynamic[id]){const old=geomDynamic[id];if(!SOFTWARE){gl.deleteBuffer(old.vbo);gl.deleteBuffer(old.nbo);gl.deleteBuffer(old.ibo)}delete geomDynamic[id];}
  }
- // v0.32: PALMARIS LONGUS (長掌筋) – individual superficial belly and tendon.
+ // v0.33: PALMARIS LONGUS (長掌筋) – individual superficial belly and tendon.
  // This muscle may be congenitally absent. It passes SUPERFICIAL to the
  // flexor retinaculum and blends into the palmar aponeurosis. NOT a bone
  // attachment at MC III. Approximate anatomy and length-change visual only.
@@ -1071,7 +1074,7 @@ function updateRealMuscles(){
  }else for(const id of plNames){
    const old=geomDynamic[id];if(old){if(!SOFTWARE){gl.deleteBuffer(old.vbo);gl.deleteBuffer(old.nbo);gl.deleteBuffer(old.ibo)}delete geomDynamic[id];}
  }
- muscleDiagnostics={mode:'v0.32: FCR + FCU + palmaris longus with palmar fan approximation',flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
+ muscleDiagnostics={mode:'v0.33: FCR + FCU + palmaris longus with palmar fan approximation',flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
   biceps:{origin:bicepsLongOrigin.slice(0,3),insertion:bicepsRadiusEnd.slice(0,3),bellyBulge:bBulge},
   triceps:{origin:tricepsOrigin.slice(0,3),insertion:tricepsEnd.slice(0,3),bellyScale:tBulge},
   brachialis:{origin:brachialisOrigin.slice(0,3),insertion:brachialisEnd.slice(0,3),bellyBulge:braBulge},
@@ -1096,7 +1099,7 @@ async function loadRealBones(){
  try{
    const result=await Promise.all(ids.map(x=>loadOneBone(x,REAL_MODELS[x])));
    ids.forEach((x,i)=>realMesh[x]=result[i]);realReady=true;makeRealPose();makeHandPose();loadRealHand().catch(e=>{handModelWarning=String(e);updateHandStatus();refreshModelStatus()});updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateAnteriorStatus();autoFit=true;fitPose();request();
-   if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.32）';refreshModelStatus();
+   if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.33）';refreshModelStatus();
    const n=$('boneModeNote');if(n)n.textContent='骨の形はBodyParts3Dの公開解剖学的メッシュに変更しました。関節の回転中心・肩甲上腕リズムは推定値です。前腕の回内回外は橈骨頭から尺骨遠位部への斜め軸を用いた近似です。関節面の衝突や靱帯による拘束は未実装です。上腕二頭筋・三頭筋・上腕筋は骨表面に沿う近似経路を使い、肘角度に応じた簡易収縮・伸長を追加しました。三角筋は他の筋肉とは独立にON/OFFでき、3つの束を推定付着点に結び付けた近似表示です。腕橈骨筋も独立ON/OFFができ、上腕骨外側から橈骨遠位部までを推定経路で結び、肘屈曲・前腕回内回外に追従します。回外筋は上腕骨外側・尺骨近位部から橈骨近位部を包む概形として追加し、円回内筋と比較できます。橈側手根屈筋の腱は乳白色の細い楕円断面で、橈骨掌側から舟状骨・大菱形骨付近を通って第2中手骨基部へ至る推定経路で表示します。尺側手根屈筋は尺骨の掌側・尺側に沿い、豆状骨に腱が連結し、有鉤骨・第5中手骨への線維性連結を近似表示します。関節付近の滑走・骨との接触計算は行っていません。長掌筋は内側上顆→手掌腱膜の模式経路として追加しました（個体差・欠損あり）。筋・腱の正確な形状や付着点、筋張力は未検証です。腱の滑走や厳密な筋体積保存は未実装です。';
  }catch(e){modelWarning=String(e);console.warn('Showing safe procedural fallback because real bones did not load:',e);
    if(loading)loading.innerHTML='近似モデルを表示中<br>実骨データの取得に失敗しました';refreshModelStatus();updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();
@@ -1371,13 +1374,30 @@ function pickJoint(clientX,clientY){
  for(const h of skeletalHandles()){const d=pointSegmentDist(p,h.a,h.b)+h.weight;if(d<best){best=d;choice=h.id}}
  return best<=Math.max(32,Math.min(50,Math.min(r.width,r.height)*.10))?choice:null;
 }
+// v0.33: Twist mode chooses the anatomical axial degree of freedom, not an elbow hinge.
+// The screen projection is used only for selection; motion continues to use the existing
+// radius/ulna and humerus joint kinematics, including the prior angle limits.
+let twistMode=false, twistTouchField=null, twistPair=null;
+function pickTwistJoint(clientX,clientY){
+ const manual=$('directJointChoice').value;
+ if(manual==='axial'||manual==='pronation')return manual;
+ const rect=canvas.getBoundingClientRect(),point=[clientX-rect.left,clientY-rect.top];
+ let best=Infinity,field=null;
+ for(const h of skeletalHandles()){
+  if(!['elbow','elev','wristFlex','fingerCurl','thumbCurl'].includes(h.id))continue;
+  const d=pointSegmentDist(point,h.a,h.b)+(h.id==='fingerCurl'?6:0);
+  if(d<best){best=d;field=h.id==='elev'?'axial':'pronation'}
+ }
+ // Don't rotate anything if the user touches empty space.
+ return best<=Math.max(42,Math.min(82,Math.min(rect.width,rect.height)*.17))?field:null;
+}
 function clearHold(){if(holdTimer!==null){clearTimeout(holdTimer);holdTimer=null}holdCandidate=null;}
 function beginJointDrag(pointerId,field,start){
  if(!field||pointers.size!==1||!pointers.has(pointerId))return false;
  directDrag={pointerId,field,last:start.slice(),accum:0};
  disableCameraAuto();
  document.querySelector('.viewer-wrap').classList.add('joint-active');
- feedbackJoint(jointLabels[field]+'：'+$(field).value+(jointPercent.has(field)?'%':'°')+'　↕ ドラッグで調整',true);
+ feedbackJoint(jointLabels[field]+'：'+$(field).value+(jointPercent.has(field)?'%':'°')+(twistMode?'　↔ 左右にドラッグ':'　↕ ドラッグで調整'),true);
  clearHold();
  return true;
 }
@@ -1391,7 +1411,7 @@ function applyDirectDrag(e){
  // Vertical moves change flexion; horizontal moves are reserved for axial/twist.
  const sideways=new Set(['plane','axial','pronation','wristDeviation','thumbOpposition']);
  const movement=sideways.has(directDrag.field)?dx:-dy;
- directDrag.accum+=movement*(jointPercent.has(directDrag.field)?0.6:0.43);
+ directDrag.accum+=movement*(twistMode?0.65:(jointPercent.has(directDrag.field)?0.6:0.43));
  const step=Math.trunc(directDrag.accum);
  if(step!==0){
   directDrag.accum-=step;const el=$(directDrag.field),min=+el.min,max=+el.max;
@@ -1402,6 +1422,17 @@ function applyDirectDrag(e){
  return true;
 }
 function stopDirectDrag(){if(directDrag){directDrag=null;document.querySelector('.viewer-wrap').classList.remove('joint-active');feedbackJoint('関節操作を終了しました')}clearHold();}
+function setTwistMode(on){
+ twistMode=Boolean(on);
+ twistPair=null;twistTouchField=null;stopDirectDrag();
+ $('edgeQuickTwist').setAttribute('aria-pressed',String(twistMode));
+ if(twistMode){
+  if(grabMode)$('grabModeToggle').click();
+  if(cameraGesture==='pan')$('camRotate').click();
+  feedbackJoint('↻ ひねる：前腕・手を左右へドラッグ＝回内外／上腕＝内旋外旋',false);
+ }else feedbackJoint('↻ ひねる終了：カメラ操作に戻りました',false);
+ if(typeof syncEdgeButtons==='function')syncEdgeButtons();
+}
 function syncImmersiveLayout(){
  // Resize happens after layout mode/class changes, so auto-fit uses the new canvas.
  requestAnimationFrame(()=>requestAnimationFrame(()=>{if($('cameraAuto').checked){autoFit=true;fitPose()}request()}));
@@ -1435,26 +1466,56 @@ window.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classLi
 
 let pointers=new Map(),prevDistance=0,prevCenter=null;
 function touchPair(){const a=[...pointers.values()];if(a.length<2)return null;
- return {center:[(a[0][0]+a[1][0])/2,(a[0][1]+a[1][1])/2],distance:Math.hypot(a[0][0]-a[1][0],a[0][1]-a[1][1])};}
+ return {center:[(a[0][0]+a[1][0])/2,(a[0][1]+a[1][1])/2],distance:Math.hypot(a[0][0]-a[1][0],a[0][1]-a[1][1]),angle:Math.atan2(a[1][1]-a[0][1],a[1][0]-a[0][0])};}
+function updateTwistPair(pair){
+ if(!twistPair||!pair||pair.distance<18)return false;
+ let delta=pair.angle-twistPair.lastAngle;
+ while(delta>Math.PI)delta-=2*Math.PI;
+ while(delta<-Math.PI)delta+=2*Math.PI;
+ twistPair.lastAngle=pair.angle;
+ twistPair.accum+=delta*180/Math.PI*1.1;
+ const step=Math.trunc(twistPair.accum);
+ if(step){
+  twistPair.accum-=step;
+  const slider=$(twistPair.field),next=clamp(Number(slider.value)+step,+slider.min,+slider.max);
+  if(next!==Number(slider.value)){
+   slider.value=next;
+   document.querySelectorAll('[data-preset]').forEach(x=>x.classList.remove('active'));
+   update();feedbackJoint(jointLabels[twistPair.field]+'：'+next+'°（2本指ひねり）',true);
+  }
+ }
+ return true;
+}
 canvas.addEventListener('pointerdown',e=>{
  try{canvas.setPointerCapture(e.pointerId)}catch(_){}
  pointers.set(e.pointerId,[e.clientX,e.clientY]);
  if(pointers.size===1){
-  const field=pickJoint(e.clientX,e.clientY);
+  twistTouchField=twistMode?pickTwistJoint(e.clientX,e.clientY):null;
+  const field=twistMode?twistTouchField:pickJoint(e.clientX,e.clientY);
   if(field){
-   if(grabMode)beginJointDrag(e.pointerId,field,[e.clientX,e.clientY]);
+   if(grabMode||twistMode)beginJointDrag(e.pointerId,field,[e.clientX,e.clientY]);
    else {holdCandidate={pointerId:e.pointerId,field,start:[e.clientX,e.clientY]};holdTimer=setTimeout(()=>activateHold(e.pointerId),410)}
+  }else if(twistMode){feedbackJoint('↻ ひねる：前腕・手・上腕の骨の近くを触ってください');}
+ }else{
+  clearHold();if(directDrag)stopDirectDrag();
+  const pair=touchPair();
+  if(twistMode&&pointers.size===2&&twistTouchField&&pair?.distance>18){
+   twistPair={field:twistTouchField,lastAngle:pair.angle,accum:0};
+   disableCameraAuto();feedbackJoint(jointLabels[twistTouchField]+'：2本指を回してひねる',true);
   }
- }else{clearHold();if(directDrag)stopDirectDrag()}
+ }
  const pair=touchPair();prevCenter=pair?.center||null;prevDistance=pair?.distance||0;
 });
 canvas.addEventListener('pointermove',e=>{
  if(!pointers.has(e.pointerId))return;
  const old=pointers.get(e.pointerId),before=touchPair();
  pointers.set(e.pointerId,[e.clientX,e.clientY]);
+ if(twistPair&&pointers.size===2){if(updateTwistPair(touchPair()))return}
  if(directDrag){if(applyDirectDrag(e))return}
  if(holdCandidate&&holdCandidate.pointerId===e.pointerId&&Math.hypot(e.clientX-holdCandidate.start[0],e.clientY-holdCandidate.start[1])>9)clearHold();
  if(pointers.size===1){
+  // Twist mode only articulates a selected bone; avoid unintended camera orbit.
+  if(twistMode)return;
   const dx=e.clientX-old[0],dy=e.clientY-old[1];
   if(cameraGesture==='pan')panCamera(dx,dy);
   else {const swipeSign=$('invertRotationSwipe').checked?-1:1;state.yaw+=dx*.008*swipeSign;state.pitch=clamp(state.pitch+dy*.008*swipeSign,-1.46,1.46);
@@ -1472,7 +1533,7 @@ canvas.addEventListener('pointermove',e=>{
  }
  request();
 });
-function releasePointer(e){if(directDrag?.pointerId===e.pointerId)stopDirectDrag();if(holdCandidate?.pointerId===e.pointerId)clearHold();pointers.delete(e.pointerId);const pair=touchPair();prevCenter=pair?.center||null;prevDistance=pair?.distance||0;}
+function releasePointer(e){if(directDrag?.pointerId===e.pointerId)stopDirectDrag();if(holdCandidate?.pointerId===e.pointerId)clearHold();pointers.delete(e.pointerId);if(pointers.size<2)twistPair=null;if(pointers.size===0)twistTouchField=null;const pair=touchPair();prevCenter=pair?.center||null;prevDistance=pair?.distance||0;}
 canvas.addEventListener('pointerup',releasePointer);
 canvas.addEventListener('pointercancel',releasePointer);
 canvas.addEventListener('lostpointercapture',releasePointer);
@@ -1494,16 +1555,16 @@ window.__labJointErrors=()=>{
  return {ready:true,wristErrorMm:handWristErrorMm,thumbCMCErrorMm,thumbMCPErrorMm,thumbIPErrorMm,distalGapDeltaMm:poseCheck.distalGapDeltaMm,
    palmNormal:handPivot.thumbPalmNormal,thumbFlexAxis:handPivot.thumbFlexAxis,thumbFlexSign:handPivot.thumbFlexSign};
 };
-window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.32',directJointControl:true,iosSelectionGuard:true,grabMode,immersive:true});
+window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.33',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
 window.__labMuscles=()=>({...muscleDiagnostics,enabled:settings.muscles,deltoidEnabled:settings.deltoid,deltoidGeometryCount:['deltoidAnterior','deltoidMiddle','deltoidPosterior'].filter(n=>Boolean(geomDynamic[n])).length,brachioradialisEnabled:settings.brachioradialis,brachioradialisGeometryCount:['brachioradialis','tendonBR'].filter(n=>Boolean(geomDynamic[n])).length,pronatorTeresEnabled:settings.pronatorTeres,pronatorTeresGeometryCount:['pronatorTeresHumeral','pronatorTeresUlnar','tendonPT'].filter(n=>Boolean(geomDynamic[n])).length,supinatorEnabled:settings.supinator,supinatorGeometryCount:['supinatorSuperficial','supinatorDeep','tendonSupinator'].filter(n=>Boolean(geomDynamic[n])).length,flexorCarpiRadialisEnabled:settings.flexorCarpiRadialis,flexorCarpiRadialisGeometryCount:['flexorCarpiRadialis','tendonFCR'].filter(n=>Boolean(geomDynamic[n])).length,palmarisLongusEnabled:settings.palmarisLongus,palmarisLongusGeometryCount:['palmarisLongus','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].filter(n=>Boolean(geomDynamic[n])).length,flexorCarpiUlnarisEnabled:settings.flexorCarpiUlnaris,flexorCarpiUlnarisGeometryCount:['flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','tendonFCU','pisohamateBand','pisometacarpalBand'].filter(n=>Boolean(geomDynamic[n])).length,realReady,exaggerated:settings.muscleEmphasis});
 window.__labFCU=()=>({enabled:settings.flexorCarpiUlnaris,handEnabled:settings.hand,realReady,handReady,geometryCount:['flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','tendonFCU','pisohamateBand','pisometacarpalBand'].filter(id=>Boolean(geomDynamic[id])).length,data:muscleDiagnostics.flexorCarpiUlnaris||{visible:false}});
 window.__labPL=()=>({enabled:settings.palmarisLongus,handEnabled:settings.hand,realReady,handReady,geometryCount:['palmarisLongus','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].filter(n=>Boolean(geomDynamic[n])).length,data:muscleDiagnostics.palmarisLongus||{visible:false}});
 window.__labFCR=()=>({enabled:settings.flexorCarpiRadialis,handEnabled:settings.hand,realReady,handReady,geometryCount:['flexorCarpiRadialis','tendonFCR'].filter(n=>Boolean(geomDynamic[n])).length,data:muscleDiagnostics.flexorCarpiRadialis||{visible:false}});
-window.__labDirect=()=>({immersive:document.body.classList.contains('full-3d'),controlsOpen:document.body.classList.contains('controls-open'),grabMode,active:directDrag?.field||null,menu:$('directJointChoice').value,handles:skeletalHandles().map(h=>({field:h.id,from:h.a,to:h.b}))});
+window.__labDirect=()=>({immersive:document.body.classList.contains('full-3d'),controlsOpen:document.body.classList.contains('controls-open'),grabMode,twistMode,pairTwist:twistPair?.field||null,active:directDrag?.field||null,menu:$('directJointChoice').value,handles:skeletalHandles().map(h=>({field:h.id,from:h.a,to:h.b}))});
  window.__labCamera=()=>({gesture:cameraGesture,invertedSwipe:$('invertRotationSwipe').checked,zoom:state.zoom,zoomScale,cameraAuto:$('cameraAuto').checked,target:state.target,yaw:state.yaw,pitch:state.pitch,autoFit,canvas:[canvas.clientWidth,canvas.clientHeight]});
 window.__labJoints=()=>({...poseCheck,realReady,frontDirection:realReady?'world -Z':'world +Z',elbowHingeSign:realReady?ELBOW_FLEX_SIGN*(settings.reverseElbow?-1:1):-(settings.reverseElbow?-1:1),elbowCheck:window.__elbowVerification});
 window.__labBounds=()=>{const pts=poseBoundingPoints();let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;for(const p of pts){const q=[...p,1],o=[0,0,0,0];for(let r=0;r<4;r++)o[r]=pv[r]*q[0]+pv[r+4]*q[1]+pv[r+8]*q[2]+pv[r+12]*q[3];const x=(.5+.5*o[0]/o[3])*lastW,y=(.5-.5*o[1]/o[3])*lastH;minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxY=Math.max(maxY,y)}return {minX,maxX,minY,maxY,width:lastW,height:lastH}};
-// v0.32: a full-viewport anatomy canvas with Geographica-style edge controls.
+// v0.33: a full-viewport anatomy canvas with Geographica-style edge controls.
 const edgeWrap=document.querySelector('.viewer-wrap');
 const edgeSide=$('labTools');
 const edgeToolbar=edgeWrap.querySelector('.viewer-toolbar');
@@ -1523,6 +1584,7 @@ function setEdgeDrawer(open){
 }
 function syncEdgeButtons(){
  const grabbing=$('grabModeToggle').getAttribute('aria-pressed')==='true';
+ $('edgeQuickTwist').setAttribute('aria-pressed',String(twistMode));
  $('edgeQuickGrab').setAttribute('aria-pressed',String(grabbing));
  $('edgeQuickGrab').setAttribute('aria-label',grabbing?'つかむモードを終了し視点回転に戻る':'骨をつかんで関節操作する');
  const panning=$('camPan').classList.contains('active');
@@ -1552,26 +1614,29 @@ $('edgeMenuClose').addEventListener('click',()=>setEdgeDrawer(false));
 $('edgeScrim').addEventListener('click',()=>setEdgeDrawer(false));
 $('edgeStandardView').addEventListener('click',()=>{setEdgeDrawer(false);edgeManualClassic=true;setEdgeWorkspace(false)});
 $('edgeQuickGrab').addEventListener('click',()=>{
+ if(twistMode)setTwistMode(false);
  const turningOn=$('grabModeToggle').getAttribute('aria-pressed')!=='true';
  if(turningOn && $('camPan').classList.contains('active'))$('camRotate').click();
  $('grabModeToggle').click();syncEdgeButtons();
 });
 $('edgeQuickPan').addEventListener('click',()=>{
+ if(twistMode)setTwistMode(false);
  const current=$('camPan').classList.contains('active');
  if(!current && $('grabModeToggle').getAttribute('aria-pressed')==='true')$('grabModeToggle').click();
  $(current?'camRotate':'camPan').click();
  syncEdgeButtons();
 });
+$('edgeQuickTwist').addEventListener('click',()=>setTwistMode(!twistMode));
 $('edgeQuickFit').addEventListener('click',()=>{$('resetCam').click();syncEdgeButtons()});
 $('edgeQuickZoomIn').addEventListener('click',()=>{$('zoomIn').click()});
 $('edgeQuickZoomOut').addEventListener('click',()=>{$('zoomOut').click()});
-$('grabModeToggle').addEventListener('click',syncEdgeButtons);
-$('camPan').addEventListener('click',syncEdgeButtons);
+$('grabModeToggle').addEventListener('click',()=>{if(grabMode&&twistMode)setTwistMode(false);syncEdgeButtons()});
+$('camPan').addEventListener('click',()=>{if(cameraGesture==='pan'&&twistMode)setTwistMode(false);syncEdgeButtons()});
 $('camRotate').addEventListener('click',syncEdgeButtons);
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('drawer-open')){setEdgeDrawer(false);e.preventDefault()}});
 const edgeShouldEnable=()=> (matchMedia('(pointer:coarse)').matches||innerWidth<=780)&&!edgeManualClassic;
 window.addEventListener('resize',()=>{if(edgeShouldEnable()&&!document.body.classList.contains('edge-ui'))setEdgeWorkspace(true)});
-window.__labEdge=()=>({edgeUI:document.body.classList.contains('edge-ui'),drawerOpen:document.body.classList.contains('drawer-open'),canvas:[canvas.clientWidth,canvas.clientHeight],grabbing:$('grabModeToggle').getAttribute('aria-pressed'),pan:$('camPan').classList.contains('active')});
+window.__labEdge=()=>({edgeUI:document.body.classList.contains('edge-ui'),drawerOpen:document.body.classList.contains('drawer-open'),canvas:[canvas.clientWidth,canvas.clientHeight],grabbing:$('grabModeToggle').getAttribute('aria-pressed'),twistMode,pan:$('camPan').classList.contains('active')});
 
 try{makeFallbackHand();gl.enable(gl.DEPTH_TEST);update();frame();loadRealBones()}catch(e){$('err').style.display='block';$('err').textContent='3D描画エラー: '+String(e);console.error(e)}
 if(edgeShouldEnable())setEdgeWorkspace(true);
