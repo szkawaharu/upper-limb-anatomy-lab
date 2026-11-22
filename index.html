@@ -63,7 +63,7 @@
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.23</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.23</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.24</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.24</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="viewer-info" aria-label="3D表示の状態">
@@ -337,7 +337,7 @@ async function loadRealHand(){
  if(settings.hand){makeHandPose();if(realReady&&(settings.muscles||settings.deltoid||settings.brachioradialis||settings.pronatorTeres||settings.supinator||settings.flexorCarpiRadialis))updateRealMuscles();if($('cameraAuto').checked){autoFit=true;fitPose()}request()}
  updateHandStatus();updateFlexorCarpiRadialisStatus();
  const stateLabel=$('modelLoadState');
- if(stateLabel&&realReady)stateLabel.innerHTML=(handReady?'BodyParts3D 上肢5骨＋右手27骨':'BodyParts3D 上肢5骨＋手の近似形状')+'<br>橈側手根屈筋の腱を乳白色で強調しました（v0.23）';
+ if(stateLabel&&realReady)stateLabel.innerHTML=(handReady?'BodyParts3D 上肢5骨＋右手27骨':'BodyParts3D 上肢5骨＋手の近似形状')+'<br>橈側手根屈筋の腱を細くして大菱形骨付近に沿わせました（v0.24）';
 }
 function updateHandStatus(){const n=$('handStatus');if(!n)return;
  n.textContent=!settings.hand?'手の骨格：非表示':handReady?'手の実骨27個を表示中。手首の回転中心と親指軸を骨格基準で調整した近似です。':handModelWarning?handModelWarning+'。現在は近似形状です。':'手の実骨データを読み込み中。読み込み前は近似形状で操作できます。';
@@ -477,7 +477,7 @@ function updateRealMuscles(){
    if(!SOFTWARE){gl.deleteBuffer(g.vbo);gl.deleteBuffer(g.nbo);gl.deleteBuffer(g.ibo)}
    delete geomDynamic[id];
   }
-  muscleDiagnostics={mode:'v0.23: muscles hidden',flexorCarpiRadialis:{visible:false}};
+  muscleDiagnostics={mode:'v0.24: muscles hidden',flexorCarpiRadialis:{visible:false}};
   return;
  }
  const bone=(name,pt,r)=>[...attachedAtlas(name,pt,true),r];
@@ -709,7 +709,7 @@ function updateRealMuscles(){
  }else for(const id of ['supinatorSuperficial','supinatorDeep','tendonSupinator']){
   if(geomDynamic[id]){const old=geomDynamic[id];if(!SOFTWARE){gl.deleteBuffer(old.vbo);gl.deleteBuffer(old.nbo);gl.deleteBuffer(old.ibo);}delete geomDynamic[id];}
  }
- // v0.23: Flexor carpi radialis (橈側手根屈筋) in the superficial
+ // v0.24: Flexor carpi radialis (橈側手根屈筋) in the superficial
  // volar forearm. The belly remains proximal to the wrist while the distal
  // tendon crosses the moving wrist and attaches to metacarpal II. Atlas
  // landmarks are approximations; no tendon sheath / excursion mechanics.
@@ -744,10 +744,16 @@ function updateRealMuscles(){
   // forearm -> fibro-osseous wrist tunnel -> MC II base. Guiding points
   // follow the radius until the wrist, then follow the carpal/MC hierarchy.
   // These are approximate exterior soft-tissue paths, not tendon forces.
+  // v0.24: Anatomically guided but deliberately *schematic* FCR tendon.
+  // FCR courses palmar to the scaphoid and in a groove over the TRAPEZIUM
+  // (not the trapezoid), then inserts mainly into the 2nd metacarpal base.
+  // Keep the tendon close to individual moving bone surfaces with small
+  // palmar offsets; a densely interpolated bounded centreline suppresses
+  // the broad loop that a sparse Catmull–Rom spline introduced at the wrist.
   const insertionOnBone=handAttached('mc2',[-275,-122,796],[.07,-.17,-.013],0);
-  const end=handAttached('mc2',[-275,-122,796],[.07,-.17,-.013],.006);
-  const wristEntry=handAttached('scaphoid',[-263,-114,814],[.063,-.042,-.015],.035);
-  const wristPath=handAttached('trapezoid',[-260,-116,805],[.05,-.12,-.028],.034);
+  const end=handAttached('mc2',[-275,-122,796],[.07,-.17,-.013],.0035);
+  const wristEntry=handAttached('scaphoid',[-263,-114,814],[.063,-.042,-.015],.013);
+  const wristGroove=handAttached('trapezium',[-274,-122,807],[.062,-.103,-.018],.011);
   const wristFlex=clamp(settings.wristFlex/80,0,1);
   const radialDeviation=clamp(-settings.wristDeviation/20,0,1);
   const bulge=1+(.32*smooth(wristFlex)+.08*smooth(radialDeviation))*(settings.muscleEmphasis?1:.65);
@@ -755,25 +761,39 @@ function updateRealMuscles(){
   const b1=U([-222,-109,996],.040*bulge,.037);
   const b2=U([-228,-111,974],.060*bulge,.044);
   const b3=U([-231,-114,941],.054*bulge,.040);
-  const b4=U([-235,-112,912],.023,.024);
-  const tendon1=R([-257,-112,884],.017,.029);
-  const tendon2=R([-262,-116,850],.016,.031);
-  const tendon3=R([-263,-119,830],.015,.034);
+  const b4=U([-235,-112,912],.021,.024);
+  const tendon1=R([-257,-112,884],.0100,.014);
+  const tendon2=R([-262,-116,850],.0085,.012);
+  const tendon3=R([-263,-119,830],.0078,.011);
   makeM('flexorCarpiRadialis',[H,elbowGuide,b1,b2,b3,b4]);
-  const tendonRoute=[b4,tendon1,tendon2,tendon3,[...wristEntry,.014],[...wristPath,.013],[...end,.009]];
-  // Widened, ivory-white FCR tendon: visible from the muscle-tendon
-  // junction past the palmar wrist even against similarly colored bones.
-  makeT('tendonFCR',tendonRoute);
+  const bridgePos=add(
+    add(mul(tendon3.slice(0,3),.47),mul(wristEntry,.53)),
+    mul(norm(add(anterior('radius',[0,0,-1]),qr(handPose.scaphoid[0],[0,0,-1]))),.003)
+  );
+  const bridge=[...bridgePos,.0073];
+  const tendonRoute=[b4,tendon1,tendon2,tendon3,bridge,[...wristEntry,.0072],[...wristGroove,.0062],[...end,.0044]];
+  // Keep all the landmarks as actual knots. Linear segment subdivisions give
+  // the final spline enough nearby samples to avoid large corner overshoots.
+  // The curve remains an illustrative course, not a tension/contact solver.
+  function boundedRoute(points){
+    const q=[points[0]];
+    for(let i=0;i<points.length-1;i++){
+      const a=points[i],b=points[i+1];
+      for(const t of [.25,.5,.75,1])q.push(a.map((x,k)=>mix(x,b[k],t)));
+    }
+    return q;
+  }
+  gdynamic('tendonFCR',tube(boundedRoute(tendonRoute),{sides:10,steps:3,ellipticity:.75,rough:0}));
   fcrInfo={visible:true,origin:H.slice(0,3),insertion:end,insertionBone:insertionOnBone,
-   wristGuide:wristPath,wristEntry,radialGuide:tendon3.slice(0,3),wristFlex:settings.wristFlex,
+   wristGuide:wristGroove,wristEntry,radialGuide:tendon3.slice(0,3),wristFlex:settings.wristFlex,
    wristDeviation:settings.wristDeviation,bulge,followedHand:handReady?'BodyParts3D':'fallback',
-   tendonColor:'ivory-white',tendonPath:tendonRoute.map(p=>p.slice(0,3)),
-   tendonRadii:tendonRoute.map(p=>p[3]),tendonSections:6,
+   tendonColor:'ivory-white',tendonPath:tendonRoute.map(p=>p.slice(0,3)),tendonGrooveBone:'trapezium',
+   tendonRadii:tendonRoute.map(p=>p[3]),tendonSections:7,
    insertionParent:'mc2',originParent:'humerus',length:len(sub(end,H.slice(0,3)))};
  }else for(const id of ['flexorCarpiRadialis','tendonFCR']){
   if(geomDynamic[id]){const old=geomDynamic[id];if(!SOFTWARE){gl.deleteBuffer(old.vbo);gl.deleteBuffer(old.nbo);gl.deleteBuffer(old.ibo)}delete geomDynamic[id]}
  }
- muscleDiagnostics={mode:'v0.23: ivory-white wrist-crossing FCR tendon with carpal and MC anchors',flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
+ muscleDiagnostics={mode:'v0.24: tapered ivory FCR tendon guided along scaphoid and trapezium groove',flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
   biceps:{origin:bicepsLongOrigin.slice(0,3),insertion:bicepsRadiusEnd.slice(0,3),bellyBulge:bBulge},
   triceps:{origin:tricepsOrigin.slice(0,3),insertion:tricepsEnd.slice(0,3),bellyScale:tBulge},
   brachialis:{origin:brachialisOrigin.slice(0,3),insertion:brachialisEnd.slice(0,3),bellyBulge:braBulge},
@@ -798,8 +818,8 @@ async function loadRealBones(){
  try{
    const result=await Promise.all(ids.map(x=>loadOneBone(x,REAL_MODELS[x])));
    ids.forEach((x,i)=>realMesh[x]=result[i]);realReady=true;makeRealPose();makeHandPose();loadRealHand().catch(e=>{handModelWarning=String(e);updateHandStatus()});updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateAnteriorStatus();autoFit=true;fitPose();request();
-   if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.23）';
-   const n=$('boneModeNote');if(n)n.textContent='骨の形はBodyParts3Dの公開解剖学的メッシュに変更しました。関節の回転中心・肩甲上腕リズムは推定値です。前腕の回内回外は橈骨頭から尺骨遠位部への斜め軸を用いた近似です。関節面の衝突や靱帯による拘束は未実装です。上腕二頭筋・三頭筋・上腕筋は骨表面に沿う近似経路を使い、肘角度に応じた簡易収縮・伸長を追加しました。三角筋は他の筋肉とは独立にON/OFFでき、3つの束を推定付着点に結び付けた近似表示です。腕橈骨筋も独立ON/OFFができ、上腕骨外側から橈骨遠位部までを推定経路で結び、肘屈曲・前腕回内回外に追従します。回外筋は上腕骨外側・尺骨近位部から橈骨近位部を包む概形として追加し、円回内筋と比較できます。橈側手根屈筋の腱は視認性のため乳白色で強調し、掌側の手首を横断する推定経路で表示します。筋・腱の正確な形状や付着点、筋張力は未検証です。腱の滑走や厳密な筋体積保存は未実装です。';
+   if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.24）';
+   const n=$('boneModeNote');if(n)n.textContent='骨の形はBodyParts3Dの公開解剖学的メッシュに変更しました。関節の回転中心・肩甲上腕リズムは推定値です。前腕の回内回外は橈骨頭から尺骨遠位部への斜め軸を用いた近似です。関節面の衝突や靱帯による拘束は未実装です。上腕二頭筋・三頭筋・上腕筋は骨表面に沿う近似経路を使い、肘角度に応じた簡易収縮・伸長を追加しました。三角筋は他の筋肉とは独立にON/OFFでき、3つの束を推定付着点に結び付けた近似表示です。腕橈骨筋も独立ON/OFFができ、上腕骨外側から橈骨遠位部までを推定経路で結び、肘屈曲・前腕回内回外に追従します。回外筋は上腕骨外側・尺骨近位部から橈骨近位部を包む概形として追加し、円回内筋と比較できます。橈側手根屈筋の腱は乳白色の細い楕円断面で、橈骨掌側から舟状骨・大菱形骨付近を通って第2中手骨基部へ至る推定経路で表示します。関節付近の滑走・骨との接触計算は行っていません。筋・腱の正確な形状や付着点、筋張力は未検証です。腱の滑走や厳密な筋体積保存は未実装です。';
  }catch(e){modelWarning=String(e);console.warn('Showing safe procedural fallback because real bones did not load:',e);
    if(loading)loading.innerHTML='近似モデルを表示中<br>実骨データの取得に失敗しました';updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();
    const n=$('boneModeNote');if(n)n.textContent='実骨格データの取得に失敗したため、旧近似モデルを表示しています。ネット接続と外部CDNの利用可否を確認して再読み込みしてください。';
@@ -954,11 +974,11 @@ function updateFlexorCarpiRadialisStatus(){
  if(!settings.hand){el.textContent='橈側手根屈筋：手骨モデルをONにすると第2中手骨への腱を表示できます';return;}
  if(!realReady){el.textContent=modelWarning?'橈側手根屈筋：実骨データを取得できず非表示です':'橈側手根屈筋：実骨データを読み込み中…';return;}
  el.textContent=geomDynamic.flexorCarpiRadialis&&geomDynamic.tendonFCR
-  ?'橈側手根屈筋：乳白色の腱を筋腹から掌側の手首を越え第2中手骨まで表示中（推定走行）'
+  ?'橈側手根屈筋：細めの乳白色腱を橈骨掌側→舟状骨→大菱形骨付近→第2中手骨へ追従表示中（推定走行）'
   :'橈側手根屈筋：骨は読み込み済み。形状生成を確認してください';
 }
 const angleFields=['elev','plane','axial','elbow','pronation'];const handFields=['wristFlex','wristDeviation','fingerCurl','thumbCurl','thumbOpposition'];function update(){for(let f of angleFields){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+'°'}for(let f of handFields){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+(f.endsWith('Curl')||f==='thumbOpposition'?'%':'°')}for(let f of ['hand','sync','muscles','deltoid','brachioradialis','pronatorTeres','supinator','flexorCarpiRadialis','rib','showlabels','showDirection','reverseElbow','muscleEmphasis'])settings[f]=$(f).checked;
- $('muscleModeNote').textContent=realReady?'v0.23：橈側手根屈筋の腱を乳白色で強調。前腕から掌側の手首を越えて第2中手骨に付着する推定経路を表示し、手首の操作に追従します。骨表面との距離は視認性のために調整した教育用の近似です。':'骨データ読み込み中／代替表示：筋肉は旧モデルによる概形です。';
+ $('muscleModeNote').textContent=realReady?'v0.24：橈側手根屈筋の腱を細い乳白色に調整し、橈骨の掌側・舟状骨・大菱形骨の溝付近を通って第2中手骨に至る経路に修正。手首の姿勢に追従します（教育用近似、腱鞘内の滑走や接触計算は未再現）。':'骨データ読み込み中／代替表示：筋肉は旧モデルによる概形です。';
  const f=clamp(settings.elbow/150,0,1), contractionRate=f*f*(3-2*f), exaggeration=settings.muscleEmphasis?1:.45;
  const bulge=1+.72*contractionRate*exaggeration;
  $('muscleBulgeValue').textContent=bulge.toFixed(2)+'倍';
