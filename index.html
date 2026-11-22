@@ -24,7 +24,7 @@
  .fit-view{right:9px;bottom:11px;padding:7px 10px;font-size:11px}
  /* The anatomy viewer stays onscreen when scrolling into the lower joint sliders. */
  .layout>.viewer-column{position:sticky;top:0;z-index:15;box-shadow:0 8px 24px #050d18b8}
- #viewer{height:42svh;min-height:284px;max-height:390px}
+ #viewer{height:46svh;min-height:310px;max-height:470px}
  .bone-label{font-size:10px}
 }
 
@@ -51,34 +51,24 @@
 .viewer-info .badgeLive{flex:0 0 auto;margin:0;font-size:11px;white-space:nowrap}
 @media(max-width:780px){.viewer-column{gap:6px}.viewer-info{padding:7px 9px;gap:6px;min-height:46px}.viewer-info-message{font-size:10px}.viewer-info .badgeLive{font-size:10px;padding:7px 9px}}
 
-/* v0.17: The angle readouts and reset action live OUTSIDE the canvas, so no model detail is obscured. */
-.viewer-actionbar{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:stretch;gap:7px;background:#0f1d2e;border:1px solid #34465a;border-radius:13px;padding:7px;min-width:0}
-.viewer-actionbar .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;min-width:0}
-.viewer-actionbar .stat{min-width:0;padding:6px 7px;background:#091523;border:1px solid #31475b;border-radius:9px}
-.viewer-actionbar .stat b{font-size:17px;color:#f5faff;line-height:1.1;display:block}
-.viewer-actionbar .stat span{display:block;font-size:9px;color:#98afc2;line-height:1.24;margin-top:4px;overflow-wrap:anywhere}
-.viewer-actionbar .fit-view{position:static;z-index:auto;display:flex;align-items:center;justify-content:center;min-width:106px;min-height:51px;white-space:nowrap;padding:7px 8px;border-radius:10px;font-size:11px;box-shadow:none}
-@media(max-width:370px){.viewer-actionbar{gap:5px;padding:5px}.viewer-actionbar .stats{gap:4px}.viewer-actionbar .stat{padding:6px 5px}.viewer-actionbar .fit-view{min-width:97px;padding:6px 5px;font-size:10px}}
+/* v0.25: readable, compact controls and accessible-only loading status. */
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.compact-pose-panel{padding:11px 13px}
+.compact-pose-panel .panelhead{margin-bottom:8px}
+.compact-pose-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.compact-pose-grid button{min-width:0;min-height:35px;border-radius:8px;font-size:11px;font-weight:600;line-height:1.25;padding:7px 3px;white-space:normal}
+.compact-pose-grid .fit-mini{color:#b5f4ec;border-color:#377d78;background:#0c3139}
+@media(max-width:780px){.compact-pose-panel{padding:9px 10px}.compact-pose-grid{gap:5px}.compact-pose-grid button{min-height:34px;padding:7px 2px;font-size:10.5px}}
 </style>
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.24</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.24</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.25</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.25</div></header>
 <main class="layout">
 <div class="viewer-column">
-<div class="viewer-info" aria-label="3D表示の状態">
-  <div class="viewer-info-message" id="modelLoadState" aria-live="polite">実骨格メッシュを読み込み中…<br>姿勢変更で自動フィット ／ ピンチ・倍率バーで手動調整</div>
-  <div class="badgeLive"><i class="dot"></i>3D リアルタイム</div>
-</div>
+<div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
 <section class="viewer-wrap"><canvas id="viewer" aria-label="タッチ操作できる上肢の3D骨格モデル"></canvas><div id="viewerFallback" class="viewer-fallback" role="status" aria-live="polite"><img alt="上肢3D骨格の静止プレビュー画像。右肩甲骨、鎖骨、上腕骨、橈骨、尺骨が見える" src="data:image/webp;base64,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"><div class="fallback-message"><strong>骨格の静止プレビューを表示中</strong><span>この画面で操作できない場合は、JavaScriptが制限されています。Webサイトとして公開し、SafariでURLを開いてください。</span></div></div><div class="labels" id="labels"></div><div class="direction-guide" id="directionGuide" aria-live="polite">胸側・背側（表示切替）</div><div id="err" class="error">3D描画の開始に失敗しました。JavaScriptが動くSafariの公開URLで開いてください。</div></section>
-<div class="viewer-actionbar" aria-label="姿勢角度と画面全体表示">
-  <div class="stats" aria-live="off">
-    <div class="stat"><b id="hElev">0°</b><span>上肢挙上</span></div>
-    <div class="stat"><b id="hGH">0°</b><span>肩甲上腕角<br>（概算）</span></div>
-    <div class="stat"><b id="hST">0°</b><span>肩甲骨上方回旋</span></div>
-  </div>
-  <button class="fit-view" id="fitView" type="button" aria-label="骨格全体を画面内に収める">⛶ 全体を表示</button>
-</div>
+
 </div>
 <section class="side"><div class="note" id="launchTip"><strong>iPhoneでモデルが表示されない場合</strong>：HTMLファイルのプレビューではJavaScriptが実行されない場合があります。HTMLファイルをWebサイトとして公開し、SafariでURLを開いてください。下の操作ボタンはブラウザ版で機能します。</div>
 <div class="panel zoom-panel"><div class="panelhead"><h2>表示倍率</h2><span class="sectioncap">CAMERA</span></div>
@@ -88,7 +78,18 @@
 <label class="switch"><input id="cameraAuto" type="checkbox" checked>姿勢変更時に自動で中央に収める</label>
 <div class="control"><label>3D画面の操作モード <output id="camModeLabel">回転</output></label><div class="btnrow" role="group" aria-label="指1本で行う操作"><button id="camRotate" type="button" class="active" aria-pressed="true">↻ 1本指で回転</button><button id="camPan" type="button" aria-pressed="false">✥ 1本指で移動</button></div><div class="detail">2本指で上下左右に移動・ピンチで拡大縮小。移動中は自動中央合わせを解除し、移動位置を維持します。</div></div>
 <div class="detail">倍率バー・＋−ボタン・ピンチでズーム。1本指で回転／移動を切り替え、2本指では常に移動＋ピンチできます。手動操作で自動中央合わせはOFFになります。「全体を表示」でリセット。</div></div>
-<div class="panel"><div class="panelhead"><h2>姿勢プリセット</h2><span class="sectioncap">POSTURE</span></div><div class="btnrow"><button class="preset active" data-preset="neutral">基本肢位</button><button class="preset" data-preset="abduct">外転90°</button><button class="preset" data-preset="overhead">挙上180°</button><button class="preset" data-preset="elbow">肘屈曲120°</button></div><div class="btnrow" style="margin-top:7px"><button class="preset" data-preset="bow">弓道の姿勢（概形）</button><button class="preset" id="resetCam">全体表示</button></div><div class="btnrow" style="margin-top:7px"><button class="preset" id="sideView">側面で前後を確認</button><button class="preset" id="frontView">正面から見る</button><button class="preset" id="backView">背面から見る</button></div></div>
+<div class="panel compact-pose-panel"><div class="panelhead"><h2>姿勢・視点</h2><span class="sectioncap">POSTURE / VIEW</span></div>
+<div class="compact-pose-grid" role="group" aria-label="姿勢プリセットと視点の切り替え">
+<button class="preset active" data-preset="neutral" type="button">基本肢位</button>
+<button class="preset" data-preset="abduct" type="button">外転90°</button>
+<button class="preset" data-preset="overhead" type="button">挙上180°</button>
+<button class="preset" data-preset="elbow" type="button">肘屈曲120°</button>
+<button class="preset" data-preset="bow" type="button">弓道姿勢</button>
+<button class="preset fit-mini" id="resetCam" type="button">⛶ 全体表示</button>
+<button class="preset" id="sideView" type="button">側面</button>
+<button class="preset" id="frontView" type="button">正面</button>
+<button class="preset" id="backView" type="button">背面</button>
+</div></div>
 <div class="panel"><div class="panelhead"><h2>関節を動かす</h2><span class="sectioncap">JOINT CONTROL</span></div>
 <div class="control"><label for="elev">上肢の挙上 <output id="elevV">0°</output></label><input id="elev" type="range" min="0" max="180" value="0"><div class="ends"><span>下垂 0°</span><span>頭上 180°</span></div></div>
 <div class="control"><label for="plane">挙上面 <output id="planeV">0°</output></label><input id="plane" type="range" min="0" max="90" value="0"><div class="ends"><span>外転面 0°</span><span>前方屈曲面 90°</span></div></div>
@@ -337,7 +338,7 @@ async function loadRealHand(){
  if(settings.hand){makeHandPose();if(realReady&&(settings.muscles||settings.deltoid||settings.brachioradialis||settings.pronatorTeres||settings.supinator||settings.flexorCarpiRadialis))updateRealMuscles();if($('cameraAuto').checked){autoFit=true;fitPose()}request()}
  updateHandStatus();updateFlexorCarpiRadialisStatus();
  const stateLabel=$('modelLoadState');
- if(stateLabel&&realReady)stateLabel.innerHTML=(handReady?'BodyParts3D 上肢5骨＋右手27骨':'BodyParts3D 上肢5骨＋手の近似形状')+'<br>橈側手根屈筋の腱を細くして大菱形骨付近に沿わせました（v0.24）';
+ if(stateLabel&&realReady)stateLabel.innerHTML=(handReady?'BodyParts3D 上肢5骨＋右手27骨':'BodyParts3D 上肢5骨＋手の近似形状')+'<br>筋肉の奥行き表示を修正し、操作パネルを整理しました（v0.25）';
 }
 function updateHandStatus(){const n=$('handStatus');if(!n)return;
  n.textContent=!settings.hand?'手の骨格：非表示':handReady?'手の実骨27個を表示中。手首の回転中心と親指軸を骨格基準で調整した近似です。':handModelWarning?handModelWarning+'。現在は近似形状です。':'手の実骨データを読み込み中。読み込み前は近似形状で操作できます。';
@@ -477,7 +478,7 @@ function updateRealMuscles(){
    if(!SOFTWARE){gl.deleteBuffer(g.vbo);gl.deleteBuffer(g.nbo);gl.deleteBuffer(g.ibo)}
    delete geomDynamic[id];
   }
-  muscleDiagnostics={mode:'v0.24: muscles hidden',flexorCarpiRadialis:{visible:false}};
+  muscleDiagnostics={mode:'v0.25: muscles hidden',flexorCarpiRadialis:{visible:false}};
   return;
  }
  const bone=(name,pt,r)=>[...attachedAtlas(name,pt,true),r];
@@ -698,7 +699,7 @@ function updateRealMuscles(){
     lo(radialPosterior,.042*supScale),lo(radialDistal,.018)
   ]);
   makeM('supinatorDeep',[
-    U,lo(radialDeep,.025),lo(radialDeepMid,.039*supScale),lo(radialDeepEnd,.018)
+    U,lo(radialDeep,.024),lo(radialDeepMid,.034*supScale),lo(radialDeepEnd,.017)
   ]);
   makeT('tendonSupinator',[lo(radialPosterior,.013),lo(radialDistal,.012)]);
   supInfo={visible:true,humeralOrigin:H.slice(0,3),ulnarOrigin:U.slice(0,3),
@@ -709,7 +710,7 @@ function updateRealMuscles(){
  }else for(const id of ['supinatorSuperficial','supinatorDeep','tendonSupinator']){
   if(geomDynamic[id]){const old=geomDynamic[id];if(!SOFTWARE){gl.deleteBuffer(old.vbo);gl.deleteBuffer(old.nbo);gl.deleteBuffer(old.ibo);}delete geomDynamic[id];}
  }
- // v0.24: Flexor carpi radialis (橈側手根屈筋) in the superficial
+ // v0.25: Flexor carpi radialis (橈側手根屈筋) in the superficial
  // volar forearm. The belly remains proximal to the wrist while the distal
  // tendon crosses the moving wrist and attaches to metacarpal II. Atlas
  // landmarks are approximations; no tendon sheath / excursion mechanics.
@@ -744,7 +745,7 @@ function updateRealMuscles(){
   // forearm -> fibro-osseous wrist tunnel -> MC II base. Guiding points
   // follow the radius until the wrist, then follow the carpal/MC hierarchy.
   // These are approximate exterior soft-tissue paths, not tendon forces.
-  // v0.24: Anatomically guided but deliberately *schematic* FCR tendon.
+  // v0.25: Anatomically guided but deliberately *schematic* FCR tendon.
   // FCR courses palmar to the scaphoid and in a groove over the TRAPEZIUM
   // (not the trapezoid), then inserts mainly into the 2nd metacarpal base.
   // Keep the tendon close to individual moving bone surfaces with small
@@ -793,7 +794,7 @@ function updateRealMuscles(){
  }else for(const id of ['flexorCarpiRadialis','tendonFCR']){
   if(geomDynamic[id]){const old=geomDynamic[id];if(!SOFTWARE){gl.deleteBuffer(old.vbo);gl.deleteBuffer(old.nbo);gl.deleteBuffer(old.ibo)}delete geomDynamic[id]}
  }
- muscleDiagnostics={mode:'v0.24: tapered ivory FCR tendon guided along scaphoid and trapezium groove',flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
+ muscleDiagnostics={mode:'v0.25: tapered ivory FCR tendon guided along scaphoid and trapezium groove',flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
   biceps:{origin:bicepsLongOrigin.slice(0,3),insertion:bicepsRadiusEnd.slice(0,3),bellyBulge:bBulge},
   triceps:{origin:tricepsOrigin.slice(0,3),insertion:tricepsEnd.slice(0,3),bellyScale:tBulge},
   brachialis:{origin:brachialisOrigin.slice(0,3),insertion:brachialisEnd.slice(0,3),bellyBulge:braBulge},
@@ -818,7 +819,7 @@ async function loadRealBones(){
  try{
    const result=await Promise.all(ids.map(x=>loadOneBone(x,REAL_MODELS[x])));
    ids.forEach((x,i)=>realMesh[x]=result[i]);realReady=true;makeRealPose();makeHandPose();loadRealHand().catch(e=>{handModelWarning=String(e);updateHandStatus()});updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateAnteriorStatus();autoFit=true;fitPose();request();
-   if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.24）';
+   if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.25）';
    const n=$('boneModeNote');if(n)n.textContent='骨の形はBodyParts3Dの公開解剖学的メッシュに変更しました。関節の回転中心・肩甲上腕リズムは推定値です。前腕の回内回外は橈骨頭から尺骨遠位部への斜め軸を用いた近似です。関節面の衝突や靱帯による拘束は未実装です。上腕二頭筋・三頭筋・上腕筋は骨表面に沿う近似経路を使い、肘角度に応じた簡易収縮・伸長を追加しました。三角筋は他の筋肉とは独立にON/OFFでき、3つの束を推定付着点に結び付けた近似表示です。腕橈骨筋も独立ON/OFFができ、上腕骨外側から橈骨遠位部までを推定経路で結び、肘屈曲・前腕回内回外に追従します。回外筋は上腕骨外側・尺骨近位部から橈骨近位部を包む概形として追加し、円回内筋と比較できます。橈側手根屈筋の腱は乳白色の細い楕円断面で、橈骨掌側から舟状骨・大菱形骨付近を通って第2中手骨基部へ至る推定経路で表示します。関節付近の滑走・骨との接触計算は行っていません。筋・腱の正確な形状や付着点、筋張力は未検証です。腱の滑走や厳密な筋体積保存は未実装です。';
  }catch(e){modelWarning=String(e);console.warn('Showing safe procedural fallback because real bones did not load:',e);
    if(loading)loading.innerHTML='近似モデルを表示中<br>実骨データの取得に失敗しました';updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();
@@ -842,7 +843,7 @@ if(settings.muscles&&!realReady){
  muscle('tendonB',[R([.10,-1.13,.25]),R([.12,-1.35,.22]),F([.14,-.17,.16])],[.042,.030,.022]);muscle('tendonT',[R([-.08,-1.31,-.18]),F([-.12,.07,-.14]),F([-.12,.02,-.13])],[.049,.035,.022]);
  }
 state.scene={SC,AC,qS,joint,qHum,elbow,qFore,scAngle,GH:Math.acos(clamp(dot([0,-1,0],qr(qm(qc(qS),qElev),[0,-1,0])),-1,1))/Math.PI*180};
-$('hElev').textContent=settings.elev+'°';$('hGH').textContent=Math.round(Math.acos(clamp(dot([0,-1,0],qr(qm(qc(qS),qElev),[0,-1,0])),-1,1))/Math.PI*180)+'°';$('hST').textContent=Math.round(scAngle)+'°';
+// v0.25: redundant on-screen angle cards removed; angles remain in their sliders and scene state.
 }
 const ID=Q(),OR=[0,0,0],motion=()=>state.scene;
 function drawPart(g,q,p,color,alpha,kind){if(!g)return;if(SOFTWARE){drawCalls.push({g,q,p,color,alpha,kind});return;}let model=mat4(q,p);gl.uniformMatrix4fv(uni.model,false,new Float32Array(model));gl.uniformMatrix4fv(uni.mvp,false,new Float32Array(mm(pv,model)));gl.uniform3fv(uni.color,color);gl.uniform1f(uni.opacity,alpha);gl.uniform1f(uni.kind,kind);gl.bindBuffer(gl.ARRAY_BUFFER,g.vbo);gl.enableVertexAttribArray(attrib.p);gl.vertexAttribPointer(attrib.p,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ARRAY_BUFFER,g.nbo);gl.enableVertexAttribArray(attrib.n);gl.vertexAttribPointer(attrib.n,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,g.ibo);gl.drawElements(gl.TRIANGLES,g.count,g.indexType||gl.UNSIGNED_SHORT,0)}
@@ -856,13 +857,18 @@ if(boneShown.scapula)drawPart(shape.glenoid,a.qS,a.AC,cCart,1,3);
 }
 if(settings.hand){const hg=handMeshSet();for(const name of HAND_NAMES){const p=handPose[name];if(p&&hg[name])drawPart(hg[name],p[0],p[1],name.startsWith('mc')?cBone2:cBone,1,0);}}
 if(settings.muscles||settings.deltoid||settings.brachioradialis||settings.pronatorTeres||settings.supinator||settings.flexorCarpiRadialis){
- gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);
+ // v0.25: Muscles and tendons are opaque. Proximal purple supinator
+ // fibers are slightly narrower to reduce approximate overlap with red
+ // pronator fibers while preserving the bone-linked anchor paths. They WRITE depth so their actual
+ // per-pixel distance from the camera decides front/back, not loop order.
+ // The transparent draw with depthMask(false) in v0.25 caused angle-dependent
+ // purple/red overlap artifacts as muscles were drawn over one another.
+ gl.disable(gl.BLEND);gl.enable(gl.DEPTH_TEST);gl.depthMask(true);
  for(const name of MUSCLE_PARTS){
   if(!muscleVisible(name))continue;
-  drawPart(geomDynamic[name],ID,OR,name==='brachialis'?cMuscleDeep:name==='brachioradialis'?[.81,.36,.32]:name.startsWith('pronatorTeres')?[.86,.32,.40]:name.startsWith('supinator')?[.55,.40,.76]:name==='flexorCarpiRadialis'?[.76,.27,.45]:cMuscle,.94,1);
+  drawPart(geomDynamic[name],ID,OR,name==='brachialis'?cMuscleDeep:name==='brachioradialis'?[.81,.36,.32]:name.startsWith('pronatorTeres')?[.86,.32,.40]:name.startsWith('supinator')?[.55,.40,.76]:name==='flexorCarpiRadialis'?[.76,.27,.45]:cMuscle,1,1);
  }
- for(const name of TENDON_PARTS)if(muscleVisible(name))drawPart(geomDynamic[name],ID,OR,name==='tendonFCR'?cTendonFCR:cTendon,name==='tendonFCR'?1:.95,2);
- gl.depthMask(true);gl.disable(gl.BLEND);
+ for(const name of TENDON_PARTS)if(muscleVisible(name))drawPart(geomDynamic[name],ID,OR,name==='tendonFCR'?cTendonFCR:cTendon,1,2);
 }
 if(settings.rib){gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);drawPart(shape.torso,ID,OR,[.37,.54,.65],.08,4);drawPart(shape.sternum,ID,OR,[.53,.64,.66],.20,4);for(let g of ribShapes)drawPart(g,ID,OR,[.48,.64,.7],.23,4);gl.depthMask(true);gl.disable(gl.BLEND)}
 if(SOFTWARE)drawSoftware();
@@ -870,7 +876,7 @@ if(SOFTWARE)drawSoftware();
 // Canvas2D fallback: flat-shaded, depth-sorted 3D triangles for browsers without WebGL.
 function drawSoftware(){if(!softCtx)return;let ctx=softCtx,w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);let bg=ctx.createLinearGradient(0,0,w,h);bg.addColorStop(0,'#1b2d40');bg.addColorStop(1,'#0b1422');ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);let all=[];
 for(let cmd of drawCalls){if(!cmd.g.cpu)continue;let m=cmd.g.cpu,points=m.vertices.map(v=>{let wp=transform(cmd.q,cmd.p,v),cl=[...wp,1],clip=[0,0,0,0];for(let r=0;r<4;r++)clip[r]=pv[r]*cl[0]+pv[r+4]*cl[1]+pv[r+8]*cl[2]+pv[r+12]*cl[3];return [(.5+.5*clip[0]/clip[3])*w,(.5-.5*clip[1]/clip[3])*h,-(view[2]*wp[0]+view[6]*wp[1]+view[10]*wp[2]+view[14])]});let normals=m.normals;
- for(let t=0;t<m.faces.length;t+=3){let i=m.faces[t],j=m.faces[t+1],k=m.faces[t+2],a=points[i],b=points[j],c=points[k];if(a[2]<.1||b[2]<.1||c[2]<.1)continue;let n=norm(add(add(normals[i],normals[j]),normals[k])),wn=qr(cmd.q,n),lighting=clamp(.43+.41*Math.max(0,dot(wn,norm([-.42,.78,.63])))+.20*Math.max(0,dot(wn,norm([.77,.36,-.33]))),.2,1.04);let rgb=cmd.color.map(v=>Math.min(255,Math.round(v*255*lighting)));let area=Math.abs((b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]));if(area<.12)continue;all.push([Math.max(a[2],b[2],c[2]),a,b,c,`rgb(${rgb.join(',')})`,cmd.alpha]);}
+ for(let t=0;t<m.faces.length;t+=3){let i=m.faces[t],j=m.faces[t+1],k=m.faces[t+2],a=points[i],b=points[j],c=points[k];if(a[2]<.1||b[2]<.1||c[2]<.1)continue;let n=norm(add(add(normals[i],normals[j]),normals[k])),wn=qr(cmd.q,n),lighting=clamp(.43+.41*Math.max(0,dot(wn,norm([-.42,.78,.63])))+.20*Math.max(0,dot(wn,norm([.77,.36,-.33]))),.2,1.04);let rgb=cmd.color.map(v=>Math.min(255,Math.round(v*255*lighting)));let area=Math.abs((b[0]-a[0])*(c[1]-a[1])-(b[1]-a[1])*(c[0]-a[0]));if(area<.12)continue;all.push([(a[2]+b[2]+c[2])/3,a,b,c,`rgb(${rgb.join(',')})`,cmd.alpha]);}
 }
 all.sort((a,b)=>b[0]-a[0]);for(let tri of all){let [,a,b,c,color,alpha]=tri;ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.lineTo(c[0],c[1]);ctx.closePath();ctx.fill();}ctx.globalAlpha=1;}
 function labels(){let box=$('labels');if(!settings.showlabels){box.style.display='none';return}box.style.display='block';for(let [i,id] of ids.entries()){let el=box.querySelector('[data-id="'+id+'"]');if(!el){el=document.createElement('div');el.className='bone-label';el.dataset.id=id;el.textContent=['肩甲骨','鎖骨','上腕骨','橈骨','尺骨'][i];box.appendChild(el)}let p=posPoints[id],v=[...p,1],w=[];for(let r=0;r<4;r++)w[r]=pv[r]*v[0]+pv[r+4]*v[1]+pv[r+8]*v[2]+pv[r+12]*v[3];let x=(w[0]/w[3]*.5+.5)*lastW,y=(-w[1]/w[3]*.5+.5)*lastH;if(w[3]<.01||!boneShown[id]||x<0||x>lastW||y<0||y>lastH){el.style.display='none'}else{el.style.display='block';let half=(el.offsetWidth||56)/2;el.style.left=clamp(x,half+4,lastW-half-4)+'px';el.style.top=clamp(y,18,lastH-18)+'px'}}}
@@ -978,7 +984,7 @@ function updateFlexorCarpiRadialisStatus(){
   :'橈側手根屈筋：骨は読み込み済み。形状生成を確認してください';
 }
 const angleFields=['elev','plane','axial','elbow','pronation'];const handFields=['wristFlex','wristDeviation','fingerCurl','thumbCurl','thumbOpposition'];function update(){for(let f of angleFields){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+'°'}for(let f of handFields){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+(f.endsWith('Curl')||f==='thumbOpposition'?'%':'°')}for(let f of ['hand','sync','muscles','deltoid','brachioradialis','pronatorTeres','supinator','flexorCarpiRadialis','rib','showlabels','showDirection','reverseElbow','muscleEmphasis'])settings[f]=$(f).checked;
- $('muscleModeNote').textContent=realReady?'v0.24：橈側手根屈筋の腱を細い乳白色に調整し、橈骨の掌側・舟状骨・大菱形骨の溝付近を通って第2中手骨に至る経路に修正。手首の姿勢に追従します（教育用近似、腱鞘内の滑走や接触計算は未再現）。':'骨データ読み込み中／代替表示：筋肉は旧モデルによる概形です。';
+ $('muscleModeNote').textContent=realReady?'v0.25：紫・赤の筋肉と腱を不透明にし、深度バッファで正しい奥行きを表示します。橈側手根屈筋の乳白色の腱経路・関節運動は引き続き教育用近似です。':'骨データ読み込み中／代替表示：筋肉は旧モデルによる概形です。';
  const f=clamp(settings.elbow/150,0,1), contractionRate=f*f*(3-2*f), exaggeration=settings.muscleEmphasis?1:.45;
  const bulge=1+.72*contractionRate*exaggeration;
  $('muscleBulgeValue').textContent=bulge.toFixed(2)+'倍';
@@ -989,7 +995,7 @@ const angleFields=['elev','plane','axial','elbow','pronation'];const handFields=
 for(let f of [...angleFields,...handFields,'hand','sync','muscles','deltoid','brachioradialis','pronatorTeres','supinator','flexorCarpiRadialis','rib','showlabels','showDirection','reverseElbow','muscleEmphasis'])$(f).addEventListener('input',()=>{document.querySelectorAll('[data-preset]').forEach(x=>x.classList.remove('active'));update()});
 const handPresets={handOpen:[0,0,0],handRelax:[42,40,25],handGrip:[100,85,90]};for(const [key,vals] of Object.entries(handPresets))$(key).addEventListener('click',()=>{['fingerCurl','thumbCurl','thumbOpposition'].forEach((f,i)=>$(f).value=vals[i]);update()});
 const presets={neutral:[0,0,0,0,0],abduct:[90,0,20,0,0],overhead:[180,0,40,0,0],elbow:[0,0,0,120,0],bow:[73,24,20,95,-15]};document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{let p=presets[b.dataset.preset];angleFields.forEach((f,i)=>$(f).value=p[i]);document.querySelectorAll('[data-preset]').forEach(x=>x.classList.toggle('active',x===b));update()}));document.querySelectorAll('[data-bone]').forEach(b=>b.addEventListener('click',()=>{let key=b.dataset.bone;boneShown[key]=!boneShown[key];b.classList.toggle('off',!boneShown[key]);autoFit=true;fitPose();request()}));
-$('resetCam').addEventListener('click',()=>{zoomScale=1;$('zoomLevel').value=100;$('zoomValue').textContent='100%';autoFit=true;state.yaw=Math.PI/2;state.pitch=.10;fitPose();request()});$('fitView').addEventListener('click',()=>{zoomScale=1;$('zoomLevel').value=100;$('zoomValue').textContent='100%';autoFit=true;fitPose();request()});
+$('resetCam').addEventListener('click',()=>{zoomScale=1;$('zoomLevel').value=100;$('zoomValue').textContent='100%';autoFit=true;state.yaw=Math.PI/2;state.pitch=.10;fitPose();request()});
 // In BodyParts3D +Y points posterior (our world +Z); the old procedural
 // geometry used world +Z as anterior. Keep the buttons anatomically named.
 $('sideView').addEventListener('click',()=>{state.yaw=Math.PI/2;state.pitch=.10;autoFit=true;fitPose();if($('showDirection').checked)pingDirectionGuide(2400);request()});
@@ -1080,6 +1086,7 @@ window.__labJointErrors=()=>{
  return {ready:true,wristErrorMm:handWristErrorMm,thumbCMCErrorMm,thumbMCPErrorMm,thumbIPErrorMm,distalGapDeltaMm:poseCheck.distalGapDeltaMm,
    palmNormal:handPivot.thumbPalmNormal,thumbFlexAxis:handPivot.thumbFlexAxis,thumbFlexSign:handPivot.thumbFlexSign};
 };
+window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.25'});
 window.__labMuscles=()=>({...muscleDiagnostics,enabled:settings.muscles,deltoidEnabled:settings.deltoid,deltoidGeometryCount:['deltoidAnterior','deltoidMiddle','deltoidPosterior'].filter(n=>Boolean(geomDynamic[n])).length,brachioradialisEnabled:settings.brachioradialis,brachioradialisGeometryCount:['brachioradialis','tendonBR'].filter(n=>Boolean(geomDynamic[n])).length,pronatorTeresEnabled:settings.pronatorTeres,pronatorTeresGeometryCount:['pronatorTeresHumeral','pronatorTeresUlnar','tendonPT'].filter(n=>Boolean(geomDynamic[n])).length,supinatorEnabled:settings.supinator,supinatorGeometryCount:['supinatorSuperficial','supinatorDeep','tendonSupinator'].filter(n=>Boolean(geomDynamic[n])).length,flexorCarpiRadialisEnabled:settings.flexorCarpiRadialis,flexorCarpiRadialisGeometryCount:['flexorCarpiRadialis','tendonFCR'].filter(n=>Boolean(geomDynamic[n])).length,realReady,exaggerated:settings.muscleEmphasis});
 window.__labFCR=()=>({enabled:settings.flexorCarpiRadialis,handEnabled:settings.hand,realReady,handReady,geometryCount:['flexorCarpiRadialis','tendonFCR'].filter(n=>Boolean(geomDynamic[n])).length,data:muscleDiagnostics.flexorCarpiRadialis||{visible:false}});
 window.__labCamera=()=>({gesture:cameraGesture,zoom:state.zoom,zoomScale,cameraAuto:$('cameraAuto').checked,target:state.target,yaw:state.yaw,pitch:state.pitch,autoFit,canvas:[canvas.clientWidth,canvas.clientHeight]});
