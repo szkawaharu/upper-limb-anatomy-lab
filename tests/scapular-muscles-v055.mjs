@@ -42,10 +42,27 @@ for(let layer=0;layer<2;layer++){
 const attachedAtlas=(bone,xyz)=>transform(realPose[bone][0],realPose[bone][1],
  sub(atlasToWorld(xyz),realAnchors[bone==='scapula'?'AC':'GH']));
 const geomDynamic={},settings={scapularMuscles:true},SOFTWARE=true,gl={};
+let meshManifoldChecks=0;
 const mesh=(vertices,faces)=>{
  assert.ok(vertices.length>5&&faces.length>20,'nonempty generated mesh');
  for(const p of vertices)assert.ok(p.length===3&&p.every(Number.isFinite),'nonfinite point');
  for(const f of faces)assert.ok(Number.isInteger(f)&&f>=0&&f<vertices.length,'invalid triangle index');
+
+ // Inspect the first four belly+tendon pairs. Edges of each closed mesh
+ // should occur exactly twice; zero-area faces would create torn shading.
+ if(meshManifoldChecks++<8){
+  const counts=new Map();
+  for(let n=0;n<faces.length;n+=3){
+   const ids=[faces[n],faces[n+1],faces[n+2]];
+   const [a,b,c]=ids.map(i=>vertices[i]);
+   assert.ok(len(cross(sub(b,a),sub(c,a)))>1e-10,'degenerate triangle');
+   for(const [x,y] of [[ids[0],ids[1]],[ids[1],ids[2]],[ids[2],ids[0]]]){
+    const key=[x,y].sort((v,w)=>v-w).join(':');
+    counts.set(key,(counts.get(key)||0)+1);
+   }
+  }
+  assert.ok([...counts.values()].every(n=>n===2),'open or nonmanifold muscle surface');
+ }
  return {vertices,faces};
 };
 const env={...spec,add,sub,mul,dot,len,norm,mix,clamp,qr,transform,realAnchors,
@@ -128,6 +145,7 @@ for(const deg of [0,30,60,90,120,150,180])for(const axial of [-90,-45,0,45,90]){
  poses.push({deg,axial,minClearance});
 }
 assert.equal(poses.length,35);
+assert.ok(meshManifoldChecks>=8,'watertight mesh checks not run');
 settings.scapularMuscles=false;api.run();
 for(const id of [...spec.SCAPULAR_MUSCLES,...spec.SCAPULAR_TENDONS])
  assert.equal(geomDynamic[id],undefined,'stale mesh after OFF: '+id);
