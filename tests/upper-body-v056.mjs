@@ -26,7 +26,7 @@ for(const m of html.matchAll(/<([a-z][\w-]*)\b([^>]*\bid="([^"]+)"[^>]*)>/gi)){
 const doc={getElementById(id){return elements.get(id)||null},body:el("body"),querySelector:get,querySelectorAll(){return[]},createElement:el,createElementNS:(_,t)=>el(t),addEventListener(){},activeElement:el()};
 const win={addEventListener(){},devicePixelRatio:1,scrollTo(){}};
 const instrument=String.raw`
-window.__runV56Tests=()=>{
+window.__runV56Tests=async()=>{
  const passed=[],ok=(b,m)=>{if(!b)throw Error(m);passed.push(m)};
  ok(Boolean(state.scene),'startup fallback scene');
  const data=window.__labUpperBody();
@@ -75,10 +75,10 @@ window.__runV56Tests=()=>{
  const arm=realPose.humerus[1].slice();v56RefreshOther();
  ok(len(sub(realPose.humerus[1],arm))<1e-9,'inactive refresh preserves active joint center');
 
- ok(V57_MANIFEST.length===48&&new Set(V57_MANIFEST.map(p=>p.file)).size===48,'48 unique atlas files');
+ ok(V57_MANIFEST.length===79&&new Set(V57_MANIFEST.map(p=>p.file)).size===79,'79 unique atlas files');
  ok(V57_MANIFEST.filter(p=>p.group==='ribs'&&p.side==='right').length===12&&V57_MANIFEST.filter(p=>p.group==='ribs'&&p.side==='left').length===12,'24 independently sourced ribs');
  ok(V57_MANIFEST.filter(p=>p.group==='spine').length===19,'19 individually sourced vertebrae');
- ok(V57_MANIFEST.filter(p=>p.group==='sternum').length===3&&V57_MANIFEST.filter(p=>p.group==='cartilage').length===2,'sternum and cartilage manifest');
+ ok(V57_MANIFEST.filter(p=>p.group==='sternum').length===3&&V57_MANIFEST.filter(p=>p.group==='cartilage').length===16,'sternum and cartilage manifest');
  const fixture=new ArrayBuffer(134),dv=new DataView(fixture);dv.setUint32(80,1,true);
  const triangle=[[-14,-72,1341],[-24,-72,1341],[-14,-82,1341]];
  triangle.forEach((v,i)=>v.forEach((n,j)=>dv.setFloat32(96+i*12+j*4,n,true)));
@@ -89,19 +89,42 @@ window.__runV56Tests=()=>{
  ok(rejected,'mismatched STL size rejected');
  const stage=V57_MANIFEST.map(e=>({...e,g:gpu(parsed),color:cBone}));
  ok(v57ValidateSet(stage)&&!v57ValidateSet(stage.slice(1)),'atomic complete set required');
- v57State.parts=stage;v57State.mode='atlas';v57State.loaded=48;
+ v57State.parts=stage;v57State.mode='atlas';v57State.loaded=79;
  $('v57TorsoLayer').value='ribs';ok(v57VisibleTorso().length===24,'atlas ribs filter');
  $('v57TorsoLayer').value='spine';ok(v57VisibleTorso().length===19,'atlas spine filter');
- $('v57TorsoLayer').value='all';ok(v57VisibleTorso().length===48,'complete atlas rendering set');
+ $('v57TorsoLayer').value='all';ok(v57VisibleTorso().length===79,'complete atlas rendering set');
  ok(poseBoundingPoints().every(p=>p.every(Number.isFinite)),'atlas camera bounds finite');
- v57State.mode='fallback';$('v57TorsoLayer').value='ribs';
+ v57State.mode='fallback';v57State.parts=[];$('v57TorsoLayer').value='ribs';
  ok(v57VisibleTorso().length===24&&v57VisibleTorso().every(p=>p.id.startsWith('rib-')),'fallback group selection');
  $('v57TorsoLayer').value='all';
 
+
+ ok(V571_CORE.length===48&&V571_COSTAL.length===14&&V571_DISCS.length===17,'core and augmentation groups');
+ ok(V571_COSTAL.every(p=>p.level>=1&&p.level<=7),'costal levels 1–7 only');
+ ok(!V571_DISCS.some(p=>p.id==='discC1'||p.id==='discT12'),'no C1–C2 or T12–L1 disc');
+ ok(V571_COSTAL_COLOR!==V571_DISC_COLOR,'cartilage and disc color differentiation');
+ const make=e=>({...e,g:gpu(parsed),color:v571Color(e)});
+ // Failure in new cartilage must not remove the precise base or discs.
+ v57State.parts=[];v57State.mode='fallback';
+ await v57LoadTorso(async e=>{if(e.id==='cartR3')throw Error('simulated missing cartilage');return make(e)});
+ ok(v57State.mode==='partial'&&v571HasCore()&&v57State.parts.length===65,'optional cartilage failure retains core and discs');
+ let retried=0;
+ await v57LoadTorso(async e=>{retried++;return make(e)});
+ ok(retried===14&&v57State.mode==='atlas'&&v57State.parts.length===79,'retry only incomplete group');
+ $('v57TorsoLayer').value='discs';ok(v57VisibleTorso().length===17,'disc filter');
+ $('v57TorsoLayer').value='cartilage';ok(v57VisibleTorso().length===16,'cartilage filter');
+ $('v571LegacyCart').checked=false;ok(v57VisibleTorso().length===14,'old cartilage independent visibility');
+ $('v571LegacyCart').checked=true;$('v57TorsoLayer').value='all';
+ ok(v571BoxHit([[0,0,0],[1,1,1]],[[.5,.5,.5],[2,2,2]])&&!v571BoxHit([[0,0,0],[1,1,1]],[[2,2,2],[3,3,3]]),'cartilage overlap broad-phase');
+ const j=v571JointAudit();ok(j.length===2&&j.every(x=>x.scToClavicleMm!==null&&x.acToScapulaMm!==null),'bilateral inferred shoulder-center audit');
+ ok(v571MinDistance([0,0,0],[])===null,'missing geometry not reported as zero clearance');
+ v57State.parts=[];v57State.mode='fallback';
+ await v57LoadTorso(async e=>{if(e.id==='R1')throw Error('simulated missing base');return make(e)});
+ ok(v57State.mode==='fallback'&&v57State.parts.length===0,'base failure keeps old fallback');
  return passed;
 };`;
 js=js.replace(/\}\)\(\);\s*$/,instrument+"\n})();");
 new Function("document","window","fetch","requestAnimationFrame","matchMedia","innerWidth","innerHeight","setTimeout","clearTimeout","console",js)(doc,win,async()=>{throw Error("offline test")},f=>callbacks.push(f),()=>({matches:true}),390,740,()=>0,()=>{}, {log(){},warn(){},error(...a){errors.push(a.map(String).join(" "))}});
 assert.equal(errors.length,0,errors.join("\n"));
-const results=win.__runV56Tests();
+const results=await win.__runV56Tests();
 console.log('PASS v0.56: '+results.length+' integration checks — '+results.join('; '));
