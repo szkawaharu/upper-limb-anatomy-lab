@@ -219,6 +219,15 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 .med-study .med-actions button{flex:1 1 115px;min-height:44px;padding:8px;border-radius:9px}
 .med-study a{color:#9adbd3}
 .med-study .med-status{min-height:22px;font-size:12px;line-height:1.6;margin:9px 0 0;color:#c3d5dc}
+/* v0.51: compact, thumb-friendly scapular muscle controls */
+.scapular-study{margin:9px 0 14px;padding:10px;border:1px solid #41616c;border-radius:11px;background:#112735}
+.scapular-study .toggles{display:grid;gap:7px;margin:7px 0}
+.scapular-study .scapular-buttons{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.scapular-study .scapular-buttons button{min-height:43px;flex:1 1 110px}
+.scapular-study select{width:100%;min-height:43px;border:1px solid #55777e;border-radius:8px;padding:8px;color:#effaf8;background:#1c2f40}
+.scapular-study label{display:block;font-size:13px;line-height:1.65}
+.scapular-study .scapular-study-status{font-size:12px;line-height:1.65;color:#c5dbe0;margin:8px 0}
+
 .shoulder-audit-output{font-size:12px;line-height:1.8;color:#d4e7ed;border:1px solid #3e6570;background:#102936;border-radius:9px;padding:10px;margin:8px 0;white-space:normal}
 .shoulder-audit-output strong{color:#a9efe5}
 .shoulder-audit-table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:10px}
@@ -270,6 +279,11 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
   <option value="tricepsLateral">上腕三頭筋・外側頭</option>
   <option value="tricepsMedial">上腕三頭筋・内側頭（未実装）</option>
   <option value="deltoid">三角筋（前部・中部・後部）</option>
+  <option value="supraspinatus">棘上筋（肩甲骨後上面）</option>
+  <option value="infraspinatus">棘下筋（肩甲骨後面）</option>
+  <option value="teresMinor">小円筋（回旋筋腱板）</option>
+  <option value="teresMajor">大円筋（回旋筋腱板ではない）</option>
+  <option value="subscapularis">肩甲下筋（未実装・回旋筋腱板）</option>
   <option value="coracobrachialis">烏口腕筋（未実装）</option>
  </select>
  <div id="medicalStudyModelStatus" class="med-reliability" role="status" aria-live="polite"></div>
@@ -381,6 +395,21 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
  </div>
 </details>
 <div class="toggles"><label class="switch"><input id="hand" type="checkbox" checked>手首・手の骨格を表示（27骨）</label><label class="switch"><input id="sync" type="checkbox" checked>肩甲骨・鎖骨を連動</label><label class="switch"><input id="muscles" type="checkbox" checked>上腕の筋肉・腱（二頭筋ほか）</label><label class="switch"><input id="deltoid" type="checkbox" checked>三角筋（前・中・後部）</label><label class="switch"><input id="brachioradialis" type="checkbox" checked>腕橈骨筋（前腕・単独表示可）</label><label class="switch"><input id="pronatorTeres" type="checkbox" checked>円回内筋（前腕・単独表示可）</label><label class="switch"><input id="supinator" type="checkbox" checked>回外筋（橈骨近位部・単独表示可）</label><label class="switch"><input id="flexorCarpiRadialis" type="checkbox" checked>橈側手根屈筋＋乳白色の腱（掌屈・橈屈）</label><label class="switch"><input id="flexorCarpiUlnaris" type="checkbox" checked>尺側手根屈筋＋腱（掌屈・尺屈／単独表示可）</label><label class="switch"><input id="palmarisLongus" type="checkbox" checked>長掌筋＋長い腱・手掌腱膜（単独表示可／個人差あり）</label><label class="switch"><input id="flexorDigitorumSuperficialis" type="checkbox" checked>浅指屈筋＋4本の腱（PIP屈曲／独立表示可）</label><label class="switch"><input id="flexorDigitorumProfundus" type="checkbox" checked>深指屈筋＋指先へ伸びる4本の腱（DIP屈曲／独立表示可）</label><label class="switch"><input id="rib" type="checkbox">胸郭の参照表示</label><label class="switch"><input id="showlabels" type="checkbox">骨の名称ラベル</label><label class="switch"><input id="showDirection" type="checkbox">側面の胸側・背側ガイド（短時間表示）</label></div>
+<details class="diagnostic-fold" id="scapularMusclePanel"><summary>肩甲骨の筋肉（v0.51・棘上筋／棘下筋／小円筋／大円筋）</summary>
+<div class="scapular-study">
+ <label class="switch"><input id="scapularMuscles" type="checkbox" checked>肩甲骨周囲4筋と腱を表示する</label>
+ <label class="switch"><input id="cuffOnly" type="checkbox">回旋筋腱板だけを見る（実装済み3筋・他筋は非表示）</label>
+ <label for="scapulaDisplay">肩甲骨の表示方法</label>
+ <select id="scapulaDisplay" aria-label="肩甲骨の表示方法">
+   <option value="opaque">骨を通常表示</option>
+   <option value="translucent">肩甲骨を半透明にする</option>
+   <option value="hidden">肩甲骨を一時的に隠す</option>
+ </select>
+ <div class="scapular-buttons"><button id="scapularBackView" type="button">肩甲骨を後ろから見る</button><button id="scapularFrontView" type="button">前面から見る</button></div>
+ <div id="scapularMuscleStatus" class="scapular-study-status" role="status" aria-live="polite">骨データを読み込み中…</div>
+ <div class="detail">筋腹は肩甲骨の棘上窩・棘下窩・外側縁・下角付近の<strong>推定骨表面点</strong>から上腕骨の推定停止位置へ広がる近似メッシュです。付着面の実測・腱の骨接触・関節運動時の滑走は未検証です。</div>
+ <div class="detail"><strong>回旋筋腱板は4筋：</strong>棘上筋・棘下筋・小円筋・肩甲下筋。<strong>肩甲下筋はv0.51では未実装</strong>。大円筋は回旋筋腱板に含まれません。</div>
+</div></details>
 <div class="forearm-layer-select">
 <div class="sectioncap">前腕の筋層（表示フィルタ）</div>
 <div class="btnrow" role="group" aria-label="前腕の筋層"><button type="button" data-forearm-layer="both" class="active" aria-pressed="true">全層</button><button type="button" data-forearm-layer="superficial" aria-pressed="false">浅層のみ</button><button type="button" data-forearm-layer="deep" aria-pressed="false">中・深層のみ</button></div>
@@ -480,7 +509,7 @@ const shape={scapula:gpu(scapula()),scapSpine:gpu(tube([[-.67,-.38,-.12,.045],[-
 let ribShapes=[];for(let side of [-1,1])for(let i=0;i<6;i++){let y=1.53-i*.24,radx=(.42+i*.055),points=[];for(let j=0;j<=10;j++){let t=j/10, x=side*(.13+radx*Math.sin(t*Math.PI*.78)),z=.18-.44*t+.02*Math.sin(t*Math.PI), yy=y-.12*Math.sin(t*Math.PI);points.push([x,yy,z,.025+i*.001])}ribShapes.push(gpu(tube(points,{sides:7,steps:3}))) }
 const ids=['scapula','clavicle','humerus','radius','ulna'],boneShown=Object.fromEntries(ids.map(x=>[x,true]));
 const cBone=[.97,.86,.73],cBone2=[.89,.78,.65],cCart=[.68,.68,.64],cMuscle=[.77,.30,.31],cMuscleDeep=[.60,.24,.28],cTendon=[.85,.77,.60],cTendonFCR=[.93,.97,.94];
-const settings={elev:0,plane:0,axial:0,elbow:0,pronation:0,wristFlex:0,wristDeviation:0,fingerCurl:0,thumbCurl:0,thumbOpposition:0,fdsPIPOnly:false,fdsPIPI:0,fdsPIPM:0,fdsPIPR:0,fdsPIPL:0,fdpDIPOnly:false,fdpDIPI:0,fdpDIPM:0,fdpDIPR:0,fdpDIPL:0,hand:true,sync:true,muscles:true,deltoid:true,brachioradialis:true,pronatorTeres:true,supinator:true,flexorCarpiRadialis:true,flexorCarpiUlnaris:true,palmarisLongus:true,flexorDigitorumSuperficialis:true,flexorDigitorumProfundus:true,extensorCarpiRadialisLongus:true,extensorCarpiRadialisBrevis:true,extensorCarpiUlnaris:true,extensorDigitorum:true,extensorDigitiMinimi:true,anconeus:true,flexorPollicisLongus:true,pronatorQuadratus:true,abductorPollicisLongus:true,extensorPollicisBrevis:true,extensorPollicisLongus:true,extensorIndicis:true,forearmLayer:'both',forearmBulk:70,rib:false,showlabels:false,showDirection:false,reverseElbow:false,muscleEmphasis:true};
+const settings={elev:0,plane:0,axial:0,elbow:0,pronation:0,wristFlex:0,wristDeviation:0,fingerCurl:0,thumbCurl:0,thumbOpposition:0,fdsPIPOnly:false,fdsPIPI:0,fdsPIPM:0,fdsPIPR:0,fdsPIPL:0,fdpDIPOnly:false,fdpDIPI:0,fdpDIPM:0,fdpDIPR:0,fdpDIPL:0,hand:true,sync:true,muscles:true,deltoid:true,scapularMuscles:true,cuffOnly:false,scapulaDisplay:'opaque',brachioradialis:true,pronatorTeres:true,supinator:true,flexorCarpiRadialis:true,flexorCarpiUlnaris:true,palmarisLongus:true,flexorDigitorumSuperficialis:true,flexorDigitorumProfundus:true,extensorCarpiRadialisLongus:true,extensorCarpiRadialisBrevis:true,extensorCarpiUlnaris:true,extensorDigitorum:true,extensorDigitiMinimi:true,anconeus:true,flexorPollicisLongus:true,pronatorQuadratus:true,abductorPollicisLongus:true,extensorPollicisBrevis:true,extensorPollicisLongus:true,extensorIndicis:true,forearmLayer:'both',forearmBulk:70,rib:false,showlabels:false,showDirection:false,reverseElbow:false,muscleEmphasis:true};
 const state={yaw:Math.PI/2,pitch:.10,zoom:5.4,target:[.49,.31,-.02]};let proj,view,pv,geomDynamic={},posPoints={},lastW=0,lastH=0;let directionGuideUntil=0;
 function gdynamic(name,geom){if(geomDynamic[name]){let b=geomDynamic[name];gl.deleteBuffer(b.vbo);gl.deleteBuffer(b.nbo);gl.deleteBuffer(b.ibo)}geomDynamic[name]=gpu(geom)}
 
@@ -806,8 +835,26 @@ function makeRealPose(){
 const V43_CONFIG=[{"id":"extensorCarpiRadialisLongus","name":"長橈側手根伸筋","layer":"superficial","tendons":["tendonECRL"]},{"id":"extensorCarpiRadialisBrevis","name":"短橈側手根伸筋","layer":"superficial","tendons":["tendonECRB"]},{"id":"extensorCarpiUlnaris","name":"尺側手根伸筋","layer":"superficial","tendons":["tendonECU"]},{"id":"extensorDigitorum","name":"総指伸筋","layer":"superficial","tendons":["edTendonI","edTendonM","edTendonR","edTendonL","edBandIL","edBandIR","edBandML","edBandMR","edBandRL","edBandRR","edBandLL","edBandLR"]},{"id":"extensorDigitiMinimi","name":"小指伸筋","layer":"superficial","tendons":["tendonEDM"]},{"id":"anconeus","name":"肘筋","layer":"superficial","tendons":[]},{"id":"flexorPollicisLongus","name":"長母指屈筋","layer":"deep","tendons":["tendonFPL"]},{"id":"pronatorQuadratus","name":"方形回内筋","layer":"deep","tendons":[]},{"id":"abductorPollicisLongus","name":"長母指外転筋","layer":"deep","tendons":["tendonAPL"]},{"id":"extensorPollicisBrevis","name":"短母指伸筋","layer":"deep","tendons":["tendonEPB"]},{"id":"extensorPollicisLongus","name":"長母指伸筋","layer":"deep","tendons":["tendonEPL"]},{"id":"extensorIndicis","name":"示指伸筋","layer":"deep","tendons":["tendonEI"]}];
 const V43_LOOKUP=Object.fromEntries(V43_CONFIG.flatMap(c=>[[c.id,{setting:c.id,layer:c.layer,tendon:false}],...c.tendons.map(n=>[n,{setting:c.id,layer:c.layer,tendon:true}])]));
 const V43_MUSCLES=V43_CONFIG.map(c=>c.id),V43_TENDONS=V43_CONFIG.flatMap(c=>c.tendons);
-const MUSCLE_PARTS=['bicepsLong','bicepsShort','triceps','tricepsLat','brachialis','deltoidAnterior','deltoidMiddle','deltoidPosterior','brachioradialis','pronatorTeresHumeral','pronatorTeresUlnar','supinatorSuperficial','supinatorDeep','flexorCarpiRadialis','flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','palmarisLongus','flexorDigitorumSuperficialis','flexorDigitorumProfundus',...V43_MUSCLES];
-const TENDON_PARTS=['tendonB','tendonB2','tendonBprox','tendonBShortDist','tendonT','tendonT2','tendonTLatDist','tendonBrach','tendonBR','tendonPT','tendonSupinator','tendonFCR','tendonFCU','pisohamateBand','pisometacarpalBand','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4','fdsTendonI','fdsTendonM','fdsTendonR','fdsTendonL','fdsBranchI1','fdsBranchI2','fdsBranchM1','fdsBranchM2','fdsBranchR1','fdsBranchR2','fdsBranchL1','fdsBranchL2','fdpTendonI','fdpTendonM','fdpTendonR','fdpTendonL',...V43_TENDONS];
+const SCAPULAR_SPEC=[
+ {id:'supraspinatus',name:'棘上筋',cuff:true,
+  originA:[-71,-53,1357],originB:[-113,-52,1364],exitA:[-145,-57,1350],exitB:[-157,-59,1340],
+  insertA:[-181,-65,1335],insertB:[-184,-63,1329],thickness:.044},
+ {id:'infraspinatus',name:'棘下筋',cuff:true,
+  originA:[-61,-47,1318],originB:[-81,-50,1202],exitA:[-149,-53,1312],exitB:[-153,-54,1277],
+  insertA:[-182,-62,1321],insertB:[-183,-59,1311],thickness:.060},
+ {id:'teresMinor',name:'小円筋',cuff:true,
+  originA:[-135,-49,1283],originB:[-119,-50,1226],exitA:[-152,-54,1300],exitB:[-155,-57,1278],
+  insertA:[-179,-58,1305],insertB:[-181,-56,1297],thickness:.036},
+ {id:'teresMajor',name:'大円筋',cuff:false,
+  originA:[-96,-50,1199],originB:[-118,-53,1168],exitA:[-148,-57,1245],exitB:[-155,-60,1220],
+  insertA:[-173,-94,1310],insertB:[-177,-93,1301],thickness:.048}
+];
+const SCAPULAR_CUFF=new Set(SCAPULAR_SPEC.filter(m=>m.cuff).map(m=>m.id));
+const SCAPULAR_MUSCLES=SCAPULAR_SPEC.map(m=>m.id);
+const SCAPULAR_TENDONS=SCAPULAR_SPEC.map(m=>'tendon'+m.id[0].toUpperCase()+m.id.slice(1));
+const SCAPULAR_PARTS=new Set([...SCAPULAR_MUSCLES,...SCAPULAR_TENDONS]);
+const MUSCLE_PARTS=['bicepsLong','bicepsShort','triceps','tricepsLat','brachialis','deltoidAnterior','deltoidMiddle','deltoidPosterior','brachioradialis','pronatorTeresHumeral','pronatorTeresUlnar','supinatorSuperficial','supinatorDeep','flexorCarpiRadialis','flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','palmarisLongus','flexorDigitorumSuperficialis','flexorDigitorumProfundus',...V43_MUSCLES,...SCAPULAR_MUSCLES];
+const TENDON_PARTS=['tendonB','tendonB2','tendonBprox','tendonBShortDist','tendonT','tendonT2','tendonTLatDist','tendonBrach','tendonBR','tendonPT','tendonSupinator','tendonFCR','tendonFCU','pisohamateBand','pisometacarpalBand','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4','fdsTendonI','fdsTendonM','fdsTendonR','fdsTendonL','fdsBranchI1','fdsBranchI2','fdsBranchM1','fdsBranchM2','fdsBranchR1','fdsBranchR2','fdsBranchL1','fdsBranchL2','fdpTendonI','fdpTendonM','fdpTendonR','fdpTendonL',...V43_TENDONS,...SCAPULAR_TENDONS];
 const MUSCLE_ALL=[...MUSCLE_PARTS,...TENDON_PARTS];
 // Anatomical FACTS are sourced separately from the UNVALIDATED 3D representations.
 // 'parts' lists only current approximate meshes; do not invent omitted heads.
@@ -819,6 +866,11 @@ const MEDICAL_ANATOMY={
  tricepsLateral:{name:'上腕三頭筋・外側頭',origin:'上腕骨後面の橈骨神経溝より近位側',insertion:'他の頭と合流し、尺骨の肘頭へ',nerve:'橈骨神経（主にC6–C8）',action:'肘関節の伸展',parts:['tricepsLat','tendonTLatDist','tendonT'],source:'https://www.ncbi.nlm.nih.gov/books/NBK536996/',note:'外側頭の起始面と共通腱への合流は模式化。神経溝との位置関係は未検証。'},
  tricepsMedial:{name:'上腕三頭筋・内側頭',origin:'上腕骨後面の橈骨神経溝より遠位側',insertion:'他の頭と合流し、尺骨の肘頭へ',nerve:'橈骨神経（主にC6–C8）',action:'肘関節の伸展',parts:[],source:'https://www.ncbi.nlm.nih.gov/books/NBK536996/',note:'重要：3D形状がまだありません。外側頭と長頭だけでは上腕三頭筋全体を正確に学べません。'},
  deltoid:{name:'三角筋（前部・中部・後部）',origin:'鎖骨外側1/3、肩峰、肩甲棘',insertion:'上腕骨の三角筋粗面',nerve:'腋窩神経（C5–C6）',action:'主に肩関節の外転。前部は屈曲・内旋、後部は伸展・外旋にも関与',parts:['deltoidAnterior','deltoidMiddle','deltoidPosterior'],source:'https://www.ncbi.nlm.nih.gov/books/NBK537056/',note:'3部分の扇状筋束は視覚近似。筋束方向・三角筋粗面の面積・肩甲上腕リズムは未検証。'},
+  supraspinatus:{name:'棘上筋',origin:'肩甲骨の棘上窩',insertion:'上腕骨大結節上面（上関節面）',nerve:'肩甲上神経（C5–C6）',action:'肩外転を補助し、上腕骨頭の安定化に寄与',parts:['supraspinatus','tendonSupraspinatus'],source:'https://www.ncbi.nlm.nih.gov/books/NBK537202/',note:'扇状メッシュは推定点に基づく視覚化。停止腱と関節包への融合や肩峰下での滑走は未検証。'},
+  infraspinatus:{name:'棘下筋',origin:'肩甲骨の棘下窩',insertion:'上腕骨大結節中関節面',nerve:'肩甲上神経（C5–C6）',action:'肩外旋と上腕骨頭の安定化',parts:['infraspinatus','tendonInfraspinatus'],source:'https://www.ncbi.nlm.nih.gov/books/NBK441844/',note:'棘下窩の筋腹輪郭と腱の停止面は近似。骨表面との正確な厚みは検証していません。'},
+  teresMinor:{name:'小円筋',origin:'肩甲骨外側縁の後面',insertion:'上腕骨大結節下関節面',nerve:'腋窩神経（C5–C6）',action:'肩外旋と上腕骨頭の安定化、弱い内転補助',parts:['teresMinor','tendonTeresMinor'],source:'https://www.ncbi.nlm.nih.gov/books/NBK513324/',note:'細長い筋腹と腱の経路は視覚的近似。骨接触や付着面の実測は未検証。'},
+  teresMajor:{name:'大円筋（回旋筋腱板ではない）',origin:'肩甲骨下角および外側縁下部の後面',insertion:'上腕骨結節間溝内側唇（小結節稜）',nerve:'下肩甲下神経（主にC5–C6）',action:'肩内転・内旋・伸展',parts:['teresMajor','tendonTeresMajor'],source:'https://www.ncbi.nlm.nih.gov/books/NBK580487/',note:'回旋筋腱板に含めない。結節間溝の内側唇への腱付着は推定点を使用。'},
+  subscapularis:{name:'肩甲下筋（未実装）',origin:'肩甲骨前面の肩甲下窩',insertion:'上腕骨小結節（および関節包）',nerve:'上・下肩甲下神経（C5–C6）',action:'肩内旋と上腕骨頭の安定化',parts:[],source:'https://www.ncbi.nlm.nih.gov/books/NBK441844/',note:'回旋筋腱板の4筋目ですが、このバージョンでは3D形状は未実装です。'},
  coracobrachialis:{name:'烏口腕筋',origin:'肩甲骨の烏口突起',insertion:'上腕骨体の内側面中央付近',nerve:'筋皮神経',action:'肩関節の屈曲と内転を補助',parts:[],source:'https://www.ncbi.nlm.nih.gov/books/NBK554420/',note:'3D形状がまだありません。前腕の筋や上腕二頭筋短頭とは異なる独立筋です。'}
 };
 let medicalFocus=null,medicalFocusPrevious=null;
@@ -834,6 +886,14 @@ function forearmSoftRail(ulnaXYZ,radiusXYZ,ulnaShare=.5,volarGap=.017){
  return add(add(mul(u,ulnaShare),mul(r,1-ulnaShare)),mul(front,volarGap));
 }
 function muscleVisible(name){
+ if(settings.cuffOnly){
+  const cuffParts=SCAPULAR_SPEC.filter(m=>m.cuff).flatMap(m=>[m.id,'tendon'+m.id[0].toUpperCase()+m.id.slice(1)]);
+  if(!cuffParts.includes(name))return false;
+ }
+ if(SCAPULAR_PARTS.has(name)){
+  if(medicalFocus&&!medicalFocus.has(name))return false;
+  return Boolean(realReady&&settings.scapularMuscles);
+ }
  if(medicalFocus&&MUSCLE_ALL.includes(name)&&!medicalFocus.has(name))return false;
  const v43=V43_LOOKUP[name];
  if(v43)return Boolean(settings[v43.setting]&&realReady&&(!v43.tendon||settings.hand)&&(settings.forearmLayer==='both'||settings.forearmLayer===v43.layer));
