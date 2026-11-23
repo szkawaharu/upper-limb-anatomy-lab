@@ -219,6 +219,14 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 .med-study .med-actions button{flex:1 1 115px;min-height:44px;padding:8px;border-radius:9px}
 .med-study a{color:#9adbd3}
 .med-study .med-status{min-height:22px;font-size:12px;line-height:1.6;margin:9px 0 0;color:#c3d5dc}
+.shoulder-audit-output{font-size:12px;line-height:1.8;color:#d4e7ed;border:1px solid #3e6570;background:#102936;border-radius:9px;padding:10px;margin:8px 0;white-space:normal}
+.shoulder-audit-output strong{color:#a9efe5}
+.shoulder-audit-table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:10px}
+.shoulder-audit-table th,.shoulder-audit-table td{padding:6px 2px;text-align:right;border-bottom:1px solid #304757}
+.shoulder-audit-table th:first-child,.shoulder-audit-table td:first-child{text-align:left}
+.shoulder-audit-note{font-size:11px;line-height:1.7;color:#bfccd4}
+.shoulder-audit-links{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.shoulder-audit-links a{color:#98e4db;font-size:11px;overflow-wrap:anywhere}
 </style>
 </head>
 <body>
@@ -308,6 +316,15 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 <div class="detail">肩関節のひねり＝<strong>上腕骨の長軸まわりの内旋・外旋</strong>です。これは前腕の回内・回外とは別の運動。<strong>外転90°＋肘屈曲90°</strong>にすると、向きの違いを比較しやすくなります。0°は取り込んだ骨データを基準にした表示で、臨床的な中間位の校正値ではありません。</div>
 <div class="audit-angle-grid" role="group" aria-label="肩の内旋外旋を比較"><button type="button" data-shoulder-test="-90">内旋90°</button><button type="button" data-shoulder-test="-45">内旋45°</button><button type="button" data-shoulder-test="0">0°</button><button type="button" data-shoulder-test="45">外旋45°</button><button type="button" data-shoulder-test="90">外旋90°</button></div>
 <button type="button" id="shoulderPoseTest" class="preset" style="width:100%;margin:6px 0 14px">肩回旋の確認姿勢（外転90°・肘屈曲90°）</button>
+<details class="diagnostic-fold" id="shoulderAuditPanel"><summary>肩甲骨・鎖骨・上腕骨の連動監査（v0.50）</summary>
+ <div class="detail">胸鎖関節（SC）・肩鎖関節（AC）・肩甲上腕関節（GH）の模式的な運動を角度別に検証します。現在の表示は<b>推定運動学</b>で、医学的な3D精度は未確認です。</div>
+ <div class="audit-angle-grid" role="group" aria-label="肩の挙上角を比較"><button type="button" data-shoulder-elev="0">0°</button><button type="button" data-shoulder-elev="45">45°</button><button type="button" data-shoulder-elev="90">90°</button><button type="button" data-shoulder-elev="135">135°</button><button type="button" data-shoulder-elev="180">180°</button></div>
+ <div id="shoulderAuditCurrent" class="shoulder-audit-output" role="status" aria-live="polite">骨格データを読み込み中…</div>
+ <button type="button" id="shoulderAuditSweep" class="preset" style="min-height:44px;width:100%">0〜180°を数値検査する（姿勢は変更しない）</button>
+ <div id="shoulderAuditSweepResult" class="shoulder-audit-output">0・30・60・90・120・150・180°の推定値と関節中心の接続誤差を表示します。</div>
+ <div class="shoulder-audit-note">参考：肩甲上腕リズムの「2:1」は一定の法則ではなく、運動方向・挙上面・個人で変化します。推定の肩甲骨上方回旋角と3Dの相対角は<b>同じ量ではありません</b>。SC・AC・GHの接続誤差0 mmは、プログラムで同じ関節中心を共有させた結果であり、軟骨・靱帯・接触状態・正確な付着を証明しません。</div>
+ <div class="shoulder-audit-links"><a href="https://pubmed.ncbi.nlm.nih.gov/15844264/" target="_blank" rel="noopener noreferrer">ISB関節座標系</a><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12398250/" target="_blank" rel="noopener noreferrer">肩甲骨運動の個人差</a><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2841046/" target="_blank" rel="noopener noreferrer">肩甲上腕リズム実測</a></div>
+</details>
 <div class="control"><label for="elbow">肘の屈曲 <output id="elbowV">0°</output></label><input id="elbow" type="range" min="0" max="150" value="0"><div class="ends"><span>伸展 0°</span><span>屈曲 150°</span></div><div class="ends" style="color:#85b5bf"><span>屈曲方向：身体の前方（胸側）</span><span>※推定軸</span></div><div class="elbow-check" id="elbowCheck">側面で見ると胸側・背側の方向を確認できます。</div><label class="switch" style="margin-top:10px"><input type="checkbox" id="reverseElbow">反対向きの動きと比較（検証用）</label></div>
 <div class="control"><label for="pronation">前腕の回内・回外 <output id="pronationV">0°</output></label><input id="pronation" type="range" min="-90" max="90" value="0"><div class="ends"><span>回外 −90°</span><span>回内 +90°</span></div></div>
 <div class="detail">参考可動域：<strong>回外・回内は各約80〜90°</strong>（合わせて約160〜180°）。このモデルは−90°〜＋90°まで操作できます。<strong>ただし0°は読み込んだ骨格の参照姿勢</strong>であり、人体計測上の正確な中間位と一致するとは限りません。回転の見た目が小さい場合、正面／側面の両方と「肩の内外旋が0°か」を確認してください。</div>
