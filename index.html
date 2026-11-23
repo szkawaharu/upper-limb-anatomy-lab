@@ -178,12 +178,20 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 @media(max-height:650px){body.edge-ui .edge-rail{top:calc(max(11px,env(safe-area-inset-top)) + 56px);gap:5px}body.edge-ui .edge-rail button{width:40px;height:40px;font-size:18px}}
 @media(prefers-reduced-motion:reduce){body.edge-ui .side,body.edge-ui .edge-scrim{transition:none!important}}
 
-/* v0.38: optical landmark audit only, not a collision/contact simulation. */
+/* v0.39: optical landmark audit only, not a collision/contact simulation. */
 #radialAuditOverlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:9;display:none;overflow:hidden}
 #radialAuditOverlay .audit-axis{stroke:#71d2e9;stroke-width:2;stroke-dasharray:5 5;opacity:.85}
 #radialAuditOverlay .audit-mark{stroke:#07131e;stroke-width:2}
 #radialAuditOverlay .audit-label{font:600 11px system-ui,sans-serif;fill:#f2f7fb;paint-order:stroke;stroke:#07131e;stroke-width:3px;stroke-linejoin:round}
 #radialAuditMetrics{line-height:1.75;font-variant-numeric:tabular-nums}
+#auditSurfaceResults{font-variant-numeric:tabular-nums;font-size:12px;line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere}
+#auditSurfaceResults strong{color:#97ebe1}
+#auditSurfaceRun{width:100%;margin:8px 0;padding:11px 6px;background:#113d4a;border:1px solid #66aaa5;border-radius:10px;color:#ddf8f5;font-weight:700}
+#auditSurfaceRun:disabled{opacity:.48}
+#auditSurfaceTable{width:100%;border-collapse:collapse;font-size:clamp(9px,2.5vw,11px);font-variant-numeric:tabular-nums}
+#auditSurfaceTable th,#auditSurfaceTable td{border-bottom:1px solid #34495b;text-align:right;padding:6px 3px}
+#auditSurfaceTable th:first-child,#auditSurfaceTable td:first-child{text-align:left}
+.audit-limit{font-size:11px;line-height:1.7;color:#aebfce}
 .audit-angle-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;margin:10px 0}
 .audit-angle-grid button{padding:10px 2px;min-width:0;font-weight:700;font-size:11px}
 .audit-angle-grid button.active{background:#174b51;border-color:#79dbd0;color:#e2fffb}
@@ -193,7 +201,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.38</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.38</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.39</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.39</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
@@ -203,7 +211,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.38</div>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.39</div>
 <nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
  <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
  <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
@@ -218,7 +226,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 
 </div>
 <section class="side" id="labTools">
-<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.38</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
+<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.39</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
 <details class="edge-help control-fold"><summary>操作方法<span class="fold-note">ヘルプ</span></summary><div class="fold-body"><div class="immersive-tips">操作：1本指ドラッグで視点回転（初期設定は逆方向）。<strong>骨を約0.4秒長押し → ドラッグで関節操作。右端の「✋」は曲げ伸ばし、「↻」は前腕の回内・回外と上腕の内旋・外旋。↻では骨を左右にドラッグするか、2本指でひねって調整できます。<strong>3本指で左右にスワイプすると、どのモードからでも前腕の回内・回外（上部の関節指定が「上腕：回旋」なら内旋・外旋）を操作できます。</strong>iPhoneで選択メニューが出る場合は「✋」または「↻」をONにして直接ドラッグ</strong>。2本指は視点移動・ピンチ。選びにくい関節は上部メニューで指定できます。</div></div></details><div class="note" id="launchTip"><strong>iPhoneでモデルが表示されない場合</strong>：HTMLファイルのプレビューではJavaScriptが実行されない場合があります。HTMLファイルをWebサイトとして公開し、SafariでURLを開いてください。下の操作ボタンはブラウザ版で機能します。</div>
 <details class="control-fold"><summary>表示倍率・視点操作<span class="fold-note">カメラ</span></summary><div class="fold-body"><div class="panel zoom-panel"><div class="panelhead"><h2>表示倍率</h2><span class="sectioncap">CAMERA</span></div>
 <div class="control zoom-control"><label for="zoomLevel">拡大・縮小 <output id="zoomValue">100%</output></label>
@@ -249,12 +257,15 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 <div class="control"><label for="axial">上腕骨の軸回旋 <output id="axialV">0°</output></label><input id="axial" type="range" min="-90" max="90" value="0"><div class="ends"><span>内旋 −90°</span><span>外旋 +90°</span></div></div>
 <div class="control"><label for="elbow">肘の屈曲 <output id="elbowV">0°</output></label><input id="elbow" type="range" min="0" max="150" value="0"><div class="ends"><span>伸展 0°</span><span>屈曲 150°</span></div><div class="ends" style="color:#85b5bf"><span>屈曲方向：身体の前方（胸側）</span><span>※推定軸</span></div><div class="elbow-check" id="elbowCheck">側面で見ると胸側・背側の方向を確認できます。</div><label class="switch" style="margin-top:10px"><input type="checkbox" id="reverseElbow">反対向きの動きと比較（検証用）</label></div>
 <div class="control"><label for="pronation">前腕の回内・回外 <output id="pronationV">0°</output></label><input id="pronation" type="range" min="-90" max="90" value="0"><div class="ends"><span>回外 −90°</span><span>回内 +90°</span></div></div>
-<details class="diagnostic-fold" id="radialAuditPanel"><summary>橈骨・尺骨の回旋を検証（v0.38）</summary>
-<div class="detail">橈骨頭付近と尺骨遠位部を結ぶ<strong>推定回旋軸</strong>を表示し、−90°〜＋90°を素早く比較できます。骨の位置関係の観察用であり、関節面の接触や脱臼の医学的判定は行いません。</div>
+<details class="diagnostic-fold" id="radialAuditPanel"><summary>橈骨・尺骨の回旋を検証（v0.39）</summary>
+<div class="detail">橈骨頭付近と尺骨遠位部を結ぶ<strong>推定回旋軸</strong>を表示し、−90°〜＋90°を素早く比較できます。骨の位置関係を観察し、メッシュ交差と頂点間距離を別途計算できます。関節面の医学的な接触や脱臼の判定は行いません。</div>
 <div class="audit-angle-grid" role="group" aria-label="回内回外の角度を比較"><button type="button" data-radial-test="-90">−90°</button><button type="button" data-radial-test="-45">−45°</button><button type="button" data-radial-test="0">0°</button><button type="button" data-radial-test="45">＋45°</button><button type="button" data-radial-test="90">＋90°</button></div>
 <label class="switch"><input type="checkbox" id="showRadialAudit">画面に回旋軸と骨の参照点を表示する</label>
 <div class="audit-legend"><span style="--marker:#7de2ee">推定軸</span><span style="--marker:#ffd27d">橈骨頭</span><span style="--marker:#d1b6ff">尺骨遠位</span><span style="--marker:#9eeac4">橈骨遠位</span></div>
 <div class="detail" id="radialAuditMetrics" role="status" aria-live="polite">骨格を読み込み中…</div>
+<button type="button" id="auditSurfaceRun">実骨メッシュで5角度を検査</button>
+<div class="detail" id="auditSurfaceResults" aria-live="polite">実骨読み込み後、ボタンを押すと橈骨・尺骨の近位／遠位のメッシュを調べます。</div>
+<div class="audit-limit">測定範囲：近位／遠位の橈尺関節周囲。最短距離は<strong>抽出頂点間の概算</strong>、交差は<strong>メッシュ三角面の交差検出</strong>です。軟骨・靱帯は含まず、検出なしは正常の証明ではありません。高負荷を防ぐため面数に上限を設け、超過時は未判定にします。関節の位置は自動変更しません。</div>
 <div class="detail">※軸上の中心点のずれや橈尺間距離は<strong>設定した運動学モデルの内部整合性</strong>を示す値です。靱帯・関節面・骨同士の干渉・筋や腱の衝突は未評価です。</div></details>
 </div></div></details>
 <details class="control-fold"><summary>手首・指の関節<span class="fold-note">5項目＋PIP/DIP</span></summary><div class="fold-body"><div class="panel" id="handPanel"><div class="panelhead"><h2>手首・手の操作</h2><span class="sectioncap">HAND / WRIST</span></div>
@@ -289,7 +300,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 <div class="detail" id="deltoidStatus" role="status" aria-live="polite">三角筋：実骨データを読み込み中…</div><div class="detail" id="brachioradialisStatus" role="status" aria-live="polite">腕橈骨筋：実骨データを読み込み中…</div><div class="detail" id="pronatorTeresStatus" role="status" aria-live="polite">円回内筋：実骨データを読み込み中…</div><div class="detail" id="supinatorStatus" role="status" aria-live="polite">回外筋：実骨データを読み込み中…</div><div class="detail" id="flexorCarpiRadialisStatus" role="status" aria-live="polite">橈側手根屈筋：実骨データを読み込み中…</div><div class="detail" id="flexorCarpiUlnarisStatus" role="status" aria-live="polite">尺側手根屈筋：実骨データを読み込み中…</div><div class="detail" id="palmarisLongusStatus" role="status" aria-live="polite">長掌筋：実骨データを読み込み中…</div><div class="detail" id="fdsStatus" role="status" aria-live="polite">浅指屈筋：実骨データを読み込み中…</div><div class="detail" id="fdpStatus" role="status" aria-live="polite">深指屈筋：実骨データを読み込み中…</div></div></details>
 <div class="muscle-feedback" id="muscleFeedback" aria-live="off"><div class="muscle-feedback-row"><span>上腕二頭筋のふくらみ（基準比）</span><output id="muscleBulgeValue">1.00倍</output></div><div class="muscle-meter"><span id="muscleBulgeMeter"></span></div><label class="switch muscle-emphasis"><input type="checkbox" id="muscleEmphasis" checked>筋腹の変形を強調（動きの観察用）</label></div><div class="sectioncap" style="margin:14px 0 8px">骨を個別に表示 / 非表示</div><div class="key"><button data-bone="scapula">肩甲骨</button><button data-bone="clavicle">鎖骨</button><button data-bone="humerus">上腕骨</button><button data-bone="radius">橈骨</button><button data-bone="ulna">尺骨</button></div>
 <details class="diagnostic-fold"><summary>骨格・関節の補足説明</summary><div class="diagnostic-stack"><div class="detail" id="boneModeNote">実骨形状を優先します。手首・指の回転中心は実骨形状から推定した教育用の近似です。橈尺関節面の接触判定は未実装です。</div><div class="detail" id="modelNote">連動あり：挙上180°で肩甲骨が約60°上方回旋する教育用の近似を使用。鎖骨の挙上・後退、肩甲骨の傾きを近似します（鎖骨の軸回旋は未実装）。</div></div></details></div></div></details>
-<details class="panel limitations-fold"><summary class="panelhead"><h2>このモデルの正確さ</h2><span class="sectioncap">MODEL LIMITATIONS</span></summary><div class="note"><strong>動作を観察するための試作です。</strong> 手首の掌屈・背屈、橈屈・尺屈、指の屈曲、親指の対立は教育用の連動近似で、関節面の接触や腱による拘束は計算していません。 骨の形状はBodyParts3Dの公開解剖学的3Dメッシュを優先して読み込みます（通信に失敗した場合は旧近似モデルに切替）。元データの骨同士の位置を保持しつつ、関節回転の中心は骨表面の推定目印に基づく近似値です。関節運動は運動学的に連動しますが、靱帯・関節包・筋張力による拘束や衝突判定、個人差は未実装です。肘の屈曲は上腕骨遠位の推定軸まわりの回転です。標準設定では骨格データの胸側に前腕が移動する符号を座標計算で選びます。「側面で前後を確認」で背側・胸側を表示できます。反対向きは比較専用です。関節面の適合は保証しません。橈側手根屈筋は上腕骨内側から第2中手骨までの概形です。尺側手根屈筋は上腕骨内側上顆・尺骨後縁から豆状骨までの推定筋・腱経路を表示し、豆状有鉤靱帯と豆状中手靱帯も概形として示します。長掌筋は存在しない人もおり、今回の表示は前腕中央の筋腹から手掌腱膜へ広がる腱・扇状線維の模式表現です。浅指屈筋は前腕の掌側から第2～5指の中節骨へ至る4本の腱を示し、各指で二分する末端を近似表示します。v0.38ではPIP付近の関節跨ぎに骨面に沿うガイド点を追加しています。深指屈筋は尺骨・骨間膜近傍の深層筋腹から4本の腱が浅指屈筋の分岐の間を通り、各指の末節骨掌側基部へ至る模式表現です。PIP・DIP付近では骨の掌側面を経由させ、角度変化時の直線的な貫通を低減しています。PIP/DIP個別操作は関節角度指定で、筋の収縮によって骨が動く物理演算ではありません。PIP個別操作はMCP/DIPを固定した教育用の関節角度指定です。腱滑走・腱鞘・Camperの交叉を厳密には再現していません。腱の張力、滑走、皮膚との結合は計算していません。腱鞘の力学・腱の滑走・骨との厳密な接触判定は未実装です。v0.38では橈骨頭―尺骨遠位の回旋軸を可視化し、内部参照点の数値を表示します。橈骨・尺骨の接触や実測と一致する動きを保証する機能ではありません。浅指屈筋・深指屈筋の前腕側腱は、尺骨側と橈骨側の骨面から移行ガイドを追加した模式的なルートです。回外筋は上腕骨外側・尺骨近位部から橈骨近位3分の1を包む2層の模式的な筋束です。円回内筋と別々に表示できますが、どちらも推定付着点・走行を用いており筋活動や張力は再現していません。「筋肉・腱」は上腕骨表面に沿う簡易経路を使った教育用の推定形状です。肘角度に応じて二頭筋・上腕筋が短く太く、三頭筋が長くやや細くなる簡易変形を加えていますが、筋活動・腱の滑走・関節包・厳密な筋体積保存は再現していません。正面・背面ボタンは骨の前後関係の確認用です。スマホではスクロール中も3D表示を画面上部に固定します。</div></details>
+<details class="panel limitations-fold"><summary class="panelhead"><h2>このモデルの正確さ</h2><span class="sectioncap">MODEL LIMITATIONS</span></summary><div class="note"><strong>動作を観察するための試作です。</strong> 手首の掌屈・背屈、橈屈・尺屈、指の屈曲、親指の対立は教育用の連動近似で、関節面の接触や腱による拘束は計算していません。 骨の形状はBodyParts3Dの公開解剖学的3Dメッシュを優先して読み込みます（通信に失敗した場合は旧近似モデルに切替）。元データの骨同士の位置を保持しつつ、関節回転の中心は骨表面の推定目印に基づく近似値です。関節運動は運動学的に連動しますが、靱帯・関節包・筋張力による拘束や衝突判定、個人差は未実装です。肘の屈曲は上腕骨遠位の推定軸まわりの回転です。標準設定では骨格データの胸側に前腕が移動する符号を座標計算で選びます。「側面で前後を確認」で背側・胸側を表示できます。反対向きは比較専用です。関節面の適合は保証しません。橈側手根屈筋は上腕骨内側から第2中手骨までの概形です。尺側手根屈筋は上腕骨内側上顆・尺骨後縁から豆状骨までの推定筋・腱経路を表示し、豆状有鉤靱帯と豆状中手靱帯も概形として示します。長掌筋は存在しない人もおり、今回の表示は前腕中央の筋腹から手掌腱膜へ広がる腱・扇状線維の模式表現です。浅指屈筋は前腕の掌側から第2～5指の中節骨へ至る4本の腱を示し、各指で二分する末端を近似表示します。v0.39ではPIP付近の関節跨ぎに骨面に沿うガイド点を追加しています。深指屈筋は尺骨・骨間膜近傍の深層筋腹から4本の腱が浅指屈筋の分岐の間を通り、各指の末節骨掌側基部へ至る模式表現です。PIP・DIP付近では骨の掌側面を経由させ、角度変化時の直線的な貫通を低減しています。PIP/DIP個別操作は関節角度指定で、筋の収縮によって骨が動く物理演算ではありません。PIP個別操作はMCP/DIPを固定した教育用の関節角度指定です。腱滑走・腱鞘・Camperの交叉を厳密には再現していません。腱の張力、滑走、皮膚との結合は計算していません。腱鞘の力学・腱の滑走・骨との厳密な接触判定は未実装です。v0.39では橈骨頭―尺骨遠位の回旋軸を可視化し、内部参照点の数値を表示します。橈骨・尺骨の接触や実測と一致する動きを保証する機能ではありません。浅指屈筋・深指屈筋の前腕側腱は、尺骨側と橈骨側の骨面から移行ガイドを追加した模式的なルートです。回外筋は上腕骨外側・尺骨近位部から橈骨近位3分の1を包む2層の模式的な筋束です。円回内筋と別々に表示できますが、どちらも推定付着点・走行を用いており筋活動や張力は再現していません。「筋肉・腱」は上腕骨表面に沿う簡易経路を使った教育用の推定形状です。肘角度に応じて二頭筋・上腕筋が短く太く、三頭筋が長くやや細くなる簡易変形を加えていますが、筋活動・腱の滑走・関節包・厳密な筋体積保存は再現していません。正面・背面ボタンは骨の前後関係の確認用です。スマホではスクロール中も3D表示を画面上部に固定します。</div></details>
 <button id="edgeStandardView" class="edge-standard-button" type="button">▤ 従来の縦スクロール表示に戻す</button>
 </section></main>
 <footer class="sources">参考：<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8880601/" target="_blank" rel="noopener">手関節と橈側手根屈筋の解剖学</a> ／ <a href="https://www.ncbi.nlm.nih.gov/books/NBK526110/" target="_blank" rel="noopener">腕橈骨筋の起始・停止</a> ／ <a href="https://www.ncbi.nlm.nih.gov/books/NBK537056/" target="_blank" rel="noopener">三角筋の解剖学的付着部</a> ／ <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3042752/" target="_blank" rel="noopener">三角筋の機能分節</a> ／ <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8111677/" target="_blank" rel="noopener">肩甲上腕リズムの概説</a> ／ <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10078813/" target="_blank" rel="noopener">胸鎖・肩鎖・肩甲胸郭の運動</a> ／ <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12398250/" target="_blank" rel="noopener">個人差と非線形性（2025）</a><br>個人の診断や関節可動域の安全性判定には使わないでください。実骨形状の読み込みにはインターネット接続が必要です。外部ライブラリは不要です。尺側手根屈筋の参考：<a href="https://rad.uw.edu/muscle-atlas/flexor-carpi-ulnaris" target="_blank" rel="noopener">University of Washington: FCU起始・停止</a> ／ <a href="https://www.ncbi.nlm.nih.gov/books/NBK526051/" target="_blank" rel="noopener">NCBI: FCUの解剖</a>。回外筋の参考：<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3552760/" target="_blank" rel="noopener">前腕背側筋の解剖学</a>。長掌筋：<a href="https://www.ncbi.nlm.nih.gov/books/NBK519516/" target="_blank" rel="noopener">NCBI / Palmaris Tendon</a>、<a href="https://www.rad.washington.edu/muscle-atlas/palmaris-longus" target="_blank" rel="noopener">University of Washington / Palmaris Longus</a>。 浅指屈筋：<a href="https://www.ncbi.nlm.nih.gov/books/NBK539723/" target="_blank" rel="noopener">NCBI / FDS</a>、<a href="https://surgeryreference.aofoundation.org/orthopedic-trauma/adult-trauma/further-reading/hand-flexor-tendon-mechanism" target="_blank" rel="noopener">AO Foundation / Tendon mechanism</a>。 ／ 深指屈筋：<a href="https://www.ncbi.nlm.nih.gov/books/NBK526046/" target="_blank" rel="noopener">NCBI / FDP</a>、<a href="https://surgeryreference.aofoundation.org/orthopedic-trauma/adult-trauma/further-reading/hand-flexor-tendon-mechanism/" target="_blank" rel="noopener">AO Foundation / 指屈筋腱</a>。</footer>
@@ -367,7 +378,7 @@ const RADIAL_HEAD_REF=atlasToWorld(RADIAL_HEAD_ATLAS),DISTAL_ULNA_REF=atlasToWor
 // Pronation/supination: radius rotates around the oblique line radial head -> distal ulnar head.
 // This is distinct from the elbow hinge; the ulna does not rotate about this axis.
 const PRONATION_AXIS_LOCAL=norm(sub(DISTAL_ULNA_REF,RADIAL_HEAD_REF));
-// v0.38: identity of the rotating radius is kept separate from the stationary
+// v0.39: identity of the rotating radius is kept separate from the stationary
 // ulna. Reference points are not measured cartilage/ligament contact centers.
 const DISTAL_RADIUS_ATLAS=[-264,-112,825];
 let poseCheck={};
@@ -527,7 +538,7 @@ async function loadRealHand(){
  if(settings.hand){makeHandPose();if(realReady&&(settings.muscles||settings.deltoid||settings.brachioradialis||settings.pronatorTeres||settings.supinator||settings.flexorCarpiRadialis||settings.flexorCarpiUlnaris||settings.palmarisLongus||settings.flexorDigitorumSuperficialis||settings.flexorDigitorumProfundus))updateRealMuscles();if($('cameraAuto').checked){autoFit=true;fitPose()}request()}
  updateHandStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateFDPStatus();refreshModelStatus();
  const stateLabel=$('modelLoadState');
- if(stateLabel&&realReady)stateLabel.innerHTML=(handReady?'BodyParts3D 上肢5骨＋右手27骨':'BodyParts3D 上肢5骨＋手の近似形状')+'<br>橈尺回旋の軸・参照点を表示／筋腱の移行区間を調整（v0.38）';
+ if(stateLabel&&realReady)stateLabel.innerHTML=(handReady?'BodyParts3D 上肢5骨＋右手27骨':'BodyParts3D 上肢5骨＋手の近似形状')+'<br>橈尺回旋の軸・参照点を表示／筋腱の移行区間を調整（v0.39）';
 }
 
 function refreshModelStatus(){
@@ -546,7 +557,7 @@ function refreshModelStatus(){
   :'骨データ取得中：読み込み完了後に筋肉・腱の実骨基準表示へ切り替わります。';
 }
 function updateHandStatus(){const n=$('handStatus');if(!n)return;
- n.textContent=!settings.hand?'手の骨格：非表示':handReady?'手の実骨27個を表示中。手首の回転中心と親指軸を骨格基準で調整した近似です。橈尺回旋は独立検証モードから比較できます。':handModelWarning?handModelWarning+'。現在は近似形状です。':'手の実骨データを読み込み中。読み込み前は近似形状で操作できます。';
+ n.textContent=!settings.hand?'手の骨格：非表示':handReady?'手の実骨27個を表示中。手首の回転中心と親指軸を骨格基準で調整した近似です。橈尺回旋は独立検証モードで、骨メッシュの接近・交差候補を調べられます。':handModelWarning?handModelWarning+'。現在は近似形状です。':'手の実骨データを読み込み中。読み込み前は近似形状で操作できます。';
 }
 function parseBinaryBone(buffer,name){
  const d=new DataView(buffer),total=d.getUint32(80,true);if(84+50*total>buffer.byteLength)throw Error(name+' のSTLデータが不正です');
@@ -621,7 +632,7 @@ function makeRealPose(){
 const MUSCLE_PARTS=['bicepsLong','bicepsShort','triceps','tricepsLat','brachialis','deltoidAnterior','deltoidMiddle','deltoidPosterior','brachioradialis','pronatorTeresHumeral','pronatorTeresUlnar','supinatorSuperficial','supinatorDeep','flexorCarpiRadialis','flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','palmarisLongus','flexorDigitorumSuperficialis','flexorDigitorumProfundus'];
 const TENDON_PARTS=['tendonB','tendonB2','tendonBprox','tendonT','tendonT2','tendonBrach','tendonBR','tendonPT','tendonSupinator','tendonFCR','tendonFCU','pisohamateBand','pisometacarpalBand','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4','fdsTendonI','fdsTendonM','fdsTendonR','fdsTendonL','fdsBranchI1','fdsBranchI2','fdsBranchM1','fdsBranchM2','fdsBranchR1','fdsBranchR2','fdsBranchL1','fdsBranchL2','fdpTendonI','fdpTendonM','fdpTendonR','fdpTendonL'];
 const MUSCLE_ALL=[...MUSCLE_PARTS,...TENDON_PARTS];
-// v0.38: smooth the *visual* transition between ulna-anchored proximal
+// v0.39: smooth the *visual* transition between ulna-anchored proximal
 // muscle and radius/hand-anchored distal tendons during pronosupination.
 // Positions are updated in each bone's own transform, never held in world space.
 // This is a surface-proxy guide, NOT a collision/retinaculum model.
@@ -1327,7 +1338,7 @@ function updateRealMuscles(){
  }else for(const id of fdpNames){
    const old=geomDynamic[id];if(old){if(!SOFTWARE){gl.deleteBuffer(old.vbo);gl.deleteBuffer(old.nbo);gl.deleteBuffer(old.ibo);}delete geomDynamic[id];}
  }
- muscleDiagnostics={mode:'v0.38: ulna-radius soft-tissue bridge + volar tendon guidance' ,flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
+ muscleDiagnostics={mode:'v0.39: ulna-radius soft-tissue bridge + volar tendon guidance' ,flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
   biceps:{origin:bicepsLongOrigin.slice(0,3),insertion:bicepsRadiusEnd.slice(0,3),bellyBulge:bBulge},
   triceps:{origin:tricepsOrigin.slice(0,3),insertion:tricepsEnd.slice(0,3),bellyScale:tBulge},
   brachialis:{origin:brachialisOrigin.slice(0,3),insertion:brachialisEnd.slice(0,3),bellyBulge:braBulge},
@@ -1341,6 +1352,11 @@ async function loadOneBone(name,id){let lastError=null;
  if(!r.ok)throw Error('HTTP '+r.status);
  const b=await r.arrayBuffer();if(b.byteLength<84)throw Error('STLファイルが短すぎます');
  const m=parseBinaryBone(b,name);
+ // Keep the indexed source triangles only for the two bones tested in v0.39.
+ // Rendering remains GPU-backed; audit geometry is evaluated on demand.
+ if(name==='radius'||name==='ulna'){
+   const out=gpu(m);out.sourceVertices=m.vertices;out.sourceFaces=m.faces;return out;
+ }
  // WebGL1 usually supports OES_element_index_uint on iOS; fallback is handled below.
  return gpu(m);
  }catch(e){lastError=e;console.warn('Mesh source unavailable:',name,url,e)} }
@@ -1352,8 +1368,8 @@ async function loadRealBones(){
  try{
    const result=await Promise.all(ids.map(x=>loadOneBone(x,REAL_MODELS[x])));
    ids.forEach((x,i)=>realMesh[x]=result[i]);realReady=true;makeRealPose();makeHandPose();updateRadialAuditMetrics();loadRealHand().catch(e=>{handModelWarning=String(e);updateHandStatus();refreshModelStatus()});updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateFDPStatus();updateAnteriorStatus();updateRadialAuditMetrics();autoFit=true;fitPose();request();
-   if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.38・橈尺回旋の検証パネル追加）';refreshModelStatus();
-   const n=$('boneModeNote');if(n)n.textContent='骨の形はBodyParts3Dの公開解剖学的メッシュに変更しました。関節の回転中心・肩甲上腕リズムは推定値です。前腕の回内回外は橈骨頭から尺骨遠位部への斜め軸を用いた近似です。関節面の衝突や靱帯による拘束は未実装です。上腕二頭筋・三頭筋・上腕筋は骨表面に沿う近似経路を使い、肘角度に応じた簡易収縮・伸長を追加しました。三角筋は他の筋肉とは独立にON/OFFでき、3つの束を推定付着点に結び付けた近似表示です。腕橈骨筋も独立ON/OFFができ、上腕骨外側から橈骨遠位部までを推定経路で結び、肘屈曲・前腕回内回外に追従します。回外筋は上腕骨外側・尺骨近位部から橈骨近位部を包む概形として追加し、円回内筋と比較できます。橈側手根屈筋の腱は乳白色の細い楕円断面で、橈骨掌側から舟状骨・大菱形骨付近を通って第2中手骨基部へ至る推定経路で表示します。尺側手根屈筋は尺骨の掌側・尺側に沿い、豆状骨に腱が連結し、有鉤骨・第5中手骨への線維性連結を近似表示します。関節付近の滑走・骨との接触計算は行っていません。長掌筋は内側上顆→手掌腱膜の模式経路として追加しました（個体差・欠損あり）。浅指屈筋は上腕骨内側上顆付近から掌側前腕へ伸び、中節骨へ左右二分する4本の腱を模式表示します。筋・腱の正確な形状や付着点、筋張力は未検証です。腱の滑走や厳密な筋体積保存は未実装です。';
+   if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.39・橈尺回旋の検証パネル追加）';refreshModelStatus();
+   const n=$('boneModeNote');if(n)n.textContent='骨の形はBodyParts3Dの公開解剖学的メッシュに変更しました。関節の回転中心・肩甲上腕リズムは推定値です。前腕の回内回外は橈骨頭から尺骨遠位部への斜め軸を用いた近似です。推定軸のままであり、靱帯や軟骨の拘束は未実装です。骨メッシュの面交差検査は検証パネルから実行できます。上腕二頭筋・三頭筋・上腕筋は骨表面に沿う近似経路を使い、肘角度に応じた簡易収縮・伸長を追加しました。三角筋は他の筋肉とは独立にON/OFFでき、3つの束を推定付着点に結び付けた近似表示です。腕橈骨筋も独立ON/OFFができ、上腕骨外側から橈骨遠位部までを推定経路で結び、肘屈曲・前腕回内回外に追従します。回外筋は上腕骨外側・尺骨近位部から橈骨近位部を包む概形として追加し、円回内筋と比較できます。橈側手根屈筋の腱は乳白色の細い楕円断面で、橈骨掌側から舟状骨・大菱形骨付近を通って第2中手骨基部へ至る推定経路で表示します。尺側手根屈筋は尺骨の掌側・尺側に沿い、豆状骨に腱が連結し、有鉤骨・第5中手骨への線維性連結を近似表示します。関節付近の滑走・骨との接触計算は行っていません。長掌筋は内側上顆→手掌腱膜の模式経路として追加しました（個体差・欠損あり）。浅指屈筋は上腕骨内側上顆付近から掌側前腕へ伸び、中節骨へ左右二分する4本の腱を模式表示します。筋・腱の正確な形状や付着点、筋張力は未検証です。腱の滑走や厳密な筋体積保存は未実装です。';
  }catch(e){modelWarning=String(e);console.warn('Showing safe procedural fallback because real bones did not load:',e);
    if(loading)loading.innerHTML='近似モデルを表示中<br>実骨データの取得に失敗しました';refreshModelStatus();updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateFDPStatus();
    const n=$('boneModeNote');if(n)n.textContent='実骨格データの取得に失敗したため、旧近似モデルを表示しています。ネット接続と外部CDNの利用可否を確認して再読み込みしてください。';
@@ -1413,8 +1429,121 @@ for(let cmd of drawCalls){if(!cmd.g.cpu)continue;let m=cmd.g.cpu,points=m.vertic
 }
 all.sort((a,b)=>b[0]-a[0]);for(let tri of all){let [,a,b,c,color,alpha]=tri;ctx.globalAlpha=alpha;ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.lineTo(c[0],c[1]);ctx.closePath();ctx.fill();}ctx.globalAlpha=1;}
 function labels(){let box=$('labels');if(!settings.showlabels){box.style.display='none';return}box.style.display='block';for(let [i,id] of ids.entries()){let el=box.querySelector('[data-id="'+id+'"]');if(!el){el=document.createElement('div');el.className='bone-label';el.dataset.id=id;el.textContent=['肩甲骨','鎖骨','上腕骨','橈骨','尺骨'][i];box.appendChild(el)}let p=posPoints[id],v=[...p,1],w=[];for(let r=0;r<4;r++)w[r]=pv[r]*v[0]+pv[r+4]*v[1]+pv[r+8]*v[2]+pv[r+12]*v[3];let x=(w[0]/w[3]*.5+.5)*lastW,y=(-w[1]/w[3]*.5+.5)*lastH;if(w[3]<.01||!boneShown[id]||x<0||x>lastW||y<0||y>lastH){el.style.display='none'}else{el.style.display='block';let half=(el.offsetWidth||56)/2;el.style.left=clamp(x,half+4,lastW-half-4)+'px';el.style.top=clamp(y,18,lastH-18)+'px'}}}
-// v0.38: opt-in landmark overlay. This explicitly shows the assumed
+// v0.39: opt-in landmark overlay. This explicitly shows the assumed
 // axis and three distinct *bone reference points* without claiming contact.
+
+// v0.39: metrology on the displayed meshes, in the ULNA-LOCAL REST frame.
+// The radius rotates about the assumed proximal-to-distal axis. Do not
+// infer normal radioulnar contact from these measurements: cartilage and
+// measured joint kinematics are not in the source atlas.
+let surfaceAuditResults=null,surfaceAuditBusy=false,surfaceAuditRevision=0;
+const SURFACE_AUDIT_ZONES=[
+ {id:'prox',name:'近位',low:-.28,high:.08},
+ {id:'dist',name:'遠位',low:-1.37,high:-1.00}
+];
+const SURFACE_AUDIT_CELL=.028, SURFACE_AUDIT_MAX_PAIR_TESTS=280000;
+const SURFACE_AUDIT_MAX_GRID_LINKS=420000;
+const axisPivotLocal=sub(RADIAL_HEAD_REF,realAnchors.EL);
+function surfaceRotateVertex(p,q){return add(axisPivotLocal,qr(q,sub(p,axisPivotLocal)))}
+function auditKey(x,y,z){return `${x},${y},${z}`}
+function auditBinPoint(p,cell=SURFACE_AUDIT_CELL){return [Math.floor(p[0]/cell),Math.floor(p[1]/cell),Math.floor(p[2]/cell)]}
+function auditFaceBoxes(vertices,faces,zone){const out=[];
+ for(let j=0;j<faces.length;j+=3){const a=vertices[faces[j]],b=vertices[faces[j+1]],c=vertices[faces[j+2]];
+  if(!a||!b||!c)continue;
+  const lo=[Math.min(a[0],b[0],c[0]),Math.min(a[1],b[1],c[1]),Math.min(a[2],b[2],c[2])],hi=[Math.max(a[0],b[0],c[0]),Math.max(a[1],b[1],c[1]),Math.max(a[2],b[2],c[2])];
+  if(hi[1]<zone.low||lo[1]>zone.high)continue;
+  out.push({a,b,c,lo,hi});
+ }
+ return out;
+}
+function auditAABBHit(a,b){return a.lo[0]<=b.hi[0]&&b.lo[0]<=a.hi[0]&&a.lo[1]<=b.hi[1]&&b.lo[1]<=a.hi[1]&&a.lo[2]<=b.hi[2]&&b.lo[2]<=a.hi[2]}
+function auditSegmentTri(p0,p1,a,b,c){
+ const d=sub(p1,p0),e1=sub(b,a),e2=sub(c,a),h=cross(d,e2),det=dot(e1,h);
+ if(Math.abs(det)<1e-11)return false;
+ const inv=1/det,s=sub(p0,a),u=inv*dot(s,h);if(u<0||u>1)return false;
+ const q=cross(s,e1),v=inv*dot(d,q);if(v<0||u+v>1)return false;
+ const t=inv*dot(e2,q);return t>=-1e-8&&t<=1+1e-8;
+}
+function auditTriangleCross(A,B){return (
+ auditSegmentTri(A.a,A.b,B.a,B.b,B.c)||auditSegmentTri(A.b,A.c,B.a,B.b,B.c)||auditSegmentTri(A.c,A.a,B.a,B.b,B.c)||
+ auditSegmentTri(B.a,B.b,A.a,A.b,A.c)||auditSegmentTri(B.b,B.c,A.a,A.b,A.c)||auditSegmentTri(B.c,B.a,A.a,A.b,A.c));}
+function auditTriangleOverlap(radius,ulna,zone){
+ const uFaces=auditFaceBoxes(ulna.verts,ulna.faces,zone),rFaces=auditFaceBoxes(radius.verts,radius.faces,zone);
+ if(!uFaces.length||!rFaces.length)return {state:'未判定（測定対象面なし）',intersect:null,triangles:[uFaces.length,rFaces.length],tested:0,candidates:0};
+ const buckets=new Map();let links=0,tooLarge=false;
+ for(let i=0;i<uFaces.length;i++){
+  const f=uFaces[i],lo=auditBinPoint(f.lo),hi=auditBinPoint(f.hi);
+  const count=(hi[0]-lo[0]+1)*(hi[1]-lo[1]+1)*(hi[2]-lo[2]+1);
+  if(links+count>SURFACE_AUDIT_MAX_GRID_LINKS){tooLarge=true;break;}
+  for(let x=lo[0];x<=hi[0];x++)for(let y=lo[1];y<=hi[1];y++)for(let z=lo[2];z<=hi[2];z++){
+   const k=auditKey(x,y,z);if(!buckets.has(k))buckets.set(k,[]);buckets.get(k).push(i);links++;
+  }
+ }
+ let tested=0,intersection=false,candidates=0;
+ if(!tooLarge){
+  for(const f of rFaces){
+   const lo=auditBinPoint(f.lo),hi=auditBinPoint(f.hi),seen=new Set();
+   for(let x=lo[0];x<=hi[0]&&!intersection&&!tooLarge;x++)for(let y=lo[1];y<=hi[1]&&!intersection&&!tooLarge;y++)for(let z=lo[2];z<=hi[2]&&!intersection&&!tooLarge;z++){
+    for(const idx of buckets.get(auditKey(x,y,z))||[]){
+     if(seen.has(idx))continue;seen.add(idx);const other=uFaces[idx];
+     if(!auditAABBHit(f,other))continue;candidates++;tested++;
+     if(tested>SURFACE_AUDIT_MAX_PAIR_TESTS){tooLarge=true;break;}
+     if(auditTriangleCross(f,other)){intersection=true;break;}
+    }
+   }
+   if(intersection||tooLarge)break;
+  }
+ }
+ return {state:tooLarge?'未判定（計算上限）':intersection?'面交差あり':'面交差検出なし',intersect:tooLarge?null:intersection,triangles:[uFaces.length,rFaces.length],tested,candidates};
+}
+function auditVertexSampleDistance(a,b,zone){
+ // Coarse sampled vertex-to-vertex clearance. This is an upper bound to
+ // the true triangle surface distance, NOT a certified minimum gap.
+ const A=a.filter(p=>p[1]>=zone.low&&p[1]<=zone.high),B=b.filter(p=>p[1]>=zone.low&&p[1]<=zone.high);
+ if(!A.length||!B.length)return null;
+ const hopA=Math.max(1,Math.ceil(A.length/1100)),hopB=Math.max(1,Math.ceil(B.length/1100));
+ const bucket=new Map(),cell=.045;
+ for(let i=0;i<A.length;i+=hopA){const p=A[i],k=auditKey(...auditBinPoint(p,cell));if(!bucket.has(k))bucket.set(k,[]);bucket.get(k).push(p);}
+ let best=Infinity;for(let i=0;i<B.length;i+=hopB){const p=B[i],j=auditBinPoint(p,cell);
+  for(let dx=-1;dx<=1;dx++)for(let dy=-1;dy<=1;dy++)for(let dz=-1;dz<=1;dz++)for(const o of bucket.get(auditKey(j[0]+dx,j[1]+dy,j[2]+dz))||[]){const d=sub(p,o),ds=dot(d,d);if(ds<best)best=ds;}
+ }
+ // If no nearby samples, measure global sample vertices as fallback.
+ if(best===Infinity){for(let i=0;i<B.length;i+=hopB)for(let j=0;j<A.length;j+=hopA){const d=sub(B[i],A[j]);best=Math.min(best,dot(d,d));}}
+ return {gapMm:Math.sqrt(best)/atlasScale,samples:[Math.ceil(A.length/hopA),Math.ceil(B.length/hopB)]};
+}
+function surfaceAuditAt(angle){
+ const u=realMesh.ulna,r=realMesh.radius;
+ if(!realReady||!u?.sourceFaces||!r?.sourceFaces)return {ready:false,reason:'実骨メッシュを読み込めていません'};
+ const q=qa(PRONATION_AXIS_LOCAL,rad(angle));
+ // Both atlas meshes are stored relative to the same EL reference point.
+ const rV=r.sourceVertices.map(p=>surfaceRotateVertex(p,q)),uV=u.sourceVertices;
+ const sections={};
+ for(const z of SURFACE_AUDIT_ZONES){sections[z.id]={
+  ...auditTriangleOverlap({verts:rV,faces:r.sourceFaces},{verts:uV,faces:u.sourceFaces},z),
+  ...auditVertexSampleDistance(rV,uV,z)};}
+ return {ready:true,angle,sections,source:'mesh',reference: 'BodyParts3D / inferred axis',medicalClearance:false};
+}
+function auditDrawSurfaceResults(){const el=$('auditSurfaceResults');if(!el)return;
+ if(surfaceAuditBusy){el.textContent='5角度を順に検査中…（描画を止めずに計算します）';return;}
+ if(!surfaceAuditResults){el.textContent='検査前：実骨読み込み後にボタンを押してください。';return;}
+ const n=v=>v==null?'—':Number(v).toFixed(1);
+ const rows=surfaceAuditResults.map(r=>{if(!r.ready)return `<tr><td>${r.angle??'—'}°</td><td colspan="4">${r.reason||'未判定'}</td></tr>`;
+ const p=r.sections.prox,d=r.sections.dist;
+ return `<tr><td>${r.angle>0?'+':''}${r.angle}°</td><td>${n(p.gapMm)}</td><td>${p.state}</td><td>${n(d.gapMm)}</td><td>${d.state}</td></tr>`;}).join('');
+ el.innerHTML=`<div class="audit-limit">間隔はサンプル頂点間の距離の概算（mm）。「面交差検出なし」でも骨内部の包含・軟骨接触や医学的整合性は未判定です。</div><table id="auditSurfaceTable"><thead><tr><th>回旋</th><th>近位距離</th><th>近位面</th><th>遠位距離</th><th>遠位面</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+async function runForearmSurfaceAudit(){if(surfaceAuditBusy)return;
+ if(!realReady||!realMesh.ulna?.sourceFaces||!realMesh.radius?.sourceFaces){$('auditSurfaceResults').textContent='実骨メッシュを取得できません。読み込み後に再実行してください。';return;}
+ surfaceAuditBusy=true;const revision=++surfaceAuditRevision;const button=$('auditSurfaceRun');button.disabled=true;auditDrawSurfaceResults();
+ const results=[];for(const angle of [-90,-45,0,45,90]){
+  // Yield between angles to keep the full-screen viewport responsive.
+  await new Promise(resolve=>setTimeout(resolve,20));
+  if(revision!==surfaceAuditRevision)break;
+  try{results.push(surfaceAuditAt(angle));}catch(err){results.push({ready:false,angle,reason:'検査中断：'+String(err).slice(0,120)});}
+ }
+ surfaceAuditResults=results;surfaceAuditBusy=false;button.disabled=false;auditDrawSurfaceResults();
+}
+
 function renderRadialAudit(){
  const layer=$('radialAuditOverlay');
  if(!$('showRadialAudit')?.checked||!realReady){layer.style.display='none';return;}
@@ -1438,11 +1567,10 @@ function renderRadialAudit(){
 }
 function updateRadialAuditMetrics(){
  const el=$('radialAuditMetrics');if(!el)return;
- const testAngles=[-90,-45,0,45,90];
  document.querySelectorAll('[data-radial-test]').forEach(b=>b.classList.toggle('active',Number(b.dataset.radialTest)===settings.pronation));
  if(!realReady||!poseCheck.radialHeadNow){el.textContent='骨格メッシュの読み込み後に数値を表示します。';return;}
  const mm=v=>Number.isFinite(v)?v.toFixed(2):'—';
- el.textContent=`現在 ${settings.pronation>0?'+':''}${settings.pronation}° ／ 橈骨頭の設定軸からのずれ ${mm(poseCheck.radialHeadError/atlasScale)} mm ／ 遠位橈尺の参照点距離 ${mm(poseCheck.distalGapMm)} mm（0°との差 ${mm(poseCheck.distalGapDeltaMm)} mm）。これはモデル内部の計算値で、関節面の接触・骨同士の衝突を検証した値ではありません。`;
+ el.textContent=`現在 ${settings.pronation>0?'+':''}${settings.pronation}° ／ 推定軸上の参照点距離 ${mm(poseCheck.distalGapMm)} mm（0°との差 ${mm(poseCheck.distalGapDeltaMm)} mm）。この距離は軸回転の定義上ほぼ一定で、関節面の正常性を保証しません。骨メッシュの検査は下のボタンから実行できます。`;
 }
 function render(){updateDirectionGuide();let w=canvas.clientWidth,h=canvas.clientHeight,pr=Math.min(window.devicePixelRatio||1,2);if(canvas.width!==Math.floor(w*pr)||canvas.height!==Math.floor(h*pr)){canvas.width=Math.floor(w*pr);canvas.height=Math.floor(h*pr)}lastW=w;lastH=h;gl.viewport(0,0,canvas.width,canvas.height);proj=ortho(state.zoom,w/h,.01,100);let eye=add(state.target,[18*Math.sin(state.yaw)*Math.cos(state.pitch),18*Math.sin(state.pitch),18*Math.cos(state.yaw)*Math.cos(state.pitch)]);view=lookAt(eye,state.target);pv=mm(proj,view);drawScene();labels();renderRadialAudit();$('viewerFallback').classList.add('hidden');$('launchTip').style.display='none'}
 let autoFit=true;let zoomScale=1;
@@ -1617,6 +1745,7 @@ $('cameraAuto').addEventListener('change',()=>{if($('cameraAuto').checked){autoF
 $('showDirection').addEventListener('change',()=>{if($('showDirection').checked)pingDirectionGuide(2400);else directionGuideUntil=0;request()});
 $('elbow').addEventListener('input',()=>{if($('showDirection').checked)pingDirectionGuide(1600)});
 $('showRadialAudit').addEventListener('change',()=>{updateRadialAuditMetrics();request()});
+$('auditSurfaceRun').addEventListener('click',runForearmSurfaceAudit);
 document.querySelectorAll('[data-radial-test]').forEach(button=>button.addEventListener('click',()=>{
  $('pronation').value=button.dataset.radialTest;
  update();
@@ -1788,7 +1917,7 @@ viewerRegion.addEventListener('touchcancel',()=>{clearHold();stopDirectDrag()},{
 window.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('full-3d')){if(document.body.classList.contains('controls-open'))setControlsOpen(false);else setImmersive(false)}});
 
 let pointers=new Map(),prevDistance=0,prevCenter=null;
-// v0.38: 3-finger lateral swipe provides quick axial articulation without a
+// v0.39: 3-finger lateral swipe provides quick axial articulation without a
 // separate tool mode. Multi-touch starts only once three TOUCH pointers land.
 // Lock camera/2-finger gestures until every finger is lifted to prevent jumps.
 let tripleSwipe=null,tripleGestureLock=false;
@@ -1908,7 +2037,7 @@ window.__labJointErrors=()=>{
  return {ready:true,wristErrorMm:handWristErrorMm,thumbCMCErrorMm,thumbMCPErrorMm,thumbIPErrorMm,distalGapDeltaMm:poseCheck.distalGapDeltaMm,
    palmNormal:handPivot.thumbPalmNormal,thumbFlexAxis:handPivot.thumbFlexAxis,thumbFlexSign:handPivot.thumbFlexSign};
 };
-window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.38',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
+window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.39',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
 window.__labMuscles=()=>({...muscleDiagnostics,enabled:settings.muscles,deltoidEnabled:settings.deltoid,deltoidGeometryCount:['deltoidAnterior','deltoidMiddle','deltoidPosterior'].filter(n=>Boolean(geomDynamic[n])).length,brachioradialisEnabled:settings.brachioradialis,brachioradialisGeometryCount:['brachioradialis','tendonBR'].filter(n=>Boolean(geomDynamic[n])).length,pronatorTeresEnabled:settings.pronatorTeres,pronatorTeresGeometryCount:['pronatorTeresHumeral','pronatorTeresUlnar','tendonPT'].filter(n=>Boolean(geomDynamic[n])).length,supinatorEnabled:settings.supinator,supinatorGeometryCount:['supinatorSuperficial','supinatorDeep','tendonSupinator'].filter(n=>Boolean(geomDynamic[n])).length,flexorCarpiRadialisEnabled:settings.flexorCarpiRadialis,flexorCarpiRadialisGeometryCount:['flexorCarpiRadialis','tendonFCR'].filter(n=>Boolean(geomDynamic[n])).length,palmarisLongusEnabled:settings.palmarisLongus,flexorDigitorumSuperficialisEnabled:settings.flexorDigitorumSuperficialis,flexorDigitorumProfundusEnabled:settings.flexorDigitorumProfundus,palmarisLongusGeometryCount:['palmarisLongus','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].filter(n=>Boolean(geomDynamic[n])).length,flexorCarpiUlnarisEnabled:settings.flexorCarpiUlnaris,flexorCarpiUlnarisGeometryCount:['flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','tendonFCU','pisohamateBand','pisometacarpalBand'].filter(n=>Boolean(geomDynamic[n])).length,realReady,exaggerated:settings.muscleEmphasis});
 window.__labFCU=()=>({enabled:settings.flexorCarpiUlnaris,handEnabled:settings.hand,realReady,handReady,geometryCount:['flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','tendonFCU','pisohamateBand','pisometacarpalBand'].filter(id=>Boolean(geomDynamic[id])).length,data:muscleDiagnostics.flexorCarpiUlnaris||{visible:false}});
 window.__labPL=()=>({enabled:settings.palmarisLongus,handEnabled:settings.hand,realReady,handReady,geometryCount:['palmarisLongus','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].filter(n=>Boolean(geomDynamic[n])).length,data:muscleDiagnostics.palmarisLongus||{visible:false}});
@@ -1919,7 +2048,8 @@ window.__labFDP=()=>({enabled:settings.flexorDigitorumProfundus,handEnabled:sett
 window.__labFCR=()=>({enabled:settings.flexorCarpiRadialis,handEnabled:settings.hand,realReady,handReady,geometryCount:['flexorCarpiRadialis','tendonFCR'].filter(n=>Boolean(geomDynamic[n])).length,data:muscleDiagnostics.flexorCarpiRadialis||{visible:false}});
 window.__labDirect=()=>({immersive:document.body.classList.contains('full-3d'),controlsOpen:document.body.classList.contains('controls-open'),grabMode,twistMode,invertTwistSwipe:$('invertTwistSwipe').checked,pairTwist:twistPair?.field||null,tripleSwipe:tripleSwipe?.field||null,tripleGestureLock,active:directDrag?.field||null,menu:$('directJointChoice').value,handles:skeletalHandles().map(h=>({field:h.id,from:h.a,to:h.b}))});
  window.__labCamera=()=>({gesture:cameraGesture,invertedSwipe:$('invertRotationSwipe').checked,zoom:state.zoom,zoomScale,cameraAuto:$('cameraAuto').checked,target:state.target,yaw:state.yaw,pitch:state.pitch,autoFit,canvas:[canvas.clientWidth,canvas.clientHeight]});
-window.__labForearmAudit=()=>({ready:realReady,pronation:settings.pronation,distalSeparationMm:poseCheck.distalGapMm??null,distalDifferenceMm:poseCheck.distalGapDeltaMm??null,radialHeadAxisErrorMm:realReady?poseCheck.radialHeadError/atlasScale:null,markerOverlay:$('showRadialAudit').checked,contactSolver:false,collisionsTested:false});
+window.__labSurfaceAudit=()=>({ready:realReady,busy:surfaceAuditBusy,results:surfaceAuditResults,at:surfaceAuditAt,run:runForearmSurfaceAudit,segmentTriangle:auditSegmentTri,triangleCross:auditTriangleCross});
+window.__labForearmAudit=()=>({ready:realReady,pronation:settings.pronation,distalSeparationMm:poseCheck.distalGapMm??null,distalDifferenceMm:poseCheck.distalGapDeltaMm??null,radialHeadAxisErrorMm:realReady?poseCheck.radialHeadError/atlasScale:null,markerOverlay:$('showRadialAudit').checked,contactSolver:false,collisionsTested:!!surfaceAuditResults});
 window.__labJoints=()=>({...poseCheck,realReady,frontDirection:realReady?'world -Z':'world +Z',elbowHingeSign:realReady?ELBOW_FLEX_SIGN*(settings.reverseElbow?-1:1):-(settings.reverseElbow?-1:1),elbowCheck:window.__elbowVerification});
 window.__labBounds=()=>{const pts=poseBoundingPoints();let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;for(const p of pts){const q=[...p,1],o=[0,0,0,0];for(let r=0;r<4;r++)o[r]=pv[r]*q[0]+pv[r+4]*q[1]+pv[r+8]*q[2]+pv[r+12]*q[3];const x=(.5+.5*o[0]/o[3])*lastW,y=(.5-.5*o[1]/o[3])*lastH;minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxY=Math.max(maxY,y)}return {minX,maxX,minY,maxY,width:lastW,height:lastH}};
 // v0.33: a full-viewport anatomy canvas with Geographica-style edge controls.
