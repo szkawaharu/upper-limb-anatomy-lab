@@ -903,7 +903,7 @@ function updateV43Forearm(){
    return [...p.slice(0,3),p[3]*taper*(inner?1+.13*activity*emphasis:1)*(deep?.87:1)];
   });
   if(id==='pronatorQuadratus')gdynamic(id,v44QuadratusSheet(pts));
-  else gdynamic(id,tube(shaped,{sides:14,steps:7,ellipticity:deep?.45:.58,rough:0}));
+  else gdynamic(id,tube(shaped,{sides:14,steps:5,ellipticity:deep?.45:.58,rough:0,linear:true}));
  };
  const makeTendon=(id,pts)=>{
   if(!muscleVisible(id)||pts.some(p=>!p)){clean(id);return}
@@ -931,15 +931,51 @@ function updateV43Forearm(){
   }
   gdynamic(id,tube(samples,{sides:8,steps:1,linear:true,ellipticity:.68,rough:0}));
  };
- const stats=[];
+ // Convex smoothing preserves endpoints and prevents cubic interpolation from
+ // crossing far outside the control polyline at a sharply flexed elbow.
+ const smoothGuide=guide=>{
+  if(guide.length<3)return guide;
+  const out=[guide[0]];
+  for(let i=0;i<guide.length-1;i++){
+   const a=guide[i],b=guide[i+1];
+   out.push(a.map((v,k)=>mix(v,b[k],.25)),a.map((v,k)=>mix(v,b[k],.75)));
+  }
+  out.push(guide.at(-1));
+  return out;
+ };
+ const guidedBelly=(id,specs,pts)=>{
+  if(id==='pronatorQuadratus')return pts; // four corners, not a muscle rail
+  const owner=name=>name==='bridge'?'ulna':name;
+  const first=specs[0],next=specs[1];
+  if(first?.[0]!=='humerus'||!next||!realPose[owner(next[0])])return smoothGuide(pts);
+  const a=pts[0],b=pts[1],distance=len(sub(a,b));
+  if(distance<.025)return smoothGuide(pts);
+  const posterior=/^extensor|^anconeus/.test(id);
+  const dir=posterior?mul(ANATOMICAL_ANTERIOR,-1):ANATOMICAL_ANTERIOR;
+  const onH=qr(realPose.humerus[0],dir),onF=qr(realPose[owner(next[0])][0],dir);
+  const average=add(onH,onF),outside=len(average)>.1?norm(average):norm(onH);
+  const raised=Math.min(.018,distance*.14);
+  const interp=t=>[...add(
+   add(mul(a.slice(0,3),1-t),mul(b.slice(0,3),t)),
+   mul(outside,raised*Math.sin(Math.PI*t))
+  ),mix(a[3],b[3],t)];
+  return smoothGuide([a,interp(.30),interp(.68),...pts.slice(1)]);
+ };
+ const stats=[],seamDistances=[];
  for(const [id,belly,tendons] of tracks){
-  const show=muscleVisible(id),pts=show?belly.map(point):[];
+  const show=muscleVisible(id),raw=show?belly.map(point):[];
+  const pts=show?guidedBelly(id,belly,raw):[];
   if(show)makeMuscle(id,pts);else clean(id);
   for(const [tendonId,tail] of tendons){
-   if(show&&muscleVisible(tendonId)&&settings.hand)makeTendon(tendonId,[pts.at(-1),...tail.map(point)]);
-   else clean(tendonId);
+   if(show&&muscleVisible(tendonId)&&settings.hand){
+    const path=[pts.at(-1),...tail.map(point)];
+    seamDistances.push({muscle:id,tendon:tendonId,gap:len(sub(pts.at(-1).slice(0,3),path[0].slice(0,3)))});
+    makeTendon(tendonId,path);
+   }else clean(tendonId);
   }
-  stats.push({id,shown:show,tendonCount:tendons.filter(([n])=>Boolean(geomDynamic[n])).length,vertexGuideCount:belly.length});
+  stats.push({id,shown:show,tendonCount:tendons.filter(([n])=>Boolean(geomDynamic[n])).length,
+   vertexGuideCount:pts.length,rawControlCount:belly.length,
+   firstGuideGap:show&&pts.length>1?len(sub(pts[0],pts[1])):null});
  }
  // Dorsal digital expansions; right/left slips follow separate finger bones.
  for(const [tag,prox,mid,dist] of [
@@ -956,8 +992,10 @@ function updateV43Forearm(){
    ]);
   }else clean(id);
  }
- v43ForearmDiagnostics={version:'v0.44',layer:settings.forearmLayer,stats,handReady,
+ v43ForearmDiagnostics={version:'v0.46',layer:settings.forearmLayer,stats,handReady,
   flatQuadratus:true,retinacularCorridors:true,dorsalExpansionBands:8,
+  seamCount:seamDistances.length,maximumSeamGap:Math.max(0,...seamDistances.map(x=>x.gap)),
+  elbowGuide:'moving-bone interpolated surface rail (approximate)',
   forceSolver:false,contactSolver:false,landmarks:'approximate atlas surface points'};
  return v43ForearmDiagnostics;
 }
