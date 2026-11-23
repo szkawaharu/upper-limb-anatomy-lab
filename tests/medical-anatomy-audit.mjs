@@ -41,6 +41,6 @@ for(const id of ['medicalStudyPanel','medicalStudySelect','medicalStudyFields','
 assert.ok(script.includes('medicalFocusPrevious'),'previous visibility state should be restored');
 assert.ok(script.includes("if(medicalFocus&&MUSCLE_ALL.includes(name)"),'focus filter missing');
 assert.ok(html.includes('医学部生向け教材としての形態・運動学的検証は未完了'),'validation limits missing');
-assert.ok(html.includes('上肢3D解剖ラボ · v0.51'),'v0.51 version missing');
+assert.ok(html.includes('上肢3D解剖ラボ · v0.53'),'v0.53 version missing');
 assert.ok(script.includes('1+.26*contractionRate*exaggeration'),'bulge indicator must match biceps visual coefficient');
-console.log('PASS v0.51: medical anatomy regression, 13 facts records + missing muscle honesty + source links + syntax');
+console.log('PASS v0.53: medical anatomy regression, 13 facts records + missing muscle honesty + source links + syntax');
