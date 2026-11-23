@@ -318,6 +318,12 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
  <button id="restoreDisplayState" type="button" disabled>直前の表示に戻す</button>
 </div>
 <div id="displayModeStatus" class="display-mode-status" role="status" aria-live="polite">筋肉・腱：すべて表示する設定</div>
+<details class="diagnostic-fold"><summary>筋肉・腱の接合確認（v0.46）</summary>
+ <div class="diagnostic-stack">
+  <button id="runAttachmentAudit" type="button" style="width:100%;margin-top:8px">現在の関節角度で接合点を点検</button>
+  <div id="attachmentAuditResult" class="detail" role="status" aria-live="polite">筋腹と腱の端点一致だけを確認します。骨との接触・滑走・張力の検査ではありません。</div>
+ </div>
+</details>
 <div class="toggles"><label class="switch"><input id="hand" type="checkbox" checked>手首・手の骨格を表示（27骨）</label><label class="switch"><input id="sync" type="checkbox" checked>肩甲骨・鎖骨を連動</label><label class="switch"><input id="muscles" type="checkbox" checked>上腕の筋肉・腱（二頭筋ほか）</label><label class="switch"><input id="deltoid" type="checkbox" checked>三角筋（前・中・後部）</label><label class="switch"><input id="brachioradialis" type="checkbox" checked>腕橈骨筋（前腕・単独表示可）</label><label class="switch"><input id="pronatorTeres" type="checkbox" checked>円回内筋（前腕・単独表示可）</label><label class="switch"><input id="supinator" type="checkbox" checked>回外筋（橈骨近位部・単独表示可）</label><label class="switch"><input id="flexorCarpiRadialis" type="checkbox" checked>橈側手根屈筋＋乳白色の腱（掌屈・橈屈）</label><label class="switch"><input id="flexorCarpiUlnaris" type="checkbox" checked>尺側手根屈筋＋腱（掌屈・尺屈／単独表示可）</label><label class="switch"><input id="palmarisLongus" type="checkbox" checked>長掌筋＋長い腱・手掌腱膜（単独表示可／個人差あり）</label><label class="switch"><input id="flexorDigitorumSuperficialis" type="checkbox" checked>浅指屈筋＋4本の腱（PIP屈曲／独立表示可）</label><label class="switch"><input id="flexorDigitorumProfundus" type="checkbox" checked>深指屈筋＋指先へ伸びる4本の腱（DIP屈曲／独立表示可）</label><label class="switch"><input id="rib" type="checkbox">胸郭の参照表示</label><label class="switch"><input id="showlabels" type="checkbox">骨の名称ラベル</label><label class="switch"><input id="showDirection" type="checkbox">側面の胸側・背側ガイド（短時間表示）</label></div>
 <div class="forearm-layer-select">
 <div class="sectioncap">前腕の筋層（表示フィルタ）</div>
@@ -1681,7 +1687,7 @@ function updateRealMuscles(){
   ['tendonBprox','bicepsLong','proximal'],['tendonB2','bicepsShort','proximal'],['tendonT2','triceps','proximal']]
   .map(([fromName,toName,kind])=>{
    const a=upperPaths[fromName],b=upperPaths[toName];
-   const from=a?.end,to=kind==='distal'?b?.start:b?.start;
+   const from=a?.end,to=b?.start;
    return {from:fromName,to:toName,kind,gap:from&&to?len(sub(from,to)):null};
   });
  const continuity={seams,upperMaxGap:Math.max(0,...seams.map(x=>x.gap||0)),
@@ -2462,6 +2468,14 @@ window.__labForearm=()=>({...v43ForearmDiagnostics,available:V43_CONFIG.length,d
 window.__labContinuity=()=>({ready:realReady,elbow:settings.elbow,pronation:settings.pronation,
  ...muscleDiagnostics.continuity,
  limitations:'endpoint equality only; collision, wrapping and force need separate validation'});
+$('runAttachmentAudit').addEventListener('click',()=>{
+ const a=window.__labContinuity(),out=$('attachmentAuditResult');
+ if(!a.ready){out.textContent='骨格の読み込み後に点検できます。';return}
+ const mm=x=>Number.isFinite(x)?(x/atlasScale).toFixed(2)+' mm':'未評価';
+ out.textContent='肘 '+a.elbow+'°／回内外 '+a.pronation+'°。上腕の接合点 最大差 '+mm(a.upperMaxGap)+
+  '、前腕の接合点 最大差 '+mm(a.forearmMaxGap)+
+  '。端点位置のみの検査です。骨への貫通・腱の滑走・張力は未検査。';
+});
 window.__labMuscles=()=>({...muscleDiagnostics,enabled:settings.muscles,deltoidEnabled:settings.deltoid,deltoidGeometryCount:['deltoidAnterior','deltoidMiddle','deltoidPosterior'].filter(n=>Boolean(geomDynamic[n])).length,brachioradialisEnabled:settings.brachioradialis,brachioradialisGeometryCount:['brachioradialis','tendonBR'].filter(n=>Boolean(geomDynamic[n])).length,pronatorTeresEnabled:settings.pronatorTeres,pronatorTeresGeometryCount:['pronatorTeresHumeral','pronatorTeresUlnar','tendonPT'].filter(n=>Boolean(geomDynamic[n])).length,supinatorEnabled:settings.supinator,supinatorGeometryCount:['supinatorSuperficial','supinatorDeep','tendonSupinator'].filter(n=>Boolean(geomDynamic[n])).length,flexorCarpiRadialisEnabled:settings.flexorCarpiRadialis,flexorCarpiRadialisGeometryCount:['flexorCarpiRadialis','tendonFCR'].filter(n=>Boolean(geomDynamic[n])).length,palmarisLongusEnabled:settings.palmarisLongus,flexorDigitorumSuperficialisEnabled:settings.flexorDigitorumSuperficialis,flexorDigitorumProfundusEnabled:settings.flexorDigitorumProfundus,palmarisLongusGeometryCount:['palmarisLongus','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].filter(n=>Boolean(geomDynamic[n])).length,flexorCarpiUlnarisEnabled:settings.flexorCarpiUlnaris,flexorCarpiUlnarisGeometryCount:['flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','tendonFCU','pisohamateBand','pisometacarpalBand'].filter(n=>Boolean(geomDynamic[n])).length,realReady,exaggerated:settings.muscleEmphasis});
 window.__labFCU=()=>({enabled:settings.flexorCarpiUlnaris,handEnabled:settings.hand,realReady,handReady,geometryCount:['flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','tendonFCU','pisohamateBand','pisometacarpalBand'].filter(id=>Boolean(geomDynamic[id])).length,data:muscleDiagnostics.flexorCarpiUlnaris||{visible:false}});
 window.__labPL=()=>({enabled:settings.palmarisLongus,handEnabled:settings.hand,realReady,handReady,geometryCount:['palmarisLongus','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].filter(n=>Boolean(geomDynamic[n])).length,data:muscleDiagnostics.palmarisLongus||{visible:false}});
