@@ -1177,6 +1177,128 @@ function updateV43Forearm(){
   forceSolver:false,contactSolver:false,landmarks:'approximate atlas surface points'};
  return v43ForearmDiagnostics;
 }
+
+// v0.51 posterior scapular fans. Scapular fossa anchors are sampled from
+// posterior-most nearby vertices of the loaded BodyParts3D scapula, rather
+// than arbitrary free-floating tubes. Fossa borders and tendon footprints
+// are anatomical approximations, NOT measured or validated attachments.
+const scapularSurfaceCache=new Map();
+function scapularPosteriorRestPoint(atlasXYZ){
+ const key=atlasXYZ.map(x=>x.toFixed(3)).join(':');
+ if(scapularSurfaceCache.has(key))return scapularSurfaceCache.get(key);
+ const vertices=realSurfaceVertices.scapula, target=sub(atlasToWorld(atlasXYZ),realAnchors.AC);
+ if(!vertices||!vertices.length)throw Error('v0.51: posterior scapula mesh not available');
+ let minD2=Infinity;
+ for(const v of vertices){
+  const d=(v[0]-target[0])**2+(v[1]-target[1])**2;
+  if(d<minD2)minD2=d;
+ }
+ // Follow the posterior surface, not the anterior sheet of this thin bone.
+ const tolerance=Math.max(.00013,minD2*.35);
+ let best=null;
+ for(const v of vertices){
+  const d=(v[0]-target[0])**2+(v[1]-target[1])**2;
+  if(d<=minD2+tolerance&&(!best||v[2]>best[2]))best=v;
+ }
+ if(!best)throw Error('v0.51: no scapular posterior surface vertex');
+ const p=best.slice();
+ scapularSurfaceCache.set(key,p);
+ return p;
+}
+const scapularPointWorld=atlasXYZ=>{
+ const local=scapularPosteriorRestPoint(atlasXYZ);
+ const [q,origin]=realPose.scapula;
+ return transform(q,origin,local);
+};
+function buildScapularClosedSurface(rows,start,end){
+ const strips=rows.slice(start,end+1);
+ const nr=strips.length,nc=strips[0].length,vertex=[],faces=[];
+ if(nr<2||nc<2)throw Error('v0.51 invalid scapular strip grid');
+ for(const side of [1,-1])
+  for(const row of strips)for(const p of row)
+   vertex.push(add(p.center,mul(p.normal,side*p.thickness)));
+ const offset=nr*nc;
+ for(let r=0;r<nr-1;r++)for(let c=0;c<nc-1;c++){
+  const a=r*nc+c,b=a+nc,d=a+1,e=b+1;
+  faces.push(a,b,d,d,b,e);
+  faces.push(offset+a,offset+d,offset+b,offset+d,offset+e,offset+b);
+ }
+ const boundary=[];
+ for(let c=0;c<nc;c++)boundary.push(c);
+ for(let r=1;r<nr;r++)boundary.push(r*nc+nc-1);
+ for(let c=nc-2;c>=0;c--)boundary.push((nr-1)*nc+c);
+ for(let r=nr-2;r>0;r--)boundary.push(r*nc);
+ for(let i=0;i<boundary.length;i++){
+  const a=boundary[i],b=boundary[(i+1)%boundary.length];
+  faces.push(a,b,offset+a,b,offset+b,offset+a);
+ }
+ return mesh(vertex,faces);
+}
+let scapularDiagnostics={version:'v0.51',verified:false,muscles:[],maximumJointGap:0};
+function updateScapularMuscles(){
+ if(!realReady)return;
+ // All four meshes are regenerated on each shoulder-pose change; the posterior
+ // origins move with scapula and insertions with the humerus.
+ const active=settings.scapularMuscles;
+ if(!active){
+  for(const id of SCAPULAR_PARTS){
+   const g=geomDynamic[id];if(!g)continue;
+   if(!SOFTWARE){gl.deleteBuffer(g.vbo);gl.deleteBuffer(g.nbo);gl.deleteBuffer(g.ibo)}
+   delete geomDynamic[id];
+  }
+  scapularDiagnostics={version:'v0.51',verified:false,muscles:[],maximumJointGap:0,hidden:true};
+  return;
+ }
+ const qScap=realPose.scapula[0],qHum=realPose.humerus[0];
+ const backScap=qr(qScap,[0,0,1]),backHumerus=qr(qHum,[0,0,1]);
+ const qNormal=t=>norm(add(mul(backScap,1-t),mul(backHumerus,t)));
+ const stations=[0,.14,.28,.43,.60,.70,.78,.88,1];
+ const split=6, lanes=5, stats=[];
+ const lerp3=(a,b,t)=>a.map((v,i)=>mix(v,b[i],t));
+ for(const spec of SCAPULAR_SPEC){
+  const rows=[];
+  for(const t of stations){
+   const row=[];
+   for(let j=0;j<lanes;j++){
+    const u=j/(lanes-1);
+    const originXYZ=lerp3(spec.originA,spec.originB,u);
+    const edgeXYZ=lerp3(spec.exitA,spec.exitB,u);
+    const humXYZ=lerp3(spec.insertA,spec.insertB,u);
+    const edge=scapularPointWorld(edgeXYZ);
+    const hum=attachedAtlas('humerus',humXYZ,true);
+    let p;
+    if(t<=.60){
+     p=scapularPointWorld(lerp3(originXYZ,edgeXYZ,t/.60));
+    }else{
+     p=lerp3(edge,hum,(t-.60)/.40);
+    }
+    // Add mild posterior bulge above the fossa (not a collision solver).
+    // Stop exactly at the humeral insertion at t=1.
+    const gap=t===1?0:.008+.010*Math.sin(Math.PI*t);
+    const muscleDepth=spec.thickness*Math.sin(Math.PI*clamp(t/.95,0,1));
+    const thickness=t>.78?.0035+.008*(1-t)/.22:.004+muscleDepth*.45;
+    row.push({center:add(p,mul(qNormal(t),gap)),normal:qNormal(t),thickness});
+   }
+   rows.push(row);
+  }
+  const tendonId='tendon'+spec.id[0].toUpperCase()+spec.id.slice(1);
+  const muscle=buildScapularClosedSurface(rows,0,split);
+  const tendon=buildScapularClosedSurface(rows,split,rows.length-1);
+  gdynamic(spec.id,muscle);
+  gdynamic(tendonId,tendon);
+  // Both surfaces use the exact SAME station, for zero numerical seam drift.
+  const seamGap=Math.max(...rows[split].map(p=>len(sub(p.center,p.center))));
+  const insertionPositions=rows.at(-1).map(p=>p.center);
+  stats.push({id:spec.id,originCount:lanes,rendered:true,scapularSurfaceSnapped:true,
+   humerusInsertionTracks:insertionPositions.every(p=>p.every(Number.isFinite)),
+   sharedStationGap:seamGap,anatomicalFootprintValidated:false,
+   originTrack:rows[0].map(p=>p.center.slice()),endTrack:insertionPositions.map(p=>p.slice())});
+ }
+ scapularDiagnostics={version:'v0.51',verified:false,muscles:stats,
+  maximumJointGap:Math.max(0,...stats.map(s=>s.sharedStationGap)),
+  scapulaAndHumerusTrackIndependently:true,pressureOrCollisionEvaluated:false};
+}
+
 function updateRealMuscles(){
  if(!realReady)return;
  if(!settings.muscles&&!settings.deltoid&&!settings.brachioradialis&&!settings.pronatorTeres&&!settings.supinator&&!settings.flexorCarpiRadialis&&!settings.flexorCarpiUlnaris&&!settings.palmarisLongus&&!settings.flexorDigitorumSuperficialis&&!settings.flexorDigitorumProfundus&&!V43_CONFIG.some(c=>settings[c.id])){
