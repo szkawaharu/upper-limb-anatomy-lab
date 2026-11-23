@@ -182,7 +182,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.34</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.34</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.35</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.35</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
@@ -192,7 +192,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.34</div>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.35</div>
 <nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
  <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
  <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
@@ -207,7 +207,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 
 </div>
 <section class="side" id="labTools">
-<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.34</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
+<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.35</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
 <details class="edge-help control-fold"><summary>操作方法<span class="fold-note">ヘルプ</span></summary><div class="fold-body"><div class="immersive-tips">操作：1本指ドラッグで視点回転（初期設定は逆方向）。<strong>骨を約0.4秒長押し → ドラッグで関節操作。右端の「✋」は曲げ伸ばし、「↻」は前腕の回内・回外と上腕の内旋・外旋。↻では骨を左右にドラッグするか、2本指でひねって調整できます。iPhoneで選択メニューが出る場合は「✋」または「↻」をONにして直接ドラッグ</strong>。2本指は視点移動・ピンチ。選びにくい関節は上部メニューで指定できます。</div></div></details><div class="note" id="launchTip"><strong>iPhoneでモデルが表示されない場合</strong>：HTMLファイルのプレビューではJavaScriptが実行されない場合があります。HTMLファイルをWebサイトとして公開し、SafariでURLを開いてください。下の操作ボタンはブラウザ版で機能します。</div>
 <details class="control-fold"><summary>表示倍率・視点操作<span class="fold-note">カメラ</span></summary><div class="fold-body"><div class="panel zoom-panel"><div class="panelhead"><h2>表示倍率</h2><span class="sectioncap">CAMERA</span></div>
 <div class="control zoom-control"><label for="zoomLevel">拡大・縮小 <output id="zoomValue">100%</output></label>
@@ -215,7 +215,9 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 <div class="ends"><span>小さく 65%</span><span>大きく 240%</span></div></div>
 <label class="switch"><input id="cameraAuto" type="checkbox" checked>姿勢変更時に自動で中央に収める</label>
 <div class="control"><label>3D画面の操作モード <output id="camModeLabel">回転</output></label><div class="btnrow" role="group" aria-label="指1本で行う操作"><button id="camRotate" type="button" class="active" aria-pressed="true">↻ 1本指で回転</button><button id="camPan" type="button" aria-pressed="false">✥ 1本指で移動</button></div><label class="switch"><input id="invertRotationSwipe" type="checkbox" checked>視点回転のスワイプ方向を逆にする（初期設定）</label>
-<div class="detail">1本指でモデルを回す方向だけ反転します。「✋ つかむ」の関節操作、2本指の移動・ピンチは変わりません。</div>
+<div class="detail">1本指でモデルを回す方向だけ反転します。関節の操作方向は別の設定です。</div>
+<label class="switch"><input id="invertTwistSwipe" type="checkbox" checked>↻ ひねる操作のスワイプ方向を逆にする（初期設定）</label>
+<div class="detail">前腕の回内・回外／上腕の内旋・外旋で、左右ドラッグと2本指のひねりを反転します。チェックを外すとv0.34の操作方向に戻ります。「✋ つかむ」の曲げ伸ばし、視点回転、ピンチズームは変わりません。</div>
 <div class="detail">2本指で上下左右に移動・ピンチで拡大縮小。移動中は自動中央合わせを解除し、移動位置を維持します。</div></div>
 <div class="detail">倍率バー・＋−ボタン・ピンチでズーム。1本指で回転／移動を切り替え、2本指では常に移動＋ピンチできます。手動操作で自動中央合わせはOFFになります。「全体を表示」でリセット。</div></div></div></details>
 <details class="control-fold"><summary>姿勢プリセット・視点<span class="fold-note">9種類</span></summary><div class="fold-body"><div class="panel compact-pose-panel"><div class="panelhead"><h2>姿勢・視点</h2><span class="sectioncap">POSTURE / VIEW</span></div>
@@ -1208,7 +1210,7 @@ async function loadRealBones(){
  try{
    const result=await Promise.all(ids.map(x=>loadOneBone(x,REAL_MODELS[x])));
    ids.forEach((x,i)=>realMesh[x]=result[i]);realReady=true;makeRealPose();makeHandPose();loadRealHand().catch(e=>{handModelWarning=String(e);updateHandStatus();refreshModelStatus()});updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateAnteriorStatus();autoFit=true;fitPose();request();
-   if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.34）';refreshModelStatus();
+   if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.35）';refreshModelStatus();
    const n=$('boneModeNote');if(n)n.textContent='骨の形はBodyParts3Dの公開解剖学的メッシュに変更しました。関節の回転中心・肩甲上腕リズムは推定値です。前腕の回内回外は橈骨頭から尺骨遠位部への斜め軸を用いた近似です。関節面の衝突や靱帯による拘束は未実装です。上腕二頭筋・三頭筋・上腕筋は骨表面に沿う近似経路を使い、肘角度に応じた簡易収縮・伸長を追加しました。三角筋は他の筋肉とは独立にON/OFFでき、3つの束を推定付着点に結び付けた近似表示です。腕橈骨筋も独立ON/OFFができ、上腕骨外側から橈骨遠位部までを推定経路で結び、肘屈曲・前腕回内回外に追従します。回外筋は上腕骨外側・尺骨近位部から橈骨近位部を包む概形として追加し、円回内筋と比較できます。橈側手根屈筋の腱は乳白色の細い楕円断面で、橈骨掌側から舟状骨・大菱形骨付近を通って第2中手骨基部へ至る推定経路で表示します。尺側手根屈筋は尺骨の掌側・尺側に沿い、豆状骨に腱が連結し、有鉤骨・第5中手骨への線維性連結を近似表示します。関節付近の滑走・骨との接触計算は行っていません。長掌筋は内側上顆→手掌腱膜の模式経路として追加しました（個体差・欠損あり）。浅指屈筋は上腕骨内側上顆付近から掌側前腕へ伸び、中節骨へ左右二分する4本の腱を模式表示します。筋・腱の正確な形状や付着点、筋張力は未検証です。腱の滑走や厳密な筋体積保存は未実装です。';
  }catch(e){modelWarning=String(e);console.warn('Showing safe procedural fallback because real bones did not load:',e);
    if(loading)loading.innerHTML='近似モデルを表示中<br>実骨データの取得に失敗しました';refreshModelStatus();updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();
@@ -1509,6 +1511,9 @@ function pickTwistJoint(clientX,clientY){
  // Don't rotate anything if the user touches empty space.
  return best<=Math.max(42,Math.min(82,Math.min(rect.width,rect.height)*.17))?field:null;
 }
+// v0.35: twist-only input direction, deliberately independent of camera swipe.
+// Default is reversed per iPhone feedback; unchecking restores the v0.34 mapping.
+function twistSwipeSign(){return $('invertTwistSwipe').checked?-1:1;}
 function clearHold(){if(holdTimer!==null){clearTimeout(holdTimer);holdTimer=null}holdCandidate=null;}
 function beginJointDrag(pointerId,field,start){
  if(!field||pointers.size!==1||!pointers.has(pointerId))return false;
@@ -1528,7 +1533,7 @@ function applyDirectDrag(e){
  const prev=directDrag.last,dx=e.clientX-prev[0],dy=e.clientY-prev[1];directDrag.last=[e.clientX,e.clientY];
  // Vertical moves change flexion; horizontal moves are reserved for axial/twist.
  const sideways=new Set(['plane','axial','pronation','wristDeviation','thumbOpposition']);
- const movement=sideways.has(directDrag.field)?dx:-dy;
+ const movement=sideways.has(directDrag.field)?dx*(twistMode?twistSwipeSign():1):-dy;
  directDrag.accum+=movement*(twistMode?0.65:(jointPercent.has(directDrag.field)?0.6:0.43));
  const step=Math.trunc(directDrag.accum);
  if(step!==0){
@@ -1557,7 +1562,7 @@ function setTwistMode(on){
  if(twistMode){
   if(grabMode)$('grabModeToggle').click();
   if(cameraGesture==='pan')$('camRotate').click();
-  feedbackJoint('↻ ひねる：前腕・手を左右へドラッグ＝回内外／上腕＝内旋外旋',false);
+  feedbackJoint('↻ ひねる：左右にドラッグ／2本指でひねる（方向は☰で切替可）',false);
  }else feedbackJoint('↻ ひねる終了：カメラ操作に戻りました',false);
  if(typeof syncEdgeButtons==='function')syncEdgeButtons();
 }
@@ -1601,7 +1606,7 @@ function updateTwistPair(pair){
  while(delta>Math.PI)delta-=2*Math.PI;
  while(delta<-Math.PI)delta+=2*Math.PI;
  twistPair.lastAngle=pair.angle;
- twistPair.accum+=delta*180/Math.PI*1.1;
+ twistPair.accum+=delta*180/Math.PI*1.1*twistSwipeSign();
  const step=Math.trunc(twistPair.accum);
  if(step){
   twistPair.accum-=step;
@@ -1683,7 +1688,7 @@ window.__labJointErrors=()=>{
  return {ready:true,wristErrorMm:handWristErrorMm,thumbCMCErrorMm,thumbMCPErrorMm,thumbIPErrorMm,distalGapDeltaMm:poseCheck.distalGapDeltaMm,
    palmNormal:handPivot.thumbPalmNormal,thumbFlexAxis:handPivot.thumbFlexAxis,thumbFlexSign:handPivot.thumbFlexSign};
 };
-window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.34',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
+window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.35',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
 window.__labMuscles=()=>({...muscleDiagnostics,enabled:settings.muscles,deltoidEnabled:settings.deltoid,deltoidGeometryCount:['deltoidAnterior','deltoidMiddle','deltoidPosterior'].filter(n=>Boolean(geomDynamic[n])).length,brachioradialisEnabled:settings.brachioradialis,brachioradialisGeometryCount:['brachioradialis','tendonBR'].filter(n=>Boolean(geomDynamic[n])).length,pronatorTeresEnabled:settings.pronatorTeres,pronatorTeresGeometryCount:['pronatorTeresHumeral','pronatorTeresUlnar','tendonPT'].filter(n=>Boolean(geomDynamic[n])).length,supinatorEnabled:settings.supinator,supinatorGeometryCount:['supinatorSuperficial','supinatorDeep','tendonSupinator'].filter(n=>Boolean(geomDynamic[n])).length,flexorCarpiRadialisEnabled:settings.flexorCarpiRadialis,flexorCarpiRadialisGeometryCount:['flexorCarpiRadialis','tendonFCR'].filter(n=>Boolean(geomDynamic[n])).length,palmarisLongusEnabled:settings.palmarisLongus,flexorDigitorumSuperficialisEnabled:settings.flexorDigitorumSuperficialis,palmarisLongusGeometryCount:['palmarisLongus','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].filter(n=>Boolean(geomDynamic[n])).length,flexorCarpiUlnarisEnabled:settings.flexorCarpiUlnaris,flexorCarpiUlnarisGeometryCount:['flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','tendonFCU','pisohamateBand','pisometacarpalBand'].filter(n=>Boolean(geomDynamic[n])).length,realReady,exaggerated:settings.muscleEmphasis});
 window.__labFCU=()=>({enabled:settings.flexorCarpiUlnaris,handEnabled:settings.hand,realReady,handReady,geometryCount:['flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','tendonFCU','pisohamateBand','pisometacarpalBand'].filter(id=>Boolean(geomDynamic[id])).length,data:muscleDiagnostics.flexorCarpiUlnaris||{visible:false}});
 window.__labPL=()=>({enabled:settings.palmarisLongus,handEnabled:settings.hand,realReady,handReady,geometryCount:['palmarisLongus','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].filter(n=>Boolean(geomDynamic[n])).length,data:muscleDiagnostics.palmarisLongus||{visible:false}});
@@ -1691,7 +1696,7 @@ window.__labFDS=()=>({enabled:settings.flexorDigitorumSuperficialis,handEnabled:
  geometryCount:['flexorDigitorumSuperficialis','fdsTendonI','fdsTendonM','fdsTendonR','fdsTendonL','fdsBranchI1','fdsBranchI2','fdsBranchM1','fdsBranchM2','fdsBranchR1','fdsBranchR2','fdsBranchL1','fdsBranchL2'].filter(n=>Boolean(geomDynamic[n])).length,
  data:muscleDiagnostics.flexorDigitorumSuperficialis||{visible:false},pipIsolation:settings.fdsPIPOnly});
 window.__labFCR=()=>({enabled:settings.flexorCarpiRadialis,handEnabled:settings.hand,realReady,handReady,geometryCount:['flexorCarpiRadialis','tendonFCR'].filter(n=>Boolean(geomDynamic[n])).length,data:muscleDiagnostics.flexorCarpiRadialis||{visible:false}});
-window.__labDirect=()=>({immersive:document.body.classList.contains('full-3d'),controlsOpen:document.body.classList.contains('controls-open'),grabMode,twistMode,pairTwist:twistPair?.field||null,active:directDrag?.field||null,menu:$('directJointChoice').value,handles:skeletalHandles().map(h=>({field:h.id,from:h.a,to:h.b}))});
+window.__labDirect=()=>({immersive:document.body.classList.contains('full-3d'),controlsOpen:document.body.classList.contains('controls-open'),grabMode,twistMode,invertTwistSwipe:$('invertTwistSwipe').checked,pairTwist:twistPair?.field||null,active:directDrag?.field||null,menu:$('directJointChoice').value,handles:skeletalHandles().map(h=>({field:h.id,from:h.a,to:h.b}))});
  window.__labCamera=()=>({gesture:cameraGesture,invertedSwipe:$('invertRotationSwipe').checked,zoom:state.zoom,zoomScale,cameraAuto:$('cameraAuto').checked,target:state.target,yaw:state.yaw,pitch:state.pitch,autoFit,canvas:[canvas.clientWidth,canvas.clientHeight]});
 window.__labJoints=()=>({...poseCheck,realReady,frontDirection:realReady?'world -Z':'world +Z',elbowHingeSign:realReady?ELBOW_FLEX_SIGN*(settings.reverseElbow?-1:1):-(settings.reverseElbow?-1:1),elbowCheck:window.__elbowVerification});
 window.__labBounds=()=>{const pts=poseBoundingPoints();let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;for(const p of pts){const q=[...p,1],o=[0,0,0,0];for(let r=0;r<4;r++)o[r]=pv[r]*q[0]+pv[r+4]*q[1]+pv[r+8]*q[2]+pv[r+12]*q[3];const x=(.5+.5*o[0]/o[3])*lastW,y=(.5-.5*o[1]/o[3])*lastH;minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxY=Math.max(maxY,y)}return {minX,maxX,minY,maxY,width:lastW,height:lastH}};
@@ -1758,6 +1763,7 @@ $('edgeQuickPan').addEventListener('click',()=>{
  syncEdgeButtons();
 });
 $('edgeQuickTwist').addEventListener('click',()=>setTwistMode(!twistMode));
+$('invertTwistSwipe').addEventListener('change',()=>{if(twistPair)twistPair.accum=0;feedbackJoint($('invertTwistSwipe').checked?'↻ ひねる方向：反転':'↻ ひねる方向：旧方向',false)});
 $('edgeQuickFit').addEventListener('click',()=>{$('resetCam').click();syncEdgeButtons()});
 $('edgeQuickZoomIn').addEventListener('click',()=>{$('zoomIn').click()});
 $('edgeQuickZoomOut').addEventListener('click',()=>{$('zoomOut').click()});
