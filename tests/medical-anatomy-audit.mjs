@@ -12,7 +12,7 @@ const match=script.match(/const MEDICAL_ANATOMY=([\s\S]*?);\nlet medicalFocus=/)
 assert.ok(match,'medical anatomy reference data missing');
 const data=vm.runInNewContext('('+match[1]+')');
 
-const keys=['bicepsLong','bicepsShort','brachialis','tricepsLong','tricepsLateral','tricepsMedial','deltoid','coracobrachialis'];
+const keys=['bicepsLong','bicepsShort','brachialis','tricepsLong','tricepsLateral','tricepsMedial','deltoid','supraspinatus','infraspinatus','teresMinor','teresMajor','subscapularis','coracobrachialis'];
 assert.deepEqual(Object.keys(data),keys);
 for(const [key,row] of Object.entries(data)){
  for(const field of ['name','origin','insertion','nerve','action','note','source'])assert.ok(row[field]?.length, key+' missing '+field);
@@ -21,9 +21,17 @@ for(const [key,row] of Object.entries(data)){
 }
 assert.equal(data.tricepsMedial.parts.length,0,'do not pretend a medial-head mesh exists');
 assert.equal(data.coracobrachialis.parts.length,0,'do not pretend coracobrachialis mesh exists');
+assert.equal(data.subscapularis.parts.length,0,'do not pretend subscapularis mesh exists');
 const staticParts=[...script.matchAll(/const (?:MUSCLE_PARTS|TENDON_PARTS)=\[([\s\S]*?)\];/g)]
  .flatMap(m=>[...m[1].matchAll(/'([^']+)'/g)].map(v=>v[1]));
-for(const row of Object.values(data))for(const part of row.parts)assert.ok(staticParts.includes(part),'unknown model part '+part);
+const scapSpecMatch=script.match(/const SCAPULAR_SPEC=(\[[\s\S]*?\]);\nconst SCAPULAR_CUFF=/);
+assert.ok(scapSpecMatch,'scapular muscle specification missing');
+const scapSpec=vm.runInNewContext(scapSpecMatch[1]);
+assert.equal(scapSpec.length,4);
+assert.equal(scapSpec.filter(s=>s.cuff).length,3);
+const scapParts=scapSpec.flatMap(m=>[m.id,'tendon'+m.id[0].toUpperCase()+m.id.slice(1)]);
+for(const row of Object.values(data))for(const part of row.parts)
+ assert.ok(staticParts.includes(part)||scapParts.includes(part),'unknown model part '+part);
 const htmlWithoutScript=html.replace(/<script>[\s\S]*?<\/script>/g,'');
 const ids=[...htmlWithoutScript.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
 assert.equal(ids.length,new Set(ids).size,'duplicate HTML ids');
@@ -33,6 +41,6 @@ for(const id of ['medicalStudyPanel','medicalStudySelect','medicalStudyFields','
 assert.ok(script.includes('medicalFocusPrevious'),'previous visibility state should be restored');
 assert.ok(script.includes("if(medicalFocus&&MUSCLE_ALL.includes(name)"),'focus filter missing');
 assert.ok(html.includes('医学部生向け教材としての形態・運動学的検証は未完了'),'validation limits missing');
-assert.ok(html.includes('上肢3D解剖ラボ · v0.49'),'v0.49 version missing');
+assert.ok(html.includes('上肢3D解剖ラボ · v0.51'),'v0.51 version missing');
 assert.ok(script.includes('1+.26*contractionRate*exaggeration'),'bulge indicator must match biceps visual coefficient');
-console.log('PASS v0.49: anatomy facts + missing structures + IDs + source links + transparency + JS syntax');
+console.log('PASS v0.51: medical anatomy regression, 13 facts records + missing muscle honesty + source links + syntax');
