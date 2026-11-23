@@ -297,7 +297,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
   <button id="medicalStudyReset" type="button">全筋表示に戻す</button>
  </div>
  <div class="med-status" id="medicalStudyFocusStatus" role="status" aria-live="polite">通常表示中。単独表示は形状比較用であり、正確性を保証しません。</div>
- <div class="detail">重要な未実装：三頭筋内側頭、烏口腕筋、肩甲下筋（回旋筋腱板の4筋目）。棘上筋・棘下筋・小円筋はv0.51で追加し、v0.55では円筋を細束状に見直しました。ただし、停止面や腱走行の医学的検証は未実施です。上腕二頭筋腱膜も簡略化されています。関節包・靱帯・神経・血管の系統的3D表示はありません。</div>
+ <div class="detail">重要な未実装：三頭筋内側頭、烏口腕筋、肩甲下筋（回旋筋腱板の4筋目）。棘上筋・棘下筋・小円筋はv0.51で追加。v0.55では4筋の輪郭曲率・断面厚み・腱への移行を個別化しました。ただし筋束配列、停止面や腱滑走の医学的検証は未実施です。上腕二頭筋腱膜も簡略化されています。関節包・靱帯・神経・血管の系統的3D表示はありません。</div>
  <p><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/ANATOMY_VALIDATION_V049.md" target="_blank" rel="noopener noreferrer">モデルの医学的妥当性監査・不足構造・検証基準を読む</a></p>
 </div></details>
 <details class="control-fold"><summary>表示倍率・視点操作<span class="fold-note">カメラ</span></summary><div class="fold-body"><div class="panel zoom-panel"><div class="panelhead"><h2>表示倍率</h2><span class="sectioncap">CAMERA</span></div>
@@ -409,6 +409,13 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
  <div id="scapularMuscleStatus" class="scapular-study-status" role="status" aria-live="polite">骨データを読み込み中…</div>
  <div class="detail">筋腹は肩甲骨の棘上窩・棘下窩・外側縁・下角付近の<strong>推定骨表面点</strong>から上腕骨の推定停止位置へ広がる近似メッシュです。付着面の実測・腱の骨接触・関節運動時の滑走は未検証です。</div>
  <div class="detail"><strong>回旋筋腱板は4筋：</strong>棘上筋・棘下筋・小円筋・肩甲下筋。<strong>肩甲下筋はv0.55でも未実装</strong>。大円筋は回旋筋腱板に含まれません。</div>
+ <details class="diagnostic-fold"><summary>v0.55：4筋の形態・根拠・未検証事項</summary>
+  <div class="detail"><strong>棘上筋</strong>：棘上窩から大結節上関節面へ。前部・後部の筋束構造は異なるため、単一筋腹は概形の近似。<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11679125/" target="_blank" rel="noopener noreferrer">2025年レビュー</a></div>
+  <div class="detail"><strong>棘下筋</strong>：棘下窩を広く占める厚い三角形。外上方へ筋束が集まり、大結節中関節面へ。<a href="https://www.ncbi.nlm.nih.gov/books/NBK513255/" target="_blank" rel="noopener noreferrer">StatPearls解剖</a></div>
+  <div class="detail"><strong>小円筋</strong>：肩甲骨外側縁から大結節下関節面へ向かう細い筋。<a href="https://www.ncbi.nlm.nih.gov/books/NBK513324/" target="_blank" rel="noopener noreferrer">StatPearls解剖</a></div>
+  <div class="detail"><strong>大円筋</strong>：肩甲骨下角後面から上腕骨結節間溝内側唇へ。幅のある扁平な筋で、回旋筋腱板ではない。<a href="https://www.ncbi.nlm.nih.gov/books/NBK580487/" target="_blank" rel="noopener noreferrer">StatPearls解剖</a></div>
+  <div class="detail"><strong>モデルの判定：</strong>骨形状＝BodyParts3D実データ、筋腹・腱＝文献から形態分類した推定ジオメトリ。起始・停止の実測ポリゴン、組織間衝突、腱滑走、筋束配向は未検証。</div>
+ </details>
  <p><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULAR_MUSCLES_V055.md" target="_blank" rel="noopener noreferrer">v0.55 描画改善・投影判定・未検証事項を確認する</a></p>
 </div></details>
 <div class="forearm-layer-select">
@@ -869,10 +876,10 @@ const MEDICAL_ANATOMY={
  tricepsLateral:{name:'上腕三頭筋・外側頭',origin:'上腕骨後面の橈骨神経溝より近位側',insertion:'他の頭と合流し、尺骨の肘頭へ',nerve:'橈骨神経（主にC6–C8）',action:'肘関節の伸展',parts:['tricepsLat','tendonTLatDist','tendonT'],source:'https://www.ncbi.nlm.nih.gov/books/NBK536996/',note:'外側頭の起始面と共通腱への合流は模式化。神経溝との位置関係は未検証。'},
  tricepsMedial:{name:'上腕三頭筋・内側頭',origin:'上腕骨後面の橈骨神経溝より遠位側',insertion:'他の頭と合流し、尺骨の肘頭へ',nerve:'橈骨神経（主にC6–C8）',action:'肘関節の伸展',parts:[],source:'https://www.ncbi.nlm.nih.gov/books/NBK536996/',note:'重要：3D形状がまだありません。外側頭と長頭だけでは上腕三頭筋全体を正確に学べません。'},
  deltoid:{name:'三角筋（前部・中部・後部）',origin:'鎖骨外側1/3、肩峰、肩甲棘',insertion:'上腕骨の三角筋粗面',nerve:'腋窩神経（C5–C6）',action:'主に肩関節の外転。前部は屈曲・内旋、後部は伸展・外旋にも関与',parts:['deltoidAnterior','deltoidMiddle','deltoidPosterior'],source:'https://www.ncbi.nlm.nih.gov/books/NBK537056/',note:'3部分の扇状筋束は視覚近似。筋束方向・三角筋粗面の面積・肩甲上腕リズムは未検証。'},
-  supraspinatus:{name:'棘上筋',origin:'肩甲骨の棘上窩',insertion:'上腕骨大結節上面（上関節面）',nerve:'肩甲上神経（C5–C6）',action:'肩外転を補助し、上腕骨頭の安定化に寄与',parts:['supraspinatus','tendonSupraspinatus'],source:'https://www.ncbi.nlm.nih.gov/books/NBK537202/',note:'扇状メッシュは推定点に基づく視覚化。停止腱と関節包への融合や肩峰下での滑走は未検証。'},
-  infraspinatus:{name:'棘下筋',origin:'肩甲骨の棘下窩',insertion:'上腕骨大結節中関節面',nerve:'肩甲上神経（C5–C6）',action:'肩外旋と上腕骨頭の安定化',parts:['infraspinatus','tendonInfraspinatus'],source:'https://www.ncbi.nlm.nih.gov/books/NBK441844/',note:'棘下窩の筋腹輪郭と腱の停止面は近似。骨表面との正確な厚みは検証していません。'},
-  teresMinor:{name:'小円筋',origin:'肩甲骨外側縁の後面',insertion:'上腕骨大結節下関節面',nerve:'腋窩神経（C5–C6）',action:'肩外旋と上腕骨頭の安定化、弱い内転補助',parts:['teresMinor','tendonTeresMinor'],source:'https://www.ncbi.nlm.nih.gov/books/NBK513324/',note:'細長い筋腹と腱の経路は視覚的近似。骨接触や付着面の実測は未検証。'},
-  teresMajor:{name:'大円筋（回旋筋腱板ではない）',origin:'肩甲骨下角および外側縁下部の後面',insertion:'上腕骨結節間溝内側唇（小結節稜）',nerve:'下肩甲下神経（主にC5–C6）',action:'肩内転・内旋・伸展',parts:['teresMajor','tendonTeresMajor'],source:'https://www.ncbi.nlm.nih.gov/books/NBK580487/',note:'回旋筋腱板に含めない。結節間溝の内側唇への腱付着は推定点を使用。'},
+  supraspinatus:{name:'棘上筋',origin:'肩甲骨の棘上窩',insertion:'上腕骨大結節上面（上関節面）',nerve:'肩甲上神経（C5–C6）',action:'肩外転を補助し、上腕骨頭の安定化に寄与',parts:['supraspinatus','tendonSupraspinatus'],source:'https://www.ncbi.nlm.nih.gov/books/NBK537202/',note:'紡錘状／扇状の外形を単一メッシュで近似。前部・後部の異なる筋束構造は未再現。停止腱、関節包との連続、肩峰下滑走は未検証。'},
+  infraspinatus:{name:'棘下筋',origin:'肩甲骨の棘下窩',insertion:'上腕骨大結節中関節面',nerve:'肩甲上神経（C5–C6）',action:'肩外旋と上腕骨頭の安定化',parts:['infraspinatus','tendonInfraspinatus'],source:'https://www.ncbi.nlm.nih.gov/books/NBK441844/',note:'厚い三角形状の外形と緩い筋束方向を模式化。棘下窩の境界・3亜領域・腱停止面・実測筋厚は未検証。'},
+  teresMinor:{name:'小円筋',origin:'肩甲骨外側縁の後面',insertion:'上腕骨大結節下関節面',nerve:'腋窩神経（C5–C6）',action:'肩外旋と上腕骨頭の安定化、弱い内転補助',parts:['teresMinor','tendonTeresMinor'],source:'https://www.ncbi.nlm.nih.gov/books/NBK513324/',note:'外側縁から大結節下部に向かう細長い筋腹を模式化。上下の筋束構造、関節包の連続、骨接触は未検証。'},
+  teresMajor:{name:'大円筋（回旋筋腱板ではない）',origin:'肩甲骨下角および外側縁下部の後面',insertion:'上腕骨結節間溝内側唇（小結節稜）',nerve:'下肩甲下神経（主にC5–C6）',action:'肩内転・内旋・伸展',parts:['teresMajor','tendonTeresMajor'],source:'https://www.ncbi.nlm.nih.gov/books/NBK580487/',note:'回旋筋腱板に含めない。下角起始の厚く扁平な束を模式化。結節間溝内側唇の実際の付着面・広背筋腱との関係は未検証。'},
   subscapularis:{name:'肩甲下筋（未実装）',origin:'肩甲骨前面の肩甲下窩',insertion:'上腕骨小結節（および関節包）',nerve:'上・下肩甲下神経（C5–C6）',action:'肩内旋と上腕骨頭の安定化',parts:[],source:'https://www.ncbi.nlm.nih.gov/books/NBK441844/',note:'回旋筋腱板の4筋目ですが、このバージョンでは3D形状は未実装です。'},
  coracobrachialis:{name:'烏口腕筋',origin:'肩甲骨の烏口突起',insertion:'上腕骨体の内側面中央付近',nerve:'筋皮神経',action:'肩関節の屈曲と内転を補助',parts:[],source:'https://www.ncbi.nlm.nih.gov/books/NBK554420/',note:'3D形状がまだありません。前腕の筋や上腕二頭筋短頭とは異なる独立筋です。'}
 };
@@ -2624,7 +2631,7 @@ function updateScapularMuscleStatus(){
   ' 後面投影の近似クリアランス最小 '+
   (Number.isFinite(clearance)?clearance.toFixed(2):'—')+' mm。'+
   (fallback?'骨面への投影範囲外 '+fallback+' 点（付着位置要再確認）。':'投影対象は三角形骨面上。')+
-  ' 棘上筋・棘下筋は広がる筋腹、円筋は細束の表示。'+
+  ' 棘上筋は紡錘状寄り、棘下筋は三角形状、小円筋は細長く、大円筋は扁平な筋腹へ曲面化。'+
   ' ※接合点・投影深度の計算であり、骨との3D衝突・腱滑走・人体での解剖学的正確性は未検証。';
 }
 $('scapulaDisplay').addEventListener('change',update);
@@ -2641,6 +2648,8 @@ window.__labScapular=()=>({
  reportedSeamMaxMm:scapularDiagnostics.maximumJointGap/atlasScale,
  reportedMinimumProjectionClearanceMm:scapularDiagnostics.minimumPosteriorProjectionClearanceMm,
  projectionFallbacks:scapularDiagnostics.projectionFallbacks,
+ muscleShapeProfiles:scapularDiagnostics.muscles.map(m=>({id:m.id,kind:m.geometryKind,widthOriginWorld:m.widthOriginWorld,widthMiddleWorld:m.widthMiddleWorld,widthExitWorld:m.widthExitWorld})),
+ maximumTendonControlStepWorld:scapularDiagnostics.maximumTendonControlStepWorld,
  anatomicalAccuracyVerified:false,originInsertionLandmarksValidated:false,
  boneCollisionValidated:false,subscapularisImplemented:false
 });
