@@ -1,0 +1,30 @@
+name: Upper limb anatomy regression
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  anatomy-and-geometry:
+    name: Syntax, surface geometry and kinematics
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Scapular surface and tendon 35-pose test
+        run: node tests/scapular-muscles-v055.mjs
+      - name: Legacy scapular surface regressions
+        run: |
+          node tests/scapular-muscles-v054.mjs
+          node tests/scapular-muscles-v053.mjs
+          node tests/scapular-muscles-v051.mjs
+      - name: Medical notes consistency
+        run: node tests/medical-anatomy-audit.mjs
+      - name: Shoulder kinematics 126 combinations
+        run: node tests/shoulder-kinematics-v050.mjs
