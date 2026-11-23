@@ -87,9 +87,9 @@ for(const deg of [0,30,60,90,120,150,180])for(const axial of [-45,0,45]){
   // unmodified app atlas transform; this is a geometry ratio, not a measured size.
   const source=spec.SCAPULAR_SPEC.find(x=>x.id===id);
   const targetA=atlasToWorld(source.originA),targetB=atlasToWorld(source.originB);
-  const fullWidth=Math.hypot(targetA[0]-targetB[0],targetA[1]-targetB[1]);
+  const fullWidth=len(sub(targetA,targetB));
   const first=g.vertices[0],last=g.vertices[sampleCount-1];
-  const observed=Math.hypot(first[0]-last[0],first[1]-last[1]);
+  const observed=len(sub(first,last));
   const ratio=observed/fullWidth;
   if(id==='teresMinor'||id==='teresMajor')
    assert.ok(ratio<.50,'teres belly is still a broad sheet: '+id+' '+ratio);
