@@ -209,6 +209,16 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 .display-quick-actions button[aria-pressed="true"]{border-color:#73dbd0;background:#15454a;color:#e6fff9}
 .display-quick-actions button:disabled{opacity:.4;cursor:not-allowed}
 .display-mode-status{font-size:11px;color:#a4c4ca;margin:2px 0 11px;line-height:1.6}
+.med-study{padding:9px 2px 4px;color:#dbe7e9}
+.med-study .med-reliability{padding:10px;border:1px solid #58727c;border-radius:9px;background:#1a2934;font-size:12px;line-height:1.7;margin:0 0 9px}
+.med-study select{display:block;width:100%;min-height:44px;padding:10px;background:#182a39;color:#f5fafa;border:1px solid #54737b;border-radius:9px;font-size:14px}
+.med-study .med-fields{margin:8px 0 12px;display:grid;gap:9px;font-size:13px}
+.med-study dt{color:#8dd8d1;font-weight:700}
+.med-study dd{margin:1px 0 0;line-height:1.65;overflow-wrap:anywhere}
+.med-study .med-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.med-study .med-actions button{flex:1 1 115px;min-height:44px;padding:8px;border-radius:9px}
+.med-study a{color:#9adbd3}
+.med-study .med-status{min-height:22px;font-size:12px;line-height:1.6;margin:9px 0 0;color:#c3d5dc}
 </style>
 </head>
 <body>
@@ -240,6 +250,33 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 <section class="side" id="labTools">
 <div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.48</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
 <details class="edge-help control-fold"><summary>操作方法<span class="fold-note">ヘルプ</span></summary><div class="fold-body"><div class="immersive-tips">操作：1本指ドラッグで視点回転（初期設定は逆方向）。<strong>骨を約0.4秒長押し → ドラッグで関節操作。右端の「✋」は曲げ伸ばし、「↻」は前腕の回内・回外と上腕の内旋・外旋。↻では骨を左右にドラッグするか、2本指でひねって調整できます。<strong>3本指で左右にスワイプすると、<strong>上腕付近は肩の内旋・外旋、前腕付近は回内・回外</strong>を操作できます。判断しにくいときは上部の関節指定で「上腕：回旋」「前腕：回内外」を固定できます。</strong>iPhoneで選択メニューが出る場合は「✋」または「↻」をONにして直接ドラッグ</strong>。2本指は視点移動・ピンチ。選びにくい関節は上部メニューで指定できます。</div></div></details><div class="note" id="launchTip"><strong>iPhoneでモデルが表示されない場合</strong>：HTMLファイルのプレビューではJavaScriptが実行されない場合があります。HTMLファイルをWebサイトとして公開し、SafariでURLを開いてください。下の操作ボタンはブラウザ版で機能します。</div>
+<details class="control-fold" id="medicalStudyPanel"><summary>医学解剖：起始・停止・神経支配・作用<span class="fold-note">根拠と限界</span></summary>
+<div class="fold-body med-study">
+ <p class="med-reliability"><strong>学習用の解剖知識は出典と照合。</strong> ただし、3D筋肉・腱は推定形状で、実測した付着面や筋腱滑走ではありません。医学部生向け教材としての形態・運動学的検証は未完了です。</p>
+ <label for="medicalStudySelect">学習する筋肉を選択</label>
+ <select id="medicalStudySelect" aria-label="上肢筋の学習対象">
+  <option value="bicepsLong">上腕二頭筋・長頭</option>
+  <option value="bicepsShort">上腕二頭筋・短頭</option>
+  <option value="brachialis">上腕筋</option>
+  <option value="tricepsLong">上腕三頭筋・長頭</option>
+  <option value="tricepsLateral">上腕三頭筋・外側頭</option>
+  <option value="tricepsMedial">上腕三頭筋・内側頭（未実装）</option>
+  <option value="deltoid">三角筋（前部・中部・後部）</option>
+  <option value="coracobrachialis">烏口腕筋（未実装）</option>
+ </select>
+ <div id="medicalStudyModelStatus" class="med-reliability" role="status" aria-live="polite"></div>
+ <details id="medicalStudyAnswers"><summary>解剖学的な要点を確認（学習用）</summary>
+  <dl class="med-fields" id="medicalStudyFields"></dl>
+  <div class="detail">起始・停止は標準的な記載を簡潔に要約しています。個人差や文献間の表現差があります。</div>
+  <a id="medicalStudySource" target="_blank" rel="noopener noreferrer" href="https://www.ncbi.nlm.nih.gov/books/NBK554420/">根拠資料（NCBI Bookshelf）</a>
+ </details>
+ <div class="med-actions">
+  <button id="medicalStudyFocus" type="button">選択した筋だけ表示</button>
+  <button id="medicalStudyReset" type="button">全筋表示に戻す</button>
+ </div>
+ <div class="med-status" id="medicalStudyFocusStatus" role="status" aria-live="polite">通常表示中。単独表示は形状比較用であり、正確性を保証しません。</div>
+ <div class="detail">重要な未実装：三頭筋内側頭、烏口腕筋、肩の回旋筋腱板。上腕二頭筋腱膜も簡略化されています。関節包・靱帯・神経・血管の系統的3D表示はありません。</div>
+</div></details>
 <details class="control-fold"><summary>表示倍率・視点操作<span class="fold-note">カメラ</span></summary><div class="fold-body"><div class="panel zoom-panel"><div class="panelhead"><h2>表示倍率</h2><span class="sectioncap">CAMERA</span></div>
 <div class="control zoom-control"><label for="zoomLevel">拡大・縮小 <output id="zoomValue">100%</output></label>
 <div class="zoom-inputs"><button id="zoomOut" type="button" aria-label="縮小">－</button><input id="zoomLevel" type="range" min="65" max="240" step="5" value="100" aria-label="表示倍率"><button id="zoomIn" type="button" aria-label="拡大">＋</button></div>
@@ -720,6 +757,19 @@ const V43_MUSCLES=V43_CONFIG.map(c=>c.id),V43_TENDONS=V43_CONFIG.flatMap(c=>c.te
 const MUSCLE_PARTS=['bicepsLong','bicepsShort','triceps','tricepsLat','brachialis','deltoidAnterior','deltoidMiddle','deltoidPosterior','brachioradialis','pronatorTeresHumeral','pronatorTeresUlnar','supinatorSuperficial','supinatorDeep','flexorCarpiRadialis','flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','palmarisLongus','flexorDigitorumSuperficialis','flexorDigitorumProfundus',...V43_MUSCLES];
 const TENDON_PARTS=['tendonB','tendonB2','tendonBprox','tendonBShortDist','tendonT','tendonT2','tendonTLatDist','tendonBrach','tendonBR','tendonPT','tendonSupinator','tendonFCR','tendonFCU','pisohamateBand','pisometacarpalBand','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4','fdsTendonI','fdsTendonM','fdsTendonR','fdsTendonL','fdsBranchI1','fdsBranchI2','fdsBranchM1','fdsBranchM2','fdsBranchR1','fdsBranchR2','fdsBranchL1','fdsBranchL2','fdpTendonI','fdpTendonM','fdpTendonR','fdpTendonL',...V43_TENDONS];
 const MUSCLE_ALL=[...MUSCLE_PARTS,...TENDON_PARTS];
+// Anatomical FACTS are sourced separately from the UNVALIDATED 3D representations.
+// 'parts' lists only current approximate meshes; do not invent omitted heads.
+const MEDICAL_ANATOMY={
+ bicepsLong:{name:'上腕二頭筋・長頭',origin:'肩甲骨の関節上結節（上方関節唇と連続）',insertion:'橈骨粗面。上腕二頭筋腱膜を介して前腕筋膜にも連結',nerve:'筋皮神経（主にC5–C6）',action:'肘屈曲・前腕回外。肩関節運動にも補助的に関与',parts:['bicepsLong','tendonBprox','tendonB'],source:'https://www.ncbi.nlm.nih.gov/books/NBK554420/',note:'起始の解剖学的記載は照合済み。長頭腱の結節間溝内滑走と上腕二頭筋腱膜の付着は未検証・未再現。'},
+ bicepsShort:{name:'上腕二頭筋・短頭',origin:'肩甲骨の烏口突起',insertion:'長頭と合流して橈骨粗面。上腕二頭筋腱膜を介して前腕筋膜にも連結',nerve:'筋皮神経（主にC5–C6）',action:'肘屈曲・前腕回外。肩関節の屈曲を補助',parts:['bicepsShort','tendonB2','tendonBShortDist','tendonB'],source:'https://www.ncbi.nlm.nih.gov/books/NBK554420/',note:'共通腱は模式的。筋腹分離と合流形状の実測検証は未実施。'},
+ brachialis:{name:'上腕筋',origin:'上腕骨前面の遠位約1/2、筋間中隔',insertion:'尺骨粗面と鉤状突起付近',nerve:'筋皮神経が主体。一部に橈骨神経の支配があることがある',action:'肘関節の屈曲（前腕回内外の位置によらず働く）',parts:['brachialis','tendonBrach'],source:'https://www.ncbi.nlm.nih.gov/books/NBK551630/',note:'筋腹・腱の平面形状と付着面は推定。深層の位置関係は未検証。'},
+ tricepsLong:{name:'上腕三頭筋・長頭',origin:'肩甲骨の関節下結節',insertion:'他の頭と合流し、尺骨の肘頭へ',nerve:'橈骨神経（主にC6–C8）',action:'肘関節の伸展。長頭は肩関節の伸展・内転も補助',parts:['triceps','tendonT2','tendonT'],source:'https://www.ncbi.nlm.nih.gov/books/NBK536996/',note:'肩甲骨から肘頭への走行は推定。共通腱は簡略モデル。'},
+ tricepsLateral:{name:'上腕三頭筋・外側頭',origin:'上腕骨後面の橈骨神経溝より近位側',insertion:'他の頭と合流し、尺骨の肘頭へ',nerve:'橈骨神経（主にC6–C8）',action:'肘関節の伸展',parts:['tricepsLat','tendonTLatDist','tendonT'],source:'https://www.ncbi.nlm.nih.gov/books/NBK536996/',note:'外側頭の起始面と共通腱への合流は模式化。神経溝との位置関係は未検証。'},
+ tricepsMedial:{name:'上腕三頭筋・内側頭',origin:'上腕骨後面の橈骨神経溝より遠位側',insertion:'他の頭と合流し、尺骨の肘頭へ',nerve:'橈骨神経（主にC6–C8）',action:'肘関節の伸展',parts:[],source:'https://www.ncbi.nlm.nih.gov/books/NBK536996/',note:'重要：3D形状がまだありません。外側頭と長頭だけでは上腕三頭筋全体を正確に学べません。'},
+ deltoid:{name:'三角筋（前部・中部・後部）',origin:'鎖骨外側1/3、肩峰、肩甲棘',insertion:'上腕骨の三角筋粗面',nerve:'腋窩神経（C5–C6）',action:'主に肩関節の外転。前部は屈曲・内旋、後部は伸展・外旋にも関与',parts:['deltoidAnterior','deltoidMiddle','deltoidPosterior'],source:'https://www.ncbi.nlm.nih.gov/books/NBK537056/',note:'3部分の扇状筋束は視覚近似。筋束方向・三角筋粗面の面積・肩甲上腕リズムは未検証。'},
+ coracobrachialis:{name:'烏口腕筋',origin:'肩甲骨の烏口突起',insertion:'上腕骨体の内側面中央付近',nerve:'筋皮神経',action:'肩関節の屈曲と内転を補助',parts:[],source:'https://www.ncbi.nlm.nih.gov/books/NBK554420/',note:'3D形状がまだありません。前腕の筋や上腕二頭筋短頭とは異なる独立筋です。'}
+};
+let medicalFocus=null;
 // v0.41: smooth the *visual* transition between ulna-anchored proximal
 // muscle and radius/hand-anchored distal tendons during pronosupination.
 // Positions are updated in each bone's own transform, never held in world space.
@@ -732,6 +782,7 @@ function forearmSoftRail(ulnaXYZ,radiusXYZ,ulnaShare=.5,volarGap=.017){
  return add(add(mul(u,ulnaShare),mul(r,1-ulnaShare)),mul(front,volarGap));
 }
 function muscleVisible(name){
+ if(medicalFocus&&MUSCLE_ALL.includes(name)&&!medicalFocus.has(name))return false;
  const v43=V43_LOOKUP[name];
  if(v43)return Boolean(settings[v43.setting]&&realReady&&(!v43.tendon||settings.hand)&&(settings.forearmLayer==='both'||settings.forearmLayer===v43.layer));
  const superficial=name==='brachioradialis'||name==='tendonBR'||name.startsWith('pronatorTeres')||name==='tendonPT'||name==='flexorCarpiRadialis'||name==='tendonFCR'||name.startsWith('flexorCarpiUlnaris')||['tendonFCU','pisohamateBand','pisometacarpalBand'].includes(name)||name==='palmarisLongus'||name==='tendonPL'||name.startsWith('palmarAponeurosis');
@@ -2152,12 +2203,42 @@ document.querySelectorAll('[data-forearm-layer]').forEach(b=>b.addEventListener(
 for(const id of [...muscleToggleIds,'hand','rib'])$(id).addEventListener('change',()=>{
  previousDisplayState=null;displayPreset=null;syncDisplayActions();
 });
+function renderMedicalStudy(){
+ const entry=MEDICAL_ANATOMY[$('medicalStudySelect').value],available=entry.parts.length>0;
+ $('medicalStudyModelStatus').textContent=available?
+  '3D：表示は可能。ただし筋腹・腱・起始停止の位置関係は未検証の近似モデルです。'+entry.note:
+  '3D：未実装。資料にある解剖学的事実のみを表示しています。'+entry.note;
+ const dl=$('medicalStudyFields');dl.replaceChildren();
+ for(const [title,value] of [['起始',entry.origin],['停止',entry.insertion],['神経支配',entry.nerve],['作用',entry.action]]){
+  const dt=document.createElement('dt'),dd=document.createElement('dd');
+  dt.textContent=title;dd.textContent=value;dl.append(dt,dd);
+ }
+ $('medicalStudySource').href=entry.source;
+ $('medicalStudySource').textContent='出典：NCBI Bookshelf（原文・更新日を確認）';
+ $('medicalStudyFocus').disabled=!available;
+}
+$('medicalStudySelect').addEventListener('change',renderMedicalStudy);
+$('medicalStudyFocus').addEventListener('click',()=>{
+ const entry=MEDICAL_ANATOMY[$('medicalStudySelect').value];
+ if(!entry.parts.length){$('medicalStudyFocusStatus').textContent='この筋は未実装のため、3Dで単独表示できません。';return}
+ medicalFocus=new Set(entry.parts);
+ if(entry.parts.some(n=>n.startsWith('deltoid'))) $('deltoid').checked=true;
+ else $('muscles').checked=true;
+ $('medicalStudyFocusStatus').textContent=entry.name+'の近似形状だけを表示中。形状精度は未検証です。';
+ update();
+});
+$('medicalStudyReset').addEventListener('click',()=>{
+ medicalFocus=null;
+ $('medicalStudyFocusStatus').textContent='通常表示に戻しました。元の筋肉のON/OFF設定を利用します。';
+ update();
+});
+renderMedicalStudy();
 const angleFields=['elev','plane','axial','elbow','pronation'];const handFields=['wristFlex','wristDeviation','fingerCurl','thumbCurl','thumbOpposition'];function update(){for(let f of angleFields){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+'°'}for(let f of handFields){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+(f.endsWith('Curl')||f==='thumbOpposition'?'%':'°')}for(const f of ['fdsPIPI','fdsPIPM','fdsPIPR','fdsPIPL','fdpDIPI','fdpDIPM','fdpDIPR','fdpDIPL']){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+'°'}settings.fdsPIPOnly=$('fdsPIPOnly').checked;settings.fdpDIPOnly=$('fdpDIPOnly').checked;settings.forearmBulk=clamp(Number($('forearmBulk').value)||70,50,110);$('forearmBulkV').textContent=settings.forearmBulk+'%';for(let f of ['hand','sync','muscles','deltoid','brachioradialis','pronatorTeres','supinator','flexorCarpiRadialis','flexorCarpiUlnaris','palmarisLongus','flexorDigitorumSuperficialis','flexorDigitorumProfundus',...V43_MUSCLES,'rib','showlabels','showDirection','reverseElbow','muscleEmphasis'])settings[f]=$(f).checked;
  refreshModelStatus();
  const f=clamp(settings.elbow/150,0,1), contractionRate=f*f*(3-2*f), exaggeration=settings.muscleEmphasis?1:.45;
- const bulge=1+.72*contractionRate*exaggeration;
+ const bulge=1+.26*contractionRate*exaggeration;
  $('muscleBulgeValue').textContent=bulge.toFixed(2)+'倍';
- $('muscleBulgeMeter').style.width=Math.min(100,100*(bulge-1)/.72)+'%';
+ $('muscleBulgeMeter').style.width=Math.min(100,100*(bulge-1)/.26)+'%';
  $('muscleFeedback').classList.toggle('active',settings.muscles);syncDisplayActions();
  updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateFDPStatus();
  compute();if(realReady)makeRealPose();else if(settings.hand)makeHandPose();updateHandStatus();updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateFDPStatus();updateAnteriorStatus();updateRadialAuditMetrics();if($('cameraAuto').checked){autoFit=true;fitPose()}else autoFit=false;request();$('modelNote').textContent=settings.sync?'連動あり：挙上180°で肩甲骨を約60°上方回旋させる教育用の近似を使用。実測リズムは個人・角度・運動方向で変わります。':'肩甲骨・鎖骨を固定した比較モード。挙上角は上腕骨のみに与えます（自然な肩の運動ではありません）。'}
