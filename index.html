@@ -276,6 +276,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
  </div>
  <div class="med-status" id="medicalStudyFocusStatus" role="status" aria-live="polite">通常表示中。単独表示は形状比較用であり、正確性を保証しません。</div>
  <div class="detail">重要な未実装：三頭筋内側頭、烏口腕筋、肩の回旋筋腱板。上腕二頭筋腱膜も簡略化されています。関節包・靱帯・神経・血管の系統的3D表示はありません。</div>
+ <p><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/ANATOMY_VALIDATION_V049.md" target="_blank" rel="noopener noreferrer">モデルの医学的妥当性監査・不足構造・検証基準を読む</a></p>
 </div></details>
 <details class="control-fold"><summary>表示倍率・視点操作<span class="fold-note">カメラ</span></summary><div class="fold-body"><div class="panel zoom-panel"><div class="panelhead"><h2>表示倍率</h2><span class="sectioncap">CAMERA</span></div>
 <div class="control zoom-control"><label for="zoomLevel">拡大・縮小 <output id="zoomValue">100%</output></label>
@@ -348,6 +349,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 </div></div></details>
 <details class="control-fold"><summary>筋肉と骨の表示<span class="fold-note">ON / OFF</span></summary><div class="fold-body"><div class="panel"><div class="panelhead"><h2>モデル表示</h2><span class="sectioncap">DISPLAY</span></div>
 <div class="model-status-compact" id="modelStatusCompact" role="status" aria-live="polite">骨格：読み込み中…</div>
+<div class="med-reliability" style="margin-top:6px;border:1px solid #6a727c;border-radius:9px;padding:8px;font-size:12px;line-height:1.6;background:#1a2830;color:#dce9e8">医学的な3D再現性：<strong>未検証</strong>。骨メッシュの実形状と筋・腱の推定経路は別の精度段階です。</div>
 <div class="display-quick-actions" role="group" aria-label="筋肉と骨格の表示を一括切り替え">
  <button id="showAllMuscles" type="button" aria-pressed="true">全筋肉 ON</button>
  <button id="hideAllMuscles" type="button" aria-pressed="false">全筋肉 OFF</button>
