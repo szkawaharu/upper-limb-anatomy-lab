@@ -65,7 +65,7 @@ for(const name of [...spec.SCAPULAR_MUSCLES,...spec.SCAPULAR_TENDONS])
 for(const id of ['scapularMuscles','cuffOnly','scapulaDisplay','scapularBackView',
  'scapularFrontView','scapularMuscleStatus'])
  assert.ok(html.includes('id="'+id+'"'),'missing UI control '+id);
-assert.ok(html.includes('上肢3D解剖ラボ · v0.53'),'wrong app version');
+assert.ok(html.includes('上肢3D解剖ラボ · v0.54'),'wrong app version');
 assert.ok(js.includes("settings.scapulaDisplay==='translucent'"),'scapular translucency missing');
 assert.ok(js.includes('SCAPULAR_CUFF'),'rotator cuff classification missing');
-console.log('PASS v0.53: '+cases+' synthetic shoulder poses × 4 muscles; mesh seams; cleanup; cuff distinction; 6 UI controls. No anatomical accuracy certified.');
+console.log('PASS v0.54: '+cases+' synthetic shoulder poses × 4 muscles; mesh seams; cleanup; cuff distinction; 6 UI controls. No anatomical accuracy certified.');
