@@ -2,7 +2,7 @@
 
 スマートフォン対応の上肢骨格・筋肉・腱を観察する教育用Webアプリ。動作と形態は**解剖学的に未検証の近似を含み、臨床用・診断用ではありません**。
 
-**現在のバージョン：v0.55**
+**現在のバージョン：v0.56**
 
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
@@ -11,6 +11,10 @@
 - **v0.54の保存ブランチ**：[`archive/v0.54-before-anatomy-rebuild`](../../tree/archive/v0.54-before-anatomy-rebuild)
 - **v0.53の保存ブランチ**：[`archive/v0.53-before-review`](../../tree/archive/v0.53-before-review)
 - **v0.51の保存ブランチ**：[`archive/v0.51-before-scapular-fix`](../../tree/archive/v0.51-before-scapular-fix)
+
+## v0.56：両上肢・胸郭・背部
+
+左右独立の関節操作、右上の左右切替、姿勢コピー、両腕・胸郭・背部筋の個別表示を追加。左上肢は右の既存実骨・筋腱形状を鏡映し、左右それぞれ別の可動状態を保持します。胸郭・胸骨・頸胸椎および僧帽筋、菱形筋、肩甲挙筋、広背筋、前鋸筋は模式メッシュです。実測形態・骨接触・筋張力・胸郭運動は未検証。
 
 ## 主な機能
 
@@ -23,6 +27,7 @@ v0.55では棘上筋・棘下筋・小円筋・大円筋の**輪郭を筋ごと�
 HTML/JSのみで起動しますが、実骨メッシュを表示するにはオンライン通信が必要です。
 
 ```bash
+node tests/upper-body-v056.mjs
 node tests/scapular-muscles-v055.mjs
 node tests/scapular-muscles-v054.mjs
 node tests/scapular-muscles-v053.mjs

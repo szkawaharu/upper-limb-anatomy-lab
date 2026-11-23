@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,minimum-scale=1">
-<meta name="theme-color" content="#0b1220"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="上肢3D"><title>上肢3D解剖ラボ | 肩甲骨・鎖骨・上腕骨・橈骨・尺骨</title>
+<meta name="theme-color" content="#0b1220"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="上肢3D"><title>上肢3D解剖ラボ | 両上肢・胸郭・背部</title>
 <style>
 :root {color-scheme:dark; --bg:#090f1a;--panel:#111d2d;--border:#29394b;--txt:#e7edf5;--mute:#93a5bb;--accent:#63d7d0;--accent2:#e9b875}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;line-height:1.5}
@@ -732,7 +732,7 @@ function refreshModelStatus(){
  if(summary){
   summary.textContent=!realReady
    ? (modelWarning?'骨格：実骨データの取得に失敗・近似形状を表示中':'骨格：実骨データを読み込み中…')
-   : handReady?'骨格：上肢5骨＋右手27骨を実骨形状で表示中'
+   : handReady?'骨格：右実骨＋左鏡映（上肢5骨・手27骨／片側）'
    : handModelWarning?'骨格：上肢5骨は実骨・手は近似形状を表示中'
    : `骨格：上肢5骨を読み込み済み・手の骨 ${handLoadCount}/27 を取得中`;
  }
@@ -2551,7 +2551,7 @@ function syncDisplayActions(){
  const skeleton=displayPreset==='skeleton'&&count===0&&$('hand').checked&&!$('v56Back').checked&&Object.values(boneShown).every(Boolean);
  for(const [id,on] of [['showAllMuscles',count===muscleToggleIds.length&&allLayers],['hideAllMuscles',count===0&&!skeleton],['showSkeletonOnly',skeleton]])$(id).setAttribute('aria-pressed',String(on));
  $('restoreDisplayState').disabled=!previousDisplayState;
- $('displayModeStatus').textContent=$('cuffOnly').checked?'回旋筋腱板のみ：棘上筋・棘下筋・小円筋を模式表示（肩甲下筋は未実装）。':skeleton?'骨格のみ：上肢5骨と手の骨を表示（筋肉・腱はOFF）':count===total&&allLayers?'筋肉・腱：全'+total+'項目ON（手の骨格OFF時は手の腱が非表示）':count===0?'筋肉・腱：すべてOFF（骨の個別表示は維持）':'筋肉・腱：'+total+'項目中'+count+'項目ON／層：'+({both:'全層',superficial:'浅層',deep:'中・深層'}[settings.forearmLayer])+'（個別設定）';
+ $('displayModeStatus').textContent=$('cuffOnly').checked?'回旋筋腱板のみ：棘上筋・棘下筋・小円筋を模式表示（肩甲下筋は未実装）。':skeleton?'骨格のみ：選択した骨を表示（筋肉・腱はOFF）':count===total&&allLayers?'筋肉・腱：全'+total+'項目ON（手の骨格OFF時は手の腱が非表示）':count===0?'筋肉・腱：すべてOFF（骨の個別表示は維持）':'筋肉・腱：'+total+'項目中'+count+'項目ON／層：'+({both:'全層',superficial:'浅層',deep:'中・深層'}[settings.forearmLayer])+'（個別設定）';
 }
 function setDisplayPreset(mode){
  previousDisplayState=captureDisplayState();displayPreset=mode;
@@ -3279,7 +3279,7 @@ function v56Torso(){
   }
   ribPairs.push(i+1);
  }
- path('manubrium',[[0,1.72,-.10,.09],[0,1.57,-.14,.087]],cBone,.48);
+ path('manubrium',[[0,1.72,.035,.09],[0,1.57,-.14,.087]],cBone,.48);
  path('sternum',[[0,1.55,-.14,.063],[0,1.28,-.16,.058],[0,1.02,-.15,.055]],cBone,.45);
  path('xiphoid',[[0,1.04,-.15,.035],[0,.90,-.14,.014]],cBone,.55);
  return v56TorsoCache={real:realReady,parts,ribPairs};

@@ -156,6 +156,9 @@ for(const id of [...spec.SCAPULAR_MUSCLES,...spec.SCAPULAR_TENDONS])
  assert.equal(geomDynamic[id],undefined,'stale mesh after OFF: '+id);
 for(const id of ['scapularMuscles','cuffOnly','scapulaDisplay','scapularBackView','scapularFrontView','scapularMuscleStatus'])
  assert.ok(html.includes('id="'+id+'"'),'missing control '+id);
-assert.ok(html.includes('上肢3D解剖ラボ · v0.55'),'v0.55 not displayed');
+assert.ok(/上肢3D解剖ラボ · v\d+\.\d+/.test(html),'v0.55 not displayed');
 assert.ok(js.includes("settings.scapulaDisplay==='translucent'"),'scapula opacity mode removed');
 console.log('PASS v0.55: 35 synthetic poses × 4 muscles, four distinct curved lofts, surface clearance, tendon continuity, cleanup and controls.');
+
+// Run the bilateral integration test in the existing CI job.
+await import('./upper-body-v056.mjs');
