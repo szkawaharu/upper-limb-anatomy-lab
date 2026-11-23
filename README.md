@@ -2,7 +2,7 @@
 
 スマートフォン対応の上肢骨格・筋肉・腱を観察する教育用Webアプリ。動作と形態は**解剖学的に未検証の近似を含み、臨床用・診断用ではありません**。
 
-**現在のバージョン：v0.56**
+**現在のバージョン：v0.57**
 
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
@@ -11,6 +11,10 @@
 - **v0.54の保存ブランチ**：[`archive/v0.54-before-anatomy-rebuild`](../../tree/archive/v0.54-before-anatomy-rebuild)
 - **v0.53の保存ブランチ**：[`archive/v0.53-before-review`](../../tree/archive/v0.53-before-review)
 - **v0.51の保存ブランチ**：[`archive/v0.51-before-scapular-fix`](../../tree/archive/v0.51-before-scapular-fix)
+
+## v0.57：胸郭・脊椎の精密化
+
+BodyParts3Dの同一アトラスから左右肋骨24、頸胸椎19、胸骨3、肋軟骨2（計48メッシュ）を個別取得。元の共有座標を保持し、全取得成功時のみ胸郭全体を置換。未取得時やWebGL非対応時は旧近似を明記。背部筋は旧形状のまま初期OFF。出典・部位表・制約は [THORAX_V057](./docs/THORAX_V057.md)。
 
 ## v0.56：両上肢・胸郭・背部
 
