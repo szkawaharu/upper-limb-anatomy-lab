@@ -754,7 +754,12 @@ function parseBinaryBone(buffer,name){
  }
  if(!ff.length)throw Error(name+' に面がありません');
  realSurfaceVertices[name]=vv; // nearest-vertex anatomical landmark snapping, computed once per file
-  if(name==='scapula')realSurfaceFaces[name]=ff; // v0.55 projected posterior surface triangle index
+  if(name==='scapula'){
+   realSurfaceFaces[name]=ff; // v0.55 projected posterior surface triangle index
+   // A retry or model refresh must never reuse surface samples from another
+   // mesh or mix old triangle bins with newly loaded atlas polygons.
+   resetScapularSurfaceProjection();
+  }
  const normals=nn.map(norm);
  return {vertices:vv,faces:ff,normals};
 }
@@ -1200,6 +1205,10 @@ function updateV43Forearm(){
 // the tendon to a humerus-local insertion in world space.
 const scapularSurfaceCache=new Map();
 let scapularSurfaceBins=null,scapularSurfaceMisses=0,scapularSurfaceRayHits=0;
+function resetScapularSurfaceProjection(){
+ scapularSurfaceCache.clear();
+ scapularSurfaceBins=null;scapularSurfaceMisses=0;scapularSurfaceRayHits=0;
+}
 const SCAPULAR_BIN=.075; // World units; only built once after the real STL loads.
 function prepareScapularSurfaceBins(){
  if(scapularSurfaceBins)return scapularSurfaceBins;
