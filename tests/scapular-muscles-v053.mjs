@@ -70,10 +70,19 @@ for(const deg of [0,30,60,90,120,150,180])for(const axial of [-45,0,45]){
  assert.equal(report.projectionFallbacks,0,'test target must hit posterior triangles');
  assert.ok(report.rayProjectionHits>50,'ray projection was not exercised');
  assert.ok(report.minimumPosteriorProjectionClearanceMm>0,'posterior offset nonpositive');
+ assert.ok(Number.isInteger(report.approximateHumeralHeadGuideMoves),'missing humeral-head visual guide count');
  let minClearance=Infinity;
  for(const id of spec.SCAPULAR_MUSCLES){
   const g=geomDynamic[id],t=geomDynamic['tendon'+id[0].toUpperCase()+id.slice(1)];
   assert.ok(g&&t,'missing mesh '+id);
+  const centerRow=4*sampleCount,backOffset=bellyRows*sampleCount;
+  const edgeThickness=len(sub(g.vertices[centerRow],g.vertices[backOffset+centerRow]))/2;
+  const middleThickness=len(sub(g.vertices[centerRow+3],g.vertices[backOffset+centerRow+3]))/2;
+  assert.ok(middleThickness>edgeThickness*2,'hard rectangular flap edge persists: '+id);
+  // Station t=1 must follow the pose of the humerus precisely, despite
+  // the approximate spherical head clearance guide for intermediate stations.
+  const row=report.muscles.find(m=>m.id===id);
+  assert.ok(row?.endTrack?.every(p=>p.every(Number.isFinite)));
   // The bottom half of the belly at scapula-attached rows 0..6 MUST be
   // outside the curved posterior envelope, never behind the bone.
   for(let k=0;k<=6;k++)for(let j=0;j<sampleCount;j++){
