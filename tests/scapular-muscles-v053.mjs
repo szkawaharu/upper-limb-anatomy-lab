@@ -1,4 +1,5 @@
-// Run: node tests/scapular-muscles-v053.mjs
+// Legacy regression: node tests/scapular-muscles-v053.mjs
+// Covers the modern geometry implementation; for v0.53 exactly, see the archived v0.53 branch.
 // Rigorous SYNTHETIC test of mesh generation, not anatomical validation.
 // Scapular surface = triangulated curved posterior and anterior sheets.
 import assert from 'node:assert/strict';
@@ -53,11 +54,11 @@ const env={...spec,add,sub,mul,dot,len,norm,mix,clamp,qr,transform,realAnchors,
  mesh,settings,SOFTWARE,gl,geomDynamic,gdynamic:(id,g)=>{geomDynamic[id]=g},realReady:true};
 const start=js.indexOf('const scapularSurfaceCache=');
 const end=js.indexOf('function updateRealMuscles(){',start);
-assert.ok(start>0&&end>start,'v0.53 projector/generator missing');
+assert.ok(start>0&&end>start,'v0.54 projector/generator missing');
 const segment=js.slice(start,end);
 const api=new Function(...Object.keys(env),segment+
  '\nreturn{run:updateScapularMuscles,diagnostics:()=>scapularDiagnostics,cache:scapularSurfaceCache}')(...Object.values(env));
-const sampleCount=7,bellyRows=9,surfaceStart=bellyRows*sampleCount,poses=[];
+const sampleCount=7,bellyRows=8,surfaceStart=bellyRows*sampleCount,poses=[];
 for(const deg of [0,30,60,90,120,150,180])for(const axial of [-45,0,45]){
  const theta=deg*Math.PI/180;
  realPose.scapula=[qa([1,0,0],theta/3),realAnchors.AC];
@@ -100,6 +101,6 @@ for(const id of [...spec.SCAPULAR_MUSCLES,...spec.SCAPULAR_TENDONS])
  assert.equal(geomDynamic[id],undefined,'stale mesh after OFF: '+id);
 for(const id of ['scapularMuscles','cuffOnly','scapulaDisplay','scapularBackView','scapularFrontView','scapularMuscleStatus'])
  assert.ok(html.includes('id="'+id+'"'),'missing control '+id);
-assert.ok(html.includes('上肢3D解剖ラボ · v0.53'),'v0.53 not displayed');
+assert.ok(html.includes('上肢3D解剖ラボ · v0.54'),'v0.54 not displayed');
 assert.ok(js.includes("settings.scapulaDisplay==='translucent'"),'scapula opacity mode removed');
-console.log('PASS v0.53: 21 synthetic shoulder poses × 4 muscles, positive posterior clearance, 0 projected misses, 0 tendon seams, OFF cleanup and UI.');
+console.log('PASS v0.54: 21 synthetic shoulder poses × 4 muscles, positive posterior clearance, 0 projected misses, 0 tendon seams, OFF cleanup and UI.');
