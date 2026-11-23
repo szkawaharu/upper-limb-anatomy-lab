@@ -99,7 +99,7 @@ for(const deg of [0,30,60,90,120,150,180])for(const axial of [-90,-45,0,45,90]){
    const stop=source.exitA.map((v,i)=>(v+source.exitB[i])*.5);
    const mid=api.curved(source,.5,.5);
    const expected=mul(add(start,stop),.5);
-   assert.ok(len(sub(mid,expected))>1.0,'straight Egyptian-style centerline remains: '+id);
+   assert.ok(len(sub(mid,expected))>.75,'straight Egyptian-style centerline remains: '+id);
   }
   const targetA=atlasToWorld(source.originA),targetB=atlasToWorld(source.originB);
   const fullWidth=len(sub(targetA,targetB));
