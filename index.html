@@ -243,7 +243,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.57</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.51</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.57.1</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.51</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
@@ -253,7 +253,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.57</div><button id="v56QuickSide" type="button" aria-label="操作する腕を切り替え（現在：右）">右</button>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.57.1</div><button id="v56QuickSide" type="button" aria-label="操作する腕を切り替え（現在：右）">右</button>
 <nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
  <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
  <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
@@ -268,16 +268,21 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 
 </div>
 <section class="side" id="labTools">
-<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.57</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
-<details class="control-fold" open><summary>両上肢・胸郭<span class="fold-note">v0.57</span></summary><div class="fold-body">
+<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.57.1</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
+<details class="control-fold" open><summary>両上肢・胸郭<span class="fold-note">v0.57.1</span></summary><div class="fold-body">
 <label for="v56Side">操作する腕（関節角度・直接操作）</label><select id="v56Side"><option value="right">右腕</option><option value="left">左腕</option></select>
 <label class="switch"><input id="v56Both" type="checkbox" checked>両腕を表示（OFF：選択中の腕だけ）</label>
 <label class="switch"><input id="v56Back" type="checkbox">背部・肩甲帯筋を表示（旧近似・初期OFF）</label>
 <button type="button" id="v56Copy">選択中の腕の姿勢を反対側にコピー</button>
 <div class="detail" id="v57TorsoStatus" role="status" aria-live="polite">胸郭：上肢の実骨データ取得を待機中</div>
-<div class="control"><label for="v57TorsoLayer">胸郭の表示部位</label><select id="v57TorsoLayer"><option value="all">全体</option><option value="ribs">肋骨</option><option value="spine">頸椎・胸椎</option><option value="sternum">胸骨</option><option value="cartilage">肋軟骨</option></select></div>
-<button type="button" id="v57RetryTorso" hidden>胸郭データを再取得</button>
-<div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/THORAX_V057.md" target="_blank" rel="noopener noreferrer">胸郭の出典・検証範囲</a>。胸郭は静的な解剖形状です。呼吸や肩甲胸郭の接触計算は未実装。</div>
+<div class="control"><label for="v57TorsoLayer">胸郭の表示部位</label><select id="v57TorsoLayer"><option value="all">全体</option><option value="ribs">肋骨</option><option value="spine">頸椎・胸椎</option><option value="sternum">胸骨</option><option value="cartilage">肋軟骨</option><option value="discs">椎間板</option></select></div>
+<button type="button" id="v57RetryTorso" hidden>不足データを再取得</button>
+<label class="switch"><input id="v571LegacyCart" type="checkbox" checked>既存の左右軟骨（BP24/28）も表示</label>
+<label class="switch"><input id="v571Joints" type="checkbox">胸鎖・肩鎖関節の推定中心を表示</label>
+<button type="button" id="v571Audit">軟骨の重複候補・関節位置を検査</button>
+<pre class="detail" id="v571AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査。実骨取得後に実行してください。</pre>
+<div class="detail">青緑＝肋軟骨、青灰＝椎間板。既存の軟骨と新規メッシュは個別に検査できます。交差検出は重複候補で、正常な接触・包含・同一平面の重なりまでは判定しません。関節中心は推定値のままです。</div>
+<div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/THORAX_V0571.md" target="_blank" rel="noopener noreferrer">胸郭の出典・検証範囲</a>。胸郭は静的な解剖形状です。呼吸や肩甲胸郭の接触計算は未実装。</div>
 <div class="detail">右上の「右／左」ボタンでも切替可能。左右の角度は独立保持、筋・骨の表示設定は共通。反対側は右の実骨形状の鏡映。胸郭・脊椎はBodyParts3Dの解剖メッシュを優先し、取得失敗時は旧近似へ切替。背部筋はv0.56の近似形状のままです。</div>
 </div></details><details class="edge-help control-fold"><summary>操作方法<span class="fold-note">ヘルプ</span></summary><div class="fold-body"><div class="immersive-tips">操作：1本指ドラッグで視点回転（初期設定は逆方向）。<strong>骨を約0.4秒長押し → ドラッグで関節操作。右端の「✋」は曲げ伸ばし、「↻」は前腕の回内・回外と上腕の内旋・外旋。↻では骨を左右にドラッグするか、2本指でひねって調整できます。<strong>3本指で左右にスワイプすると、<strong>上腕付近は肩の内旋・外旋、前腕付近は回内・回外</strong>を操作できます。判断しにくいときは上部の関節指定で「上腕：回旋」「前腕：回内外」を固定できます。</strong>iPhoneで選択メニューが出る場合は「✋」または「↻」をONにして直接ドラッグ</strong>。2本指は視点移動・ピンチ。選びにくい関節は上部メニューで指定できます。</div></div></details><div class="note" id="launchTip"><strong>iPhoneでモデルが表示されない場合</strong>：HTMLファイルのプレビューではJavaScriptが実行されない場合があります。HTMLファイルをWebサイトとして公開し、SafariでURLを開いてください。下の操作ボタンはブラウザ版で機能します。</div>
 <details class="control-fold" id="medicalStudyPanel"><summary>医学解剖：起始・停止・神経支配・作用<span class="fold-note">根拠と限界</span></summary>
@@ -2236,7 +2241,7 @@ if(settings.scapularMuscles||settings.muscles||settings.deltoid||settings.brachi
  }
  for(const name of TENDON_PARTS)if(muscleVisible(name))drawPart(geomDynamic[name],ID,OR,['tendonFCR','tendonFCU','pisohamateBand','pisometacarpalBand','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].includes(name)||name.startsWith('fds')?cTendonFCR:name.startsWith('fdp')?[.79,.90,.94]:cTendon,1,2);
 }
-v56DrawBack();
+v56DrawBack();v571DrawJointCenters();
 // Translucent scapula is drawn AFTER opaque muscles without writing depth,
  // to reveal their posterior surface and the rim of the bone.
  if(boneShown.scapula&&settings.scapulaDisplay==='translucent'){
@@ -3090,7 +3095,7 @@ window.__labJointErrors=()=>{
  return {ready:true,wristErrorMm:handWristErrorMm,thumbCMCErrorMm,thumbMCPErrorMm,thumbIPErrorMm,distalGapDeltaMm:poseCheck.distalGapDeltaMm,
    palmNormal:handPivot.thumbPalmNormal,thumbFlexAxis:handPivot.thumbFlexAxis,thumbFlexSign:handPivot.thumbFlexSign};
 };
-window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.57',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
+window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.57.1',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
 window.__labForearm=()=>({...v43ForearmDiagnostics,available:V43_CONFIG.length,display:settings.forearmLayer,bulkPercent:settings.forearmBulk});
 window.__labContinuity=()=>({ready:realReady,elbow:settings.elbow,pronation:settings.pronation,forearmBulk:settings.forearmBulk,
  ...muscleDiagnostics.continuity,
@@ -3289,23 +3294,32 @@ function v56Torso(){
  return v56TorsoCache={real:realReady,parts,ribPairs};
 }
 
-// v0.57: static axial anatomy from the SAME common atlas coordinate frame.
+// v0.57.1: static axial anatomy from the SAME common atlas coordinate frame.
 // The source commit is pinned. Never individually center or scale STL meshes.
 const V57_SOURCE='2c83c698788cff57f6317bddcf712e7acfbea7d8';
-const V57_MANIFEST=Object.freeze([{"id":"C1","file":"FMA12519.stl","group":"spine","side":null,"level":1,"bytes":308684,"sha":"0baa9a334c9dcc0edf18766583e6844cf02feb97"},{"id":"C2","file":"FMA12520.stl","group":"spine","side":null,"level":2,"bytes":343584,"sha":"836a2134498443bc0232225f4538a3b191d18836"},{"id":"C3","file":"FMA12521.stl","group":"spine","side":null,"level":3,"bytes":263984,"sha":"e1cfb107cef73e797c31079b67e2fa77fe004cc8"},{"id":"C4","file":"FMA12522.stl","group":"spine","side":null,"level":4,"bytes":211284,"sha":"a17a67c4aad36b42e0cc646548c3d9108eb82735"},{"id":"C5","file":"FMA12523.stl","group":"spine","side":null,"level":5,"bytes":237784,"sha":"a65b7498adde062279a31ecdc430f8bbe4563450"},{"id":"C6","file":"FMA12524.stl","group":"spine","side":null,"level":6,"bytes":317584,"sha":"f5c0e94cc332d12090c777558b7dbb3e5e2378e3"},{"id":"C7","file":"FMA12525.stl","group":"spine","side":null,"level":7,"bytes":261184,"sha":"0105ea0865b4307f9515035380746a5079e83c26"},{"id":"T1","file":"FMA9165.stl","group":"spine","side":null,"level":1,"bytes":280784,"sha":"836f475f465f641c901dc8247778bba381881c29"},{"id":"T2","file":"FMA9187.stl","group":"spine","side":null,"level":2,"bytes":418084,"sha":"c32d1b1b9dce952dee201ff6742212f1bc10ffc4"},{"id":"T3","file":"FMA9209.stl","group":"spine","side":null,"level":3,"bytes":445584,"sha":"ed92d12c8d1a6b008ad536598836f870569d4edd"},{"id":"T4","file":"FMA9248.stl","group":"spine","side":null,"level":4,"bytes":446584,"sha":"8eb5c627faaa8b409b9c937a6267ee12d19142db"},{"id":"T5","file":"FMA9922.stl","group":"spine","side":null,"level":5,"bytes":491784,"sha":"4f32806b16f18bb37073fb94cbf42cf8889ac1f7"},{"id":"T6","file":"FMA9945.stl","group":"spine","side":null,"level":6,"bytes":244884,"sha":"58396556a652315e1f365afa90b4073eb4c89e9b"},{"id":"T7","file":"FMA9968.stl","group":"spine","side":null,"level":7,"bytes":537084,"sha":"3efaa61786e54db4958b644c25206dc0ba1574be"},{"id":"T8","file":"FMA9991.stl","group":"spine","side":null,"level":8,"bytes":260384,"sha":"9c7a5f71ad333163c3a9cb86675bcf0c231d2e79"},{"id":"T9","file":"FMA10014.stl","group":"spine","side":null,"level":9,"bytes":564384,"sha":"fe4d88049910ec51817d13da11a13a951316af39"},{"id":"T10","file":"FMA10037.stl","group":"spine","side":null,"level":10,"bytes":596484,"sha":"3775902c33dcea2301e4a271f41f9b29ff8ccb99"},{"id":"T11","file":"FMA10059.stl","group":"spine","side":null,"level":11,"bytes":282684,"sha":"5d7ce507e589db5b8b30dd183d7f1a3d958b3a68"},{"id":"T12","file":"FMA10081.stl","group":"spine","side":null,"level":12,"bytes":301984,"sha":"b51bd9ec204d2aea6b0dd5539523aa2a30d0b2ea"},{"id":"R1","file":"FMA7857.stl","group":"ribs","side":"right","level":1,"bytes":709784,"sha":"7c90cb8cca8c02a5b8cab16e92afd4ea40955aa4"},{"id":"R2","file":"FMA7882.stl","group":"ribs","side":"right","level":2,"bytes":1184784,"sha":"8624142c3e416b742a039de13fd727d2a584c64f"},{"id":"R3","file":"FMA7909.stl","group":"ribs","side":"right","level":3,"bytes":1543084,"sha":"02d820e7297018e3f567a668c1498e636af6c56a"},{"id":"R4","file":"FMA7957.stl","group":"ribs","side":"right","level":4,"bytes":1924484,"sha":"64d96c9a7b685caab9a9e7d6c3704945922ef678"},{"id":"R5","file":"FMA8066.stl","group":"ribs","side":"right","level":5,"bytes":2081784,"sha":"cd27206acfb3f4a26e2c77abec2a8cd9110c9fed"},{"id":"R6","file":"FMA8175.stl","group":"ribs","side":"right","level":6,"bytes":2231784,"sha":"dbde29d9fd73772c96e91f7f3461d91b2beb1091"},{"id":"R7","file":"FMA8229.stl","group":"ribs","side":"right","level":7,"bytes":2157384,"sha":"9f734303eb74e1750b5aa26b5a2baca26930b0cb"},{"id":"R8","file":"FMA8283.stl","group":"ribs","side":"right","level":8,"bytes":1832384,"sha":"a4ba569bc526117d24b52b59ddf6f7a4b2671474"},{"id":"R9","file":"FMA8364.stl","group":"ribs","side":"right","level":9,"bytes":1713984,"sha":"7af49ba4fed22486661201dae1642a27c3dc110b"},{"id":"R10","file":"FMA8445.stl","group":"ribs","side":"right","level":10,"bytes":1550584,"sha":"5c412b0bdac0dddfc47f8ff706b6410e715d6875"},{"id":"R11","file":"FMA8531.stl","group":"ribs","side":"right","level":11,"bytes":1121484,"sha":"e34fd45f1b94a2c8bbbff8b6462f93d736ab3089"},{"id":"R12","file":"FMA8533.stl","group":"ribs","side":"right","level":12,"bytes":663184,"sha":"a878befad2348334a235b176cf3c49e62ab47536"},{"id":"L1","file":"FMA7987.stl","group":"ribs","side":"left","level":1,"bytes":773284,"sha":"be28b5ee8e00693b438cffa9980c1c385ed22ee9"},{"id":"L2","file":"FMA8012.stl","group":"ribs","side":"left","level":2,"bytes":1265284,"sha":"a8e93635ddd97561ae03358578fe2fbdb6df948c"},{"id":"L3","file":"FMA8039.stl","group":"ribs","side":"left","level":3,"bytes":1560684,"sha":"cd4bab108e475831cce05e5d961f71b613879bc8"},{"id":"L4","file":"FMA8148.stl","group":"ribs","side":"left","level":4,"bytes":1896184,"sha":"26a3f0bc09746ed3750ba5a08237d89c451b8778"},{"id":"L5","file":"FMA8093.stl","group":"ribs","side":"left","level":5,"bytes":2078484,"sha":"f6f3a4c10d871aa79495f26ee39a047464703de3"},{"id":"L6","file":"FMA8202.stl","group":"ribs","side":"left","level":6,"bytes":2221784,"sha":"8f305c97a23c4142a86ea005c74f379d9a1d5e6e"},{"id":"L7","file":"FMA8256.stl","group":"ribs","side":"left","level":7,"bytes":2203184,"sha":"737ec06b48704d4521e7f79add1ff8a30b73d2d6"},{"id":"L8","file":"FMA8310.stl","group":"ribs","side":"left","level":8,"bytes":1856784,"sha":"37a316855d052718b503d5b40fba3dd0a4d59e17"},{"id":"L9","file":"FMA8391.stl","group":"ribs","side":"left","level":9,"bytes":1801084,"sha":"43ed7639aa445d750d6247b4d7c89baf67eac897"},{"id":"L10","file":"FMA8472.stl","group":"ribs","side":"left","level":10,"bytes":1587984,"sha":"84a961da3b750f63b7d7b49635cbe23be6eef4b3"},{"id":"L11","file":"FMA8532.stl","group":"ribs","side":"left","level":11,"bytes":1141384,"sha":"268128de0accc5903151aff7b5aa601bf7ff9551"},{"id":"L12","file":"FMA8534.stl","group":"ribs","side":"left","level":12,"bytes":686384,"sha":"138ab2cbf384e2880840f0962784f5937b8b7d1a"},{"id":"manubrium","file":"FMA7486.stl","group":"sternum","side":null,"level":null,"bytes":594184,"sha":"13a9334b67a3092084bf9b74b761563611a493a2"},{"id":"sternalBody","file":"FMA7487.stl","group":"sternum","side":null,"level":null,"bytes":995884,"sha":"fa7948c5cbd456089c965e481b366ea97a2ea937"},{"id":"xiphoid","file":"FMA7488.stl","group":"sternum","side":null,"level":null,"bytes":204384,"sha":"806cecafd4c3e2167a2a99a8a120891b830fe564"},{"id":"cartilageR","file":"BP28.stl","group":"cartilage","side":"right","level":null,"bytes":957884,"sha":"61a63d9564545a96d4988f5d1cbae0339ed01cd1"},{"id":"cartilageL","file":"BP24.stl","group":"cartilage","side":"left","level":null,"bytes":947184,"sha":"7506256f24d1408758831cf10405f2965f4d64be"}]);
+const V57_MANIFEST=Object.freeze([{"id":"C1","file":"FMA12519.stl","group":"spine","side":null,"level":1,"bytes":308684,"sha":"0baa9a334c9dcc0edf18766583e6844cf02feb97"},{"id":"C2","file":"FMA12520.stl","group":"spine","side":null,"level":2,"bytes":343584,"sha":"836a2134498443bc0232225f4538a3b191d18836"},{"id":"C3","file":"FMA12521.stl","group":"spine","side":null,"level":3,"bytes":263984,"sha":"e1cfb107cef73e797c31079b67e2fa77fe004cc8"},{"id":"C4","file":"FMA12522.stl","group":"spine","side":null,"level":4,"bytes":211284,"sha":"a17a67c4aad36b42e0cc646548c3d9108eb82735"},{"id":"C5","file":"FMA12523.stl","group":"spine","side":null,"level":5,"bytes":237784,"sha":"a65b7498adde062279a31ecdc430f8bbe4563450"},{"id":"C6","file":"FMA12524.stl","group":"spine","side":null,"level":6,"bytes":317584,"sha":"f5c0e94cc332d12090c777558b7dbb3e5e2378e3"},{"id":"C7","file":"FMA12525.stl","group":"spine","side":null,"level":7,"bytes":261184,"sha":"0105ea0865b4307f9515035380746a5079e83c26"},{"id":"T1","file":"FMA9165.stl","group":"spine","side":null,"level":1,"bytes":280784,"sha":"836f475f465f641c901dc8247778bba381881c29"},{"id":"T2","file":"FMA9187.stl","group":"spine","side":null,"level":2,"bytes":418084,"sha":"c32d1b1b9dce952dee201ff6742212f1bc10ffc4"},{"id":"T3","file":"FMA9209.stl","group":"spine","side":null,"level":3,"bytes":445584,"sha":"ed92d12c8d1a6b008ad536598836f870569d4edd"},{"id":"T4","file":"FMA9248.stl","group":"spine","side":null,"level":4,"bytes":446584,"sha":"8eb5c627faaa8b409b9c937a6267ee12d19142db"},{"id":"T5","file":"FMA9922.stl","group":"spine","side":null,"level":5,"bytes":491784,"sha":"4f32806b16f18bb37073fb94cbf42cf8889ac1f7"},{"id":"T6","file":"FMA9945.stl","group":"spine","side":null,"level":6,"bytes":244884,"sha":"58396556a652315e1f365afa90b4073eb4c89e9b"},{"id":"T7","file":"FMA9968.stl","group":"spine","side":null,"level":7,"bytes":537084,"sha":"3efaa61786e54db4958b644c25206dc0ba1574be"},{"id":"T8","file":"FMA9991.stl","group":"spine","side":null,"level":8,"bytes":260384,"sha":"9c7a5f71ad333163c3a9cb86675bcf0c231d2e79"},{"id":"T9","file":"FMA10014.stl","group":"spine","side":null,"level":9,"bytes":564384,"sha":"fe4d88049910ec51817d13da11a13a951316af39"},{"id":"T10","file":"FMA10037.stl","group":"spine","side":null,"level":10,"bytes":596484,"sha":"3775902c33dcea2301e4a271f41f9b29ff8ccb99"},{"id":"T11","file":"FMA10059.stl","group":"spine","side":null,"level":11,"bytes":282684,"sha":"5d7ce507e589db5b8b30dd183d7f1a3d958b3a68"},{"id":"T12","file":"FMA10081.stl","group":"spine","side":null,"level":12,"bytes":301984,"sha":"b51bd9ec204d2aea6b0dd5539523aa2a30d0b2ea"},{"id":"R1","file":"FMA7857.stl","group":"ribs","side":"right","level":1,"bytes":709784,"sha":"7c90cb8cca8c02a5b8cab16e92afd4ea40955aa4"},{"id":"R2","file":"FMA7882.stl","group":"ribs","side":"right","level":2,"bytes":1184784,"sha":"8624142c3e416b742a039de13fd727d2a584c64f"},{"id":"R3","file":"FMA7909.stl","group":"ribs","side":"right","level":3,"bytes":1543084,"sha":"02d820e7297018e3f567a668c1498e636af6c56a"},{"id":"R4","file":"FMA7957.stl","group":"ribs","side":"right","level":4,"bytes":1924484,"sha":"64d96c9a7b685caab9a9e7d6c3704945922ef678"},{"id":"R5","file":"FMA8066.stl","group":"ribs","side":"right","level":5,"bytes":2081784,"sha":"cd27206acfb3f4a26e2c77abec2a8cd9110c9fed"},{"id":"R6","file":"FMA8175.stl","group":"ribs","side":"right","level":6,"bytes":2231784,"sha":"dbde29d9fd73772c96e91f7f3461d91b2beb1091"},{"id":"R7","file":"FMA8229.stl","group":"ribs","side":"right","level":7,"bytes":2157384,"sha":"9f734303eb74e1750b5aa26b5a2baca26930b0cb"},{"id":"R8","file":"FMA8283.stl","group":"ribs","side":"right","level":8,"bytes":1832384,"sha":"a4ba569bc526117d24b52b59ddf6f7a4b2671474"},{"id":"R9","file":"FMA8364.stl","group":"ribs","side":"right","level":9,"bytes":1713984,"sha":"7af49ba4fed22486661201dae1642a27c3dc110b"},{"id":"R10","file":"FMA8445.stl","group":"ribs","side":"right","level":10,"bytes":1550584,"sha":"5c412b0bdac0dddfc47f8ff706b6410e715d6875"},{"id":"R11","file":"FMA8531.stl","group":"ribs","side":"right","level":11,"bytes":1121484,"sha":"e34fd45f1b94a2c8bbbff8b6462f93d736ab3089"},{"id":"R12","file":"FMA8533.stl","group":"ribs","side":"right","level":12,"bytes":663184,"sha":"a878befad2348334a235b176cf3c49e62ab47536"},{"id":"L1","file":"FMA7987.stl","group":"ribs","side":"left","level":1,"bytes":773284,"sha":"be28b5ee8e00693b438cffa9980c1c385ed22ee9"},{"id":"L2","file":"FMA8012.stl","group":"ribs","side":"left","level":2,"bytes":1265284,"sha":"a8e93635ddd97561ae03358578fe2fbdb6df948c"},{"id":"L3","file":"FMA8039.stl","group":"ribs","side":"left","level":3,"bytes":1560684,"sha":"cd4bab108e475831cce05e5d961f71b613879bc8"},{"id":"L4","file":"FMA8148.stl","group":"ribs","side":"left","level":4,"bytes":1896184,"sha":"26a3f0bc09746ed3750ba5a08237d89c451b8778"},{"id":"L5","file":"FMA8093.stl","group":"ribs","side":"left","level":5,"bytes":2078484,"sha":"f6f3a4c10d871aa79495f26ee39a047464703de3"},{"id":"L6","file":"FMA8202.stl","group":"ribs","side":"left","level":6,"bytes":2221784,"sha":"8f305c97a23c4142a86ea005c74f379d9a1d5e6e"},{"id":"L7","file":"FMA8256.stl","group":"ribs","side":"left","level":7,"bytes":2203184,"sha":"737ec06b48704d4521e7f79add1ff8a30b73d2d6"},{"id":"L8","file":"FMA8310.stl","group":"ribs","side":"left","level":8,"bytes":1856784,"sha":"37a316855d052718b503d5b40fba3dd0a4d59e17"},{"id":"L9","file":"FMA8391.stl","group":"ribs","side":"left","level":9,"bytes":1801084,"sha":"43ed7639aa445d750d6247b4d7c89baf67eac897"},{"id":"L10","file":"FMA8472.stl","group":"ribs","side":"left","level":10,"bytes":1587984,"sha":"84a961da3b750f63b7d7b49635cbe23be6eef4b3"},{"id":"L11","file":"FMA8532.stl","group":"ribs","side":"left","level":11,"bytes":1141384,"sha":"268128de0accc5903151aff7b5aa601bf7ff9551"},{"id":"L12","file":"FMA8534.stl","group":"ribs","side":"left","level":12,"bytes":686384,"sha":"138ab2cbf384e2880840f0962784f5937b8b7d1a"},{"id":"manubrium","file":"FMA7486.stl","group":"sternum","side":null,"level":null,"bytes":594184,"sha":"13a9334b67a3092084bf9b74b761563611a493a2"},{"id":"sternalBody","file":"FMA7487.stl","group":"sternum","side":null,"level":null,"bytes":995884,"sha":"fa7948c5cbd456089c965e481b366ea97a2ea937"},{"id":"xiphoid","file":"FMA7488.stl","group":"sternum","side":null,"level":null,"bytes":204384,"sha":"806cecafd4c3e2167a2a99a8a120891b830fe564"},{"id":"cartilageR","file":"BP28.stl","group":"cartilage","side":"right","level":null,"bytes":957884,"sha":"61a63d9564545a96d4988f5d1cbae0339ed01cd1"},{"id":"cartilageL","file":"BP24.stl","group":"cartilage","side":"left","level":null,"bytes":947184,"sha":"7506256f24d1408758831cf10405f2965f4d64be"},{"id":"cartR1","file":"FMA7875.stl","group":"cartilage","side":"right","level":1,"bytes":117184,"sha":"6d60244454f1b432c2bde63133ad52d22f77f6b0"},{"id":"cartR2","file":"FMA7886.stl","group":"cartilage","side":"right","level":2,"bytes":127084,"sha":"4d44c5ae0365090b9c602c32b644400be25b0019"},{"id":"cartR3","file":"FMA7913.stl","group":"cartilage","side":"right","level":3,"bytes":134784,"sha":"ac841437ab3704c0b761d5ee5551e804a398d2bc"},{"id":"cartR4","file":"FMA7976.stl","group":"cartilage","side":"right","level":4,"bytes":174384,"sha":"9d9ac17ade056cd94f10bcfb090f921376024e1a"},{"id":"cartR5","file":"FMA8070.stl","group":"cartilage","side":"right","level":5,"bytes":241584,"sha":"eb0e8179aacabbb5e80cd0f001639a1f0f0fb06f"},{"id":"cartR6","file":"FMA8194.stl","group":"cartilage","side":"right","level":6,"bytes":303984,"sha":"ef7f9f159dc07596675d58e923e9b7f5032ea06f"},{"id":"cartR7","file":"FMA8248.stl","group":"cartilage","side":"right","level":7,"bytes":524684,"sha":"6baf7d074b118e9344cf1d419f0cb38937adb58a"},{"id":"cartL1","file":"FMA8005.stl","group":"cartilage","side":"left","level":1,"bytes":110284,"sha":"0e778f2c9a0ab12f1af45e27015903c38baa878e"},{"id":"cartL2","file":"FMA8031.stl","group":"cartilage","side":"left","level":2,"bytes":117584,"sha":"3ceff8c8f697e8040ff9454f78d963afe8f40d9e"},{"id":"cartL3","file":"FMA8058.stl","group":"cartilage","side":"left","level":3,"bytes":121484,"sha":"88cf765e187f27efc714d6c3b4c0c52650dd855c"},{"id":"cartL4","file":"FMA8167.stl","group":"cartilage","side":"left","level":4,"bytes":161084,"sha":"ccb28f4648eeb80f8f8990b38748b65a363c30bb"},{"id":"cartL5","file":"FMA8112.stl","group":"cartilage","side":"left","level":5,"bytes":226884,"sha":"1fe9b06034e181fa453df7f5e443bf5742c03054"},{"id":"cartL6","file":"FMA8221.stl","group":"cartilage","side":"left","level":6,"bytes":298384,"sha":"ead3e49afdda52719757927c144d349c37ba241b"},{"id":"cartL7","file":"FMA8275.stl","group":"cartilage","side":"left","level":7,"bytes":495184,"sha":"0e768aa470980c894ff287c17e5443c8fe30c0c6"},{"id":"discC2","file":"FMA25058.stl","group":"discs","side":null,"level":2,"bytes":150784,"sha":"1f6bd7a0bdf1b2a6db51774a604834bc59c2378f"},{"id":"discC3","file":"FMA13896.stl","group":"discs","side":null,"level":3,"bytes":151684,"sha":"96315433859255ca3d306070e2267dd85f45d2d0"},{"id":"discC4","file":"FMA13897.stl","group":"discs","side":null,"level":4,"bytes":175884,"sha":"ad190dec4660699b6e5f143c135beb6e50fc08ed"},{"id":"discC5","file":"FMA13898.stl","group":"discs","side":null,"level":5,"bytes":172284,"sha":"c9e7c468d6e6a78b3729ec7407f58a97751623be"},{"id":"discC6","file":"FMA13899.stl","group":"discs","side":null,"level":6,"bytes":161984,"sha":"6bd7d31603abb74f3aa5a3993bb690d45c40112c"},{"id":"discC7","file":"FMA13900.stl","group":"discs","side":null,"level":7,"bytes":195684,"sha":"4e4b0faa1be446a952989149f7c670d69e8fa461"},{"id":"discT1","file":"FMA10458.stl","group":"discs","side":null,"level":1,"bytes":214084,"sha":"5ef06950c000adc7decd248b73b6b538118c4f97"},{"id":"discT2","file":"FMA13495.stl","group":"discs","side":null,"level":2,"bytes":248584,"sha":"6172cc6d4d5c24eeb6bd6707f5dfe9f0bb20e878"},{"id":"discT3","file":"FMA13500.stl","group":"discs","side":null,"level":3,"bytes":258784,"sha":"2fe27a601ab19701b5c5c94c270d609d14817191"},{"id":"discT4","file":"FMA13501.stl","group":"discs","side":null,"level":4,"bytes":315484,"sha":"580cb69e793f90ae004c25d90f89a639f15b689c"},{"id":"discT5","file":"FMA13502.stl","group":"discs","side":null,"level":5,"bytes":366884,"sha":"013e09662ac51c3302f2dfeaa3ae7354256e5648"},{"id":"discT6","file":"FMA13503.stl","group":"discs","side":null,"level":6,"bytes":452984,"sha":"8da10b6709830f283a6f24a7b058c5100e3d7df2"},{"id":"discT7","file":"FMA13504.stl","group":"discs","side":null,"level":7,"bytes":519384,"sha":"c5add18660cba1466615852f85e1885ff77a5bbd"},{"id":"discT8","file":"FMA13505.stl","group":"discs","side":null,"level":8,"bytes":510184,"sha":"54d1febd42086f5fc2aaa2cb76b4537f175eb139"},{"id":"discT9","file":"FMA13506.stl","group":"discs","side":null,"level":9,"bytes":252084,"sha":"03e14bc174a4b11cf8530146af62bc0aba87251d"},{"id":"discT10","file":"FMA13507.stl","group":"discs","side":null,"level":10,"bytes":576784,"sha":"b493b97bec636e30d99d7e9ecc47ef36469c5033"},{"id":"discT11","file":"FMA13508.stl","group":"discs","side":null,"level":11,"bytes":714084,"sha":"1dbae68ae25d1fa5e9f460f3f229392219f33193"}]);
 const V57_BASES=[
  'https://cdn.jsdelivr.net/gh/Kevin-Mattheus-Moerman/BodyParts3D@'+V57_SOURCE+'/assets/BodyParts3D_data/stl/',
  'https://raw.githubusercontent.com/Kevin-Mattheus-Moerman/BodyParts3D/'+V57_SOURCE+'/assets/BodyParts3D_data/stl/'
 ];
 const v57State={mode:'waiting',loaded:0,parts:[],failed:[],busy:false};
+const V571_CORE=V57_MANIFEST.filter(e=>!e.id.startsWith('cartR')&&!e.id.startsWith('cartL')&&e.group!=='discs');
+const V571_COSTAL=V57_MANIFEST.filter(e=>/^cart[RL]\d+$/.test(e.id));
+const V571_DISCS=V57_MANIFEST.filter(e=>e.group==='discs');
+const V571_GROUPS=[V571_CORE,V571_COSTAL,V571_DISCS];
+const V571_COSTAL_COLOR=[.46,.77,.76],V571_DISC_COLOR=[.55,.65,.80];
+function v571Color(e){return e.group==='cartilage'?V571_COSTAL_COLOR:e.group==='discs'?V571_DISC_COLOR:cBone}
+function v571Complete(entries,parts){return entries.every(e=>parts.some(p=>p.id===e.id&&p.file===e.file&&p.g?.box?.flat().every(Number.isFinite)))}
+function v571HasCore(){return v571Complete(V571_CORE,v57State.parts)}
 function v57SetStatus(mode,reason=''){
  v57State.mode=mode;
  const n=$('v57TorsoStatus'),retry=$('v57RetryTorso');
- const detail=mode==='atlas'?'BodyParts3D 胸郭48部位を読み込み済み（左右の肋骨は別メッシュ）':
-  mode==='loading'?'胸郭の解剖メッシュ取得中 '+v57State.loaded+'/'+V57_MANIFEST.length+'：取得完了まで旧近似を表示':
+ const detail=mode==='atlas'?'BodyParts3D '+v57State.parts.length+'/'+V57_MANIFEST.length+'部位表示（全取得済み）':
+  mode==='partial'?'BodyParts3D '+v57State.parts.length+'/'+V57_MANIFEST.length+'部位表示。不足 '+(V57_MANIFEST.length-v57State.parts.length)+' 部位：再取得可能':
+  mode==='loading'?'胸郭の解剖メッシュ取得中 '+v57State.loaded+'/'+V57_MANIFEST.length+(v571HasCore()?'：取得済み実骨を表示':'：取得完了まで旧近似を表示') :
   mode==='fallback'?'胸郭：旧近似を表示中。'+reason:'胸郭：上肢の実骨データ取得を待機中';
  if(n)n.textContent=detail;
- if(retry)retry.hidden=mode!=='fallback'||!realReady||SOFTWARE;
+ if(retry)retry.hidden=!['fallback','partial'].includes(mode)||!realReady||SOFTWARE;
 }
 function v57ParseSTL(buffer,entry){
  const d=new DataView(buffer);
@@ -3333,8 +3347,13 @@ async function v57FetchEntry(entry){
   try{
    const response=await fetch(base+entry.file,{mode:'cors',cache:'force-cache',signal:typeof AbortSignal!=='undefined'&&AbortSignal.timeout?AbortSignal.timeout(30000):undefined});
    if(!response.ok)throw Error('HTTP '+response.status);
-   const g=gpu(v57ParseSTL(await response.arrayBuffer(),entry));
-   return {...entry,g,color:entry.group==='cartilage'?cCart:cBone};
+   const meshData=v57ParseSTL(await response.arrayBuffer(),entry),g=gpu(meshData);
+   // Retain exact triangles only for cartilage intersection inspection. Keep
+   // small sample sets for sternum/joint landmarks rather than all rib faces.
+   const auditMesh=entry.group==='cartilage'?{verts:meshData.vertices,faces:meshData.faces}:null;
+   const stride=Math.max(1,Math.ceil(meshData.vertices.length/1600));
+   const sample=entry.group==='sternum'||entry.group==='ribs'?meshData.vertices.filter((_,i)=>i%stride===0):null;
+   return {...entry,g,color:v571Color(entry),auditMesh,sample};
   }catch(e){error=e}
  }
  throw error||Error(entry.id);
@@ -3353,27 +3372,32 @@ function v57ValidateSet(parts){
 }
 async function v57LoadTorso(load=v57FetchEntry){
  if(!realReady||v57State.busy||v57State.mode==='atlas')return;
- // Full high-resolution atlas is deliberately unavailable in CPU triangle sorting mode.
  if(SOFTWARE&&load===v57FetchEntry){v57SetStatus('fallback','WebGLが利用できない端末では軽量モデルを使用');return}
- v57State.busy=true;v57State.loaded=0;v57State.failed=[];v57SetStatus('loading');
- const stage=[],camera=JSON.stringify([state.yaw,state.pitch,state.zoom,state.target]);let cursor=0;
- async function worker(){
-  while(cursor<V57_MANIFEST.length){
-   const entry=V57_MANIFEST[cursor++];
-   try{stage.push(await load(entry));v57State.loaded++}
-   catch(e){v57State.failed.push(entry.id);console.warn('Thorax mesh unavailable',entry.file,e)}
-   v57SetStatus('loading');
-  }
- }
+ v57State.busy=true;v57State.loaded=v57State.parts.length;v57State.failed=[];v57SetStatus('loading');
+ const camera=JSON.stringify([state.yaw,state.pitch,state.zoom,state.target]);
  try{
-  await Promise.all([worker(),worker(),worker()]);
-  // Atomic swap: no partial atlas mixed with schematic ribs or vertebrae.
-  if(v57State.failed.length||!v57ValidateSet(stage)){
-   v57Dispose(stage);v57SetStatus('fallback','取得失敗 '+v57State.failed.length+' 部位。再取得できます。');return;
+  for(const group of V571_GROUPS){
+   if(v571Complete(group,v57State.parts))continue;
+   const stage=[],failed=[];let cursor=0;
+   async function worker(){
+    while(cursor<group.length){
+     const e=group[cursor++];
+     try{const p=await load(e);if(p.id!==e.id||p.file!==e.file||!p.g?.box?.flat().every(Number.isFinite))throw Error('invalid part '+e.id);stage.push(p);v57State.loaded++}
+     catch(error){failed.push(e.id);console.warn('Thorax mesh unavailable',e.file,error)}
+     v57SetStatus('loading');
+    }
+   }
+   await Promise.all([worker(),worker(),worker()]);
+   if(failed.length||!v571Complete(group,stage)){
+    v57Dispose(stage);v57State.failed.push(...failed);v57State.loaded=v57State.parts.length;
+    if(group===V571_CORE){v57SetStatus('fallback','基本胸郭の取得失敗。再取得できます。');request();return}
+   }else{
+    v57State.parts.push(...stage);v57State.loaded=v57State.parts.length;
+    if(group===V571_CORE&&v56TorsoCache){v57Dispose(v56TorsoCache.parts);v56TorsoCache=null}
+    v57SetStatus('loading');request();
+   }
   }
-  v57State.parts=stage.sort((a,b)=>V57_MANIFEST.findIndex(x=>x.id===a.id)-V57_MANIFEST.findIndex(x=>x.id===b.id));
-  v57SetStatus('atlas');
-  if(v56TorsoCache){v57Dispose(v56TorsoCache.parts);v56TorsoCache=null}
+  v57SetStatus(v57ValidateSet(v57State.parts)?'atlas':'partial');
   if($('cameraAuto').checked||camera===JSON.stringify([state.yaw,state.pitch,state.zoom,state.target]))fitPose();
   request();
  }finally{v57State.busy=false}
@@ -3386,13 +3410,95 @@ function v57FallbackGroup(id){
 }
 function v57VisibleTorso(){
  const layer=$('v57TorsoLayer').value||'all';
- const parts=realReady&&v57State.mode==='atlas'?v57State.parts:v56Torso().parts;
+ let parts=realReady&&v571HasCore()?v57State.parts:v56Torso().parts;
+ if(!$('v571LegacyCart').checked)parts=parts.filter(p=>p.id!=='cartilageR'&&p.id!=='cartilageL');
  return layer==='all'?parts:parts.filter(p=>(p.group||v57FallbackGroup(p.id))===layer);
 }
 $('v57TorsoLayer').addEventListener('change',()=>{fitPose();request()});
 $('v57RetryTorso').addEventListener('click',()=>v57LoadTorso().catch(e=>console.warn(e)));
-window.__labThorax=()=>({version:'v0.57',mode:v57State.mode,loaded:v57State.loaded,total:V57_MANIFEST.length,failed:v57State.failed.slice(),sourceCommit:V57_SOURCE,groups:{ribs:24,spine:19,sternum:3,cartilage:2},sourceBytes:V57_MANIFEST.reduce((s,p)=>s+p.bytes,0),layer:$('v57TorsoLayer').value,actualLeftRightRibs:true,clinicalValidation:false});
+window.__labThorax=()=>({version:'v0.57.1',mode:v57State.mode,loaded:v57State.loaded,total:V57_MANIFEST.length,failed:v57State.failed.slice(),sourceCommit:V57_SOURCE,groups:{ribs:24,spine:19,sternum:3,cartilage:16,discs:17},rendered:v57State.parts.map(p=>p.id),coreReady:v571HasCore(),sourceBytes:V57_MANIFEST.reduce((s,p)=>s+p.bytes,0),layer:$('v57TorsoLayer').value,actualLeftRightRibs:true,clinicalValidation:false});
 
+
+// v0.57.1: audit data is descriptive; it never silently shifts atlas bones.
+// Exact triangle-crossing candidates for the original BP cartilage and the
+// newly included 1–7 cartilages. Coplanar containment is not certified.
+let v571JointMarker=null,v571LastAudit=null;
+function v571DrawJointCenters(){
+ if(!realReady||!$('v571Joints').checked)return;
+ if(!v571JointMarker)v571JointMarker=gpu(ball([0,0,0],[.022,.022,.022],10,12));
+ const p=shoulderPoseFor(settings.elev,settings.plane,settings.axial,settings.sync);
+ drawPart(v571JointMarker,ID,p.SC,[.30,.90,.90],1,0);
+ drawPart(v571JointMarker,ID,p.AC,[.95,.72,.24],1,0);
+}
+function v571BoxHit(a,b){
+ if(!a||!b)return false;
+ return auditAABBHit({lo:a[0],hi:a[1]},{lo:b[0],hi:b[1]});
+}
+function v571MinDistance(point,vertices){
+ let d=Infinity;
+ for(const v of vertices||[]){const delta=sub(point,v);d=Math.min(d,dot(delta,delta))}
+ return Number.isFinite(d)?Math.sqrt(d)/atlasScale:null;
+}
+function v571RestClavicle(){
+ return (realSurfaceVertices.clavicle||[]).map(p=>add(p,realAnchors.SC));
+}
+function v571RestScapula(){
+ return (realSurfaceVertices.scapula||[]).map(p=>add(p,realAnchors.AC));
+}
+function v571JointAudit(){
+ const sternum=v57State.parts.find(p=>p.id==='manubrium');
+ const clav=v571RestClavicle(),scap=v571RestScapula();
+ const side=(name,reflect)=>{
+  const R=p=>reflect?v56Reflect(p):p;
+  const SC=R(realAnchors.SC),AC=R(realAnchors.AC);
+  // Distances are to samples (sternum) or source vertices (clavicle/scapula).
+  // Only neutral source frame; these are NOT articular gap measurements.
+  return {side:name,scToManubriumMm:v571MinDistance(SC,sternum?.sample),scToClavicleMm:v571MinDistance(SC,clav.map(R)),
+   acToClavicleMm:v571MinDistance(AC,clav.map(R)),acToScapulaMm:v571MinDistance(AC,scap.map(R))};
+ };
+ return [side('right',false),side('left',true)];
+}
+async function v571RunAudit(){
+ if(!v571HasCore())return {ready:false,reason:'基本胸郭未取得'};
+ const pairs=[],byId=new Map(v57State.parts.map(p=>[p.id,p]));
+ for(const side of ['R','L']){
+  const legacy=byId.get('cartilage'+side);
+  for(let level=1;level<=7;level++){
+   const part=byId.get('cart'+side+level);
+   let result={intersect:null,state:'未取得'};
+   if(legacy&&part){
+    if(!v571BoxHit(legacy.g.box,part.g.box))result={intersect:false,state:'境界箱分離'};
+    else if(legacy.auditMesh&&part.auditMesh)result=auditTriangleOverlap(part.auditMesh,legacy.auditMesh,{low:-Infinity,high:Infinity});
+    else result={intersect:null,state:'監査メッシュなし'};
+   }
+   pairs.push({side,level,...result});
+   await new Promise(resolve=>setTimeout(resolve,0));
+  }
+ }
+ const connections=[];
+ for(const side of ['R','L']){
+  const cart=byId.get('cart'+side+'7'),rib=byId.get(side+'7'),legacy=byId.get('cartilage'+side);
+  const x=byId.get('xiphoid'),body=byId.get('sternalBody');
+  for(const [label,other] of [['第7肋骨',rib],['旧左右軟骨',legacy],['胸骨体',body],['剣状突起',x]]){
+   connections.push({side,part:'第7肋軟骨',other:label,boxOverlap:cart&&other?v571BoxHit(cart.g.box,other.g.box):null});
+  }
+ }
+ return {ready:true,pairs,connections,joints:v571JointAudit(),clinicalValidation:false,notes:'三角形交差候補・境界箱の重なり・頂点距離。包含、同一平面の重複、関節面の医学的適合性は未検証。'};
+}
+$('v571LegacyCart').addEventListener('change',()=>{fitPose();request()});
+$('v571Joints').addEventListener('change',request);
+$('v571Audit').addEventListener('click',async()=>{
+ const b=$('v571Audit'),out=$('v571AuditOut');b.disabled=true;out.textContent='検査中…';
+ try{
+  const r=await v571RunAudit();v571LastAudit=r;
+  if(!r.ready){out.textContent=r.reason;return}
+  const mm=x=>x==null?'未判定':x.toFixed(1)+' mm';
+  out.textContent='旧軟骨と第1～7肋軟骨：\n'+r.pairs.map(p=>(p.side==='R'?'右':'左')+p.level+': '+p.state).join('\n')+
+   '\n\n第7肋軟骨付近（境界箱）：\n'+r.connections.map(p=>(p.side==='R'?'右':'左')+' '+p.other+' '+(p.boxOverlap===null?'未取得':p.boxOverlap?'重なり候補':'分離')).join('\n')+
+   '\n\n中立時の推定中心→骨頂点距離：\n'+r.joints.map(j=>(j.side==='right'?'右':'左')+' SC胸骨 '+mm(j.scToManubriumMm)+'／鎖骨 '+mm(j.scToClavicleMm)+'；AC鎖骨 '+mm(j.acToClavicleMm)+'／肩甲骨 '+mm(j.acToScapulaMm)).join('\n')+'\n'+r.notes;
+ }catch(e){out.textContent='検査失敗：'+e.message}finally{b.disabled=false}
+});
+window.__labThoraxConnections=()=>v571LastAudit;
 // Visual proxies for six muscle groups, with bone-tracking distal endpoints.
 const v56BackIds=['v56TrapUpper','v56TrapMiddle','v56TrapLower','v56RhomboidMinor','v56RhomboidMajor','v56Levator','v56Lat','v56Serratus'];
 const v56BackCache=new WeakMap();
@@ -3462,10 +3568,10 @@ function poseBoundingPoints(){
 }
 window.__labUpperBody=()=>{
  v56SaveActive();v56RefreshOther();
- return {version:'v0.57',activeSide:v56Side,both:$('v56Both').checked,thorax:settings.rib,back:v56BackVisible(),
+ return {version:'v0.57.1',activeSide:v56Side,both:$('v56Both').checked,thorax:settings.rib,back:v56BackVisible(),
   poses:{right:{...v56PoseBySide.right},left:{...v56PoseBySide.left}},mirrorPlane:v56Mid(),
   activeBuffers:Object.keys(geomDynamic).length,otherBuffers:Object.keys(v56Other.geom).length,
-  ribPairs:12,staticBoneMeshShared:true,thoraxProcedural:v57State.mode!=='atlas',thoraxSource:window.__labThorax(),anatomyValidated:false};
+  ribPairs:12,staticBoneMeshShared:true,thoraxProcedural:!v571HasCore(),thoraxSource:window.__labThorax(),anatomyValidated:false};
 };
 state.yaw=Math.PI;
 try{makeFallbackHand();gl.enable(gl.DEPTH_TEST);update();fitPose();frame();loadRealBones()}catch(e){$('err').style.display='block';$('err').textContent='3D描画エラー: '+String(e);console.error(e)}

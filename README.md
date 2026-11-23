@@ -2,7 +2,7 @@
 
 スマートフォン対応の上肢骨格・筋肉・腱を観察する教育用Webアプリ。動作と形態は**解剖学的に未検証の近似を含み、臨床用・診断用ではありません**。
 
-**現在のバージョン：v0.57**
+**現在のバージョン：v0.57.1**
 
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
@@ -11,6 +11,10 @@
 - **v0.54の保存ブランチ**：[`archive/v0.54-before-anatomy-rebuild`](../../tree/archive/v0.54-before-anatomy-rebuild)
 - **v0.53の保存ブランチ**：[`archive/v0.53-before-review`](../../tree/archive/v0.53-before-review)
 - **v0.51の保存ブランチ**：[`archive/v0.51-before-scapular-fix`](../../tree/archive/v0.51-before-scapular-fix)
+
+## v0.57.1：胸郭接続の補完
+
+第1〜7肋軟骨の左右14メッシュ、C2–T11の下位椎間板17メッシュを追加（合計79）。肋軟骨と椎間板を異なる色で表示。旧BP24/28を個別非表示可能。新規グループ取得失敗時も既存胸郭48部位を保持し、未取得グループのみ再試行。軟骨面交差候補・第7肋軟骨の境界箱・SC/AC推定中心から骨頂点までの距離の監査を追加。医学的接触精度は未検証。[詳細](./docs/THORAX_V0571.md)
 
 ## v0.57：胸郭・脊椎の精密化
 
