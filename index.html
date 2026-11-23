@@ -219,7 +219,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 .med-study .med-actions button{flex:1 1 115px;min-height:44px;padding:8px;border-radius:9px}
 .med-study a{color:#9adbd3}
 .med-study .med-status{min-height:22px;font-size:12px;line-height:1.6;margin:9px 0 0;color:#c3d5dc}
-/* v0.53: compact, thumb-friendly scapular muscle controls */
+/* v0.54: compact, thumb-friendly scapular muscle controls */
 .scapular-study{margin:9px 0 14px;padding:10px;border:1px solid #41616c;border-radius:11px;background:#112735}
 .scapular-study .toggles{display:grid;gap:7px;margin:7px 0}
 .scapular-study .scapular-buttons{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
@@ -240,7 +240,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.53</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.51</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.54</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.51</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
@@ -250,7 +250,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.53</div>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.54</div>
 <nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
  <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
  <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
@@ -265,7 +265,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 
 </div>
 <section class="side" id="labTools">
-<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.53</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
+<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.54</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
 <details class="edge-help control-fold"><summary>操作方法<span class="fold-note">ヘルプ</span></summary><div class="fold-body"><div class="immersive-tips">操作：1本指ドラッグで視点回転（初期設定は逆方向）。<strong>骨を約0.4秒長押し → ドラッグで関節操作。右端の「✋」は曲げ伸ばし、「↻」は前腕の回内・回外と上腕の内旋・外旋。↻では骨を左右にドラッグするか、2本指でひねって調整できます。<strong>3本指で左右にスワイプすると、<strong>上腕付近は肩の内旋・外旋、前腕付近は回内・回外</strong>を操作できます。判断しにくいときは上部の関節指定で「上腕：回旋」「前腕：回内外」を固定できます。</strong>iPhoneで選択メニューが出る場合は「✋」または「↻」をONにして直接ドラッグ</strong>。2本指は視点移動・ピンチ。選びにくい関節は上部メニューで指定できます。</div></div></details><div class="note" id="launchTip"><strong>iPhoneでモデルが表示されない場合</strong>：HTMLファイルのプレビューではJavaScriptが実行されない場合があります。HTMLファイルをWebサイトとして公開し、SafariでURLを開いてください。下の操作ボタンはブラウザ版で機能します。</div>
 <details class="control-fold" id="medicalStudyPanel"><summary>医学解剖：起始・停止・神経支配・作用<span class="fold-note">根拠と限界</span></summary>
 <div class="fold-body med-study">
@@ -297,7 +297,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
   <button id="medicalStudyReset" type="button">全筋表示に戻す</button>
  </div>
  <div class="med-status" id="medicalStudyFocusStatus" role="status" aria-live="polite">通常表示中。単独表示は形状比較用であり、正確性を保証しません。</div>
- <div class="detail">重要な未実装：三頭筋内側頭、烏口腕筋、肩甲下筋（回旋筋腱板の4筋目）。棘上筋・棘下筋・小円筋はv0.51で追加、v0.53で後面投影と筋腹形状を改善しましたが、付着面の医学的検証は未実施です。上腕二頭筋腱膜も簡略化されています。関節包・靱帯・神経・血管の系統的3D表示はありません。</div>
+ <div class="detail">重要な未実装：三頭筋内側頭、烏口腕筋、肩甲下筋（回旋筋腱板の4筋目）。棘上筋・棘下筋・小円筋はv0.51で追加、v0.54で後面投影と筋腹形状を改善しましたが、付着面の医学的検証は未実施です。上腕二頭筋腱膜も簡略化されています。関節包・靱帯・神経・血管の系統的3D表示はありません。</div>
  <p><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/ANATOMY_VALIDATION_V049.md" target="_blank" rel="noopener noreferrer">モデルの医学的妥当性監査・不足構造・検証基準を読む</a></p>
 </div></details>
 <details class="control-fold"><summary>表示倍率・視点操作<span class="fold-note">カメラ</span></summary><div class="fold-body"><div class="panel zoom-panel"><div class="panelhead"><h2>表示倍率</h2><span class="sectioncap">CAMERA</span></div>
@@ -395,7 +395,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
  </div>
 </details>
 <div class="toggles"><label class="switch"><input id="hand" type="checkbox" checked>手首・手の骨格を表示（27骨）</label><label class="switch"><input id="sync" type="checkbox" checked>肩甲骨・鎖骨を連動</label><label class="switch"><input id="muscles" type="checkbox" checked>上腕の筋肉・腱（二頭筋ほか）</label><label class="switch"><input id="deltoid" type="checkbox" checked>三角筋（前・中・後部）</label><label class="switch"><input id="brachioradialis" type="checkbox" checked>腕橈骨筋（前腕・単独表示可）</label><label class="switch"><input id="pronatorTeres" type="checkbox" checked>円回内筋（前腕・単独表示可）</label><label class="switch"><input id="supinator" type="checkbox" checked>回外筋（橈骨近位部・単独表示可）</label><label class="switch"><input id="flexorCarpiRadialis" type="checkbox" checked>橈側手根屈筋＋乳白色の腱（掌屈・橈屈）</label><label class="switch"><input id="flexorCarpiUlnaris" type="checkbox" checked>尺側手根屈筋＋腱（掌屈・尺屈／単独表示可）</label><label class="switch"><input id="palmarisLongus" type="checkbox" checked>長掌筋＋長い腱・手掌腱膜（単独表示可／個人差あり）</label><label class="switch"><input id="flexorDigitorumSuperficialis" type="checkbox" checked>浅指屈筋＋4本の腱（PIP屈曲／独立表示可）</label><label class="switch"><input id="flexorDigitorumProfundus" type="checkbox" checked>深指屈筋＋指先へ伸びる4本の腱（DIP屈曲／独立表示可）</label><label class="switch"><input id="rib" type="checkbox">胸郭の参照表示</label><label class="switch"><input id="showlabels" type="checkbox">骨の名称ラベル</label><label class="switch"><input id="showDirection" type="checkbox">側面の胸側・背側ガイド（短時間表示）</label></div>
-<details class="diagnostic-fold" id="scapularMusclePanel"><summary>肩甲骨の筋肉（v0.53・棘上筋／棘下筋／小円筋／大円筋）</summary>
+<details class="diagnostic-fold" id="scapularMusclePanel"><summary>肩甲骨の筋肉（v0.54・棘上筋／棘下筋／小円筋／大円筋）</summary>
 <div class="scapular-study">
  <label class="switch"><input id="scapularMuscles" type="checkbox" checked>肩甲骨周囲4筋と腱を表示する</label>
  <label class="switch"><input id="cuffOnly" type="checkbox">回旋筋腱板だけを見る（実装済み3筋・他筋は非表示）</label>
@@ -408,8 +408,8 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
  <div class="scapular-buttons"><button id="scapularBackView" type="button">肩甲骨を後ろから見る</button><button id="scapularFrontView" type="button">前面から見る</button></div>
  <div id="scapularMuscleStatus" class="scapular-study-status" role="status" aria-live="polite">骨データを読み込み中…</div>
  <div class="detail">筋腹は肩甲骨の棘上窩・棘下窩・外側縁・下角付近の<strong>推定骨表面点</strong>から上腕骨の推定停止位置へ広がる近似メッシュです。付着面の実測・腱の骨接触・関節運動時の滑走は未検証です。</div>
- <div class="detail"><strong>回旋筋腱板は4筋：</strong>棘上筋・棘下筋・小円筋・肩甲下筋。<strong>肩甲下筋はv0.53でも未実装</strong>。大円筋は回旋筋腱板に含まれません。</div>
- <p><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULAR_MUSCLES_V053.md" target="_blank" rel="noopener noreferrer">v0.53 描画改善・投影判定・未検証事項を確認する</a></p>
+ <div class="detail"><strong>回旋筋腱板は4筋：</strong>棘上筋・棘下筋・小円筋・肩甲下筋。<strong>肩甲下筋はv0.54でも未実装</strong>。大円筋は回旋筋腱板に含まれません。</div>
+ <p><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULAR_MUSCLES_V053.md" target="_blank" rel="noopener noreferrer">v0.54 描画改善・投影判定・未検証事項を確認する</a></p>
 </div></details>
 <div class="forearm-layer-select">
 <div class="sectioncap">前腕の筋層（表示フィルタ）</div>
@@ -747,7 +747,7 @@ function parseBinaryBone(buffer,name){
  }
  if(!ff.length)throw Error(name+' に面がありません');
  realSurfaceVertices[name]=vv; // nearest-vertex anatomical landmark snapping, computed once per file
-  if(name==='scapula')realSurfaceFaces[name]=ff; // v0.53 projected posterior surface triangle index
+  if(name==='scapula')realSurfaceFaces[name]=ff; // v0.54 projected posterior surface triangle index
  const normals=nn.map(norm);
  return {vertices:vv,faces:ff,normals};
 }
@@ -1185,7 +1185,7 @@ function updateV43Forearm(){
 // posterior-most nearby vertices of the loaded BodyParts3D scapula, rather
 // than arbitrary free-floating tubes. Fossa borders and tendon footprints
 // are anatomical approximations, NOT measured or validated attachments.
-// v0.53: posterior-surface-projected anatomical *proxy*, not measured anatomy.
+// v0.54: posterior-surface-projected anatomical *proxy*, not measured anatomy.
 // The earlier vertex-only selection created discontinuous patches, and the
 // symmetric (front/back) ribbon intersected the scapular plate at many angles.
 // This implementation projects its rest-pose control grid onto the POSTERIOR
@@ -1198,7 +1198,7 @@ function prepareScapularSurfaceBins(){
  if(scapularSurfaceBins)return scapularSurfaceBins;
  const verts=realSurfaceVertices.scapula,faces=realSurfaceFaces.scapula||[];
  const bins=new Map();
- if(!verts||!verts.length)throw Error('v0.53: scapular mesh vertices unavailable');
+ if(!verts||!verts.length)throw Error('v0.54: scapular mesh vertices unavailable');
  for(let i=0;i<faces.length;i+=3){
   const a=verts[faces[i]],b=verts[faces[i+1]],c=verts[faces[i+2]];
   if(!a||!b||!c)continue;
@@ -1250,7 +1250,7 @@ function scapularPosteriorRestPoint(atlasXYZ){
     best=d;vertex=v;
    }
   }
-  if(!vertex)throw Error('v0.53: no posterior scapula fallback vertex');
+  if(!vertex)throw Error('v0.54: no posterior scapula fallback vertex');
   p=vertex.slice();scapularSurfaceMisses++;
  }
  scapularSurfaceCache.set(key,p);
@@ -1263,7 +1263,7 @@ const scapularPointWorld=xyz=>{
 function buildScapularClosedSurface(rows,start,end){
  const strips=rows.slice(start,end+1);
  const nr=strips.length,nc=strips[0].length,vertex=[],faces=[];
- if(nr<2||nc<2)throw Error('v0.53 invalid scapular strip grid');
+ if(nr<2||nc<2)throw Error('v0.54 invalid scapular strip grid');
  for(const side of [1,-1])
   for(const row of strips)for(const p of row)
    vertex.push(add(p.center,mul(p.normal,side*p.thickness)));
@@ -1284,7 +1284,7 @@ function buildScapularClosedSurface(rows,start,end){
  }
  return mesh(vertex,faces);
 }
-let scapularDiagnostics={version:'v0.53',verified:false,muscles:[],maximumJointGap:0};
+let scapularDiagnostics={version:'v0.54',verified:false,muscles:[],maximumJointGap:0};
 function updateScapularMuscles(){
  if(!realReady)return;
  if(!settings.scapularMuscles){
@@ -1293,21 +1293,26 @@ function updateScapularMuscles(){
    if(!SOFTWARE){gl.deleteBuffer(g.vbo);gl.deleteBuffer(g.nbo);gl.deleteBuffer(g.ibo)}
    delete geomDynamic[id];
   }
-  scapularDiagnostics={version:'v0.53',verified:false,muscles:[],maximumJointGap:0,hidden:true};
+  scapularDiagnostics={version:'v0.54',verified:false,muscles:[],maximumJointGap:0,hidden:true};
   return;
  }
  const qScap=realPose.scapula[0],backScap=qr(qScap,[0,0,1]);
  // A single scapula-local outward normal on the muscle belly avoids the
  // old qScap/qHumerus blended normal reversing or becoming zero at 180°.
  const stations=[0,.08,.17,.27,.38,.50,.64,.71,.79,.86,.93,1];
- const split=8,lanes=7;
+ const split=7,lanes=7;
  const toXYZ=(a,b,t)=>a.map((v,i)=>mix(v,b[i],t));
  const smooth01=t=>{const x=clamp(t,0,1);return x*x*(3-2*x)};
  const stats=[];
- let minimumClearance=Infinity,humeralHeadGuideMoves=0;
+ let minimumClearance=Infinity;
  for(const spec of SCAPULAR_SPEC){
-  const origin=Array.from({length:lanes},(_,j)=>scapularPointWorld(toXYZ(spec.originA,spec.originB,j/(lanes-1))));
-  const edge=Array.from({length:lanes},(_,j)=>scapularPointWorld(toXYZ(spec.exitA,spec.exitB,j/(lanes-1))));
+  // The two teres are elongated straps, not broad fan sheets.
+  // Keep the broad infraspinatus fossa visualization, but avoid spanning
+  // the entire inferior margin with a flat rectangular band.
+  const width={supraspinatus:.68,infraspinatus:.84,teresMinor:.39,teresMajor:.42}[spec.id]||.7;
+  const sourceU=u=>.5+(u-.5)*width;
+  const edge=Array.from({length:lanes},(_,j)=>
+   scapularPointWorld(toXYZ(spec.exitA,spec.exitB,sourceU(j/(lanes-1)))));
   const hum=Array.from({length:lanes},(_,j)=>
    attachedAtlas('humerus',toXYZ(spec.insertA,spec.insertB,j/(lanes-1)),true));
   const rows=[];
@@ -1316,46 +1321,34 @@ function updateScapularMuscles(){
    const row=[],onPlate=t<=.64,plateRatio=clamp(t/.64,0,1);
    const jointRatio=clamp((t-.64)/.36,0,1);
    for(let j=0;j<lanes;j++){
-    const u=j/(lanes-1);
-    const across=.04+.96*Math.pow(Math.max(0,Math.sin(Math.PI*u)),.72);
-    let p,thickness,clearance;
+    const u=j/(lanes-1),widthU=sourceU(u);
+    const across=.08+.92*Math.pow(Math.max(0,Math.sin(Math.PI*u)),.85);
+    let p,thickness;
     if(onPlate){
-     // Query triangles at the current rest-pose location, *then* transform
-     // by the same rigid scapular pose as the displayed bone.
-     const raw=toXYZ(toXYZ(spec.originA,spec.originB,u),toXYZ(spec.exitA,spec.exitB,u),smooth01(plateRatio));
+     const raw=toXYZ(toXYZ(spec.originA,spec.originB,widthU),toXYZ(spec.exitA,spec.exitB,widthU),smooth01(plateRatio));
      p=scapularPointWorld(raw);
-     const swell=Math.pow(Math.max(0,Math.sin(Math.PI*(.10+.83*plateRatio))),.78);
-     thickness=.0008+spec.thickness*.47*swell*across;
-     clearance=.0020+.010*Math.sin(Math.PI*plateRatio);
+     const swell=Math.pow(Math.max(0,Math.sin(Math.PI*(.07+.89*plateRatio))),.8);
+     // More natural shallow belly, with narrow margins and a bone-following
+     // underside. This is still a non-calibrated geometric proxy.
+     thickness=.00045+spec.thickness*.30*swell*across;
+     const clearance=.0015+.0025*Math.sin(Math.PI*plateRatio);
      p=add(p,mul(backScap,thickness+clearance));
      localClearance=Math.min(localClearance,clearance);
     }else{
-     // Cuff tendons approach humerus on a shallow, stable posterior arc.
-     // These are kinematic guides, NOT solved collision-free routes.
      const a=smooth01(jointRatio);
-     const routeStart=add(edge[j],mul(backScap,.009+spec.thickness*.12));
-     p=add(toXYZ(routeStart,hum[j],a),
-      mul(backScap,.028*Math.sin(Math.PI*a)*(1-a*.40)));
-     // Visual avoidance rail around an APPROXIMATE humeral head sphere.
-     // The radius is not a fitted anatomical head surface, and there is no
-     // mesh collision or joint-capsule solver here. We push only posteriorly
-     // so the guide does not unexpectedly flip around the head.
-     const head=realPose.humerus[1],d=sub(p,head);
-     const endpointRadius=len(sub(hum[j],head));
-     const fade=smooth01(clamp((a-.58)/.42,0,1));
-     const guideRadius=mix(Math.max(.126,endpointRadius+.010),endpointRadius,fade);
-     const d2=dot(d,d),r2=guideRadius*guideRadius;
-     if(d2<r2&&a<.999){
-      const along=dot(d,backScap);
-      const delta=-along+Math.sqrt(Math.max(0,along*along+r2-d2));
-      const safeDelta=clamp(delta,0,.090);
-      p=add(p,mul(backScap,safeDelta));
-      if(safeDelta>1e-6)humeralHeadGuideMoves++;
-     }
-     thickness=(.0009+.010*(1-a))*(.16+.84*across);
-     clearance=0; // clearance is only measured where the scapula is underneath
+     // Converge separate muscle fibres into a narrow tendon, avoiding the
+     // previous floating broad red sheet over the shoulder joint.
+     const bridgeU=sourceU(.5+(u-.5)*(1-.70*a));
+     const start=add(scapularPointWorld(toXYZ(spec.exitA,spec.exitB,bridgeU)),
+      mul(backScap,.002+spec.thickness*.09));
+     const stop=hum[j];
+     const midpoint=add(mul(add(start,stop),.5),mul(backScap,.025));
+     const b=1-a;
+     p=add(add(mul(start,b*b),mul(midpoint,2*b*a)),mul(stop,a*a));
+     thickness=(.00065+.0055*(1-a))*(.12+.88*across);
+     // No spherical push/clamping: the old hard rail produced sharp loops
+     // when the humerus rotated relative to the scapula.
     }
-    // Keep two sides apart without a sharp plate edge at the muscle boundary.
     row.push({center:p,normal:backScap,thickness});
    }
    rows.push(row);
@@ -1376,11 +1369,11 @@ function updateScapularMuscles(){
    sharedStationGap:seamGap,posteriorSheetClearanceWorld:localClearance,
    anatomicalFootprintValidated:false,boneContactSolver:false});
  }
- scapularDiagnostics={version:'v0.53',verified:false,muscles:stats,
+ scapularDiagnostics={version:'v0.54',verified:false,muscles:stats,
   maximumJointGap:Math.max(0,...stats.map(x=>x.sharedStationGap)),
   minimumPosteriorProjectionClearanceMm:minimumClearance/atlasScale,
   rayProjectionHits:scapularSurfaceRayHits,projectionFallbacks:scapularSurfaceMisses,
-  approximateHumeralHeadGuideMoves:humeralHeadGuideMoves,
+  approximateHumeralHeadGuideMoves:0, // old unvalidated sphere rail removed in v0.54
   scapulaAndHumerusTrackIndependently:true,pressureOrCollisionEvaluated:false};
 }
 
@@ -2616,7 +2609,7 @@ $('scapularFrontView').addEventListener('click',()=>{
  state.yaw=realReady?Math.PI:0;state.pitch=.12;autoFit=true;fitPose();request();
 });
 window.__labScapular=()=>({
- version:'v0.53',ready:realReady,
+ version:'v0.54',ready:realReady,
  muscleIds:SCAPULAR_MUSCLES.slice(),cuffMuscles:Array.from(SCAPULAR_CUFF),
  currentlyVisible:SCAPULAR_MUSCLES.filter(muscleVisible),
  reportedSeamMaxMm:scapularDiagnostics.maximumJointGap/atlasScale,
@@ -3040,7 +3033,7 @@ window.__labJointErrors=()=>{
  return {ready:true,wristErrorMm:handWristErrorMm,thumbCMCErrorMm,thumbMCPErrorMm,thumbIPErrorMm,distalGapDeltaMm:poseCheck.distalGapDeltaMm,
    palmNormal:handPivot.thumbPalmNormal,thumbFlexAxis:handPivot.thumbFlexAxis,thumbFlexSign:handPivot.thumbFlexSign};
 };
-window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.53',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
+window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.54',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
 window.__labForearm=()=>({...v43ForearmDiagnostics,available:V43_CONFIG.length,display:settings.forearmLayer,bulkPercent:settings.forearmBulk});
 window.__labContinuity=()=>({ready:realReady,elbow:settings.elbow,pronation:settings.pronation,forearmBulk:settings.forearmBulk,
  ...muscleDiagnostics.continuity,
