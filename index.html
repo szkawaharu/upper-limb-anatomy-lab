@@ -796,6 +796,7 @@ function makeRealPose(){
  const center=mul(add(box[0],box[1]),.5);posPoints[id]=transform(pose[0],pose[1],center)}
  if(settings.hand)makeHandPose();
  updateRealMuscles();
+ updateShoulderAuditMetrics();
 }
 
 // Muscle attachments: approximate atlas landmarks, snapped to the nearest actual
@@ -2364,6 +2365,67 @@ $('shoulderPoseTest').addEventListener('click',()=>{
  document.querySelectorAll('[data-preset]').forEach(x=>x.classList.remove('active'));
  update();feedbackJoint('肩のひねり確認：外転90°・肘90°。内旋／外旋を比較',false);
 });
+
+function updateShoulderAuditMetrics(){
+ const n=$('shoulderAuditCurrent');if(!n)return;
+ if(!realReady){n.textContent='実骨モデルの読み込み後に、肩帯の推定値と接続誤差を表示します。';return}
+ const v=shoulderPoseMetrics(settings.elev);
+ const fmt=x=>Number.isFinite(x)?x.toFixed(2):'未評価';
+ n.textContent='挙上 '+v.elev+'°／挙上面 '+v.plane+'°／上腕軸回旋 '+v.axial+
+  '°。肩甲骨上方回旋の設定値 '+fmt(v.assumedScapularUpDeg)+
+  '°、肩甲骨に対する上腕長軸の傾き（近似） '+fmt(v.relativeTiltDeg)+
+  '°、肩甲上腕関節中心の移動 '+fmt(v.ghDisplacementMm)+
+  ' mm。SC・AC・GHの共有中心の最大ずれ '+fmt(Math.max(v.scGapMm,v.acGapMm,v.ghGapMm))+
+  ' mm。これらは推定運動学の内部整合性で、関節面の精度や正常運動の証明ではありません。';
+ document.querySelectorAll('[data-shoulder-elev]').forEach(b=>
+  b.classList.toggle('active',Number(b.dataset.shoulderElev)===v.elev));
+}
+function runShoulderAuditSweep(){
+ const out=$('shoulderAuditSweepResult');
+ if(!realReady){out.textContent='まず実骨データを読み込んでください。';return}
+ const samples=[0,30,60,90,120,150,180].map(deg=>
+  shoulderPoseMetrics(deg,settings.plane,settings.axial,settings.sync));
+ const maxGap=Math.max(...samples.flatMap(x=>[x.scGapMm,x.acGapMm,x.ghGapMm]));
+ const minLength=Math.min(...samples.map(x=>x.clavicleLengthMm)),maxLength=Math.max(...samples.map(x=>x.clavicleLengthMm));
+ out.replaceChildren();
+ const p=document.createElement('p');
+ p.textContent='挙上面 '+settings.plane+'°、軸回旋 '+settings.axial+
+  '°、肩帯の連動 '+(settings.sync?'ON':'OFF')+
+  'のモデル値。SC/AC/GH最大共有中心ずれ '+maxGap.toFixed(3)+
+  ' mm、鎖骨長の計算上の変化 '+(maxLength-minLength).toFixed(3)+
+  ' mm。関節間の実測距離を判定する検査ではありません。';
+ out.appendChild(p);
+ const table=document.createElement('table');table.className='shoulder-audit-table';
+ const columns=[['挙上','elev'],['肩甲骨設定','assumedScapularUpDeg'],['上腕相対傾き','relativeTiltDeg'],['AC中心誤差mm','acGapMm'],['GH中心移動mm','ghDisplacementMm']];
+ const thead=document.createElement('thead'),headRow=document.createElement('tr');
+ for(const [name] of columns){const th=document.createElement('th');th.textContent=name;headRow.appendChild(th)}
+ thead.appendChild(headRow);table.appendChild(thead);
+ const tbody=document.createElement('tbody');
+ for(const row of samples){
+  const tr=document.createElement('tr');
+  for(const [name,key] of columns){
+   const td=document.createElement('td');
+   const val=row[key];td.textContent=key==='elev'?String(val):Number.isFinite(val)?val.toFixed(key.includes('Gap')?3:1):'—';
+   tr.appendChild(td);
+  }
+  tbody.appendChild(tr);
+ }
+ table.appendChild(tbody);out.appendChild(table);
+ const foot=document.createElement('p');foot.className='shoulder-audit-note';
+ foot.textContent='肩甲骨設定角と上腕相対傾きは別の指標。医学的な関節可動域・衝突・肩甲胸郭への接触は未判定。';
+ out.appendChild(foot);
+}
+$('shoulderAuditSweep').addEventListener('click',runShoulderAuditSweep);
+document.querySelectorAll('[data-shoulder-elev]').forEach(b=>b.addEventListener('click',()=>{
+ $('elev').value=b.dataset.shoulderElev;
+ document.querySelectorAll('[data-preset]').forEach(x=>x.classList.remove('active'));
+ update();
+ feedbackJoint('肩の挙上：'+b.dataset.shoulderElev+'°（解剖学的運動は要検証）',false);
+}));
+window.__labShoulder=()=>({ready:realReady,current:realReady?shoulderPoseMetrics(settings.elev):null,
+ samples:realReady?[0,30,60,90,120,150,180].map(v=>shoulderPoseMetrics(v)):[],
+ medicalAccuracyVerified:false,collisionAndCapsularConstraints:false});
+
 let cameraGesture='rotate';
 function chooseCameraGesture(mode){cameraGesture=mode;
  $('camRotate').classList.toggle('active',mode==='rotate');$('camPan').classList.toggle('active',mode==='pan');
