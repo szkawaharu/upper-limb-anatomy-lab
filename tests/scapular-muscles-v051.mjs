@@ -26,7 +26,7 @@ const ID=[0,0,0,1],realPose={scapula:[ID,realAnchors.AC],humerus:[ID,realAnchors
 const scalp=[];
 for(let x=-210;x<=-20;x+=5)for(let z=1120;z<=1400;z+=5)for(let y of [-95,-70,-48])
  scalp.push(sub(atlasToWorld([x,y,z]),realAnchors.AC));
-const realSurfaceVertices={scapula:scalp};
+const realSurfaceVertices={scapula:scalp};const realSurfaceFaces={scapula:[]};
 const attachedAtlas=(name,xyz)=>transform(realPose[name][0],realPose[name][1],
  sub(atlasToWorld(xyz),name==='scapula'?realAnchors.AC:realAnchors.GH));
 const geomDynamic={};const settings={scapularMuscles:true};const SOFTWARE=true,gl={};
@@ -36,7 +36,7 @@ const mesh=(vertices,faces)=>{
  for(const f of faces)assert.ok(Number.isInteger(f)&&f>=0&&f<vertices.length,'invalid triangle index');
  return {vertices,faces,normals:vertices.map(()=>[0,0,1])};
 };
-const env={...spec,realSurfaceVertices,realAnchors,realPose,atlasScale,atlasToWorld,
+const env={...spec,realSurfaceVertices,realSurfaceFaces,realAnchors,realPose,atlasScale,atlasToWorld,
  add,sub,mul,dot,len,norm,mix,clamp,qr,transform,mesh,settings,SOFTWARE,gl,geomDynamic,
  attachedAtlas,gdynamic:(name,geom)=>geomDynamic[name]=geom,realReady:true};
 const start=js.indexOf('const scapularSurfaceCache=');
