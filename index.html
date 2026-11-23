@@ -213,7 +213,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.45</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.45</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.46</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.46</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
@@ -223,7 +223,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.45</div>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.46</div>
 <nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
  <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
  <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
@@ -238,7 +238,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 
 </div>
 <section class="side" id="labTools">
-<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.45</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
+<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.46</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
 <details class="edge-help control-fold"><summary>操作方法<span class="fold-note">ヘルプ</span></summary><div class="fold-body"><div class="immersive-tips">操作：1本指ドラッグで視点回転（初期設定は逆方向）。<strong>骨を約0.4秒長押し → ドラッグで関節操作。右端の「✋」は曲げ伸ばし、「↻」は前腕の回内・回外と上腕の内旋・外旋。↻では骨を左右にドラッグするか、2本指でひねって調整できます。<strong>3本指で左右にスワイプすると、<strong>上腕付近は肩の内旋・外旋、前腕付近は回内・回外</strong>を操作できます。判断しにくいときは上部の関節指定で「上腕：回旋」「前腕：回内外」を固定できます。</strong>iPhoneで選択メニューが出る場合は「✋」または「↻」をONにして直接ドラッグ</strong>。2本指は視点移動・ピンチ。選びにくい関節は上部メニューで指定できます。</div></div></details><div class="note" id="launchTip"><strong>iPhoneでモデルが表示されない場合</strong>：HTMLファイルのプレビューではJavaScriptが実行されない場合があります。HTMLファイルをWebサイトとして公開し、SafariでURLを開いてください。下の操作ボタンはブラウザ版で機能します。</div>
 <details class="control-fold"><summary>表示倍率・視点操作<span class="fold-note">カメラ</span></summary><div class="fold-body"><div class="panel zoom-panel"><div class="panelhead"><h2>表示倍率</h2><span class="sectioncap">CAMERA</span></div>
 <div class="control zoom-control"><label for="zoomLevel">拡大・縮小 <output id="zoomValue">100%</output></label>
@@ -1024,7 +1024,9 @@ function updateRealMuscles(){
  // Educational visual exaggeration is separate from physiological activation.
  const exaggeration=settings.muscleEmphasis?1.0:0.45;
  const bBulge=1+.72*contract*exaggeration,braBulge=1+.52*contract*exaggeration,tBulge=1-.24*contract*exaggeration;
+ const upperPaths={};
  const makeM=(id,pts)=>{
+  upperPaths[id]={kind:'muscle',start:pts[0].slice(0,3),end:pts.at(-1).slice(0,3)};
   const shaped=pts.map((p,i)=>{
    const edge=i===0||i===pts.length-1;
    const taper=edge?.88:(i===1||i===pts.length-2?.96:1);
@@ -1033,6 +1035,7 @@ function updateRealMuscles(){
   gdynamic(id,tube(shaped,{sides:16,steps:8,ellipticity:id==='brachialis'?.51:.62,rough:0}));
  };
  const makeT=(id,pts)=>{
+  upperPaths[id]={kind:'tendon',start:pts[0].slice(0,3),end:pts.at(-1).slice(0,3)};
   // v0.46: linear between anchored elbow stations avoids spline overshoot.
   gdynamic(id,tube(pts,{sides:10,steps:7,ellipticity:.79,rough:0,linear:true}));
  };
@@ -1673,12 +1676,24 @@ function updateRealMuscles(){
    const old=geomDynamic[id];if(old){if(!SOFTWARE){gl.deleteBuffer(old.vbo);gl.deleteBuffer(old.nbo);gl.deleteBuffer(old.ibo);}delete geomDynamic[id];}
  }
  const v43Data=updateV43Forearm();
-  muscleDiagnostics={mode:'v0.45: continuous tube frames and muscle-tendon junctions' ,flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
+ const seams=[['bicepsLong','tendonB','distal'],['bicepsShort','tendonBShortDist','distal'],
+  ['triceps','tendonT','distal'],['tricepsLat','tendonTLatDist','distal'],['brachialis','tendonBrach','distal'],
+  ['tendonBprox','bicepsLong','proximal'],['tendonB2','bicepsShort','proximal'],['tendonT2','triceps','proximal']]
+  .map(([fromName,toName,kind])=>{
+   const a=upperPaths[fromName],b=upperPaths[toName];
+   const from=a?.end,to=kind==='distal'?b?.start:b?.start;
+   return {from:fromName,to:toName,kind,gap:from&&to?len(sub(from,to)):null};
+  });
+ const continuity={seams,upperMaxGap:Math.max(0,...seams.map(x=>x.gap||0)),
+  forearmMaxGap:v43Data.maximumSeamGap??null,forearmSeams:v43Data.seamCount??0,
+  currentElbow:settings.elbow,currentPronation:settings.pronation,
+  collisionSolver:false,validatedAgainst:'shared control endpoints'};
+ muscleDiagnostics={mode:'v0.46: bone-guided elbow tendon and convex forearm muscle continuity' ,flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
   biceps:{origin:bicepsLongOrigin.slice(0,3),insertion:bicepsRadiusEnd.slice(0,3),bellyBulge:bBulge},
   triceps:{origin:tricepsOrigin.slice(0,3),insertion:tricepsEnd.slice(0,3),bellyScale:tBulge},
   brachialis:{origin:brachialisOrigin.slice(0,3),insertion:brachialisEnd.slice(0,3),bellyBulge:braBulge},
   lengths:{biceps:len(sub(bicepsLongOrigin,bicepsRadiusEnd)),triceps:len(sub(tricepsOrigin,tricepsEnd))},
-  mappedToRealPose:true,forearmV43:v43Data,deltoidVisible:settings.deltoid,deltoid:deltoidData,brachioradialis:brInfo,pronatorTeres:ptInfo,supinator:supInfo,flexorCarpiRadialis:fcrInfo,flexorCarpiUlnaris:fcuInfo,palmarisLongus:plInfo,flexorDigitorumSuperficialis:fdsInfo,flexorDigitorumProfundus:fdpInfo};
+  mappedToRealPose:true,continuity,forearmV43:v43Data,deltoidVisible:settings.deltoid,deltoid:deltoidData,brachioradialis:brInfo,pronatorTeres:ptInfo,supinator:supInfo,flexorCarpiRadialis:fcrInfo,flexorCarpiUlnaris:fcuInfo,palmarisLongus:plInfo,flexorDigitorumSuperficialis:fdsInfo,flexorDigitorumProfundus:fdpInfo};
 }
 
 async function loadOneBone(name,id){let lastError=null;
@@ -2442,8 +2457,11 @@ window.__labJointErrors=()=>{
  return {ready:true,wristErrorMm:handWristErrorMm,thumbCMCErrorMm,thumbMCPErrorMm,thumbIPErrorMm,distalGapDeltaMm:poseCheck.distalGapDeltaMm,
    palmNormal:handPivot.thumbPalmNormal,thumbFlexAxis:handPivot.thumbFlexAxis,thumbFlexSign:handPivot.thumbFlexSign};
 };
-window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.45',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
+window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.46',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
 window.__labForearm=()=>({...v43ForearmDiagnostics,available:V43_CONFIG.length,display:settings.forearmLayer});
+window.__labContinuity=()=>({ready:realReady,elbow:settings.elbow,pronation:settings.pronation,
+ ...muscleDiagnostics.continuity,
+ limitations:'endpoint equality only; collision, wrapping and force need separate validation'});
 window.__labMuscles=()=>({...muscleDiagnostics,enabled:settings.muscles,deltoidEnabled:settings.deltoid,deltoidGeometryCount:['deltoidAnterior','deltoidMiddle','deltoidPosterior'].filter(n=>Boolean(geomDynamic[n])).length,brachioradialisEnabled:settings.brachioradialis,brachioradialisGeometryCount:['brachioradialis','tendonBR'].filter(n=>Boolean(geomDynamic[n])).length,pronatorTeresEnabled:settings.pronatorTeres,pronatorTeresGeometryCount:['pronatorTeresHumeral','pronatorTeresUlnar','tendonPT'].filter(n=>Boolean(geomDynamic[n])).length,supinatorEnabled:settings.supinator,supinatorGeometryCount:['supinatorSuperficial','supinatorDeep','tendonSupinator'].filter(n=>Boolean(geomDynamic[n])).length,flexorCarpiRadialisEnabled:settings.flexorCarpiRadialis,flexorCarpiRadialisGeometryCount:['flexorCarpiRadialis','tendonFCR'].filter(n=>Boolean(geomDynamic[n])).length,palmarisLongusEnabled:settings.palmarisLongus,flexorDigitorumSuperficialisEnabled:settings.flexorDigitorumSuperficialis,flexorDigitorumProfundusEnabled:settings.flexorDigitorumProfundus,palmarisLongusGeometryCount:['palmarisLongus','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].filter(n=>Boolean(geomDynamic[n])).length,flexorCarpiUlnarisEnabled:settings.flexorCarpiUlnaris,flexorCarpiUlnarisGeometryCount:['flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','tendonFCU','pisohamateBand','pisometacarpalBand'].filter(n=>Boolean(geomDynamic[n])).length,realReady,exaggerated:settings.muscleEmphasis});
 window.__labFCU=()=>({enabled:settings.flexorCarpiUlnaris,handEnabled:settings.hand,realReady,handReady,geometryCount:['flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','tendonFCU','pisohamateBand','pisometacarpalBand'].filter(id=>Boolean(geomDynamic[id])).length,data:muscleDiagnostics.flexorCarpiUlnaris||{visible:false}});
 window.__labPL=()=>({enabled:settings.palmarisLongus,handEnabled:settings.hand,realReady,handReady,geometryCount:['palmarisLongus','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].filter(n=>Boolean(geomDynamic[n])).length,data:muscleDiagnostics.palmarisLongus||{visible:false}});
