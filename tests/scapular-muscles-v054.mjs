@@ -1,3 +1,5 @@
+// Legacy regression assertions updated to run against current v0.55 mesh grid.
+// The exact historical geometry is preserved in archive branches.
 // Run: node tests/scapular-muscles-v053.mjs
 // Rigorous SYNTHETIC test of mesh generation, not anatomical validation.
 // Scapular surface = triangulated curved posterior and anterior sheets.
@@ -53,11 +55,11 @@ const env={...spec,add,sub,mul,dot,len,norm,mix,clamp,qr,transform,realAnchors,
  mesh,settings,SOFTWARE,gl,geomDynamic,gdynamic:(id,g)=>{geomDynamic[id]=g},realReady:true};
 const start=js.indexOf('const scapularSurfaceCache=');
 const end=js.indexOf('function updateRealMuscles(){',start);
-assert.ok(start>0&&end>start,'v0.54 projector/generator missing');
+assert.ok(start>0&&end>start,'v0.55 projector/generator missing');
 const segment=js.slice(start,end);
 const api=new Function(...Object.keys(env),segment+
  '\nreturn{run:updateScapularMuscles,diagnostics:()=>scapularDiagnostics,cache:scapularSurfaceCache}')(...Object.values(env));
-const sampleCount=7,bellyRows=8,surfaceStart=bellyRows*sampleCount,poses=[];
+const sampleCount=11,bellyRows=11,surfaceStart=bellyRows*sampleCount,poses=[];
 for(const deg of [0,30,60,90,120,150,180])for(const axial of [-45,0,45]){
  const theta=deg*Math.PI/180;
  realPose.scapula=[qa([1,0,0],theta/3),realAnchors.AC];
@@ -75,9 +77,9 @@ for(const deg of [0,30,60,90,120,150,180])for(const axial of [-45,0,45]){
  for(const id of spec.SCAPULAR_MUSCLES){
   const g=geomDynamic[id],t=geomDynamic['tendon'+id[0].toUpperCase()+id.slice(1)];
   assert.ok(g&&t,'missing mesh '+id);
-  const centerRow=4*sampleCount,backOffset=bellyRows*sampleCount;
+  const centerRow=5*sampleCount,backOffset=bellyRows*sampleCount;
   const edgeThickness=len(sub(g.vertices[centerRow],g.vertices[backOffset+centerRow]))/2;
-  const middleThickness=len(sub(g.vertices[centerRow+3],g.vertices[backOffset+centerRow+3]))/2;
+  const middleThickness=len(sub(g.vertices[centerRow+5],g.vertices[backOffset+centerRow+5]))/2;
   assert.ok(middleThickness>edgeThickness*2,'hard rectangular flap edge persists: '+id);
   // Station t=1 must follow the humerus, independent from the scapular pose.
   const row=report.muscles.find(m=>m.id===id);
@@ -103,7 +105,7 @@ for(const deg of [0,30,60,90,120,150,180])for(const axial of [-45,0,45]){
   }
   // The bottom half of the belly at scapula-attached rows 0..6 MUST be
   // outside the curved posterior envelope, never behind the bone.
-  for(let k=0;k<=6;k++)for(let j=0;j<sampleCount;j++){
+  for(let k=0;k<=10;k++)for(let j=0;j<sampleCount;j++){
    const point=g.vertices[surfaceStart+k*sampleCount+j];
    const local=qr(qc(realPose.scapula[0]),sub(point,realPose.scapula[1]));
    minClearance=Math.min(minClearance,local[2]-posterior(local[0],local[1]));
@@ -118,6 +120,6 @@ for(const id of [...spec.SCAPULAR_MUSCLES,...spec.SCAPULAR_TENDONS])
  assert.equal(geomDynamic[id],undefined,'stale mesh after OFF: '+id);
 for(const id of ['scapularMuscles','cuffOnly','scapulaDisplay','scapularBackView','scapularFrontView','scapularMuscleStatus'])
  assert.ok(html.includes('id="'+id+'"'),'missing control '+id);
-assert.ok(html.includes('上肢3D解剖ラボ · v0.54'),'v0.54 not displayed');
+assert.ok(html.includes('上肢3D解剖ラボ · v0.55'),'v0.55 not displayed');
 assert.ok(js.includes("settings.scapulaDisplay==='translucent'"),'scapula opacity mode removed');
-console.log('PASS v0.54: 21 synthetic poses × 4 muscles, teres strap widths, curved tendon continuity, posterior clearance, OFF cleanup.');
+console.log('PASS v0.55: 21 synthetic poses × 4 muscles, teres strap widths, curved tendon continuity, posterior clearance, OFF cleanup.');
