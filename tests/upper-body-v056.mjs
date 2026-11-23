@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 const html=readFileSync('index.html','utf8');
 let js=html.match(/<script>([\s\S]*?)<\/script>/)[1];
 new Function(js);
-assert.ok(html.includes('上肢3D解剖ラボ · v0.56'));
+assert.ok(/上肢3D解剖ラボ · v\d+\.\d+/.test(html));
 const elements=new Map(),errors=[],callbacks=[],generic=new Map();
 function el(id=""){
  const attrs={},classes=new Set(),events={};
@@ -74,6 +74,30 @@ window.__runV56Tests=()=>{
  ok(geomDynamic!==v56Other.geom&&geomDynamic.bicepsLong!==v56Other.geom.bicepsLong,'independent real-ready muscle buffers');
  const arm=realPose.humerus[1].slice();v56RefreshOther();
  ok(len(sub(realPose.humerus[1],arm))<1e-9,'inactive refresh preserves active joint center');
+
+ ok(V57_MANIFEST.length===48&&new Set(V57_MANIFEST.map(p=>p.file)).size===48,'48 unique atlas files');
+ ok(V57_MANIFEST.filter(p=>p.group==='ribs'&&p.side==='right').length===12&&V57_MANIFEST.filter(p=>p.group==='ribs'&&p.side==='left').length===12,'24 independently sourced ribs');
+ ok(V57_MANIFEST.filter(p=>p.group==='spine').length===19,'19 individually sourced vertebrae');
+ ok(V57_MANIFEST.filter(p=>p.group==='sternum').length===3&&V57_MANIFEST.filter(p=>p.group==='cartilage').length===2,'sternum and cartilage manifest');
+ const fixture=new ArrayBuffer(134),dv=new DataView(fixture);dv.setUint32(80,1,true);
+ const triangle=[[-14,-72,1341],[-24,-72,1341],[-14,-82,1341]];
+ triangle.forEach((v,i)=>v.forEach((n,j)=>dv.setFloat32(96+i*12+j*4,n,true)));
+ const parsed=v57ParseSTL(fixture,{id:'synthetic',bytes:134});
+ ok(parsed.faces.length===3&&len(sub(parsed.vertices[0],atlasToWorld(triangle[0])))<1e-10,'binary STL common atlas coordinates');
+ ok(len(sub(parsed.vertices[1],atlasToWorld(triangle[1])))<1e-10,'STL preserves absolute position and scale');
+ let rejected=false;try{v57ParseSTL(fixture,{id:'bad',bytes:135})}catch(e){rejected=true}
+ ok(rejected,'mismatched STL size rejected');
+ const stage=V57_MANIFEST.map(e=>({...e,g:gpu(parsed),color:cBone}));
+ ok(v57ValidateSet(stage)&&!v57ValidateSet(stage.slice(1)),'atomic complete set required');
+ v57State.parts=stage;v57State.mode='atlas';v57State.loaded=48;
+ $('v57TorsoLayer').value='ribs';ok(v57VisibleTorso().length===24,'atlas ribs filter');
+ $('v57TorsoLayer').value='spine';ok(v57VisibleTorso().length===19,'atlas spine filter');
+ $('v57TorsoLayer').value='all';ok(v57VisibleTorso().length===48,'complete atlas rendering set');
+ ok(poseBoundingPoints().every(p=>p.every(Number.isFinite)),'atlas camera bounds finite');
+ v57State.mode='fallback';$('v57TorsoLayer').value='ribs';
+ ok(v57VisibleTorso().length===24&&v57VisibleTorso().every(p=>p.id.startsWith('rib-')),'fallback group selection');
+ $('v57TorsoLayer').value='all';
+
  return passed;
 };`;
 js=js.replace(/\}\)\(\);\s*$/,instrument+"\n})();");
