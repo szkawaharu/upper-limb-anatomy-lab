@@ -297,7 +297,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
   <button id="medicalStudyReset" type="button">全筋表示に戻す</button>
  </div>
  <div class="med-status" id="medicalStudyFocusStatus" role="status" aria-live="polite">通常表示中。単独表示は形状比較用であり、正確性を保証しません。</div>
- <div class="detail">重要な未実装：三頭筋内側頭、烏口腕筋、肩甲下筋（回旋筋腱板の4筋目）。棘上筋・棘下筋・小円筋はv0.51で追加、v0.54で後面投影と筋腹形状を改善しましたが、付着面の医学的検証は未実施です。上腕二頭筋腱膜も簡略化されています。関節包・靱帯・神経・血管の系統的3D表示はありません。</div>
+ <div class="detail">重要な未実装：三頭筋内側頭、烏口腕筋、肩甲下筋（回旋筋腱板の4筋目）。棘上筋・棘下筋・小円筋はv0.51で追加し、v0.54では円筋を細束状に見直しました。ただし、停止面や腱走行の医学的検証は未実施です。上腕二頭筋腱膜も簡略化されています。関節包・靱帯・神経・血管の系統的3D表示はありません。</div>
  <p><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/ANATOMY_VALIDATION_V049.md" target="_blank" rel="noopener noreferrer">モデルの医学的妥当性監査・不足構造・検証基準を読む</a></p>
 </div></details>
 <details class="control-fold"><summary>表示倍率・視点操作<span class="fold-note">カメラ</span></summary><div class="fold-body"><div class="panel zoom-panel"><div class="panelhead"><h2>表示倍率</h2><span class="sectioncap">CAMERA</span></div>
@@ -409,7 +409,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
  <div id="scapularMuscleStatus" class="scapular-study-status" role="status" aria-live="polite">骨データを読み込み中…</div>
  <div class="detail">筋腹は肩甲骨の棘上窩・棘下窩・外側縁・下角付近の<strong>推定骨表面点</strong>から上腕骨の推定停止位置へ広がる近似メッシュです。付着面の実測・腱の骨接触・関節運動時の滑走は未検証です。</div>
  <div class="detail"><strong>回旋筋腱板は4筋：</strong>棘上筋・棘下筋・小円筋・肩甲下筋。<strong>肩甲下筋はv0.54でも未実装</strong>。大円筋は回旋筋腱板に含まれません。</div>
- <p><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULAR_MUSCLES_V053.md" target="_blank" rel="noopener noreferrer">v0.54 描画改善・投影判定・未検証事項を確認する</a></p>
+ <p><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULAR_MUSCLES_V054.md" target="_blank" rel="noopener noreferrer">v0.54 描画改善・投影判定・未検証事項を確認する</a></p>
 </div></details>
 <div class="forearm-layer-select">
 <div class="sectioncap">前腕の筋層（表示フィルタ）</div>
@@ -2599,6 +2599,7 @@ function updateScapularMuscleStatus(){
   ' 後面投影の近似クリアランス最小 '+
   (Number.isFinite(clearance)?clearance.toFixed(2):'—')+' mm。'+
   (fallback?'骨面への投影範囲外 '+fallback+' 点（付着位置要再確認）。':'投影対象は三角形骨面上。')+
+  ' 棘上筋・棘下筋は広がる筋腹、円筋は細束の表示。'+
   ' ※接合点・投影深度の計算であり、骨との3D衝突・腱滑走・人体での解剖学的正確性は未検証。';
 }
 $('scapulaDisplay').addEventListener('change',update);
