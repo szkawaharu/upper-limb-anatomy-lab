@@ -1199,7 +1199,6 @@ function prepareScapularSurfaceBins(){
  const verts=realSurfaceVertices.scapula,faces=realSurfaceFaces.scapula||[];
  const bins=new Map();
  if(!verts||!verts.length)throw Error('v0.53: scapular mesh vertices unavailable');
- const bucket=(x,y)=>Math.floor(x/SCAPULAR_BIN)+','+Math.floor(y/SCAPULAR_BIN);
  for(let i=0;i<faces.length;i+=3){
   const a=verts[faces[i]],b=verts[faces[i+1]],c=verts[faces[i+2]];
   if(!a||!b||!c)continue;
@@ -1318,7 +1317,7 @@ function updateScapularMuscles(){
    const jointRatio=clamp((t-.64)/.36,0,1);
    for(let j=0;j<lanes;j++){
     const u=j/(lanes-1);
-    const across=.15+.85*Math.pow(Math.max(0,Math.sin(Math.PI*u)),.70);
+    const across=.04+.96*Math.pow(Math.max(0,Math.sin(Math.PI*u)),.72);
     let p,thickness,clearance;
     if(onPlate){
      // Query triangles at the current rest-pose location, *then* transform
@@ -1326,8 +1325,8 @@ function updateScapularMuscles(){
      const raw=toXYZ(toXYZ(spec.originA,spec.originB,u),toXYZ(spec.exitA,spec.exitB,u),smooth01(plateRatio));
      p=scapularPointWorld(raw);
      const swell=Math.pow(Math.max(0,Math.sin(Math.PI*(.10+.83*plateRatio))),.78);
-     thickness=.0028+spec.thickness*.47*swell*across;
-     clearance=.0065+.010*Math.sin(Math.PI*plateRatio);
+     thickness=.0008+spec.thickness*.47*swell*across;
+     clearance=.0020+.010*Math.sin(Math.PI*plateRatio);
      p=add(p,mul(backScap,thickness+clearance));
      localClearance=Math.min(localClearance,clearance);
     }else{
@@ -1337,7 +1336,7 @@ function updateScapularMuscles(){
      const routeStart=add(edge[j],mul(backScap,.009+spec.thickness*.12));
      p=add(toXYZ(routeStart,hum[j],a),
       mul(backScap,.024*Math.sin(Math.PI*a)*(1-a*.40)));
-     thickness=(.0028+.010*(1-a))*(.22+.78*across);
+     thickness=(.0009+.010*(1-a))*(.16+.84*across);
      clearance=0; // clearance is only measured where the scapula is underneath
     }
     // Keep two sides apart without a sharp plate edge at the muscle boundary.
