@@ -1335,7 +1335,8 @@ function updateScapularMuscles(){
  const plateEnd=stations[split];
  const stats=[];let minimumClearance=Infinity,maximumTendonStep=0;
  for(const spec of SCAPULAR_SPEC){
-  const shape=SCAPULAR_FORM_V055[spec.id],rows=[],localClearance=Infinity;
+  const shape=SCAPULAR_FORM_V055[spec.id],rows=[];
+  let localClearance=Infinity;
   const hum=Array.from({length:lanes},(_,j)=>{
    const u=j/(lanes-1);
    return attachedAtlas('humerus',spec.insertA.map((p,k)=>mix(p,spec.insertB[k],u)),true);
