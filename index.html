@@ -213,7 +213,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.47</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.47</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.48</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.48</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
@@ -223,7 +223,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.47</div>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.48</div>
 <nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
  <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
  <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
@@ -238,7 +238,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 
 </div>
 <section class="side" id="labTools">
-<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.47</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
+<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.48</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
 <details class="edge-help control-fold"><summary>操作方法<span class="fold-note">ヘルプ</span></summary><div class="fold-body"><div class="immersive-tips">操作：1本指ドラッグで視点回転（初期設定は逆方向）。<strong>骨を約0.4秒長押し → ドラッグで関節操作。右端の「✋」は曲げ伸ばし、「↻」は前腕の回内・回外と上腕の内旋・外旋。↻では骨を左右にドラッグするか、2本指でひねって調整できます。<strong>3本指で左右にスワイプすると、<strong>上腕付近は肩の内旋・外旋、前腕付近は回内・回外</strong>を操作できます。判断しにくいときは上部の関節指定で「上腕：回旋」「前腕：回内外」を固定できます。</strong>iPhoneで選択メニューが出る場合は「✋」または「↻」をONにして直接ドラッグ</strong>。2本指は視点移動・ピンチ。選びにくい関節は上部メニューで指定できます。</div></div></details><div class="note" id="launchTip"><strong>iPhoneでモデルが表示されない場合</strong>：HTMLファイルのプレビューではJavaScriptが実行されない場合があります。HTMLファイルをWebサイトとして公開し、SafariでURLを開いてください。下の操作ボタンはブラウザ版で機能します。</div>
 <details class="control-fold"><summary>表示倍率・視点操作<span class="fold-note">カメラ</span></summary><div class="fold-body"><div class="panel zoom-panel"><div class="panelhead"><h2>表示倍率</h2><span class="sectioncap">CAMERA</span></div>
 <div class="control zoom-control"><label for="zoomLevel">拡大・縮小 <output id="zoomValue">100%</output></label>
@@ -1038,7 +1038,8 @@ function updateRealMuscles(){
  const stretch=(center,f,amount=.10)=>center+(f-center)*(1+amount*contract);
  // Educational visual exaggeration is separate from physiological activation.
  const exaggeration=settings.muscleEmphasis?1.0:0.45;
- const bBulge=1+.72*contract*exaggeration,braBulge=1+.52*contract*exaggeration,tBulge=1-.24*contract*exaggeration;
+ // v0.48: less exaggerated cross-sectional changes during elbow flexion.
+ const bBulge=1+.26*contract*exaggeration,braBulge=1+.22*contract*exaggeration,tBulge=1-.13*contract*exaggeration;
  const upperPaths={};
  const makeM=(id,pts)=>{
   upperPaths[id]={kind:'muscle',start:pts[0].slice(0,3),end:pts.at(-1).slice(0,3)};
@@ -1046,13 +1047,28 @@ function updateRealMuscles(){
    id.startsWith('supinator')||id.startsWith('flexor')||id==='palmarisLongus';
   const deep=id.startsWith('supinator')||id==='flexorDigitorumProfundus';
   const bulk=forearmId?clamp(settings.forearmBulk/100,.50,1.10)*(deep?.86:1):1;
+  // v0.48: the upper-arm muscle fibers have head-specific, rounder sections,
+  // with modest belly width and unchanged endpoint radii. The forearm
+  // thickness control remains the same as v0.47.
+  const upper={
+   bicepsLong:{width:.92,depth:.80},
+   bicepsShort:{width:.92,depth:.76},
+   triceps:{width:.94,depth:.80},
+   tricepsLat:{width:.95,depth:.76},
+   brachialis:{width:.95,depth:.61}
+  }[id];
   const shaped=pts.map((p,i)=>{
    const edge=i===0||i===pts.length-1;
-   const taper=edge?.88:(i===1||i===pts.length-2?.96:1);
-   return [...p.slice(0,3),p[3]*taper*bulk];
+   const taper=upper?(edge?1:((i===1||i===pts.length-2)?.96:1)):
+     (edge?.88:(i===1||i===pts.length-2?.96:1));
+   const widthScale=upper?(edge?1:upper.width):bulk;
+   // Only the proximal forearm muscle shoulder is slightly tapered; mid-
+   // forearm bulk remains exactly at the selected v0.47 slider percentage.
+   const elbowRelief=forearmId&&i===1?.94:1;
+   return [...p.slice(0,3),p[3]*taper*widthScale*elbowRelief];
   });
   gdynamic(id,tube(shaped,{sides:16,steps:8,
-   ellipticity:forearmId?(deep?.54:.65):(id==='brachialis'?.51:.62),rough:0}));
+   ellipticity:forearmId?(deep?.54:.65):(upper?upper.depth:.68),rough:0}));
  };
  const makeT=(id,pts)=>{
   upperPaths[id]={kind:'tendon',start:pts[0].slice(0,3),end:pts.at(-1).slice(0,3)};
@@ -1077,22 +1093,25 @@ function updateRealMuscles(){
    hg(shrink(.52,.72,.30),'anterior',.052*bBulge,.025,.018),
    bicepsEnd
  ]);
+ const bicepsShortStart=hg(shrink(.50,.22,.28),'anterior',.014,.022,-.025);
+ const bicepsShortEnd=hg(shrink(.50,.80,.28),'anterior',.014,.023,-.023);
  makeM('bicepsShort',[
-   hg(shrink(.50,.22,.28),'anterior',.014,.022,-.025),
-   hg(shrink(.50,.37,.28),'anterior',.034,.028,-.026),
-   hg(shrink(.50,.51,.28),'anterior',.065*bBulge,.031,-.027),
-   hg(shrink(.50,.66,.28),'anterior',.056*bBulge,.028,-.025),
-   hg(shrink(.50,.80,.28),'anterior',.023,.023,-.023)
+  bicepsShortStart,
+  hg(shrink(.50,.37,.28),'anterior',.034,.028,-.026),
+  hg(shrink(.50,.51,.28),'anterior',.065*bBulge,.031,-.027),
+  hg(shrink(.50,.66,.28),'anterior',.056*bBulge,.028,-.025),
+  bicepsShortEnd
  ]);
  makeT('tendonBprox',[bicepsLongOrigin,hg(.10,'anterior',mix(.009,.0083,contract),.018,.015),bicepsStart]);
- makeT('tendonB2',[bicepsShortOrigin,hg(.15,'anterior',mix(.009,.0083,contract),.021,-.025),hg(shrink(.50,.22,.28),'anterior',mix(.011,.0102,contract),.022,-.025)]);
+ makeT('tendonB2',[bicepsShortOrigin,hg(.15,'anterior',mix(.009,.0083,contract),.021,-.025),bicepsShortStart]);
  const radialBicepsGuide=nearElbow('radius',[-239,-92,1028],'anterior',.0095,.026);
  makeT('tendonB',[bicepsEnd,hg(.95,'anterior',mix(.011,.010,contract),.013,.014),radialBicepsGuide,bicepsRadiusEnd]);
- // v0.45: the short head previously ended with a visible cut-off.
- // Its distal tendon now joins the common insertion on the moving radius.
+ // v0.48: biceps heads join one distal tendon, instead of two coincident
+ // tendons both traversing the radius/ulna elbow corridor.
  makeT('tendonBShortDist',[
-  hg(shrink(.50,.80,.28),'anterior',.023,.023,-.023),
-  hg(.91,'anterior',.009,.018,-.012),radialBicepsGuide,bicepsRadiusEnd]);
+  bicepsShortEnd,
+  hg(shrink(.50,.85,.28),'anterior',.011,.018,-.009),
+  bicepsEnd]);
  const tricepsOrigin=bone('scapula',[-170,-62,1295],.011);
  const tricepsEnd=bone('ulna',[-211,-47,1057],.011);
  const triBellyStart=hg(stretch(.53,.19,.09),'posterior',.014,.024,.016), triBellyEnd=hg(stretch(.53,.88,.09),'posterior',.013,.021,.017);
@@ -1104,20 +1123,24 @@ function updateRealMuscles(){
    hg(stretch(.53,.80,.09),'posterior',.035,.020,.020),
    triBellyEnd
  ]);
+ const tricepsLatEnd=hg(stretch(.56,.88,.08),'posterior',.011,.018,-.015);
  makeM('tricepsLat',[
-   hg(stretch(.56,.19,.08),'posterior',.007,.003,-.021),
-   hg(stretch(.56,.29,.08),'posterior',.011,.015,-.023),
-   hg(stretch(.56,.42,.08),'posterior',.038,.023,-.026),
-   hg(stretch(.56,.59,.08),'posterior',.056*tBulge,.024,-.025),
-   hg(stretch(.56,.77,.08),'posterior',.030,.019,-.019),
-   hg(stretch(.56,.88,.08),'posterior',.011,.018,-.015)
+  hg(stretch(.56,.19,.08),'posterior',.007,.003,-.021),
+  hg(stretch(.56,.29,.08),'posterior',.011,.015,-.023),
+  hg(stretch(.56,.42,.08),'posterior',.038,.023,-.026),
+  hg(stretch(.56,.59,.08),'posterior',.056*tBulge,.024,-.025),
+  hg(stretch(.56,.77,.08),'posterior',.030,.019,-.019),
+  tricepsLatEnd
  ]);
  makeT('tendonT2',[tricepsOrigin,hg(.10,'posterior',.009,.015,.018),triBellyStart]);
  const ulnarTricepsGuide=nearElbow('ulna',[-214,-48,1065],'posterior',.010,.019);
  makeT('tendonT',[triBellyEnd,hg(.97,'posterior',mix(.011,.0105,contract),.014,.011),ulnarTricepsGuide,tricepsEnd]);
+ // v0.48: lateral and long heads converge on their shared triceps tendon
+ // before the olecranon; this removes the redundant parallel long tendon.
  makeT('tendonTLatDist',[
-  hg(stretch(.56,.88,.08),'posterior',.011,.018,-.015),
-  hg(.965,'posterior',.009,.016,-.008),ulnarTricepsGuide,tricepsEnd]);
+  tricepsLatEnd,
+  hg(stretch(.56,.91,.08),'posterior',.009,.016,-.005),
+  triBellyEnd]);
  const brachialisOrigin=hg(shrink(.68,.43,.22),'anterior',.017,.005,-.013);
  const brachialisEnd=bone('ulna',[-215,-87,1041],mix(.010,.0096,contract));
  const brachBellyEnd=hg(shrink(.68,.92,.22),'anterior',mix(.012,.013,contract),.009,-.011);
@@ -1704,11 +1727,16 @@ function updateRealMuscles(){
    const from=a?.end,to=b?.start;
    return {from:fromName,to:toName,kind,gap:from&&to?len(sub(from,to)):null};
   });
- const continuity={seams,upperMaxGap:Math.max(0,...seams.map(x=>x.gap||0)),
+ const unionGaps=[
+  {name:'bicepsSharedDistal',gap:len(sub(upperPaths.tendonBShortDist.end,upperPaths.tendonB.start))},
+  {name:'tricepsSharedDistal',gap:len(sub(upperPaths.tendonTLatDist.end,upperPaths.tendonT.start))}
+ ];
+ const continuity={seams,unionGaps,unionMaxGap:Math.max(0,...unionGaps.map(x=>x.gap)),
+  upperMaxGap:Math.max(0,...seams.map(x=>x.gap||0)),
   forearmMaxGap:v43Data.maximumSeamGap??null,forearmSeams:v43Data.seamCount??0,
   currentElbow:settings.elbow,currentPronation:settings.pronation,
   collisionSolver:false,validatedAgainst:'shared control endpoints'};
- muscleDiagnostics={mode:'v0.47: realistic forearm belly scale plus controlled v0.46 elbow paths' ,flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
+ muscleDiagnostics={mode:'v0.48: slimmer rounded upper bellies and shared elbow tendons' ,flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
   biceps:{origin:bicepsLongOrigin.slice(0,3),insertion:bicepsRadiusEnd.slice(0,3),bellyBulge:bBulge},
   triceps:{origin:tricepsOrigin.slice(0,3),insertion:tricepsEnd.slice(0,3),bellyScale:tBulge},
   brachialis:{origin:brachialisOrigin.slice(0,3),insertion:brachialisEnd.slice(0,3),bellyBulge:braBulge},
@@ -2477,7 +2505,7 @@ window.__labJointErrors=()=>{
  return {ready:true,wristErrorMm:handWristErrorMm,thumbCMCErrorMm,thumbMCPErrorMm,thumbIPErrorMm,distalGapDeltaMm:poseCheck.distalGapDeltaMm,
    palmNormal:handPivot.thumbPalmNormal,thumbFlexAxis:handPivot.thumbFlexAxis,thumbFlexSign:handPivot.thumbFlexSign};
 };
-window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.47',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
+window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.48',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
 window.__labForearm=()=>({...v43ForearmDiagnostics,available:V43_CONFIG.length,display:settings.forearmLayer,bulkPercent:settings.forearmBulk});
 window.__labContinuity=()=>({ready:realReady,elbow:settings.elbow,pronation:settings.pronation,forearmBulk:settings.forearmBulk,
  ...muscleDiagnostics.continuity,
