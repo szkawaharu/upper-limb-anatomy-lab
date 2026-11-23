@@ -53,6 +53,6 @@ for(const sync of [false,true])for(const elev of [0,30,60,90,120,150,180])for(co
 }
 const ids=['shoulderAuditPanel','shoulderAuditCurrent','shoulderAuditSweep','shoulderAuditSweepResult'];
 for(const id of ids)assert.ok(html.includes('id="'+id+'"'),'missing UI: '+id);
-assert.ok(html.includes('上肢3D解剖ラボ · v0.50'),'version 0.50 not visible');
+assert.ok(html.includes('上肢3D解剖ラボ · v0.51'),'version 0.51 not visible');
 assert.ok(js.includes('window.__labShoulder=()=>'),'missing user inspect API');
 console.log('PASS v0.50: '+count+' posture combinations, SC/AC/GH continuity and legacy motion preservation. Clinical accuracy is NOT certified.');
