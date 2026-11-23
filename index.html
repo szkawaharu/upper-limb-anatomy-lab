@@ -1304,7 +1304,7 @@ function updateScapularMuscles(){
  const toXYZ=(a,b,t)=>a.map((v,i)=>mix(v,b[i],t));
  const smooth01=t=>{const x=clamp(t,0,1);return x*x*(3-2*x)};
  const stats=[];
- let minimumClearance=Infinity;
+ let minimumClearance=Infinity,humeralHeadGuideMoves=0;
  for(const spec of SCAPULAR_SPEC){
   const origin=Array.from({length:lanes},(_,j)=>scapularPointWorld(toXYZ(spec.originA,spec.originB,j/(lanes-1))));
   const edge=Array.from({length:lanes},(_,j)=>scapularPointWorld(toXYZ(spec.exitA,spec.exitB,j/(lanes-1))));
@@ -1335,7 +1335,23 @@ function updateScapularMuscles(){
      const a=smooth01(jointRatio);
      const routeStart=add(edge[j],mul(backScap,.009+spec.thickness*.12));
      p=add(toXYZ(routeStart,hum[j],a),
-      mul(backScap,.024*Math.sin(Math.PI*a)*(1-a*.40)));
+      mul(backScap,.028*Math.sin(Math.PI*a)*(1-a*.40)));
+     // Visual avoidance rail around an APPROXIMATE humeral head sphere.
+     // The radius is not a fitted anatomical head surface, and there is no
+     // mesh collision or joint-capsule solver here. We push only posteriorly
+     // so the guide does not unexpectedly flip around the head.
+     const head=realPose.humerus[1],d=sub(p,head);
+     const endpointRadius=len(sub(hum[j],head));
+     const fade=smooth01(clamp((a-.58)/.42,0,1));
+     const guideRadius=mix(Math.max(.126,endpointRadius+.010),endpointRadius,fade);
+     const d2=dot(d,d),r2=guideRadius*guideRadius;
+     if(d2<r2&&a<.999){
+      const along=dot(d,backScap);
+      const delta=-along+Math.sqrt(Math.max(0,along*along+r2-d2));
+      const safeDelta=clamp(delta,0,.090);
+      p=add(p,mul(backScap,safeDelta));
+      if(safeDelta>1e-6)humeralHeadGuideMoves++;
+     }
      thickness=(.0009+.010*(1-a))*(.16+.84*across);
      clearance=0; // clearance is only measured where the scapula is underneath
     }
@@ -1364,6 +1380,7 @@ function updateScapularMuscles(){
   maximumJointGap:Math.max(0,...stats.map(x=>x.sharedStationGap)),
   minimumPosteriorProjectionClearanceMm:minimumClearance/atlasScale,
   rayProjectionHits:scapularSurfaceRayHits,projectionFallbacks:scapularSurfaceMisses,
+  approximateHumeralHeadGuideMoves:humeralHeadGuideMoves,
   scapulaAndHumerusTrackIndependently:true,pressureOrCollisionEvaluated:false};
 }
 
