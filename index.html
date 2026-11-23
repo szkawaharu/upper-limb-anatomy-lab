@@ -1483,12 +1483,13 @@ function updateRealMuscles(){
  }else for(const id of fdpNames){
    const old=geomDynamic[id];if(old){if(!SOFTWARE){gl.deleteBuffer(old.vbo);gl.deleteBuffer(old.nbo);gl.deleteBuffer(old.ibo);}delete geomDynamic[id];}
  }
- muscleDiagnostics={mode:'v0.41: ulna-radius soft-tissue bridge + volar tendon guidance' ,flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
+ const v43Data=updateV43Forearm();
+  muscleDiagnostics={mode:'v0.43: layered forearm extensors and thumb tendon guides' ,flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
   biceps:{origin:bicepsLongOrigin.slice(0,3),insertion:bicepsRadiusEnd.slice(0,3),bellyBulge:bBulge},
   triceps:{origin:tricepsOrigin.slice(0,3),insertion:tricepsEnd.slice(0,3),bellyScale:tBulge},
   brachialis:{origin:brachialisOrigin.slice(0,3),insertion:brachialisEnd.slice(0,3),bellyBulge:braBulge},
   lengths:{biceps:len(sub(bicepsLongOrigin,bicepsRadiusEnd)),triceps:len(sub(tricepsOrigin,tricepsEnd))},
-  mappedToRealPose:true,deltoidVisible:settings.deltoid,deltoid:deltoidData,brachioradialis:brInfo,pronatorTeres:ptInfo,supinator:supInfo,flexorCarpiRadialis:fcrInfo,flexorCarpiUlnaris:fcuInfo,palmarisLongus:plInfo,flexorDigitorumSuperficialis:fdsInfo,flexorDigitorumProfundus:fdpInfo};
+  mappedToRealPose:true,forearmV43:v43Data,deltoidVisible:settings.deltoid,deltoid:deltoidData,brachioradialis:brInfo,pronatorTeres:ptInfo,supinator:supInfo,flexorCarpiRadialis:fcrInfo,flexorCarpiUlnaris:fcuInfo,palmarisLongus:plInfo,flexorDigitorumSuperficialis:fdsInfo,flexorDigitorumProfundus:fdpInfo};
 }
 
 async function loadOneBone(name,id){let lastError=null;
@@ -1560,7 +1561,7 @@ if(settings.muscles||settings.deltoid||settings.brachioradialis||settings.pronat
  gl.disable(gl.BLEND);gl.enable(gl.DEPTH_TEST);gl.depthMask(true);
  for(const name of MUSCLE_PARTS){
   if(!muscleVisible(name))continue;
-  drawPart(geomDynamic[name],ID,OR,name==='brachialis'?cMuscleDeep:name==='brachioradialis'?[.81,.36,.32]:name.startsWith('pronatorTeres')?[.86,.32,.40]:name.startsWith('supinator')?[.55,.40,.76]:name==='flexorCarpiRadialis'?[.76,.27,.45]:name.startsWith('flexorCarpiUlnaris')?[.77,.37,.29]:name==='palmarisLongus'?[.82,.43,.33]:name==='flexorDigitorumSuperficialis'?[.68,.28,.34]:name==='flexorDigitorumProfundus'?[.51,.21,.33]:cMuscle,1,1);
+  drawPart(geomDynamic[name],ID,OR,V43_LOOKUP[name]?(V43_LOOKUP[name].layer==='deep'?[.53,.24,.35]:[.80,.33,.34]):name==='brachialis'?cMuscleDeep:name==='brachioradialis'?[.81,.36,.32]:name.startsWith('pronatorTeres')?[.86,.32,.40]:name.startsWith('supinator')?[.55,.40,.76]:name==='flexorCarpiRadialis'?[.76,.27,.45]:name.startsWith('flexorCarpiUlnaris')?[.77,.37,.29]:name==='palmarisLongus'?[.82,.43,.33]:name==='flexorDigitorumSuperficialis'?[.68,.28,.34]:name==='flexorDigitorumProfundus'?[.51,.21,.33]:cMuscle,1,1);
  }
  for(const name of TENDON_PARTS)if(muscleVisible(name))drawPart(geomDynamic[name],ID,OR,['tendonFCR','tendonFCU','pisohamateBand','pisometacarpalBand','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].includes(name)||name.startsWith('fds')?cTendonFCR:name.startsWith('fdp')?[.79,.90,.94]:cTendon,1,2);
 }
@@ -2253,6 +2254,7 @@ window.__labJointErrors=()=>{
    palmNormal:handPivot.thumbPalmNormal,thumbFlexAxis:handPivot.thumbFlexAxis,thumbFlexSign:handPivot.thumbFlexSign};
 };
 window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.43',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
+window.__labForearm=()=>({...v43ForearmDiagnostics,available:V43_CONFIG.length,display:settings.forearmLayer});
 window.__labMuscles=()=>({...muscleDiagnostics,enabled:settings.muscles,deltoidEnabled:settings.deltoid,deltoidGeometryCount:['deltoidAnterior','deltoidMiddle','deltoidPosterior'].filter(n=>Boolean(geomDynamic[n])).length,brachioradialisEnabled:settings.brachioradialis,brachioradialisGeometryCount:['brachioradialis','tendonBR'].filter(n=>Boolean(geomDynamic[n])).length,pronatorTeresEnabled:settings.pronatorTeres,pronatorTeresGeometryCount:['pronatorTeresHumeral','pronatorTeresUlnar','tendonPT'].filter(n=>Boolean(geomDynamic[n])).length,supinatorEnabled:settings.supinator,supinatorGeometryCount:['supinatorSuperficial','supinatorDeep','tendonSupinator'].filter(n=>Boolean(geomDynamic[n])).length,flexorCarpiRadialisEnabled:settings.flexorCarpiRadialis,flexorCarpiRadialisGeometryCount:['flexorCarpiRadialis','tendonFCR'].filter(n=>Boolean(geomDynamic[n])).length,palmarisLongusEnabled:settings.palmarisLongus,flexorDigitorumSuperficialisEnabled:settings.flexorDigitorumSuperficialis,flexorDigitorumProfundusEnabled:settings.flexorDigitorumProfundus,palmarisLongusGeometryCount:['palmarisLongus','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].filter(n=>Boolean(geomDynamic[n])).length,flexorCarpiUlnarisEnabled:settings.flexorCarpiUlnaris,flexorCarpiUlnarisGeometryCount:['flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','tendonFCU','pisohamateBand','pisometacarpalBand'].filter(n=>Boolean(geomDynamic[n])).length,realReady,exaggerated:settings.muscleEmphasis});
 window.__labFCU=()=>({enabled:settings.flexorCarpiUlnaris,handEnabled:settings.hand,realReady,handReady,geometryCount:['flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','tendonFCU','pisohamateBand','pisometacarpalBand'].filter(id=>Boolean(geomDynamic[id])).length,data:muscleDiagnostics.flexorCarpiUlnaris||{visible:false}});
 window.__labPL=()=>({enabled:settings.palmarisLongus,handEnabled:settings.hand,realReady,handReady,geometryCount:['palmarisLongus','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].filter(n=>Boolean(geomDynamic[n])).length,data:muscleDiagnostics.palmarisLongus||{visible:false}});
