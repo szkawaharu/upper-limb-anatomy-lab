@@ -197,11 +197,17 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 .audit-angle-grid button.active{background:#174b51;border-color:#79dbd0;color:#e2fffb}
 .audit-legend{display:flex;gap:9px;flex-wrap:wrap;margin:8px 0;color:#acc7d5;font-size:11px}
 .audit-legend span::before{content:'●';margin-right:4px;color:var(--marker)}
+/* v0.42: large touch targets for the grouped muscle/bone display actions. */
+.display-quick-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:12px 0 6px}
+.display-quick-actions button{min-height:42px;padding:9px 6px;font-size:12px;font-weight:700;white-space:normal;line-height:1.35}
+.display-quick-actions button[aria-pressed="true"]{border-color:#73dbd0;background:#15454a;color:#e6fff9}
+.display-quick-actions button:disabled{opacity:.4;cursor:not-allowed}
+.display-mode-status{font-size:11px;color:#a4c4ca;margin:2px 0 11px;line-height:1.6}
 </style>
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.41</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.41</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.42</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.42</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
@@ -211,7 +217,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.41</div>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.42</div>
 <nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
  <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
  <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
@@ -226,7 +232,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 
 </div>
 <section class="side" id="labTools">
-<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.41</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
+<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.42</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
 <details class="edge-help control-fold"><summary>操作方法<span class="fold-note">ヘルプ</span></summary><div class="fold-body"><div class="immersive-tips">操作：1本指ドラッグで視点回転（初期設定は逆方向）。<strong>骨を約0.4秒長押し → ドラッグで関節操作。右端の「✋」は曲げ伸ばし、「↻」は前腕の回内・回外と上腕の内旋・外旋。↻では骨を左右にドラッグするか、2本指でひねって調整できます。<strong>3本指で左右にスワイプすると、<strong>上腕付近は肩の内旋・外旋、前腕付近は回内・回外</strong>を操作できます。判断しにくいときは上部の関節指定で「上腕：回旋」「前腕：回内外」を固定できます。</strong>iPhoneで選択メニューが出る場合は「✋」または「↻」をONにして直接ドラッグ</strong>。2本指は視点移動・ピンチ。選びにくい関節は上部メニューで指定できます。</div></div></details><div class="note" id="launchTip"><strong>iPhoneでモデルが表示されない場合</strong>：HTMLファイルのプレビューではJavaScriptが実行されない場合があります。HTMLファイルをWebサイトとして公開し、SafariでURLを開いてください。下の操作ボタンはブラウザ版で機能します。</div>
 <details class="control-fold"><summary>表示倍率・視点操作<span class="fold-note">カメラ</span></summary><div class="fold-body"><div class="panel zoom-panel"><div class="panelhead"><h2>表示倍率</h2><span class="sectioncap">CAMERA</span></div>
 <div class="control zoom-control"><label for="zoomLevel">拡大・縮小 <output id="zoomValue">100%</output></label>
@@ -299,7 +305,14 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 </div></div></details>
 <details class="control-fold"><summary>筋肉と骨の表示<span class="fold-note">ON / OFF</span></summary><div class="fold-body"><div class="panel"><div class="panelhead"><h2>モデル表示</h2><span class="sectioncap">DISPLAY</span></div>
 <div class="model-status-compact" id="modelStatusCompact" role="status" aria-live="polite">骨格：読み込み中…</div>
-<div class="toggles"><label class="switch"><input id="hand" type="checkbox" checked>手首・手の骨格を表示（27骨）</label><label class="switch"><input id="sync" type="checkbox" checked>肩甲骨・鎖骨を連動</label><label class="switch"><input id="muscles" type="checkbox">上腕の筋肉・腱（二頭筋ほか）</label><label class="switch"><input id="deltoid" type="checkbox" checked>三角筋（前・中・後部）</label><label class="switch"><input id="brachioradialis" type="checkbox" checked>腕橈骨筋（前腕・単独表示可）</label><label class="switch"><input id="pronatorTeres" type="checkbox" checked>円回内筋（前腕・単独表示可）</label><label class="switch"><input id="supinator" type="checkbox" checked>回外筋（橈骨近位部・単独表示可）</label><label class="switch"><input id="flexorCarpiRadialis" type="checkbox" checked>橈側手根屈筋＋乳白色の腱（掌屈・橈屈）</label><label class="switch"><input id="flexorCarpiUlnaris" type="checkbox" checked>尺側手根屈筋＋腱（掌屈・尺屈／単独表示可）</label><label class="switch"><input id="palmarisLongus" type="checkbox" checked>長掌筋＋長い腱・手掌腱膜（単独表示可／個人差あり）</label><label class="switch"><input id="flexorDigitorumSuperficialis" type="checkbox" checked>浅指屈筋＋4本の腱（PIP屈曲／独立表示可）</label><label class="switch"><input id="flexorDigitorumProfundus" type="checkbox" checked>深指屈筋＋指先へ伸びる4本の腱（DIP屈曲／独立表示可）</label><label class="switch"><input id="rib" type="checkbox">胸郭の参照表示</label><label class="switch"><input id="showlabels" type="checkbox">骨の名称ラベル</label><label class="switch"><input id="showDirection" type="checkbox">側面の胸側・背側ガイド（短時間表示）</label></div>
+<div class="display-quick-actions" role="group" aria-label="筋肉と骨格の表示を一括切り替え">
+ <button id="showAllMuscles" type="button" aria-pressed="true">全筋肉 ON</button>
+ <button id="hideAllMuscles" type="button" aria-pressed="false">全筋肉 OFF</button>
+ <button id="showSkeletonOnly" type="button" aria-pressed="false">骨格のみ表示</button>
+ <button id="restoreDisplayState" type="button" disabled>直前の表示に戻す</button>
+</div>
+<div id="displayModeStatus" class="display-mode-status" role="status" aria-live="polite">筋肉・腱：すべて表示する設定</div>
+<div class="toggles"><label class="switch"><input id="hand" type="checkbox" checked>手首・手の骨格を表示（27骨）</label><label class="switch"><input id="sync" type="checkbox" checked>肩甲骨・鎖骨を連動</label><label class="switch"><input id="muscles" type="checkbox" checked>上腕の筋肉・腱（二頭筋ほか）</label><label class="switch"><input id="deltoid" type="checkbox" checked>三角筋（前・中・後部）</label><label class="switch"><input id="brachioradialis" type="checkbox" checked>腕橈骨筋（前腕・単独表示可）</label><label class="switch"><input id="pronatorTeres" type="checkbox" checked>円回内筋（前腕・単独表示可）</label><label class="switch"><input id="supinator" type="checkbox" checked>回外筋（橈骨近位部・単独表示可）</label><label class="switch"><input id="flexorCarpiRadialis" type="checkbox" checked>橈側手根屈筋＋乳白色の腱（掌屈・橈屈）</label><label class="switch"><input id="flexorCarpiUlnaris" type="checkbox" checked>尺側手根屈筋＋腱（掌屈・尺屈／単独表示可）</label><label class="switch"><input id="palmarisLongus" type="checkbox" checked>長掌筋＋長い腱・手掌腱膜（単独表示可／個人差あり）</label><label class="switch"><input id="flexorDigitorumSuperficialis" type="checkbox" checked>浅指屈筋＋4本の腱（PIP屈曲／独立表示可）</label><label class="switch"><input id="flexorDigitorumProfundus" type="checkbox" checked>深指屈筋＋指先へ伸びる4本の腱（DIP屈曲／独立表示可）</label><label class="switch"><input id="rib" type="checkbox">胸郭の参照表示</label><label class="switch"><input id="showlabels" type="checkbox">骨の名称ラベル</label><label class="switch"><input id="showDirection" type="checkbox">側面の胸側・背側ガイド（短時間表示）</label></div>
 <details class="diagnostic-fold"><summary>筋肉・腱の表示詳細（必要なときだけ開く）</summary><div class="diagnostic-stack"><div class="detail" id="muscleModeNote">上腕筋群と三角筋は別々に切り替えできます。三角筋は実骨の読み込み後に表示します（付着位置は推定）。</div>
 <div class="detail" id="deltoidStatus" role="status" aria-live="polite">三角筋：実骨データを読み込み中…</div><div class="detail" id="brachioradialisStatus" role="status" aria-live="polite">腕橈骨筋：実骨データを読み込み中…</div><div class="detail" id="pronatorTeresStatus" role="status" aria-live="polite">円回内筋：実骨データを読み込み中…</div><div class="detail" id="supinatorStatus" role="status" aria-live="polite">回外筋：実骨データを読み込み中…</div><div class="detail" id="flexorCarpiRadialisStatus" role="status" aria-live="polite">橈側手根屈筋：実骨データを読み込み中…</div><div class="detail" id="flexorCarpiUlnarisStatus" role="status" aria-live="polite">尺側手根屈筋：実骨データを読み込み中…</div><div class="detail" id="palmarisLongusStatus" role="status" aria-live="polite">長掌筋：実骨データを読み込み中…</div><div class="detail" id="fdsStatus" role="status" aria-live="polite">浅指屈筋：実骨データを読み込み中…</div><div class="detail" id="fdpStatus" role="status" aria-live="polite">深指屈筋：実骨データを読み込み中…</div></div></details>
 <div class="muscle-feedback" id="muscleFeedback" aria-live="off"><div class="muscle-feedback-row"><span>上腕二頭筋のふくらみ（基準比）</span><output id="muscleBulgeValue">1.00倍</output></div><div class="muscle-meter"><span id="muscleBulgeMeter"></span></div><label class="switch muscle-emphasis"><input type="checkbox" id="muscleEmphasis" checked>筋腹の変形を強調（動きの観察用）</label></div><div class="sectioncap" style="margin:14px 0 8px">骨を個別に表示 / 非表示</div><div class="key"><button data-bone="scapula">肩甲骨</button><button data-bone="clavicle">鎖骨</button><button data-bone="humerus">上腕骨</button><button data-bone="radius">橈骨</button><button data-bone="ulna">尺骨</button></div>
@@ -344,7 +357,7 @@ const shape={scapula:gpu(scapula()),scapSpine:gpu(tube([[-.67,-.38,-.12,.045],[-
 let ribShapes=[];for(let side of [-1,1])for(let i=0;i<6;i++){let y=1.53-i*.24,radx=(.42+i*.055),points=[];for(let j=0;j<=10;j++){let t=j/10, x=side*(.13+radx*Math.sin(t*Math.PI*.78)),z=.18-.44*t+.02*Math.sin(t*Math.PI), yy=y-.12*Math.sin(t*Math.PI);points.push([x,yy,z,.025+i*.001])}ribShapes.push(gpu(tube(points,{sides:7,steps:3}))) }
 const ids=['scapula','clavicle','humerus','radius','ulna'],boneShown=Object.fromEntries(ids.map(x=>[x,true]));
 const cBone=[.97,.86,.73],cBone2=[.89,.78,.65],cCart=[.68,.68,.64],cMuscle=[.77,.30,.31],cMuscleDeep=[.60,.24,.28],cTendon=[.85,.77,.60],cTendonFCR=[.93,.97,.94];
-const settings={elev:0,plane:0,axial:0,elbow:0,pronation:0,wristFlex:0,wristDeviation:0,fingerCurl:0,thumbCurl:0,thumbOpposition:0,fdsPIPOnly:false,fdsPIPI:0,fdsPIPM:0,fdsPIPR:0,fdsPIPL:0,fdpDIPOnly:false,fdpDIPI:0,fdpDIPM:0,fdpDIPR:0,fdpDIPL:0,hand:true,sync:true,muscles:false,deltoid:true,brachioradialis:true,pronatorTeres:true,supinator:true,flexorCarpiRadialis:true,flexorCarpiUlnaris:true,palmarisLongus:true,flexorDigitorumSuperficialis:true,flexorDigitorumProfundus:true,rib:false,showlabels:false,showDirection:false,reverseElbow:false,muscleEmphasis:true};
+const settings={elev:0,plane:0,axial:0,elbow:0,pronation:0,wristFlex:0,wristDeviation:0,fingerCurl:0,thumbCurl:0,thumbOpposition:0,fdsPIPOnly:false,fdsPIPI:0,fdsPIPM:0,fdsPIPR:0,fdsPIPL:0,fdpDIPOnly:false,fdpDIPI:0,fdpDIPM:0,fdpDIPR:0,fdpDIPL:0,hand:true,sync:true,muscles:true,deltoid:true,brachioradialis:true,pronatorTeres:true,supinator:true,flexorCarpiRadialis:true,flexorCarpiUlnaris:true,palmarisLongus:true,flexorDigitorumSuperficialis:true,flexorDigitorumProfundus:true,rib:false,showlabels:false,showDirection:false,reverseElbow:false,muscleEmphasis:true};
 const state={yaw:Math.PI/2,pitch:.10,zoom:5.4,target:[.49,.31,-.02]};let proj,view,pv,geomDynamic={},posPoints={},lastW=0,lastH=0;let directionGuideUntil=0;
 function gdynamic(name,geom){if(geomDynamic[name]){let b=geomDynamic[name];gl.deleteBuffer(b.vbo);gl.deleteBuffer(b.nbo);gl.deleteBuffer(b.ibo)}geomDynamic[name]=gpu(geom)}
 
@@ -1727,13 +1740,49 @@ function updateFDPStatus(){
  const count=['fdpTendonI','fdpTendonM','fdpTendonR','fdpTendonL'].filter(id=>Boolean(geomDynamic[id])).length;
  el.textContent=count===4?'深指屈筋：尺骨掌側の深層筋腹＋4本の腱→各指の末節骨へ（推定走行）。DIP個別操作に追従します。':'深指屈筋：骨は読み込み済み。筋・腱の生成を確認してください。';
 }
+// v0.42: grouped muscle controls; joint pose and camera settings are untouched.
+const muscleToggleIds=['muscles','deltoid','brachioradialis','pronatorTeres','supinator','flexorCarpiRadialis','flexorCarpiUlnaris','palmarisLongus','flexorDigitorumSuperficialis','flexorDigitorumProfundus'];
+let previousDisplayState=null,displayPreset=null;
+function captureDisplayState(){
+ return {checks:Object.fromEntries([...muscleToggleIds,'hand','rib'].map(id=>[id,$(id).checked])),bones:{...boneShown}};
+}
+function syncDisplayActions(){
+ const count=muscleToggleIds.filter(id=>$(id).checked).length;
+ const skeleton=displayPreset==='skeleton'&&count===0&&$('hand').checked&&!$('rib').checked&&Object.values(boneShown).every(Boolean);
+ for(const [id,on] of [['showAllMuscles',count===muscleToggleIds.length],['hideAllMuscles',count===0&&!skeleton],['showSkeletonOnly',skeleton]])$(id).setAttribute('aria-pressed',String(on));
+ $('restoreDisplayState').disabled=!previousDisplayState;
+ $('displayModeStatus').textContent=skeleton?'骨格のみ：上肢5骨と手の骨を表示（筋肉・腱はOFF）':count===muscleToggleIds.length?'筋肉・腱：全10グループON（手の骨格がOFFの場合、手の腱は表示されません）':count===0?'筋肉・腱：すべてOFF（骨の個別表示は維持）':'筋肉・腱：10グループ中'+count+'グループON（個別設定）';
+}
+function setDisplayPreset(mode){
+ previousDisplayState=captureDisplayState();displayPreset=mode;
+ for(const id of muscleToggleIds)$(id).checked=mode==='on';
+ if(mode==='on')$('hand').checked=true;
+ if(mode==='skeleton'){
+  $('hand').checked=true;$('rib').checked=false;
+  document.querySelectorAll('[data-bone]').forEach(b=>{boneShown[b.dataset.bone]=true;b.classList.remove('off')});
+ }
+ update();
+}
+for(const [id,mode] of [['showAllMuscles','on'],['hideAllMuscles','off'],['showSkeletonOnly','skeleton']])$(id).addEventListener('click',()=>setDisplayPreset(mode));
+$('restoreDisplayState').addEventListener('click',()=>{
+ if(!previousDisplayState)return;
+ const prior=previousDisplayState;
+ previousDisplayState=null;displayPreset=null;
+ for(const [id,value] of Object.entries(prior.checks))$(id).checked=value;
+ for(const [id,value] of Object.entries(prior.bones))boneShown[id]=value;
+ document.querySelectorAll('[data-bone]').forEach(b=>b.classList.toggle('off',!boneShown[b.dataset.bone]));
+ update();
+});
+for(const id of [...muscleToggleIds,'hand','rib'])$(id).addEventListener('change',()=>{
+ previousDisplayState=null;displayPreset=null;syncDisplayActions();
+});
 const angleFields=['elev','plane','axial','elbow','pronation'];const handFields=['wristFlex','wristDeviation','fingerCurl','thumbCurl','thumbOpposition'];function update(){for(let f of angleFields){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+'°'}for(let f of handFields){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+(f.endsWith('Curl')||f==='thumbOpposition'?'%':'°')}for(const f of ['fdsPIPI','fdsPIPM','fdsPIPR','fdsPIPL','fdpDIPI','fdpDIPM','fdpDIPR','fdpDIPL']){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+'°'}settings.fdsPIPOnly=$('fdsPIPOnly').checked;settings.fdpDIPOnly=$('fdpDIPOnly').checked;for(let f of ['hand','sync','muscles','deltoid','brachioradialis','pronatorTeres','supinator','flexorCarpiRadialis','flexorCarpiUlnaris','palmarisLongus','flexorDigitorumSuperficialis','flexorDigitorumProfundus','rib','showlabels','showDirection','reverseElbow','muscleEmphasis'])settings[f]=$(f).checked;
  refreshModelStatus();
  const f=clamp(settings.elbow/150,0,1), contractionRate=f*f*(3-2*f), exaggeration=settings.muscleEmphasis?1:.45;
  const bulge=1+.72*contractionRate*exaggeration;
  $('muscleBulgeValue').textContent=bulge.toFixed(2)+'倍';
  $('muscleBulgeMeter').style.width=Math.min(100,100*(bulge-1)/.72)+'%';
- $('muscleFeedback').classList.toggle('active',settings.muscles);
+ $('muscleFeedback').classList.toggle('active',settings.muscles);syncDisplayActions();
  updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateFDPStatus();
  compute();if(realReady)makeRealPose();else if(settings.hand)makeHandPose();updateHandStatus();updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateFDPStatus();updateAnteriorStatus();updateRadialAuditMetrics();if($('cameraAuto').checked){autoFit=true;fitPose()}else autoFit=false;request();$('modelNote').textContent=settings.sync?'連動あり：挙上180°で肩甲骨を約60°上方回旋させる教育用の近似を使用。実測リズムは個人・角度・運動方向で変わります。':'肩甲骨・鎖骨を固定した比較モード。挙上角は上腕骨のみに与えます（自然な肩の運動ではありません）。'}
 for(let f of [...angleFields,...handFields,'fdsPIPOnly','fdsPIPI','fdsPIPM','fdsPIPR','fdsPIPL','fdpDIPOnly','fdpDIPI','fdpDIPM','fdpDIPR','fdpDIPL','hand','sync','muscles','deltoid','brachioradialis','pronatorTeres','supinator','flexorCarpiRadialis','flexorCarpiUlnaris','palmarisLongus','flexorDigitorumSuperficialis','flexorDigitorumProfundus','rib','showlabels','showDirection','reverseElbow','muscleEmphasis'])$(f).addEventListener('input',()=>{document.querySelectorAll('[data-preset]').forEach(x=>x.classList.remove('active'));update()});
@@ -1741,7 +1790,7 @@ for(const [button,value] of [['fdsPIPOpen',0],['fdsPIPHalf',50],['fdsPIPBend',90
 for(const [button,value] of [['fdpDIPOpen',0],['fdpDIPHalf',40],['fdpDIPBend',75]])$(button).addEventListener('click',()=>{$('fdpDIPOnly').checked=true;$('fdsPIPOnly').checked=false;for(const f of ['fdpDIPI','fdpDIPM','fdpDIPR','fdpDIPL'])$(f).value=value;update()});
 for(const control of ['fdsPIPOnly','fdpDIPOnly'])$(control).addEventListener('change',()=>{if($(control).checked)$(control==='fdsPIPOnly'?'fdpDIPOnly':'fdsPIPOnly').checked=false;update()});
 const handPresets={handOpen:[0,0,0],handRelax:[42,40,25],handGrip:[100,85,90]};for(const [key,vals] of Object.entries(handPresets))$(key).addEventListener('click',()=>{['fingerCurl','thumbCurl','thumbOpposition'].forEach((f,i)=>$(f).value=vals[i]);$('fdsPIPOnly').checked=false;$('fdpDIPOnly').checked=false;update()});
-const presets={neutral:[0,0,0,0,0],abduct:[90,0,20,0,0],overhead:[180,0,40,0,0],elbow:[0,0,0,120,0],bow:[73,24,20,95,-15]};document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{let p=presets[b.dataset.preset];angleFields.forEach((f,i)=>$(f).value=p[i]);document.querySelectorAll('[data-preset]').forEach(x=>x.classList.toggle('active',x===b));update()}));document.querySelectorAll('[data-bone]').forEach(b=>b.addEventListener('click',()=>{let key=b.dataset.bone;boneShown[key]=!boneShown[key];b.classList.toggle('off',!boneShown[key]);autoFit=true;fitPose();request()}));
+const presets={neutral:[0,0,0,0,0],abduct:[90,0,20,0,0],overhead:[180,0,40,0,0],elbow:[0,0,0,120,0],bow:[73,24,20,95,-15]};document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{let p=presets[b.dataset.preset];angleFields.forEach((f,i)=>$(f).value=p[i]);document.querySelectorAll('[data-preset]').forEach(x=>x.classList.toggle('active',x===b));update()}));document.querySelectorAll('[data-bone]').forEach(b=>b.addEventListener('click',()=>{let key=b.dataset.bone;boneShown[key]=!boneShown[key];b.classList.toggle('off',!boneShown[key]);previousDisplayState=null;displayPreset=null;syncDisplayActions();autoFit=true;fitPose();request()}));
 // Fit the CURRENT camera direction, rather than unexpectedly returning to the side view.
 $('resetCam').addEventListener('click',()=>{zoomScale=1;$('zoomLevel').value=100;$('zoomValue').textContent='100%';disableCameraAuto();fitPose();request()});
 // In BodyParts3D +Y points posterior (our world +Z); the old procedural
@@ -2080,7 +2129,7 @@ window.__labJointErrors=()=>{
  return {ready:true,wristErrorMm:handWristErrorMm,thumbCMCErrorMm,thumbMCPErrorMm,thumbIPErrorMm,distalGapDeltaMm:poseCheck.distalGapDeltaMm,
    palmNormal:handPivot.thumbPalmNormal,thumbFlexAxis:handPivot.thumbFlexAxis,thumbFlexSign:handPivot.thumbFlexSign};
 };
-window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.41',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
+window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.42',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
 window.__labMuscles=()=>({...muscleDiagnostics,enabled:settings.muscles,deltoidEnabled:settings.deltoid,deltoidGeometryCount:['deltoidAnterior','deltoidMiddle','deltoidPosterior'].filter(n=>Boolean(geomDynamic[n])).length,brachioradialisEnabled:settings.brachioradialis,brachioradialisGeometryCount:['brachioradialis','tendonBR'].filter(n=>Boolean(geomDynamic[n])).length,pronatorTeresEnabled:settings.pronatorTeres,pronatorTeresGeometryCount:['pronatorTeresHumeral','pronatorTeresUlnar','tendonPT'].filter(n=>Boolean(geomDynamic[n])).length,supinatorEnabled:settings.supinator,supinatorGeometryCount:['supinatorSuperficial','supinatorDeep','tendonSupinator'].filter(n=>Boolean(geomDynamic[n])).length,flexorCarpiRadialisEnabled:settings.flexorCarpiRadialis,flexorCarpiRadialisGeometryCount:['flexorCarpiRadialis','tendonFCR'].filter(n=>Boolean(geomDynamic[n])).length,palmarisLongusEnabled:settings.palmarisLongus,flexorDigitorumSuperficialisEnabled:settings.flexorDigitorumSuperficialis,flexorDigitorumProfundusEnabled:settings.flexorDigitorumProfundus,palmarisLongusGeometryCount:['palmarisLongus','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].filter(n=>Boolean(geomDynamic[n])).length,flexorCarpiUlnarisEnabled:settings.flexorCarpiUlnaris,flexorCarpiUlnarisGeometryCount:['flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','tendonFCU','pisohamateBand','pisometacarpalBand'].filter(n=>Boolean(geomDynamic[n])).length,realReady,exaggerated:settings.muscleEmphasis});
 window.__labFCU=()=>({enabled:settings.flexorCarpiUlnaris,handEnabled:settings.hand,realReady,handReady,geometryCount:['flexorCarpiUlnarisHumeral','flexorCarpiUlnarisUlnar','tendonFCU','pisohamateBand','pisometacarpalBand'].filter(id=>Boolean(geomDynamic[id])).length,data:muscleDiagnostics.flexorCarpiUlnaris||{visible:false}});
 window.__labPL=()=>({enabled:settings.palmarisLongus,handEnabled:settings.hand,realReady,handReady,geometryCount:['palmarisLongus','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].filter(n=>Boolean(geomDynamic[n])).length,data:muscleDiagnostics.palmarisLongus||{visible:false}});
