@@ -277,7 +277,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <div class="detail" id="v57TorsoStatus" role="status" aria-live="polite">胸郭：上肢の実骨データ取得を待機中</div>
 <div class="control"><label for="v57TorsoLayer">胸郭の表示部位</label><select id="v57TorsoLayer"><option value="all">全体</option><option value="ribs">肋骨</option><option value="spine">頸椎・胸椎</option><option value="sternum">胸骨</option><option value="cartilage">肋軟骨</option><option value="discs">椎間板</option></select></div>
 <button type="button" id="v57RetryTorso" hidden>不足データを再取得</button>
-<label class="switch"><input id="v571LegacyCart" type="checkbox" checked>既存の左右肋骨弓軟骨（BP24/28）も表示</label>
+<label class="switch"><input id="v571LegacyCart" type="checkbox" checked>既存の左右軟骨（BP24/28）も表示</label>
 <label class="switch"><input id="v571Joints" type="checkbox">胸鎖・肩鎖関節の推定中心を表示</label>
 <button type="button" id="v571Audit">軟骨の重複候補・関節位置を検査</button>
 <pre class="detail" id="v571AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査。実骨取得後に実行してください。</pre>
@@ -3315,7 +3315,7 @@ function v57SetStatus(mode,reason=''){
  v57State.mode=mode;
  const n=$('v57TorsoStatus'),retry=$('v57RetryTorso');
  const detail=mode==='atlas'?'BodyParts3D '+v57State.parts.length+'/'+V57_MANIFEST.length+'部位表示（全取得済み）':
-  mode==='partial'?'BodyParts3D '+v57State.parts.length+'/'+V57_MANIFEST.length+'部位表示。不足 '+v57State.failed.length+' 部位：再取得可能':
+  mode==='partial'?'BodyParts3D '+v57State.parts.length+'/'+V57_MANIFEST.length+'部位表示。不足 '+(V57_MANIFEST.length-v57State.parts.length)+' 部位：再取得可能':
   mode==='loading'?'胸郭の解剖メッシュ取得中 '+v57State.loaded+'/'+V57_MANIFEST.length+(v571HasCore()?'：取得済み実骨を表示':'：取得完了まで旧近似を表示') :
   mode==='fallback'?'胸郭：旧近似を表示中。'+reason:'胸郭：上肢の実骨データ取得を待機中';
  if(n)n.textContent=detail;
@@ -3479,7 +3479,7 @@ async function v571RunAudit(){
  for(const side of ['R','L']){
   const cart=byId.get('cart'+side+'7'),rib=byId.get(side+'7'),legacy=byId.get('cartilage'+side);
   const x=byId.get('xiphoid'),body=byId.get('sternalBody');
-  for(const [label,other] of [['第7肋骨',rib],['旧肋骨弓',legacy],['胸骨体',body],['剣状突起',x]]){
+  for(const [label,other] of [['第7肋骨',rib],['旧左右軟骨',legacy],['胸骨体',body],['剣状突起',x]]){
    connections.push({side,part:'第7肋軟骨',other:label,boxOverlap:cart&&other?v571BoxHit(cart.g.box,other.g.box):null});
   }
  }
