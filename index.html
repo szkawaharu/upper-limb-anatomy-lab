@@ -720,18 +720,50 @@ function parseBinaryBone(buffer,name){
  const normals=nn.map(norm);
  return {vertices:vv,faces:ff,normals};
 }
+// Single-source shoulder-girdle transforms used by the real skeleton and
+// the diagnostic calculations. All articular pivots are estimates from a
+// static atlas; these rotations are NOT a validated shoulder dynamics model.
+function shoulderPoseFor(elev,plane,axial,sync){
+ const k=clamp(elev/180,0,1),yaw=sync?rad(12*k):0;
+ const qC=sync?qm(qa([0,0,1],rad(18*k)),qa([0,1,0],yaw)):ID;
+ const AC=transform(qC,realAnchors.SC,sub(realAnchors.AC,realAnchors.SC));
+ const qSt=qm(qa([0,0,1],rad(sync?elev/3:0)),
+  qm(qa([1,0,0],rad(sync?13*k:0)),qa([0,1,0],rad(sync?10*k:0))));
+ const qS=qm(qa([0,1,0],yaw),qSt);
+ const GH=transform(qS,AC,sub(realAnchors.GH,realAnchors.AC));
+ const theta=rad(elev),phi=rad(plane);
+ const direction=elev===180?[.001,1,.001]:
+  [Math.sin(theta)*Math.cos(phi),-Math.cos(theta),Math.sin(theta)*Math.sin(phi)];
+ const qH=qm(qt([0,-1,0],direction),qa([0,-1,0],rad(axial)));
+ return {qC,qS,qH,AC,GH,SC:realAnchors.SC,assumedScapularUpDeg:sync?elev/3:0,
+  model:'non-ISB, fixed-parameter educational kinematics'};
+}
+// Returns numerical consistency data, not medical accuracy results.
+// Relative tilt is the angle between the humeral shaft in scapular
+// coordinates and its neutral reference, NOT clinical GH abduction.
+function shoulderPoseMetrics(elev,plane=settings.plane,axial=settings.axial,sync=settings.sync){
+ const p=shoulderPoseFor(elev,plane,axial,sync);
+ const neutralAxis=norm(sub(realAnchors.EL,realAnchors.GH));
+ const humeralAxis=qr(p.qH,neutralAxis);
+ const humeralInScapula=qr(qc(p.qS),humeralAxis);
+ const relativeTiltDeg=Math.acos(clamp(dot(neutralAxis,humeralInScapula),-1,1))*180/Math.PI;
+ const acFromClav=transform(p.qC,p.SC,sub(realAnchors.AC,realAnchors.SC));
+ const acFromScap=transform(p.qS,p.AC,[0,0,0]);
+ const scFromClav=transform(p.qC,p.SC,[0,0,0]);
+ const ghFromScap=transform(p.qS,p.AC,sub(realAnchors.GH,realAnchors.AC));
+ const ghFromHum=transform(p.qH,p.GH,[0,0,0]);
+ const mm=v=>v/atlasScale;
+ return {elev,plane,axial,sync,assumedScapularUpDeg:p.assumedScapularUpDeg,relativeTiltDeg,
+  scGapMm:mm(len(sub(scFromClav,realAnchors.SC))),
+  acGapMm:mm(len(sub(acFromClav,acFromScap))),
+  ghGapMm:mm(len(sub(ghFromHum,ghFromScap))),
+  clavicleLengthMm:mm(len(sub(p.AC,p.SC))),
+  ghDisplacementMm:mm(len(sub(p.GH,realAnchors.GH))),
+  connectionOnly:true,clinicalAccuracyVerified:false,cartilageLigamentCollisionTested:false};
+}
 function makeRealPose(){
  if(!realReady)return;
- const old=state.scene,k=settings.elev/180;
- // Sternoclavicular elevation and clavicular retraction are approximate, around the sternal end.
- const clavicularYaw=settings.sync?rad(12*k):0;
- const qC=settings.sync?qm(qa([0,0,1],rad(18*k)),qa([0,1,0],clavicularYaw)):ID;
- const AC=transform(qC,realAnchors.SC,sub(realAnchors.AC,realAnchors.SC));
- // Scapula stays connected at the lateral clavicle and follows its rotational excursion.
- // Total upward rotation stays approximately at the old ~60°/180° rather than adding 18° twice.
- const qS=qm(qa([0,1,0],clavicularYaw),old.qS);
- const GH=transform(qS,AC,sub(realAnchors.GH,realAnchors.AC));
- const qH=old.qHum;
+ const {qC,AC,qS,GH,qH}=shoulderPoseFor(settings.elev,settings.plane,settings.axial,settings.sync);
  // Separate fixed elbow hinge from forearm pronation.
  const EL=transform(qH,GH,sub(realAnchors.EL,realAnchors.GH));
  // Anatomical anterior is world -Z for the BodyParts3D atlas. Hinge sign is
@@ -755,7 +787,7 @@ function makeRealPose(){
  const distalRadiusNow=transform(qR,radOrigin,sub(distalRadiusRef,realAnchors.EL));
  const distalGapMm=len(sub(distalRadiusNow,ulnaHeadNow))/atlasScale;
  const distalNeutralGapMm=len(sub(distalRadiusRef,DISTAL_ULNA_REF))/atlasScale;
- poseCheck={SC:realAnchors.SC,AC,GH,EL,radialHeadNow,ulnaHeadNow,radialWristNow,distalGapMm,distalNeutralGapMm,distalGapDeltaMm:distalGapMm-distalNeutralGapMm,
+ poseCheck={SC:realAnchors.SC,AC,GH,EL,shoulder:shoulderPoseMetrics(settings.elev),radialHeadNow,ulnaHeadNow,radialWristNow,distalGapMm,distalNeutralGapMm,distalGapDeltaMm:distalGapMm-distalNeutralGapMm,
    radialHeadError:len(sub(transform(qR,radOrigin,sub(RADIAL_HEAD_REF,realAnchors.EL)),radialHeadNow)),
    distalRadiusNow,distalRadiusRef,radialNeutralNow:transform(qU,EL,sub(distalRadiusRef,realAnchors.EL)),
    axisLocal:PRONATION_AXIS_LOCAL,
