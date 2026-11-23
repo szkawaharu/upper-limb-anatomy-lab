@@ -73,7 +73,7 @@ const end=js.indexOf('function updateRealMuscles(){',start);
 assert.ok(start>0&&end>start,'v0.55 projector/generator missing');
 const segment=js.slice(start,end);
 const api=new Function(...Object.keys(env),segment+
- '\nreturn{run:updateScapularMuscles,diagnostics:()=>scapularDiagnostics,cache:scapularSurfaceCache,curved:scapularCurvedAtlasPoint}')(...Object.values(env));
+ '\nreturn{run:updateScapularMuscles,diagnostics:()=>scapularDiagnostics,cache:scapularSurfaceCache,curved:scapularCurvedAtlasPoint,reset:resetScapularSurfaceProjection}')(...Object.values(env));
 const sampleCount=11,bellyRows=11,surfaceStart=bellyRows*sampleCount,poses=[];
 for(const deg of [0,30,60,90,120,150,180])for(const axial of [-90,-45,0,45,90]){
  const theta=deg*Math.PI/180;
@@ -146,6 +146,11 @@ for(const deg of [0,30,60,90,120,150,180])for(const axial of [-90,-45,0,45,90]){
 }
 assert.equal(poses.length,35);
 assert.ok(meshManifoldChecks>=8,'watertight mesh checks not run');
+assert.ok(api.cache.size>100,'posterior bone projection cache never populated');
+api.reset();assert.equal(api.cache.size,0,'stale bone projections survived reset');
+settings.scapularMuscles=true;api.run();
+assert.ok(api.cache.size>100,'projection cache failed to regenerate after mesh refresh');
+assert.equal(api.diagnostics().projectionFallbacks,0,'stale projection misses on reload');
 settings.scapularMuscles=false;api.run();
 for(const id of [...spec.SCAPULAR_MUSCLES,...spec.SCAPULAR_TENDONS])
  assert.equal(geomDynamic[id],undefined,'stale mesh after OFF: '+id);
