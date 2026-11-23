@@ -223,7 +223,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.48</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.48</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.49</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.49</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
@@ -233,7 +233,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.48</div>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.49</div>
 <nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
  <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
  <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
@@ -248,7 +248,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 
 </div>
 <section class="side" id="labTools">
-<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.48</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
+<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.49</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
 <details class="edge-help control-fold"><summary>操作方法<span class="fold-note">ヘルプ</span></summary><div class="fold-body"><div class="immersive-tips">操作：1本指ドラッグで視点回転（初期設定は逆方向）。<strong>骨を約0.4秒長押し → ドラッグで関節操作。右端の「✋」は曲げ伸ばし、「↻」は前腕の回内・回外と上腕の内旋・外旋。↻では骨を左右にドラッグするか、2本指でひねって調整できます。<strong>3本指で左右にスワイプすると、<strong>上腕付近は肩の内旋・外旋、前腕付近は回内・回外</strong>を操作できます。判断しにくいときは上部の関節指定で「上腕：回旋」「前腕：回内外」を固定できます。</strong>iPhoneで選択メニューが出る場合は「✋」または「↻」をONにして直接ドラッグ</strong>。2本指は視点移動・ピンチ。選びにくい関節は上部メニューで指定できます。</div></div></details><div class="note" id="launchTip"><strong>iPhoneでモデルが表示されない場合</strong>：HTMLファイルのプレビューではJavaScriptが実行されない場合があります。HTMLファイルをWebサイトとして公開し、SafariでURLを開いてください。下の操作ボタンはブラウザ版で機能します。</div>
 <details class="control-fold" id="medicalStudyPanel"><summary>医学解剖：起始・停止・神経支配・作用<span class="fold-note">根拠と限界</span></summary>
 <div class="fold-body med-study">
@@ -370,7 +370,7 @@ body.edge-ui .edge-rail button:focus-visible,body.edge-ui #edgeMenuButton:focus-
 <details class="diagnostic-fold"><summary>前腕の深層筋・母指筋（v0.43・個別切替）</summary><div class="toggles"><label class="switch"><input type="checkbox" id="flexorPollicisLongus" checked>長母指屈筋</label><label class="switch"><input type="checkbox" id="pronatorQuadratus" checked>方形回内筋</label><label class="switch"><input type="checkbox" id="abductorPollicisLongus" checked>長母指外転筋</label><label class="switch"><input type="checkbox" id="extensorPollicisBrevis" checked>短母指伸筋</label><label class="switch"><input type="checkbox" id="extensorPollicisLongus" checked>長母指伸筋</label><label class="switch"><input type="checkbox" id="extensorIndicis" checked>示指伸筋</label></div></details>
 <details class="diagnostic-fold"><summary>筋肉・腱の表示詳細（必要なときだけ開く）</summary><div class="diagnostic-stack"><div class="detail" id="muscleModeNote">上腕筋群と三角筋は別々に切り替えできます。三角筋は実骨の読み込み後に表示します（付着位置は推定）。</div>
 <div class="detail" id="deltoidStatus" role="status" aria-live="polite">三角筋：実骨データを読み込み中…</div><div class="detail" id="brachioradialisStatus" role="status" aria-live="polite">腕橈骨筋：実骨データを読み込み中…</div><div class="detail" id="pronatorTeresStatus" role="status" aria-live="polite">円回内筋：実骨データを読み込み中…</div><div class="detail" id="supinatorStatus" role="status" aria-live="polite">回外筋：実骨データを読み込み中…</div><div class="detail" id="flexorCarpiRadialisStatus" role="status" aria-live="polite">橈側手根屈筋：実骨データを読み込み中…</div><div class="detail" id="flexorCarpiUlnarisStatus" role="status" aria-live="polite">尺側手根屈筋：実骨データを読み込み中…</div><div class="detail" id="palmarisLongusStatus" role="status" aria-live="polite">長掌筋：実骨データを読み込み中…</div><div class="detail" id="fdsStatus" role="status" aria-live="polite">浅指屈筋：実骨データを読み込み中…</div><div class="detail" id="fdpStatus" role="status" aria-live="polite">深指屈筋：実骨データを読み込み中…</div></div></details>
-<div class="muscle-feedback" id="muscleFeedback" aria-live="off"><div class="muscle-feedback-row"><span>上腕二頭筋のふくらみ（基準比）</span><output id="muscleBulgeValue">1.00倍</output></div><div class="muscle-meter"><span id="muscleBulgeMeter"></span></div><label class="switch muscle-emphasis"><input type="checkbox" id="muscleEmphasis" checked>筋腹の変形を強調（動きの観察用）</label></div>
+<div class="muscle-feedback" id="muscleFeedback" aria-live="off"><div class="muscle-feedback-row"><span>二頭筋の表示変形係数（測定値ではありません）</span><output id="muscleBulgeValue">1.00倍</output></div><div class="muscle-meter"><span id="muscleBulgeMeter"></span></div><label class="switch muscle-emphasis"><input type="checkbox" id="muscleEmphasis" checked>筋腹の変形を強調（動きの観察用）</label></div>
 <div class="control" id="forearmBulkControl"><label for="forearmBulk">前腕筋の表示太さ（旧版比） <output id="forearmBulkV">70%</output></label>
  <input id="forearmBulk" type="range" min="50" max="110" step="5" value="70">
  <div class="ends"><span>細め 50%</span><span>旧版 100%</span></div>
@@ -769,7 +769,7 @@ const MEDICAL_ANATOMY={
  deltoid:{name:'三角筋（前部・中部・後部）',origin:'鎖骨外側1/3、肩峰、肩甲棘',insertion:'上腕骨の三角筋粗面',nerve:'腋窩神経（C5–C6）',action:'主に肩関節の外転。前部は屈曲・内旋、後部は伸展・外旋にも関与',parts:['deltoidAnterior','deltoidMiddle','deltoidPosterior'],source:'https://www.ncbi.nlm.nih.gov/books/NBK537056/',note:'3部分の扇状筋束は視覚近似。筋束方向・三角筋粗面の面積・肩甲上腕リズムは未検証。'},
  coracobrachialis:{name:'烏口腕筋',origin:'肩甲骨の烏口突起',insertion:'上腕骨体の内側面中央付近',nerve:'筋皮神経',action:'肩関節の屈曲と内転を補助',parts:[],source:'https://www.ncbi.nlm.nih.gov/books/NBK554420/',note:'3D形状がまだありません。前腕の筋や上腕二頭筋短頭とは異なる独立筋です。'}
 };
-let medicalFocus=null;
+let medicalFocus=null,medicalFocusPrevious=null;
 // v0.41: smooth the *visual* transition between ulna-anchored proximal
 // muscle and radius/hand-anchored distal tendons during pronosupination.
 // Positions are updated in each bone's own transform, never held in world space.
@@ -1787,7 +1787,7 @@ function updateRealMuscles(){
   forearmMaxGap:v43Data.maximumSeamGap??null,forearmSeams:v43Data.seamCount??0,
   currentElbow:settings.elbow,currentPronation:settings.pronation,
   collisionSolver:false,validatedAgainst:'shared control endpoints'};
- muscleDiagnostics={mode:'v0.48: slimmer rounded upper bellies and shared elbow tendons' ,flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
+ muscleDiagnostics={mode:'v0.49: verified anatomy reference cards with unvalidated muscle geometry' ,flexion:settings.elbow,pronation:settings.pronation,contraction:contract,
   biceps:{origin:bicepsLongOrigin.slice(0,3),insertion:bicepsRadiusEnd.slice(0,3),bellyBulge:bBulge},
   triceps:{origin:tricepsOrigin.slice(0,3),insertion:tricepsEnd.slice(0,3),bellyScale:tBulge},
   brachialis:{origin:brachialisOrigin.slice(0,3),insertion:brachialisEnd.slice(0,3),bellyBulge:braBulge},
@@ -2217,10 +2217,23 @@ function renderMedicalStudy(){
  $('medicalStudySource').textContent='出典：NCBI Bookshelf（原文・更新日を確認）';
  $('medicalStudyFocus').disabled=!available;
 }
-$('medicalStudySelect').addEventListener('change',renderMedicalStudy);
+$('medicalStudySelect').addEventListener('change',()=>{
+ if(medicalFocus){
+  medicalFocus=null;
+  if(medicalFocusPrevious){
+   $('muscles').checked=medicalFocusPrevious.muscles;
+   $('deltoid').checked=medicalFocusPrevious.deltoid;
+   medicalFocusPrevious=null;
+  }
+  $('medicalStudyFocusStatus').textContent='学習対象を変更したため単独表示を解除しました。';
+  update();
+ }
+ renderMedicalStudy();
+});
 $('medicalStudyFocus').addEventListener('click',()=>{
  const entry=MEDICAL_ANATOMY[$('medicalStudySelect').value];
  if(!entry.parts.length){$('medicalStudyFocusStatus').textContent='この筋は未実装のため、3Dで単独表示できません。';return}
+ if(!medicalFocusPrevious) medicalFocusPrevious={muscles:$('muscles').checked,deltoid:$('deltoid').checked};
  medicalFocus=new Set(entry.parts);
  if(entry.parts.some(n=>n.startsWith('deltoid'))) $('deltoid').checked=true;
  else $('muscles').checked=true;
@@ -2229,7 +2242,12 @@ $('medicalStudyFocus').addEventListener('click',()=>{
 });
 $('medicalStudyReset').addEventListener('click',()=>{
  medicalFocus=null;
- $('medicalStudyFocusStatus').textContent='通常表示に戻しました。元の筋肉のON/OFF設定を利用します。';
+ if(medicalFocusPrevious){
+  $('muscles').checked=medicalFocusPrevious.muscles;
+  $('deltoid').checked=medicalFocusPrevious.deltoid;
+  medicalFocusPrevious=null;
+ }
+ $('medicalStudyFocusStatus').textContent='単独表示前の筋肉ON/OFF設定に戻しました。';
  update();
 });
 renderMedicalStudy();
@@ -2586,7 +2604,7 @@ window.__labJointErrors=()=>{
  return {ready:true,wristErrorMm:handWristErrorMm,thumbCMCErrorMm,thumbMCPErrorMm,thumbIPErrorMm,distalGapDeltaMm:poseCheck.distalGapDeltaMm,
    palmNormal:handPivot.thumbPalmNormal,thumbFlexAxis:handPivot.thumbFlexAxis,thumbFlexSign:handPivot.thumbFlexSign};
 };
-window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.48',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
+window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.49',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
 window.__labForearm=()=>({...v43ForearmDiagnostics,available:V43_CONFIG.length,display:settings.forearmLayer,bulkPercent:settings.forearmBulk});
 window.__labContinuity=()=>({ready:realReady,elbow:settings.elbow,pronation:settings.pronation,forearmBulk:settings.forearmBulk,
  ...muscleDiagnostics.continuity,
