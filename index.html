@@ -825,6 +825,7 @@ function makeRealPose(){
  const center=mul(add(box[0],box[1]),.5);posPoints[id]=transform(pose[0],pose[1],center)}
  if(settings.hand)makeHandPose();
  updateRealMuscles();
+ updateScapularMuscles();
  updateShoulderAuditMetrics();
 }
 
@@ -1287,7 +1288,10 @@ function updateScapularMuscles(){
   gdynamic(spec.id,muscle);
   gdynamic(tendonId,tendon);
   // Both surfaces use the exact SAME station, for zero numerical seam drift.
-  const seamGap=Math.max(...rows[split].map(p=>len(sub(p.center,p.center))));
+  const nc=lanes,last=(split)*nc,lowerStart=(split+1)*nc;
+  const seamGap=Math.max(0,...Array.from({length:lanes},(_,j)=>
+   Math.max(len(sub(muscle.vertices[last+j],tendon.vertices[j])),
+    len(sub(muscle.vertices[lowerStart+j],tendon.vertices[(rows.length-split)*nc+j])))));
   const insertionPositions=rows.at(-1).map(p=>p.center);
   stats.push({id:spec.id,originCount:lanes,rendered:true,scapularSurfaceSnapped:true,
    humerusInsertionTracks:insertionPositions.every(p=>p.every(Number.isFinite)),
@@ -2080,15 +2084,17 @@ state.scene={SC,AC,qS,joint,qHum,elbow,qFore,scAngle,GH:Math.acos(clamp(dot([0,-
 const ID=Q(),OR=[0,0,0],motion=()=>state.scene;
 function drawPart(g,q,p,color,alpha,kind){if(!g)return;if(SOFTWARE){drawCalls.push({g,q,p,color,alpha,kind});return;}let model=mat4(q,p);gl.uniformMatrix4fv(uni.model,false,new Float32Array(model));gl.uniformMatrix4fv(uni.mvp,false,new Float32Array(mm(pv,model)));gl.uniform3fv(uni.color,color);gl.uniform1f(uni.opacity,alpha);gl.uniform1f(uni.kind,kind);gl.bindBuffer(gl.ARRAY_BUFFER,g.vbo);gl.enableVertexAttribArray(attrib.p);gl.vertexAttribPointer(attrib.p,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ARRAY_BUFFER,g.nbo);gl.enableVertexAttribArray(attrib.n);gl.vertexAttribPointer(attrib.n,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,g.ibo);gl.drawElements(gl.TRIANGLES,g.count,g.indexType||gl.UNSIGNED_SHORT,0)}
 function drawScene(){if(SOFTWARE)drawCalls=[];let a=motion();gl.clearColor(.053,.091,.145,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.enable(gl.DEPTH_TEST);gl.disable(gl.CULL_FACE);gl.disable(gl.BLEND);gl.depthMask(true);
-let bone=(name,g,q,p,color=cBone)=>{if(boneShown[name])drawPart(g,q,p,color,1,0)};
-if(realReady){for(const id of ids){if(!boneShown[id])continue;const p=realPose[id];if(p)drawPart(realMesh[id],p[0],p[1],id==='clavicle'?[.91,.82,.68]:cBone,1,0)}}else{
+let bone=(name,g,q,p,color=cBone)=>{if(boneShown[name]&&(name!=='scapula'||settings.scapulaDisplay==='opaque'))drawPart(g,q,p,color,1,0)};
+if(realReady){for(const id of ids){if(!boneShown[id])continue;
+ if(id==='scapula'&&settings.scapulaDisplay!=='opaque')continue;
+ const p=realPose[id];if(p)drawPart(realMesh[id],p[0],p[1],id==='clavicle'?[.91,.82,.68]:cBone,1,0)}}else{
 bone('scapula',shape.scapula,a.qS,a.AC);bone('scapula',shape.scapSpine,a.qS,a.AC,cBone2);bone('scapula',shape.acromion,a.qS,a.AC);bone('scapula',shape.coracoid,a.qS,a.AC,cBone2);bone('clavicle',geomDynamic.clavicle,ID,OR,[.91,.77,.60]);
 bone('humerus',shape.humerus,a.qHum,a.joint);bone('humerus',shape.neck,a.qHum,a.joint);bone('humerus',shape.head,a.qHum,a.joint,[.95,.83,.69]);bone('humerus',shape.gt,a.qHum,a.joint,cBone2);bone('humerus',shape.lt,a.qHum,a.joint,cBone2);bone('humerus',shape.deltoidBump,a.qHum,a.joint,cBone2);bone('humerus',shape.condyleL,a.qHum,a.joint);bone('humerus',shape.condyleR,a.qHum,a.joint);bone('humerus',shape.trochlea,a.qHum,a.joint,[.95,.82,.66]);
 bone('ulna',shape.ulna,a.qFore,a.elbow,[.90,.75,.61]);bone('ulna',shape.olecranon,a.qFore,a.elbow);bone('ulna',shape.ulnaDistal,a.qFore,a.elbow);bone('radius',geomDynamic.radius,a.qFore,a.elbow,[.96,.83,.65]);bone('radius',shape.radialHead,a.qFore,a.elbow,[.91,.80,.69]);
-if(boneShown.scapula)drawPart(shape.glenoid,a.qS,a.AC,cCart,1,3);
+if(boneShown.scapula&&settings.scapulaDisplay==='opaque')drawPart(shape.glenoid,a.qS,a.AC,cCart,1,3);
 }
 if(settings.hand){const hg=handMeshSet();for(const name of HAND_NAMES){const p=handPose[name];if(p&&hg[name])drawPart(hg[name],p[0],p[1],name.startsWith('mc')?cBone2:cBone,1,0);}}
-if(settings.muscles||settings.deltoid||settings.brachioradialis||settings.pronatorTeres||settings.supinator||settings.flexorCarpiRadialis||settings.flexorCarpiUlnaris||settings.palmarisLongus||settings.flexorDigitorumSuperficialis||settings.flexorDigitorumProfundus||V43_CONFIG.some(c=>settings[c.id])){
+if(settings.scapularMuscles||settings.muscles||settings.deltoid||settings.brachioradialis||settings.pronatorTeres||settings.supinator||settings.flexorCarpiRadialis||settings.flexorCarpiUlnaris||settings.palmarisLongus||settings.flexorDigitorumSuperficialis||settings.flexorDigitorumProfundus||V43_CONFIG.some(c=>settings[c.id])){
  // v0.29: Muscles and tendons are opaque. Proximal purple supinator
  // fibers are slightly narrower to reduce approximate overlap with red
  // pronator fibers while preserving the bone-linked anchor paths. They WRITE depth so their actual
@@ -2098,11 +2104,22 @@ if(settings.muscles||settings.deltoid||settings.brachioradialis||settings.pronat
  gl.disable(gl.BLEND);gl.enable(gl.DEPTH_TEST);gl.depthMask(true);
  for(const name of MUSCLE_PARTS){
   if(!muscleVisible(name))continue;
-  drawPart(geomDynamic[name],ID,OR,V43_LOOKUP[name]?(V43_LOOKUP[name].layer==='deep'?[.53,.24,.35]:[.80,.33,.34]):name==='brachialis'?cMuscleDeep:name==='brachioradialis'?[.81,.36,.32]:name.startsWith('pronatorTeres')?[.86,.32,.40]:name.startsWith('supinator')?[.55,.40,.76]:name==='flexorCarpiRadialis'?[.76,.27,.45]:name.startsWith('flexorCarpiUlnaris')?[.77,.37,.29]:name==='palmarisLongus'?[.82,.43,.33]:name==='flexorDigitorumSuperficialis'?[.68,.28,.34]:name==='flexorDigitorumProfundus'?[.51,.21,.33]:cMuscle,1,1);
+  drawPart(geomDynamic[name],ID,OR,V43_LOOKUP[name]?(V43_LOOKUP[name].layer==='deep'?[.53,.24,.35]:[.80,.33,.34]):SCAPULAR_MUSCLES.includes(name)?[.73,.29,.34]:name==='brachialis'?cMuscleDeep:name==='brachioradialis'?[.81,.36,.32]:name.startsWith('pronatorTeres')?[.86,.32,.40]:name.startsWith('supinator')?[.55,.40,.76]:name==='flexorCarpiRadialis'?[.76,.27,.45]:name.startsWith('flexorCarpiUlnaris')?[.77,.37,.29]:name==='palmarisLongus'?[.82,.43,.33]:name==='flexorDigitorumSuperficialis'?[.68,.28,.34]:name==='flexorDigitorumProfundus'?[.51,.21,.33]:cMuscle,1,1);
  }
  for(const name of TENDON_PARTS)if(muscleVisible(name))drawPart(geomDynamic[name],ID,OR,['tendonFCR','tendonFCU','pisohamateBand','pisometacarpalBand','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].includes(name)||name.startsWith('fds')?cTendonFCR:name.startsWith('fdp')?[.79,.90,.94]:cTendon,1,2);
 }
-if(settings.rib){gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);drawPart(shape.torso,ID,OR,[.37,.54,.65],.08,4);drawPart(shape.sternum,ID,OR,[.53,.64,.66],.20,4);for(let g of ribShapes)drawPart(g,ID,OR,[.48,.64,.7],.23,4);gl.depthMask(true);gl.disable(gl.BLEND)}
+// Translucent scapula is drawn AFTER opaque muscles without writing depth,
+ // to reveal their posterior surface and the rim of the bone.
+ if(boneShown.scapula&&settings.scapulaDisplay==='translucent'){
+  gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);
+  if(realReady){
+   const p=realPose.scapula;if(p)drawPart(realMesh.scapula,p[0],p[1],cBone,.22,0);
+  }else{
+   for(const g of [shape.scapula,shape.scapSpine,shape.acromion,shape.coracoid])drawPart(g,a.qS,a.AC,cBone,.22,0);
+  }
+  gl.depthMask(true);gl.disable(gl.BLEND);
+ }
+ if(settings.rib){gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);drawPart(shape.torso,ID,OR,[.37,.54,.65],.08,4);drawPart(shape.sternum,ID,OR,[.53,.64,.66],.20,4);for(let g of ribShapes)drawPart(g,ID,OR,[.48,.64,.7],.23,4);gl.depthMask(true);gl.disable(gl.BLEND)}
 if(SOFTWARE)drawSoftware();
 }
 // Canvas2D fallback: flat-shaded, depth-sorted 3D triangles for browsers without WebGL.
@@ -2263,8 +2280,8 @@ function poseBoundingPoints(){
  const a=motion(),pts=[];if(!a)return pts;
  function addGeom(g,q,p){if(!g||!g.box)return;let [lo,hi]=g.box;for(let x of [lo[0],hi[0]])for(let y of [lo[1],hi[1]])for(let z of [lo[2],hi[2]])pts.push(transform(q,p,[x,y,z]))}
  function parts(bones,groups,q,p){if(!bones)return;for(let g of groups)addGeom(g,q,p)}
- if(realReady){for(const id of ids){if(!boneShown[id])continue;const p=realPose[id],g=realMesh[id];if(p&&g)addGeom(g,p[0],p[1]);}if(settings.hand){const hm=handMeshSet();for(const name of HAND_NAMES){const p=handPose[name];if(p&&hm[name])addGeom(hm[name],p[0],p[1])}}for(const name of MUSCLE_ALL)if(muscleVisible(name))addGeom(geomDynamic[name],ID,OR);if(settings.rib){addGeom(shape.torso,ID,OR);addGeom(shape.sternum,ID,OR);for(const rib of ribShapes)addGeom(rib,ID,OR)}if(!pts.length)pts.push(realAnchors.SC,realAnchors.GH,realAnchors.EL);return pts;}
- parts(boneShown.scapula,[shape.scapula,shape.scapSpine,shape.acromion,shape.coracoid,shape.glenoid],a.qS,a.AC);
+ if(realReady){for(const id of ids){if(!boneShown[id]||(id==='scapula'&&settings.scapulaDisplay==='hidden'))continue;const p=realPose[id],g=realMesh[id];if(p&&g)addGeom(g,p[0],p[1]);}if(settings.hand){const hm=handMeshSet();for(const name of HAND_NAMES){const p=handPose[name];if(p&&hm[name])addGeom(hm[name],p[0],p[1])}}for(const name of MUSCLE_ALL)if(muscleVisible(name))addGeom(geomDynamic[name],ID,OR);if(settings.rib){addGeom(shape.torso,ID,OR);addGeom(shape.sternum,ID,OR);for(const rib of ribShapes)addGeom(rib,ID,OR)}if(!pts.length)pts.push(realAnchors.SC,realAnchors.GH,realAnchors.EL);return pts;}
+ parts(boneShown.scapula&&settings.scapulaDisplay!=='hidden',[shape.scapula,shape.scapSpine,shape.acromion,shape.coracoid,shape.glenoid],a.qS,a.AC);
  parts(boneShown.clavicle,[geomDynamic.clavicle],ID,OR);
  parts(boneShown.humerus,[shape.humerus,shape.neck,shape.head,shape.gt,shape.lt,shape.deltoidBump,shape.condyleL,shape.condyleR,shape.trochlea],a.qHum,a.joint);
  parts(boneShown.ulna,[shape.ulna,shape.olecranon,shape.ulnaDistal],a.qFore,a.elbow);
