@@ -1288,7 +1288,7 @@ function updateScapularMuscles(){
   gdynamic(spec.id,muscle);
   gdynamic(tendonId,tendon);
   // Both surfaces use the exact SAME station, for zero numerical seam drift.
-  const nc=lanes,last=(split)*nc,lowerStart=(split+1)*nc;
+  const nc=lanes,last=split*nc,lowerStart=(split+1)*nc+last;
   const seamGap=Math.max(0,...Array.from({length:lanes},(_,j)=>
    Math.max(len(sub(muscle.vertices[last+j],tendon.vertices[j])),
     len(sub(muscle.vertices[lowerStart+j],tendon.vertices[(rows.length-split)*nc+j])))));
@@ -2054,7 +2054,7 @@ async function loadRealBones(){
  if(loading)loading.innerHTML='解剖学的な骨形状を取得中…<br>旧モデルはそのまま操作できます';
  try{
    const result=await Promise.all(ids.map(x=>loadOneBone(x,REAL_MODELS[x])));
-   ids.forEach((x,i)=>realMesh[x]=result[i]);realReady=true;makeRealPose();makeHandPose();updateRadialAuditMetrics();loadRealHand().catch(e=>{handModelWarning=String(e);updateHandStatus();refreshModelStatus()});updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateFDPStatus();updateAnteriorStatus();updateRadialAuditMetrics();autoFit=true;fitPose();request();
+   ids.forEach((x,i)=>realMesh[x]=result[i]);realReady=true;makeRealPose();makeHandPose();updateScapularMuscleStatus();updateRadialAuditMetrics();loadRealHand().catch(e=>{handModelWarning=String(e);updateHandStatus();refreshModelStatus()});updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateFDPStatus();updateAnteriorStatus();updateRadialAuditMetrics();autoFit=true;fitPose();request();
    if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.41・橈尺回旋の検証パネル追加）';refreshModelStatus();
    const n=$('boneModeNote');if(n)n.textContent='骨の形はBodyParts3Dの公開解剖学的メッシュに変更しました。関節の回転中心・肩甲上腕リズムは推定値です。前腕の回内回外は橈骨頭から尺骨遠位部への斜め軸を用いた近似です。推定軸のままであり、靱帯や軟骨の拘束は未実装です。骨メッシュの面交差検査は検証パネルから実行できます。上腕二頭筋・三頭筋・上腕筋は骨表面に沿う近似経路を使い、肘角度に応じた簡易収縮・伸長を追加しました。三角筋は他の筋肉とは独立にON/OFFでき、3つの束を推定付着点に結び付けた近似表示です。腕橈骨筋も独立ON/OFFができ、上腕骨外側から橈骨遠位部までを推定経路で結び、肘屈曲・前腕回内回外に追従します。回外筋は上腕骨外側・尺骨近位部から橈骨近位部を包む概形として追加し、円回内筋と比較できます。橈側手根屈筋の腱は乳白色の細い楕円断面で、橈骨掌側から舟状骨・大菱形骨付近を通って第2中手骨基部へ至る推定経路で表示します。尺側手根屈筋は尺骨の掌側・尺側に沿い、豆状骨に腱が連結し、有鉤骨・第5中手骨への線維性連結を近似表示します。関節付近の滑走・骨との接触計算は行っていません。長掌筋は内側上顆→手掌腱膜の模式経路として追加しました（個体差・欠損あり）。浅指屈筋は上腕骨内側上顆付近から掌側前腕へ伸び、中節骨へ左右二分する4本の腱を模式表示します。筋・腱の正確な形状や付着点、筋張力は未検証です。腱の滑走や厳密な筋体積保存は未実装です。';
  }catch(e){modelWarning=String(e);console.warn('Showing safe procedural fallback because real bones did not load:',e);
@@ -2474,6 +2474,8 @@ $('medicalStudySelect').addEventListener('change',()=>{
   if(medicalFocusPrevious){
    $('muscles').checked=medicalFocusPrevious.muscles;
    $('deltoid').checked=medicalFocusPrevious.deltoid;
+   $('scapularMuscles').checked=medicalFocusPrevious.scapularMuscles;
+   $('cuffOnly').checked=medicalFocusPrevious.cuffOnly;
    medicalFocusPrevious=null;
   }
   $('medicalStudyFocusStatus').textContent='学習対象を変更したため単独表示を解除しました。';
@@ -2484,9 +2486,12 @@ $('medicalStudySelect').addEventListener('change',()=>{
 $('medicalStudyFocus').addEventListener('click',()=>{
  const entry=MEDICAL_ANATOMY[$('medicalStudySelect').value];
  if(!entry.parts.length){$('medicalStudyFocusStatus').textContent='この筋は未実装のため、3Dで単独表示できません。';return}
- if(!medicalFocusPrevious) medicalFocusPrevious={muscles:$('muscles').checked,deltoid:$('deltoid').checked};
+ if(!medicalFocusPrevious) medicalFocusPrevious={muscles:$('muscles').checked,deltoid:$('deltoid').checked,scapularMuscles:$('scapularMuscles').checked,cuffOnly:$('cuffOnly').checked};
  medicalFocus=new Set(entry.parts);
- if(entry.parts.some(n=>n.startsWith('deltoid'))) $('deltoid').checked=true;
+ if(entry.parts.some(n=>SCAPULAR_PARTS.has(n))){
+  $('scapularMuscles').checked=true;
+  $('cuffOnly').checked=false;
+ }else if(entry.parts.some(n=>n.startsWith('deltoid'))) $('deltoid').checked=true;
  else $('muscles').checked=true;
  $('medicalStudyFocusStatus').textContent=entry.name+'の近似形状だけを表示中。形状精度は未検証です。';
  update();
@@ -2496,13 +2501,43 @@ $('medicalStudyReset').addEventListener('click',()=>{
  if(medicalFocusPrevious){
   $('muscles').checked=medicalFocusPrevious.muscles;
   $('deltoid').checked=medicalFocusPrevious.deltoid;
+  $('scapularMuscles').checked=medicalFocusPrevious.scapularMuscles;
+  $('cuffOnly').checked=medicalFocusPrevious.cuffOnly;
   medicalFocusPrevious=null;
  }
  $('medicalStudyFocusStatus').textContent='単独表示前の筋肉ON/OFF設定に戻しました。';
  update();
 });
 renderMedicalStudy();
-const angleFields=['elev','plane','axial','elbow','pronation'];const handFields=['wristFlex','wristDeviation','fingerCurl','thumbCurl','thumbOpposition'];function update(){for(let f of angleFields){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+'°'}for(let f of handFields){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+(f.endsWith('Curl')||f==='thumbOpposition'?'%':'°')}for(const f of ['fdsPIPI','fdsPIPM','fdsPIPR','fdsPIPL','fdpDIPI','fdpDIPM','fdpDIPR','fdpDIPL']){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+'°'}settings.fdsPIPOnly=$('fdsPIPOnly').checked;settings.fdpDIPOnly=$('fdpDIPOnly').checked;settings.forearmBulk=clamp(Number($('forearmBulk').value)||70,50,110);$('forearmBulkV').textContent=settings.forearmBulk+'%';for(let f of ['hand','sync','muscles','deltoid','brachioradialis','pronatorTeres','supinator','flexorCarpiRadialis','flexorCarpiUlnaris','palmarisLongus','flexorDigitorumSuperficialis','flexorDigitorumProfundus',...V43_MUSCLES,'rib','showlabels','showDirection','reverseElbow','muscleEmphasis'])settings[f]=$(f).checked;
+const angleFields=['elev','plane','axial','elbow','pronation'];const handFields=['wristFlex','wristDeviation','fingerCurl','thumbCurl','thumbOpposition'];
+function updateScapularMuscleStatus(){
+ const status=$('scapularMuscleStatus');if(!status)return;
+ if(!realReady){status.textContent='実骨データを取得中。読み込みが完了するまで新しい肩甲骨筋は表示されません。';return}
+ if(!settings.scapularMuscles){status.textContent='肩甲骨周囲4筋：OFF（個別学習の選択でも表示されません）';return}
+ const count=SCAPULAR_MUSCLES.filter(id=>Boolean(geomDynamic[id])).length;
+ const seam=Number(scapularDiagnostics.maximumJointGap||0)/atlasScale;
+ status.textContent='肩甲骨周囲筋：'+count+'/4筋の推定形状を生成。'+
+  (settings.cuffOnly?'回旋筋腱板3筋のみを表示中（肩甲下筋は未実装）。':'大円筋を含む4筋を表示中。')+
+  ' 筋腹→腱の接合点最大差 '+(Number.isFinite(seam)?seam.toFixed(3):'—')+
+  ' mm（数値的連続性だけの検査・骨への貫通/滑走は未検証）。';
+}
+$('scapulaDisplay').addEventListener('change',update);
+$('scapularBackView').addEventListener('click',()=>{
+ state.yaw=realReady?0:Math.PI;state.pitch=.12;autoFit=true;fitPose();request();
+});
+$('scapularFrontView').addEventListener('click',()=>{
+ state.yaw=realReady?Math.PI:0;state.pitch=.12;autoFit=true;fitPose();request();
+});
+window.__labScapular=()=>({
+ version:'v0.51',ready:realReady,
+ muscleIds:SCAPULAR_MUSCLES.slice(),cuffMuscles:Array.from(SCAPULAR_CUFF),
+ currentlyVisible:SCAPULAR_MUSCLES.filter(muscleVisible),
+ reportedSeamMaxMm:scapularDiagnostics.maximumJointGap/atlasScale,
+ anatomicalAccuracyVerified:false,originInsertionLandmarksValidated:false,
+ boneCollisionValidated:false,subscapularisImplemented:false
+});
+
+function update(){for(let f of angleFields){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+'°'}for(let f of handFields){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+(f.endsWith('Curl')||f==='thumbOpposition'?'%':'°')}for(const f of ['fdsPIPI','fdsPIPM','fdsPIPR','fdsPIPL','fdpDIPI','fdpDIPM','fdpDIPR','fdpDIPL']){settings[f]=Number($(f).value);$(f+'V').textContent=settings[f]+'°'}settings.fdsPIPOnly=$('fdsPIPOnly').checked;settings.fdpDIPOnly=$('fdpDIPOnly').checked;settings.scapulaDisplay=$('scapulaDisplay').value;settings.forearmBulk=clamp(Number($('forearmBulk').value)||70,50,110);$('forearmBulkV').textContent=settings.forearmBulk+'%';for(let f of ['hand','sync','muscles','deltoid','scapularMuscles','cuffOnly','brachioradialis','pronatorTeres','supinator','flexorCarpiRadialis','flexorCarpiUlnaris','palmarisLongus','flexorDigitorumSuperficialis','flexorDigitorumProfundus',...V43_MUSCLES,'rib','showlabels','showDirection','reverseElbow','muscleEmphasis'])settings[f]=$(f).checked;
  refreshModelStatus();
  const f=clamp(settings.elbow/150,0,1), contractionRate=f*f*(3-2*f), exaggeration=settings.muscleEmphasis?1:.45;
  const bulge=1+.26*contractionRate*exaggeration;
@@ -2510,8 +2545,8 @@ const angleFields=['elev','plane','axial','elbow','pronation'];const handFields=
  $('muscleBulgeMeter').style.width=Math.min(100,100*(bulge-1)/.26)+'%';
  $('muscleFeedback').classList.toggle('active',settings.muscles);syncDisplayActions();
  updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateFDPStatus();
- compute();if(realReady)makeRealPose();else if(settings.hand)makeHandPose();updateHandStatus();updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateFDPStatus();updateAnteriorStatus();updateRadialAuditMetrics();if($('cameraAuto').checked){autoFit=true;fitPose()}else autoFit=false;request();$('modelNote').textContent=settings.sync?'連動あり：肩甲骨を挙上角の1/3だけ上方回旋させる固定パラメータの模式運動学。実測データでの検証は未完了です。':'肩甲骨・鎖骨を固定した比較モード（正常な肩の運動を示すものではありません）。'}
-for(let f of [...angleFields,...handFields,'fdsPIPOnly','fdsPIPI','fdsPIPM','fdsPIPR','fdsPIPL','fdpDIPOnly','fdpDIPI','fdpDIPM','fdpDIPR','fdpDIPL','hand','sync','muscles','deltoid','brachioradialis','pronatorTeres','supinator','flexorCarpiRadialis','flexorCarpiUlnaris','palmarisLongus','flexorDigitorumSuperficialis','flexorDigitorumProfundus',...V43_MUSCLES,'rib','showlabels','showDirection','reverseElbow','muscleEmphasis','forearmBulk'])$(f).addEventListener('input',()=>{document.querySelectorAll('[data-preset]').forEach(x=>x.classList.remove('active'));update()});
+ compute();if(realReady)makeRealPose();else if(settings.hand)makeHandPose();updateHandStatus();updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateFDPStatus();updateAnteriorStatus();updateRadialAuditMetrics();updateScapularMuscleStatus();if($('cameraAuto').checked){autoFit=true;fitPose()}else autoFit=false;request();$('modelNote').textContent=settings.sync?'連動あり：肩甲骨を挙上角の1/3だけ上方回旋させる固定パラメータの模式運動学。実測データでの検証は未完了です。':'肩甲骨・鎖骨を固定した比較モード（正常な肩の運動を示すものではありません）。'}
+for(let f of [...angleFields,...handFields,'fdsPIPOnly','fdsPIPI','fdsPIPM','fdsPIPR','fdsPIPL','fdpDIPOnly','fdpDIPI','fdpDIPM','fdpDIPR','fdpDIPL','hand','sync','muscles','deltoid','scapularMuscles','cuffOnly','brachioradialis','pronatorTeres','supinator','flexorCarpiRadialis','flexorCarpiUlnaris','palmarisLongus','flexorDigitorumSuperficialis','flexorDigitorumProfundus',...V43_MUSCLES,'rib','showlabels','showDirection','reverseElbow','muscleEmphasis','forearmBulk'])$(f).addEventListener('input',()=>{document.querySelectorAll('[data-preset]').forEach(x=>x.classList.remove('active'));update()});
 for(const [button,value] of [['fdsPIPOpen',0],['fdsPIPHalf',50],['fdsPIPBend',90]])$(button).addEventListener('click',()=>{$('fdsPIPOnly').checked=true;$('fdpDIPOnly').checked=false;for(const f of ['fdsPIPI','fdsPIPM','fdsPIPR','fdsPIPL'])$(f).value=value;update()});
 for(const [button,value] of [['fdpDIPOpen',0],['fdpDIPHalf',40],['fdpDIPBend',75]])$(button).addEventListener('click',()=>{$('fdpDIPOnly').checked=true;$('fdsPIPOnly').checked=false;for(const f of ['fdpDIPI','fdpDIPM','fdpDIPR','fdpDIPL'])$(f).value=value;update()});
 for(const control of ['fdsPIPOnly','fdpDIPOnly'])$(control).addEventListener('change',()=>{if($(control).checked)$(control==='fdsPIPOnly'?'fdpDIPOnly':'fdsPIPOnly').checked=false;update()});
