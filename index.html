@@ -994,7 +994,15 @@ function updateRealMuscles(){
   });
   gdynamic(id,tube(shaped,{sides:16,steps:8,ellipticity:id==='brachialis'?.51:.62,rough:0}));
  };
- const makeT=(id,pts)=>gdynamic(id,tube(pts,{sides:9,steps:5,ellipticity:1,rough:0}));
+ const makeT=(id,pts)=>{
+  // v0.46: linear between anchored elbow stations avoids spline overshoot.
+  gdynamic(id,tube(pts,{sides:10,steps:7,ellipticity:.79,rough:0,linear:true}));
+ };
+ const nearElbow=(name,xyz,side,r=.009,gap=.019)=>{
+  const center=attachedAtlas(name,xyz,true);
+  const dir=qr(realPose[name][0],side==='anterior'?ANATOMICAL_ANTERIOR:mul(ANATOMICAL_ANTERIOR,-1));
+  return [...add(center,mul(norm(dir),gap)),r];
+ };
  const bicepsLongOrigin=bone('scapula',[-166,-69,1334],mix(.010,.009,contract));
  const bicepsShortOrigin=bone('scapula',[-160,-95,1350],mix(.010,.009,contract));
  const bicepsRadiusEnd=bone('radius',[-237,-91,1015],mix(.009,.0085,contract));
@@ -1017,12 +1025,13 @@ function updateRealMuscles(){
  ]);
  makeT('tendonBprox',[bicepsLongOrigin,hg(.10,'anterior',mix(.009,.0083,contract),.018,.015),bicepsStart]);
  makeT('tendonB2',[bicepsShortOrigin,hg(.15,'anterior',mix(.009,.0083,contract),.021,-.025),hg(shrink(.50,.22,.28),'anterior',mix(.011,.0102,contract),.022,-.025)]);
- makeT('tendonB',[bicepsEnd,hg(.95,'anterior',mix(.011,.010,contract),.013,.014),bicepsRadiusEnd]);
+ const radialBicepsGuide=nearElbow('radius',[-239,-92,1028],'anterior',.0095,.026);
+ makeT('tendonB',[bicepsEnd,hg(.95,'anterior',mix(.011,.010,contract),.013,.014),radialBicepsGuide,bicepsRadiusEnd]);
  // v0.45: the short head previously ended with a visible cut-off.
  // Its distal tendon now joins the common insertion on the moving radius.
  makeT('tendonBShortDist',[
   hg(shrink(.50,.80,.28),'anterior',.023,.023,-.023),
-  hg(.91,'anterior',.009,.018,-.012),bicepsRadiusEnd]);
+  hg(.91,'anterior',.009,.018,-.012),radialBicepsGuide,bicepsRadiusEnd]);
  const tricepsOrigin=bone('scapula',[-170,-62,1295],.011);
  const tricepsEnd=bone('ulna',[-211,-47,1057],.011);
  const triBellyStart=hg(stretch(.53,.19,.09),'posterior',.014,.024,.016), triBellyEnd=hg(stretch(.53,.88,.09),'posterior',.013,.021,.017);
@@ -1043,10 +1052,11 @@ function updateRealMuscles(){
    hg(stretch(.56,.88,.08),'posterior',.011,.018,-.015)
  ]);
  makeT('tendonT2',[tricepsOrigin,hg(.10,'posterior',.009,.015,.018),triBellyStart]);
- makeT('tendonT',[triBellyEnd,hg(.97,'posterior',mix(.011,.0105,contract),.014,.011),tricepsEnd]);
+ const ulnarTricepsGuide=nearElbow('ulna',[-214,-48,1065],'posterior',.010,.019);
+ makeT('tendonT',[triBellyEnd,hg(.97,'posterior',mix(.011,.0105,contract),.014,.011),ulnarTricepsGuide,tricepsEnd]);
  makeT('tendonTLatDist',[
   hg(stretch(.56,.88,.08),'posterior',.011,.018,-.015),
-  hg(.965,'posterior',.009,.016,-.008),tricepsEnd]);
+  hg(.965,'posterior',.009,.016,-.008),ulnarTricepsGuide,tricepsEnd]);
  const brachialisOrigin=hg(shrink(.68,.43,.22),'anterior',.017,.005,-.013);
  const brachialisEnd=bone('ulna',[-215,-87,1041],mix(.010,.0096,contract));
  const brachBellyEnd=hg(shrink(.68,.92,.22),'anterior',mix(.012,.013,contract),.009,-.011);
@@ -1057,7 +1067,8 @@ function updateRealMuscles(){
    hg(shrink(.68,.81,.22),'anterior',.036*braBulge,.011,-.015),
    brachBellyEnd
  ]);
- makeT('tendonBrach',[brachBellyEnd,hg(.98,'anterior',mix(.010,.0096,contract),.007,-.01),brachialisEnd]);
+ const ulnarBrachialisGuide=nearElbow('ulna',[-218,-88,1047],'anterior',.009,.019);
+ makeT('tendonBrach',[brachBellyEnd,hg(.98,'anterior',mix(.010,.0096,contract),.007,-.01),ulnarBrachialisGuide,brachialisEnd]);
  // v0.14 deltoid: three anatomy-informed paths with independent origins.
  // Anterior: lateral third of clavicle; middle: acromion; posterior: scapular spine.
  // Common distal attachment: deltoid tuberosity of the humerus (atlas-approximate).
