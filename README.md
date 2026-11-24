@@ -2,7 +2,7 @@
 
 スマートフォン対応の上肢骨格・筋肉・腱を観察する教育用Webアプリ。動作と形態は**解剖学的に未検証の近似を含み、臨床用・診断用ではありません**。
 
-**現在のバージョン：v0.64.0**
+**現在のバージョン：v0.65.0**
 
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
@@ -11,6 +11,10 @@
 - **v0.54の保存ブランチ**：[`archive/v0.54-before-anatomy-rebuild`](../../tree/archive/v0.54-before-anatomy-rebuild)
 - **v0.53の保存ブランチ**：[`archive/v0.53-before-review`](../../tree/archive/v0.53-before-review)
 - **v0.51の保存ブランチ**：[`archive/v0.51-before-scapular-fix`](../../tree/archive/v0.51-before-scapular-fix)
+
+## v0.65：肩甲胸郭面拘束＋前鋸筋9スリップ
+
+肩甲骨肋骨面の最大離開・内方移動を追加監視し、前鋸筋を第1〜9肋骨に対応する9本の連続スリップとして専用変形。v0.65 GPU経路が使えない端末はv0.64へフォールバック。実測筋束・真の接触・筋力ではありません。詳細は [SCAP_SERRATUS_V065](./docs/SCAP_SERRATUS_V065.md)。
 
 ## v0.64：筋束経路エンジン（研究試作）
 
