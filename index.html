@@ -301,7 +301,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <div class="control"><label>筋メッシュ変形方式（研究用）</label><select id="v62Mode"><option value="guided" selected>v0.63 肩・胸郭ガイド（試験）</option><option value="linear">従来の線形（比較用）</option><option value="auto">比較選択（補正上限あり・試験）</option><option value="dual">非線形 DQS（補正上限あり・試験）</option></select>
 <label class="switch"><input id="v62Route" type="checkbox" checked>胸郭・肩周辺の経路近似補正（試験モードのみ）</label>
 <div class="detail">v0.63：前鋸筋は胸郭の横断面近似、三角筋・大胸筋は骨頭付近の半径包絡を参照。候補を局所辺長で比較し、補正は最大30mm・付着点でゼロ。実接触・筋力・体積保存は未検証です。従来方式も比較可能。</div>
-<button type="button" id="v62Audit">新旧変形を比較（現在姿勢）</button><pre class="detail" id="v62Out" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre>
+<button type="button" id="v63Volume">三角筋・大胸筋の体積変化を検査</button><pre class="detail" id="v63VolumeOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査（閉じた一貫したメッシュのみ）</pre><button type="button" id="v62Audit">新旧変形を比較（現在姿勢）</button><pre class="detail" id="v62Out" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre>
 <div class="detail">局所辺長損失を比較。筋力・正常範囲の評価ではありません。<a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/NONLINEAR_V062.md" target="_blank" rel="noopener noreferrer">仕様と限界</a></div></div>
 <button type="button" id="v61Audit">幾何拘束・筋変形の検査</button><pre class="detail" id="v61Out" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre>
 <div class="detail">筋ごとに13姿勢の局所辺長損失が小さいウェイトを選択。衝突・体積・筋力は未検証。</div>
@@ -3474,9 +3474,7 @@ async function v57FetchEntry(entry){
  let error;
  for(const base of V57_BASES){
   try{
-   const response=await fetch(base+entry.file,{mode:'cors',cache:'force-cache',signal:typeof AbortSignal!=='undefined'&&AbortSignal.timeout?AbortSignal.timeout(30000):undefined});
-   if(!response.ok)throw Error('HTTP '+response.status);
-   const meshData=v57ParseSTL(await response.arrayBuffer(),entry),g=gpu(meshData);
+   const meshData=await v63ReadAtlas(base,entry.file,entry.bytes,b=>v57ParseSTL(b,entry)),g=gpu(meshData);
    // Retain exact triangles only for cartilage intersection inspection. Keep
    // small sample sets for sternum/joint landmarks rather than all rib faces.
    const auditMesh=entry.group==='cartilage'?{verts:meshData.vertices,faces:meshData.faces}:null;
@@ -3898,19 +3896,17 @@ async function v58Load(fetcher=null){
      let error;
      for(const base of V57_BASES){
       try{
-       const r=await fetch(base+spec.file,{mode:'cors',cache:'force-cache',signal:typeof AbortSignal!=='undefined'&&AbortSignal.timeout?AbortSignal.timeout(30000):undefined});
-       if(!r.ok)throw Error('HTTP '+r.status);
-       parsed=v58Parse(await r.arrayBuffer(),spec);break;
+       parsed=await v63ReadAtlas(base,spec.file,spec.bytes,b=>v58Parse(b,spec));break;
       }catch(e){error=e}
      }
      if(!parsed)throw error||Error(spec.id);
     }
     const g=gpu(parsed.data);
     if(!SOFTWARE){g.weightBuffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,g.weightBuffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(parsed.weights),gl.STATIC_DRAW)}
-    v58Meshes.set(spec.id,{g,box:parsed.box,triangles:g.count/3,originalTriangles:parsed.originalTriangles,bounds:parsed.bounds||v60WeightBounds(parsed.data.vertices,parsed.weights),samples:parsed.samples||[],selection:parsed.selection||null,nonlinear:parsed.nonlinear||null,attachmentMode:parsed.attachmentMode||'synthetic'});
+    v58Meshes.set(spec.id,{g,box:parsed.box,triangles:g.count/3,originalTriangles:parsed.originalTriangles,bounds:parsed.bounds||v60WeightBounds(parsed.data.vertices,parsed.weights),samples:parsed.samples||[],selection:parsed.selection||null,nonlinear:parsed.nonlinear||null,attachmentMode:parsed.attachmentMode||'synthetic',volume:v63VolumeSource(spec,parsed.data,parsed.weights)});
     request();
    }catch(e){v58Failed.push(spec.id);console.warn('Deep mesh:',spec.id,e)}
-   v58Status();
+   v58Status();await new Promise(resolve=>setTimeout(resolve,0));
   }
  }finally{v58Busy=false;v58Status();updateDeltoidStatus();request()}
 }
@@ -4552,6 +4548,85 @@ window.__labNonlinearV062=v62Audit;
 // v0.63: horizontal thorax profiles, sampled from the actual atlas ribs.
 // Engineering clearance proxy, not contact, cartilage or clinical kinematics.
 const v63GuideCache=new Map();
+// Cache only pinned atlas URLs, validated by the existing parser first.
+// One canonical key per file, max 48 MiB of selected source meshes.
+const v63CacheFiles=new Set();
+let v63CacheBudget=48*1024*1024;
+for(const f of [...new Map([...V57_MANIFEST,...V60_ALL].map(e=>[e.file,e])).values()].sort((a,b)=>a.bytes-b.bytes)){
+ if(f.bytes>0&&f.bytes<=4*1024*1024&&f.bytes<=v63CacheBudget){v63CacheFiles.add(f.file);v63CacheBudget-=f.bytes}
+}
+let v63CachePromise=null,v63CacheHits=0;
+function v63OpenCache(){
+ if(v63CachePromise===null)v63CachePromise=Promise.resolve().then(()=>typeof caches==='undefined'?null:caches.open('upper-limb-atlas-'+V57_SOURCE)).catch(()=>null);
+ return v63CachePromise;
+}
+async function v63ReadAtlas(base,file,bytes,parse){
+ const key=V57_BASES[0]+file,cache=v63CacheFiles.has(file)?await v63OpenCache():null;
+ if(cache){
+  try{const response=await cache.match(key);
+   if(response){const b=await response.arrayBuffer();if(b.byteLength!==bytes)throw Error('cached size');const p=parse(b);v63CacheHits++;return p}
+  }catch(e){try{await cache.delete(key)}catch(_){}}
+ }
+ const response=await fetch(base+file,{mode:'cors',cache:'force-cache',signal:typeof AbortSignal!=='undefined'&&AbortSignal.timeout?AbortSignal.timeout(30000):undefined});
+ if(!response.ok)throw Error('HTTP '+response.status);
+ const b=await response.arrayBuffer(),p=parse(b);
+ if(cache&&b.byteLength===bytes)try{await cache.put(key,new Response(b,{headers:{'Content-Type':'application/octet-stream'}}))}catch(_){}
+ return p;
+}
+// Exact signed-volume diagnostic only for closed, consistently oriented
+// clustered meshes. Retain compact arrays for six target muscles.
+function v63VolumeSource(spec,data,weights){
+ if(!(spec.deltoid||['v60PecClav','v60PecStern','v60PecAbd'].includes(spec.id)))return null;
+ if(data.vertices.length>60000||data.faces.length>300000)return null;
+ return {p:Float32Array.from(data.vertices.flat()),f:Uint32Array.from(data.faces),w:Float32Array.from(weights),closed:null,rest:null};
+}
+function v63VolumeClosed(m){
+ if(m.closed!==null)return m.closed;
+ const n=m.w.length,edges=new Map();
+ for(let i=0;i<m.f.length;i+=3){
+  const a=m.f[i],b=m.f[i+1],c=m.f[i+2];
+  for(const [u,v] of [[a,b],[b,c],[c,a]]){
+   const key=Math.min(u,v)*n+Math.max(u,v),old=edges.get(key)||[0,0];
+   old[0]++;old[1]+=u<v?1:-1;edges.set(key,old);
+  }
+ }
+ m.closed=[...edges.values()].every(e=>e[0]===2&&e[1]===0);
+ return m.closed;
+}
+function v63SignedVolume(p,f){
+ const o=[p[0],p[1],p[2]];let sum=0;
+ const at=i=>[p[i*3]-o[0],p[i*3+1]-o[1],p[i*3+2]-o[2]];
+ for(let i=0;i<f.length;i+=3)sum+=dot(at(f[i]),cross(at(f[i+1]),at(f[i+2])));
+ return sum/6;
+}
+function v63VolumeSide(side){
+ const rows=[],center=$('v59Guard').checked?v59ChestCenter():null;
+ for(const spec of V60_ALL){
+  if(!(spec.deltoid||['v60PecClav','v60PecStern','v60PecAbd'].includes(spec.id)))continue;
+  const m=v58Meshes.get(spec.id),v=m?.volume;
+  if(!v||!v63VolumeClosed(v)){rows.push({name:spec.name,reason:'閉じた一貫した面を確認できない／未取得'});continue}
+  if(v.rest===null)v.rest=v63SignedVolume(v.p,v.f);
+  if(!Number.isFinite(v.rest)||Math.abs(v.rest)<1e-8){rows.push({name:spec.name,reason:'中立位体積が不定'});continue}
+  const a=v58Anchor(spec.a),b=v58Anchor(spec.b),mode=v62Mode(spec,m),route=v62RouteFor(spec,b,mode.route,false,mode.guided),pair=mode.dual?[v62DQ(a),v62DQ(b)]:null;
+  const p=new Float64Array(v.p.length);
+  for(let i=0;i<v.w.length;i++){const q=v62Point(a,b,[v.p[3*i],v.p[3*i+1],v.p[3*i+2]],v.w[i],mode.dual,route,spec.id==='v58Serratus'?center:null,pair);p.set(q,i*3)}
+  const ratio=v63SignedVolume(p,v.f)/v.rest;
+  rows.push({name:spec.name,ratio:Number.isFinite(ratio)?ratio:null});
+ }
+ return {side,rows};
+}
+function v63VolumeAudit(){
+ if(!realReady)return {ready:false,sides:[],volumeValidated:false};
+ v572FlushPose();v56RefreshOther();
+ const sides=[v63VolumeSide(v56Side)];if($('v56Both').checked)sides.push(v56WithOther(()=>v63VolumeSide(v56Inactive())));
+ return {ready:true,sides,volumeValidated:false,collisionValidated:false};
+}
+$('v63Volume').addEventListener('click',()=>{
+ const r=v63VolumeAudit();
+ $('v63VolumeOut').textContent=r.ready?r.sides.map(s=>(s.side==='right'?'右':'左')+'\n'+s.rows.map(x=>x.name+'：'+(x.reason||(!Number.isFinite(x.ratio)?'評価不能':(100*x.ratio).toFixed(1)+'%（中立位比）'))).join('\n')).join('\n\n')+'\n符号付き包絡体積。自己交差・体積保存・筋力を保証しません。':'実骨データ未取得';
+});
+window.__labVolumeV063=v63VolumeAudit;
+window.__labCacheV063=()=>({files:v63CacheFiles.size,limitBytes:48*1024*1024,selectedBytes:48*1024*1024-v63CacheBudget,hits:v63CacheHits});
 function v63Profile(points,e){
  if(!e||!points.length)return null;
  const rows=[],n=13,dy=2*e.r[1]/(n-1);
@@ -4581,7 +4656,7 @@ function v63GuideCost(q,ac,data){
   if(v.sliceRest===null)continue;
   const gap=v63Gap(transform(q,ac,v.p),data.profile);
   // Never improve the objective by leaving the sampled vertical range.
-  const d=gap===null?35:(gap-v.sliceRest)/atlasScale;
+  const d=gap===null?100+Math.abs(v.sliceRest)/atlasScale:(gap-v.sliceRest)/atlasScale;
   cost+=d*d*(d<0?2:1);n++;
  }
  return n>=8?cost/n:Infinity;
@@ -4620,7 +4695,7 @@ function v63LoadStatus(){
  if(!n||$('v63Loading').hidden)return;
  const total=5+27+V57_MANIFEST.length+V60_ALL.length,done=(realReady?5:0)+handLoadCount+v57State.loaded+v58Meshes.size;
  bar.max=total;bar.value=Math.min(total,done);
- n.textContent='上肢骨 '+(realReady?5:0)+'/5　手 '+handLoadCount+'/27\n胸郭 '+v57State.loaded+'/'+V57_MANIFEST.length+'　筋 '+v58Meshes.size+'/'+V60_ALL.length+'\n通信環境により時間がかかることがあります。';
+ n.textContent='上肢骨 '+(realReady?5:0)+'/5　手 '+handLoadCount+'/27\n胸郭 '+v57State.loaded+'/'+V57_MANIFEST.length+'　筋 '+v58Meshes.size+'/'+V60_ALL.length+'\nキャッシュ利用 '+v63CacheHits+'件。通信環境により時間がかかることがあります。';
 }
 function v63FinishLoading(){
  v63LoadStatus();
