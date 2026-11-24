@@ -162,9 +162,9 @@ window.__runV56Tests=async()=>{
  const parsed=v58Parse(fixture,{...spec,bytes:134});
  ok(parsed.data.faces.length===3&&parsed.weights.every(x=>x>=0&&x<=1),'STL cluster and bounded weights');
  await v58Load(async e=>{if(e===V58_DEEP[3])throw Error('simulated missing');return parsed});
- ok(v58Meshes.size===8&&v58Failed.length===1,'partial deep load independent of skeleton');
+ ok(v58Meshes.size===16&&v58Failed.length===1,'partial deep load independent of skeleton');
  let retry=0;await v58Load(async()=>{retry++;return parsed});
- ok(retry===1&&v58Meshes.size===9,'retry only missing muscle');
+ ok(retry===1&&v58Meshes.size===17,'retry only missing muscle');
  $('v58Subscap').checked=true;settings.cuffOnly=true;ok(V58_DEEP.filter(v58Visible).length===1,'cuff isolation includes subscapularis');settings.cuffOnly=false;
  v572Preset('neutral');state.yaw=Math.PI/2;
  const drag={accum:0,planeAccum:0};
@@ -193,10 +193,29 @@ window.__runV56Tests=async()=>{
  $('v56Back').checked=false;ok(!v58Visible(V59_SURFACE[0]),'surface master hides atlas muscle');
  setDisplayPreset('skeleton');ok(V59_ALL.every(s=>!$(s.id).checked),'skeleton hides all nine muscle regions');
  }
+
+ {
+ ok(V60_ALL.length===17&&new Set(V60_ALL.map(s=>s.file)).size===17,'17 unique atlas regions');
+ ok(V60_CHEST.length===8&&V60_DELT.length===3,'eight chest/shoulder regions');
+ ok(V60_CHEST.every(s=>v58Meshes.has(s.id)),'all new synthetic meshes loaded');
+ const spec=V60_CHEST[0],c=v60WeightContext(spec);
+ ok(v60Weight(spec,c.origin[0],null,c)===0&&v60Weight(spec,c.insertion[0],null,c)===1,'chest origin/insertion weights');
+ for(const s of V60_CHEST){const c=v60WeightContext(s),w=v60Weight(s,[0,1,0],null,c);ok(Number.isFinite(w)&&w>=0&&w<=1,'finite weights '+s.id)}
+ const a={q:ID,p:OR,rest:OR},b={q:qa([0,0,1],1.1),p:[1,2,3],rest:OR},v=[[0,0,0],[1,2,3],[2,1,0],[.5,1,1]],w=[0,.23,.65,1];
+ const pts=v60BoundPoints(v60WeightBounds(v,w),a,b),box=v58Box(pts);
+ ok(v.every((p,i)=>v58Blend(a,b,p,w[i]).every((x,j)=>x>=box[0][j]-1e-9&&x<=box[1][j]+1e-9)),'weight interval boxes enclose skinned vertices');
+ const before=$('muscles').checked;v60Layer('surface');
+ ok($('v60PecClav').checked&&$('v60DeltAnt').checked&&!$('v60PecMinor').checked&&!$('v58Serratus').checked,'surface layer excludes deep');
+ v60Layer('deep');ok(!$('v60PecClav').checked&&!$('deltoid').checked&&$('v60PecMinor').checked&&$('v58Subscap').checked,'deep layer excludes surface');
+ v60Layer('all');ok(V60_ALL.every(s=>$(s.id).checked)&&$('muscles').checked===before,'all layers preserve upper arm switch');
+ setDisplayPreset('skeleton');ok(V60_ALL.every(s=>!$(s.id).checked),'skeleton hides all atlas muscles');
+ ok(!v60ScapAudit().ready,'missing thorax not claimed as measured clearance');
+ ok(!v60DeltReady(),'software harness cannot claim atlas deltoid GPU rendering');
+ }
  return passed;
 };`;
 js=js.replace(/\}\)\(\);\s*$/,instrument+"\n})();");
 new Function("document","window","fetch","requestAnimationFrame","matchMedia","innerWidth","innerHeight","setTimeout","clearTimeout","console",js)(doc,win,async()=>{throw Error("offline test")},f=>callbacks.push(f),()=>({matches:true}),390,740,()=>0,()=>{}, {log(){},warn(){},error(...a){errors.push(a.map(String).join(" "))}});
 assert.equal(errors.length,0,errors.join("\n"));
 const results=await win.__runV56Tests();
-console.log('PASS v0.59: '+results.length+' integration checks — '+results.join('; '));
+console.log('PASS v0.60: '+results.length+' integration checks — '+results.join('; '));
