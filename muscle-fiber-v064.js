@@ -56,6 +56,14 @@ function build(vertices,faces,weights,axis){
   const p=vertices[j],q=vertices[k],d=len(sub(p,q));if(d<.002)continue;
   refs.push({p:p.slice(),q:q.slice(),w:[weights[j],weights[k]],l:[uv[j],uv[k]],d});
  }
+ // Separate hold-out faces from the sampled fitting edges. Area is an
+ // unsigned surface metric, not a material Jacobian or collision test.
+ const tris=[],triStep=Math.max(1,Math.ceil(faces.length/3/48));
+ for(let k=Math.floor(triStep/2);k<faces.length/3;k+=triStep){
+  const ids=faces.slice(k*3,k*3+3),p=ids.map(i=>vertices[i].slice()),area=len(cross(sub(p[1],p[0]),sub(p[2],p[0])));
+  if(area<.000004)continue;
+  tris.push({p,w:ids.map(i=>weights[i]),l:ids.map(i=>uv[i]),area});
+ }
  const bounds=[],stride=Math.max(1,Math.ceil(vertices.length/180));
  for(let i=0;i<vertices.length;i+=stride)bounds.push({p:vertices[i].slice(),w:weights[i],l:uv[i]});
  // Explicitly retain coordinate extrema as well as regular samples.
@@ -63,7 +71,7 @@ function build(vertices,faces,weights,axis){
   let j=0;for(let i=1;i<vertices.length;i++)if(sign*vertices[i][axis]>sign*vertices[j][axis])j=i;
   bounds.push({p:vertices[j].slice(),w:weights[j],l:uv[j]});
  }
- return {...field,controls,uv,refs,bounds};
+ return {...field,controls,uv,refs,tris,bounds};
 }
 function pose(field,a,b,wrap){
  return field.controls.map(c=>{
@@ -88,19 +96,45 @@ function point(p,t,l,field,posed,a,b,base,alpha=1){
  const gate=smooth(t/.18)*smooth((1-t)/.18)*smooth((dot(ref,sv)+.995)/.045);
  return mix(base,candidate,gate*alpha);
 }
-function assess(field,posed,a,b,baseline){
+function assess(field,posed,a,b,baseline,constraint=null){
  const rows=field.refs.map(e=>{
   const p=baseline(e.p,e.w[0]),q=baseline(e.q,e.w[1]);
   return {p,q,P:point(e.p,e.w[0],e.l[0],field,posed,a,b,p),Q:point(e.q,e.w[1],e.l[1],field,posed,a,b,q),d:e.d};
  });
+ const faces=(field.tris||[]).map(e=>{
+  const p=e.p.map((p,i)=>baseline(p,e.w[i]));
+  return {p,q:e.p.map((x,i)=>point(x,e.w[i],e.l[i],field,posed,a,b,p[i])),rest:e.p,area:e.area};
+ });
+ const contacts=constraint?field.bounds.filter((_,i)=>i%3===0).map(e=>{
+  const p=baseline(e.p,e.w);return {p,q:point(e.p,e.w,e.l,field,posed,a,b,p),rest:e.p};
+ }):[];
+ const penalty=r=>{const x=Math.abs(Math.log(Math.max(r,1e-6)));return x*x+4*Math.max(0,x-Math.log(2))**2};
  const score=alpha=>{
-  let sum=0,max=0,minRatio=Infinity,maxRatio=0;
-  for(const e of rows){const r=len(sub(mix(e.P,e.p,1-alpha),mix(e.Q,e.q,1-alpha)))/e.d;if(!Number.isFinite(r))return {loss:Infinity,minRatio:0,maxRatio:Infinity};const x=Math.abs(Math.log(Math.max(r,1e-6))),pen=x*x+4*Math.max(0,x-Math.log(2))**2;sum+=pen;max=Math.max(max,pen);minRatio=Math.min(minRatio,r);maxRatio=Math.max(maxRatio,r)}
-  return {loss:rows.length?sum/rows.length+.1*max:Infinity,minRatio,maxRatio};
+  let sum=0,max=0,minRatio=Infinity,maxRatio=0,areaSum=0,areaMax=0,contact=0,nContact=0;
+  for(const e of rows){
+   const r=len(sub(mix(e.p,e.P,alpha),mix(e.q,e.Q,alpha)))/e.d;
+   if(!Number.isFinite(r))return {loss:Infinity,areaLoss:Infinity,contactLoss:Infinity,minRatio:0,maxRatio:Infinity};
+   const pen=penalty(r);sum+=pen;max=Math.max(max,pen);minRatio=Math.min(minRatio,r);maxRatio=Math.max(maxRatio,r);
+  }
+  for(const e of faces){const p=e.p.map((x,i)=>mix(x,e.q[i],alpha)),r=len(cross(sub(p[1],p[0]),sub(p[2],p[0])))/e.area;
+   if(!Number.isFinite(r))return {loss:Infinity,areaLoss:Infinity,contactLoss:Infinity,minRatio:0,maxRatio:Infinity};
+   const x=penalty(r);areaSum+=x;areaMax=Math.max(areaMax,x);
+  }
+  for(const e of contacts){const v=constraint(e.rest,mix(e.p,e.q,alpha));if(Number.isFinite(v)){contact+=v*v;nContact++}}
+  return {loss:rows.length?sum/rows.length+.1*max:Infinity,minRatio,maxRatio,areaLoss:faces.length?areaSum/faces.length+.1*areaMax:null,contactLoss:nContact?contact/nContact:null};
  };
- const base=score(0);let best=base,alpha=0;
- for(const x of [.25,.5,.75,1]){const c=score(x);if(c.loss<best.loss-1e-10){best=c;alpha=x}}
- return {alpha,baseline:base.loss,score:best.loss,minRatio:best.minRatio,maxRatio:best.maxRatio,samples:rows.length};
+ const base=score(0),ok=c=>c.loss<=base.loss+1e-10&&(base.areaLoss===null||c.areaLoss!==null&&c.areaLoss<=base.areaLoss+1e-8)&&(base.contactLoss===null||c.contactLoss!==null&&c.contactLoss<=base.contactLoss+1e-8);
+ let best=base,alpha=0,total=0,weighted=0;
+ for(const x of [.25,.5,.75,1]){
+  const c=score(x);if(!ok(c))continue;
+  const gain=Math.max(0,base.loss-c.loss);
+  if(gain>1e-10){total+=gain*gain;weighted+=x*gain*gain}
+  if(c.loss<best.loss-1e-10){best=c;alpha=x}
+ }
+ // A weighted interpolation gives smoother pose-to-pose adoption.
+ // Recheck the interpolated result and fall back to the best safe sample.
+ if(total>1e-20){const x=weighted/total,c=score(x);if(ok(c)&&c.loss<base.loss-1e-10){alpha=x;best=c}}
+ return {alpha,baseline:base.loss,score:best.loss,minRatio:best.minRatio,maxRatio:best.maxRatio,samples:rows.length,areaSamples:faces.length,areaBaseline:base.areaLoss,areaScore:best.areaLoss,contactBaseline:base.contactLoss,contactScore:best.contactLoss};
 }
 function tubeVolume(pts){let v=0;for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i];v+=Math.PI*len(sub(b.slice(0,3),a.slice(0,3)))*(a[3]**2+a[3]*b[3]+b[3]**2)/3}return v}
 function tubeCorrect(pts,target){
