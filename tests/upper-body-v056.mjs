@@ -145,10 +145,38 @@ window.__runV56Tests=async()=>{
  ok(!v572FitIfNeeded()&&state.zoom===.75,'opt-out preserves manual zoom');
  v572Preset('neutral');
  }
+
+ {
+ ok(V58_DEEP.length===5&&new Set(V58_DEEP.map(x=>x.file)).size===5,'five distinct source muscles');
+ ok(v56BackIds.length===4&&!v56BackIds.includes('v56Serratus'),'old deep plates removed');
+ const box=[[0,0,0],[1,1,1]],spec=V58_DEEP[0];
+ ok(v58Weight(spec,[0,.5,.5],box)===0&&v58Weight(spec,[1,.5,.5],box)===1,'rhomboid endpoint weights');
+ ok(v58Weight(V58_DEEP[2],[.5,1,.5],box)===0&&v58Weight(V58_DEEP[2],[.5,0,.5],box)===1,'levator downward attachment weights');
+ ok(v58Weight(V58_DEEP[3],[.5,.5,0],box)===0&&v58Weight(V58_DEEP[3],[.5,.5,1],box)===1,'serratus posterior attachment proxy');
+ const a={q:ID,p:OR,rest:OR},b={q:qa([0,1,0],.4),p:[1,2,3],rest:[.1,.2,.3]},point=[.4,.5,.6];
+ ok(len(sub(v58Blend(a,b,point,0),point))<1e-10&&len(sub(v58Blend(a,b,point,1),v58Transform(b,point)))<1e-10,'skin endpoints follow respective anchor');
+ const matrix=v58AnchorMatrix(b),mp=[...point,1],mv=[0,1,2].map(r=>mp.reduce((s,v,k)=>s+v*matrix[k*4+r],0));
+ ok(len(sub(mv,v58Transform(b,point)))<1e-10,'skin matrix matches CPU transform');
+ const fixture=new ArrayBuffer(134),dv=new DataView(fixture);dv.setUint32(80,1,true);
+ [[-14,-72,1341],[-24,-72,1341],[-14,-82,1341]].forEach((v,i)=>v.forEach((n,j)=>dv.setFloat32(96+i*12+j*4,n,true)));
+ const parsed=v58Parse(fixture,{...spec,bytes:134});
+ ok(parsed.data.faces.length===3&&parsed.weights.every(x=>x>=0&&x<=1),'STL cluster and bounded weights');
+ await v58Load(async e=>{if(e===V58_DEEP[3])throw Error('simulated missing');return parsed});
+ ok(v58Meshes.size===4&&v58Failed.length===1,'partial deep load independent of skeleton');
+ let retry=0;await v58Load(async()=>{retry++;return parsed});
+ ok(retry===1&&v58Meshes.size===5,'retry only missing muscle');
+ $('v58Subscap').checked=true;settings.cuffOnly=true;ok(V58_DEEP.filter(v58Visible).length===1,'cuff isolation includes subscapularis');settings.cuffOnly=false;
+ v572Preset('neutral');state.yaw=Math.PI/2;
+ const drag={accum:0,planeAccum:0};
+ ok(v58DragShoulder(drag,100,-100)&&Number($('elev').value)===43&&Number($('plane').value)===43,'diagonal shoulder drag changes both axes');
+ v58DragShoulder(drag,1000,-1000);ok(Number($('plane').value)===90&&Number($('elev').value)===180,'shoulder drag clamps both axes');
+ v58DragShoulder(drag,-1000,1000);ok(Number($('plane').value)===0&&Number($('elev').value)===0,'reverse drag returns to neutral');
+ setDisplayPreset('skeleton');ok(V58_DEEP.every(s=>!$(s.id).checked),'skeleton hides all deep muscles');
+ }
  return passed;
 };`;
 js=js.replace(/\}\)\(\);\s*$/,instrument+"\n})();");
 new Function("document","window","fetch","requestAnimationFrame","matchMedia","innerWidth","innerHeight","setTimeout","clearTimeout","console",js)(doc,win,async()=>{throw Error("offline test")},f=>callbacks.push(f),()=>({matches:true}),390,740,()=>0,()=>{}, {log(){},warn(){},error(...a){errors.push(a.map(String).join(" "))}});
 assert.equal(errors.length,0,errors.join("\n"));
 const results=await win.__runV56Tests();
-console.log('PASS v0.57.2: '+results.length+' integration checks — '+results.join('; '));
+console.log('PASS v0.58: '+results.length+' integration checks — '+results.join('; '));

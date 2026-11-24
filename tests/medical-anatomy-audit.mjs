@@ -21,7 +21,8 @@ for(const [key,row] of Object.entries(data)){
 }
 assert.equal(data.tricepsMedial.parts.length,0,'do not pretend a medial-head mesh exists');
 assert.equal(data.coracobrachialis.parts.length,0,'do not pretend coracobrachialis mesh exists');
-assert.equal(data.subscapularis.parts.length,0,'do not pretend subscapularis mesh exists');
+assert.deepEqual(data.subscapularis.parts,['v58Subscap'],'subscapularis has atlas loader ID');
+assert.ok(script.includes("file:'FMA13414.stl'"));
 const staticParts=[...script.matchAll(/const (?:MUSCLE_PARTS|TENDON_PARTS)=\[([\s\S]*?)\];/g)]
  .flatMap(m=>[...m[1].matchAll(/'([^']+)'/g)].map(v=>v[1]));
 const scapSpecMatch=script.match(/const SCAPULAR_SPEC=(\[[\s\S]*?\]);\nconst SCAPULAR_CUFF=/);
@@ -31,7 +32,7 @@ assert.equal(scapSpec.length,4);
 assert.equal(scapSpec.filter(s=>s.cuff).length,3);
 const scapParts=scapSpec.flatMap(m=>[m.id,'tendon'+m.id[0].toUpperCase()+m.id.slice(1)]);
 for(const row of Object.values(data))for(const part of row.parts)
- assert.ok(staticParts.includes(part)||scapParts.includes(part),'unknown model part '+part);
+ assert.ok(staticParts.includes(part)||scapParts.includes(part)||part==='v58Subscap','unknown model part '+part);
 const htmlWithoutScript=html.replace(/<script>[\s\S]*?<\/script>/g,'');
 const ids=[...htmlWithoutScript.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
 assert.equal(ids.length,new Set(ids).size,'duplicate HTML ids');
