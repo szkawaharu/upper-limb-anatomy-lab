@@ -2566,14 +2566,11 @@ function fitPose(){
  // not usable model space. Reserve enough room when explicitly fitting.
  // A manual pan/zoom never triggers this routine automatically by default.
  const edgeUI=document.body.classList.contains('edge-ui');
- const leftPad=edgeUI?Math.min(48,Math.max(34,w*.105)):Math.min(26,w*.065);
- const rightPad=edgeUI?Math.min(88,Math.max(67,w*.22)):Math.min(26,w*.065);
- const topPad=edgeUI?Math.min(92,Math.max(65,h*.075)):Math.min(30,h*.065);
- const bottomPad=edgeUI?Math.min(110,Math.max(74,h*.085)):Math.min(30,h*.065);
+ const [leftPad,rightPad,topPad,bottomPad]=v64Insets(w,h,edgeUI);
  const areaW=Math.max(70,w-leftPad-rightPad),areaH=Math.max(80,h-topPad-bottomPad);
  const rangeX=maxX-minX,rangeY=maxY-minY;
  // Height-of-view is the sole zoom parameter; orthographic projection guarantees fit at any view angle.
- const span=Math.max(1.85,rangeX*h/areaW,rangeY*h/areaH)*1.08;
+ const span=Math.max(1.85,rangeX*h/areaW,rangeY*h/areaH)*1.04;
  const xMid=(minX+maxX)/2,yMid=(minY+maxY)/2;
  let base=mul(add(pts[0],pts[pts.length-1]),.5);
  // Choose target via x/y screen-space coordinates, retaining depth about the world origin.
@@ -3748,8 +3745,7 @@ function v572FitIfNeeded(){
  const outward=[Math.sin(state.yaw)*Math.cos(state.pitch),Math.sin(state.pitch),Math.cos(state.yaw)*Math.cos(state.pitch)];
  const right=norm(cross([0,1,0],outward)),up=cross(outward,right);
  const edge=document.body.classList.contains('edge-ui');
- const L=edge?Math.min(48,Math.max(34,w*.105)):Math.min(26,w*.065),R=edge?Math.min(88,Math.max(67,w*.22)):Math.min(26,w*.065);
- const T=edge?Math.min(92,Math.max(65,h*.075)):Math.min(30,h*.065),B=edge?Math.min(110,Math.max(74,h*.085)):Math.min(30,h*.065);
+ const [L,R,T,B]=v64Insets(w,h,edge);
  const clipped=pts.some(p=>{const d=sub(p,state.target),x=w/2+dot(d,right)*h/state.zoom,y=h/2-dot(d,up)*h/state.zoom;return x<L||x>w-R||y<T||y>h-B});
  if(clipped){const previousZoom=state.zoom;zoomScale=1;$('zoomLevel').value=100;$('zoomValue').textContent='100%';fitPose();if(!$('cameraAuto').checked)state.zoom=Math.max(state.zoom,previousZoom);request()}
  return clipped;
@@ -4352,10 +4348,17 @@ function v61GuideData(){
  if(v61GuideCache?.key===key)return v61GuideCache.data;
  const points=ribs.flatMap(p=>p.sample),e=v61FitThorax(points);let data=null;
  if(e&&scap.length>100){
-  const [lo,hi]=v58Box(scap),cand=scap.filter(p=>p[0]<lo[0]+.58*(hi[0]-lo[0])&&p[1]<lo[1]+.85*(hi[1]-lo[1]));
-  const step=Math.max(1,Math.ceil(cand.length/48));
+  const [lo,hi]=v58Box(scap),cand=scap.filter(p=>p[0]<lo[0]+.62*(hi[0]-lo[0])&&p[1]<lo[1]+.84*(hi[1]-lo[1]));
   const profile=v63Profile(points,e);
-  const v=cand.filter((_,i)=>i%step===0).map(p=>({p,rest:v61Radial(add(realAnchors.AC,p),e),sliceRest:v63Gap(add(realAnchors.AC,p),profile)}));
+  // Atlas anterior = -Z: retain the most costal point in each blade cell.
+  const cells=new Map(),nx=8,ny=9;
+  for(const p of cand){
+   const ix=clamp(Math.floor((p[0]-lo[0])/Math.max(hi[0]-lo[0],1e-8)*nx),0,nx-1),iy=clamp(Math.floor((p[1]-lo[1])/Math.max(hi[1]-lo[1],1e-8)*ny),0,ny-1),key=ix+':'+iy;
+   const old=cells.get(key);if(!old||p[2]<old[2])cells.set(key,p);
+  }
+  const surface=[...cells.values()],step=Math.max(1,Math.ceil(cand.length/48));
+  const sample=surface.length>=12?surface:cand.filter((_,i)=>i%step===0);
+  const v=sample.map(p=>({p,rest:v61Radial(add(realAnchors.AC,p),e),sliceRest:v63Gap(add(realAnchors.AC,p),profile),weight:1+.7*(1-clamp((p[1]-lo[1])/Math.max(hi[1]-lo[1],1e-8),0,1))}));
   if(v.length>=8)data={e,v,profile};
  }
  v61GuideCache={key,data};return data;
@@ -4380,7 +4383,7 @@ function v61Guide(q,ac,elev,data=v61GuideData()){
 }
 function v61RefreshGuide(){
  v61GuideCache=null;v63GuideCache.clear();const d=v61GuideData();
- $('v61ScapStatus').textContent=d?'実肋骨の横断面近似・肩甲骨候補 '+d.v.length+'点。SC/AC連結を維持して回旋を補正（接触未検証）。':'データ不足：基本肩甲帯運動を使用。';
+ $('v61ScapStatus').textContent=d?'実肋骨の横断面近似・肩甲骨肋骨面候補 '+d.v.length+'点。SC/AC連結を維持して5変数補正（接触未検証）。':'データ不足：基本肩甲帯運動を使用。';
  if(realReady){makeRealPose();v56Other.key=null;request()}
 }
 $('v61Scap').addEventListener('change',()=>{v61RefreshGuide();update()});
@@ -4546,7 +4549,7 @@ function v62Bounds(bins,a,b,pad=0){
   pts.push(...v62BoxCorners(m.map(x=>x-radius),m.map(x=>x+radius)));
  }return pts;
 }
-for(const id of ['v62Mode','v62Route'])$(id).addEventListener('change',()=>{v64UpdateStatus();update();request()});
+for(const id of ['v62Mode','v62Route'])$(id).addEventListener('change',()=>{v56Other.key=null;v64UpdateStatus();update();request()});
 function v62AuditSide(side){
  const rows=[],center=$('v59Guard').checked?v59ChestCenter():null;
  for(const spec of V60_ALL){
@@ -4674,34 +4677,33 @@ function v63Gap(p,profile){
  const r=Math.hypot(x/rx,z/rz);return r>1e-8?Math.hypot(x,z)*(1-1/r):-Math.min(rx,rz);
 }
 function v63GuideCost(q,ac,data){
- let cost=0,n=0;
+ let cost=0,n=0,wSum=0;
  for(const v of data.v){
   if(v.sliceRest===null)continue;
   const gap=v63Gap(transform(q,ac,v.p),data.profile);
-  // Never improve the objective by leaving the sampled vertical range.
-  const d=gap===null?100+Math.abs(v.sliceRest)/atlasScale:(gap-v.sliceRest)/atlasScale;
-  cost+=d*d*(d<0?2:1);n++;
+  const d=gap===null?100+Math.abs(v.sliceRest)/atlasScale:(gap-v.sliceRest)/atlasScale,w=v.weight||1;
+  cost+=w*(d*d*(d<0?2:1)+2*Math.max(0,Math.abs(d)-5)**2);n++;wSum+=w;
  }
- return n>=8?cost/n:Infinity;
+ return n>=8?cost/wSum:Infinity;
 }
 function v63ShoulderGuide(qC,qS,AC,elev,plane,data=v61GuideData()){
- const identity={qC,qS,AC,before:null,after:null,angles:[0,0,0,0]};
+ const identity={qC,qS,AC,before:null,after:null,angles:[0,0,0,0,0]};
  if(!data?.profile||elev<=0)return identity;
  const key=[elev,plane,qC.join(','),qS.join(',')].join(':');
  if(v63GuideCache.has(key))return v63GuideCache.get(key);
  const cv=sub(realAnchors.AC,realAnchors.SC),base=v63GuideCost(qS,AC,data);
  if(!Number.isFinite(base))return identity;
- const scale=smooth(clamp(elev/45,0,1)),limits=[22*scale,22*scale,6*scale,8*scale];
- const build=([yaw,tilt,ce,cr])=>{
+ const scale=smooth(clamp(elev/45,0,1)),limits=[32*scale,30*scale,8*scale,10*scale,10*scale];
+ const build=([yaw,tilt,ce,cr,up=0])=>{
   const c=qm(qa([0,0,1],rad(ce)),qm(qa([0,1,0],rad(cr)),qC));
   const ac=transform(c,realAnchors.SC,cv);
-  const q=qm(qa([0,1,0],rad(yaw)),qm(qa([1,0,0],rad(tilt)),qS));
+  const q=qm(qa([0,0,1],rad(up)),qm(qa([0,1,0],rad(yaw)),qm(qa([1,0,0],rad(tilt)),qS)));
   return {qC:c,qS:q,AC:ac};
  };
- const evaluate=a=>{const p=build(a),raw=v63GuideCost(p.qS,p.AC,data);return {p,raw,score:raw+.18*(a[0]**2+a[1]**2)+.9*(a[2]**2+a[3]**2)}};
- let a=[0,0,0,0],best=evaluate(a);
- for(const step of [8,4,2,1]){
-  for(let axis=0;axis<4;axis++){
+ const evaluate=a=>{const p=build(a),raw=v63GuideCost(p.qS,p.AC,data);return {p,raw,score:raw+.18*(a[0]**2+a[1]**2)+.9*(a[2]**2+a[3]**2)+.65*a[4]**2}};
+ let a=[0,0,0,0,0],best=evaluate(a);
+ for(const step of [10,5,2,1]){
+  for(let axis=0;axis<5;axis++){
    const from=a.slice();
    for(const sign of [-1,1]){
     const c=from.slice();c[axis]=clamp(c[axis]+sign*step,-limits[axis],limits[axis]);
@@ -4740,11 +4742,12 @@ const V64_MUSCLES=Object.freeze({
  v60PecMinor:{axis:1,wrap:'none'},v60Subclavius:{axis:2,wrap:'none'},
  v60DeltAnt:{axis:2,wrap:'head'},v60DeltMid:{axis:2,wrap:'head'},v60DeltPost:{axis:2,wrap:'head'}
 });
+function v64Insets(w,h,edge){return edge?[Math.min(44,Math.max(20,w*.07)),Math.min(72,Math.max(52,w*.16)),Math.min(96,Math.max(64,h*.08)),Math.min(92,Math.max(56,h*.075))]:[Math.min(26,w*.065),Math.min(26,w*.065),Math.min(30,h*.065),Math.min(30,h*.065)]}
 const v64TubeRest=new Map();
 function v64Tube(id,pts){
  if(!v64Engine||$('v62Mode').value!=='fiber')return pts;
  const neutral=['elev','axial','elbow','pronation','wristFlex','wristDeviation','fingerCurl','thumbCurl','thumbOpposition'].every(f=>Math.abs(settings[f]||0)<1e-6);
- const key=id+':'+settings.forearmBulk+':'+settings.muscleEmphasis;
+ const key=id+':'+settings.forearmBulk+':'+settings.muscleEmphasis+':'+handReady;
  if(neutral){if(!v64TubeRest.has(key)){if(v64TubeRest.size>=160)v64TubeRest.delete(v64TubeRest.keys().next().value);v64TubeRest.set(key,v64Engine.tubeVolume(pts))}return pts}
  return v64Engine.tubeCorrect(pts,v64TubeRest.get(key));
 }
