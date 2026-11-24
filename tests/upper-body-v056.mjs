@@ -239,10 +239,33 @@ window.__runV56Tests=async()=>{
  const timing=v601PerfStats([1,2,3,4,10]);ok(timing.n===5&&timing.median===3&&timing.p95===10,'CPU render timing summary');
  ok(v601PerfStats([])===null,'empty timing not measured');
  }
+
+ {
+ const sphere=[];for(let i=0;i<20;i++)for(let j=0;j<12;j++){const a=i*Math.PI/10,b=j*Math.PI/6;sphere.push([Math.cos(a)*Math.sin(b),2*Math.cos(b),Math.sin(a)*Math.sin(b)])}
+ const ell=v61FitThorax(sphere);
+ ok(ell&&Math.abs(v61Radial([1,0,0],ell))<1e-8,'thorax proxy surface radial residual');
+ ok(v61Radial([.5,0,0],ell)<0&&v61Radial([1.5,0,0],ell)>0,'signed inward/outward proxy');
+ ok(v61FitThorax([])===null,'missing samples never produce a guide');
+ const ac=[.8,0,0],pts=[[0,0,.4],[0,.2,.4],[-.2,.3,.5],[-.3,-.2,.6],[-.2,.1,.5],[-.15,-.4,.55],[-.1,.4,.4],[-.3,.4,.3]];
+ const data={e:ell,v:pts.map(p=>({p,rest:v61Radial(add(ac,p),ell)}))};
+ const q=qa([0,1,0],.5),g=v61Guide(q,ac,120,data);
+ ok(g.after<=g.before+1e-9&&g.angles.every(a=>Math.abs(a)<=8),'guide objective non-increasing and correction bounded');
+ ok(len(sub(transform(g.q,ac,OR),ac))<1e-9,'guide preserves AC pivot');
+ ok(v61Guide(ID,ac,0,data).q===ID,'guide preserves neutral pose');
+ ok(v61Guide(q,ac,120,null).q===q,'missing geometry retains old kinematics');
+ const v=[[0,0,0],[.1,0,0],[.2,0,0],[.1,.1,0]],f=[0,1,3,1,2,3],old=[0,.1,1,.8],refined=[0,.4,1,.6];
+ const s=v61SelectWeights(V60_CHEST[0],v,f,old,refined);
+ ok(s.report&&s.report.score<=s.report.baseline+1e-9,'sampled multi-pose choice never worse than baseline objective');
+ ok(s.weights[0]===0&&s.weights[2]===1&&Array.from(s.weights).every(w=>w>=0&&w<=1),'selection preserves exact attachment candidates');
+ ok(v61Objective([1,1])===0&&v61Objective([.5,2])>0,'symmetric strain objective');
+ ok(Math.abs(v61Objective([.5])-v61Objective([2]))<1e-9,'compression and extension scored symmetrically');
+ ok(v61EdgeIndices(v,f).length===5,'unique sample edge selection');
+ const report=v61AuditReport();ok(report.version==='v0.61'&&!report.collisionValidated&&!report.volumeValidated,'audit declares validation limits');
+ }
  return passed;
 };`;
 js=js.replace(/\}\)\(\);\s*$/,instrument+"\n})();");
 new Function("document","window","fetch","requestAnimationFrame","matchMedia","innerWidth","innerHeight","setTimeout","clearTimeout","console",js)(doc,win,async()=>{throw Error("offline test")},f=>callbacks.push(f),()=>({matches:true}),390,740,()=>0,()=>{}, {log(){},warn(){},error(...a){errors.push(a.map(String).join(" "))}});
 assert.equal(errors.length,0,errors.join("\n"));
 const results=await win.__runV56Tests();
-console.log('PASS v0.60.1: '+results.length+' integration checks — '+results.join('; '));
+console.log('PASS v0.61: '+results.length+' integration checks — '+results.join('; '));
