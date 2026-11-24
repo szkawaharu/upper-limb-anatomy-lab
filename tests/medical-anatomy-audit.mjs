@@ -21,7 +21,8 @@ for(const [key,row] of Object.entries(data)){
 }
 assert.equal(data.tricepsMedial.parts.length,0,'do not pretend a medial-head mesh exists');
 assert.equal(data.coracobrachialis.parts.length,0,'do not pretend coracobrachialis mesh exists');
-assert.deepEqual(data.subscapularis.parts,['v58Subscap'],'subscapularis has atlas loader ID');
+assert.equal(data.subscapularis.parts.length,1,'subscapularis has one atlas loader ID');
+assert.equal(data.subscapularis.parts[0],'v58Subscap','subscapularis atlas loader ID');
 assert.ok(script.includes("file:'FMA13414.stl'"));
 const staticParts=[...script.matchAll(/const (?:MUSCLE_PARTS|TENDON_PARTS)=\[([\s\S]*?)\];/g)]
  .flatMap(m=>[...m[1].matchAll(/'([^']+)'/g)].map(v=>v[1]));
