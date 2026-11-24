@@ -162,9 +162,9 @@ window.__runV56Tests=async()=>{
  const parsed=v58Parse(fixture,{...spec,bytes:134});
  ok(parsed.data.faces.length===3&&parsed.weights.every(x=>x>=0&&x<=1),'STL cluster and bounded weights');
  await v58Load(async e=>{if(e===V58_DEEP[3])throw Error('simulated missing');return parsed});
- ok(v58Meshes.size===4&&v58Failed.length===1,'partial deep load independent of skeleton');
+ ok(v58Meshes.size===8&&v58Failed.length===1,'partial deep load independent of skeleton');
  let retry=0;await v58Load(async()=>{retry++;return parsed});
- ok(retry===1&&v58Meshes.size===5,'retry only missing muscle');
+ ok(retry===1&&v58Meshes.size===9,'retry only missing muscle');
  $('v58Subscap').checked=true;settings.cuffOnly=true;ok(V58_DEEP.filter(v58Visible).length===1,'cuff isolation includes subscapularis');settings.cuffOnly=false;
  v572Preset('neutral');state.yaw=Math.PI/2;
  const drag={accum:0,planeAccum:0};
@@ -173,10 +173,30 @@ window.__runV56Tests=async()=>{
  v58DragShoulder(drag,-1000,1000);ok(Number($('plane').value)===0&&Number($('elev').value)===0,'reverse drag returns to neutral');
  setDisplayPreset('skeleton');ok(V58_DEEP.every(s=>!$(s.id).checked),'skeleton hides all deep muscles');
  }
+
+ {
+ ok(V59_ALL.length===9&&new Set(V59_ALL.map(s=>s.file)).size===9,'nine distinct atlas muscle regions');
+ const idx=v59PointIndex([[1,2,3],[4,5,6]]);
+ ok(idx.near([1,2,3])===0&&idx.near([20,20,20])===Infinity,'spatial attachment index');
+ const s=V58_DEEP[3],box=[[0,0,0],[2,2,2]],p=[1,1,1];
+ const c={ribs:v59PointIndex([p]),surface:null,origin:null,insertion:[[2,1,1],[2,2,1]]};
+ ok(v59Weight(s,p,box,c)===0,'rib-near origin held stationary');
+ ok(v59Weight(s,[2,1,1],box,c)===1,'scapular candidate held to moving anchor');
+ const rest=[1,1,0],posed=[1.5,1,0],center=[0,0];
+ ok(len(sub(v59Wrap(rest,posed,0,center),posed))<1e-9&&len(sub(v59Wrap(rest,posed,1,center),posed))<1e-9,'radial guard preserves exact endpoints');
+ ok(len(sub(v59Wrap(rest,rest,.5,center),rest))<1e-9,'radial guard preserves neutral');
+ ok(Math.abs(v59Wrap(rest,posed,.5,center)[0]-1.067)<1e-9,'mid-belly outward radial movement capped');
+ ok(Math.abs(v59Wrap(rest,[.5,1,0],.5,center)[0]-.972)<1e-9,'mid-belly inward radial movement capped');
+ ok(V59_SURFACE.every(s=>v58Meshes.has(s.id)),'surface meshes independently loaded');
+ $('v56Back').checked=true;$('v59TrapUpper').checked=true;
+ ok(v58Visible(V59_SURFACE[0]),'surface master and individual visibility');
+ $('v56Back').checked=false;ok(!v58Visible(V59_SURFACE[0]),'surface master hides atlas muscle');
+ setDisplayPreset('skeleton');ok(V59_ALL.every(s=>!$(s.id).checked),'skeleton hides all nine muscle regions');
+ }
  return passed;
 };`;
 js=js.replace(/\}\)\(\);\s*$/,instrument+"\n})();");
 new Function("document","window","fetch","requestAnimationFrame","matchMedia","innerWidth","innerHeight","setTimeout","clearTimeout","console",js)(doc,win,async()=>{throw Error("offline test")},f=>callbacks.push(f),()=>({matches:true}),390,740,()=>0,()=>{}, {log(){},warn(){},error(...a){errors.push(a.map(String).join(" "))}});
 assert.equal(errors.length,0,errors.join("\n"));
 const results=await win.__runV56Tests();
-console.log('PASS v0.58: '+results.length+' integration checks — '+results.join('; '));
+console.log('PASS v0.59: '+results.length+' integration checks — '+results.join('; '));
