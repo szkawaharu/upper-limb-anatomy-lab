@@ -260,7 +260,33 @@ window.__runV56Tests=async()=>{
  ok(v61Objective([1,1])===0&&v61Objective([.5,2])>0,'symmetric strain objective');
  ok(Math.abs(v61Objective([.5])-v61Objective([2]))<1e-9,'compression and extension scored symmetrically');
  ok(v61EdgeIndices(v,f).length===5,'unique sample edge selection');
- const report=v61AuditReport();ok(report.version==='v0.61'&&!report.collisionValidated&&!report.volumeValidated,'audit declares validation limits');
+ const report=v61AuditReport();ok(report.version==='v0.62'&&!report.collisionValidated&&!report.volumeValidated,'audit declares validation limits');
+ }
+
+ {
+ const a={q:ID,p:OR,rest:OR},b={q:qa([0,1,0],Math.PI),p:[.1,.2,.3],rest:[.3,.2,.1]},p=[.4,.5,.6],q=[.8,.5,.6],close=(a,b)=>len(sub(a,b))<1e-8;
+ ok(close(v62DQBlend(a,b,p,0),v58Transform(a,p))&&close(v62DQBlend(a,b,p,1),v58Transform(b,p)),'DQS attachment endpoints');
+ ok(close(v62DQBlend(a,a,p,.43),p),'DQS neutral preserved');
+ const neg={...b,q:b.q.map(x=>-x)};
+ ok(close(v62DQBlend(a,b,p,.5),v62DQBlend(a,neg,p,.5)),'DQS antipodal invariance');
+ ok(Math.abs(len(sub(v62DQBlend(a,b,p,.5),v62DQBlend(a,b,q,.5)))-len(sub(p,q)))<1e-8,'equal-weight DQS preserves local length under twist');
+ ok(len(sub(v58Blend(a,b,p,.5),v58Blend(a,b,q,.5)))<1e-8,'linear blend twist collapse fixture');
+ const route={kind:1,rest:OR,radii:[1,1]},outside=[2,0,0];
+ ok(close(v62RoutePoint([1,0,0],outside,0,route),outside)&&close(v62RoutePoint([1,0,0],outside,1,route),outside),'rib route preserves fixed endpoints');
+ const fixed=v62RoutePoint([1,0,0],outside,.5,route);
+ ok(fixed[0]<outside[0]&&len(sub(fixed,outside))<=.120000001,'rib route bounded outward correction');
+ ok(close(v62RoutePoint(p,p,.5,route),p),'rib route neutral unchanged');
+ const r={kind:2,rest:OR,now:OR,radius:1},inside=[.2,0,0],result=v62RoutePoint([.8,0,0],inside,.5,r);
+ ok(result[0]>inside[0]&&len(sub(result,inside))<=.120000001,'head proxy bounded inward correction');
+ ok(close(v62RoutePoint(p,p,.5,r),p),'head proxy neutral unchanged');
+ const vertices=[p,q,[.1,.2,.3],[.1,-.3,.5]],w=[.13,.22,.48,.92],bins=v60WeightBounds(vertices,w),bb=v58Box(v62Bounds(bins,a,b,.12));
+ ok(vertices.every((p,i)=>v62DQBlend(a,b,p,w[i]).every((x,j)=>x>=bb[0][j]-1e-9&&x<=bb[1][j]+1e-9)),'DQS camera bounds enclose transformed points');
+ const edges=v601EdgeSamples(vertices,[0,1,2,1,2,3],w,w,12),s=v62SelectMode(V60_CHEST[0],edges);
+ ok(s&&s.on.score<=s.on.baseline+1e-9&&s.off.score<=s.off.baseline+1e-9,'auto nonlinear candidates include linear baseline');
+ $('v62Mode').value='linear';ok(!v62Mode(V60_CHEST[0],{nonlinear:s}).dual&&!v62Mode(V60_CHEST[0],{nonlinear:s}).route,'linear rollback mode');
+ $('v62Mode').value='dual';ok(v62Mode(V60_CHEST[0],{nonlinear:s}).dual,'manual DQS mode');
+ $('v62Mode').value='auto';ok(v62Mode(V60_CHEST[0],{nonlinear:s}).dual===s[$('v62Route').checked?'on':'off'].dual,'auto mode matches selected result');
+ ok(!v62Audit().collisionValidated&&!v62Audit().volumeValidated,'nonlinear audit declares limitations');
  }
  return passed;
 };`;
@@ -268,4 +294,4 @@ js=js.replace(/\}\)\(\);\s*$/,instrument+"\n})();");
 new Function("document","window","fetch","requestAnimationFrame","matchMedia","innerWidth","innerHeight","setTimeout","clearTimeout","console",js)(doc,win,async()=>{throw Error("offline test")},f=>callbacks.push(f),()=>({matches:true}),390,740,()=>0,()=>{}, {log(){},warn(){},error(...a){errors.push(a.map(String).join(" "))}});
 assert.equal(errors.length,0,errors.join("\n"));
 const results=await win.__runV56Tests();
-console.log('PASS v0.61: '+results.length+' integration checks — '+results.join('; '));
+console.log('PASS v0.62: '+results.length+' integration checks — '+results.join('; '));
