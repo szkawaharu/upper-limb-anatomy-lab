@@ -243,7 +243,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.57.2</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.57.2</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.58</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.58</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
@@ -253,7 +253,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.57.2</div><button id="v56QuickSide" type="button" aria-label="操作する腕を切り替え（現在：右）">右</button>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.58</div><button id="v56QuickSide" type="button" aria-label="操作する腕を切り替え（現在：右）">右</button>
 <nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
  <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
  <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
@@ -268,15 +268,26 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 
 </div>
 <section class="side" id="labTools">
-<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.57.2</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
-<details class="control-fold" open><summary>両上肢・胸郭<span class="fold-note">v0.57.2</span></summary><div class="fold-body">
+<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.58</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
+<details class="control-fold" open><summary>両上肢・胸郭<span class="fold-note">v0.58</span></summary><div class="fold-body">
 <div class="control"><label>両腕の姿勢（左右を同時設定）</label><div style="display:flex;flex-wrap:wrap;gap:6px"><button type="button" id="v572Forward">前ならえ</button><button type="button" id="v572T">T字</button><button type="button" id="v572Up">バンザイ</button><button type="button" id="v572Neutral">基本肢位</button></div><div class="detail">前ならえ：肩前方挙上90°、肘伸展、手首中立、手掌内向きの近似。</div></div>
 <div class="control"><label for="v572Quality">描画品質</label><select id="v572Quality"><option value="auto">自動（操作中軽量／停止後高精細）</option><option value="light">軽量優先</option><option value="high">常に高精細</option></select><div id="v572QualityStatus" class="detail" role="status">自動品質</div></div>
 <label class="switch"><input id="v572Fit" type="checkbox" checked>関節操作終了時、画面外の骨格を自動フィット</label>
 <div class="detail">骨・筋肉のメッシュ精度は変更しません。肩甲帯の前方移動は模式運動です。</div>
 <label for="v56Side">操作する腕（関節角度・直接操作）</label><select id="v56Side"><option value="right">右腕</option><option value="left">左腕</option></select>
 <label class="switch"><input id="v56Both" type="checkbox" checked>両腕を表示（OFF：選択中の腕だけ）</label>
-<label class="switch"><input id="v56Back" type="checkbox">背部・肩甲帯筋を表示（旧近似・初期OFF）</label>
+<label class="switch"><input id="v56Back" type="checkbox">表層筋（僧帽筋・広背筋：旧近似・初期OFF）</label>
+<div class="control"><label>深層筋（解剖メッシュ／左右鏡映）</label>
+<label class="switch"><input id="v58RhomboidMajor" type="checkbox" checked>大菱形筋</label>
+<label class="switch"><input id="v58RhomboidMinor" type="checkbox" checked>小菱形筋</label>
+<label class="switch"><input id="v58Levator" type="checkbox" checked>肩甲挙筋</label>
+<label class="switch"><input id="v58Serratus" type="checkbox" checked>前鋸筋</label>
+<label class="switch"><input id="v58Subscap" type="checkbox" checked>肩甲下筋</label>
+<div id="v58Status" class="detail" role="status">深層筋：胸郭取得後に読み込み</div>
+<button id="v58Retry" type="button" hidden>深層筋を再取得</button>
+<div class="detail">BodyParts3D形状を共有座標で使用。筋腹の変形は付着領域の推定ウェイトによるGPU補間。筋力、接触・滑走、体積保存は未検証。<a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/DEEP_V058.md" target="_blank" rel="noopener noreferrer">出典と仕様</a></div></div>
+<label class="switch"><input id="v58Drag2D" type="checkbox" checked>肩を長押し：上下で挙上、左右で前後方向（挙上面）</label>
+<div class="detail">肩を操作中、横スワイプで外転面0°～前方屈曲面90°を調整。斜めスワイプで両方を調整できます。3本指の軸回旋は従来どおり。</div>
 <button type="button" id="v56Copy">選択中の腕の姿勢を反対側にコピー</button>
 <div class="detail" id="v57TorsoStatus" role="status" aria-live="polite">胸郭：上肢の実骨データ取得を待機中</div>
 <div class="control"><label for="v57TorsoLayer">胸郭の表示部位</label><select id="v57TorsoLayer"><option value="all">全体</option><option value="ribs">肋骨</option><option value="spine">頸椎・胸椎</option><option value="sternum">胸骨</option><option value="cartilage">肋軟骨</option><option value="discs">椎間板</option></select></div>
@@ -305,7 +316,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
   <option value="infraspinatus">棘下筋（肩甲骨後面）</option>
   <option value="teresMinor">小円筋（回旋筋腱板）</option>
   <option value="teresMajor">大円筋（回旋筋腱板ではない）</option>
-  <option value="subscapularis">肩甲下筋（未実装・回旋筋腱板）</option>
+  <option value="subscapularis">肩甲下筋（回旋筋腱板）</option>
   <option value="coracobrachialis">烏口腕筋（未実装）</option>
  </select>
  <div id="medicalStudyModelStatus" class="med-reliability" role="status" aria-live="polite"></div>
@@ -319,7 +330,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
   <button id="medicalStudyReset" type="button">全筋表示に戻す</button>
  </div>
  <div class="med-status" id="medicalStudyFocusStatus" role="status" aria-live="polite">通常表示中。単独表示は形状比較用であり、正確性を保証しません。</div>
- <div class="detail">重要な未実装：三頭筋内側頭、烏口腕筋、肩甲下筋（回旋筋腱板の4筋目）。棘上筋・棘下筋・小円筋はv0.51で追加。v0.55では4筋の輪郭曲率・断面厚み・腱への移行を個別化しました。ただし筋束配列、停止面や腱滑走の医学的検証は未実施です。上腕二頭筋腱膜も簡略化されています。関節包・靱帯・神経・血管の系統的3D表示はありません。</div>
+ <div class="detail">重要な未実装：三頭筋内側頭、烏口腕筋。肩甲下筋はv0.58で解剖メッシュを追加。棘上筋・棘下筋・小円筋はv0.51で追加。v0.55では4筋の輪郭曲率・断面厚み・腱への移行を個別化しました。ただし筋束配列、停止面や腱滑走の医学的検証は未実施です。上腕二頭筋腱膜も簡略化されています。関節包・靱帯・神経・血管の系統的3D表示はありません。</div>
  <p><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/ANATOMY_VALIDATION_V049.md" target="_blank" rel="noopener noreferrer">モデルの医学的妥当性監査・不足構造・検証基準を読む</a></p>
 </div></details>
 <details class="control-fold"><summary>表示倍率・視点操作<span class="fold-note">カメラ</span></summary><div class="fold-body"><div class="panel zoom-panel"><div class="panelhead"><h2>表示倍率</h2><span class="sectioncap">CAMERA</span></div>
@@ -420,7 +431,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <details class="diagnostic-fold" id="scapularMusclePanel"><summary>肩甲骨の筋肉（v0.55・棘上筋／棘下筋／小円筋／大円筋）</summary>
 <div class="scapular-study">
  <label class="switch"><input id="scapularMuscles" type="checkbox" checked>肩甲骨周囲4筋と腱を表示する</label>
- <label class="switch"><input id="cuffOnly" type="checkbox">回旋筋腱板だけを見る（実装済み3筋・他筋は非表示）</label>
+ <label class="switch"><input id="cuffOnly" type="checkbox">回旋筋腱板だけを見る（肩甲下筋は取得後表示）</label>
  <label for="scapulaDisplay">肩甲骨の表示方法</label>
  <select id="scapulaDisplay" aria-label="肩甲骨の表示方法">
    <option value="opaque">骨を通常表示</option>
@@ -430,7 +441,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
  <div class="scapular-buttons"><button id="scapularBackView" type="button">肩甲骨を後ろから見る</button><button id="scapularFrontView" type="button">前面から見る</button></div>
  <div id="scapularMuscleStatus" class="scapular-study-status" role="status" aria-live="polite">骨データを読み込み中…</div>
  <div class="detail">筋腹は肩甲骨の棘上窩・棘下窩・外側縁・下角付近の<strong>推定骨表面点</strong>から上腕骨の推定停止位置へ広がる近似メッシュです。付着面の実測・腱の骨接触・関節運動時の滑走は未検証です。</div>
- <div class="detail"><strong>回旋筋腱板は4筋：</strong>棘上筋・棘下筋・小円筋・肩甲下筋。<strong>肩甲下筋はv0.55でも未実装</strong>。大円筋は回旋筋腱板に含まれません。</div>
+ <div class="detail"><strong>回旋筋腱板は4筋：</strong>棘上筋・棘下筋・小円筋・肩甲下筋。<strong>肩甲下筋はv0.58で追加（取得後）</strong>。大円筋は回旋筋腱板に含まれません。</div>
  <details class="diagnostic-fold"><summary>v0.55：4筋の形態・根拠・未検証事項</summary>
   <div class="detail"><strong>棘上筋</strong>：棘上窩から大結節上関節面へ。前部・後部の筋束構造は異なるため、単一筋腹は概形の近似。<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11679125/" target="_blank" rel="noopener noreferrer">2025年レビュー</a></div>
   <div class="detail"><strong>棘下筋</strong>：棘下窩を広く占める厚い三角形。外上方へ筋束が集まり、大結節中関節面へ。<a href="https://www.ncbi.nlm.nih.gov/books/NBK513255/" target="_blank" rel="noopener noreferrer">StatPearls解剖</a></div>
@@ -529,11 +540,11 @@ function scapula(){let outline=[[-.02,-.08,-.025],[-.28,-.06,-.11],[-.65,-.15,-.
  let v=[],f=[],N=perimeter.length,R=7,mid=[-.40,-.56,-.105];for(let face=0;face<2;face++)for(let r=0;r<=R;r++){let t=r/R;for(let j=0;j<N;j++){let pt=perimeter[j],wave=.014*Math.sin(j*.65)*Math.sin(Math.PI*t),z=mid[2]*(1-t)+pt[2]*t + wave + (face===0?.023:-.055)*(1-.10*t);v.push([mid[0]*(1-t)+pt[0]*t,mid[1]*(1-t)+pt[1]*t,z])}}
  let faceOffset=(R+1)*N;for(let side=0;side<2;side++)for(let r=0;r<R;r++)for(let j=0;j<N;j++){let a=side*faceOffset+r*N+j,b=side*faceOffset+r*N+(j+1)%N,c=a+N,d=b+N;if(side===0)f.push(a,b,c,b,d,c);else f.push(a,c,b,b,c,d)}for(let j=0;j<N;j++){let a=R*N+j,b=R*N+(j+1)%N,c=faceOffset+a,d=faceOffset+b;f.push(a,c,b,b,c,d)}return mesh(v,f)}
 
-const shaderVS=`attribute vec3 pos;attribute vec3 normal;uniform mat4 mvp;uniform mat4 model;varying vec3 N;varying vec3 W;void main(){vec4 wp=model*vec4(pos,1.0);W=wp.xyz;N=normalize(mat3(model)*normal);gl_Position=mvp*vec4(pos,1.0);}`;
+const shaderVS=`attribute vec3 pos;attribute vec3 normal;attribute float skinWeight;uniform float skinOn;uniform mat4 skinA;uniform mat4 skinB;uniform mat4 mvp;uniform mat4 model;varying vec3 N;varying vec3 W;void main(){vec4 p=vec4(pos,1.0);vec3 n=normal;if(skinOn>0.5){p=mix(skinA*p,skinB*p,skinWeight);n=mix(mat3(skinA)*n,mat3(skinB)*n,skinWeight);}vec4 wp=model*p;W=wp.xyz;N=normalize(mat3(model)*n);gl_Position=mvp*p;}`;
 const shaderFS=`precision mediump float;uniform vec3 color;uniform float opacity;uniform float kind;varying vec3 N;varying vec3 W;void main(){vec3 n=normalize(N);vec3 a=normalize(vec3(-0.42,0.78,0.63)),b=normalize(vec3(0.77,0.36,-0.33));float diffuse=.43+.40*max(0.,dot(n,a))+.20*max(0.,dot(n,b));float grain=sin(W.x*71.+sin(W.y*32.)*1.8)*sin(W.y*109.+W.z*57.);float weave=sin(W.y*64.+W.x*27.);float micro=kind<.5?(.97+.035*grain):kind<1.5?(.94+.055*weave+.028*grain):1.;vec3 rgb=color*diffuse*micro;rgb+=vec3(.055,.065,.078)*pow(max(0.,dot(reflect(-a,n),normalize(vec3(.4,.5,1.)))),22.);gl_FragColor=vec4(rgb,opacity);}`;
 function shader(type,src){let s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s}
 let program=gl.createProgram();gl.attachShader(program,shader(gl.VERTEX_SHADER,shaderVS));gl.attachShader(program,shader(gl.FRAGMENT_SHADER,shaderFS));gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(program));gl.useProgram(program);
-let attrib={p:gl.getAttribLocation(program,'pos'),n:gl.getAttribLocation(program,'normal')},uni={mvp:gl.getUniformLocation(program,'mvp'),model:gl.getUniformLocation(program,'model'),color:gl.getUniformLocation(program,'color'),opacity:gl.getUniformLocation(program,'opacity'),kind:gl.getUniformLocation(program,'kind')};
+let attrib={p:gl.getAttribLocation(program,'pos'),n:gl.getAttribLocation(program,'normal'),weight:gl.getAttribLocation(program,'skinWeight')},uni={mvp:gl.getUniformLocation(program,'mvp'),model:gl.getUniformLocation(program,'model'),color:gl.getUniformLocation(program,'color'),opacity:gl.getUniformLocation(program,'opacity'),kind:gl.getUniformLocation(program,'kind'),skinOn:gl.getUniformLocation(program,'skinOn'),skinA:gl.getUniformLocation(program,'skinA'),skinB:gl.getUniformLocation(program,'skinB')};
 function gpu(m){let mn=[Infinity,Infinity,Infinity],mx=[-Infinity,-Infinity,-Infinity];for(let p of m.vertices)for(let k=0;k<3;k++){mn[k]=Math.min(mn[k],p[k]);mx[k]=Math.max(mx[k],p[k])}let box=[mn,mx];if(SOFTWARE)return {cpu:m,count:m.faces.length,box};let vbo=gl.createBuffer(),nbo=gl.createBuffer(),ibo=gl.createBuffer();let longIndex=m.vertices.length>65535;let indexType=longIndex?gl.UNSIGNED_INT:gl.UNSIGNED_SHORT;if(longIndex&&!gl.getExtension('OES_element_index_uint'))throw Error('この端末では大きな骨格メッシュ用の32bitインデックスが使えません');gl.bindBuffer(gl.ARRAY_BUFFER,vbo);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(m.vertices.flat()),gl.STATIC_DRAW);gl.bindBuffer(gl.ARRAY_BUFFER,nbo);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(m.normals.flat()),gl.STATIC_DRAW);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ibo);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,(longIndex?new Uint32Array(m.faces):new Uint16Array(m.faces)),gl.STATIC_DRAW);return {vbo,nbo,ibo,count:m.faces.length,box,indexType}}
 const shape={scapula:gpu(scapula()),scapSpine:gpu(tube([[-.67,-.38,-.12,.045],[-.39,-.33,-.025,.069],[-.18,-.25,.08,.083],[.04,-.075,.10,.066]],{sides:13,rough:.018})),acromion:gpu(tube([[-.03,-.14,.09,.078],[.05,-.01,.09,.11],[.16,.055,.025,.11],[.17,-.09,-.02,.067]],{rough:.018})),coracoid:gpu(tube([[-.10,-.16,.06,.075],[-.02,-.11,.22,.095],[.14,-.16,.32,.059]],{rough:.015})),glenoid:gpu(ball([.095,-.302,.047],[.112,.156,.042])),humerus:gpu(tube([[.07,-.10,-.015,.105],[.095,-.22,-.015,.113],[.072,-.43,-.02,.098],[.02,-.75,-.03,.080],[.012,-1.07,-.013,.074],[.025,-1.31,.018,.095],[.008,-1.46,.040,.137]],{sides:22,steps:12,ellipticity:.78,rough:.015})),head:gpu(ball([-.117,-.015,-.006],[.183,.186,.176],24,32)),neck:gpu(tube([[-.11,-.035,-.015,.105],[.012,-.15,-.013,.108],[.076,-.27,-.019,.092]],{rough:.012})),gt:gpu(ball([.142,.008,-.033],[.104,.116,.103])),lt:gpu(ball([.070,-.055,.145],[.066,.093,.070])),deltoidBump:gpu(tube([[.085,-.50,.00,.026],[.139,-.64,.014,.043],[.067,-.75,.015,.023]],{rough:.012})),condyleL:gpu(ball([-.115,-1.462,.045],[.133,.100,.130])),condyleR:gpu(ball([.128,-1.458,.040],[.120,.103,.130])),trochlea:gpu(ball([-.038,-1.502,.050],[.122,.088,.127])),ulna:gpu(tube([[-.13,-.075,-.03,.075],[-.135,-.22,-.02,.087],[-.11,-.48,-.018,.067],[-.105,-.77,-.013,.051],[-.11,-1.04,-.022,.048],[-.13,-1.28,-.015,.063]],{sides:18,steps:12,ellipticity:.74,rough:.012})),olecranon:gpu(ball([-.12,.005,-.090],[.099,.120,.113])),ulnaDistal:gpu(ball([-.12,-1.29,-.015],[.082,.086,.079])),radialHead:gpu(ball([.135,-.092,.06],[.087,.051,.092])),torso:gpu(ball([-.34,.72,-.08],[.92,1.16,.41],28,36)),sternum:gpu(tube([[.0,1.78,.30,.09],[.0,1.44,.35,.095],[.0,1.1,.36,.085],[.0,.87,.32,.065]],{sides:12}))};
 let ribShapes=[];for(let side of [-1,1])for(let i=0;i<6;i++){let y=1.53-i*.24,radx=(.42+i*.055),points=[];for(let j=0;j<=10;j++){let t=j/10, x=side*(.13+radx*Math.sin(t*Math.PI*.78)),z=.18-.44*t+.02*Math.sin(t*Math.PI), yy=y-.12*Math.sin(t*Math.PI);points.push([x,yy,z,.025+i*.001])}ribShapes.push(gpu(tube(points,{sides:7,steps:3}))) }
@@ -906,7 +917,7 @@ const MEDICAL_ANATOMY={
   infraspinatus:{name:'棘下筋',origin:'肩甲骨の棘下窩',insertion:'上腕骨大結節中関節面',nerve:'肩甲上神経（C5–C6）',action:'肩外旋と上腕骨頭の安定化',parts:['infraspinatus','tendonInfraspinatus'],source:'https://www.ncbi.nlm.nih.gov/books/NBK441844/',note:'厚い三角形状の外形と緩い筋束方向を模式化。棘下窩の境界・3亜領域・腱停止面・実測筋厚は未検証。'},
   teresMinor:{name:'小円筋',origin:'肩甲骨外側縁の後面',insertion:'上腕骨大結節下関節面',nerve:'腋窩神経（C5–C6）',action:'肩外旋と上腕骨頭の安定化、弱い内転補助',parts:['teresMinor','tendonTeresMinor'],source:'https://www.ncbi.nlm.nih.gov/books/NBK513324/',note:'外側縁から大結節下部に向かう細長い筋腹を模式化。上下の筋束構造、関節包の連続、骨接触は未検証。'},
   teresMajor:{name:'大円筋（回旋筋腱板ではない）',origin:'肩甲骨下角および外側縁下部の後面',insertion:'上腕骨結節間溝内側唇（小結節稜）',nerve:'下肩甲下神経（主にC5–C6）',action:'肩内転・内旋・伸展',parts:['teresMajor','tendonTeresMajor'],source:'https://www.ncbi.nlm.nih.gov/books/NBK580487/',note:'回旋筋腱板に含めない。下角起始の厚く扁平な束を模式化。結節間溝内側唇の実際の付着面・広背筋腱との関係は未検証。'},
-  subscapularis:{name:'肩甲下筋（未実装）',origin:'肩甲骨前面の肩甲下窩',insertion:'上腕骨小結節（および関節包）',nerve:'上・下肩甲下神経（C5–C6）',action:'肩内旋と上腕骨頭の安定化',parts:[],source:'https://www.ncbi.nlm.nih.gov/books/NBK441844/',note:'回旋筋腱板の4筋目ですが、このバージョンでは3D形状は未実装です。'},
+  subscapularis:{name:'肩甲下筋',origin:'肩甲骨前面の肩甲下窩',insertion:'上腕骨小結節（および関節包）',nerve:'上・下肩甲下神経（C5–C6）',action:'肩内旋と上腕骨頭の安定化',parts:['v58Subscap'],source:'https://www.ncbi.nlm.nih.gov/books/NBK441844/',note:'BodyParts3Dの形状を使用。取得成功時に表示可能。変形と停止位置は近似です。'},
  coracobrachialis:{name:'烏口腕筋',origin:'肩甲骨の烏口突起',insertion:'上腕骨体の内側面中央付近',nerve:'筋皮神経',action:'肩関節の屈曲と内転を補助',parts:[],source:'https://www.ncbi.nlm.nih.gov/books/NBK554420/',note:'3D形状がまだありません。前腕の筋や上腕二頭筋短頭とは異なる独立筋です。'}
 };
 let medicalFocus=null,medicalFocusPrevious=null;
@@ -2190,7 +2201,7 @@ async function loadRealBones(){
  if(loading)loading.innerHTML='解剖学的な骨形状を取得中…<br>旧モデルはそのまま操作できます';
  try{
    const result=await Promise.all(ids.map(x=>loadOneBone(x,REAL_MODELS[x])));
-   ids.forEach((x,i)=>realMesh[x]=result[i]);realReady=true;state.yaw=0;makeRealPose();makeHandPose();updateScapularMuscleStatus();updateRadialAuditMetrics();loadRealHand().catch(e=>{handModelWarning=String(e);updateHandStatus();refreshModelStatus()});updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateFDPStatus();updateAnteriorStatus();updateRadialAuditMetrics();autoFit=true;fitPose();request();v57LoadTorso().catch(e=>console.warn('Thorax:',e));
+   ids.forEach((x,i)=>realMesh[x]=result[i]);realReady=true;state.yaw=0;makeRealPose();makeHandPose();updateScapularMuscleStatus();updateRadialAuditMetrics();loadRealHand().catch(e=>{handModelWarning=String(e);updateHandStatus();refreshModelStatus()});updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateFDPStatus();updateAnteriorStatus();updateRadialAuditMetrics();autoFit=true;fitPose();request();v57LoadTorso().catch(e=>console.warn('Thorax:',e)).finally(()=>v58Load().catch(e=>console.warn('Deep muscles:',e)));
    if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.41・橈尺回旋の検証パネル追加）';refreshModelStatus();
    const n=$('boneModeNote');if(n)n.textContent='骨の形はBodyParts3Dの公開解剖学的メッシュに変更しました。関節の回転中心・肩甲上腕リズムは推定値です。前腕の回内回外は橈骨頭から尺骨遠位部への斜め軸を用いた近似です。推定軸のままであり、靱帯や軟骨の拘束は未実装です。骨メッシュの面交差検査は検証パネルから実行できます。上腕二頭筋・三頭筋・上腕筋は骨表面に沿う近似経路を使い、肘角度に応じた簡易収縮・伸長を追加しました。三角筋は他の筋肉とは独立にON/OFFでき、3つの束を推定付着点に結び付けた近似表示です。腕橈骨筋も独立ON/OFFができ、上腕骨外側から橈骨遠位部までを推定経路で結び、肘屈曲・前腕回内回外に追従します。回外筋は上腕骨外側・尺骨近位部から橈骨近位部を包む概形として追加し、円回内筋と比較できます。橈側手根屈筋の腱は乳白色の細い楕円断面で、橈骨掌側から舟状骨・大菱形骨付近を通って第2中手骨基部へ至る推定経路で表示します。尺側手根屈筋は尺骨の掌側・尺側に沿い、豆状骨に腱が連結し、有鉤骨・第5中手骨への線維性連結を近似表示します。関節付近の滑走・骨との接触計算は行っていません。長掌筋は内側上顆→手掌腱膜の模式経路として追加しました（個体差・欠損あり）。浅指屈筋は上腕骨内側上顆付近から掌側前腕へ伸び、中節骨へ左右二分する4本の腱を模式表示します。筋・腱の正確な形状や付着点、筋張力は未検証です。腱の滑走や厳密な筋体積保存は未実装です。';
  }catch(e){modelWarning=String(e);console.warn('Showing safe procedural fallback because real bones did not load:',e);
@@ -2218,7 +2229,7 @@ state.scene={SC,AC,qS,joint,qHum,elbow,qFore,scAngle,GH:Math.acos(clamp(dot([0,-
 // v0.29: redundant on-screen angle cards removed; angles remain in their sliders and scene state.
 }
 const ID=Q(),OR=[0,0,0],motion=()=>state.scene;
-function drawPart(g,q,p,color,alpha,kind){if(!g)return;if(SOFTWARE){drawCalls.push({g,q,p,color,alpha,kind,mirror:v56DrawMirror});return;}let model=mat4(q,p);if(v56DrawMirror)model=mm(v56ReflectionMatrix(),model);gl.uniformMatrix4fv(uni.model,false,new Float32Array(model));gl.uniformMatrix4fv(uni.mvp,false,new Float32Array(mm(pv,model)));gl.uniform3fv(uni.color,color);gl.uniform1f(uni.opacity,alpha);gl.uniform1f(uni.kind,kind);gl.bindBuffer(gl.ARRAY_BUFFER,g.vbo);gl.enableVertexAttribArray(attrib.p);gl.vertexAttribPointer(attrib.p,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ARRAY_BUFFER,g.nbo);gl.enableVertexAttribArray(attrib.n);gl.vertexAttribPointer(attrib.n,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,g.ibo);gl.drawElements(gl.TRIANGLES,g.count,g.indexType||gl.UNSIGNED_SHORT,0)}
+function drawPart(g,q,p,color,alpha,kind,skin=null){if(!g)return;if(SOFTWARE){drawCalls.push({g,q,p,color,alpha,kind,mirror:v56DrawMirror});return;}gl.uniform1f(uni.skinOn,skin?1:0);if(skin){gl.uniformMatrix4fv(uni.skinA,false,new Float32Array(skin[0]));gl.uniformMatrix4fv(uni.skinB,false,new Float32Array(skin[1]));gl.bindBuffer(gl.ARRAY_BUFFER,g.weightBuffer);gl.enableVertexAttribArray(attrib.weight);gl.vertexAttribPointer(attrib.weight,1,gl.FLOAT,false,0,0)}else gl.disableVertexAttribArray(attrib.weight);let model=mat4(q,p);if(v56DrawMirror)model=mm(v56ReflectionMatrix(),model);gl.uniformMatrix4fv(uni.model,false,new Float32Array(model));gl.uniformMatrix4fv(uni.mvp,false,new Float32Array(mm(pv,model)));gl.uniform3fv(uni.color,color);gl.uniform1f(uni.opacity,alpha);gl.uniform1f(uni.kind,kind);gl.bindBuffer(gl.ARRAY_BUFFER,g.vbo);gl.enableVertexAttribArray(attrib.p);gl.vertexAttribPointer(attrib.p,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ARRAY_BUFFER,g.nbo);gl.enableVertexAttribArray(attrib.n);gl.vertexAttribPointer(attrib.n,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,g.ibo);gl.drawElements(gl.TRIANGLES,g.count,g.indexType||gl.UNSIGNED_SHORT,0)}
 function drawArm(){let a=motion();gl.enable(gl.DEPTH_TEST);gl.disable(gl.CULL_FACE);gl.disable(gl.BLEND);gl.depthMask(true);
 let bone=(name,g,q,p,color=cBone)=>{if(boneShown[name]&&(name!=='scapula'||settings.scapulaDisplay==='opaque'))drawPart(g,q,p,color,1,0)};
 if(realReady){for(const id of ids){if(!boneShown[id])continue;
@@ -2244,7 +2255,7 @@ if(settings.scapularMuscles||settings.muscles||settings.deltoid||settings.brachi
  }
  for(const name of TENDON_PARTS)if(muscleVisible(name))drawPart(geomDynamic[name],ID,OR,['tendonFCR','tendonFCU','pisohamateBand','pisometacarpalBand','tendonPL','palmarAponeurosisPL2','palmarAponeurosisPL3','palmarAponeurosisPL4'].includes(name)||name.startsWith('fds')?cTendonFCR:name.startsWith('fdp')?[.79,.90,.94]:cTendon,1,2);
 }
-v56DrawBack();v571DrawJointCenters();
+v56DrawBack();v58DrawDeep();v571DrawJointCenters();
 // Translucent scapula is drawn AFTER opaque muscles without writing depth,
  // to reveal their posterior surface and the rim of the bone.
  if(boneShown.scapula&&settings.scapulaDisplay==='translucent'){
@@ -2416,7 +2427,7 @@ function armBoundingPoints(){
  const a=motion(),pts=[];if(!a)return pts;
  function addGeom(g,q,p){if(!g||!g.box)return;let [lo,hi]=g.box;for(let x of [lo[0],hi[0]])for(let y of [lo[1],hi[1]])for(let z of [lo[2],hi[2]])pts.push(transform(q,p,[x,y,z]))}
  function parts(bones,groups,q,p){if(!bones)return;for(let g of groups)addGeom(g,q,p)}
- if(realReady){for(const id of ids){if(!boneShown[id]||(id==='scapula'&&settings.scapulaDisplay==='hidden'))continue;const p=realPose[id],g=realMesh[id];if(p&&g)addGeom(g,p[0],p[1]);}if(settings.hand){const hm=handMeshSet();for(const name of HAND_NAMES){const p=handPose[name];if(p&&hm[name])addGeom(hm[name],p[0],p[1])}}for(const name of MUSCLE_ALL)if(muscleVisible(name))addGeom(geomDynamic[name],ID,OR);for(const id of v56BackIds)if(v56BackVisible())addGeom(geomDynamic[id],ID,OR);if(!pts.length)pts.push(realAnchors.SC,realAnchors.GH,realAnchors.EL);return pts;}
+ if(realReady){for(const id of ids){if(!boneShown[id]||(id==='scapula'&&settings.scapulaDisplay==='hidden'))continue;const p=realPose[id],g=realMesh[id];if(p&&g)addGeom(g,p[0],p[1]);}if(settings.hand){const hm=handMeshSet();for(const name of HAND_NAMES){const p=handPose[name];if(p&&hm[name])addGeom(hm[name],p[0],p[1])}}for(const name of MUSCLE_ALL)if(muscleVisible(name))addGeom(geomDynamic[name],ID,OR);for(const id of v56BackIds)if(v56BackVisible())addGeom(geomDynamic[id],ID,OR);pts.push(...v58DeepBounds());if(!pts.length)pts.push(realAnchors.SC,realAnchors.GH,realAnchors.EL);return pts;}
  parts(boneShown.scapula&&settings.scapulaDisplay!=='hidden',[shape.scapula,shape.scapSpine,shape.acromion,shape.coracoid,shape.glenoid],a.qS,a.AC);
  parts(boneShown.clavicle,[geomDynamic.clavicle],ID,OR);
  parts(boneShown.humerus,[shape.humerus,shape.neck,shape.head,shape.gt,shape.lt,shape.deltoidBump,shape.condyleL,shape.condyleR,shape.trochlea],a.qHum,a.joint);
@@ -2551,7 +2562,7 @@ function updateFDPStatus(){
  el.textContent=count===4?'深指屈筋：尺骨掌側の深層筋腹＋4本の腱→各指の末節骨へ（推定走行）。DIP個別操作に追従します。':'深指屈筋：骨は読み込み済み。筋・腱の生成を確認してください。';
 }
 // v0.42: grouped muscle controls; joint pose and camera settings are untouched.
-const muscleToggleIds=['muscles','deltoid','scapularMuscles','brachioradialis','pronatorTeres','supinator','flexorCarpiRadialis','flexorCarpiUlnaris','palmarisLongus','flexorDigitorumSuperficialis','flexorDigitorumProfundus',...V43_MUSCLES];
+const muscleToggleIds=['v58RhomboidMajor','v58RhomboidMinor','v58Levator','v58Serratus','v58Subscap','muscles','deltoid','scapularMuscles','brachioradialis','pronatorTeres','supinator','flexorCarpiRadialis','flexorCarpiUlnaris','palmarisLongus','flexorDigitorumSuperficialis','flexorDigitorumProfundus',...V43_MUSCLES];
 let previousDisplayState=null,displayPreset=null;
 function captureDisplayState(){
  return {checks:Object.fromEntries([...muscleToggleIds,'cuffOnly','hand','rib','v56Back'].map(id=>[id,$(id).checked])),bones:{...boneShown},forearmLayer:settings.forearmLayer};
@@ -2563,7 +2574,7 @@ function syncDisplayActions(){
  const skeleton=displayPreset==='skeleton'&&count===0&&$('hand').checked&&!$('v56Back').checked&&Object.values(boneShown).every(Boolean);
  for(const [id,on] of [['showAllMuscles',count===muscleToggleIds.length&&allLayers],['hideAllMuscles',count===0&&!skeleton],['showSkeletonOnly',skeleton]])$(id).setAttribute('aria-pressed',String(on));
  $('restoreDisplayState').disabled=!previousDisplayState;
- $('displayModeStatus').textContent=$('cuffOnly').checked?'回旋筋腱板のみ：棘上筋・棘下筋・小円筋を模式表示（肩甲下筋は未実装）。':skeleton?'骨格のみ：選択した骨を表示（筋肉・腱はOFF）':count===total&&allLayers?'筋肉・腱：全'+total+'項目ON（手の骨格OFF時は手の腱が非表示）':count===0?'筋肉・腱：すべてOFF（骨の個別表示は維持）':'筋肉・腱：'+total+'項目中'+count+'項目ON／層：'+({both:'全層',superficial:'浅層',deep:'中・深層'}[settings.forearmLayer])+'（個別設定）';
+ $('displayModeStatus').textContent=$('cuffOnly').checked?'回旋筋腱板のみ：棘上筋・棘下筋・小円筋と肩甲下筋（取得済みの場合）。':skeleton?'骨格のみ：選択した骨を表示（筋肉・腱はOFF）':count===total&&allLayers?'筋肉・腱：全'+total+'項目ON（手の骨格OFF時は手の腱が非表示）':count===0?'筋肉・腱：すべてOFF（骨の個別表示は維持）':'筋肉・腱：'+total+'項目中'+count+'項目ON／層：'+({both:'全層',superficial:'浅層',deep:'中・深層'}[settings.forearmLayer])+'（個別設定）';
 }
 function setDisplayPreset(mode){
  previousDisplayState=captureDisplayState();displayPreset=mode;
@@ -2656,7 +2667,7 @@ function updateScapularMuscleStatus(){
  const fallback=scapularDiagnostics.projectionFallbacks||0;
  const clearance=scapularDiagnostics.minimumPosteriorProjectionClearanceMm;
  status.textContent='肩甲骨周囲筋：'+count+'/4筋の推定形状を生成。'+
-  (settings.cuffOnly?'回旋筋腱板3筋のみを表示中（肩甲下筋は未実装）。':'大円筋を含む4筋を表示中。')+
+  (settings.cuffOnly?'回旋筋腱板を表示中（肩甲下筋は取得後に追加表示）。':'大円筋を含む4筋を表示中。')+
   ' 筋腹→腱の接合点最大差 '+(Number.isFinite(seam)?seam.toFixed(3):'—')+' mm。'+
   ' 後面投影の近似クリアランス最小 '+
   (Number.isFinite(clearance)?clearance.toFixed(2):'—')+' mm。'+
@@ -2891,10 +2902,10 @@ function twistSwipeSign(){return $('invertTwistSwipe').checked?-1:1;}
 function clearHold(){if(holdTimer!==null){clearTimeout(holdTimer);holdTimer=null}holdCandidate=null;}
 function beginJointDrag(pointerId,field,start){
  if(!field||pointers.size!==1||!pointers.has(pointerId))return false;
- directDrag={pointerId,field,last:start.slice(),accum:0};
+ directDrag={pointerId,field,last:start.slice(),accum:0,planeAccum:0};
  disableCameraAuto();
  document.querySelector('.viewer-wrap').classList.add('joint-active');
- feedbackJoint(jointLabels[field]+'：'+$(field).value+(jointPercent.has(field)?'%':'°')+(twistMode?'　↔ 左右にドラッグ':'　↕ ドラッグで調整'),true);
+ feedbackJoint(jointLabels[field]+'：'+$(field).value+(jointPercent.has(field)?'%':'°')+(twistMode?'　↔ 左右にドラッグ':field==='elev'&&$('v58Drag2D').checked?'　↕ 挙上／↔ 前後方向':'　↕ ドラッグで調整'),true);
  clearHold();
  return true;
 }
@@ -2905,7 +2916,12 @@ function activateHold(pointerId){
 function applyDirectDrag(e){
  if(!directDrag||directDrag.pointerId!==e.pointerId)return false;
  v572Activity();const prev=directDrag.last,dx=e.clientX-prev[0],dy=e.clientY-prev[1];directDrag.last=[e.clientX,e.clientY];
- // Vertical moves change flexion; horizontal moves are reserved for axial/twist.
+ if(directDrag.field==='elev'&&!twistMode&&$('v58Drag2D').checked){
+  const changed=v58DragShoulder(directDrag,dx,dy);
+  if(changed){document.querySelectorAll('[data-preset]').forEach(x=>x.classList.remove('active'));v572QueuePose();feedbackJoint('肩：挙上 '+$('elev').value+'° ／前方 '+$('plane').value+'°',true)}
+  return true;
+ }
+ // Other joints keep their existing one-axis gesture.
  const sideways=new Set(['plane','axial','pronation','wristDeviation','thumbOpposition']);
  const movement=sideways.has(directDrag.field)?dx*(twistMode?twistSwipeSign():1):-dy;
  directDrag.accum+=movement*(twistMode?0.65:(jointPercent.has(directDrag.field)?0.6:0.43));
@@ -3098,7 +3114,7 @@ window.__labJointErrors=()=>{
  return {ready:true,wristErrorMm:handWristErrorMm,thumbCMCErrorMm,thumbMCPErrorMm,thumbIPErrorMm,distalGapDeltaMm:poseCheck.distalGapDeltaMm,
    palmNormal:handPivot.thumbPalmNormal,thumbFlexAxis:handPivot.thumbFlexAxis,thumbFlexSign:handPivot.thumbFlexSign};
 };
-window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.57.2',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
+window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.58',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
 window.__labForearm=()=>({...v43ForearmDiagnostics,available:V43_CONFIG.length,display:settings.forearmLayer,bulkPercent:settings.forearmBulk});
 window.__labContinuity=()=>({ready:realReady,elbow:settings.elbow,pronation:settings.pronation,forearmBulk:settings.forearmBulk,
  ...muscleDiagnostics.continuity,
@@ -3297,7 +3313,7 @@ function v56Torso(){
  return v56TorsoCache={real:realReady,parts,ribPairs};
 }
 
-// v0.57.2: static axial anatomy from the SAME common atlas coordinate frame.
+// v0.58: static axial anatomy from the SAME common atlas coordinate frame.
 // The source commit is pinned. Never individually center or scale STL meshes.
 const V57_SOURCE='2c83c698788cff57f6317bddcf712e7acfbea7d8';
 const V57_MANIFEST=Object.freeze([{"id":"C1","file":"FMA12519.stl","group":"spine","side":null,"level":1,"bytes":308684,"sha":"0baa9a334c9dcc0edf18766583e6844cf02feb97"},{"id":"C2","file":"FMA12520.stl","group":"spine","side":null,"level":2,"bytes":343584,"sha":"836a2134498443bc0232225f4538a3b191d18836"},{"id":"C3","file":"FMA12521.stl","group":"spine","side":null,"level":3,"bytes":263984,"sha":"e1cfb107cef73e797c31079b67e2fa77fe004cc8"},{"id":"C4","file":"FMA12522.stl","group":"spine","side":null,"level":4,"bytes":211284,"sha":"a17a67c4aad36b42e0cc646548c3d9108eb82735"},{"id":"C5","file":"FMA12523.stl","group":"spine","side":null,"level":5,"bytes":237784,"sha":"a65b7498adde062279a31ecdc430f8bbe4563450"},{"id":"C6","file":"FMA12524.stl","group":"spine","side":null,"level":6,"bytes":317584,"sha":"f5c0e94cc332d12090c777558b7dbb3e5e2378e3"},{"id":"C7","file":"FMA12525.stl","group":"spine","side":null,"level":7,"bytes":261184,"sha":"0105ea0865b4307f9515035380746a5079e83c26"},{"id":"T1","file":"FMA9165.stl","group":"spine","side":null,"level":1,"bytes":280784,"sha":"836f475f465f641c901dc8247778bba381881c29"},{"id":"T2","file":"FMA9187.stl","group":"spine","side":null,"level":2,"bytes":418084,"sha":"c32d1b1b9dce952dee201ff6742212f1bc10ffc4"},{"id":"T3","file":"FMA9209.stl","group":"spine","side":null,"level":3,"bytes":445584,"sha":"ed92d12c8d1a6b008ad536598836f870569d4edd"},{"id":"T4","file":"FMA9248.stl","group":"spine","side":null,"level":4,"bytes":446584,"sha":"8eb5c627faaa8b409b9c937a6267ee12d19142db"},{"id":"T5","file":"FMA9922.stl","group":"spine","side":null,"level":5,"bytes":491784,"sha":"4f32806b16f18bb37073fb94cbf42cf8889ac1f7"},{"id":"T6","file":"FMA9945.stl","group":"spine","side":null,"level":6,"bytes":244884,"sha":"58396556a652315e1f365afa90b4073eb4c89e9b"},{"id":"T7","file":"FMA9968.stl","group":"spine","side":null,"level":7,"bytes":537084,"sha":"3efaa61786e54db4958b644c25206dc0ba1574be"},{"id":"T8","file":"FMA9991.stl","group":"spine","side":null,"level":8,"bytes":260384,"sha":"9c7a5f71ad333163c3a9cb86675bcf0c231d2e79"},{"id":"T9","file":"FMA10014.stl","group":"spine","side":null,"level":9,"bytes":564384,"sha":"fe4d88049910ec51817d13da11a13a951316af39"},{"id":"T10","file":"FMA10037.stl","group":"spine","side":null,"level":10,"bytes":596484,"sha":"3775902c33dcea2301e4a271f41f9b29ff8ccb99"},{"id":"T11","file":"FMA10059.stl","group":"spine","side":null,"level":11,"bytes":282684,"sha":"5d7ce507e589db5b8b30dd183d7f1a3d958b3a68"},{"id":"T12","file":"FMA10081.stl","group":"spine","side":null,"level":12,"bytes":301984,"sha":"b51bd9ec204d2aea6b0dd5539523aa2a30d0b2ea"},{"id":"R1","file":"FMA7857.stl","group":"ribs","side":"right","level":1,"bytes":709784,"sha":"7c90cb8cca8c02a5b8cab16e92afd4ea40955aa4"},{"id":"R2","file":"FMA7882.stl","group":"ribs","side":"right","level":2,"bytes":1184784,"sha":"8624142c3e416b742a039de13fd727d2a584c64f"},{"id":"R3","file":"FMA7909.stl","group":"ribs","side":"right","level":3,"bytes":1543084,"sha":"02d820e7297018e3f567a668c1498e636af6c56a"},{"id":"R4","file":"FMA7957.stl","group":"ribs","side":"right","level":4,"bytes":1924484,"sha":"64d96c9a7b685caab9a9e7d6c3704945922ef678"},{"id":"R5","file":"FMA8066.stl","group":"ribs","side":"right","level":5,"bytes":2081784,"sha":"cd27206acfb3f4a26e2c77abec2a8cd9110c9fed"},{"id":"R6","file":"FMA8175.stl","group":"ribs","side":"right","level":6,"bytes":2231784,"sha":"dbde29d9fd73772c96e91f7f3461d91b2beb1091"},{"id":"R7","file":"FMA8229.stl","group":"ribs","side":"right","level":7,"bytes":2157384,"sha":"9f734303eb74e1750b5aa26b5a2baca26930b0cb"},{"id":"R8","file":"FMA8283.stl","group":"ribs","side":"right","level":8,"bytes":1832384,"sha":"a4ba569bc526117d24b52b59ddf6f7a4b2671474"},{"id":"R9","file":"FMA8364.stl","group":"ribs","side":"right","level":9,"bytes":1713984,"sha":"7af49ba4fed22486661201dae1642a27c3dc110b"},{"id":"R10","file":"FMA8445.stl","group":"ribs","side":"right","level":10,"bytes":1550584,"sha":"5c412b0bdac0dddfc47f8ff706b6410e715d6875"},{"id":"R11","file":"FMA8531.stl","group":"ribs","side":"right","level":11,"bytes":1121484,"sha":"e34fd45f1b94a2c8bbbff8b6462f93d736ab3089"},{"id":"R12","file":"FMA8533.stl","group":"ribs","side":"right","level":12,"bytes":663184,"sha":"a878befad2348334a235b176cf3c49e62ab47536"},{"id":"L1","file":"FMA7987.stl","group":"ribs","side":"left","level":1,"bytes":773284,"sha":"be28b5ee8e00693b438cffa9980c1c385ed22ee9"},{"id":"L2","file":"FMA8012.stl","group":"ribs","side":"left","level":2,"bytes":1265284,"sha":"a8e93635ddd97561ae03358578fe2fbdb6df948c"},{"id":"L3","file":"FMA8039.stl","group":"ribs","side":"left","level":3,"bytes":1560684,"sha":"cd4bab108e475831cce05e5d961f71b613879bc8"},{"id":"L4","file":"FMA8148.stl","group":"ribs","side":"left","level":4,"bytes":1896184,"sha":"26a3f0bc09746ed3750ba5a08237d89c451b8778"},{"id":"L5","file":"FMA8093.stl","group":"ribs","side":"left","level":5,"bytes":2078484,"sha":"f6f3a4c10d871aa79495f26ee39a047464703de3"},{"id":"L6","file":"FMA8202.stl","group":"ribs","side":"left","level":6,"bytes":2221784,"sha":"8f305c97a23c4142a86ea005c74f379d9a1d5e6e"},{"id":"L7","file":"FMA8256.stl","group":"ribs","side":"left","level":7,"bytes":2203184,"sha":"737ec06b48704d4521e7f79add1ff8a30b73d2d6"},{"id":"L8","file":"FMA8310.stl","group":"ribs","side":"left","level":8,"bytes":1856784,"sha":"37a316855d052718b503d5b40fba3dd0a4d59e17"},{"id":"L9","file":"FMA8391.stl","group":"ribs","side":"left","level":9,"bytes":1801084,"sha":"43ed7639aa445d750d6247b4d7c89baf67eac897"},{"id":"L10","file":"FMA8472.stl","group":"ribs","side":"left","level":10,"bytes":1587984,"sha":"84a961da3b750f63b7d7b49635cbe23be6eef4b3"},{"id":"L11","file":"FMA8532.stl","group":"ribs","side":"left","level":11,"bytes":1141384,"sha":"268128de0accc5903151aff7b5aa601bf7ff9551"},{"id":"L12","file":"FMA8534.stl","group":"ribs","side":"left","level":12,"bytes":686384,"sha":"138ab2cbf384e2880840f0962784f5937b8b7d1a"},{"id":"manubrium","file":"FMA7486.stl","group":"sternum","side":null,"level":null,"bytes":594184,"sha":"13a9334b67a3092084bf9b74b761563611a493a2"},{"id":"sternalBody","file":"FMA7487.stl","group":"sternum","side":null,"level":null,"bytes":995884,"sha":"fa7948c5cbd456089c965e481b366ea97a2ea937"},{"id":"xiphoid","file":"FMA7488.stl","group":"sternum","side":null,"level":null,"bytes":204384,"sha":"806cecafd4c3e2167a2a99a8a120891b830fe564"},{"id":"cartilageR","file":"BP28.stl","group":"cartilage","side":"right","level":null,"bytes":957884,"sha":"61a63d9564545a96d4988f5d1cbae0339ed01cd1"},{"id":"cartilageL","file":"BP24.stl","group":"cartilage","side":"left","level":null,"bytes":947184,"sha":"7506256f24d1408758831cf10405f2965f4d64be"},{"id":"cartR1","file":"FMA7875.stl","group":"cartilage","side":"right","level":1,"bytes":117184,"sha":"6d60244454f1b432c2bde63133ad52d22f77f6b0"},{"id":"cartR2","file":"FMA7886.stl","group":"cartilage","side":"right","level":2,"bytes":127084,"sha":"4d44c5ae0365090b9c602c32b644400be25b0019"},{"id":"cartR3","file":"FMA7913.stl","group":"cartilage","side":"right","level":3,"bytes":134784,"sha":"ac841437ab3704c0b761d5ee5551e804a398d2bc"},{"id":"cartR4","file":"FMA7976.stl","group":"cartilage","side":"right","level":4,"bytes":174384,"sha":"9d9ac17ade056cd94f10bcfb090f921376024e1a"},{"id":"cartR5","file":"FMA8070.stl","group":"cartilage","side":"right","level":5,"bytes":241584,"sha":"eb0e8179aacabbb5e80cd0f001639a1f0f0fb06f"},{"id":"cartR6","file":"FMA8194.stl","group":"cartilage","side":"right","level":6,"bytes":303984,"sha":"ef7f9f159dc07596675d58e923e9b7f5032ea06f"},{"id":"cartR7","file":"FMA8248.stl","group":"cartilage","side":"right","level":7,"bytes":524684,"sha":"6baf7d074b118e9344cf1d419f0cb38937adb58a"},{"id":"cartL1","file":"FMA8005.stl","group":"cartilage","side":"left","level":1,"bytes":110284,"sha":"0e778f2c9a0ab12f1af45e27015903c38baa878e"},{"id":"cartL2","file":"FMA8031.stl","group":"cartilage","side":"left","level":2,"bytes":117584,"sha":"3ceff8c8f697e8040ff9454f78d963afe8f40d9e"},{"id":"cartL3","file":"FMA8058.stl","group":"cartilage","side":"left","level":3,"bytes":121484,"sha":"88cf765e187f27efc714d6c3b4c0c52650dd855c"},{"id":"cartL4","file":"FMA8167.stl","group":"cartilage","side":"left","level":4,"bytes":161084,"sha":"ccb28f4648eeb80f8f8990b38748b65a363c30bb"},{"id":"cartL5","file":"FMA8112.stl","group":"cartilage","side":"left","level":5,"bytes":226884,"sha":"1fe9b06034e181fa453df7f5e443bf5742c03054"},{"id":"cartL6","file":"FMA8221.stl","group":"cartilage","side":"left","level":6,"bytes":298384,"sha":"ead3e49afdda52719757927c144d349c37ba241b"},{"id":"cartL7","file":"FMA8275.stl","group":"cartilage","side":"left","level":7,"bytes":495184,"sha":"0e768aa470980c894ff287c17e5443c8fe30c0c6"},{"id":"discC2","file":"FMA25058.stl","group":"discs","side":null,"level":2,"bytes":150784,"sha":"1f6bd7a0bdf1b2a6db51774a604834bc59c2378f"},{"id":"discC3","file":"FMA13896.stl","group":"discs","side":null,"level":3,"bytes":151684,"sha":"96315433859255ca3d306070e2267dd85f45d2d0"},{"id":"discC4","file":"FMA13897.stl","group":"discs","side":null,"level":4,"bytes":175884,"sha":"ad190dec4660699b6e5f143c135beb6e50fc08ed"},{"id":"discC5","file":"FMA13898.stl","group":"discs","side":null,"level":5,"bytes":172284,"sha":"c9e7c468d6e6a78b3729ec7407f58a97751623be"},{"id":"discC6","file":"FMA13899.stl","group":"discs","side":null,"level":6,"bytes":161984,"sha":"6bd7d31603abb74f3aa5a3993bb690d45c40112c"},{"id":"discC7","file":"FMA13900.stl","group":"discs","side":null,"level":7,"bytes":195684,"sha":"4e4b0faa1be446a952989149f7c670d69e8fa461"},{"id":"discT1","file":"FMA10458.stl","group":"discs","side":null,"level":1,"bytes":214084,"sha":"5ef06950c000adc7decd248b73b6b538118c4f97"},{"id":"discT2","file":"FMA13495.stl","group":"discs","side":null,"level":2,"bytes":248584,"sha":"6172cc6d4d5c24eeb6bd6707f5dfe9f0bb20e878"},{"id":"discT3","file":"FMA13500.stl","group":"discs","side":null,"level":3,"bytes":258784,"sha":"2fe27a601ab19701b5c5c94c270d609d14817191"},{"id":"discT4","file":"FMA13501.stl","group":"discs","side":null,"level":4,"bytes":315484,"sha":"580cb69e793f90ae004c25d90f89a639f15b689c"},{"id":"discT5","file":"FMA13502.stl","group":"discs","side":null,"level":5,"bytes":366884,"sha":"013e09662ac51c3302f2dfeaa3ae7354256e5648"},{"id":"discT6","file":"FMA13503.stl","group":"discs","side":null,"level":6,"bytes":452984,"sha":"8da10b6709830f283a6f24a7b058c5100e3d7df2"},{"id":"discT7","file":"FMA13504.stl","group":"discs","side":null,"level":7,"bytes":519384,"sha":"c5add18660cba1466615852f85e1885ff77a5bbd"},{"id":"discT8","file":"FMA13505.stl","group":"discs","side":null,"level":8,"bytes":510184,"sha":"54d1febd42086f5fc2aaa2cb76b4537f175eb139"},{"id":"discT9","file":"FMA13506.stl","group":"discs","side":null,"level":9,"bytes":252084,"sha":"03e14bc174a4b11cf8530146af62bc0aba87251d"},{"id":"discT10","file":"FMA13507.stl","group":"discs","side":null,"level":10,"bytes":576784,"sha":"b493b97bec636e30d99d7e9ecc47ef36469c5033"},{"id":"discT11","file":"FMA13508.stl","group":"discs","side":null,"level":11,"bytes":714084,"sha":"1dbae68ae25d1fa5e9f460f3f229392219f33193"}]);
@@ -3419,10 +3435,10 @@ function v57VisibleTorso(){
 }
 $('v57TorsoLayer').addEventListener('change',()=>{fitPose();request()});
 $('v57RetryTorso').addEventListener('click',()=>v57LoadTorso().catch(e=>console.warn(e)));
-window.__labThorax=()=>({version:'v0.57.2',mode:v57State.mode,loaded:v57State.loaded,total:V57_MANIFEST.length,failed:v57State.failed.slice(),sourceCommit:V57_SOURCE,groups:{ribs:24,spine:19,sternum:3,cartilage:16,discs:17},rendered:v57State.parts.map(p=>p.id),coreReady:v571HasCore(),sourceBytes:V57_MANIFEST.reduce((s,p)=>s+p.bytes,0),layer:$('v57TorsoLayer').value,actualLeftRightRibs:true,clinicalValidation:false});
+window.__labThorax=()=>({version:'v0.58',mode:v57State.mode,loaded:v57State.loaded,total:V57_MANIFEST.length,failed:v57State.failed.slice(),sourceCommit:V57_SOURCE,groups:{ribs:24,spine:19,sternum:3,cartilage:16,discs:17},rendered:v57State.parts.map(p=>p.id),coreReady:v571HasCore(),sourceBytes:V57_MANIFEST.reduce((s,p)=>s+p.bytes,0),layer:$('v57TorsoLayer').value,actualLeftRightRibs:true,clinicalValidation:false});
 
 
-// v0.57.2: audit data is descriptive; it never silently shifts atlas bones.
+// v0.58: audit data is descriptive; it never silently shifts atlas bones.
 // Exact triangle-crossing candidates for the original BP cartilage and the
 // newly included 1–7 cartilages. Coplanar containment is not certified.
 let v571JointMarker=null,v571LastAudit=null;
@@ -3503,7 +3519,7 @@ $('v571Audit').addEventListener('click',async()=>{
 });
 window.__labThoraxConnections=()=>v571LastAudit;
 // Visual proxies for six muscle groups, with bone-tracking distal endpoints.
-const v56BackIds=['v56TrapUpper','v56TrapMiddle','v56TrapLower','v56RhomboidMinor','v56RhomboidMajor','v56Levator','v56Lat','v56Serratus'];
+const v56BackIds=['v56TrapUpper','v56TrapMiddle','v56TrapLower','v56Lat'];
 const v56BackCache=new WeakMap();
 function v56BackVisible(){return $('v56Back').checked&&!settings.cuffOnly&&!medicalFocus}
 function v56BuildBack(){
@@ -3532,11 +3548,7 @@ function v56BuildBack(){
  fan('v56TrapUpper',P(.015,2.29,.40),P(.035,1.82,.47),add(ac,[0,.025,v56Z(.035)]),spineLat,.034,.05);
  fan('v56TrapMiddle',P(.025,1.75,.48),P(.025,1.42,.51),spineLat,medSpine,.028,.04);
  fan('v56TrapLower',P(.02,1.28,.51),P(.025,.53,.52),medSpine,add(medSpine,[.09,-.035,0]),.024,.035);
- fan('v56RhomboidMinor',P(.035,1.79,.40),P(.035,1.65,.41),medTop,medSpine,.023,.01);
- fan('v56RhomboidMajor',P(.035,1.63,.40),P(.035,1.23,.45),medSpine,medLow,.028,.005);
- fan('v56Levator',P(.10,2.24,.28),P(.14,1.99,.29),medTop,add(medTop,[.05,-.12,0]),.026,.025);
  fan('v56Lat',P(.045,.74,.47),P(.50,.28,.30),add(inf,[.05,-.10,0]),upperHum,.042,.035);
- fan('v56Serratus',P(.61,1.22,-.04),P(.67,.63,.04),add(medSpine,[0,0,v56Z(-.035)]),add(inf,[0,0,v56Z(-.035)]),.019,-.035);
  v56BackCache.set(geomDynamic,key);
 }
 function v56DrawBack(){
@@ -3571,13 +3583,13 @@ function poseBoundingPoints(){
 }
 window.__labUpperBody=()=>{
  v56SaveActive();v56RefreshOther();
- return {version:'v0.57.2',activeSide:v56Side,both:$('v56Both').checked,thorax:settings.rib,back:v56BackVisible(),
+ return {version:'v0.58',activeSide:v56Side,both:$('v56Both').checked,thorax:settings.rib,back:v56BackVisible(),
   poses:{right:{...v56PoseBySide.right},left:{...v56PoseBySide.left}},mirrorPlane:v56Mid(),
   activeBuffers:Object.keys(geomDynamic).length,otherBuffers:Object.keys(v56Other.geom).length,
   ribPairs:12,staticBoneMeshShared:true,thoraxProcedural:!v571HasCore(),thoraxSource:window.__labThorax(),anatomyValidated:false};
 };
 
-// v0.57.2: adaptive framebuffer and coalesced pose updates.
+// v0.58: adaptive framebuffer and coalesced pose updates.
 let v572Moving=false,v572Pending=false,v572NeedsFit=false,v572IdleTimer=null;
 function v572Scale(mode,active,dpr){
  const high=Math.min(Math.max(dpr||1,.5),2);
@@ -3654,8 +3666,148 @@ function v572Preset(name){
  feedbackJoint({forward:'両腕：前ならえ',t:'両腕：T字',up:'両腕：バンザイ',neutral:'両腕：基本肢位'}[name]);
 }
 for(const [id,p] of [['v572Forward','forward'],['v572T','t'],['v572Up','up'],['v572Neutral','neutral']])$(id).addEventListener('click',()=>v572Preset(p));
-window.__labPerformance=()=>({version:'v0.57.2',moving:v572Moving,mode:$('v572Quality').value,pixelRatio:v572RenderScale(),pendingPose:v572Pending,geometryUnchanged:true,autoFitOnJointEnd:$('v572Fit').checked});
+window.__labPerformance=()=>({version:'v0.58',moving:v572Moving,mode:$('v572Quality').value,pixelRatio:v572RenderScale(),pendingPose:v572Pending,geometryUnchanged:true,autoFitOnJointEnd:$('v572Fit').checked});
 window.__labForwardPose=()=>({realReady,forwardAxis:realReady?'world -Z':'world +Z',palm:v572ChoosePalm(),clinicalValidation:false});
+
+
+// v0.58: atlas deep muscles, two-anchor GPU skinning. The neutral mesh is
+// preserved; the per-vertex weights are anatomical-region proxies, not measured
+// muscle fibers or wrapping constraints. Left side uses existing reflection.
+const V58_DEEP=[
+ {id:'v58RhomboidMajor',file:'FMA13381.stl',bytes:2412784,a:'trunk',b:'scapula',axis:'x',name:'大菱形筋'},
+ {id:'v58RhomboidMinor',file:'FMA13383.stl',bytes:754684,a:'trunk',b:'scapula',axis:'x',name:'小菱形筋'},
+ {id:'v58Levator',file:'FMA32540.stl',bytes:1566884,a:'trunk',b:'scapula',axis:'down',name:'肩甲挙筋'},
+ {id:'v58Serratus',file:'FMA13398.stl',bytes:12432084,a:'trunk',b:'scapula',axis:'serratus',name:'前鋸筋'},
+ {id:'v58Subscap',file:'FMA13414.stl',bytes:1531084,a:'scapula',b:'humerus',axis:'x',name:'肩甲下筋'}
+];
+const v58Meshes=new Map();let v58Busy=false,v58Failed=[];
+function v58Box(vertices){
+ const lo=[Infinity,Infinity,Infinity],hi=[-Infinity,-Infinity,-Infinity];
+ for(const v of vertices)for(let i=0;i<3;i++){lo[i]=Math.min(lo[i],v[i]);hi[i]=Math.max(hi[i],v[i])}
+ return [lo,hi];
+}
+function v58Weight(spec,p,box){
+ const [lo,hi]=box;
+ const f=(axis)=>clamp((p[axis]-lo[axis])/Math.max(hi[axis]-lo[axis],1e-8),0,1);
+ let t=spec.axis==='down'?1-f(1):spec.axis==='serratus'?f(2):f(0);
+ // Serratus origins are anterior/lateral ribs; insertion lies posterior
+ // along medial scapular border. Use posterior position as an explicit proxy.
+ return smooth(clamp((t-.12)/.76,0,1));
+}
+// Vertex clustering only for NEW muscle surfaces to limit extra GPU burden.
+// 1 mm in source coordinates; keep the original axial and limb meshes.
+function v58Parse(buffer,spec){
+ const d=new DataView(buffer);
+ if(d.byteLength<84||d.byteLength!==spec.bytes)throw Error('STL size '+spec.file);
+ const count=d.getUint32(80,true);
+ if(!count||d.byteLength!==84+50*count)throw Error('STL header '+spec.file);
+ const grid=atlasScale,lookup=new Map(),vertices=[],faces=[],counts=[],seen=new Set();
+ for(let i=0;i<count;i++){
+  const tri=[];
+  for(let j=0;j<3;j++){
+   const k=96+i*50+j*12,p=atlasToWorld([d.getFloat32(k,true),d.getFloat32(k+4,true),d.getFloat32(k+8,true)]);
+   if(!p.every(Number.isFinite)||p.some(x=>Math.abs(x)>20))throw Error('Invalid coordinate '+spec.id);
+   const key=p.map(x=>Math.round(x/grid)).join(',');
+   let n=lookup.get(key);
+   if(n===undefined){n=vertices.length;lookup.set(key,n);vertices.push(p);counts.push(1)}
+   else {const c=++counts[n],v=vertices[n];for(let a=0;a<3;a++)v[a]+=(p[a]-v[a])/c}
+   tri.push(n);
+  }
+  if(new Set(tri).size!==3)continue;
+  const key=tri.slice().sort((a,b)=>a-b).join(',');
+  if(!seen.has(key)){seen.add(key);faces.push(...tri)}
+ }
+ if(!faces.length)throw Error('Empty muscle '+spec.id);
+ const data=mesh(vertices,faces),box=v58Box(vertices);
+ return {data,box,weights:vertices.map(p=>v58Weight(spec,p,box)),originalTriangles:count};
+}
+function v58Anchor(name){
+ if(name==='trunk')return {q:ID,p:OR,rest:OR};
+ const pose=realPose[name];
+ return {q:pose[0],p:pose[1],rest:realAnchors[anchorFor[name]]};
+}
+function v58AnchorMatrix(anchor){
+ return mat4(anchor.q,sub(anchor.p,qr(anchor.q,anchor.rest)));
+}
+function v58Transform(anchor,p){return transform(anchor.q,anchor.p,sub(p,anchor.rest))}
+function v58Blend(a,b,p,w){return add(mul(v58Transform(a,p),1-w),mul(v58Transform(b,p),w))}
+function v58Visible(spec){
+ if(!realReady)return false;
+ if(medicalFocus)return medicalFocus.has(spec.id);
+ if(settings.cuffOnly)return spec.id==='v58Subscap';
+ return $(spec.id).checked;
+}
+function v58Status(){
+ const n=$('v58Status');
+ n.textContent=SOFTWARE?'深層筋：WebGL非対応のため非表示':v58Busy?'深層筋：取得中 '+v58Meshes.size+'/5':v58Meshes.size===5?'深層筋：5/5 取得済み（変形は近似）':'深層筋：'+v58Meshes.size+'/5 取得済み'+(v58Failed.length?'／未取得 '+v58Failed.length:'');
+ $('v58Retry').hidden=SOFTWARE||v58Busy||!v58Failed.length;
+}
+async function v58Load(fetcher=null){
+ if(!realReady||v58Busy||(!fetcher&&SOFTWARE))return;
+ v58Busy=true;v58Failed=[];v58Status();
+ try{
+  // Sequential to avoid simultaneous memory spikes on iPad.
+  for(const spec of V58_DEEP){
+   if(v58Meshes.has(spec.id))continue;
+   try{
+    let parsed;
+    if(fetcher)parsed=await fetcher(spec);
+    else{
+     let error;
+     for(const base of V57_BASES){
+      try{
+       const r=await fetch(base+spec.file,{mode:'cors',cache:'force-cache',signal:typeof AbortSignal!=='undefined'&&AbortSignal.timeout?AbortSignal.timeout(30000):undefined});
+       if(!r.ok)throw Error('HTTP '+r.status);
+       parsed=v58Parse(await r.arrayBuffer(),spec);break;
+      }catch(e){error=e}
+     }
+     if(!parsed)throw error||Error(spec.id);
+    }
+    const g=gpu(parsed.data);
+    if(!SOFTWARE){g.weightBuffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,g.weightBuffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(parsed.weights),gl.STATIC_DRAW)}
+    v58Meshes.set(spec.id,{g,box:parsed.box,triangles:g.count/3,originalTriangles:parsed.originalTriangles});
+    request();
+   }catch(e){v58Failed.push(spec.id);console.warn('Deep mesh:',spec.id,e)}
+   v58Status();
+  }
+ }finally{v58Busy=false;v58Status();request()}
+}
+function v58DrawDeep(){
+ if(SOFTWARE)return;
+ for(const spec of V58_DEEP){
+  const m=v58Meshes.get(spec.id);
+  if(!m||!v58Visible(spec))continue;
+  drawPart(m.g,ID,OR,spec.id==='v58Subscap'?[.73,.30,.32]:[.62,.23,.28],1,1,[v58AnchorMatrix(v58Anchor(spec.a)),v58AnchorMatrix(v58Anchor(spec.b))]);
+ }
+}
+function v58DeepBounds(){
+ if(SOFTWARE||!realReady)return [];
+ const pts=[];
+ for(const spec of V58_DEEP){
+  const m=v58Meshes.get(spec.id);if(!m||!v58Visible(spec))continue;
+  const [lo,hi]=m.box,a=v58Anchor(spec.a),b=v58Anchor(spec.b);
+  // Convex hull of both transformed boxes encloses all blended vertices.
+  for(const x of [lo[0],hi[0]])for(const y of [lo[1],hi[1]])for(const z of [lo[2],hi[2]])pts.push(v58Transform(a,[x,y,z]),v58Transform(b,[x,y,z]));
+ }
+ return pts;
+}
+function v58DragShoulder(d,dx,dy){
+ d.accum+=-dy*.43;
+ // When viewed from the opposite side, reverse horizontal screen direction.
+ // At front/back (depth foreshortened), right still increases forward plane.
+ const sign=Math.abs(Math.sin(state.yaw))>.25?(Math.sin(state.yaw)>0?1:-1):1;
+ d.planeAccum+=dx*.43*sign;
+ const e=Math.trunc(d.accum),p=Math.trunc(d.planeAccum);d.accum-=e;d.planeAccum-=p;
+ let changed=false;
+ for(const [id,delta] of [['elev',e],['plane',p]]){
+  const bar=$(id),old=Number(bar.value),next=clamp(old+delta,+bar.min,+bar.max);
+  if(next!==old){bar.value=String(next);changed=true}
+ }
+ return changed;
+}
+for(const spec of V58_DEEP)$(spec.id).addEventListener('change',()=>{syncDisplayActions();request();if(!v58Busy&&v58Failed.length)v58Load().catch(console.warn)});
+$('v58Retry').addEventListener('click',()=>v58Load().catch(console.warn));
+window.__labDeepMuscles=()=>({version:'v0.58',loaded:[...v58Meshes.keys()],failed:v58Failed.slice(),available:V58_DEEP.length,visible:V58_DEEP.filter(s=>v58Visible(s)&&v58Meshes.has(s.id)).map(s=>s.id),triangles:[...v58Meshes].map(([id,m])=>({id,triangles:m.triangles,source:m.originalTriangles})),gpuSkinning:!SOFTWARE,clinicalValidation:false});
 
 state.yaw=Math.PI;
 try{makeFallbackHand();gl.enable(gl.DEPTH_TEST);update();fitPose();frame();loadRealBones()}catch(e){$('err').style.display='block';$('err').textContent='3D描画エラー: '+String(e);console.error(e)}
