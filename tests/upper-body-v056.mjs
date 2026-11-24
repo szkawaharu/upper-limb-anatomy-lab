@@ -166,11 +166,32 @@ window.__runV56Tests=async()=>{
  let retry=0;await v58Load(async()=>{retry++;return parsed});
  ok(retry===1&&v58Meshes.size===17,'retry only missing muscle');
  $('v58Subscap').checked=true;settings.cuffOnly=true;ok(V58_DEEP.filter(v58Visible).length===1,'cuff isolation includes subscapularis');settings.cuffOnly=false;
- v572Preset('neutral');state.yaw=Math.PI/2;
- const drag={accum:0,planeAccum:0};
- ok(v58DragShoulder(drag,100,-100)&&Number($('elev').value)===43&&Number($('plane').value)===43,'diagonal shoulder drag changes both axes');
- v58DragShoulder(drag,1000,-1000);ok(Number($('plane').value)===90&&Number($('elev').value)===180,'shoulder drag clamps both axes');
- v58DragShoulder(drag,-1000,1000);ok(Number($('plane').value)===0&&Number($('elev').value)===0,'reverse drag returns to neutral');
+
+ v572Preset('neutral');
+ const cameraSave=[state.yaw,state.pitch,state.zoom],basePose={...settings,elev:65,plane:40,axial:0,elbow:65,sync:true};
+ state.zoom=5;state.pitch=.15;
+ const dist2=(a,b)=>(a[0]-b[0])**2+(a[1]-b[1])**2;
+ for(const yaw of [0,Math.PI/2,Math.PI,-Math.PI/2,.7,-2.3]){
+  state.yaw=yaw;
+  for(const side of ['right','left']){
+   for(const field of ['elev','elbow']){
+    const key=field==='elev'?'elev':'elbow',goal={...basePose,[key]:basePose[key]+10};
+    const orig=v622Project(v622Point(basePose,field),side),target=v622Project(v622Point(goal,field),side),dx=target[0]-orig[0],dy=target[1]-orig[1];
+    const next=v622Solve(basePose,side,field,dx,dy),actual=v622Project(v622Point(next,field),side);
+    ok(dist2(actual,target)<dist2(orig,target)*.35+1e-7,'projected drag follows target '+field+' '+side+' '+yaw);
+    ok(next.elev>=0&&next.elev<=180&&next.plane>=0&&next.plane<=90&&next.elbow>=0&&next.elbow<=150,'bounded inverse gesture '+field+' '+side+' '+yaw);
+   }
+  }
+ }
+ state.yaw=Math.PI/2;
+ for(const side of ['right','left']){
+  const neutral={...basePose,elev:0,plane:0},goal={...neutral,elev:15,plane:90};
+  const p=v622Project(v622Point(neutral,'elev'),side),q=v622Project(v622Point(goal,'elev'),side);
+  const n=v622Solve(neutral,side,'elev',q[0]-p[0],q[1]-p[1]);
+  ok(dist2(v622Project(v622Point(n,'elev'),side),q)<dist2(p,q)*.5,'forward lift from neutral '+side);
+ }
+ const fixed=v622Solve(basePose,'right','elev',0,0);ok(fixed===basePose,'zero swipe leaves angles unchanged');
+ [state.yaw,state.pitch,state.zoom]=cameraSave;
  setDisplayPreset('skeleton');ok(V58_DEEP.every(s=>!$(s.id).checked),'skeleton hides all deep muscles');
  }
 
@@ -260,7 +281,7 @@ window.__runV56Tests=async()=>{
  ok(v61Objective([1,1])===0&&v61Objective([.5,2])>0,'symmetric strain objective');
  ok(Math.abs(v61Objective([.5])-v61Objective([2]))<1e-9,'compression and extension scored symmetrically');
  ok(v61EdgeIndices(v,f).length===5,'unique sample edge selection');
- const report=v61AuditReport();ok(report.version==='v0.62.1'&&!report.collisionValidated&&!report.volumeValidated,'audit declares validation limits');
+ const report=v61AuditReport();ok(report.version==='v0.62.2'&&!report.collisionValidated&&!report.volumeValidated,'audit declares validation limits');
  }
 
  {
@@ -317,4 +338,4 @@ js=js.replace(/\}\)\(\);\s*$/,instrument+"\n})();");
 new Function("document","window","fetch","requestAnimationFrame","matchMedia","innerWidth","innerHeight","setTimeout","clearTimeout","console",js)(doc,win,async()=>{throw Error("offline test")},f=>callbacks.push(f),()=>({matches:true}),390,740,()=>0,()=>{}, {log(){},warn(){},error(...a){errors.push(a.map(String).join(" "))}});
 assert.equal(errors.length,0,errors.join("\n"));
 const results=await win.__runV56Tests();
-console.log('PASS v0.62.1: '+results.length+' integration checks — '+results.join('; '));
+console.log('PASS v0.62.2: '+results.length+' integration checks — '+results.join('; '));
