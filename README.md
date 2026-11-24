@@ -2,7 +2,7 @@
 
 スマートフォン対応の上肢骨格・筋肉・腱を観察する教育用Webアプリ。動作と形態は**解剖学的に未検証の近似を含み、臨床用・診断用ではありません**。
 
-**現在のバージョン：v0.58**
+**現在のバージョン：v0.59**
 
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
@@ -11,6 +11,10 @@
 - **v0.54の保存ブランチ**：[`archive/v0.54-before-anatomy-rebuild`](../../tree/archive/v0.54-before-anatomy-rebuild)
 - **v0.53の保存ブランチ**：[`archive/v0.53-before-review`](../../tree/archive/v0.53-before-review)
 - **v0.51の保存ブランチ**：[`archive/v0.51-before-scapular-fix`](../../tree/archive/v0.51-before-scapular-fix)
+
+## v0.59：背部筋と付着近似の改善
+
+僧帽筋3区分と広背筋をBodyParts3Dメッシュ化。前鋸筋の肋骨近接領域を固定し、肩甲骨内側縁候補へ追従。GPUの胸郭方向変位抑制を追加。深層筋の付着候補を更新。厳密な衝突・筋体積保存は未実装。詳細は [BACK_V059](./docs/BACK_V059.md)。
 
 ## v0.58：深層筋と肩の2方向操作
 
