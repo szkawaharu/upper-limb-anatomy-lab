@@ -287,6 +287,11 @@ window.__runV56Tests=async()=>{
  $('v62Mode').value='dual';ok(v62Mode(V60_CHEST[0],{nonlinear:s}).dual,'manual DQS mode');
  $('v62Mode').value='auto';ok(v62Mode(V60_CHEST[0],{nonlinear:s}).dual===s[$('v62Route').checked?'on':'off'].dual,'auto mode matches selected result');
  ok(!v62Audit().collisionValidated&&!v62Audit().volumeValidated,'nonlinear audit declares limitations');
+ ok(close(v62DQBlend(a,b,p,.42,[v62DQ(a),v62DQ(b)]),v62DQBlend(a,b,p,.42)),'cached DQ pair matches reference');
+ const beforeRoute=$('v62Route').checked;$('v62Route').checked=false;
+ const disabled=v62SelectMode(V60_CHEST[0],edges);$('v62Route').checked=true;
+ const enabled=v62SelectMode(V60_CHEST[0],edges);$('v62Route').checked=beforeRoute;
+ ok(JSON.stringify(disabled)===JSON.stringify(enabled),'on/off candidate scoring independent of current route toggle');
  }
  return passed;
 };`;

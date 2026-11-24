@@ -4309,8 +4309,8 @@ function v62DQ(a){
  const t=sub(a.p,qr(a.q,a.rest));
  return {q:a.q,d:qm([...t,0],a.q).map(x=>x*.5)};
 }
-function v62DQBlend(a,b,p,w){
- const A=v62DQ(a),B=v62DQ(b),sign=A.q.reduce((s,x,i)=>s+x*B.q[i],0)<0?-1:1;
+function v62DQBlend(a,b,p,w,pair=null){
+ const [A,B]=pair||[v62DQ(a),v62DQ(b)],sign=A.q.reduce((s,x,i)=>s+x*B.q[i],0)<0?-1:1;
  const q=A.q.map((x,i)=>x*(1-w)+B.q[i]*w*sign),d=A.d.map((x,i)=>x*(1-w)+B.d[i]*w*sign),l=Math.hypot(...q);
  const n=q.map(x=>x/l),dual=d.map(x=>x/l),t=qm(dual,qc(n)).slice(0,3).map(x=>2*x);
  return add(qr(n,p),t);
@@ -4325,8 +4325,8 @@ function v62HeadRadius(){
  const r=s.length>=20?s[Math.floor(.65*(s.length-1))]:null;
  v62HeadCache={v,r:r&&r>atlasScale*8?r:null};return v62HeadCache.r;
 }
-function v62RouteFor(spec,b,enabled){
- if(!enabled||!$('v62Route').checked)return null;
+function v62RouteFor(spec,b,enabled,ignoreToggle=false){
+ if(!enabled||(!ignoreToggle&&!$('v62Route').checked))return null;
  if(spec.id==='v58Serratus'&&$('v59Guard').checked){
   const data=v61GuideData();if(!data)return null;
   return {kind:1,rest:data.e.c,radii:[data.e.r[0],data.e.r[2]]};
@@ -4349,12 +4349,12 @@ function v62RoutePoint(rest,p,w,r){
  const l0=len(sub(rest,r.rest)),v=sub(p,r.now),l1=len(v),gate=1-smooth(clamp((l0-r.radius)/.19425,0,1)),target=Math.min(l0,r.radius)-.01665;
  return l1<.0001?p:add(p,mul(v,Math.min(.12,Math.max(0,target-l1))*k*gate/l1));
 }
-function v62Point(a,b,p,w,dual,route,wrap){
- const posed=dual?v62DQBlend(a,b,p,w):v58Blend(a,b,p,w);
+function v62Point(a,b,p,w,dual,route,wrap,pair=null){
+ const posed=dual?v62DQBlend(a,b,p,w,pair):v58Blend(a,b,p,w);
  return route?v62RoutePoint(p,posed,w,route):wrap?v59Wrap(p,posed,w,wrap):posed;
 }
-function v62EdgeRatio(e,a,b,dual,route,wrap){
- return len(sub(v62Point(a,b,e.p,e.w[0],dual,route,wrap),v62Point(a,b,e.q,e.w[1],dual,route,wrap)))/e.rest;
+function v62EdgeRatio(e,a,b,dual,route,wrap,pair=null){
+ return len(sub(v62Point(a,b,e.p,e.w[0],dual,route,wrap,pair),v62Point(a,b,e.q,e.w[1],dual,route,wrap,pair)))/e.rest;
 }
 function v62Mode(spec,m){
  const mode=$('v62Mode').value||'auto';
@@ -4373,8 +4373,8 @@ function v62SelectMode(spec,samples){
  const edges=samples.filter((_,i)=>i%2===0),wrap=spec.id==='v58Serratus'&&$('v59Guard').checked?v59ChestCenter():null;
  const score=(dual,route)=>{
   const ratios=[];
-  for(const p of poses){const a=v61PoseAnchor(spec.a,p),b=v61PoseAnchor(spec.b,p),r=v62RouteFor(spec,b,route);
-   for(const e of edges)ratios.push(v62EdgeRatio(e,a,b,dual,r,wrap));
+  for(const p of poses){const a=v61PoseAnchor(spec.a,p),b=v61PoseAnchor(spec.b,p),r=v62RouteFor(spec,b,route,true),pair=dual?[v62DQ(a),v62DQ(b)]:null;
+   for(const e of edges)ratios.push(v62EdgeRatio(e,a,b,dual,r,wrap,pair));
   }return v61Objective(ratios);
  };
  const baseline=score(false,false),d=score(true,false);
