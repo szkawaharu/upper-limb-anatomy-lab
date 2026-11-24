@@ -2,7 +2,7 @@
 
 スマートフォン対応の上肢骨格・筋肉・腱を観察する教育用Webアプリ。動作と形態は**解剖学的に未検証の近似を含み、臨床用・診断用ではありません**。
 
-**現在のバージョン：v0.60**
+**現在のバージョン：v0.60.1**
 
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
@@ -11,6 +11,10 @@
 - **v0.54の保存ブランチ**：[`archive/v0.54-before-anatomy-rebuild`](../../tree/archive/v0.54-before-anatomy-rebuild)
 - **v0.53の保存ブランチ**：[`archive/v0.53-before-review`](../../tree/archive/v0.53-before-review)
 - **v0.51の保存ブランチ**：[`archive/v0.51-before-scapular-fix`](../../tree/archive/v0.51-before-scapular-fix)
+
+## v0.60.1：筋変形の微調整と検査
+
+静止解剖メッシュを維持し、前鋸筋・肩甲下筋・広背筋の近接付着候補と僧帽筋・大胸筋・三角筋の中間ウェイトを調整。固定候補を保持するメッシュ隣接平滑化、旧方式と局所辺長変化を比較する検査、端末のCPU描画時間記録、GPU変換行列の再利用を追加。詳細は [REFINEMENT_V0601](./docs/REFINEMENT_V0601.md)。
 
 ## v0.60：胸部・肩部の解剖メッシュ
 

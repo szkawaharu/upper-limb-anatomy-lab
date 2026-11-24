@@ -212,10 +212,37 @@ window.__runV56Tests=async()=>{
  ok(!v60ScapAudit().ready,'missing thorax not claimed as measured clearance');
  ok(!v60DeltReady(),'software harness cannot claim atlas deltoid GPU rendering');
  }
+
+ {
+ const v=[[0,0,0],[1,0,0],[0,1,0],[1,1,0]],f=[0,1,2,1,2,3],raw=[0,.15,.85,1];
+ const w=v601SmoothWeights(v,f,raw);
+ ok(w[0]===0&&w[3]===1,'weight smoothing preserves attachment endpoints');
+ ok(w[1]>.15&&w[2]<.85&&Array.from(w).every(x=>x>=0&&x<=1),'smoothing reduces local jumps and stays bounded');
+ ok(Array.from(v601SmoothWeights(v,f,[.4,.4,.4,.4])).every(x=>Math.abs(x-.4)<1e-6),'constant field preserved');
+ const spec=V58_DEEP[3],p=[1,1,1],c={ribs:v59PointIndex([p]),surface:null,origin:null,insertion:[[2,1,1],[2,2,1]]};
+ ok(v601Weight(spec,p,null,c,.5)===0,'serratus nearby rib fixed');
+ ok(v601Weight(spec,[2,1,1],null,c,.5)===1,'serratus insertion fully follows scapula');
+ const q=[1+atlasScale*16,1,1],withSample=v601Weight(spec,q,null,c,.5),noSample=v601Weight(spec,q,null,{...c,ribs:v59PointIndex([])},.5);
+ ok(Math.abs(withSample-noSample)<1e-9,'rib weight finite support continuous at search cutoff');
+ const scap=V58_DEEP[4],c2={...c,ribs:v59PointIndex([]),surface:v59PointIndex([p])};
+ ok(v601Weight(scap,p,null,c2,.5)===0,'subscapularis near scapula remains attached');
+ const pec=V60_CHEST[0],pc=v60WeightContext(pec);
+ ok(v601Weight(pec,p,null,pc,0)===0&&v601Weight(pec,p,null,pc,1)===1&&v601Weight(pec,p,null,pc,.5)<.5,'pectoral origin bias preserves endpoints');
+ const samples=v601EdgeSamples(v,f,raw,w,10);
+ ok(samples.length===5&&samples.every(e=>e.rest>0),'edge audit deduplicates sample edges');
+ const a={q:ID,p:OR,rest:OR};
+ ok(samples.every(e=>Math.abs(v601EdgeRatio(e,a,a,e.w)-1)<1e-9),'neutral deformation preserves edge lengths');
+ const b={q:qa([0,1,0],1.1),p:[1,2,3],rest:OR};
+ ok(samples.every(e=>Number.isFinite(v601EdgeRatio(e,a,b,e.w,[0,0]))),'finite guarded edge ratios');
+ const s=v601Stats([.1,.9,1,1.2,3]);ok(s.n===5&&s.outside===2&&s.p95===3,'edge statistics distinguish heuristic outliers');
+ ok(v601Stats([])===null,'missing edge samples not treated as zero');
+ const timing=v601PerfStats([1,2,3,4,10]);ok(timing.n===5&&timing.median===3&&timing.p95===10,'CPU render timing summary');
+ ok(v601PerfStats([])===null,'empty timing not measured');
+ }
  return passed;
 };`;
 js=js.replace(/\}\)\(\);\s*$/,instrument+"\n})();");
 new Function("document","window","fetch","requestAnimationFrame","matchMedia","innerWidth","innerHeight","setTimeout","clearTimeout","console",js)(doc,win,async()=>{throw Error("offline test")},f=>callbacks.push(f),()=>({matches:true}),390,740,()=>0,()=>{}, {log(){},warn(){},error(...a){errors.push(a.map(String).join(" "))}});
 assert.equal(errors.length,0,errors.join("\n"));
 const results=await win.__runV56Tests();
-console.log('PASS v0.60: '+results.length+' integration checks — '+results.join('; '));
+console.log('PASS v0.60.1: '+results.length+' integration checks — '+results.join('; '));
