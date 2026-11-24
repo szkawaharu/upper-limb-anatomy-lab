@@ -260,7 +260,7 @@ window.__runV56Tests=async()=>{
  ok(v61Objective([1,1])===0&&v61Objective([.5,2])>0,'symmetric strain objective');
  ok(Math.abs(v61Objective([.5])-v61Objective([2]))<1e-9,'compression and extension scored symmetrically');
  ok(v61EdgeIndices(v,f).length===5,'unique sample edge selection');
- const report=v61AuditReport();ok(report.version==='v0.62'&&!report.collisionValidated&&!report.volumeValidated,'audit declares validation limits');
+ const report=v61AuditReport();ok(report.version==='v0.62.1'&&!report.collisionValidated&&!report.volumeValidated,'audit declares validation limits');
  }
 
  {
@@ -293,10 +293,28 @@ window.__runV56Tests=async()=>{
  const enabled=v62SelectMode(V60_CHEST[0],edges);$('v62Route').checked=beforeRoute;
  ok(JSON.stringify(disabled)===JSON.stringify(enabled),'on/off candidate scoring independent of current route toggle');
  }
+
+ {
+ const left={side:'left',id:'elev',a:[20,50,.2],b:[20,150,.2],weight:1},right={side:'right',id:'elev',a:[250,50,.3],b:[250,150,.3],weight:1};
+ ok(v621Hit([20,100],[right,left],40).side==='left'&&v621Hit([250,100],[right,left],40).side==='right','both arms picked regardless of ordering');
+ ok(v621Hit([120,100],[right,left],40)===null,'empty space not picked');
+ ok(v621Hit([20,100],[left,{...right,a:[21,50,-.3],b:[21,150,-.3]}],40).side==='right','overlap prefers front arm');
+ ok(v621Hit([20,100],[left],40,true).field==='axial','upper arm twist selection');
+ ok(v621Hit([20,100],[{...left,id:'elbow'}],40,true).field==='pronation','forearm twist selection');
+ const a=[0,0,0],b=[2,0,0];
+ ok(len(sub(v621Limit(a,b,.5),a))<=.044400001,'long-range DQS excursion capped');
+ ok(len(v621Limit(a,b,0))===0&&len(v621Limit(a,b,1))===0,'cap preserves locked endpoints');
+ const A={q:ID,p:OR,rest:OR},B={q:qa([0,1,0],Math.PI),p:OR,rest:OR};
+ for(const w of [0,.1,.5,.9,1]){const p=[1.5,.2,.6],legacy=v58Blend(A,B,p,w),candidate=v62Point(A,B,p,w,true,null,null);ok(len(sub(candidate,legacy))<=.0444*4*w*(1-w)+1e-8,'posed vertex capped against linear '+w)}
+ $('v62Mode').value='linear';ok(!v62Mode(V60_CHEST[0],{}).dual,'stable default uses legacy linear');
+ v56ChooseSide('right');$('elbow').value='30';update();v56ChooseSide('left');$('elbow').value='75';update();v56ChooseSide('right');
+ pointers.set(111,[20,100]);ok(beginJointDrag(111,'elbow',[20,100],'left')&&v56Side==='left'&&Number($('elbow').value)===75,'hold automatically activates touched left arm');
+ stopDirectDrag();pointers.delete(111);v56ChooseSide('right');ok(Number($('elbow').value)===30,'opposite arm pose retained');
+ }
  return passed;
 };`;
 js=js.replace(/\}\)\(\);\s*$/,instrument+"\n})();");
 new Function("document","window","fetch","requestAnimationFrame","matchMedia","innerWidth","innerHeight","setTimeout","clearTimeout","console",js)(doc,win,async()=>{throw Error("offline test")},f=>callbacks.push(f),()=>({matches:true}),390,740,()=>0,()=>{}, {log(){},warn(){},error(...a){errors.push(a.map(String).join(" "))}});
 assert.equal(errors.length,0,errors.join("\n"));
 const results=await win.__runV56Tests();
-console.log('PASS v0.62: '+results.length+' integration checks — '+results.join('; '));
+console.log('PASS v0.62.1: '+results.length+' integration checks — '+results.join('; '));
