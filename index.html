@@ -4400,7 +4400,7 @@ function v61Guide(q,ac,elev,data=v61GuideData()){
 }
 function v61RefreshGuide(){
  v61GuideCache=null;v63GuideCache.clear();const d=v61GuideData();
- $('v61ScapStatus').textContent=d?'実肋骨の横断面近似・肩甲骨肋骨面候補 '+d.v.length+'点。SC/AC連結を維持して5変数補正（接触未検証）。':'データ不足：基本肩甲帯運動を使用。';
+ $('v61ScapStatus').textContent=d?'実肋骨の横断面近似・肩甲骨肋骨面候補 '+d.v.length+'点。SC/AC連結を維持し、平均距離に加えて最大離開・内方移動も抑制（実接触未検証）。':'データ不足：基本肩甲帯運動を使用。';
  if(realReady){makeRealPose();v56Other.key=null;request()}
 }
 $('v61Scap').addEventListener('change',()=>{v61RefreshGuide();update()});
@@ -4693,6 +4693,11 @@ function v63Gap(p,profile){
  const x=p[0]-mix(a.c[0],b.c[0],t),z=p[2]-mix(a.c[1],b.c[1],t),rx=mix(a.r[0],b.r[0],t),rz=mix(a.r[1],b.r[1],t);
  const r=Math.hypot(x/rx,z/rz);return r>1e-8?Math.hypot(x,z)*(1-1/r):-Math.min(rx,rz);
 }
+function v65ScapMetrics(q,ac,data){
+ let w=0,sum=0,out=-Infinity,inside=Infinity,n=0;
+ for(const v of data?.v||[]){if(v.sliceRest===null)continue;const gap=v63Gap(transform(q,ac,v.p),data.profile);if(gap===null)continue;const d=(gap-v.sliceRest)/atlasScale,k=v.weight||1;sum+=k*d*d;w+=k;out=Math.max(out,d);inside=Math.min(inside,d);n++}
+ return {n,rms:w?Math.sqrt(sum/w):Infinity,maxOutMm:out,maxInMm:inside};
+}
 function v63GuideCost(q,ac,data){
  let cost=0,n=0,wSum=0;
  for(const v of data.v){
@@ -4701,7 +4706,12 @@ function v63GuideCost(q,ac,data){
   const d=gap===null?100+Math.abs(v.sliceRest)/atlasScale:(gap-v.sliceRest)/atlasScale,w=v.weight||1;
   cost+=w*(d*d*(d<0?2:1)+2*Math.max(0,Math.abs(d)-5)**2);n++;wSum+=w;
  }
- return n>=8?cost/wSum:Infinity;
+ if(n<8)return Infinity;
+ const m=v65ScapMetrics(q,ac,data);
+ // Engineering safety regularizers: keep the costal surface close to its
+ // neutral clearance and especially suppress medial/inferior-edge winging.
+ // These thresholds are not clinical normal ranges.
+ return cost/wSum+2.5*Math.max(0,m.maxOutMm-8)**2+4*Math.max(0,-m.maxInMm-4)**2+.5*Math.max(0,m.rms-5)**2;
 }
 function v63ShoulderGuide(qC,qS,AC,elev,plane,data=v61GuideData()){
  const identity={qC,qS,AC,before:null,after:null,angles:[0,0,0,0,0]};
@@ -4835,11 +4845,6 @@ function v65SerratusPoint(z,p,w,s){return v65Engine.point(p,w,s,z.field,z.posed,
 function v65UpdateStatus(){
  const n=$('v65Status');if(!n)return;const m=v58Meshes.get('v58Serratus');
  n.textContent=!v65GPU?'前鋸筋9スリップ：GPU上限等によりv0.64へフォールバック':m?.serratus?'前鋸筋9スリップ：第1〜9肋骨の9領域を準備済み（実測筋束ではない）':'前鋸筋9スリップ：胸郭・筋メッシュ待ち';
-}
-function v65ScapMetrics(q,ac,data){
- let w=0,sum=0,out=-Infinity,inside=Infinity,n=0;
- for(const v of data?.v||[]){if(v.sliceRest===null)continue;const gap=v63Gap(transform(q,ac,v.p),data.profile);if(gap===null)continue;const d=(gap-v.sliceRest)/atlasScale,k=v.weight||1;sum+=k*d*d;w+=k;out=Math.max(out,d);inside=Math.min(inside,d);n++}
- return {n,rms:w?Math.sqrt(sum/w):Infinity,maxOutMm:out,maxInMm:inside};
 }
 function v65AuditSide(side){
  const m=v58Meshes.get('v58Serratus'),spec=V60_ALL.find(x=>x.id==='v58Serratus'),data=v61GuideData();
