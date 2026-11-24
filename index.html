@@ -243,7 +243,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.61</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.61</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.62</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.62</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
@@ -253,7 +253,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.61</div><button id="v56QuickSide" type="button" aria-label="操作する腕を切り替え（現在：右）">右</button>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.62</div><button id="v56QuickSide" type="button" aria-label="操作する腕を切り替え（現在：右）">右</button>
 <nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
  <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
  <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
@@ -268,8 +268,8 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 
 </div>
 <section class="side" id="labTools">
-<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.61</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
-<details class="control-fold" open><summary>両上肢・胸郭<span class="fold-note">v0.61</span></summary><div class="fold-body">
+<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.62</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
+<details class="control-fold" open><summary>両上肢・胸郭<span class="fold-note">v0.62</span></summary><div class="fold-body">
 <div class="control"><label>両腕の姿勢（左右を同時設定）</label><div style="display:flex;flex-wrap:wrap;gap:6px"><button type="button" id="v572Forward">前ならえ</button><button type="button" id="v572T">T字</button><button type="button" id="v572Up">バンザイ</button><button type="button" id="v572Neutral">基本肢位</button></div><div class="detail">前ならえ：肩前方挙上90°、肘伸展、手首中立、手掌内向きの近似。</div></div>
 <div class="control"><label for="v572Quality">描画品質</label><select id="v572Quality"><option value="auto">自動（操作中軽量／停止後高精細）</option><option value="light">軽量優先</option><option value="high">常に高精細</option></select><div id="v572QualityStatus" class="detail" role="status">自動品質</div></div>
 <label class="switch"><input id="v572Fit" type="checkbox" checked>関節操作終了時、画面外の骨格を自動フィット</label>
@@ -290,6 +290,11 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <div style="display:flex;flex-wrap:wrap;gap:6px"><button id="v60LayerAll" type="button">胸・肩・背：全層</button><button id="v60LayerSurface" type="button">表層</button><button id="v60LayerDeep" type="button">深層</button></div>
 <div class="detail">胸・肩・背の筋群のみ切替。上腕・前腕の表示設定は維持。</div>
 <label class="switch"><input id="v61Scap" type="checkbox" checked>肩甲胸郭の近似滑走補正（実胸郭取得時）</label><div class="detail" id="v61ScapStatus">胸郭の表面サンプルから楕円体近似を構築します。実接触は未検証。</div>
+<div class="control"><label>筋メッシュ変形方式（研究用）</label><select id="v62Mode"><option value="auto" selected>比較選択（推奨）</option><option value="linear">v0.61 線形方式</option><option value="dual">非線形 DQS</option></select>
+<label class="switch"><input id="v62Route" type="checkbox" checked>胸郭・肩周辺の経路近似補正</label>
+<div class="detail">前鋸筋は胸郭断面、三角筋・大胸筋は上腕骨頭周辺の近似距離を参照。真の接触・筋経路・体積保存ではありません。線形方式では旧処理を再現。</div>
+<button type="button" id="v62Audit">新旧変形を比較（現在姿勢）</button><pre class="detail" id="v62Out" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre>
+<div class="detail">局所辺長損失を比較。筋力・正常範囲の評価ではありません。<a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/NONLINEAR_V062.md" target="_blank" rel="noopener noreferrer">仕様と限界</a></div></div>
 <button type="button" id="v61Audit">幾何拘束・筋変形の検査</button><pre class="detail" id="v61Out" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre>
 <div class="detail">筋ごとに13姿勢の局所辺長損失が小さいウェイトを選択。衝突・体積・筋力は未検証。</div>
 <button type="button" id="v601Audit">筋の変形を検査（v0.60方式と比較）</button>
@@ -360,7 +365,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
   <button id="medicalStudyReset" type="button">全筋表示に戻す</button>
  </div>
  <div class="med-status" id="medicalStudyFocusStatus" role="status" aria-live="polite">通常表示中。単独表示は形状比較用であり、正確性を保証しません。</div>
- <div class="detail">重要な未実装：三頭筋内側頭、烏口腕筋。肩甲下筋はv0.61で解剖メッシュを追加。棘上筋・棘下筋・小円筋はv0.51で追加。v0.55では4筋の輪郭曲率・断面厚み・腱への移行を個別化しました。ただし筋束配列、停止面や腱滑走の医学的検証は未実施です。上腕二頭筋腱膜も簡略化されています。関節包・靱帯・神経・血管の系統的3D表示はありません。</div>
+ <div class="detail">重要な未実装：三頭筋内側頭、烏口腕筋。肩甲下筋はv0.62で解剖メッシュを追加。棘上筋・棘下筋・小円筋はv0.51で追加。v0.55では4筋の輪郭曲率・断面厚み・腱への移行を個別化しました。ただし筋束配列、停止面や腱滑走の医学的検証は未実施です。上腕二頭筋腱膜も簡略化されています。関節包・靱帯・神経・血管の系統的3D表示はありません。</div>
  <p><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/ANATOMY_VALIDATION_V049.md" target="_blank" rel="noopener noreferrer">モデルの医学的妥当性監査・不足構造・検証基準を読む</a></p>
 </div></details>
 <details class="control-fold"><summary>表示倍率・視点操作<span class="fold-note">カメラ</span></summary><div class="fold-body"><div class="panel zoom-panel"><div class="panelhead"><h2>表示倍率</h2><span class="sectioncap">CAMERA</span></div>
@@ -471,7 +476,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
  <div class="scapular-buttons"><button id="scapularBackView" type="button">肩甲骨を後ろから見る</button><button id="scapularFrontView" type="button">前面から見る</button></div>
  <div id="scapularMuscleStatus" class="scapular-study-status" role="status" aria-live="polite">骨データを読み込み中…</div>
  <div class="detail">筋腹は肩甲骨の棘上窩・棘下窩・外側縁・下角付近の<strong>推定骨表面点</strong>から上腕骨の推定停止位置へ広がる近似メッシュです。付着面の実測・腱の骨接触・関節運動時の滑走は未検証です。</div>
- <div class="detail"><strong>回旋筋腱板は4筋：</strong>棘上筋・棘下筋・小円筋・肩甲下筋。<strong>肩甲下筋はv0.61で追加（取得後）</strong>。大円筋は回旋筋腱板に含まれません。</div>
+ <div class="detail"><strong>回旋筋腱板は4筋：</strong>棘上筋・棘下筋・小円筋・肩甲下筋。<strong>肩甲下筋はv0.62で追加（取得後）</strong>。大円筋は回旋筋腱板に含まれません。</div>
  <details class="diagnostic-fold"><summary>v0.55：4筋の形態・根拠・未検証事項</summary>
   <div class="detail"><strong>棘上筋</strong>：棘上窩から大結節上関節面へ。前部・後部の筋束構造は異なるため、単一筋腹は概形の近似。<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11679125/" target="_blank" rel="noopener noreferrer">2025年レビュー</a></div>
   <div class="detail"><strong>棘下筋</strong>：棘下窩を広く占める厚い三角形。外上方へ筋束が集まり、大結節中関節面へ。<a href="https://www.ncbi.nlm.nih.gov/books/NBK513255/" target="_blank" rel="noopener noreferrer">StatPearls解剖</a></div>
@@ -570,15 +575,41 @@ function scapula(){let outline=[[-.02,-.08,-.025],[-.28,-.06,-.11],[-.65,-.15,-.
  let v=[],f=[],N=perimeter.length,R=7,mid=[-.40,-.56,-.105];for(let face=0;face<2;face++)for(let r=0;r<=R;r++){let t=r/R;for(let j=0;j<N;j++){let pt=perimeter[j],wave=.014*Math.sin(j*.65)*Math.sin(Math.PI*t),z=mid[2]*(1-t)+pt[2]*t + wave + (face===0?.023:-.055)*(1-.10*t);v.push([mid[0]*(1-t)+pt[0]*t,mid[1]*(1-t)+pt[1]*t,z])}}
  let faceOffset=(R+1)*N;for(let side=0;side<2;side++)for(let r=0;r<R;r++)for(let j=0;j<N;j++){let a=side*faceOffset+r*N+j,b=side*faceOffset+r*N+(j+1)%N,c=a+N,d=b+N;if(side===0)f.push(a,b,c,b,d,c);else f.push(a,c,b,b,c,d)}for(let j=0;j<N;j++){let a=R*N+j,b=R*N+(j+1)%N,c=faceOffset+a,d=faceOffset+b;f.push(a,c,b,b,c,d)}return mesh(v,f)}
 
-const shaderVS=`attribute vec3 pos;attribute vec3 normal;attribute float skinWeight;uniform float skinOn;uniform float wrapOn;uniform vec2 wrapCenter;uniform mat4 skinA;uniform mat4 skinB;uniform mat4 mvp;uniform mat4 model;varying vec3 N;varying vec3 W;void main(){vec4 p=vec4(pos,1.0);vec3 n=normal;if(skinOn>0.5){vec4 rest=p;p=mix(skinA*p,skinB*p,skinWeight);n=mix(mat3(skinA)*n,mat3(skinB)*n,skinWeight);
- if(wrapOn>0.5){
+const shaderVS=`attribute vec3 pos;attribute vec3 normal;attribute float skinWeight;uniform float skinOn;uniform float wrapOn;uniform vec2 wrapCenter;uniform mat4 skinA;uniform mat4 skinB;uniform float dqOn;uniform vec4 dqA;uniform vec4 dqB;uniform vec4 dualA;uniform vec4 dualB;uniform float routeKind;uniform vec3 routeRest;uniform vec3 routeNow;uniform vec2 routeRadii;uniform float routeRadius;uniform mat4 mvp;uniform mat4 model;varying vec3 N;varying vec3 W;
+vec4 qmul(vec4 a,vec4 b){return vec4(a.w*b.xyz+b.w*a.xyz+cross(a.xyz,b.xyz),a.w*b.w-dot(a.xyz,b.xyz));}
+vec3 qrot(vec4 q,vec3 v){vec3 t=2.0*cross(q.xyz,v);return v+q.w*t+cross(q.xyz,t);}
+void main(){vec4 p=vec4(pos,1.0);vec3 n=normal;if(skinOn>0.5){vec4 rest=p;p=mix(skinA*p,skinB*p,skinWeight);n=mix(mat3(skinA)*n,mat3(skinB)*n,skinWeight);
+ if(dqOn>0.5){
+  float signB=dot(dqA,dqB)<0.0?-1.0:1.0;
+  vec4 q=mix(dqA,dqB*signB,skinWeight),d=mix(dualA,dualB*signB,skinWeight);
+  float l=max(length(q),0.000001);q/=l;d/=l;
+  p=vec4(qrot(q,rest.xyz)+2.0*qmul(d,vec4(-q.xyz,q.w)).xyz,1.0);n=qrot(q,normal);
+ }
+ if(routeKind>0.5){
+  float k=4.0*skinWeight*(1.0-skinWeight);
+  if(routeKind<1.5){
+   vec2 r0=rest.xz-routeRest.xz,r1=p.xz-routeRest.xz;
+   float l0=length(r0/routeRadii),l1=length(r1/routeRadii);
+   if(l1>0.0001){
+    vec2 delta=r1*(clamp(l1,l0-0.045,l0+0.09)/l1-1.0);
+    float dl=length(delta);if(dl>0.12)delta*=0.12/dl;
+    p.xz+=delta*k;
+   }
+  }else{
+   vec3 r0=rest.xyz-routeRest,r1=p.xyz-routeNow;
+   float l0=length(r0),l1=length(r1);
+   float gate=1.0-smoothstep(routeRadius,routeRadius+0.19425,l0);
+   float target=min(l0,routeRadius)-0.01665;
+   if(l1>0.0001)p.xyz+=r1/l1*min(0.12,max(0.0,target-l1))*k*gate;
+  }
+ }else if(wrapOn>0.5){
  vec2 r=rest.xz-wrapCenter;float l=length(r);
  if(l>0.0001){vec2 u=r/l;float d=dot(p.xz-rest.xz,u);float k=4.0*skinWeight*(1.0-skinWeight);p.xz-=u*(d-clamp(d,-0.028,0.067))*k;}
  }}vec4 wp=model*p;W=wp.xyz;N=normalize(mat3(model)*n);gl_Position=mvp*p;}`;
 const shaderFS=`precision mediump float;uniform vec3 color;uniform float opacity;uniform float kind;varying vec3 N;varying vec3 W;void main(){vec3 n=normalize(N);vec3 a=normalize(vec3(-0.42,0.78,0.63)),b=normalize(vec3(0.77,0.36,-0.33));float diffuse=.43+.40*max(0.,dot(n,a))+.20*max(0.,dot(n,b));float grain=sin(W.x*71.+sin(W.y*32.)*1.8)*sin(W.y*109.+W.z*57.);float weave=sin(W.y*64.+W.x*27.);float micro=kind<.5?(.97+.035*grain):kind<1.5?(.94+.055*weave+.028*grain):1.;vec3 rgb=color*diffuse*micro;rgb+=vec3(.055,.065,.078)*pow(max(0.,dot(reflect(-a,n),normalize(vec3(.4,.5,1.)))),22.);gl_FragColor=vec4(rgb,opacity);}`;
 function shader(type,src){let s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s}
 let program=gl.createProgram();gl.attachShader(program,shader(gl.VERTEX_SHADER,shaderVS));gl.attachShader(program,shader(gl.FRAGMENT_SHADER,shaderFS));gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(program));gl.useProgram(program);
-let attrib={p:gl.getAttribLocation(program,'pos'),n:gl.getAttribLocation(program,'normal'),weight:gl.getAttribLocation(program,'skinWeight')},uni={mvp:gl.getUniformLocation(program,'mvp'),model:gl.getUniformLocation(program,'model'),color:gl.getUniformLocation(program,'color'),opacity:gl.getUniformLocation(program,'opacity'),kind:gl.getUniformLocation(program,'kind'),skinOn:gl.getUniformLocation(program,'skinOn'),skinA:gl.getUniformLocation(program,'skinA'),skinB:gl.getUniformLocation(program,'skinB'),wrapOn:gl.getUniformLocation(program,'wrapOn'),wrapCenter:gl.getUniformLocation(program,'wrapCenter')};
+let attrib={p:gl.getAttribLocation(program,'pos'),n:gl.getAttribLocation(program,'normal'),weight:gl.getAttribLocation(program,'skinWeight')},uni={mvp:gl.getUniformLocation(program,'mvp'),model:gl.getUniformLocation(program,'model'),color:gl.getUniformLocation(program,'color'),opacity:gl.getUniformLocation(program,'opacity'),kind:gl.getUniformLocation(program,'kind'),skinOn:gl.getUniformLocation(program,'skinOn'),skinA:gl.getUniformLocation(program,'skinA'),skinB:gl.getUniformLocation(program,'skinB'),wrapOn:gl.getUniformLocation(program,'wrapOn'),wrapCenter:gl.getUniformLocation(program,'wrapCenter'),dqOn:gl.getUniformLocation(program,'dqOn'),dqA:gl.getUniformLocation(program,'dqA'),dqB:gl.getUniformLocation(program,'dqB'),dualA:gl.getUniformLocation(program,'dualA'),dualB:gl.getUniformLocation(program,'dualB'),routeKind:gl.getUniformLocation(program,'routeKind'),routeRest:gl.getUniformLocation(program,'routeRest'),routeNow:gl.getUniformLocation(program,'routeNow'),routeRadii:gl.getUniformLocation(program,'routeRadii'),routeRadius:gl.getUniformLocation(program,'routeRadius')};
 function gpu(m){let mn=[Infinity,Infinity,Infinity],mx=[-Infinity,-Infinity,-Infinity];for(let p of m.vertices)for(let k=0;k<3;k++){mn[k]=Math.min(mn[k],p[k]);mx[k]=Math.max(mx[k],p[k])}let box=[mn,mx];if(SOFTWARE)return {cpu:m,count:m.faces.length,box};let vbo=gl.createBuffer(),nbo=gl.createBuffer(),ibo=gl.createBuffer();let longIndex=m.vertices.length>65535;let indexType=longIndex?gl.UNSIGNED_INT:gl.UNSIGNED_SHORT;if(longIndex&&!gl.getExtension('OES_element_index_uint'))throw Error('この端末では大きな骨格メッシュ用の32bitインデックスが使えません');gl.bindBuffer(gl.ARRAY_BUFFER,vbo);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(m.vertices.flat()),gl.STATIC_DRAW);gl.bindBuffer(gl.ARRAY_BUFFER,nbo);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(m.normals.flat()),gl.STATIC_DRAW);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ibo);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,(longIndex?new Uint32Array(m.faces):new Uint16Array(m.faces)),gl.STATIC_DRAW);return {vbo,nbo,ibo,count:m.faces.length,box,indexType}}
 const shape={scapula:gpu(scapula()),scapSpine:gpu(tube([[-.67,-.38,-.12,.045],[-.39,-.33,-.025,.069],[-.18,-.25,.08,.083],[.04,-.075,.10,.066]],{sides:13,rough:.018})),acromion:gpu(tube([[-.03,-.14,.09,.078],[.05,-.01,.09,.11],[.16,.055,.025,.11],[.17,-.09,-.02,.067]],{rough:.018})),coracoid:gpu(tube([[-.10,-.16,.06,.075],[-.02,-.11,.22,.095],[.14,-.16,.32,.059]],{rough:.015})),glenoid:gpu(ball([.095,-.302,.047],[.112,.156,.042])),humerus:gpu(tube([[.07,-.10,-.015,.105],[.095,-.22,-.015,.113],[.072,-.43,-.02,.098],[.02,-.75,-.03,.080],[.012,-1.07,-.013,.074],[.025,-1.31,.018,.095],[.008,-1.46,.040,.137]],{sides:22,steps:12,ellipticity:.78,rough:.015})),head:gpu(ball([-.117,-.015,-.006],[.183,.186,.176],24,32)),neck:gpu(tube([[-.11,-.035,-.015,.105],[.012,-.15,-.013,.108],[.076,-.27,-.019,.092]],{rough:.012})),gt:gpu(ball([.142,.008,-.033],[.104,.116,.103])),lt:gpu(ball([.070,-.055,.145],[.066,.093,.070])),deltoidBump:gpu(tube([[.085,-.50,.00,.026],[.139,-.64,.014,.043],[.067,-.75,.015,.023]],{rough:.012})),condyleL:gpu(ball([-.115,-1.462,.045],[.133,.100,.130])),condyleR:gpu(ball([.128,-1.458,.040],[.120,.103,.130])),trochlea:gpu(ball([-.038,-1.502,.050],[.122,.088,.127])),ulna:gpu(tube([[-.13,-.075,-.03,.075],[-.135,-.22,-.02,.087],[-.11,-.48,-.018,.067],[-.105,-.77,-.013,.051],[-.11,-1.04,-.022,.048],[-.13,-1.28,-.015,.063]],{sides:18,steps:12,ellipticity:.74,rough:.012})),olecranon:gpu(ball([-.12,.005,-.090],[.099,.120,.113])),ulnaDistal:gpu(ball([-.12,-1.29,-.015],[.082,.086,.079])),radialHead:gpu(ball([.135,-.092,.06],[.087,.051,.092])),torso:gpu(ball([-.34,.72,-.08],[.92,1.16,.41],28,36)),sternum:gpu(tube([[.0,1.78,.30,.09],[.0,1.44,.35,.095],[.0,1.1,.36,.085],[.0,.87,.32,.065]],{sides:12}))};
 let ribShapes=[];for(let side of [-1,1])for(let i=0;i<6;i++){let y=1.53-i*.24,radx=(.42+i*.055),points=[];for(let j=0;j<=10;j++){let t=j/10, x=side*(.13+radx*Math.sin(t*Math.PI*.78)),z=.18-.44*t+.02*Math.sin(t*Math.PI), yy=y-.12*Math.sin(t*Math.PI);points.push([x,yy,z,.025+i*.001])}ribShapes.push(gpu(tube(points,{sides:7,steps:3}))) }
@@ -2264,7 +2295,10 @@ state.scene={SC,AC,qS,joint,qHum,elbow,qFore,scAngle,GH:Math.acos(clamp(dot([0,-
 // v0.29: redundant on-screen angle cards removed; angles remain in their sliders and scene state.
 }
 const ID=Q(),OR=[0,0,0],motion=()=>state.scene;
-function drawPart(g,q,p,color,alpha,kind,skin=null){if(!g)return;if(SOFTWARE){drawCalls.push({g,q,p,color,alpha,kind,mirror:v56DrawMirror});return;}gl.uniform1f(uni.skinOn,skin?1:0);gl.uniform1f(uni.wrapOn,skin&&skin[2]?1:0);if(skin&&skin[2])gl.uniform2fv(uni.wrapCenter,skin[2]);if(skin){gl.uniformMatrix4fv(uni.skinA,false,new Float32Array(skin[0]));gl.uniformMatrix4fv(uni.skinB,false,new Float32Array(skin[1]));gl.bindBuffer(gl.ARRAY_BUFFER,g.weightBuffer);gl.enableVertexAttribArray(attrib.weight);gl.vertexAttribPointer(attrib.weight,1,gl.FLOAT,false,0,0)}else gl.disableVertexAttribArray(attrib.weight);let model=mat4(q,p);if(v56DrawMirror)model=mm(v56ReflectionMatrix(),model);gl.uniformMatrix4fv(uni.model,false,new Float32Array(model));gl.uniformMatrix4fv(uni.mvp,false,new Float32Array(mm(pv,model)));gl.uniform3fv(uni.color,color);gl.uniform1f(uni.opacity,alpha);gl.uniform1f(uni.kind,kind);gl.bindBuffer(gl.ARRAY_BUFFER,g.vbo);gl.enableVertexAttribArray(attrib.p);gl.vertexAttribPointer(attrib.p,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ARRAY_BUFFER,g.nbo);gl.enableVertexAttribArray(attrib.n);gl.vertexAttribPointer(attrib.n,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,g.ibo);gl.drawElements(gl.TRIANGLES,g.count,g.indexType||gl.UNSIGNED_SHORT,0)}
+function drawPart(g,q,p,color,alpha,kind,skin=null){if(!g)return;if(SOFTWARE){drawCalls.push({g,q,p,color,alpha,kind,mirror:v56DrawMirror});return;}gl.uniform1f(uni.skinOn,skin?1:0);gl.uniform1f(uni.dqOn,skin&&skin[3]?1:0);gl.uniform1f(uni.routeKind,skin&&skin[4]?skin[4].kind:0);
+ if(skin&&skin[3]){const [a,b]=skin[3];gl.uniform4fv(uni.dqA,a.q);gl.uniform4fv(uni.dqB,b.q);gl.uniform4fv(uni.dualA,a.d);gl.uniform4fv(uni.dualB,b.d)}
+ if(skin&&skin[4]){const r=skin[4];gl.uniform3fv(uni.routeRest,r.rest);gl.uniform3fv(uni.routeNow,r.now||r.rest);gl.uniform2fv(uni.routeRadii,r.radii||[1,1]);gl.uniform1f(uni.routeRadius,r.radius||1)}
+ gl.uniform1f(uni.wrapOn,skin&&skin[2]?1:0);if(skin&&skin[2])gl.uniform2fv(uni.wrapCenter,skin[2]);if(skin){gl.uniformMatrix4fv(uni.skinA,false,new Float32Array(skin[0]));gl.uniformMatrix4fv(uni.skinB,false,new Float32Array(skin[1]));gl.bindBuffer(gl.ARRAY_BUFFER,g.weightBuffer);gl.enableVertexAttribArray(attrib.weight);gl.vertexAttribPointer(attrib.weight,1,gl.FLOAT,false,0,0)}else gl.disableVertexAttribArray(attrib.weight);let model=mat4(q,p);if(v56DrawMirror)model=mm(v56ReflectionMatrix(),model);gl.uniformMatrix4fv(uni.model,false,new Float32Array(model));gl.uniformMatrix4fv(uni.mvp,false,new Float32Array(mm(pv,model)));gl.uniform3fv(uni.color,color);gl.uniform1f(uni.opacity,alpha);gl.uniform1f(uni.kind,kind);gl.bindBuffer(gl.ARRAY_BUFFER,g.vbo);gl.enableVertexAttribArray(attrib.p);gl.vertexAttribPointer(attrib.p,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ARRAY_BUFFER,g.nbo);gl.enableVertexAttribArray(attrib.n);gl.vertexAttribPointer(attrib.n,3,gl.FLOAT,false,0,0);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,g.ibo);gl.drawElements(gl.TRIANGLES,g.count,g.indexType||gl.UNSIGNED_SHORT,0)}
 function drawArm(){let a=motion();gl.enable(gl.DEPTH_TEST);gl.disable(gl.CULL_FACE);gl.disable(gl.BLEND);gl.depthMask(true);
 let bone=(name,g,q,p,color=cBone)=>{if(boneShown[name]&&(name!=='scapula'||settings.scapulaDisplay==='opaque'))drawPart(g,q,p,color,1,0)};
 if(realReady){for(const id of ids){if(!boneShown[id])continue;
@@ -3150,7 +3184,7 @@ window.__labJointErrors=()=>{
  return {ready:true,wristErrorMm:handWristErrorMm,thumbCMCErrorMm,thumbMCPErrorMm,thumbIPErrorMm,distalGapDeltaMm:poseCheck.distalGapDeltaMm,
    palmNormal:handPivot.thumbPalmNormal,thumbFlexAxis:handPivot.thumbFlexAxis,thumbFlexSign:handPivot.thumbFlexSign};
 };
-window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.61',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
+window.__labRenderMode=()=>({musclesOpaque:true,depthTest:true,depthWrite:true,softwareFallback:SOFTWARE,version:'v0.62',directJointControl:true,iosSelectionGuard:true,grabMode,twistMode,immersive:true});
 window.__labForearm=()=>({...v43ForearmDiagnostics,available:V43_CONFIG.length,display:settings.forearmLayer,bulkPercent:settings.forearmBulk});
 window.__labContinuity=()=>({ready:realReady,elbow:settings.elbow,pronation:settings.pronation,forearmBulk:settings.forearmBulk,
  ...muscleDiagnostics.continuity,
@@ -3349,7 +3383,7 @@ function v56Torso(){
  return v56TorsoCache={real:realReady,parts,ribPairs};
 }
 
-// v0.61: static axial anatomy from the SAME common atlas coordinate frame.
+// v0.62: static axial anatomy from the SAME common atlas coordinate frame.
 // The source commit is pinned. Never individually center or scale STL meshes.
 const V57_SOURCE='2c83c698788cff57f6317bddcf712e7acfbea7d8';
 const V57_MANIFEST=Object.freeze([{"id":"C1","file":"FMA12519.stl","group":"spine","side":null,"level":1,"bytes":308684,"sha":"0baa9a334c9dcc0edf18766583e6844cf02feb97"},{"id":"C2","file":"FMA12520.stl","group":"spine","side":null,"level":2,"bytes":343584,"sha":"836a2134498443bc0232225f4538a3b191d18836"},{"id":"C3","file":"FMA12521.stl","group":"spine","side":null,"level":3,"bytes":263984,"sha":"e1cfb107cef73e797c31079b67e2fa77fe004cc8"},{"id":"C4","file":"FMA12522.stl","group":"spine","side":null,"level":4,"bytes":211284,"sha":"a17a67c4aad36b42e0cc646548c3d9108eb82735"},{"id":"C5","file":"FMA12523.stl","group":"spine","side":null,"level":5,"bytes":237784,"sha":"a65b7498adde062279a31ecdc430f8bbe4563450"},{"id":"C6","file":"FMA12524.stl","group":"spine","side":null,"level":6,"bytes":317584,"sha":"f5c0e94cc332d12090c777558b7dbb3e5e2378e3"},{"id":"C7","file":"FMA12525.stl","group":"spine","side":null,"level":7,"bytes":261184,"sha":"0105ea0865b4307f9515035380746a5079e83c26"},{"id":"T1","file":"FMA9165.stl","group":"spine","side":null,"level":1,"bytes":280784,"sha":"836f475f465f641c901dc8247778bba381881c29"},{"id":"T2","file":"FMA9187.stl","group":"spine","side":null,"level":2,"bytes":418084,"sha":"c32d1b1b9dce952dee201ff6742212f1bc10ffc4"},{"id":"T3","file":"FMA9209.stl","group":"spine","side":null,"level":3,"bytes":445584,"sha":"ed92d12c8d1a6b008ad536598836f870569d4edd"},{"id":"T4","file":"FMA9248.stl","group":"spine","side":null,"level":4,"bytes":446584,"sha":"8eb5c627faaa8b409b9c937a6267ee12d19142db"},{"id":"T5","file":"FMA9922.stl","group":"spine","side":null,"level":5,"bytes":491784,"sha":"4f32806b16f18bb37073fb94cbf42cf8889ac1f7"},{"id":"T6","file":"FMA9945.stl","group":"spine","side":null,"level":6,"bytes":244884,"sha":"58396556a652315e1f365afa90b4073eb4c89e9b"},{"id":"T7","file":"FMA9968.stl","group":"spine","side":null,"level":7,"bytes":537084,"sha":"3efaa61786e54db4958b644c25206dc0ba1574be"},{"id":"T8","file":"FMA9991.stl","group":"spine","side":null,"level":8,"bytes":260384,"sha":"9c7a5f71ad333163c3a9cb86675bcf0c231d2e79"},{"id":"T9","file":"FMA10014.stl","group":"spine","side":null,"level":9,"bytes":564384,"sha":"fe4d88049910ec51817d13da11a13a951316af39"},{"id":"T10","file":"FMA10037.stl","group":"spine","side":null,"level":10,"bytes":596484,"sha":"3775902c33dcea2301e4a271f41f9b29ff8ccb99"},{"id":"T11","file":"FMA10059.stl","group":"spine","side":null,"level":11,"bytes":282684,"sha":"5d7ce507e589db5b8b30dd183d7f1a3d958b3a68"},{"id":"T12","file":"FMA10081.stl","group":"spine","side":null,"level":12,"bytes":301984,"sha":"b51bd9ec204d2aea6b0dd5539523aa2a30d0b2ea"},{"id":"R1","file":"FMA7857.stl","group":"ribs","side":"right","level":1,"bytes":709784,"sha":"7c90cb8cca8c02a5b8cab16e92afd4ea40955aa4"},{"id":"R2","file":"FMA7882.stl","group":"ribs","side":"right","level":2,"bytes":1184784,"sha":"8624142c3e416b742a039de13fd727d2a584c64f"},{"id":"R3","file":"FMA7909.stl","group":"ribs","side":"right","level":3,"bytes":1543084,"sha":"02d820e7297018e3f567a668c1498e636af6c56a"},{"id":"R4","file":"FMA7957.stl","group":"ribs","side":"right","level":4,"bytes":1924484,"sha":"64d96c9a7b685caab9a9e7d6c3704945922ef678"},{"id":"R5","file":"FMA8066.stl","group":"ribs","side":"right","level":5,"bytes":2081784,"sha":"cd27206acfb3f4a26e2c77abec2a8cd9110c9fed"},{"id":"R6","file":"FMA8175.stl","group":"ribs","side":"right","level":6,"bytes":2231784,"sha":"dbde29d9fd73772c96e91f7f3461d91b2beb1091"},{"id":"R7","file":"FMA8229.stl","group":"ribs","side":"right","level":7,"bytes":2157384,"sha":"9f734303eb74e1750b5aa26b5a2baca26930b0cb"},{"id":"R8","file":"FMA8283.stl","group":"ribs","side":"right","level":8,"bytes":1832384,"sha":"a4ba569bc526117d24b52b59ddf6f7a4b2671474"},{"id":"R9","file":"FMA8364.stl","group":"ribs","side":"right","level":9,"bytes":1713984,"sha":"7af49ba4fed22486661201dae1642a27c3dc110b"},{"id":"R10","file":"FMA8445.stl","group":"ribs","side":"right","level":10,"bytes":1550584,"sha":"5c412b0bdac0dddfc47f8ff706b6410e715d6875"},{"id":"R11","file":"FMA8531.stl","group":"ribs","side":"right","level":11,"bytes":1121484,"sha":"e34fd45f1b94a2c8bbbff8b6462f93d736ab3089"},{"id":"R12","file":"FMA8533.stl","group":"ribs","side":"right","level":12,"bytes":663184,"sha":"a878befad2348334a235b176cf3c49e62ab47536"},{"id":"L1","file":"FMA7987.stl","group":"ribs","side":"left","level":1,"bytes":773284,"sha":"be28b5ee8e00693b438cffa9980c1c385ed22ee9"},{"id":"L2","file":"FMA8012.stl","group":"ribs","side":"left","level":2,"bytes":1265284,"sha":"a8e93635ddd97561ae03358578fe2fbdb6df948c"},{"id":"L3","file":"FMA8039.stl","group":"ribs","side":"left","level":3,"bytes":1560684,"sha":"cd4bab108e475831cce05e5d961f71b613879bc8"},{"id":"L4","file":"FMA8148.stl","group":"ribs","side":"left","level":4,"bytes":1896184,"sha":"26a3f0bc09746ed3750ba5a08237d89c451b8778"},{"id":"L5","file":"FMA8093.stl","group":"ribs","side":"left","level":5,"bytes":2078484,"sha":"f6f3a4c10d871aa79495f26ee39a047464703de3"},{"id":"L6","file":"FMA8202.stl","group":"ribs","side":"left","level":6,"bytes":2221784,"sha":"8f305c97a23c4142a86ea005c74f379d9a1d5e6e"},{"id":"L7","file":"FMA8256.stl","group":"ribs","side":"left","level":7,"bytes":2203184,"sha":"737ec06b48704d4521e7f79add1ff8a30b73d2d6"},{"id":"L8","file":"FMA8310.stl","group":"ribs","side":"left","level":8,"bytes":1856784,"sha":"37a316855d052718b503d5b40fba3dd0a4d59e17"},{"id":"L9","file":"FMA8391.stl","group":"ribs","side":"left","level":9,"bytes":1801084,"sha":"43ed7639aa445d750d6247b4d7c89baf67eac897"},{"id":"L10","file":"FMA8472.stl","group":"ribs","side":"left","level":10,"bytes":1587984,"sha":"84a961da3b750f63b7d7b49635cbe23be6eef4b3"},{"id":"L11","file":"FMA8532.stl","group":"ribs","side":"left","level":11,"bytes":1141384,"sha":"268128de0accc5903151aff7b5aa601bf7ff9551"},{"id":"L12","file":"FMA8534.stl","group":"ribs","side":"left","level":12,"bytes":686384,"sha":"138ab2cbf384e2880840f0962784f5937b8b7d1a"},{"id":"manubrium","file":"FMA7486.stl","group":"sternum","side":null,"level":null,"bytes":594184,"sha":"13a9334b67a3092084bf9b74b761563611a493a2"},{"id":"sternalBody","file":"FMA7487.stl","group":"sternum","side":null,"level":null,"bytes":995884,"sha":"fa7948c5cbd456089c965e481b366ea97a2ea937"},{"id":"xiphoid","file":"FMA7488.stl","group":"sternum","side":null,"level":null,"bytes":204384,"sha":"806cecafd4c3e2167a2a99a8a120891b830fe564"},{"id":"cartilageR","file":"BP28.stl","group":"cartilage","side":"right","level":null,"bytes":957884,"sha":"61a63d9564545a96d4988f5d1cbae0339ed01cd1"},{"id":"cartilageL","file":"BP24.stl","group":"cartilage","side":"left","level":null,"bytes":947184,"sha":"7506256f24d1408758831cf10405f2965f4d64be"},{"id":"cartR1","file":"FMA7875.stl","group":"cartilage","side":"right","level":1,"bytes":117184,"sha":"6d60244454f1b432c2bde63133ad52d22f77f6b0"},{"id":"cartR2","file":"FMA7886.stl","group":"cartilage","side":"right","level":2,"bytes":127084,"sha":"4d44c5ae0365090b9c602c32b644400be25b0019"},{"id":"cartR3","file":"FMA7913.stl","group":"cartilage","side":"right","level":3,"bytes":134784,"sha":"ac841437ab3704c0b761d5ee5551e804a398d2bc"},{"id":"cartR4","file":"FMA7976.stl","group":"cartilage","side":"right","level":4,"bytes":174384,"sha":"9d9ac17ade056cd94f10bcfb090f921376024e1a"},{"id":"cartR5","file":"FMA8070.stl","group":"cartilage","side":"right","level":5,"bytes":241584,"sha":"eb0e8179aacabbb5e80cd0f001639a1f0f0fb06f"},{"id":"cartR6","file":"FMA8194.stl","group":"cartilage","side":"right","level":6,"bytes":303984,"sha":"ef7f9f159dc07596675d58e923e9b7f5032ea06f"},{"id":"cartR7","file":"FMA8248.stl","group":"cartilage","side":"right","level":7,"bytes":524684,"sha":"6baf7d074b118e9344cf1d419f0cb38937adb58a"},{"id":"cartL1","file":"FMA8005.stl","group":"cartilage","side":"left","level":1,"bytes":110284,"sha":"0e778f2c9a0ab12f1af45e27015903c38baa878e"},{"id":"cartL2","file":"FMA8031.stl","group":"cartilage","side":"left","level":2,"bytes":117584,"sha":"3ceff8c8f697e8040ff9454f78d963afe8f40d9e"},{"id":"cartL3","file":"FMA8058.stl","group":"cartilage","side":"left","level":3,"bytes":121484,"sha":"88cf765e187f27efc714d6c3b4c0c52650dd855c"},{"id":"cartL4","file":"FMA8167.stl","group":"cartilage","side":"left","level":4,"bytes":161084,"sha":"ccb28f4648eeb80f8f8990b38748b65a363c30bb"},{"id":"cartL5","file":"FMA8112.stl","group":"cartilage","side":"left","level":5,"bytes":226884,"sha":"1fe9b06034e181fa453df7f5e443bf5742c03054"},{"id":"cartL6","file":"FMA8221.stl","group":"cartilage","side":"left","level":6,"bytes":298384,"sha":"ead3e49afdda52719757927c144d349c37ba241b"},{"id":"cartL7","file":"FMA8275.stl","group":"cartilage","side":"left","level":7,"bytes":495184,"sha":"0e768aa470980c894ff287c17e5443c8fe30c0c6"},{"id":"discC2","file":"FMA25058.stl","group":"discs","side":null,"level":2,"bytes":150784,"sha":"1f6bd7a0bdf1b2a6db51774a604834bc59c2378f"},{"id":"discC3","file":"FMA13896.stl","group":"discs","side":null,"level":3,"bytes":151684,"sha":"96315433859255ca3d306070e2267dd85f45d2d0"},{"id":"discC4","file":"FMA13897.stl","group":"discs","side":null,"level":4,"bytes":175884,"sha":"ad190dec4660699b6e5f143c135beb6e50fc08ed"},{"id":"discC5","file":"FMA13898.stl","group":"discs","side":null,"level":5,"bytes":172284,"sha":"c9e7c468d6e6a78b3729ec7407f58a97751623be"},{"id":"discC6","file":"FMA13899.stl","group":"discs","side":null,"level":6,"bytes":161984,"sha":"6bd7d31603abb74f3aa5a3993bb690d45c40112c"},{"id":"discC7","file":"FMA13900.stl","group":"discs","side":null,"level":7,"bytes":195684,"sha":"4e4b0faa1be446a952989149f7c670d69e8fa461"},{"id":"discT1","file":"FMA10458.stl","group":"discs","side":null,"level":1,"bytes":214084,"sha":"5ef06950c000adc7decd248b73b6b538118c4f97"},{"id":"discT2","file":"FMA13495.stl","group":"discs","side":null,"level":2,"bytes":248584,"sha":"6172cc6d4d5c24eeb6bd6707f5dfe9f0bb20e878"},{"id":"discT3","file":"FMA13500.stl","group":"discs","side":null,"level":3,"bytes":258784,"sha":"2fe27a601ab19701b5c5c94c270d609d14817191"},{"id":"discT4","file":"FMA13501.stl","group":"discs","side":null,"level":4,"bytes":315484,"sha":"580cb69e793f90ae004c25d90f89a639f15b689c"},{"id":"discT5","file":"FMA13502.stl","group":"discs","side":null,"level":5,"bytes":366884,"sha":"013e09662ac51c3302f2dfeaa3ae7354256e5648"},{"id":"discT6","file":"FMA13503.stl","group":"discs","side":null,"level":6,"bytes":452984,"sha":"8da10b6709830f283a6f24a7b058c5100e3d7df2"},{"id":"discT7","file":"FMA13504.stl","group":"discs","side":null,"level":7,"bytes":519384,"sha":"c5add18660cba1466615852f85e1885ff77a5bbd"},{"id":"discT8","file":"FMA13505.stl","group":"discs","side":null,"level":8,"bytes":510184,"sha":"54d1febd42086f5fc2aaa2cb76b4537f175eb139"},{"id":"discT9","file":"FMA13506.stl","group":"discs","side":null,"level":9,"bytes":252084,"sha":"03e14bc174a4b11cf8530146af62bc0aba87251d"},{"id":"discT10","file":"FMA13507.stl","group":"discs","side":null,"level":10,"bytes":576784,"sha":"b493b97bec636e30d99d7e9ecc47ef36469c5033"},{"id":"discT11","file":"FMA13508.stl","group":"discs","side":null,"level":11,"bytes":714084,"sha":"1dbae68ae25d1fa5e9f460f3f229392219f33193"}]);
@@ -3472,10 +3506,10 @@ function v57VisibleTorso(){
 }
 $('v57TorsoLayer').addEventListener('change',()=>{fitPose();request()});
 $('v57RetryTorso').addEventListener('click',()=>v57LoadTorso().catch(e=>console.warn(e)));
-window.__labThorax=()=>({version:'v0.61',mode:v57State.mode,loaded:v57State.loaded,total:V57_MANIFEST.length,failed:v57State.failed.slice(),sourceCommit:V57_SOURCE,groups:{ribs:24,spine:19,sternum:3,cartilage:16,discs:17},rendered:v57State.parts.map(p=>p.id),coreReady:v571HasCore(),sourceBytes:V57_MANIFEST.reduce((s,p)=>s+p.bytes,0),layer:$('v57TorsoLayer').value,actualLeftRightRibs:true,clinicalValidation:false});
+window.__labThorax=()=>({version:'v0.62',mode:v57State.mode,loaded:v57State.loaded,total:V57_MANIFEST.length,failed:v57State.failed.slice(),sourceCommit:V57_SOURCE,groups:{ribs:24,spine:19,sternum:3,cartilage:16,discs:17},rendered:v57State.parts.map(p=>p.id),coreReady:v571HasCore(),sourceBytes:V57_MANIFEST.reduce((s,p)=>s+p.bytes,0),layer:$('v57TorsoLayer').value,actualLeftRightRibs:true,clinicalValidation:false});
 
 
-// v0.61: audit data is descriptive; it never silently shifts atlas bones.
+// v0.62: audit data is descriptive; it never silently shifts atlas bones.
 // Exact triangle-crossing candidates for the original BP cartilage and the
 // newly included 1–7 cartilages. Coplanar containment is not certified.
 let v571JointMarker=null,v571LastAudit=null;
@@ -3620,13 +3654,13 @@ function poseBoundingPoints(){
 }
 window.__labUpperBody=()=>{
  v56SaveActive();v56RefreshOther();
- return {version:'v0.61',activeSide:v56Side,both:$('v56Both').checked,thorax:settings.rib,back:$('v56Back').checked&&!settings.cuffOnly&&!medicalFocus,
+ return {version:'v0.62',activeSide:v56Side,both:$('v56Both').checked,thorax:settings.rib,back:$('v56Back').checked&&!settings.cuffOnly&&!medicalFocus,
   poses:{right:{...v56PoseBySide.right},left:{...v56PoseBySide.left}},mirrorPlane:v56Mid(),
   activeBuffers:Object.keys(geomDynamic).length,otherBuffers:Object.keys(v56Other.geom).length,
   ribPairs:12,staticBoneMeshShared:true,thoraxProcedural:!v571HasCore(),thoraxSource:window.__labThorax(),anatomyValidated:false};
 };
 
-// v0.61: adaptive framebuffer and coalesced pose updates.
+// v0.62: adaptive framebuffer and coalesced pose updates.
 let v572Moving=false,v572Pending=false,v572NeedsFit=false,v572IdleTimer=null;
 function v572Scale(mode,active,dpr){
  const high=Math.min(Math.max(dpr||1,.5),2);
@@ -3703,11 +3737,11 @@ function v572Preset(name){
  feedbackJoint({forward:'両腕：前ならえ',t:'両腕：T字',up:'両腕：バンザイ',neutral:'両腕：基本肢位'}[name]);
 }
 for(const [id,p] of [['v572Forward','forward'],['v572T','t'],['v572Up','up'],['v572Neutral','neutral']])$(id).addEventListener('click',()=>v572Preset(p));
-window.__labPerformance=()=>({version:'v0.61',moving:v572Moving,mode:$('v572Quality').value,pixelRatio:v572RenderScale(),pendingPose:v572Pending,geometryUnchanged:true,autoFitOnJointEnd:$('v572Fit').checked});
+window.__labPerformance=()=>({version:'v0.62',moving:v572Moving,mode:$('v572Quality').value,pixelRatio:v572RenderScale(),pendingPose:v572Pending,geometryUnchanged:true,autoFitOnJointEnd:$('v572Fit').checked});
 window.__labForwardPose=()=>({realReady,forwardAxis:realReady?'world -Z':'world +Z',palm:v572ChoosePalm(),clinicalValidation:false});
 
 
-// v0.61: atlas deep muscles, two-anchor GPU skinning. The neutral mesh is
+// v0.62: atlas deep muscles, two-anchor GPU skinning. The neutral mesh is
 // preserved; the per-vertex weights are anatomical-region proxies, not measured
 // muscle fibers or wrapping constraints. Left side uses existing reflection.
 const V58_DEEP=[
@@ -3785,7 +3819,8 @@ function v58Parse(buffer,spec){
  const selection=v61SelectWeights(spec,vertices,faces,oldWeights,v601Weights);
  const weights=selection.weights;
  const samples=v601EdgeSamples(vertices,faces,oldWeights,weights);
- return {data,box,weights,bounds:v60WeightBounds(vertices,weights),samples,selection:selection.report,originalTriangles:count,attachmentMode:context.mode+' / v0.61'};
+ const nonlinear=v62SelectMode(spec,samples);
+ return {data,box,weights,nonlinear,bounds:v60WeightBounds(vertices,weights),samples,selection:selection.report,originalTriangles:count,attachmentMode:context.mode+' / v0.62'};
 }
 function v58Anchor(name){
  if(name==='trunk')return {q:ID,p:OR,rest:OR};
@@ -3832,7 +3867,7 @@ async function v58Load(fetcher=null){
     }
     const g=gpu(parsed.data);
     if(!SOFTWARE){g.weightBuffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,g.weightBuffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(parsed.weights),gl.STATIC_DRAW)}
-    v58Meshes.set(spec.id,{g,box:parsed.box,triangles:g.count/3,originalTriangles:parsed.originalTriangles,bounds:parsed.bounds||v60WeightBounds(parsed.data.vertices,parsed.weights),samples:parsed.samples||[],selection:parsed.selection||null,attachmentMode:parsed.attachmentMode||'synthetic'});
+    v58Meshes.set(spec.id,{g,box:parsed.box,triangles:g.count/3,originalTriangles:parsed.originalTriangles,bounds:parsed.bounds||v60WeightBounds(parsed.data.vertices,parsed.weights),samples:parsed.samples||[],selection:parsed.selection||null,nonlinear:parsed.nonlinear||null,attachmentMode:parsed.attachmentMode||'synthetic'});
     request();
    }catch(e){v58Failed.push(spec.id);console.warn('Deep mesh:',spec.id,e)}
    v58Status();
@@ -3842,12 +3877,13 @@ async function v58Load(fetcher=null){
 function v58DrawDeep(){
  if(SOFTWARE)return;
  // Cache the at-most-four rigid transforms per side, per draw.
- const matrices=new Map(),matrix=name=>{if(!matrices.has(name))matrices.set(name,v58AnchorMatrix(v58Anchor(name)));return matrices.get(name)};
+ const anchors=new Map(),anchor=name=>{if(!anchors.has(name)){const a=v58Anchor(name);anchors.set(name,{a,m:v58AnchorMatrix(a),dq:v62DQ(a)})}return anchors.get(name)};
  let chest=null;
  for(const spec of V60_ALL){
   const m=v58Meshes.get(spec.id);
   if(!m||!v58Visible(spec))continue;
-  drawPart(m.g,ID,OR,spec.id==='v58Subscap'?[.73,.30,.32]:[.62,.23,.28],1,1,[matrix(spec.a),matrix(spec.b),spec.id==='v58Serratus'&&$('v59Guard').checked?(chest??=v59ChestCenter()):null]);
+  const a=anchor(spec.a),b=anchor(spec.b),mode=v62Mode(spec,m),route=v62RouteFor(spec,b.a,mode.route);
+  drawPart(m.g,ID,OR,spec.id==='v58Subscap'?[.73,.30,.32]:[.62,.23,.28],1,1,[a.m,b.m,spec.id==='v58Serratus'&&$('v59Guard').checked?(chest??=v59ChestCenter()):null,mode.dual?[a.dq,b.dq]:null,route]);
  }
 }
 function v58DeepBounds(){
@@ -3858,6 +3894,9 @@ function v58DeepBounds(){
   const [lo,hi]=m.box,a=v58Anchor(spec.a),b=v58Anchor(spec.b);
   // Unwrapped GPU skinning is bounded by per-weight interval boxes rather
   // than treating the entire muscle as if rigidly attached to either bone.
+  const mode=v62Mode(spec,m),route=v62RouteFor(spec,b,mode.route);
+  if(mode.dual){pts.push(...v62Bounds(m.bounds,a,b,route?.kind?0.12:spec.id==='v58Serratus'&&$('v59Guard').checked?null:0));continue}
+  if(route){const p=v60BoundPoints(m.bounds,a,b),[l,u]=v58Box(p);pts.push(...v62BoxCorners(l.map(x=>x-.12),u.map(x=>x+.12)));continue}
   if(spec.id!=='v58Serratus'||!$('v59Guard').checked){pts.push(...v60BoundPoints(m.bounds,a,b));continue}
   // Serratus guard can modify displacement: keep the older broad bound.
   for(const x of [lo[0],hi[0]])for(const y of [lo[1],hi[1]])for(const z of [lo[2],hi[2]]){pts.push(v58Transform(a,[x,y,z]),v58Transform(b,[x,y,z]));if(spec.id==='v58Serratus'&&$('v59Guard').checked)pts.push([x,y,z]);}
@@ -3880,10 +3919,10 @@ function v58DragShoulder(d,dx,dy){
 }
 for(const spec of V60_ALL)$(spec.id).addEventListener('change',()=>{syncDisplayActions();request();if(!v58Busy&&v58Failed.length)v58Load().catch(console.warn)});
 $('v58Retry').addEventListener('click',()=>v58Load().catch(console.warn));
-window.__labDeepMuscles=()=>({version:'v0.61',loaded:[...v58Meshes.keys()],failed:v58Failed.slice(),available:V60_ALL.length,visible:V60_ALL.filter(s=>v58Visible(s)&&v58Meshes.has(s.id)).map(s=>s.id),triangles:[...v58Meshes].map(([id,m])=>({id,triangles:m.triangles,source:m.originalTriangles})),gpuSkinning:!SOFTWARE,clinicalValidation:false});
+window.__labDeepMuscles=()=>({version:'v0.62',loaded:[...v58Meshes.keys()],failed:v58Failed.slice(),available:V60_ALL.length,visible:V60_ALL.filter(s=>v58Visible(s)&&v58Meshes.has(s.id)).map(s=>s.id),triangles:[...v58Meshes].map(([id,m])=>({id,triangles:m.triangles,source:m.originalTriangles})),gpuSkinning:!SOFTWARE,clinicalValidation:false});
 
 
-// v0.61: source-frame attachment candidates. Bone samples are rest-space;
+// v0.62: source-frame attachment candidates. Bone samples are rest-space;
 // a sparse spatial index avoids all-pairs rib/mesh comparisons.
 function v59PointIndex(points,cell=atlasScale*16){
  const bins=new Map();const key=(x,y,z)=>x+','+y+','+z;
@@ -3966,10 +4005,10 @@ function v59Wrap(rest,posed,w,center){
  return sub(posed,mul(u,(d-clamp(d,-.028,.067))*k));
 }
 $('v59Guard').addEventListener('change',request);
-window.__labBackV059=()=>({version:'v0.61',surfaceMeshes:V59_SURFACE.map(s=>({id:s.id,loaded:v58Meshes.has(s.id)})),weights:[...v58Meshes].map(([id,m])=>({id,mode:m.attachmentMode})),guard:$('v59Guard').checked,collisionValidated:false,volumeValidated:false});
+window.__labBackV059=()=>({version:'v0.62',surfaceMeshes:V59_SURFACE.map(s=>({id:s.id,loaded:v58Meshes.has(s.id)})),weights:[...v58Meshes].map(([id,m])=>({id,mode:m.attachmentMode})),guard:$('v59Guard').checked,collisionValidated:false,volumeValidated:false});
 
 
-// v0.61 attachment candidates for chest and deltoid. All positions remain
+// v0.62 attachment candidates for chest and deltoid. All positions remain
 // in the common atlas reference frame. Distances are proxies, not footprints.
 function v60WeightContext(spec){
  const ribPoints=[];
@@ -4048,10 +4087,10 @@ $('v60ScapAudit').addEventListener('click',()=>{
  const r=v60ScapAudit(),fmt=x=>x.minMm===null?'近傍サンプルなし':x.minMm.toFixed(1)+' mm / 10mm以内 '+x.near10mm+'点';
  $('v60ScapOut').textContent=r.ready?r.rows.map(x=>(x.side==='right'?'右':'左')+' 中立 '+fmt(x.neutral)+'\n現在 '+fmt(x.current)).join('\n')+'\nサンプル間距離。貫通・真の関節面距離ではありません。':r.reason;
 });
-window.__labChestV060=()=>({version:'v0.61',loaded:V60_CHEST.filter(s=>v58Meshes.has(s.id)).map(s=>s.id),total:V60_CHEST.length,deltoidAtlas:v60DeltReady(),clinicalValidation:false});
+window.__labChestV060=()=>({version:'v0.62',loaded:V60_CHEST.filter(s=>v58Meshes.has(s.id)).map(s=>s.id),total:V60_CHEST.length,deltoidAtlas:v60DeltReady(),clinicalValidation:false});
 
 
-// v0.61: preserve atlas rest geometry and refine only skinning weights.
+// v0.62: preserve atlas rest geometry and refine only skinning weights.
 // Candidate distances and radii are engineering heuristics, not measured
 // anatomical attachment footprints. Keep v0.60 functions as audit baseline.
 function v601Weight(spec,p,box,c,old){
@@ -4131,7 +4170,8 @@ function v601AuditSide(side){
   const m=v58Meshes.get(spec.id);if(!m?.samples?.length)continue;
   const a=v58Anchor(spec.a),b=v58Anchor(spec.b),wrap=spec.id==='v58Serratus'?center:null;
   const old=v601Stats(m.samples.map(e=>v601EdgeRatio(e,a,b,e.old,wrap)));
-  const current=v601Stats(m.samples.map(e=>v601EdgeRatio(e,a,b,e.w,wrap)));
+  const mode=v62Mode(spec,m),route=v62RouteFor(spec,b,mode.route);
+  const current=v601Stats(m.samples.map(e=>v62EdgeRatio(e,a,b,mode.dual,route,wrap)));
   rows.push({id:spec.id,name:spec.name,old,current});
  }
  return {side,rows};
@@ -4165,7 +4205,7 @@ $('v601Perf').addEventListener('click',()=>{
  const fmt=a=>{const s=v601PerfStats(a);return s?s.n+'回：中央値 '+s.median.toFixed(1)+'ms／95% '+s.p95.toFixed(1)+'ms':'未計測'};
  $('v601PerfOut').textContent='操作中 '+fmt(v601RenderTimes.moving)+' ／停止中 '+fmt(v601RenderTimes.still)+'。JS描画呼び出し時間（GPU完了・FPSではありません）。';
 });
-window.__labRefinementV0601=()=>({version:'v0.61',audit:v601Audit(),renderCPU:{moving:v601PerfStats(v601RenderTimes.moving),still:v601PerfStats(v601RenderTimes.still)},clinicalValidation:false});
+window.__labRefinementV0601=()=>({version:'v0.62',audit:v601Audit(),renderCPU:{moving:v601PerfStats(v601RenderTimes.moving),still:v601PerfStats(v601RenderTimes.still)},clinicalValidation:false});
 
 
 let v61GuideCache=null;
@@ -4253,13 +4293,140 @@ function v61AuditReport(){
   const p=side===v56Side?settings:v56PoseBySide[side],raw=shoulderPoseFor(p.elev,p.plane,p.axial,p.sync,true),g=p.sync?v61Guide(raw.qS,raw.AC,p.elev,d):{before:null,after:null,angles:[0,0]};
   return {side,enabled:$('v61Scap').checked&&p.sync,guide:g.before===null?null:{before:g.before,after:g.after,angles:g.angles}};
  });
- return {version:'v0.61',thoraxProxy:!!d,sides,muscles:[...v58Meshes].filter(([,m])=>m.selection).map(([id,m])=>({id,name:V60_ALL.find(s=>s.id===id)?.name,...m.selection})),collisionValidated:false,volumeValidated:false,clinicalValidation:false};
+ return {version:'v0.62',thoraxProxy:!!d,sides,muscles:[...v58Meshes].filter(([,m])=>m.selection).map(([id,m])=>({id,name:V60_ALL.find(s=>s.id===id)?.name,...m.selection})),collisionValidated:false,volumeValidated:false,clinicalValidation:false};
 }
 $('v61Audit').addEventListener('click',()=>{
  v572FlushPose();const r=v61AuditReport();
  $('v61Out').textContent=r.sides.map(s=>(s.side==='right'?'右':'左')+' 肩甲胸郭：'+(!s.guide?'未評価':(s.enabled?'ON ':'OFF ')+Math.sqrt(s.guide.before).toFixed(1)+' → '+Math.sqrt(s.guide.after).toFixed(1)+' mm相当（代理誤差）')).join('\n')+'\n'+r.muscles.map(m=>m.name+'：'+m.selected+' / '+m.baseline.toFixed(3)+' → '+m.score.toFixed(3)).join('\n')+'\n筋の値は13姿勢の局所辺長損失。接触・体積・筋力ではありません。';
 });
 window.__labConstraintsV061=v61AuditReport;
+
+
+// v0.62: approximate dual-quaternion blending (Kavan et al. 2008).
+// CPU reference matches shader: XYZW quaternions, antipodal handling,
+// normalize by real norm; dual scalar component does not affect translation.
+function v62DQ(a){
+ const t=sub(a.p,qr(a.q,a.rest));
+ return {q:a.q,d:qm([...t,0],a.q).map(x=>x*.5)};
+}
+function v62DQBlend(a,b,p,w,pair=null){
+ const [A,B]=pair||[v62DQ(a),v62DQ(b)],sign=A.q.reduce((s,x,i)=>s+x*B.q[i],0)<0?-1:1;
+ const q=A.q.map((x,i)=>x*(1-w)+B.q[i]*w*sign),d=A.d.map((x,i)=>x*(1-w)+B.d[i]*w*sign),l=Math.hypot(...q);
+ const n=q.map(x=>x/l),dual=d.map(x=>x/l),t=qm(dual,qc(n)).slice(0,3).map(x=>2*x);
+ return add(qr(n,p),t);
+}
+// Approximate shoulder head radius from nearby actual humerus samples;
+// cache by array identity. No assumption that GH is a measured sphere center.
+let v62HeadCache=null;
+function v62HeadRadius(){
+ const v=realSurfaceVertices.humerus;if(!v?.length)return null;
+ if(v62HeadCache?.v===v)return v62HeadCache.r;
+ const s=v.filter(p=>len(p)<atlasScale*40).map(p=>len(p)).sort((a,b)=>a-b);
+ const r=s.length>=20?s[Math.floor(.65*(s.length-1))]:null;
+ v62HeadCache={v,r:r&&r>atlasScale*8?r:null};return v62HeadCache.r;
+}
+function v62RouteFor(spec,b,enabled,ignoreToggle=false){
+ if(!enabled||(!ignoreToggle&&!$('v62Route').checked))return null;
+ if(spec.id==='v58Serratus'&&$('v59Guard').checked){
+  const data=v61GuideData();if(!data)return null;
+  return {kind:1,rest:data.e.c,radii:[data.e.r[0],data.e.r[2]]};
+ }
+ if(spec.deltoid||['v60PecClav','v60PecStern','v60PecAbd'].includes(spec.id)){
+  const radius=v62HeadRadius();if(!radius)return null;
+  return {kind:2,rest:realAnchors.GH,now:b.p,radius};
+ }
+ return null;
+}
+function v62RoutePoint(rest,p,w,r){
+ if(!r)return p;
+ const k=4*w*(1-w);
+ if(r.kind===1){
+  const a=[rest[0]-r.rest[0],rest[2]-r.rest[2]],b=[p[0]-r.rest[0],p[2]-r.rest[2]],l0=Math.hypot(a[0]/r.radii[0],a[1]/r.radii[1]),l1=Math.hypot(b[0]/r.radii[0],b[1]/r.radii[1]);
+  if(l1<.0001)return p;
+  const d=b.map(x=>x*(clamp(l1,l0-.045,l0+.09)/l1-1)),dl=Math.hypot(...d),s=k*Math.min(1,.12/Math.max(dl,1e-12));
+  return [p[0]+d[0]*s,p[1],p[2]+d[1]*s];
+ }
+ const l0=len(sub(rest,r.rest)),v=sub(p,r.now),l1=len(v),gate=1-smooth(clamp((l0-r.radius)/.19425,0,1)),target=Math.min(l0,r.radius)-.01665;
+ return l1<.0001?p:add(p,mul(v,Math.min(.12,Math.max(0,target-l1))*k*gate/l1));
+}
+function v62Point(a,b,p,w,dual,route,wrap,pair=null){
+ const posed=dual?v62DQBlend(a,b,p,w,pair):v58Blend(a,b,p,w);
+ return route?v62RoutePoint(p,posed,w,route):wrap?v59Wrap(p,posed,w,wrap):posed;
+}
+function v62EdgeRatio(e,a,b,dual,route,wrap,pair=null){
+ return len(sub(v62Point(a,b,e.p,e.w[0],dual,route,wrap,pair),v62Point(a,b,e.q,e.w[1],dual,route,wrap,pair)))/e.rest;
+}
+function v62Mode(spec,m){
+ const mode=$('v62Mode').value||'auto';
+ if(mode==='linear')return {dual:false,route:false};
+ if(mode==='dual')return {dual:true,route:true};
+ // If route settings change, use selection for that setting, never apply
+ // a route to a candidate selected with a different route.
+ const result=m.nonlinear?.[$('v62Route').checked?'on':'off'];
+ return result?{dual:result.dual,route:result.route}:{dual:false,route:false};
+}
+function v62SelectMode(spec,samples){
+ if(!samples.length)return null;
+ // Use the same static v0.61 weights for all candidates. Include -90°
+ // axial rotation with high elevation in both principal planes.
+ const poses=[...V61_POSES,[165,0,-90],[165,90,-90],[180,0,60],[90,90,-90]].map(([e,p,a])=>shoulderPoseFor(e,p,a,true));
+ const edges=samples.filter((_,i)=>i%2===0),wrap=spec.id==='v58Serratus'&&$('v59Guard').checked?v59ChestCenter():null;
+ const score=(dual,route)=>{
+  const ratios=[];
+  for(const p of poses){const a=v61PoseAnchor(spec.a,p),b=v61PoseAnchor(spec.b,p),r=v62RouteFor(spec,b,route,true),pair=dual?[v62DQ(a),v62DQ(b)]:null;
+   for(const e of edges)ratios.push(v62EdgeRatio(e,a,b,dual,r,wrap,pair));
+  }return v61Objective(ratios);
+ };
+ const baseline=score(false,false),d=score(true,false);
+ const candidates=[{name:'線形',dual:false,route:false,score:baseline},{name:'DQS',dual:true,route:false,score:d}];
+ const choose=c=>({...c.reduce((a,b)=>b.score<a.score-1e-10?b:a),baseline,poses:poses.length,edges:edges.length});
+ const off=choose(candidates);
+ const on=choose([...candidates,{name:'線形＋経路',dual:false,route:true,score:score(false,true)},{name:'DQS＋経路',dual:true,route:true,score:score(true,true)}]);
+ return {on,off};
+}
+// Conservative camera bound for DQS, not the old linear hull. For each
+// weight interval center the rest box and subtract the transformed A center.
+// The relative dual translation has endpoint norm |Bcenter-Acenter|/2;
+// shortest-hemisphere real interpolation norm >= 1/sqrt(2).
+// Derivative bound for center translation <= (sqrt(2)+4*sqrt(2))*distance;
+// add rest box radius (rigid rotation) and bounded route displacement.
+function v62BoxCorners(lo,hi){
+ const p=[];for(const x of [lo[0],hi[0]])for(const y of [lo[1],hi[1]])for(const z of [lo[2],hi[2]])p.push([x,y,z]);return p;
+}
+function v62Bounds(bins,a,b,pad=0){
+ const pts=[];
+ for(const box of bins||[]){
+  const c=box.lo.map((x,i)=>(x+box.hi[i])/2),r=len(sub(box.hi,c)),w=(box.w0+box.w1)/2;
+  const A=v58Transform(a,c),B=v58Transform(b,c),m=v62DQBlend(a,b,c,w);
+  let radius=r+8*len(sub(A,B))*(box.w1-box.w0)/2;
+  // Old tapered radial guard is non-expansive toward rest in one axis,
+  // but can combine other coordinates: enclose its radial displacement.
+  if(pad===null)radius+=len(sub(m,c))+radius;
+  else radius+=pad;
+  pts.push(...v62BoxCorners(m.map(x=>x-radius),m.map(x=>x+radius)));
+ }return pts;
+}
+for(const id of ['v62Mode','v62Route'])$(id).addEventListener('change',request);
+function v62AuditSide(side){
+ const rows=[],center=$('v59Guard').checked?v59ChestCenter():null;
+ for(const spec of V60_ALL){
+  const m=v58Meshes.get(spec.id);if(!m?.samples?.length)continue;
+  const a=v58Anchor(spec.a),b=v58Anchor(spec.b),mode=v62Mode(spec,m),route=v62RouteFor(spec,b,mode.route),wrap=spec.id==='v58Serratus'?center:null;
+  const baseline=v61Objective(m.samples.map(e=>v62EdgeRatio(e,a,b,false,null,wrap))),current=v61Objective(m.samples.map(e=>v62EdgeRatio(e,a,b,mode.dual,route,wrap)));
+  rows.push({id:spec.id,name:spec.name,mode:mode.dual?'DQS':'線形',route:route?.kind||0,baseline,current,selection:m.nonlinear});
+ }return {side,rows};
+}
+function v62Audit(){
+ if(!realReady)return {ready:false,sides:[]};
+ v572FlushPose();v56RefreshOther();
+ const sides=[v62AuditSide(v56Side)];if($('v56Both').checked)sides.push(v56WithOther(()=>v62AuditSide(v56Inactive())));
+ return {ready:sides.some(s=>s.rows.length),sides,collisionValidated:false,volumeValidated:false,clinicalValidation:false};
+}
+$('v62Audit').addEventListener('click',()=>{
+ const r=v62Audit();
+ $('v62Out').textContent=r.ready?r.sides.map(s=>(s.side==='right'?'右':'左')+'\n'+s.rows.map(x=>x.name+' '+x.mode+(x.route?'＋経路':'')+'：旧 '+x.baseline.toFixed(3)+' → 新 '+x.current.toFixed(3)).join('\n')).join('\n\n')+'\n現在姿勢のサンプル辺長損失。増加する場合は線形方式で比較してください。':'未取得／サンプルなし';
+});
+window.__labNonlinearV062=v62Audit;
 
 state.yaw=Math.PI;
 try{makeFallbackHand();gl.enable(gl.DEPTH_TEST);update();fitPose();frame();loadRealBones()}catch(e){$('err').style.display='block';$('err').textContent='3D描画エラー: '+String(e);console.error(e)}
