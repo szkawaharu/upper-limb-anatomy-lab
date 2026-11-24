@@ -121,10 +121,34 @@ window.__runV56Tests=async()=>{
  v57State.parts=[];v57State.mode='fallback';
  await v57LoadTorso(async e=>{if(e.id==='R1')throw Error('simulated missing base');return make(e)});
  ok(v57State.mode==='fallback'&&v57State.parts.length===0,'base failure keeps old fallback');
+
+ {
+ ok(v572Scale('auto',true,2)===.85&&v572Scale('auto',false,2)===2,'adaptive resolution');
+ ok(v572Scale('high',true,2)===2&&v572Scale('light',false,2)===1,'manual quality overrides');
+ ok(v572Scale('auto',true,.7)===.7,'adaptive resolution never exceeds device');
+ v572Preset('forward');
+ let v572p=window.__labUpperBody().poses;
+ ok(v572p.right.elev===90&&v572p.left.elev===90&&v572p.right.plane===90&&v572p.left.plane===90,'bilateral forward preset');
+ ok(v572p.right.elbow===0&&v572p.left.elbow===0&&v572p.right.wristFlex===0&&v572p.left.fingerCurl===0,'forward preset straight elbows and hands');
+ ok(qr(shoulderPoseFor(90,90,0,true).qH,[0,-1,0])[2]<-.999999,'real anterior direction');
+ const palm=v572ChoosePalm();ok(Number.isFinite(palm.alignment)&&palm.pronation>=-90&&palm.pronation<=90,'bounded palm optimization');
+ v572Preset('t');v572p=window.__labUpperBody().poses;ok(v572p.right.plane===0&&v572p.left.elev===90,'bilateral T preset');
+ v572Preset('up');v572p=window.__labUpperBody().poses;ok(v572p.right.elev===180&&v572p.left.elev===180,'bilateral overhead preset');
+ v572Preset('neutral');v572p=window.__labUpperBody().poses;ok(v572p.right.elev===0&&v572p.left.elev===0,'bilateral neutral preset');
+ $('elbow').value='42';v572QueuePose();v572QueuePose();
+ ok(v572Pending&&settings.elbow===0,'pose changes coalesced before frame');
+ v572FinishInteraction();
+ ok(!v572Pending&&!v572Moving&&settings.elbow===42,'final pose flushed and quality restored');
+ state.zoom=.75;$('v572Fit').checked=true;
+ ok(v572FitIfNeeded()&&state.zoom>.75,'clipped model fit');
+ $('v572Fit').checked=false;state.zoom=.75;
+ ok(!v572FitIfNeeded()&&state.zoom===.75,'opt-out preserves manual zoom');
+ v572Preset('neutral');
+ }
  return passed;
 };`;
 js=js.replace(/\}\)\(\);\s*$/,instrument+"\n})();");
 new Function("document","window","fetch","requestAnimationFrame","matchMedia","innerWidth","innerHeight","setTimeout","clearTimeout","console",js)(doc,win,async()=>{throw Error("offline test")},f=>callbacks.push(f),()=>({matches:true}),390,740,()=>0,()=>{}, {log(){},warn(){},error(...a){errors.push(a.map(String).join(" "))}});
 assert.equal(errors.length,0,errors.join("\n"));
 const results=await win.__runV56Tests();
-console.log('PASS v0.56: '+results.length+' integration checks — '+results.join('; '));
+console.log('PASS v0.57.2: '+results.length+' integration checks — '+results.join('; '));

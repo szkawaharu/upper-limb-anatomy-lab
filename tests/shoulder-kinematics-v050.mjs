@@ -41,18 +41,28 @@ for(const sync of [false,true])for(const elev of [0,30,60,90,120,150,180])for(co
  assert.ok(m.relativeTiltDeg>=0&&m.relativeTiltDeg<180.01,'relative tilt finite');
  assert.equal(m.clinicalAccuracyVerified,false);
  const p=shoulderPoseFor(elev,plane,axial,sync);
- const k=elev/180,yaw=rad(sync?12*k:0);
+ const k=elev/180,forward=Math.sin(rad(plane)),yaw=rad(sync?(12+12*forward)*k:0);
  const qOld=qm(qa([0,0,1],rad(sync?elev/3:0)),qm(qa([1,0,0],rad(sync?13*k:0)),qa([0,1,0],rad(sync?10*k:0))));
- const qScap=qm(qa([0,1,0],yaw),qOld);
+ const qScap=qm(qa([0,1,0],yaw+(sync?rad(8*k*forward):0)),qOld);
  const qClav=sync?qm(qa([0,0,1],rad(18*k)),qa([0,1,0],yaw)):ID;
- const theta=rad(elev),phi=rad(plane),dir=elev===180?[.001,1,.001]:[Math.sin(theta)*Math.cos(phi),-Math.cos(theta),Math.sin(theta)*Math.sin(phi)];
- const qHum=qm(qt([0,-1,0],dir),qa([0,-1,0],rad(axial)));
+ const theta=rad(elev),phi=rad(plane);
+ const qHum=qm(qa([Math.sin(phi),0,Math.cos(phi)],theta),qa([0,-1,0],rad(axial)));
  const eq=(a,b)=>len(sub(a,b))<1e-10;
- assert.ok(eq(qScap,p.qS)&&eq(qClav,p.qC)&&eq(qHum,p.qH),'existing kinematics changed');
+ assert.ok(eq(qScap,p.qS)&&eq(qClav,p.qC)&&eq(qHum,p.qH),'plane-aware kinematics mismatch');
  count++;
 }
 const ids=['shoulderAuditPanel','shoulderAuditCurrent','shoulderAuditSweep','shoulderAuditSweepResult'];
 for(const id of ids)assert.ok(html.includes('id="'+id+'"'),'missing UI: '+id);
 assert.ok(/上肢3D解剖ラボ · v\d+\.\d+/.test(html),'version 0.51 not visible');
 assert.ok(js.includes('window.__labShoulder=()=>'),'missing user inspect API');
-console.log('PASS v0.50: '+count+' posture combinations, SC/AC/GH continuity and legacy motion preservation. Clinical accuracy is NOT certified.');
+console.log('PASS v0.50: '+count+' posture combinations, SC/AC/GH continuity and plane-aware motion. Clinical accuracy is NOT certified.');
+
+const forward=shoulderPoseFor(90,90,0,true),side=shoulderPoseFor(90,0,0,true);
+assert.ok(qr(forward.qH,[0,-1,0])[2]<-.999999,'front elevation is anterior (-Z)');
+assert.ok(qr(side.qH,[0,-1,0])[0]>.999999,'lateral elevation remains lateral');
+assert.ok(forward.AC[2]<side.AC[2],'forward plane advances clavicle endpoint');
+for(const plane of [0,30,60,90]){
+ const a=shoulderPoseFor(179.999,plane,0,true),b=shoulderPoseFor(180,plane,0,true);
+ assert.ok(len(sub(qr(a.qH,[1,0,0]),qr(b.qH,[1,0,0])))<.001,'overhead rotation continuous');
+}
+console.log('PASS v0.57.2: anterior sign, lateral direction, plane-aware protraction, overhead continuity');

@@ -2,7 +2,7 @@
 
 スマートフォン対応の上肢骨格・筋肉・腱を観察する教育用Webアプリ。動作と形態は**解剖学的に未検証の近似を含み、臨床用・診断用ではありません**。
 
-**現在のバージョン：v0.57.1**
+**現在のバージョン：v0.57.2**
 
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
@@ -11,6 +11,10 @@
 - **v0.54の保存ブランチ**：[`archive/v0.54-before-anatomy-rebuild`](../../tree/archive/v0.54-before-anatomy-rebuild)
 - **v0.53の保存ブランチ**：[`archive/v0.53-before-review`](../../tree/archive/v0.53-before-review)
 - **v0.51の保存ブランチ**：[`archive/v0.51-before-scapular-fix`](../../tree/archive/v0.51-before-scapular-fix)
+
+## v0.57.2：操作性と前方挙上
+
+実骨の前方挙上を -Z に修正し、180°で挙上面ごとの回転を連続化。肩甲帯前方移動は固定パラメータの模式モデル。両腕の前ならえ・T字・バンザイ・基本肢位プリセットを追加。操作中は描画倍率を最大0.85、停止後は最大2に復帰（自動／軽量／高精細）。関節入力をフレーム単位に集約し、操作終了時に画面外の場合のみフィットするオプションを追加。実機速度・臨床的運動精度は未検証。[詳細](./docs/MOTION_V0572.md)
 
 ## v0.57.1：胸郭接続の補完
 
