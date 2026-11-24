@@ -300,7 +300,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <label class="switch"><input id="v61Scap" type="checkbox" checked>肩甲胸郭の近似滑走補正（実胸郭取得時）</label><div class="detail" id="v61ScapStatus">肋骨サンプルから高さ別の横断面近似を構築します。実接触は未検証。</div>
 <div class="control"><label>筋メッシュ変形方式（研究用）</label><select id="v62Mode"><option value="fiber" selected>v0.64 筋束経路エンジン（試験）</option><option value="guided">v0.63 肩・胸郭ガイド（比較）</option><option value="linear">従来の線形（比較用）</option><option value="auto">比較選択（補正上限あり・試験）</option><option value="dual">非線形 DQS（補正上限あり・試験）</option></select>
 <label class="switch"><input id="v62Route" type="checkbox" checked>胸郭・肩周辺の経路近似補正（試験モードのみ）</label>
-<div class="detail">v0.64：解剖メッシュ内の6本の領域ガイド曲線を使い、接線方向の伸縮と断面の近似補正を分離。局所辺長の比較で悪化する変形は抑制。ガイドは実測筋束ではなく、接触・筋力・体積保存は未検証。</div>
+<div class="detail">v0.64：解剖メッシュ内の6本の領域ガイド曲線を使い、接線方向の伸縮と断面の近似補正を分離。局所辺長・別サンプル面積・近似包絡の比較で悪化する候補は抑制。ガイドは実測筋束ではなく、接触・筋力・体積保存は未検証。</div>
 <div class="detail" id="v64Status">筋束エンジン：準備中</div><button type="button" id="v64Audit">筋束エンジンの検査（左右）</button><pre class="detail" id="v64AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><button type="button" id="v63Volume">三角筋・大胸筋の体積変化を検査</button><pre class="detail" id="v63VolumeOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査（閉じた一貫したメッシュのみ）</pre><button type="button" id="v62Audit">新旧変形を比較（現在姿勢）</button><pre class="detail" id="v62Out" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre>
 <div class="detail">局所辺長損失を比較。筋力・正常範囲の評価ではありません。<a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/NONLINEAR_V062.md" target="_blank" rel="noopener noreferrer">仕様と限界</a></div></div>
 <button type="button" id="v61Audit">幾何拘束・筋変形の検査</button><pre class="detail" id="v61Out" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre>
@@ -514,7 +514,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <footer class="sources">参考：<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8880601/" target="_blank" rel="noopener">手関節と橈側手根屈筋の解剖学</a> ／ <a href="https://www.ncbi.nlm.nih.gov/books/NBK526110/" target="_blank" rel="noopener">腕橈骨筋の起始・停止</a> ／ <a href="https://www.ncbi.nlm.nih.gov/books/NBK537056/" target="_blank" rel="noopener">三角筋の解剖学的付着部</a> ／ <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3042752/" target="_blank" rel="noopener">三角筋の機能分節</a> ／ <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8111677/" target="_blank" rel="noopener">肩甲上腕リズムの概説</a> ／ <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10078813/" target="_blank" rel="noopener">胸鎖・肩鎖・肩甲胸郭の運動</a> ／ <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12398250/" target="_blank" rel="noopener">個人差と非線形性（2025）</a><br>個人の診断や関節可動域の安全性判定には使わないでください。実骨形状の読み込みにはインターネット接続が必要です。外部ライブラリは不要です。尺側手根屈筋の参考：<a href="https://rad.uw.edu/muscle-atlas/flexor-carpi-ulnaris" target="_blank" rel="noopener">University of Washington: FCU起始・停止</a> ／ <a href="https://www.ncbi.nlm.nih.gov/books/NBK526051/" target="_blank" rel="noopener">NCBI: FCUの解剖</a>。回外筋の参考：<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3552760/" target="_blank" rel="noopener">前腕背側筋の解剖学</a>。長掌筋：<a href="https://www.ncbi.nlm.nih.gov/books/NBK519516/" target="_blank" rel="noopener">NCBI / Palmaris Tendon</a>、<a href="https://www.rad.washington.edu/muscle-atlas/palmaris-longus" target="_blank" rel="noopener">University of Washington / Palmaris Longus</a>。 浅指屈筋：<a href="https://www.ncbi.nlm.nih.gov/books/NBK539723/" target="_blank" rel="noopener">NCBI / FDS</a>、<a href="https://surgeryreference.aofoundation.org/orthopedic-trauma/adult-trauma/further-reading/hand-flexor-tendon-mechanism" target="_blank" rel="noopener">AO Foundation / Tendon mechanism</a>。 ／ 深指屈筋：<a href="https://www.ncbi.nlm.nih.gov/books/NBK526046/" target="_blank" rel="noopener">NCBI / FDP</a>、<a href="https://surgeryreference.aofoundation.org/orthopedic-trauma/adult-trauma/further-reading/hand-flexor-tendon-mechanism/" target="_blank" rel="noopener">AO Foundation / 指屈筋腱</a>。</footer>
 <div class="sources" style="max-width:1024px;margin:9px auto 4px;line-height:1.75">筋の解剖学的配置：<a href="https://www.ncbi.nlm.nih.gov/books/NBK534805/" target="_blank" rel="noopener">NCBI Bookshelf: Wrist Extensor Muscles</a>（筋・腱形状は推定ガイドであり原図の複製ではありません）／ 骨形状：<a href="https://github.com/Kevin-Mattheus-Moerman/BodyParts3D" target="_blank" rel="noopener">BodyParts3D / Anatomography</a>、© The Database Center for Life Science、<a href="https://creativecommons.org/licenses/by-sa/2.1/jp/" target="_blank" rel="noopener">CC BY-SA 2.1 Japan</a>。本サイトの骨形状はWeb表示用に形式変換し、可動モデルへ組み込んでいます。<a href="https://doi.org/10.1093/nar/gkn613" target="_blank" rel="noopener">Mitsuhashi et al. (2009)</a>。教育・研究試作用で、臨床診断や安全性評価には使えません。</div>
 </div>
-<script src="./muscle-fiber-v064.js?v=0640"></script>
+<script src="./muscle-fiber-v064.js?v=0640r2"></script>
 <script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id), canvas=$('viewer'); let nativeGL=null;try{nativeGL=canvas.getContext('webgl',{antialias:true,alpha:false,preserveDrawingBuffer:false})||canvas.getContext('experimental-webgl',{antialias:true,alpha:false});}catch(e){console.warn('WebGL unavailable; 2D fallback requested:',e)}const SOFTWARE=!nativeGL;
@@ -4772,12 +4772,28 @@ function v64Wrap(spec){
  };
  return null;
 }
+// Rest-relative envelope diagnostics only: no claim of exact contact.
+function v64Constraint(spec,b){
+ if(!$('v62Route').checked)return null;
+ const cfg=V64_MUSCLES[spec.id],radius=cfg?.wrap==='head'?v62HeadRadius():null,profile=cfg?.wrap==='thorax'?v61GuideData()?.profile:null;
+ if(radius)return (rest,p)=>{
+  const r0=len(sub(rest,realAnchors.GH));if(r0>radius+.18)return null;
+  const r1=len(sub(p,b.p)),minR=Math.min(r0,radius),maxR=r0+.0555;
+  return (Math.max(0,minR-r1)+Math.max(0,r1-maxR))/atlasScale;
+ };
+ if(profile)return (rest,p)=>{
+  const g0=v63Gap(rest,profile);if(g0===null)return null;
+  const g1=v63Gap(p,profile);if(g1===null)return 100;
+  return (Math.max(0,g0-.0222-g1)+Math.max(0,g1-g0-.0444))/atlasScale;
+ };
+ return null;
+}
 function v64Field(spec,m,a,b,mode,route,wrap){
  if(!mode.fiber||!v64GPU||!m.fiber)return null;
  const key=JSON.stringify([a.q,a.p,b.q,b.p,mode.dual,mode.route,route?.kind,wrap,v57State.parts.length]);
  if(m.fiberCache.has(key))return m.fiberCache.get(key);
  const pair=mode.dual?[v62DQ(a),v62DQ(b)]:null,baseline=(p,t)=>v62Point(a,b,p,t,mode.dual,route,wrap,pair);
- const posed=v64Engine.pose(m.fiber,a,b,v64Wrap(spec)),stats=v64Engine.assess(m.fiber,posed,a,b,baseline);
+ const posed=v64Engine.pose(m.fiber,a,b,v64Wrap(spec)),stats=v64Engine.assess(m.fiber,posed,a,b,baseline,v64Constraint(spec,b));
  const f={...stats,field:m.fiber,posed,a,b,basePoint:baseline,restFlat:Float32Array.from(m.fiber.controls.flat(2)),nowFlat:Float32Array.from(posed.flat(2))};
  if(m.fiberCache.size>=2)m.fiberCache.delete(m.fiberCache.keys().next().value);
  m.fiberCache.set(key,f);return f;
@@ -4794,7 +4810,7 @@ function v64AuditSide(side){
   const m=v58Meshes.get(spec.id);if(!m?.fiber){rows.push({id:spec.id,name:spec.name,reason:'未取得または領域ガイド構築不能'});continue}
   const a=v58Anchor(spec.a),b=v58Anchor(spec.b),mode=v62Mode(spec,m),route=v62RouteFor(spec,b,mode.route,false,mode.guided),wrap=spec.id==='v58Serratus'?center:null;
   const f=v64Field(spec,m,a,b,mode,route,wrap);
-  rows.push(f?{id:spec.id,name:spec.name,alpha:f.alpha,baseline:f.baseline,score:f.score,minRatio:f.minRatio,maxRatio:f.maxRatio,samples:f.samples}:{id:spec.id,name:spec.name,reason:'筋束モード未選択またはGPU非対応'});
+  rows.push(f?{id:spec.id,name:spec.name,alpha:f.alpha,baseline:f.baseline,score:f.score,minRatio:f.minRatio,maxRatio:f.maxRatio,samples:f.samples,areaSamples:f.areaSamples,areaBaseline:f.areaBaseline,areaScore:f.areaScore,contactBaseline:f.contactBaseline,contactScore:f.contactScore}:{id:spec.id,name:spec.name,reason:'筋束モード未選択またはGPU非対応'});
  }
  return {side,rows};
 }
@@ -4805,7 +4821,7 @@ function v64Audit(){
  return {ready:true,gpu:v64GPU,sides,clinicalValidation:false,contactValidated:false,volumePreserved:false,measuredFibers:false};
 }
 $('v64Audit').addEventListener('click',()=>{
- const r=v64Audit();$('v64AuditOut').textContent=r.ready?r.sides.map(s=>(s.side==='right'?'右':'左')+'\n'+s.rows.map(x=>x.name+'：'+(x.reason||('筋束 '+Math.round(x.alpha*100)+'%／局所損失 '+x.baseline.toFixed(3)+' → '+x.score.toFixed(3)+'／辺長比 '+x.minRatio.toFixed(2)+'–'+x.maxRatio.toFixed(2)))).join('\n')).join('\n\n')+'\n候補比較は局所辺長のみ。形状・接触・臨床精度を保証しません。':'実骨未取得';
+ const r=v64Audit();$('v64AuditOut').textContent=r.ready?r.sides.map(s=>(s.side==='right'?'右':'左')+'\n'+s.rows.map(x=>x.name+'：'+(x.reason||('筋束 '+Math.round(x.alpha*100)+'%／局所損失 '+x.baseline.toFixed(3)+' → '+x.score.toFixed(3)+'／辺長比 '+x.minRatio.toFixed(2)+'–'+x.maxRatio.toFixed(2)+(Number.isFinite(x.areaScore)?'／面積損失 '+x.areaBaseline.toFixed(3)+' → '+x.areaScore.toFixed(3):'／面積未評価')+(Number.isFinite(x.contactScore)?'／包絡損失 '+x.contactBaseline.toFixed(2)+' → '+x.contactScore.toFixed(2):'')))).join('\n')).join('\n\n')+'\n局所辺長・別サンプル面積・近似包絡を比較。実接触・臨床精度・体積保存は未保証。':'実骨未取得';
 });
 window.__labFiberV064=v64Audit;
 v64UpdateStatus();
