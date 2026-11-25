@@ -5,7 +5,11 @@
   "scripts": {
     "test": "node scripts/run-tests.mjs",
     "test:browser": "node tests/browser-v073.mjs",
-    "serve": "python3 -m http.server 8730"
+    "serve": "python3 -m http.server 8730",
+    "test:browser:numeric": "QA_NUMERIC_ONLY=1 node tests/browser-v073.mjs",
+    "test:browser:compare": "node tests/browser-compare-v073.mjs"
   },
-  "devDependencies": { "playwright": "1.65.1" }
+  "devDependencies": {
+    "playwright": "1.65.1"
+  }
 }
