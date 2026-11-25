@@ -65,14 +65,13 @@ function pose(field,a,b,wrap){
 function frame(controls,l,t,reference=null){
  const c=laneCurve(controls,l),center=curve(c,t),T=tangent(c,t),dl=.25,l0=clamp(l-dl,0,N-1),l1=clamp(l+dl,0,N-1),U0=curve(laneCurve(controls,l0),t),U1=curve(laneCurve(controls,l1),t),U=sub(U1,U0);
  if(len(T)<1e-7||len(U)<1e-7)return null;
- let rawT=norm(T),tn=rawT;
- if(reference?.t){
-  const refT=norm(reference.t);if(dot(rawT,refT)<0)rawT=mul(rawT,-1);
-  const c=smooth((Math.abs(dot(rawT,refT))-.12)/.38);tn=norm(mix(refT,rawT,c));
- }
- let rawU=sub(U,mul(tn,dot(U,tn)));if(len(rawU)<1e-7)return null;rawU=norm(rawU);let un=rawU;
- if(reference?.u){
-  let refU=sub(reference.u,mul(tn,dot(reference.u,tn)));if(len(refU)>1e-7){refU=norm(refU);if(dot(rawU,refU)<0)rawU=mul(rawU,-1);const c=smooth((Math.abs(dot(rawU,refU))-.12)/.38);un=norm(mix(refU,rawU,c))}
+ let tn=norm(T);
+ if(reference?.t&&len(reference.t)>1e-7)tn=norm(reference.t);
+ let un;
+ if(reference?.u&&len(reference.u)>1e-7){
+  un=sub(reference.u,mul(tn,dot(reference.u,tn)));if(len(un)<1e-7)return null;un=norm(un);
+ }else{
+  un=sub(U,mul(tn,dot(U,tn)));if(len(un)<1e-7)return null;un=norm(un);
  }
  let nn=norm(cross(tn,un));if(len(nn)<.5)return null;if(reference?.n&&dot(nn,reference.n)<0){un=mul(un,-1);nn=mul(nn,-1)}
  return {center,T,U,t:tn,u:un,n:nn,tLen:len(T),uLen:len(U)/Math.max(l1-l0,1e-6)};
