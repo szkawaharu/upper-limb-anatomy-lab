@@ -47,3 +47,5 @@ The user explicitly requested updating Git and deploying the existing developmen
 - Add a curated `_site` artifact and Pages deployment after the existing 23-suite regression job. Replace the failing legacy Pages build configuration with workflow deployment.
 - Publish version/commit metadata at `build-info.json`; use it as the authoritative deployed revision for future chats.
 - Add root `HANDOFF_V073.md` with a ready-to-copy continuation prompt, architecture, quantitative limits, reproduction commands, priorities and rollback guidance.
+
+- First publication run `45646195464`: all regression tests and the static artifact upload succeeded, but deploy-pages could not list the just-uploaded artifact. REST confirmed that `github-pages` existed. Separate artifact preparation and deployment into dependent jobs so deployment starts after the upload job has completed; retry publication without changing application geometry.

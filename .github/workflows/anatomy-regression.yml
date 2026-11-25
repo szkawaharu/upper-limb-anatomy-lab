@@ -25,8 +25,8 @@ jobs:
         with:
           name: anatomy-test-results
           path: test-results/
-  deploy-pages:
-    name: Publish validated static artifact to GitHub Pages
+  prepare-pages:
+    name: Prepare GitHub Pages artifact
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: anatomy-and-geometry
     runs-on: ubuntu-latest
@@ -34,13 +34,6 @@ jobs:
     permissions:
       contents: read
       pages: write
-      id-token: write
-    concurrency:
-      group: github-pages
-      cancel-in-progress: false
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -54,6 +47,21 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
+  deploy-pages:
+    name: Publish validated static artifact to GitHub Pages
+    needs: prepare-pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
