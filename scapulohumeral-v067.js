@@ -40,8 +40,8 @@ function envelope(elev,plane){
   maxCorrectionDeg:10+10*k,
   // Broad descriptive GH contribution band. It is intentionally much wider
   // than a single scapulohumeral-rhythm ratio.
-  ghMinDeg:Math.max(0,elev*(.46+.02*forward)-12),
-  ghMaxDeg:elev*(.90+.02*forward)+12,
+  ghMinDeg:Math.max(0,elev*(.46+.02*forward)-15),
+  ghMaxDeg:elev*(.90+.02*forward)+15,
   ghDeviationFromBaseMaxDeg:12+8*k
  };
 }
