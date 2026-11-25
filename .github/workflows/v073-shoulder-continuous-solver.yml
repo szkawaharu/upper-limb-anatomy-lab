@@ -22,7 +22,10 @@ jobs:
           echo
           echo "Expected main at diagnosis: fd546cd9ebc7d4caf7e37df926742d9ff088e76c"
       - run: npm ci
-      - run: npm test
+      - name: Run unchanged regression tests
+        id: regression
+        continue-on-error: true
+        run: npm test
       - run: npx playwright install --with-deps chromium
       - name: Real-atlas bone stage trace and fixed-camera outlier images
         run: |
@@ -30,6 +33,9 @@ jobs:
           python3 -m http.server 8730 > /tmp/v073-server.log 2>&1 &
           QA_TRACE_ONLY=1 QA_OUTPUT=test-results/shoulder-trace npm run test:browser:numeric
           QA_OUTPUT=test-results/shoulder-full npm run test:browser:numeric
+      - name: Preserve failed regression status
+        if: always() && steps.regression.outcome == 'failure'
+        run: exit 1
       - name: Retain numeric data
         if: always()
         uses: actions/upload-artifact@v4
