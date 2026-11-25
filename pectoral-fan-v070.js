@@ -9,7 +9,7 @@
 const N=6,clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),smooth=x=>{x=clamp(x,0,1);return x*x*(3-2*x)};
 const add=(a,b)=>a.map((x,i)=>x+b[i]),sub=(a,b)=>a.map((x,i)=>x-b[i]),mul=(a,s)=>a.map(x=>x*s),dot=(a,b)=>a.reduce((s,x,i)=>s+x*b[i],0);
 const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],len=a=>Math.hypot(...a),norm=a=>mul(a,1/Math.max(len(a),1e-12)),mix=(a,b,t)=>add(mul(a,1-t),mul(b,t));
-const qrot=(q,v)=>{const u=q.slice(0,3),t=mul(cross(u,v),2);return add(v,add(mul(t,q[3]),cross(u,t)))},apply=(a,p)=>add(a.p,qrot(a.q,sub(p,a.rest)));
+const qrot=(q,v)=>{const u=q.slice(0,3),t=mul(cross(u,v),2);return add(v,add(mul(t,q[3]),cross(u,t)))},qmix=(a,b,t)=>norm(mix(a,mul(b,dot(a,b)<0?-1:1),t)),apply=(a,p)=>add(a.p,qrot(a.q,sub(p,a.rest)));
 function curve(c,t){const u=1-t;return add(add(mul(c[0],u*u*u),mul(c[1],3*u*u*t)),add(mul(c[2],3*u*t*t),mul(c[3],t*t*t)))}
 function tangent(c,t){const u=1-t;return add(add(mul(sub(c[1],c[0]),3*u*u),mul(sub(c[2],c[1]),6*u*t)),mul(sub(c[3],c[2]),3*t*t))}
 function laneCurve(controls,l){const x=clamp(l,0,N-1),i=Math.min(N-2,Math.floor(x)),f=x-i;return controls[i].map((p,j)=>mix(p,controls[i+1][j],f))}
@@ -62,13 +62,13 @@ function pose(field,a,b,wrap){
  for(let j=1;j<=2;j++)for(let k=0;k<N;k++){const ds=[];for(let q=Math.max(0,k-1);q<=Math.min(N-1,k+1);q++)ds.push(sub(rows[q][j],field.controls[q][j]));let avg=[0,0,0];for(const d of ds)avg=add(avg,d);avg=mul(avg,1/ds.length);out[k][j]=add(rows[k][j],mul(sub(avg,sub(rows[k][j],field.controls[k][j])),.10))}
  return out;
 }
-function frame(controls,l,t){
+function frame(controls,l,t,reference=null){
  const c=laneCurve(controls,l),center=curve(c,t),T=tangent(c,t),dl=.25,l0=clamp(l-dl,0,N-1),l1=clamp(l+dl,0,N-1),U0=curve(laneCurve(controls,l0),t),U1=curve(laneCurve(controls,l1),t),U=sub(U1,U0);
- if(len(T)<1e-7||len(U)<1e-7)return null;const tn=norm(T),un0=norm(U),nn=norm(cross(tn,un0));if(len(nn)<.5)return null;const un=norm(cross(nn,tn));
+ if(len(T)<1e-7||len(U)<1e-7)return null;const tn=norm(T),un0=norm(U);let nn=norm(cross(tn,un0));if(len(nn)<.5)return null;if(reference&&dot(nn,reference)<0)nn=mul(nn,-1);const un=norm(cross(nn,tn));
  return {center,T,U,t:tn,u:un,n:nn,tLen:len(T),uLen:len(U)/Math.max(l1-l0,1e-6)};
 }
 function point(p,t,l,field,posed,a,b,base,alpha=1){
- if(t<=0||t>=1||alpha<=0)return base;const R=frame(field.controls,l,t),S=frame(posed,l,t);if(!R||!S)return base;
+ if(t<=0||t>=1||alpha<=0)return base;const R=frame(field.controls,l,t,field.n);if(!R)return base;const refN=qrot(qmix(a.q,b.q,smooth(t)),R.n),S=frame(posed,l,t,refN);if(!S)return base;
  const off=sub(p,R.center),xt=dot(off,R.t),xu=dot(off,R.u),xn=dot(off,R.n),st=clamp(S.tLen/Math.max(R.tLen,1e-8),.68,1.45),su=clamp(S.uLen/Math.max(R.uLen,1e-8),.72,1.30),sn=clamp(1/(st*su),.68,1.35);
  const candidate=add(S.center,add(add(mul(S.t,xt*st),mul(S.u,xu*su)),mul(S.n,xn*sn))),gate=smooth(t/.14)*smooth((1-t)/.16)*clamp(alpha,0,1);
  return mix(base,candidate,gate);
