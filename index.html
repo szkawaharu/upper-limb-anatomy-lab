@@ -4987,7 +4987,7 @@ function v68AuditSide(side){
   const m=v58Meshes.get(spec.id);if(!m?.fiber||!v68Engine?.config?.[spec.id])continue;
   const a=v58Anchor(spec.a),b=v58Anchor(spec.b),mode=v62Mode(spec,m),route=v62RouteFor(spec,b,mode.route,false,mode.guided),wrap=null,f=v64Field(spec,m,a,b,mode,route,wrap);
   const q=f?.route068;
-  rows.push({id:spec.id,name:spec.name,enabled:q?.enabled??false,adopted:q?.adopted??false,before:q?.before??null,after:q?.after??null,maxShiftMm:q?.maxShiftMm??null,distortionBefore:f?.baseline??null,distortionAfter:f?.score??null});
+  rows.push({id:spec.id,name:spec.name,enabled:q?.enabled??false,adopted:q?.adopted??false,before:q?.before??null,after:q?.after??null,maxShiftMm:q?.maxShiftMm??null,maxBendIncreaseDeg:q?.maxBendIncreaseDeg??null,blend:q?.blend??null,distortionBefore:f?.baseline??null,distortionAfter:f?.score??null});
  }
  return {side,rows};
 }
