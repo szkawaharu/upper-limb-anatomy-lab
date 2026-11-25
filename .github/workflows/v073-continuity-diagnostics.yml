@@ -18,14 +18,14 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npx playwright install --with-deps chromium
-      - name: Real-atlas numeric sweep (baseline)
+      - name: Real-atlas bone stage trace and fixed-camera outlier images
         run: |
           export CHROME_PATH="$(node -e 'console.log(require("playwright").chromium.executablePath())')"
           python3 -m http.server 8730 > /tmp/v073-server.log 2>&1 &
-          npm run test:browser:numeric
+          QA_TRACE_ONLY=1 npm run test:browser:numeric
       - name: Retain numeric data
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: v073-continuity-diagnostics
+          name: v073-bone-stage-trace
           path: test-results/

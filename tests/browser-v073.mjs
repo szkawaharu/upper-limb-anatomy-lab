@@ -59,6 +59,8 @@ window.__qa={
  both(right,left){v56ChooseSide('right');this.pose(right);v56ChooseSide('left');this.pose(left);v56ChooseSide('right')},
  neck(n){v73SetNeck(n)},
  view(yaw){state.yaw=yaw;state.pitch=.1;fitPose();request()},
+ boneTrace(elev,plane,axial=0){const data=v61GuideData(),raw=shoulderPoseFor(elev,plane,axial,true,true),final=v72ShoulderGuide(raw.qC,raw.qS,raw.AC,elev,plane,raw.qH,axial,data);const compact=g=>({qC:g?.qC,qS:g?.qS,AC:g?.AC,params:g?.params,blend:g?.v67?.blend,reason:g?.v72?.reason,contactParams:g?.v72?.params,before:g?.v72?.beforeScore,after:g?.v72?.afterScore,regions:g?.v72?.after?.regions||g?.metrics?.regions});return {elev,plane,axial,raw:compact(raw),v66:compact(v66Last),v67:compact(v67Last),v72:compact(final)}},
+ camera(yaw, prior){if(prior)Object.assign(state,prior);else{state.yaw=yaw;state.pitch=.1;fitPose()}return {yaw:state.yaw,pitch:state.pitch,zoom:state.zoom,target:state.target.slice()}},
  sample(){return V60_ALL.map(spec=>{const m=v58Meshes.get(spec.id);return m?.common?qaExport(v73MuscleState(spec,m),spec.id):{id:spec.id,error:'missing'}})},
  neckSamples(){return [...v73NeckMuscles.values()].map(m=>qaExport(v73NeckMuscleState(m),m.spec.id))},
 
@@ -104,6 +106,26 @@ try {
     [],
     "missing common binding",
   );
+  if(process.env.QA_TRACE_ONLY==="1") {
+    const trace=[];
+    for(let elev=114;elev<=129;elev++)trace.push(await page.evaluate(e=>window.__qa.boneTrace(e,0),elev));
+    writeFileSync(join(out,"bone-trace.json"),JSON.stringify(trace,null,2));
+    for(const t of trace)console.log("BONE_TRACE "+JSON.stringify(t));
+    const cameras={};
+    await page.evaluate(()=>window.__qa.skipRender(false));
+    for(const elev of [120,123]){
+      await page.evaluate(e=>window.__qa.both({elev:e,plane:0},{elev:0,plane:0}),elev);
+      for(const [name,yaw] of [["back",0],["side",Math.PI/2],["front",Math.PI]]){
+        const camera=await page.evaluate(([y,c])=>window.__qa.camera(y,c),[yaw,cameras[name]||null]);
+        if(cameras[name])assert.deepEqual(camera,cameras[name]);else cameras[name]=camera;
+        await page.evaluate(()=>window.__qa.render());
+        const rect=await page.locator("#viewer").boundingBox();
+        await page.screenshot({clip:rect,path:join(out,`baseline-${elev}-0-${name}.png`),timeout:120000});
+      }
+    }
+    writeFileSync(join(out,"bone-trace-camera.json"),JSON.stringify(cameras,null,2));
+    assert.equal(errors.length,0,errors.join("\n"));
+  } else {
   const rows = [],
     paths = [],
     cases = [
@@ -429,6 +451,7 @@ try {
     ),
   );
   console.log(JSON.stringify({ gpu, maxStepMm, maxReturnMm, errors }));
+  }
 } catch (error) {
   writeFileSync(
     join(out, "failure.json"),
