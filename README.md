@@ -2,7 +2,7 @@
 
 スマートフォン対応の上肢骨格・筋肉・腱を観察する教育用Webアプリ。動作と形態は**解剖学的に未検証の近似を含み、臨床用・診断用ではありません**。
 
-**現在のバージョン：v0.65.0**
+**現在のバージョン：v0.66.0**
 
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
@@ -11,6 +11,10 @@
 - **v0.54の保存ブランチ**：[`archive/v0.54-before-anatomy-rebuild`](../../tree/archive/v0.54-before-anatomy-rebuild)
 - **v0.53の保存ブランチ**：[`archive/v0.53-before-review`](../../tree/archive/v0.53-before-review)
 - **v0.51の保存ブランチ**：[`archive/v0.51-before-scapular-fix`](../../tree/archive/v0.51-before-scapular-fix)
+
+## v0.66：肩甲胸郭3領域面拘束
+
+肩甲骨肋骨面を上・中・下3領域に分け、胸郭との中立位相対距離、局所最大離開・内方移動、胸郭面との接線整合を同時に評価。SC–AC長を保持した6自由度の補正を行い、幾何指標が悪化する候補は採用しない。GH中心は剛体接続を維持するが、生体内の上腕骨頭translationや真の関節接触は未再現。詳細は [SCAPULOTHORACIC_V066](./docs/SCAPULOTHORACIC_V066.md)。
 
 ## v0.65：肩甲胸郭面拘束＋前鋸筋9スリップ
 
