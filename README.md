@@ -2,7 +2,7 @@
 
 スマートフォン対応の上肢骨格・筋肉・腱を観察する教育用Webアプリ。動作と形態は**解剖学的に未検証の近似を含み、臨床用・診断用ではありません**。
 
-**現在のバージョン：v0.68.0**
+**現在のバージョン：v0.68.1**
 
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
@@ -11,6 +11,10 @@
 - **v0.54の保存ブランチ**：[`archive/v0.54-before-anatomy-rebuild`](../../tree/archive/v0.54-before-anatomy-rebuild)
 - **v0.53の保存ブランチ**：[`archive/v0.53-before-review`](../../tree/archive/v0.53-before-review)
 - **v0.51の保存ブランチ**：[`archive/v0.51-before-scapular-fix`](../../tree/archive/v0.51-before-scapular-fix)
+
+## v0.68.1：直接操作のプルプル修正
+
+iPhone/iPadの肩2軸ドラッグで、毎フレーム現在姿勢を新しい画面目標の基準にしていたため、逆運動学が複数解の間を往復することがあった。v0.68.1ではドラッグ開始時の姿勢と指位置を固定基準にし、現在姿勢からは減衰付き最小二乗で小さな連続補正のみを行う。1イベントの可視角度変化を制限し、指を止めた状態での2状態往復を回帰テストに追加。
 
 ## v0.68：肩甲帯周囲筋の順序付き経路補正
 
