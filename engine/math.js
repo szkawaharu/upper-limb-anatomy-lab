@@ -44,6 +44,15 @@
       a = cross(k, p);
     return add(p, add(a, mul(cross(k, a), 1 / Math.max(1 + d, 1e-6))));
   }
+  function conditionedTransport(u, v) {
+    const d = clamp(dot(u, v), -1, 1), k = cross(u, v), s = len(k);
+    // Engineering conditioning interval: Rodrigues' 1/(1+d)
+    // grows from 100 to 10000 (the old hard-switch condition).
+    const confidence = smooth(((1 + d) - 1e-4) / (1e-2 - 1e-4));
+    const angle = confidence * Math.atan2(s, d);
+    const q = s > 1e-12 && confidence > 0 ? qaxis(mul(k, 1 / s), angle) : [0,0,0,1];
+    return {q, confidence, inputDot:d};
+  }
   root.AnatomyMath = Object.freeze({
     clamp,
     smooth,
@@ -62,5 +71,6 @@
     apply,
     identity,
     align,
+    conditionedTransport,
   });
 })(globalThis);

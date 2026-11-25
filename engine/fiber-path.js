@@ -70,8 +70,12 @@
     const q = qmix(a.q, b.q, smooth(t)),
       rt = qrot(q, R.t),
       ru = qrot(q, R.u),
-      u = norm(align(rt, S.t, ru, ru));
-    return { ...S, u, n: norm(cross(S.t, u)) };
+      rn = qrot(q, R.n),
+      tr = M.conditionedTransport(rt, S.t),
+      effectiveT = qrot(tr.q, rt),
+      u = qrot(tr.q, ru),
+      n = qrot(tr.q, rn);
+    return { ...S, rawT:S.t, t:effectiveT, u, n, frameConfidence:tr.confidence, inputTangentDot:tr.inputDot, effectiveTangentDot:dot(effectiveT,S.t) };
   }
   root.FiberPath = Object.freeze({
     curve,

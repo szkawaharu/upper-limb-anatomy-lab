@@ -19,7 +19,7 @@ export function describeStep(row,i){
  const rawLongitudinal=R&&raw?raw.tl/R.tl:null,rawTransverse=R&&raw?raw.ul/Math.max(R.ul,1e-7):null;
  const tendon=globalThis.TendonDeformation.fraction(x.t,binding.definition.tissues);
  const scales=R&&raw?globalThis.VolumeConstraint.scales(rawLongitudinal,rawTransverse,s.sheet,tendon):null;
- return {vertexId:x.vertexId,restPoint:x.p,weight:x.t,lane:x.l,materialT:x.materialT,point:x.q,originAnchor:a,insertionAnchor:b,restFrame:R,rawPosedFrame:raw,transportedFrame:S,referenceT:refT,referenceU:refU,tangentDot:refT&&raw?M.dot(refT,raw.t):null,rawLongitudinal,rawTransverse,scales,gate:M.smooth(x.t/.12)*M.smooth((1-x.t)/.12),base,preContact:pre.point,postContact:post.point,contactDeltaMm:dist(pre.point,post.point),reconstructedErrorMm:dist(post.point,x.q),invalidFrame:!!pre.invalidFrame};
+ return {vertexId:x.vertexId,restPoint:x.p,weight:x.t,lane:x.l,materialT:x.materialT,point:x.q,originAnchor:a,insertionAnchor:b,restFrame:R,rawPosedFrame:raw,transportedFrame:S,referenceT:refT,referenceU:refU,tangentDot:refT&&raw?M.dot(refT,raw.t):null,rawLongitudinal,rawTransverse,scales,frameConfidence:S?.frameConfidence??null,effectiveTangentDot:S?.effectiveTangentDot??null,gate:M.smooth(x.t/.12)*M.smooth((1-x.t)/.12),base,preContact:pre.point,postContact:post.point,contactDeltaMm:dist(pre.point,post.point),reconstructedErrorMm:dist(post.point,x.q),invalidFrame:!!pre.invalidFrame};
 }
 export function trackStep(maxima,before,after,i,pose){
  const x=before.samples[i],y=after.samples[i];

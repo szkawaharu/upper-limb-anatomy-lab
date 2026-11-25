@@ -67,7 +67,9 @@
       minDet = Infinity,
       maxDet = -Infinity,
       bounded = 0,
-      invalidFrames = 0;
+      invalidFrames = 0,
+      conditionedFrames = 0,
+      minEffectiveTangentDot = Infinity;
     for (let i = 0; i < B.weights.length; i++) {
       const p = now.slice(3 * i, 3 * i + 3),
         r = rest.slice(3 * i, 3 * i + 3),
@@ -95,6 +97,8 @@
         B.material[i],
       );
       if (e.invalidFrame) invalidFrames++;
+      if (e.frameConfidence != null && e.frameConfidence < 1) conditionedFrames++;
+      if (e.effectiveTangentDot != null) minEffectiveTangentDot = Math.min(minEffectiveTangentDot,e.effectiveTangentDot);
       if (e.bounded) bounded++;
       if (e.stretch != null) {
         minStretch = Math.min(minStretch, e.stretch);
@@ -144,6 +148,8 @@
       localDeterminantApprox: [minDet, maxDet],
       boundedVertices: bounded,
       invalidFrames,
+      conditionedFrames,
+      minEffectiveTangentDot:Number.isFinite(minEffectiveTangentDot)?minEffectiveTangentDot:null,
       volumetricJacobian: null,
       newIntersections: null,
       newInversions: null,

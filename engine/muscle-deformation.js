@@ -238,6 +238,8 @@
       stretch: sc.t,
       determinant: sc.determinant,
       bounded: sc.bounded,
+      frameConfidence:S.frameConfidence,
+      effectiveTangentDot:S.effectiveTangentDot,
     };
   }
   function point(state, p, t, l, materialT = t) {
