@@ -28,10 +28,9 @@
           throw Error(gl.getProgramInfoLog(p));
         this.program = p;
         this.attributes = Object.fromEntries(
-          ["pos", "normal", "weight", "lane", "materialT"].map((n) => [
-            n,
-            gl.getAttribLocation(p, n),
-          ]),
+          ["pos", "normal", "weight", "lane", "materialT", "originBlend"].map(
+            (n) => [n, gl.getAttribLocation(p, n)],
+          ),
         );
         this.uniforms = Object.fromEntries(
           [
@@ -39,6 +38,9 @@
             "model",
             "anchorA",
             "anchorB",
+            "originAnchor",
+            "originQA",
+            "originMixOn",
             "qa",
             "qb",
             "restControls[0]",
@@ -80,6 +82,9 @@
         weight: buffer(B.weights),
         lane: buffer(B.lane),
         materialT: buffer(B.material),
+        originBlend: buffer(
+          B.originBlend || new Float32Array(B.weights.length),
+        ),
         rest: new Float32Array(108),
         now: new Float32Array(108),
         cpu: new Map(),
@@ -92,7 +97,8 @@
         B = state.binding,
         r = this.resource(B),
         u = this.uniforms;
-      if (this.backend !== "gpu" || state.originAt) return false;
+      if (this.backend !== "gpu" || (state.originAt && !state.originMix))
+        return false;
       gl.useProgram(this.program);
       r.rest.fill(0);
       r.now.fill(0);
@@ -104,6 +110,7 @@
         ["weight", r.weight, 1],
         ["lane", r.lane, 1],
         ["materialT", r.materialT, 1],
+        ["originBlend", r.originBlend, 1],
       ]) {
         const a = this.attributes[n];
         if (a >= 0) {
@@ -114,6 +121,13 @@
       }
       for (const n of ["mvp", "model", "anchorA", "anchorB"])
         gl.uniformMatrix4fv(u[n], false, matrices[n]);
+      gl.uniform1f(u.originMixOn, state.originMix ? 1 : 0);
+      gl.uniform4fv(u.originQA, state.originMix?.q || state.a.q);
+      gl.uniformMatrix4fv(
+        u.originAnchor,
+        false,
+        matrices.originAnchor || matrices.anchorA,
+      );
       gl.uniform4fv(u.qa, state.a.q);
       gl.uniform4fv(u.qb, state.b.q);
       gl.uniform3fv(u["restControls[0]"], r.rest);

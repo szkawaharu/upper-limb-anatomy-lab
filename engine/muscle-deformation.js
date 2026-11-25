@@ -5,7 +5,12 @@
     { add, sub, mul, dot, len, mix, qrot, apply, smooth } = M;
   function bind(definition, weights, regionalField = null) {
     const { vertices, faces } = definition.restMesh;
-    if (!faces.length || faces.length % 3 || faces.some(i => !Number.isInteger(i) || i < 0 || i >= vertices.length)) throw Error("Invalid muscle faces " + definition.id);
+    if (
+      !faces.length ||
+      faces.length % 3 ||
+      faces.some((i) => !Number.isInteger(i) || i < 0 || i >= vertices.length)
+    )
+      throw Error("Invalid muscle faces " + definition.id);
     if (
       vertices.length !== weights.length ||
       vertices.some((p) => !p.every(Number.isFinite)) ||
@@ -13,8 +18,12 @@
     )
       throw Error("Invalid muscle data " + definition.id);
     const originalWeights = weights;
-    const graph = root.MaterialCoordinates.adjacency(vertices,faces);
-    weights = root.MaterialCoordinates.regularize(weights,originalWeights,graph);
+    const graph = root.MaterialCoordinates.adjacency(vertices, faces);
+    weights = root.MaterialCoordinates.regularize(
+      weights,
+      originalWeights,
+      graph,
+    );
     const sheet = ["fan", "sheet", "pennate"].includes(definition.morphology),
       fan =
         sheet && root.PectoralFanEngineV070?.build(vertices, faces, weights);
@@ -68,17 +77,27 @@
           if (sign * vertices[i][k] > sign * vertices[j][k]) j = i;
         bounds.add(j);
       }
+    const rest = Float32Array.from(vertices.flat()),
+      faceIndices = Uint32Array.from(faces);
+    const boundDefinition = {
+      ...definition,
+      restMesh: { positions: rest, faces: faceIndices },
+    };
     return {
       bounds: [...bounds],
-      definition,
+      definition: boundDefinition,
       weights: Float32Array.from(weights),
       field: f,
       lane,
-      material: root.MaterialCoordinates.regularize(material,originalWeights,graph),
+      material: root.MaterialCoordinates.regularize(
+        material,
+        originalWeights,
+        graph,
+      ),
       sheet,
       reference: ref,
-      rest: Float32Array.from(vertices.flat()),
-      faces: Uint32Array.from(faces),
+      rest,
+      faces: faceIndices,
       cache: new Map(),
     };
   }

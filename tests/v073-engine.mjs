@@ -117,4 +117,11 @@ console.log(
   }),
 );
 
-assert.throws(() => E.bind({...def, restMesh:{vertices, faces:[0,1,vertices.length]}},weights), /Invalid muscle faces/);
+assert.throws(
+  () =>
+    E.bind(
+      { ...def, restMesh: { vertices, faces: [0, 1, vertices.length] } },
+      weights,
+    ),
+  /Invalid muscle faces/,
+);

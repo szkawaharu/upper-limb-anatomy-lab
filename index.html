@@ -5250,21 +5250,24 @@ async function v73LoadHead(){
   if(entry.kind==='skull')target.set(entry.id,{g:gpu(data),entry});
   else{
    const box=v58Box(data.vertices),cervicis=entry.id==='FMA22726'||entry.id==='FMA22727',scm=entry.id==='FMA13408'||entry.id==='FMA13409',weights=data.vertices.map(p=>{const t=clamp((p[1]-box[0][1])/(box[1][1]-box[0][1]),0,1);return smooth(clamp((t-.12)/.76,0,1))}),a={q:ID,p:OR,rest:OR},b=v73NeckPose.transforms[cervicis?'C2':'C0'];
-   const spec={id:entry.id,name:entry.name,a:'trunk',b:cervicis?'C2':'C0',file:entry.file,morphology:scm?'multi-head':'sheet',side:entry.name.startsWith('left')?'left':'right',region:'neck'},def=MuscleDefinitions.create(spec,data.vertices,data.faces,weights,[a,b]),binding=MuscleDeformation.bind(def,weights),g=gpu(data);v73System.register(binding);target.set(entry.id,{g,spec,common:binding,scm,cervicis});
+   const spec={id:entry.id,name:entry.name,a:'trunk',b:cervicis?'C2':'C0',file:entry.file,morphology:scm?'multi-head':'sheet',originBones:scm?['trunk','clavicle']:['trunk'],side:entry.name.startsWith('left')?'left':'right',region:'neck'},def=MuscleDefinitions.create(spec,data.vertices,data.faces,weights,[a,b]),binding=MuscleDeformation.bind(def,weights),g=gpu(data);if(scm)binding.originBlend=Float32Array.from(data.vertices,p=>smooth(clamp((Math.abs(p[0]-v56Mid())-atlasScale*8)/(atlasScale*25),0,1)));if(scm)binding.definition.attachments[0].blend={bones:['trunk','clavicle'],weights:binding.originBlend,method:'estimated-distance-partition'};v73System.register(binding);target.set(entry.id,{g,spec,common:binding,scm,cervicis});
   }
  }catch(e){v73HeadFailed.push(entry.id);v73System.fallback(entry.id,String(e))}await new Promise(r=>setTimeout(r,0));$('v73NeckStatus').textContent='頭蓋骨 '+v73HeadParts.size+'/22、頸部筋 '+v73NeckMuscles.size+'/6 取得済み'+(v73HeadFailed.length?'／取得失敗 '+v73HeadFailed.length:'')}
  }finally{v73HeadBusy=false;fitPose();request()}
 }
 function v73Clavicle(side){const pose=side===v56Side?realPose.clavicle:v56Other.real.clavicle;if(!pose)return {q:ID,p:OR,rest:OR};const a={q:pose[0],p:pose[1],rest:realAnchors.SC};return side==='left'?{q:[a.q[0],-a.q[1],-a.q[2],a.q[3]],p:v56Reflect(a.p),rest:v56Reflect(a.rest)}:a}
+function v73NeckMuscleState(m){
+ const b=v73NeckPose.transforms[m.cervicis?'C2':'C0'],a={q:ID,p:OR,rest:OR},clav=m.scm?v73Clavicle(m.spec.side):null,originAt=clav?(p=>{const k=smooth(clamp((Math.abs(p[0]-v56Mid())-atlasScale*8)/(atlasScale*25),0,1)),rest=p.slice();return {q:AnatomyMath.qmix(ID,clav.q,k),p:add(mul(p,1-k),mul(AnatomyMath.apply(clav,p),k)),rest}}):null,f=MuscleDeformation.pose(m.common,a,b,null,originAt);f.key=JSON.stringify([a,b,clav]);f.originMix=clav;return f;
+}
 function v73DrawHead(){
  if(!v73NeckPose)return;
  if(!$('v73HeadVisible').checked)return;
  for(const {g} of v73HeadParts.values()){const a=v73NeckPose.transforms.C0;drawPart(g,a.q,sub(a.p,qr(a.q,a.rest)),cBone,1,0)}
  if(!$('v73NeckMusclesVisible').checked)return;
  for(const m of v73NeckMuscles.values()){
-  const b=v73NeckPose.transforms[m.cervicis?'C2':'C0'],a={q:ID,p:OR,rest:OR},clav=m.scm?v73Clavicle(m.spec.side):null,originAt=clav?(p=>{const k=smooth(clamp((Math.abs(p[0]-v56Mid())-atlasScale*8)/(atlasScale*25),0,1)),rest=p.slice();return {q:AnatomyMath.qmix(ID,clav.q,k),p:add(mul(p,1-k),mul(AnatomyMath.apply(clav,p),k)),rest}}):null,f=MuscleDeformation.pose(m.common,a,b,null,originAt);f.key=JSON.stringify([a,b,clav]);
+  const f=v73NeckMuscleState(m),a=f.a,b=f.b,clav=f.originMix;
   if(!v73Renderer)v73Renderer=new MuscleRenderer(gl,shaderFS,(v,f)=>gpu(mesh(v,f)));
-  const model=mat4(ID,OR),matrices={model:Float32Array.from(model),mvp:Float32Array.from(mm(pv,model)),anchorA:Float32Array.from(v58AnchorMatrix(a)),anchorB:Float32Array.from(v58AnchorMatrix(b))};
+  const model=mat4(ID,OR),matrices={model:Float32Array.from(model),mvp:Float32Array.from(mm(pv,model)),anchorA:Float32Array.from(v58AnchorMatrix(a)),anchorB:Float32Array.from(v58AnchorMatrix(b)),originAnchor:Float32Array.from(v58AnchorMatrix(clav||a))};
   if($('v73Backend').value!=='cpu'&&v73Renderer.draw(f,m.g,matrices,[.66,.27,.32]))gl.useProgram(program);else {gl.useProgram(program);drawPart(v73Renderer.cpuGeometry(f,f.key),ID,OR,[.66,.27,.32],1,1)}
  }
 }
@@ -5320,6 +5323,7 @@ function v73DrawMuscle(spec,m){
 }
 function v73AuditSide(side){return {side,rows:V60_ALL.map(spec=>{const m=v58Meshes.get(spec.id),f=m?.common&&v73MuscleState(spec,m,side);if(!f)return {id:spec.id,status:'unavailable'};const start=v601Now(),now=MuscleDeformation.deform(f),r=DeformationAudit.audit(f,now);r.cpuMs=v601Now()-start;return r})}}
 window.__labMuscleEngineV073=()=>{v56RefreshOther();return {mode:$('v62Mode').value,backend:v73Renderer?.backend||'not-initialized',...v73System?.report(),sides:[v73AuditSide(v56Side),...($('v56Both').checked?[v56WithOther(()=>v73AuditSide(v56Inactive()))]:[])],medicalValidation:false}};
+window.__labMuscleDefinitionsV073=()=>[...v73System.bindings.values()].map(B=>({id:B.definition.id,name:B.definition.name,side:B.definition.side,morphology:B.definition.morphology,source:B.definition.source,originBones:B.definition.originBones,insertionBones:B.definition.insertionBones,attachments:B.definition.attachments.map(a=>({bone:a.bone,kind:a.kind,vertices:a.indices.length,confidence:a.confidence,blendedBones:a.blend?.bones})),unverified:B.definition.unverified}));
 $('v73Audit').addEventListener('click',()=>{const r=window.__labMuscleEngineV073();$('v73AuditOut').textContent=JSON.stringify(r,null,2)});
 $('v73Backend').addEventListener('change',()=>{v56Other.key=null;request()});
 function v73NeckAngleValue(){return typeof v73NeckAngle==='number'?v73NeckAngle:0}
