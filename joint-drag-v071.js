@@ -123,7 +123,7 @@ function targetCost(pose,side,target,point,project){
 function solve(opts){
  const {lock,current,dx=0,dy=0,point,project,ranges}=opts||{};
  if(!lock||!current||lock.field!=='elev'||typeof point!=='function'||typeof project!=='function'||!ranges)return current;
- const target=add2(lock.anchorScreen,[dx,dy]),[globalLo,globalHi]=lock.lambdaRange;
+ const travel=dot2([dx,dy],lock.initialScreenDir),target=add2(lock.anchorScreen,[lock.initialScreenDir[0]*travel,lock.initialScreenDir[1]*travel]),[globalLo,globalHi]=lock.lambdaRange;
  let center=clamp(Number.isFinite(lock.lambda)?lock.lambda:0,globalLo,globalHi);
  // Keep one event local. This is the second continuity guard after the fixed
  // gesture ray: sparse touch events cannot jump to a remote projected solution.
