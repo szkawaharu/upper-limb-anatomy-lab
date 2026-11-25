@@ -22,3 +22,18 @@ Working branch: `feature/v0.73.0-common-engine`.
 4. T1→C7→…→C1→C0 hierarchy, pinned matching skull parts and confirmed neck muscles; degree distribution is configurable educational approximation. Slider/reset and camera-locked direct drag with arm independence.
 5. Repair baseline harness defects; run all legacy/new tests, browser actual-atlas sweeps, screenshots and GPU readback. Record max/outliers, null for unsupported measures, mobile device untested.
 6. Commit each functional unit. Main/Pages release only if required scope is complete and no major regressions remain. Otherwise push work branch and write exact resume steps. No medical accuracy certification from engineering tests.
+
+## Implemented checkpoints
+
+- Shared rest-material mapping, independent anatomy schema, immutable final bone snapshots, sheet/fan/pennate/slip handling and passive procedural adapters.
+- Separate material and attachment coordinates; graph regularization with fixed Dirichlet attachment masks. A partial-range material chart now preserves incomplete original attachment weights rather than inventing an insertion.
+- Common CPU/WebGL1 map, 2-bone mixed origins, packed reference arrays and bounded caches. General multibone cervical origins use same-map CPU fallback.
+- Hierarchical cervical chain, 22 matching atlas skull parts, 6 matching neck muscle meshes, global independent neck angle, slider/reset and fixed-direction head drag.
+- Original slip shader helper omission repaired. All 23 offline entry points pass locally and in GitHub Actions (`b3511f2`, run 45635126944). Original extra atlas-data suite also executed with cached source files.
+- Real atlas shape audit detected maximum local edge stretch 46.878 before coordinate regularization; after regularization the six priority subdivisions still reach 16.029. All six fail closed-oriented topology checks, so signed-volume targets are not evaluable.
+- A browser sweep caught rhomboid-minor field fitting failure. Its existing weights do not span a complete material chart. Alternative Cartesian lane axes alone did not resolve it; partial attachment charts now separate chart fitting from the preserved bone-weight range. Missing fixed insertion data remains an anatomical release blocker.
+- Main still points to `025b768888b31bb89713e13a28e81d77c6f7417a`; no main push or Pages release has been performed. Public HTML responds HTTP 200 and shows v0.72.0. GitHub Pages API reported an existing `errored` state, source `main:/`; this branch did not trigger a Pages deployment.
+
+- Final numeric browser run: all 17 muscle charts created; 18,413 GPU readback samples (including six neck meshes), maximum CPU/GPU difference 0.00284415 mm, reverse-return drift 0 mm, page errors 0. Head drag at front/side/back preserved arm settings and camera angles.
+- Release still rejected: maximum sampled displacement 53.6984 mm per 3-degree step and priority edge ratio 16.0288, incomplete attachment anatomy and migration, contact/volume limitations. Numeric correctness does not imply shape acceptance.
+- Fixed-camera visual comparison completed: original archived v0.72 vs common CPU reference, neutral and unilateral forward 150 degrees, front/side/back. Both versions focus on the same six pectoral/deltoid subdivisions; 12 screenshots, identical yaw/pitch/zoom/target, page errors 0. Persistent bulge/local deformation remains visible; release is withheld.

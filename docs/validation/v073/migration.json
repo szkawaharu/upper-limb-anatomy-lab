@@ -1,0 +1,803 @@
+[
+  {
+    "id": "v58RhomboidMajor",
+    "name": "大菱形筋",
+    "source": "FMA13381.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "v58RhomboidMinor",
+    "name": "小菱形筋",
+    "source": "FMA13383.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "v58Levator",
+    "name": "肩甲挙筋",
+    "source": "FMA32540.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "v58Serratus",
+    "name": "前鋸筋",
+    "source": "FMA13398.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "v58Subscap",
+    "name": "肩甲下筋",
+    "source": "FMA13414.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "v59TrapUpper",
+    "name": "僧帽筋上部",
+    "source": "FMA33586.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "v59TrapMiddle",
+    "name": "僧帽筋中部",
+    "source": "FMA33584.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "v59TrapLower",
+    "name": "僧帽筋下部",
+    "source": "FMA33581.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "v59Lat",
+    "name": "広背筋",
+    "source": "FMA13358.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "v60PecClav",
+    "name": "大胸筋鎖骨部",
+    "source": "FMA34690.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "v60PecStern",
+    "name": "大胸筋胸肋部",
+    "source": "FMA79979.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "v60PecAbd",
+    "name": "大胸筋腹部",
+    "source": "FMA45874.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "v60PecMinor",
+    "name": "小胸筋",
+    "source": "FMA13375.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "v60Subclavius",
+    "name": "鎖骨下筋",
+    "source": "FMA13412.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "v60DeltAnt",
+    "name": "三角筋前部",
+    "source": "FMA34680.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "v60DeltMid",
+    "name": "三角筋中部",
+    "source": "FMA34682.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "v60DeltPost",
+    "name": "三角筋後部",
+    "source": "FMA34684.stl",
+    "representation": "atlas material map",
+    "migration": "shared CPU/GPU kernel; attachments estimated",
+    "validation": "engineering sweep; clinical/contact unverified"
+  },
+  {
+    "id": "bicepsLong",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "bicepsShort",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "triceps",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "tricepsLat",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "brachialis",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "deltoidAnterior",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "deltoidMiddle",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "deltoidPosterior",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "brachioradialis",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "pronatorTeresHumeral",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "pronatorTeresUlnar",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "supinatorSuperficial",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "supinatorDeep",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "flexorCarpiRadialis",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "flexorCarpiUlnarisHumeral",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "flexorCarpiUlnarisUlnar",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "palmarisLongus",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "flexorDigitorumSuperficialis",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "flexorDigitorumProfundus",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "extensorCarpiRadialisLongus",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "extensorCarpiRadialisBrevis",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "extensorCarpiUlnaris",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "extensorDigitorum",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "extensorDigitiMinimi",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "anconeus",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "flexorPollicisLongus",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "pronatorQuadratus",
+    "source": "procedural",
+    "representation": "quadrilateral sheet",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "abductorPollicisLongus",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "extensorPollicisBrevis",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "extensorPollicisLongus",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "extensorIndicis",
+    "source": "procedural",
+    "representation": "shaped multi-station path",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "supraspinatus",
+    "source": "procedural",
+    "representation": "curved sheet loft",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "infraspinatus",
+    "source": "procedural",
+    "representation": "curved sheet loft",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "teresMinor",
+    "source": "procedural",
+    "representation": "curved sheet loft",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "teresMajor",
+    "source": "procedural",
+    "representation": "curved sheet loft",
+    "migration": "adapter; legacy routing retained, not a complete material-map migration",
+    "validation": "legacy synthetic continuity tests; geometric contact unverified"
+  },
+  {
+    "id": "tendonB",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonB2",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonBprox",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonBShortDist",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonT",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonT2",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonTLatDist",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonBrach",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonBR",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonPT",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonSupinator",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonFCR",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonFCU",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "pisohamateBand",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "pisometacarpalBand",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonPL",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "palmarAponeurosisPL2",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "palmarAponeurosisPL3",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "palmarAponeurosisPL4",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "fdsTendonI",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "fdsTendonM",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "fdsTendonR",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "fdsTendonL",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "fdsBranchI1",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "fdsBranchI2",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "fdsBranchM1",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "fdsBranchM2",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "fdsBranchR1",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "fdsBranchR2",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "fdsBranchL1",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "fdsBranchL2",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "fdpTendonI",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "fdpTendonM",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "fdpTendonR",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "fdpTendonL",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonECRL",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonECRB",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonECU",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "edTendonI",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "edTendonM",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "edTendonR",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "edTendonL",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "edBandIL",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "edBandIR",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "edBandML",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "edBandMR",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "edBandRL",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "edBandRR",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "edBandLL",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "edBandLR",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonEDM",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonFPL",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonAPL",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonEPB",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonEPL",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonEI",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonSupraspinatus",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonInfraspinatus",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonTeresMinor",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  },
+  {
+    "id": "tendonTeresMajor",
+    "source": "procedural",
+    "representation": "tendon/aponeurosis path",
+    "migration": "adapter; prescribed distal taper and routing retained",
+    "validation": "endpoint continuity only; sliding/contact unverified"
+  }
+]

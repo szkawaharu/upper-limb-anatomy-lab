@@ -27,25 +27,25 @@
     "test": "scapular-muscles-v055.mjs",
     "code": 13,
     "seconds": 2.914,
-    "tail": "PASS v0.55: 35 synthetic poses \u00d7 4 muscles, four distinct curved lofts, surface clearance, tendon continuity, cleanup and controls.\nWarning: Detected unsettled top-level await at file:///Users/suzukawaharuki/Documents/Codex/2026-11-25/3d-v0-73-0-1-https/tests/scapular-muscles-v055.mjs:164\nawait import('./upper-body-v056.mjs');\n^\n\n\n\n"
+    "tail": "PASS v0.55: 35 synthetic poses \u00d7 4 muscles, four distinct curved lofts, surface clearance, tendon continuity, cleanup and controls.\nWarning: Detected unsettled top-level await at file://<workspace>/tests/scapular-muscles-v055.mjs:164\nawait import('./upper-body-v056.mjs');\n^\n\n\n\n"
   },
   {
     "test": "shoulder-kinematics-v050.mjs",
     "code": 1,
     "seconds": 0.333,
-    "tail": ":10)\n    at file:///Users/suzukawaharuki/Documents/Codex/2026-11-25/3d-v0-73-0-1-https/tests/shoulder-kinematics-v050.mjs:37:10\n    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)\n    at async node:internal/modules/esm/loader:650:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5)\n\nNode.js v26.13.0\n"
+    "tail": ":10)\n    at file://<workspace>/tests/shoulder-kinematics-v050.mjs:37:10\n    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)\n    at async node:internal/modules/esm/loader:650:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5)\n\nNode.js v26.13.0\n"
   },
   {
     "test": "upper-body-v056.mjs",
     "code": 13,
     "seconds": 2.889,
-    "tail": "Warning: Detected unsettled top-level await at file:///Users/suzukawaharuki/Documents/Codex/2026-11-25/3d-v0-73-0-1-https/tests/upper-body-v056.mjs:340\nconst results=await win.__runV56Tests();\n              ^\n\n\n\n"
+    "tail": "Warning: Detected unsettled top-level await at file://<workspace>/tests/upper-body-v056.mjs:340\nconst results=await win.__runV56Tests();\n              ^\n\n\n\n"
   },
   {
     "test": "v063-synthetic.mjs",
     "code": 1,
     "seconds": 0.332,
-    "tail": "nymous>:126:15)\n    at file:///Users/suzukawaharuki/Documents/Codex/2026-11-25/3d-v0-73-0-1-https/tests/v063-synthetic.mjs:9:37\n    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)\n    at async node:internal/modules/esm/loader:650:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5)\n\nNode.js v26.13.0\n"
+    "tail": "nymous>:126:15)\n    at file://<workspace>/tests/v063-synthetic.mjs:9:37\n    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)\n    at async node:internal/modules/esm/loader:650:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5)\n\nNode.js v26.13.0\n"
   },
   {
     "test": "v064-engine.mjs",
@@ -57,7 +57,7 @@
     "test": "v064-shoulder.mjs",
     "code": 1,
     "seconds": 0.327,
-    "tail": "onymous>:126:15)\n    at file:///Users/suzukawaharuki/Documents/Codex/2026-11-25/3d-v0-73-0-1-https/tests/v064-shoulder.mjs:9:37\n    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)\n    at async node:internal/modules/esm/loader:650:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5)\n\nNode.js v26.13.0\n"
+    "tail": "onymous>:126:15)\n    at file://<workspace>/tests/v064-shoulder.mjs:9:37\n    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)\n    at async node:internal/modules/esm/loader:650:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5)\n\nNode.js v26.13.0\n"
   },
   {
     "test": "v065-serratus.mjs",
@@ -69,7 +69,7 @@
     "test": "v065-shoulder.mjs",
     "code": 1,
     "seconds": 0.292,
-    "tail": "onymous>:126:15)\n    at file:///Users/suzukawaharuki/Documents/Codex/2026-11-25/3d-v0-73-0-1-https/tests/v065-shoulder.mjs:9:37\n    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)\n    at async node:internal/modules/esm/loader:650:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5)\n\nNode.js v26.13.0\n"
+    "tail": "onymous>:126:15)\n    at file://<workspace>/tests/v065-shoulder.mjs:9:37\n    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)\n    at async node:internal/modules/esm/loader:650:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5)\n\nNode.js v26.13.0\n"
   },
   {
     "test": "v066-scapulothoracic.mjs",

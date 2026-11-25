@@ -1,0 +1,326 @@
+[
+  {
+    "version": "v072",
+    "focus": "pectoralis and deltoid subdivisions; other muscles hidden equally",
+    "view": "front",
+    "camera": {
+      "yaw": 3.141592653589793,
+      "pitch": 0.1,
+      "zoom": 5.3245237324643355,
+      "target": [
+        -0.07769999999999994,
+        0.2145531596185944,
+        -0.003847568753144355
+      ]
+    },
+    "pose": {
+      "right": {
+        "elev": 0,
+        "plane": 0
+      },
+      "left": {
+        "elev": 0,
+        "plane": 0
+      }
+    },
+    "renderer": "original archived v0.72 GPU fallback",
+    "errors": []
+  },
+  {
+    "version": "v072",
+    "focus": "pectoralis and deltoid subdivisions; other muscles hidden equally",
+    "view": "side",
+    "camera": {
+      "yaw": 1.5707963267948966,
+      "pitch": 0.1,
+      "zoom": 5.441985827609609,
+      "target": [
+        0.1970225553753471,
+        0.1951022026520406,
+        -0.1267564138203859
+      ]
+    },
+    "pose": {
+      "right": {
+        "elev": 0,
+        "plane": 0
+      },
+      "left": {
+        "elev": 0,
+        "plane": 0
+      }
+    },
+    "renderer": "original archived v0.72 GPU fallback",
+    "errors": []
+  },
+  {
+    "version": "v072",
+    "focus": "pectoralis and deltoid subdivisions; other muscles hidden equally",
+    "view": "back",
+    "camera": {
+      "yaw": 0,
+      "pitch": 0.1,
+      "zoom": 5.189887855446399,
+      "target": [
+        -0.07769999999999994,
+        0.27180858297731053,
+        0.08977681005227486
+      ]
+    },
+    "pose": {
+      "right": {
+        "elev": 0,
+        "plane": 0
+      },
+      "left": {
+        "elev": 0,
+        "plane": 0
+      }
+    },
+    "renderer": "original archived v0.72 GPU fallback",
+    "errors": []
+  },
+  {
+    "version": "v072",
+    "focus": "pectoralis and deltoid subdivisions; other muscles hidden equally",
+    "view": "front",
+    "camera": {
+      "yaw": 3.141592653589793,
+      "pitch": 0.1,
+      "zoom": 8.459528971709988,
+      "target": [
+        -0.08293333983790019,
+        1.5851391204743681,
+        0.035402417654427504
+      ]
+    },
+    "pose": {
+      "right": {
+        "elev": 150,
+        "plane": 90
+      },
+      "left": {
+        "elev": 0,
+        "plane": 0
+      }
+    },
+    "renderer": "original archived v0.72 GPU fallback",
+    "errors": []
+  },
+  {
+    "version": "v072",
+    "focus": "pectoralis and deltoid subdivisions; other muscles hidden equally",
+    "view": "side",
+    "camera": {
+      "yaw": 1.5707963267948966,
+      "pitch": 0.1,
+      "zoom": 8.172835457417605,
+      "target": [
+        0.27691631916564236,
+        1.708752515638126,
+        -0.37402904666229025
+      ]
+    },
+    "pose": {
+      "right": {
+        "elev": 150,
+        "plane": 90
+      },
+      "left": {
+        "elev": 0,
+        "plane": 0
+      }
+    },
+    "renderer": "original archived v0.72 GPU fallback",
+    "errors": []
+  },
+  {
+    "version": "v072",
+    "focus": "pectoralis and deltoid subdivisions; other muscles hidden equally",
+    "view": "back",
+    "camera": {
+      "yaw": 0,
+      "pitch": 0.1,
+      "zoom": 8.585830456015834,
+      "target": [
+        -0.08293333983790008,
+        1.7379749432695826,
+        -0.13710531609884977
+      ]
+    },
+    "pose": {
+      "right": {
+        "elev": 150,
+        "plane": 90
+      },
+      "left": {
+        "elev": 0,
+        "plane": 0
+      }
+    },
+    "renderer": "original archived v0.72 GPU fallback",
+    "errors": []
+  },
+  {
+    "version": "v073",
+    "focus": "pectoralis and deltoid subdivisions; other muscles hidden equally",
+    "view": "front",
+    "camera": {
+      "yaw": 3.141592653589793,
+      "pitch": 0.1,
+      "zoom": 5.3245237324643355,
+      "target": [
+        -0.07769999999999994,
+        0.2145531596185944,
+        -0.003847568753144355
+      ]
+    },
+    "pose": {
+      "right": {
+        "elev": 0,
+        "plane": 0
+      },
+      "left": {
+        "elev": 0,
+        "plane": 0
+      }
+    },
+    "renderer": "CPU reference, WebGL rasterization",
+    "errors": []
+  },
+  {
+    "version": "v073",
+    "focus": "pectoralis and deltoid subdivisions; other muscles hidden equally",
+    "view": "side",
+    "camera": {
+      "yaw": 1.5707963267948966,
+      "pitch": 0.1,
+      "zoom": 5.441985827609609,
+      "target": [
+        0.1970225553753471,
+        0.1951022026520406,
+        -0.1267564138203859
+      ]
+    },
+    "pose": {
+      "right": {
+        "elev": 0,
+        "plane": 0
+      },
+      "left": {
+        "elev": 0,
+        "plane": 0
+      }
+    },
+    "renderer": "CPU reference, WebGL rasterization",
+    "errors": []
+  },
+  {
+    "version": "v073",
+    "focus": "pectoralis and deltoid subdivisions; other muscles hidden equally",
+    "view": "back",
+    "camera": {
+      "yaw": 0,
+      "pitch": 0.1,
+      "zoom": 5.189887855446399,
+      "target": [
+        -0.07769999999999994,
+        0.27180858297731053,
+        0.08977681005227486
+      ]
+    },
+    "pose": {
+      "right": {
+        "elev": 0,
+        "plane": 0
+      },
+      "left": {
+        "elev": 0,
+        "plane": 0
+      }
+    },
+    "renderer": "CPU reference, WebGL rasterization",
+    "errors": []
+  },
+  {
+    "version": "v073",
+    "focus": "pectoralis and deltoid subdivisions; other muscles hidden equally",
+    "view": "front",
+    "camera": {
+      "yaw": 3.141592653589793,
+      "pitch": 0.1,
+      "zoom": 8.459528971709988,
+      "target": [
+        -0.08293333983790019,
+        1.5851391204743681,
+        0.035402417654427504
+      ]
+    },
+    "pose": {
+      "right": {
+        "elev": 150,
+        "plane": 90
+      },
+      "left": {
+        "elev": 0,
+        "plane": 0
+      }
+    },
+    "renderer": "CPU reference, WebGL rasterization",
+    "errors": []
+  },
+  {
+    "version": "v073",
+    "focus": "pectoralis and deltoid subdivisions; other muscles hidden equally",
+    "view": "side",
+    "camera": {
+      "yaw": 1.5707963267948966,
+      "pitch": 0.1,
+      "zoom": 8.172835457417605,
+      "target": [
+        0.27691631916564236,
+        1.708752515638126,
+        -0.37402904666229025
+      ]
+    },
+    "pose": {
+      "right": {
+        "elev": 150,
+        "plane": 90
+      },
+      "left": {
+        "elev": 0,
+        "plane": 0
+      }
+    },
+    "renderer": "CPU reference, WebGL rasterization",
+    "errors": []
+  },
+  {
+    "version": "v073",
+    "focus": "pectoralis and deltoid subdivisions; other muscles hidden equally",
+    "view": "back",
+    "camera": {
+      "yaw": 0,
+      "pitch": 0.1,
+      "zoom": 8.585830456015834,
+      "target": [
+        -0.08293333983790008,
+        1.7379749432695826,
+        -0.13710531609884977
+      ]
+    },
+    "pose": {
+      "right": {
+        "elev": 150,
+        "plane": 90
+      },
+      "left": {
+        "elev": 0,
+        "plane": 0
+      }
+    },
+    "renderer": "CPU reference, WebGL rasterization",
+    "errors": []
+  }
+]

@@ -1,0 +1,1463 @@
+{
+  "results": [
+    {
+      "elev": 0,
+      "plane": 0,
+      "data": {
+        "thorax": {
+          "version": "v0.66.0",
+          "mode": "atlas",
+          "loaded": 79,
+          "total": 79,
+          "failed": [],
+          "sourceCommit": "2c83c698788cff57f6317bddcf712e7acfbea7d8",
+          "groups": {
+            "ribs": 24,
+            "spine": 19,
+            "sternum": 3,
+            "cartilage": 16,
+            "discs": 17
+          },
+          "rendered": [
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "T1",
+            "T2",
+            "T3",
+            "T4",
+            "T6",
+            "T5",
+            "T7",
+            "T8",
+            "T9",
+            "T10",
+            "T11",
+            "T12",
+            "R1",
+            "R4",
+            "R2",
+            "R3",
+            "R5",
+            "R6",
+            "R7",
+            "R8",
+            "R9",
+            "R10",
+            "R12",
+            "R11",
+            "L1",
+            "L4",
+            "L2",
+            "L3",
+            "L5",
+            "L6",
+            "L7",
+            "L8",
+            "L9",
+            "L10",
+            "L11",
+            "L12",
+            "manubrium",
+            "xiphoid",
+            "sternalBody",
+            "cartilageR",
+            "cartilageL",
+            "cartR1",
+            "cartR3",
+            "cartR2",
+            "cartR4",
+            "cartR5",
+            "cartR6",
+            "cartL1",
+            "cartR7",
+            "cartL2",
+            "cartL3",
+            "cartL4",
+            "cartL5",
+            "cartL6",
+            "cartL7",
+            "discC3",
+            "discC4",
+            "discC2",
+            "discC6",
+            "discC5",
+            "discC7",
+            "discT1",
+            "discT3",
+            "discT2",
+            "discT5",
+            "discT6",
+            "discT4",
+            "discT9",
+            "discT8",
+            "discT7",
+            "discT10",
+            "discT11"
+          ],
+          "coreReady": true,
+          "sourceBytes": 56893736,
+          "layer": "all",
+          "actualLeftRightRibs": true,
+          "clinicalValidation": false
+        },
+        "deep": {
+          "version": "v0.66.0",
+          "loaded": [
+            "v58RhomboidMajor",
+            "v58RhomboidMinor",
+            "v58Levator",
+            "v58Serratus",
+            "v58Subscap",
+            "v59TrapUpper",
+            "v59TrapMiddle",
+            "v59TrapLower",
+            "v59Lat",
+            "v60PecClav",
+            "v60PecStern",
+            "v60PecAbd",
+            "v60PecMinor",
+            "v60Subclavius",
+            "v60DeltAnt",
+            "v60DeltMid",
+            "v60DeltPost"
+          ],
+          "failed": [],
+          "available": 17,
+          "visible": [
+            "v58RhomboidMajor",
+            "v58RhomboidMinor",
+            "v58Levator",
+            "v58Serratus",
+            "v58Subscap",
+            "v60PecClav",
+            "v60PecStern",
+            "v60PecAbd",
+            "v60PecMinor",
+            "v60Subclavius",
+            "v60DeltAnt",
+            "v60DeltMid",
+            "v60DeltPost"
+          ],
+          "triangles": [
+            {
+              "id": "v58RhomboidMajor",
+              "triangles": 19729,
+              "source": 48254
+            },
+            {
+              "id": "v58RhomboidMinor",
+              "triangles": 6390,
+              "source": 15092
+            },
+            {
+              "id": "v58Levator",
+              "triangles": 13005,
+              "source": 31336
+            },
+            {
+              "id": "v58Serratus",
+              "triangles": 60276,
+              "source": 248640
+            },
+            {
+              "id": "v58Subscap",
+              "triangles": 14163,
+              "source": 30620
+            },
+            {
+              "id": "v59TrapUpper",
+              "triangles": 27213,
+              "source": 46450
+            },
+            {
+              "id": "v59TrapMiddle",
+              "triangles": 17811,
+              "source": 30584
+            },
+            {
+              "id": "v59TrapLower",
+              "triangles": 40443,
+              "source": 69632
+            },
+            {
+              "id": "v59Lat",
+              "triangles": 91183,
+              "source": 227978
+            },
+            {
+              "id": "v60PecClav",
+              "triangles": 7318,
+              "source": 9330
+            },
+            {
+              "id": "v60PecStern",
+              "triangles": 28491,
+              "source": 36014
+            },
+            {
+              "id": "v60PecAbd",
+              "triangles": 6129,
+              "source": 7546
+            },
+            {
+              "id": "v60PecMinor",
+              "triangles": 16936,
+              "source": 45360
+            },
+            {
+              "id": "v60Subclavius",
+              "triangles": 3143,
+              "source": 8154
+            },
+            {
+              "id": "v60DeltAnt",
+              "triangles": 17708,
+              "source": 29082
+            },
+            {
+              "id": "v60DeltMid",
+              "triangles": 18267,
+              "source": 29682
+            },
+            {
+              "id": "v60DeltPost",
+              "triangles": 26250,
+              "source": 44010
+            }
+          ],
+          "gpuSkinning": true,
+          "clinicalValidation": false
+        },
+        "performance": {
+          "moving": null,
+          "still": {
+            "n": 15,
+            "median": 8.400000095367432,
+            "p95": 127
+          }
+        }
+      }
+    },
+    {
+      "elev": 90,
+      "plane": 0,
+      "data": {
+        "thorax": {
+          "version": "v0.66.0",
+          "mode": "atlas",
+          "loaded": 79,
+          "total": 79,
+          "failed": [],
+          "sourceCommit": "2c83c698788cff57f6317bddcf712e7acfbea7d8",
+          "groups": {
+            "ribs": 24,
+            "spine": 19,
+            "sternum": 3,
+            "cartilage": 16,
+            "discs": 17
+          },
+          "rendered": [
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "T1",
+            "T2",
+            "T3",
+            "T4",
+            "T6",
+            "T5",
+            "T7",
+            "T8",
+            "T9",
+            "T10",
+            "T11",
+            "T12",
+            "R1",
+            "R4",
+            "R2",
+            "R3",
+            "R5",
+            "R6",
+            "R7",
+            "R8",
+            "R9",
+            "R10",
+            "R12",
+            "R11",
+            "L1",
+            "L4",
+            "L2",
+            "L3",
+            "L5",
+            "L6",
+            "L7",
+            "L8",
+            "L9",
+            "L10",
+            "L11",
+            "L12",
+            "manubrium",
+            "xiphoid",
+            "sternalBody",
+            "cartilageR",
+            "cartilageL",
+            "cartR1",
+            "cartR3",
+            "cartR2",
+            "cartR4",
+            "cartR5",
+            "cartR6",
+            "cartL1",
+            "cartR7",
+            "cartL2",
+            "cartL3",
+            "cartL4",
+            "cartL5",
+            "cartL6",
+            "cartL7",
+            "discC3",
+            "discC4",
+            "discC2",
+            "discC6",
+            "discC5",
+            "discC7",
+            "discT1",
+            "discT3",
+            "discT2",
+            "discT5",
+            "discT6",
+            "discT4",
+            "discT9",
+            "discT8",
+            "discT7",
+            "discT10",
+            "discT11"
+          ],
+          "coreReady": true,
+          "sourceBytes": 56893736,
+          "layer": "all",
+          "actualLeftRightRibs": true,
+          "clinicalValidation": false
+        },
+        "deep": {
+          "version": "v0.66.0",
+          "loaded": [
+            "v58RhomboidMajor",
+            "v58RhomboidMinor",
+            "v58Levator",
+            "v58Serratus",
+            "v58Subscap",
+            "v59TrapUpper",
+            "v59TrapMiddle",
+            "v59TrapLower",
+            "v59Lat",
+            "v60PecClav",
+            "v60PecStern",
+            "v60PecAbd",
+            "v60PecMinor",
+            "v60Subclavius",
+            "v60DeltAnt",
+            "v60DeltMid",
+            "v60DeltPost"
+          ],
+          "failed": [],
+          "available": 17,
+          "visible": [
+            "v58RhomboidMajor",
+            "v58RhomboidMinor",
+            "v58Levator",
+            "v58Serratus",
+            "v58Subscap",
+            "v60PecClav",
+            "v60PecStern",
+            "v60PecAbd",
+            "v60PecMinor",
+            "v60Subclavius",
+            "v60DeltAnt",
+            "v60DeltMid",
+            "v60DeltPost"
+          ],
+          "triangles": [
+            {
+              "id": "v58RhomboidMajor",
+              "triangles": 19729,
+              "source": 48254
+            },
+            {
+              "id": "v58RhomboidMinor",
+              "triangles": 6390,
+              "source": 15092
+            },
+            {
+              "id": "v58Levator",
+              "triangles": 13005,
+              "source": 31336
+            },
+            {
+              "id": "v58Serratus",
+              "triangles": 60276,
+              "source": 248640
+            },
+            {
+              "id": "v58Subscap",
+              "triangles": 14163,
+              "source": 30620
+            },
+            {
+              "id": "v59TrapUpper",
+              "triangles": 27213,
+              "source": 46450
+            },
+            {
+              "id": "v59TrapMiddle",
+              "triangles": 17811,
+              "source": 30584
+            },
+            {
+              "id": "v59TrapLower",
+              "triangles": 40443,
+              "source": 69632
+            },
+            {
+              "id": "v59Lat",
+              "triangles": 91183,
+              "source": 227978
+            },
+            {
+              "id": "v60PecClav",
+              "triangles": 7318,
+              "source": 9330
+            },
+            {
+              "id": "v60PecStern",
+              "triangles": 28491,
+              "source": 36014
+            },
+            {
+              "id": "v60PecAbd",
+              "triangles": 6129,
+              "source": 7546
+            },
+            {
+              "id": "v60PecMinor",
+              "triangles": 16936,
+              "source": 45360
+            },
+            {
+              "id": "v60Subclavius",
+              "triangles": 3143,
+              "source": 8154
+            },
+            {
+              "id": "v60DeltAnt",
+              "triangles": 17708,
+              "source": 29082
+            },
+            {
+              "id": "v60DeltMid",
+              "triangles": 18267,
+              "source": 29682
+            },
+            {
+              "id": "v60DeltPost",
+              "triangles": 26250,
+              "source": 44010
+            }
+          ],
+          "gpuSkinning": true,
+          "clinicalValidation": false
+        },
+        "performance": {
+          "moving": null,
+          "still": {
+            "n": 19,
+            "median": 5,
+            "p95": 139.69999980926514
+          }
+        }
+      }
+    },
+    {
+      "elev": 150,
+      "plane": 0,
+      "data": {
+        "thorax": {
+          "version": "v0.66.0",
+          "mode": "atlas",
+          "loaded": 79,
+          "total": 79,
+          "failed": [],
+          "sourceCommit": "2c83c698788cff57f6317bddcf712e7acfbea7d8",
+          "groups": {
+            "ribs": 24,
+            "spine": 19,
+            "sternum": 3,
+            "cartilage": 16,
+            "discs": 17
+          },
+          "rendered": [
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "T1",
+            "T2",
+            "T3",
+            "T4",
+            "T6",
+            "T5",
+            "T7",
+            "T8",
+            "T9",
+            "T10",
+            "T11",
+            "T12",
+            "R1",
+            "R4",
+            "R2",
+            "R3",
+            "R5",
+            "R6",
+            "R7",
+            "R8",
+            "R9",
+            "R10",
+            "R12",
+            "R11",
+            "L1",
+            "L4",
+            "L2",
+            "L3",
+            "L5",
+            "L6",
+            "L7",
+            "L8",
+            "L9",
+            "L10",
+            "L11",
+            "L12",
+            "manubrium",
+            "xiphoid",
+            "sternalBody",
+            "cartilageR",
+            "cartilageL",
+            "cartR1",
+            "cartR3",
+            "cartR2",
+            "cartR4",
+            "cartR5",
+            "cartR6",
+            "cartL1",
+            "cartR7",
+            "cartL2",
+            "cartL3",
+            "cartL4",
+            "cartL5",
+            "cartL6",
+            "cartL7",
+            "discC3",
+            "discC4",
+            "discC2",
+            "discC6",
+            "discC5",
+            "discC7",
+            "discT1",
+            "discT3",
+            "discT2",
+            "discT5",
+            "discT6",
+            "discT4",
+            "discT9",
+            "discT8",
+            "discT7",
+            "discT10",
+            "discT11"
+          ],
+          "coreReady": true,
+          "sourceBytes": 56893736,
+          "layer": "all",
+          "actualLeftRightRibs": true,
+          "clinicalValidation": false
+        },
+        "deep": {
+          "version": "v0.66.0",
+          "loaded": [
+            "v58RhomboidMajor",
+            "v58RhomboidMinor",
+            "v58Levator",
+            "v58Serratus",
+            "v58Subscap",
+            "v59TrapUpper",
+            "v59TrapMiddle",
+            "v59TrapLower",
+            "v59Lat",
+            "v60PecClav",
+            "v60PecStern",
+            "v60PecAbd",
+            "v60PecMinor",
+            "v60Subclavius",
+            "v60DeltAnt",
+            "v60DeltMid",
+            "v60DeltPost"
+          ],
+          "failed": [],
+          "available": 17,
+          "visible": [
+            "v58RhomboidMajor",
+            "v58RhomboidMinor",
+            "v58Levator",
+            "v58Serratus",
+            "v58Subscap",
+            "v60PecClav",
+            "v60PecStern",
+            "v60PecAbd",
+            "v60PecMinor",
+            "v60Subclavius",
+            "v60DeltAnt",
+            "v60DeltMid",
+            "v60DeltPost"
+          ],
+          "triangles": [
+            {
+              "id": "v58RhomboidMajor",
+              "triangles": 19729,
+              "source": 48254
+            },
+            {
+              "id": "v58RhomboidMinor",
+              "triangles": 6390,
+              "source": 15092
+            },
+            {
+              "id": "v58Levator",
+              "triangles": 13005,
+              "source": 31336
+            },
+            {
+              "id": "v58Serratus",
+              "triangles": 60276,
+              "source": 248640
+            },
+            {
+              "id": "v58Subscap",
+              "triangles": 14163,
+              "source": 30620
+            },
+            {
+              "id": "v59TrapUpper",
+              "triangles": 27213,
+              "source": 46450
+            },
+            {
+              "id": "v59TrapMiddle",
+              "triangles": 17811,
+              "source": 30584
+            },
+            {
+              "id": "v59TrapLower",
+              "triangles": 40443,
+              "source": 69632
+            },
+            {
+              "id": "v59Lat",
+              "triangles": 91183,
+              "source": 227978
+            },
+            {
+              "id": "v60PecClav",
+              "triangles": 7318,
+              "source": 9330
+            },
+            {
+              "id": "v60PecStern",
+              "triangles": 28491,
+              "source": 36014
+            },
+            {
+              "id": "v60PecAbd",
+              "triangles": 6129,
+              "source": 7546
+            },
+            {
+              "id": "v60PecMinor",
+              "triangles": 16936,
+              "source": 45360
+            },
+            {
+              "id": "v60Subclavius",
+              "triangles": 3143,
+              "source": 8154
+            },
+            {
+              "id": "v60DeltAnt",
+              "triangles": 17708,
+              "source": 29082
+            },
+            {
+              "id": "v60DeltMid",
+              "triangles": 18267,
+              "source": 29682
+            },
+            {
+              "id": "v60DeltPost",
+              "triangles": 26250,
+              "source": 44010
+            }
+          ],
+          "gpuSkinning": true,
+          "clinicalValidation": false
+        },
+        "performance": {
+          "moving": null,
+          "still": {
+            "n": 23,
+            "median": 5,
+            "p95": 127
+          }
+        }
+      }
+    },
+    {
+      "elev": 180,
+      "plane": 0,
+      "data": {
+        "thorax": {
+          "version": "v0.66.0",
+          "mode": "atlas",
+          "loaded": 79,
+          "total": 79,
+          "failed": [],
+          "sourceCommit": "2c83c698788cff57f6317bddcf712e7acfbea7d8",
+          "groups": {
+            "ribs": 24,
+            "spine": 19,
+            "sternum": 3,
+            "cartilage": 16,
+            "discs": 17
+          },
+          "rendered": [
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "T1",
+            "T2",
+            "T3",
+            "T4",
+            "T6",
+            "T5",
+            "T7",
+            "T8",
+            "T9",
+            "T10",
+            "T11",
+            "T12",
+            "R1",
+            "R4",
+            "R2",
+            "R3",
+            "R5",
+            "R6",
+            "R7",
+            "R8",
+            "R9",
+            "R10",
+            "R12",
+            "R11",
+            "L1",
+            "L4",
+            "L2",
+            "L3",
+            "L5",
+            "L6",
+            "L7",
+            "L8",
+            "L9",
+            "L10",
+            "L11",
+            "L12",
+            "manubrium",
+            "xiphoid",
+            "sternalBody",
+            "cartilageR",
+            "cartilageL",
+            "cartR1",
+            "cartR3",
+            "cartR2",
+            "cartR4",
+            "cartR5",
+            "cartR6",
+            "cartL1",
+            "cartR7",
+            "cartL2",
+            "cartL3",
+            "cartL4",
+            "cartL5",
+            "cartL6",
+            "cartL7",
+            "discC3",
+            "discC4",
+            "discC2",
+            "discC6",
+            "discC5",
+            "discC7",
+            "discT1",
+            "discT3",
+            "discT2",
+            "discT5",
+            "discT6",
+            "discT4",
+            "discT9",
+            "discT8",
+            "discT7",
+            "discT10",
+            "discT11"
+          ],
+          "coreReady": true,
+          "sourceBytes": 56893736,
+          "layer": "all",
+          "actualLeftRightRibs": true,
+          "clinicalValidation": false
+        },
+        "deep": {
+          "version": "v0.66.0",
+          "loaded": [
+            "v58RhomboidMajor",
+            "v58RhomboidMinor",
+            "v58Levator",
+            "v58Serratus",
+            "v58Subscap",
+            "v59TrapUpper",
+            "v59TrapMiddle",
+            "v59TrapLower",
+            "v59Lat",
+            "v60PecClav",
+            "v60PecStern",
+            "v60PecAbd",
+            "v60PecMinor",
+            "v60Subclavius",
+            "v60DeltAnt",
+            "v60DeltMid",
+            "v60DeltPost"
+          ],
+          "failed": [],
+          "available": 17,
+          "visible": [
+            "v58RhomboidMajor",
+            "v58RhomboidMinor",
+            "v58Levator",
+            "v58Serratus",
+            "v58Subscap",
+            "v60PecClav",
+            "v60PecStern",
+            "v60PecAbd",
+            "v60PecMinor",
+            "v60Subclavius",
+            "v60DeltAnt",
+            "v60DeltMid",
+            "v60DeltPost"
+          ],
+          "triangles": [
+            {
+              "id": "v58RhomboidMajor",
+              "triangles": 19729,
+              "source": 48254
+            },
+            {
+              "id": "v58RhomboidMinor",
+              "triangles": 6390,
+              "source": 15092
+            },
+            {
+              "id": "v58Levator",
+              "triangles": 13005,
+              "source": 31336
+            },
+            {
+              "id": "v58Serratus",
+              "triangles": 60276,
+              "source": 248640
+            },
+            {
+              "id": "v58Subscap",
+              "triangles": 14163,
+              "source": 30620
+            },
+            {
+              "id": "v59TrapUpper",
+              "triangles": 27213,
+              "source": 46450
+            },
+            {
+              "id": "v59TrapMiddle",
+              "triangles": 17811,
+              "source": 30584
+            },
+            {
+              "id": "v59TrapLower",
+              "triangles": 40443,
+              "source": 69632
+            },
+            {
+              "id": "v59Lat",
+              "triangles": 91183,
+              "source": 227978
+            },
+            {
+              "id": "v60PecClav",
+              "triangles": 7318,
+              "source": 9330
+            },
+            {
+              "id": "v60PecStern",
+              "triangles": 28491,
+              "source": 36014
+            },
+            {
+              "id": "v60PecAbd",
+              "triangles": 6129,
+              "source": 7546
+            },
+            {
+              "id": "v60PecMinor",
+              "triangles": 16936,
+              "source": 45360
+            },
+            {
+              "id": "v60Subclavius",
+              "triangles": 3143,
+              "source": 8154
+            },
+            {
+              "id": "v60DeltAnt",
+              "triangles": 17708,
+              "source": 29082
+            },
+            {
+              "id": "v60DeltMid",
+              "triangles": 18267,
+              "source": 29682
+            },
+            {
+              "id": "v60DeltPost",
+              "triangles": 26250,
+              "source": 44010
+            }
+          ],
+          "gpuSkinning": true,
+          "clinicalValidation": false
+        },
+        "performance": {
+          "moving": null,
+          "still": {
+            "n": 27,
+            "median": 5,
+            "p95": 139.69999980926514
+          }
+        }
+      }
+    },
+    {
+      "elev": 90,
+      "plane": 90,
+      "data": {
+        "thorax": {
+          "version": "v0.66.0",
+          "mode": "atlas",
+          "loaded": 79,
+          "total": 79,
+          "failed": [],
+          "sourceCommit": "2c83c698788cff57f6317bddcf712e7acfbea7d8",
+          "groups": {
+            "ribs": 24,
+            "spine": 19,
+            "sternum": 3,
+            "cartilage": 16,
+            "discs": 17
+          },
+          "rendered": [
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "T1",
+            "T2",
+            "T3",
+            "T4",
+            "T6",
+            "T5",
+            "T7",
+            "T8",
+            "T9",
+            "T10",
+            "T11",
+            "T12",
+            "R1",
+            "R4",
+            "R2",
+            "R3",
+            "R5",
+            "R6",
+            "R7",
+            "R8",
+            "R9",
+            "R10",
+            "R12",
+            "R11",
+            "L1",
+            "L4",
+            "L2",
+            "L3",
+            "L5",
+            "L6",
+            "L7",
+            "L8",
+            "L9",
+            "L10",
+            "L11",
+            "L12",
+            "manubrium",
+            "xiphoid",
+            "sternalBody",
+            "cartilageR",
+            "cartilageL",
+            "cartR1",
+            "cartR3",
+            "cartR2",
+            "cartR4",
+            "cartR5",
+            "cartR6",
+            "cartL1",
+            "cartR7",
+            "cartL2",
+            "cartL3",
+            "cartL4",
+            "cartL5",
+            "cartL6",
+            "cartL7",
+            "discC3",
+            "discC4",
+            "discC2",
+            "discC6",
+            "discC5",
+            "discC7",
+            "discT1",
+            "discT3",
+            "discT2",
+            "discT5",
+            "discT6",
+            "discT4",
+            "discT9",
+            "discT8",
+            "discT7",
+            "discT10",
+            "discT11"
+          ],
+          "coreReady": true,
+          "sourceBytes": 56893736,
+          "layer": "all",
+          "actualLeftRightRibs": true,
+          "clinicalValidation": false
+        },
+        "deep": {
+          "version": "v0.66.0",
+          "loaded": [
+            "v58RhomboidMajor",
+            "v58RhomboidMinor",
+            "v58Levator",
+            "v58Serratus",
+            "v58Subscap",
+            "v59TrapUpper",
+            "v59TrapMiddle",
+            "v59TrapLower",
+            "v59Lat",
+            "v60PecClav",
+            "v60PecStern",
+            "v60PecAbd",
+            "v60PecMinor",
+            "v60Subclavius",
+            "v60DeltAnt",
+            "v60DeltMid",
+            "v60DeltPost"
+          ],
+          "failed": [],
+          "available": 17,
+          "visible": [
+            "v58RhomboidMajor",
+            "v58RhomboidMinor",
+            "v58Levator",
+            "v58Serratus",
+            "v58Subscap",
+            "v60PecClav",
+            "v60PecStern",
+            "v60PecAbd",
+            "v60PecMinor",
+            "v60Subclavius",
+            "v60DeltAnt",
+            "v60DeltMid",
+            "v60DeltPost"
+          ],
+          "triangles": [
+            {
+              "id": "v58RhomboidMajor",
+              "triangles": 19729,
+              "source": 48254
+            },
+            {
+              "id": "v58RhomboidMinor",
+              "triangles": 6390,
+              "source": 15092
+            },
+            {
+              "id": "v58Levator",
+              "triangles": 13005,
+              "source": 31336
+            },
+            {
+              "id": "v58Serratus",
+              "triangles": 60276,
+              "source": 248640
+            },
+            {
+              "id": "v58Subscap",
+              "triangles": 14163,
+              "source": 30620
+            },
+            {
+              "id": "v59TrapUpper",
+              "triangles": 27213,
+              "source": 46450
+            },
+            {
+              "id": "v59TrapMiddle",
+              "triangles": 17811,
+              "source": 30584
+            },
+            {
+              "id": "v59TrapLower",
+              "triangles": 40443,
+              "source": 69632
+            },
+            {
+              "id": "v59Lat",
+              "triangles": 91183,
+              "source": 227978
+            },
+            {
+              "id": "v60PecClav",
+              "triangles": 7318,
+              "source": 9330
+            },
+            {
+              "id": "v60PecStern",
+              "triangles": 28491,
+              "source": 36014
+            },
+            {
+              "id": "v60PecAbd",
+              "triangles": 6129,
+              "source": 7546
+            },
+            {
+              "id": "v60PecMinor",
+              "triangles": 16936,
+              "source": 45360
+            },
+            {
+              "id": "v60Subclavius",
+              "triangles": 3143,
+              "source": 8154
+            },
+            {
+              "id": "v60DeltAnt",
+              "triangles": 17708,
+              "source": 29082
+            },
+            {
+              "id": "v60DeltMid",
+              "triangles": 18267,
+              "source": 29682
+            },
+            {
+              "id": "v60DeltPost",
+              "triangles": 26250,
+              "source": 44010
+            }
+          ],
+          "gpuSkinning": true,
+          "clinicalValidation": false
+        },
+        "performance": {
+          "moving": null,
+          "still": {
+            "n": 31,
+            "median": 4,
+            "p95": 139.69999980926514
+          }
+        }
+      }
+    },
+    {
+      "elev": 150,
+      "plane": 90,
+      "data": {
+        "thorax": {
+          "version": "v0.66.0",
+          "mode": "atlas",
+          "loaded": 79,
+          "total": 79,
+          "failed": [],
+          "sourceCommit": "2c83c698788cff57f6317bddcf712e7acfbea7d8",
+          "groups": {
+            "ribs": 24,
+            "spine": 19,
+            "sternum": 3,
+            "cartilage": 16,
+            "discs": 17
+          },
+          "rendered": [
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "T1",
+            "T2",
+            "T3",
+            "T4",
+            "T6",
+            "T5",
+            "T7",
+            "T8",
+            "T9",
+            "T10",
+            "T11",
+            "T12",
+            "R1",
+            "R4",
+            "R2",
+            "R3",
+            "R5",
+            "R6",
+            "R7",
+            "R8",
+            "R9",
+            "R10",
+            "R12",
+            "R11",
+            "L1",
+            "L4",
+            "L2",
+            "L3",
+            "L5",
+            "L6",
+            "L7",
+            "L8",
+            "L9",
+            "L10",
+            "L11",
+            "L12",
+            "manubrium",
+            "xiphoid",
+            "sternalBody",
+            "cartilageR",
+            "cartilageL",
+            "cartR1",
+            "cartR3",
+            "cartR2",
+            "cartR4",
+            "cartR5",
+            "cartR6",
+            "cartL1",
+            "cartR7",
+            "cartL2",
+            "cartL3",
+            "cartL4",
+            "cartL5",
+            "cartL6",
+            "cartL7",
+            "discC3",
+            "discC4",
+            "discC2",
+            "discC6",
+            "discC5",
+            "discC7",
+            "discT1",
+            "discT3",
+            "discT2",
+            "discT5",
+            "discT6",
+            "discT4",
+            "discT9",
+            "discT8",
+            "discT7",
+            "discT10",
+            "discT11"
+          ],
+          "coreReady": true,
+          "sourceBytes": 56893736,
+          "layer": "all",
+          "actualLeftRightRibs": true,
+          "clinicalValidation": false
+        },
+        "deep": {
+          "version": "v0.66.0",
+          "loaded": [
+            "v58RhomboidMajor",
+            "v58RhomboidMinor",
+            "v58Levator",
+            "v58Serratus",
+            "v58Subscap",
+            "v59TrapUpper",
+            "v59TrapMiddle",
+            "v59TrapLower",
+            "v59Lat",
+            "v60PecClav",
+            "v60PecStern",
+            "v60PecAbd",
+            "v60PecMinor",
+            "v60Subclavius",
+            "v60DeltAnt",
+            "v60DeltMid",
+            "v60DeltPost"
+          ],
+          "failed": [],
+          "available": 17,
+          "visible": [
+            "v58RhomboidMajor",
+            "v58RhomboidMinor",
+            "v58Levator",
+            "v58Serratus",
+            "v58Subscap",
+            "v60PecClav",
+            "v60PecStern",
+            "v60PecAbd",
+            "v60PecMinor",
+            "v60Subclavius",
+            "v60DeltAnt",
+            "v60DeltMid",
+            "v60DeltPost"
+          ],
+          "triangles": [
+            {
+              "id": "v58RhomboidMajor",
+              "triangles": 19729,
+              "source": 48254
+            },
+            {
+              "id": "v58RhomboidMinor",
+              "triangles": 6390,
+              "source": 15092
+            },
+            {
+              "id": "v58Levator",
+              "triangles": 13005,
+              "source": 31336
+            },
+            {
+              "id": "v58Serratus",
+              "triangles": 60276,
+              "source": 248640
+            },
+            {
+              "id": "v58Subscap",
+              "triangles": 14163,
+              "source": 30620
+            },
+            {
+              "id": "v59TrapUpper",
+              "triangles": 27213,
+              "source": 46450
+            },
+            {
+              "id": "v59TrapMiddle",
+              "triangles": 17811,
+              "source": 30584
+            },
+            {
+              "id": "v59TrapLower",
+              "triangles": 40443,
+              "source": 69632
+            },
+            {
+              "id": "v59Lat",
+              "triangles": 91183,
+              "source": 227978
+            },
+            {
+              "id": "v60PecClav",
+              "triangles": 7318,
+              "source": 9330
+            },
+            {
+              "id": "v60PecStern",
+              "triangles": 28491,
+              "source": 36014
+            },
+            {
+              "id": "v60PecAbd",
+              "triangles": 6129,
+              "source": 7546
+            },
+            {
+              "id": "v60PecMinor",
+              "triangles": 16936,
+              "source": 45360
+            },
+            {
+              "id": "v60Subclavius",
+              "triangles": 3143,
+              "source": 8154
+            },
+            {
+              "id": "v60DeltAnt",
+              "triangles": 17708,
+              "source": 29082
+            },
+            {
+              "id": "v60DeltMid",
+              "triangles": 18267,
+              "source": 29682
+            },
+            {
+              "id": "v60DeltPost",
+              "triangles": 26250,
+              "source": 44010
+            }
+          ],
+          "gpuSkinning": true,
+          "clinicalValidation": false
+        },
+        "performance": {
+          "moving": null,
+          "still": {
+            "n": 35,
+            "median": 3.5999999046325684,
+            "p95": 139.69999980926514
+          }
+        }
+      }
+    }
+  ],
+  "errors": []
+}

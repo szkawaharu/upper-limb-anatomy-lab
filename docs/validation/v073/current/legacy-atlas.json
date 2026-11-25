@@ -1,0 +1,98 @@
+[
+  {
+    "name": "大胸筋腹部",
+    "file": "FMA45874.stl",
+    "vertices": 3066,
+    "improved": 3,
+    "results": [
+      {
+        "angle": 0,
+        "alpha": 0,
+        "base": 0,
+        "score": 0,
+        "areaBase": 0,
+        "areaScore": 0
+      },
+      {
+        "angle": 45,
+        "alpha": 0,
+        "base": 0.03881,
+        "score": 0.03881,
+        "areaBase": 0.03908,
+        "areaScore": 0.03908
+      },
+      {
+        "angle": 90,
+        "alpha": 0.531,
+        "base": 0.15033,
+        "score": 0.08788,
+        "areaBase": 0.15587,
+        "areaScore": 0.08465
+      },
+      {
+        "angle": 135,
+        "alpha": 0.632,
+        "base": 1.86161,
+        "score": 0.15014,
+        "areaBase": 2.77007,
+        "areaScore": 0.12011
+      },
+      {
+        "angle": 180,
+        "alpha": 0.608,
+        "base": 0.59015,
+        "score": 0.21287,
+        "areaBase": 0.76187,
+        "areaScore": 0.16194
+      }
+    ]
+  },
+  {
+    "name": "大胸筋鎖骨部",
+    "file": "FMA34690.stl",
+    "vertices": 3660,
+    "improved": 1,
+    "results": [
+      {
+        "angle": 0,
+        "alpha": 0,
+        "base": 0,
+        "score": 0,
+        "areaBase": 0,
+        "areaScore": 0
+      },
+      {
+        "angle": 45,
+        "alpha": 0.25,
+        "base": 0.02357,
+        "score": 0.01803,
+        "areaBase": 0.02636,
+        "areaScore": 0.02412
+      },
+      {
+        "angle": 90,
+        "alpha": 0,
+        "base": 0.07017,
+        "score": 0.07017,
+        "areaBase": 0.08073,
+        "areaScore": 0.08073
+      },
+      {
+        "angle": 135,
+        "alpha": 0,
+        "base": 0.11505,
+        "score": 0.11505,
+        "areaBase": 0.13914,
+        "areaScore": 0.13914
+      },
+      {
+        "angle": 180,
+        "alpha": 0,
+        "base": 0.22582,
+        "score": 0.22582,
+        "areaBase": 0.40418,
+        "areaScore": 0.40418
+      }
+    ]
+  }
+]
