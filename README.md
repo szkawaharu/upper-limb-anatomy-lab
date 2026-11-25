@@ -2,7 +2,7 @@
 
 スマートフォン対応の上肢骨格・筋肉・腱を観察する教育用Webアプリ。動作と形態は**解剖学的に未検証の近似を含み、臨床用・診断用ではありません**。
 
-**現在のバージョン：v0.69.0**
+**現在のバージョン：v0.70.0**
 
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
@@ -11,6 +11,12 @@
 - **v0.54の保存ブランチ**：[`archive/v0.54-before-anatomy-rebuild`](../../tree/archive/v0.54-before-anatomy-rebuild)
 - **v0.53の保存ブランチ**：[`archive/v0.53-before-review`](../../tree/archive/v0.53-before-review)
 - **v0.51の保存ブランチ**：[`archive/v0.51-before-scapular-fix`](../../tree/archive/v0.51-before-scapular-fix)
+
+## v0.70：大胸筋 Fan-sheet（2D扇状筋）変形
+
+大胸筋鎖骨部・胸肋部・腹部を、従来の主に1D筋束ベースの変形から、**広い起始から遠位腱へ収束する6レーンの2D Fan-sheet**へ切り替えた。各頂点を長手・横断・厚みの局所シート座標で変形し、局所軸は中立位の解剖学的方向を肩運動から輸送して使用する。生の曲面接線は伸長率計測に限定し、接線が特異になる姿勢での枝切り替え・プルプルを抑える。
+
+v0.69はFan-sheet後段の安全層へ変更し、v0.70時は旧形状へ引き戻す腋窩コリドーを停止。筋膜外方拘束と遠位の太りすぎ抑制のみ残す。詳細は [PECTORAL_FAN_V070](./docs/PECTORAL_FAN_V070.md)。
 
 ## v0.69：大胸筋の筋膜包絡＋筋腱移行
 
