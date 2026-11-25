@@ -261,7 +261,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.66.0</div><button id="v56QuickSide" type="button" aria-label="操作中の腕（直接操作で自動選択／手動切替も可）：右）">右</button>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.67.0</div><button id="v56QuickSide" type="button" aria-label="操作中の腕（直接操作で自動選択／手動切替も可）：右）">右</button>
 <nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
  <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
  <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
@@ -297,7 +297,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <div class="detail">三角筋は従来の三角筋スイッチと連動。3部位の取得完了時に旧形状を一括置換。腹部は腰部未実装のため下端固定の近似。</div>
 <div style="display:flex;flex-wrap:wrap;gap:6px"><button id="v60LayerAll" type="button">胸・肩・背：全層</button><button id="v60LayerSurface" type="button">表層</button><button id="v60LayerDeep" type="button">深層</button></div>
 <div class="detail">胸・肩・背の筋群のみ切替。上腕・前腕の表示設定は維持。</div>
-<label class="switch"><input id="v61Scap" type="checkbox" checked>肩甲胸郭 v0.66 面拘束（実胸郭取得時）</label><div class="detail" id="v61ScapStatus">肋骨サンプルから胸郭面を近似し、肩甲骨肋骨面を上・中・下3領域で拘束します。実接触は未検証。</div><div class="detail" id="v66Status">v0.66肩甲胸郭：準備中</div><button type="button" id="v66Audit">v0.66 肩甲胸郭・GH監査</button><pre class="detail" id="v66AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOTHORACIC_V066.md" target="_blank" rel="noopener noreferrer">v0.66 仕様・文献・検証限界</a></div>
+<label class="switch"><input id="v61Scap" type="checkbox" checked>肩甲胸郭 v0.66 面拘束（実胸郭取得時）</label><div class="detail" id="v61ScapStatus">肋骨サンプルから胸郭面を近似し、肩甲骨肋骨面を上・中・下3領域で拘束します。実接触は未検証。</div><div class="detail" id="v66Status">v0.66肩甲胸郭：準備中</div><div class="detail" id="v67Status">v0.67肩甲上腕ガード：準備中</div><button type="button" id="v67Audit">v0.67 肩甲骨姿勢・GH監査</button><pre class="detail" id="v67AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOHUMERAL_V067.md" target="_blank" rel="noopener noreferrer">v0.67 仕様・文献・検証限界</a></div><button type="button" id="v66Audit">v0.66 肩甲胸郭・GH監査</button><pre class="detail" id="v66AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOTHORACIC_V066.md" target="_blank" rel="noopener noreferrer">v0.66 仕様・文献・検証限界</a></div>
 <div class="control"><label>筋メッシュ変形方式（研究用）</label><select id="v62Mode"><option value="fiber" selected>v0.65 筋束＋前鋸筋9スリップ（試験）</option><option value="guided">v0.63 肩・胸郭ガイド（比較）</option><option value="linear">従来の線形（比較用）</option><option value="auto">比較選択（補正上限あり・試験）</option><option value="dual">非線形 DQS（補正上限あり・試験）</option></select>
 <label class="switch"><input id="v62Route" type="checkbox" checked>胸郭・肩周辺の経路近似補正（試験モードのみ）</label>
 <div class="detail">v0.65：共通筋束エンジンに加え、前鋸筋は第1〜9肋骨に対応する9本の連続スリップで変形。上・中・下部の解剖学的区域を保ちながら隣接スリップを補間します。実測筋束・筋力・真の接触・体積保存ではありません。</div>
@@ -517,6 +517,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <script src="./muscle-fiber-v064.js?v=0640r2"></script>
 <script src="./serratus-v065.js?v=0650"></script>
 <script src="./scapulothoracic-v066.js?v=0660"></script>
+<script src="./scapulohumeral-v067.js?v=0670"></script>
 <script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id), canvas=$('viewer'); let nativeGL=null;try{nativeGL=canvas.getContext('webgl',{antialias:true,alpha:false,preserveDrawingBuffer:false})||canvas.getContext('experimental-webgl',{antialias:true,alpha:false});}catch(e){console.warn('WebGL unavailable; 2D fallback requested:',e)}const SOFTWARE=!nativeGL;
@@ -631,7 +632,7 @@ void main(){vec4 p=vec4(pos,1.0);vec3 n=normal;if(skinOn>0.5){vec4 rest=p;p=mix(
  }vec4 wp=model*p;W=wp.xyz;N=normalize(mat3(model)*n);gl_Position=mvp*p;}`;
 const shaderFS=`precision mediump float;uniform vec3 color;uniform float opacity;uniform float kind;varying vec3 N;varying vec3 W;void main(){vec3 n=normalize(N);vec3 a=normalize(vec3(-0.42,0.78,0.63)),b=normalize(vec3(0.77,0.36,-0.33));float diffuse=.43+.40*max(0.,dot(n,a))+.20*max(0.,dot(n,b));float grain=sin(W.x*71.+sin(W.y*32.)*1.8)*sin(W.y*109.+W.z*57.);float weave=sin(W.y*64.+W.x*27.);float micro=kind<.5?(.97+.035*grain):kind<1.5?(.94+.055*weave+.028*grain):1.;vec3 rgb=color*diffuse*micro;rgb+=vec3(.055,.065,.078)*pow(max(0.,dot(reflect(-a,n),normalize(vec3(.4,.5,1.)))),22.);gl_FragColor=vec4(rgb,opacity);}`;
 function shader(type,src){let s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s}
-const v64Engine=globalThis.FiberEngineV064||null,v65Engine=globalThis.SerratusEngineV065||null,v66Engine=globalThis.ScapulothoracicEngineV066||null;
+const v64Engine=globalThis.FiberEngineV064||null,v65Engine=globalThis.SerratusEngineV065||null,v66Engine=globalThis.ScapulothoracicEngineV066||null,v67Engine=globalThis.ScapulohumeralGuardV067||null;
 let v64GPU=false,v65GPU=false;
 function v64BuildShader(){
  const declarations='attribute float fiberLane;uniform float fiberAlpha;uniform vec3 fiberRest[24];uniform vec3 fiberNow[24];uniform vec4 fiberQA;uniform vec4 fiberQB;';
@@ -928,13 +929,13 @@ function shoulderPoseFor(elev,plane,axial,sync,skipGuide=false){
  let AC=transform(qC,realAnchors.SC,cv);
  const qSt=qm(qa([0,0,1],rad(sync?elev/3:0)),qa([1,0,0],rad(sync?13*k:0)));
  let qS=qm(qa([0,1,0],rad(sync?(-8+12*forward)*k:0)),qSt);
- if(sync&&!skipGuide&&$('v61Scap').checked){const g=v66ShoulderGuide(qC,qS,AC,elev,plane);qC=g.qC;qS=g.qS;AC=g.AC;}
- const GH=transform(qS,AC,sub(realAnchors.GH,realAnchors.AC));
  const theta=rad(elev),phi=rad(plane);
  // Real atlas anterior = -Z. Plane-specific axis remains continuous at 180 degrees.
  const qH=qm(qa([Math.sin(phi),0,Math.cos(phi)],theta),qa([0,-1,0],rad(axial)));
+ if(sync&&!skipGuide&&$('v61Scap').checked){const g=v67ShoulderGuide(qC,qS,AC,elev,plane,qH,axial);qC=g.qC;qS=g.qS;AC=g.AC;}
+ const GH=transform(qS,AC,sub(realAnchors.GH,realAnchors.AC));
  return {qC,qS,qH,AC,GH,SC:realAnchors.SC,assumedScapularUpDeg:sync?elev/3:0,
-  model:'v0.66 three-region surface-constrained educational scapulothoracic kinematics; not validated ISB joint angles'};
+  model:'v0.67 v0.66 surface constraint plus broad scapular/GH contribution guard; atlas proxy angles are not validated ISB joint angles'};
 }
 // Returns numerical consistency data, not medical accuracy results.
 // Relative tilt is the angle between the humeral shaft in scapular
@@ -4789,6 +4790,47 @@ $('v66Audit').addEventListener('click',()=>{
  }).join('\n\n')+'\n※距離閾値と角度は工学的監査値。正常範囲・真の関節接触を意味しません。';
 });
 window.__labScapulothoracicV066=v66Audit;
+let v67Last=null;
+function v67ShoulderGuide(qC,qS,AC,elev,plane,qH,axial,data=v61GuideData()){
+ const base={qC,qS,AC},candidate=v66ShoulderGuide(qC,qS,AC,elev,plane,data);
+ if(!v67Engine||!v66Engine||!data?.profile){
+  v67Last={...candidate,fallback:'v0.66'};return candidate;
+ }
+ const restShaft=norm(sub(realAnchors.EL,realAnchors.GH));
+ const g=v67Engine.refine({
+  v66:v66Engine,base,candidate,SC:realAnchors.SC,cv:sub(realAnchors.AC,realAnchors.SC),restAC:realAnchors.AC,
+  elev,plane,axial,qH,restShaft,points:data.v,gapFn:p=>v63Gap(p,data.profile),
+  normalFn:p=>v66ThoraxNormal(p,data.profile),scale:atlasScale
+ });
+ v67Last=g;return g;
+}
+function v67AuditSide(side){
+ const data=v61GuideData();if(!realReady||!data?.profile)return {side,reason:'胸郭または肩甲骨データ未取得'};
+ const pose=side===v56Side?settings:v56PoseBySide[side],raw=shoulderPoseFor(pose.elev,pose.plane,pose.axial,pose.sync,true);
+ const g=v67ShoulderGuide(raw.qC,raw.qS,raw.AC,pose.elev,pose.plane,raw.qH,pose.axial,data);
+ return {side,fallback:g.fallback||null,before:g.before,after:g.after,v66Before:g.v66Before,v66After:g.v66After,v67:g.v67||null};
+}
+function v67Audit(){
+ v572FlushPose();v56RefreshOther();const sides=[v67AuditSide(v56Side)];
+ if($('v56Both').checked)sides.push(v56WithOther(()=>v67AuditSide(v56Inactive())));
+ return {version:'v0.67.0',ready:realReady,sides,proxyAngles:true,clinicalValidation:false,trueGHContact:false};
+}
+function v67UpdateStatus(){
+ const n=$('v67Status');if(!n)return;
+ n.textContent=!v67Engine?'v0.67肩甲上腕ガード：未取得のためv0.66を使用':!realReady?'v0.67肩甲上腕ガード：骨データ待ち':'v0.67肩甲上腕ガード：広い姿勢帯＋GH寄与帯でv0.66補正量を監視';
+}
+$('v67Audit').addEventListener('click',()=>{
+ const r=v67Audit();$('v67AuditOut').textContent=r.sides.map(x=>{
+  if(x.reason)return (x.side==='right'?'右':'左')+'：'+x.reason;
+  const a=x.v67,head=(x.side==='right'?'右':'左')+(x.fallback?'（'+x.fallback+'）':'')+'：胸郭目的 '+(Number.isFinite(x.before)?x.before.toFixed(2):'—')+' → '+(Number.isFinite(x.after)?x.after.toFixed(2):'—');
+  if(!a)return head+'\nv0.67指標なし';
+  const p=a.proxy,e=a.env,proxy='肩甲骨proxy：上方 '+p.upwardDeg.toFixed(1)+'°／傾斜 '+p.tiltDeg.toFixed(1)+'°／内外旋 '+p.internalDeg.toFixed(1)+'°';
+  const band='許容中心±幅：上方 '+e.center.upwardDeg.toFixed(1)+'±'+e.tol.upwardDeg.toFixed(1)+'°／傾斜 '+e.center.tiltDeg.toFixed(1)+'±'+e.tol.tiltDeg.toFixed(1)+'°／内外旋 '+e.center.internalDeg.toFixed(1)+'±'+e.tol.internalDeg.toFixed(1)+'°';
+  const gh='GH相対挙上proxy '+a.ghDeg.toFixed(1)+'°（広い監査帯 '+e.ghMinDeg.toFixed(1)+'–'+e.ghMaxDeg.toFixed(1)+'°）／v0.66補正採用 '+Math.round(a.blend*100)+'%／補正角 '+a.correctionDeg.toFixed(1)+'°';
+  return head+'\n'+proxy+'\n'+band+'\n'+gh;
+ }).join('\n\n')+'\n※proxy角はアトラス座標のY-Z-X分解。臨床ISB角・正常/異常判定ではありません。';
+});
+window.__labScapulohumeralV067=v67Audit;
 function v63LoadStatus(){
  const n=$('v63LoadDetail'),bar=$('v63LoadBar');
  if(!n||$('v63Loading').hidden)return;
@@ -4929,12 +4971,12 @@ $('v64Audit').addEventListener('click',()=>{
  const r=v64Audit();$('v64AuditOut').textContent=r.ready?r.sides.map(s=>(s.side==='right'?'右':'左')+'\n'+s.rows.map(x=>x.name+'：'+(x.reason||('筋束 '+Math.round(x.alpha*100)+'%／局所損失 '+x.baseline.toFixed(3)+' → '+x.score.toFixed(3)+'／辺長比 '+x.minRatio.toFixed(2)+'–'+x.maxRatio.toFixed(2)+(Number.isFinite(x.areaScore)?'／面積損失 '+x.areaBaseline.toFixed(3)+' → '+x.areaScore.toFixed(3):'／面積未評価')+(Number.isFinite(x.contactScore)?'／包絡損失 '+x.contactBaseline.toFixed(2)+' → '+x.contactScore.toFixed(2):'')))).join('\n')).join('\n\n')+'\n局所辺長・別サンプル面積・近似包絡を比較。実接触・臨床精度・体積保存は未保証。':'実骨未取得';
 });
 window.__labFiberV064=v64Audit;
-v64UpdateStatus();v66UpdateStatus();
+v64UpdateStatus();v66UpdateStatus();v67UpdateStatus();
 state.yaw=Math.PI;
 try{
  makeFallbackHand();gl.enable(gl.DEPTH_TEST);update();fitPose();frame();
  const timer=setInterval(v63LoadStatus,250);
- loadRealBones().finally(()=>{clearInterval(timer);v66UpdateStatus();v63FinishLoading()});
+ loadRealBones().finally(()=>{clearInterval(timer);v66UpdateStatus();v67UpdateStatus();v63FinishLoading()});
 }catch(e){$('v63LoadTitle').textContent='3D描画の準備に失敗しました';$('v63LoadDetail').textContent=String(e);$('v63LoadRetry').hidden=false;$('err').style.display='block';$('err').textContent='3D描画エラー: '+String(e);console.error(e)}
 if(edgeShouldEnable())setEdgeWorkspace(true);
 })();
