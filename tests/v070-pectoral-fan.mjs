@@ -9,6 +9,7 @@ const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]]
 const len=a=>Math.hypot(...a);
 const qrot=(q,v)=>{const u=q.slice(0,3),t=mul(cross(u,v),2);return add(v,add(mul(t,q[3]),cross(u,t)))};
 const qa=(axis,a)=>{const n=len(axis)||1,s=Math.sin(a/2);return [axis[0]/n*s,axis[1]/n*s,axis[2]/n*s,Math.cos(a/2)]};
+const smooth=x=>{x=Math.max(0,Math.min(1,x));return x*x*(3-2*x)};
 
 const vertices=[],weights=[],faces=[],nu=11,nt=18;
 for(let j=0;j<nt;j++){
@@ -45,11 +46,14 @@ for(let k=0;k<=120;k++){
   const p=E.curve(posed[lane],t),q=E.curve(posed[lane+1],t);
   minLaneSpacing=Math.min(minLaneSpacing,len(sub(p,q)));
  }
- // Local frame normal must not randomly invert along a lane.
+ // Audit the transported frame actually used by v0.70, not the raw
+ // derivative frame (which may legitimately pass through a singular orientation).
  for(let lane=0;lane<6;lane++){
   let prevN=null;
   for(const t of [.18,.3,.45,.6,.78]){
-   const F=E.frame(posed,lane,t,{n:field.n});assert(F,'valid sheet frame');
+   const R=E.frame(field.controls,lane,t,{n:field.n});assert(R,'valid rest frame');
+   const q=qa([0,0,1],angle*smooth(t));
+   const F=E.frame(posed,lane,t,{t:qrot(q,R.t),u:qrot(q,R.u),n:qrot(q,R.n)});assert(F,'valid transported sheet frame');
    if(prevN)maxNormalFlip=Math.min(maxNormalFlip,prevN[0]*F.n[0]+prevN[1]*F.n[1]+prevN[2]*F.n[2]);
    prevN=F.n;
   }
