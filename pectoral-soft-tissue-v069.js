@@ -59,11 +59,11 @@ function refinePoint(id,rest,candidate,base,t,l,field,posed,env,options=null){
  const maxTotal=mm((preserveFan?22:14)+(preserveFan?6:5)*(1-t),env.scale),dv=sub(q,base);if(len(dv)>maxTotal)q=add(base,capVector(dv,maxTotal));
  diag.totalShiftMm=len(sub(q,candidate))/env.scale;return {point:q,diag};
 }
-function audit(id,field,posed,samples,env,pointFn){
+function audit(id,field,posed,samples,env,pointFn,options=null){
  if(!CFG[id]||!field?.controls||!posed||!Array.isArray(samples)||typeof pointFn!=='function')return {enabled:false,id};
  let n=0,maxFascia=0,maxBridge=0,maxTendon=0,maxTotal=0,sumTotal=0,activeFascia=0,activeTendon=0;
  for(const s of samples){
-  const base=pointFn(s,'base'),candidate=pointFn(s,'candidate'),r=refinePoint(id,s.p,candidate,base,s.w,s.l,field,posed,env),d=r.diag;if(!d?.enabled)continue;
+  const base=pointFn(s,'base'),candidate=pointFn(s,'candidate'),r=refinePoint(id,s.p,candidate,base,s.w,s.l,field,posed,env,options),d=r.diag;if(!d?.enabled)continue;
   n++;maxFascia=Math.max(maxFascia,d.fasciaShiftMm||0);maxBridge=Math.max(maxBridge,d.bridgeShiftMm||0);maxTendon=Math.max(maxTendon,d.tendonShiftMm||0);maxTotal=Math.max(maxTotal,d.totalShiftMm||0);sumTotal+=d.totalShiftMm||0;
   if((d.fasciaActive||0)>.02)activeFascia++;if((d.tendonBlend||0)>.02)activeTendon++;
  }
