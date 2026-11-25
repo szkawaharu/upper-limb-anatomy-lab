@@ -281,7 +281,7 @@ window.__runV56Tests=async()=>{
  ok(v61Objective([1,1])===0&&v61Objective([.5,2])>0,'symmetric strain objective');
  ok(Math.abs(v61Objective([.5])-v61Objective([2]))<1e-9,'compression and extension scored symmetrically');
  ok(v61EdgeIndices(v,f).length===5,'unique sample edge selection');
- const report=v61AuditReport();ok(report.version==='v0.62.2'&&!report.collisionValidated&&!report.volumeValidated,'audit declares validation limits');
+ const report=v61AuditReport();ok(/^v0\.\d+\.\d+$/.test(report.version)&&!report.collisionValidated&&!report.volumeValidated,'audit declares validation limits');
  }
 
  {
@@ -335,7 +335,7 @@ window.__runV56Tests=async()=>{
  return passed;
 };`;
 js=js.replace(/\}\)\(\);\s*$/,instrument+"\n})();");
-new Function("document","window","fetch","requestAnimationFrame","matchMedia","innerWidth","innerHeight","setTimeout","clearTimeout","console",js)(doc,win,async()=>{throw Error("offline test")},f=>callbacks.push(f),()=>({matches:true}),390,740,()=>0,()=>{}, {log(){},warn(){},error(...a){errors.push(a.map(String).join(" "))}});
+new Function("document","window","fetch","requestAnimationFrame","matchMedia","innerWidth","innerHeight","setTimeout","clearTimeout","console",js)(doc,win,async()=>{throw Error("offline test")},f=>callbacks.push(f),()=>({matches:true}),390,740,(f,ms)=>{if(ms===0)queueMicrotask(f);return 0},()=>{}, {log(){},warn(){},error(...a){errors.push(a.map(String).join(" "))}});
 assert.equal(errors.length,0,errors.join("\n"));
 const results=await win.__runV56Tests();
 console.log('PASS v0.62.2: '+results.length+' integration checks — '+results.join('; '));

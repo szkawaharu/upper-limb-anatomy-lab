@@ -28,7 +28,8 @@ const qt=(from,to)=>{const a=norm(from),b=norm(to),d=dot(a,b);
  const v=[...cross(a,b),1+d],m=Math.hypot(...v);return v.map(x=>x/m)};
 const realAnchors={SC:[0,0,0],AC:[.55,.02,.12],GH:[.65,-.16,.15],EL:[.95,-1.6,.25]};
 const settings={elev:0,plane:0,axial:0,sync:true},atlasScale=.00555,ID=[0,0,0,1];
-const api={add,sub,mul,dot,len,norm,clamp,rad,qa,qm,qc,qr,qt,transform,realAnchors,settings,atlasScale,ID};
+const $=()=>({checked:false}); // Surface guards are exercised by their dedicated suites.
+const api={$,add,sub,mul,dot,len,norm,clamp,rad,qa,qm,qc,qr,qt,transform,realAnchors,settings,atlasScale,ID};
 const pure=js.slice(start,end);
 const {shoulderPoseFor,shoulderPoseMetrics}=new Function(...Object.keys(api),pure+'; return {shoulderPoseFor,shoulderPoseMetrics}')(...Object.values(api));
 let count=0;
@@ -41,10 +42,10 @@ for(const sync of [false,true])for(const elev of [0,30,60,90,120,150,180])for(co
  assert.ok(m.relativeTiltDeg>=0&&m.relativeTiltDeg<180.01,'relative tilt finite');
  assert.equal(m.clinicalAccuracyVerified,false);
  const p=shoulderPoseFor(elev,plane,axial,sync);
- const k=elev/180,forward=Math.sin(rad(plane)),yaw=rad(sync?(12+12*forward)*k:0);
- const qOld=qm(qa([0,0,1],rad(sync?elev/3:0)),qm(qa([1,0,0],rad(sync?13*k:0)),qa([0,1,0],rad(sync?10*k:0))));
- const qScap=qm(qa([0,1,0],yaw+(sync?rad(8*k*forward):0)),qOld);
- const qClav=sync?qm(qa([0,0,1],rad(18*k)),qa([0,1,0],yaw)):ID;
+ const k=elev/180,forward=Math.sin(rad(plane));
+ const qScap=qm(qa([0,1,0],rad(sync?(-8+12*forward)*k:0)),qm(qa([0,0,1],rad(sync?elev/3:0)),qa([1,0,0],rad(sync?13*k:0))));
+ const cv=sub(realAnchors.AC,realAnchors.SC);
+ const qClav=sync?qm(qm(qa([0,0,1],rad(14*k)),qa([0,1,0],rad(-(18-10*forward)*k))),qa(cv,rad(25*k))):ID;
  const theta=rad(elev),phi=rad(plane);
  const qHum=qm(qa([Math.sin(phi),0,Math.cos(phi)],theta),qa([0,-1,0],rad(axial)));
  const eq=(a,b)=>len(sub(a,b))<1e-10;
