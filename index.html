@@ -251,7 +251,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.68.2</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.68.2</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.69.0</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.69.0</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
@@ -261,7 +261,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.68.2</div><button id="v56QuickSide" type="button" aria-label="操作中の腕（直接操作で自動選択／手動切替も可）：右）">右</button>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.69.0</div><button id="v56QuickSide" type="button" aria-label="操作中の腕（直接操作で自動選択／手動切替も可）：右）">右</button>
 <nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
  <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
  <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
@@ -276,7 +276,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 
 </div>
 <section class="side" id="labTools">
-<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.68.2</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
+<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.69.0</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
 <details class="control-fold" open><summary>両上肢・胸郭<span class="fold-note">v0.68.0</span></summary><div class="fold-body">
 <div class="control"><label>両腕の姿勢（左右を同時設定）</label><div style="display:flex;flex-wrap:wrap;gap:6px"><button type="button" id="v572Forward">前ならえ</button><button type="button" id="v572T">T字</button><button type="button" id="v572Up">バンザイ</button><button type="button" id="v572Neutral">基本肢位</button></div><div class="detail">前ならえ：肩前方挙上90°、肘伸展、手首中立、手掌内向きの近似。</div></div>
 <div class="control"><label for="v572Quality">描画品質</label><select id="v572Quality"><option value="auto">自動（操作中軽量／停止後高精細）</option><option value="light">軽量優先</option><option value="high">常に高精細</option></select><div id="v572QualityStatus" class="detail" role="status">自動品質</div></div>
@@ -298,10 +298,10 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <div style="display:flex;flex-wrap:wrap;gap:6px"><button id="v60LayerAll" type="button">胸・肩・背：全層</button><button id="v60LayerSurface" type="button">表層</button><button id="v60LayerDeep" type="button">深層</button></div>
 <div class="detail">胸・肩・背の筋群のみ切替。上腕・前腕の表示設定は維持。</div>
 <label class="switch"><input id="v61Scap" type="checkbox" checked>肩甲胸郭 v0.66 面拘束（実胸郭取得時）</label><div class="detail" id="v61ScapStatus">肋骨サンプルから胸郭面を近似し、肩甲骨肋骨面を上・中・下3領域で拘束します。実接触は未検証。</div><div class="detail" id="v66Status">v0.66肩甲胸郭：準備中</div><div class="detail" id="v67Status">v0.67肩甲上腕ガード：準備中</div><button type="button" id="v67Audit">v0.67 肩甲骨姿勢・GH監査</button><pre class="detail" id="v67AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOHUMERAL_V067.md" target="_blank" rel="noopener noreferrer">v0.67 仕様・文献・検証限界</a></div><button type="button" id="v66Audit">v0.66 肩甲胸郭・GH監査</button><pre class="detail" id="v66AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOTHORACIC_V066.md" target="_blank" rel="noopener noreferrer">v0.66 仕様・文献・検証限界</a></div>
-<div class="control"><label>筋メッシュ変形方式（研究用）</label><select id="v62Mode"><option value="fiber" selected>v0.68 筋経路＋筋束＋前鋸筋9スリップ（試験）</option><option value="guided">v0.63 肩・胸郭ガイド（比較）</option><option value="linear">従来の線形（比較用）</option><option value="auto">比較選択（補正上限あり・試験）</option><option value="dual">非線形 DQS（補正上限あり・試験）</option></select>
+<div class="control"><label>筋メッシュ変形方式（研究用）</label><select id="v62Mode"><option value="fiber" selected>v0.69 筋膜包絡＋筋経路＋筋束（試験）</option><option value="guided">v0.63 肩・胸郭ガイド（比較）</option><option value="linear">従来の線形（比較用）</option><option value="auto">比較選択（補正上限あり・試験）</option><option value="dual">非線形 DQS（補正上限あり・試験）</option></select>
 <label class="switch"><input id="v62Route" type="checkbox" checked>胸郭・肩周辺の経路近似補正（試験モードのみ）</label>
-<div class="detail">v0.68：v0.64筋束変形とv0.65前鋸筋9スリップを維持し、16筋に胸郭・上腕骨頭の順序付き経路補正を追加。付着点を固定し、経路指標が悪化する補正は採用しません。実接触・筋力・筋膜・腱滑走・有限要素解析ではありません。</div>
-<div class="detail" id="v68Status">v0.68筋経路：準備中</div><button type="button" id="v68Audit">v0.68 筋経路・障害物監査</button><pre class="detail" id="v68AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/MUSCLE_ROUTE_V068.md" target="_blank" rel="noopener noreferrer">v0.68 仕様・文献・検証限界</a></div><div class="detail" id="v64Status">筋束エンジン：準備中</div><div class="detail" id="v65Status">前鋸筋9スリップ：準備中</div><button type="button" id="v65Audit">肩甲胸郭・前鋸筋v0.65検査</button><pre class="detail" id="v65AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAP_SERRATUS_V065.md" target="_blank" rel="noopener noreferrer">v0.65 仕様・文献・検証限界</a></div><button type="button" id="v64Audit">筋束エンジンの検査（左右）</button><pre class="detail" id="v64AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><button type="button" id="v63Volume">三角筋・大胸筋の体積変化を検査</button><pre class="detail" id="v63VolumeOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査（閉じた一貫したメッシュのみ）</pre><button type="button" id="v62Audit">新旧変形を比較（現在姿勢）</button><pre class="detail" id="v62Out" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre>
+<div class="detail">v0.69：v0.68.2の連続筋経路を維持し、大胸筋3部に大胸筋膜／軟部組織の柔らかい包絡と、上腕骨付着部へ向かう筋腱移行の保護を追加。皮膚・筋膜の実接触圧、筋力、腱滑走、有限要素解析ではありません。</div>
+<div class="detail" id="v69Status">v0.69大胸筋軟部組織：準備中</div><button type="button" id="v69Audit">v0.69 大胸筋膜・筋腱移行監査</button><pre class="detail" id="v69AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/PECTORAL_SOFT_TISSUE_V069.md" target="_blank" rel="noopener noreferrer">v0.69 仕様・文献・検証限界</a></div><div class="detail" id="v68Status">v0.68筋経路：準備中</div><button type="button" id="v68Audit">v0.68 筋経路・障害物監査</button><pre class="detail" id="v68AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/MUSCLE_ROUTE_V068.md" target="_blank" rel="noopener noreferrer">v0.68 仕様・文献・検証限界</a></div><div class="detail" id="v64Status">筋束エンジン：準備中</div><div class="detail" id="v65Status">前鋸筋9スリップ：準備中</div><button type="button" id="v65Audit">肩甲胸郭・前鋸筋v0.65検査</button><pre class="detail" id="v65AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAP_SERRATUS_V065.md" target="_blank" rel="noopener noreferrer">v0.65 仕様・文献・検証限界</a></div><button type="button" id="v64Audit">筋束エンジンの検査（左右）</button><pre class="detail" id="v64AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><button type="button" id="v63Volume">三角筋・大胸筋の体積変化を検査</button><pre class="detail" id="v63VolumeOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査（閉じた一貫したメッシュのみ）</pre><button type="button" id="v62Audit">新旧変形を比較（現在姿勢）</button><pre class="detail" id="v62Out" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre>
 <div class="detail">局所辺長損失を比較。筋力・正常範囲の評価ではありません。<a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/NONLINEAR_V062.md" target="_blank" rel="noopener noreferrer">仕様と限界</a></div></div>
 <button type="button" id="v61Audit">幾何拘束・筋変形の検査</button><pre class="detail" id="v61Out" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre>
 <div class="detail">筋ごとに13姿勢の局所辺長損失が小さいウェイトを選択。衝突・体積・筋力は未検証。</div>
@@ -519,6 +519,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <script src="./scapulothoracic-v066.js?v=0660"></script>
 <script src="./scapulohumeral-v067.js?v=0670"></script>
 <script src="./muscle-route-v0682.js?v=0682"></script>
+<script src="./pectoral-soft-tissue-v069.js?v=0690"></script>
 <script src="./joint-drag-v0681.js?v=0681"></script>
 <script>
 (()=>{'use strict';
@@ -634,8 +635,8 @@ void main(){vec4 p=vec4(pos,1.0);vec3 n=normal;if(skinOn>0.5){vec4 rest=p;p=mix(
  }vec4 wp=model*p;W=wp.xyz;N=normalize(mat3(model)*n);gl_Position=mvp*p;}`;
 const shaderFS=`precision mediump float;uniform vec3 color;uniform float opacity;uniform float kind;varying vec3 N;varying vec3 W;void main(){vec3 n=normalize(N);vec3 a=normalize(vec3(-0.42,0.78,0.63)),b=normalize(vec3(0.77,0.36,-0.33));float diffuse=.43+.40*max(0.,dot(n,a))+.20*max(0.,dot(n,b));float grain=sin(W.x*71.+sin(W.y*32.)*1.8)*sin(W.y*109.+W.z*57.);float weave=sin(W.y*64.+W.x*27.);float micro=kind<.5?(.97+.035*grain):kind<1.5?(.94+.055*weave+.028*grain):1.;vec3 rgb=color*diffuse*micro;rgb+=vec3(.055,.065,.078)*pow(max(0.,dot(reflect(-a,n),normalize(vec3(.4,.5,1.)))),22.);gl_FragColor=vec4(rgb,opacity);}`;
 function shader(type,src){let s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s}
-const v64Engine=globalThis.FiberEngineV064||null,v65Engine=globalThis.SerratusEngineV065||null,v66Engine=globalThis.ScapulothoracicEngineV066||null,v67Engine=globalThis.ScapulohumeralGuardV067||null,v68Engine=globalThis.MuscleRouteEngineV0682||null,v681DragEngine=globalThis.JointDragEngineV0681||null;
-let v64GPU=false,v65GPU=false;
+const v64Engine=globalThis.FiberEngineV064||null,v65Engine=globalThis.SerratusEngineV065||null,v66Engine=globalThis.ScapulothoracicEngineV066||null,v67Engine=globalThis.ScapulohumeralGuardV067||null,v68Engine=globalThis.MuscleRouteEngineV0682||null,v69Engine=globalThis.PectoralSoftTissueEngineV069||null,v681DragEngine=globalThis.JointDragEngineV0681||null;
+let v64GPU=false,v65GPU=false,v69GPU=false;
 function v64BuildShader(){
  const declarations='attribute float fiberLane;uniform float fiberAlpha;uniform vec3 fiberRest[24];uniform vec3 fiberNow[24];uniform vec4 fiberQA;uniform vec4 fiberQB;';
  function curveFn(name,array){
@@ -645,8 +646,29 @@ function v64BuildShader(){
  }
  const functions=curveFn('fiberCurveRest','fiberRest')+curveFn('fiberCurveNow','fiberNow')+
  'vec3 fiberAlign(vec3 u,vec3 v,vec3 p){float d=clamp(dot(u,v),-1.0,1.0);if(d<-.995)return p;vec3 k=cross(u,v),a=cross(k,p);return p+(a+cross(k,a)/(1.0+d))*smoothstep(-.995,-.95,d);}';
- const branch='if(fiberAlpha>0.0&&skinWeight>0.0&&skinWeight<1.0){float t=skinWeight;vec3 r,s,rt,st;fiberCurveRest(fiberLane,t,r,rt);fiberCurveNow(fiberLane,t,s,st);float lr=length(rt),ls=length(st);if(lr>0.00001&&ls>0.00001){vec3 ru=rt/lr,sv=st/ls;vec4 fq=normalize(mix(fiberQA,fiberQB*(dot(fiberQA,fiberQB)<0.0?-1.0:1.0),t));vec3 ref=qrot(fq,ru),off=rest.xyz-r;float axial=clamp(ls/lr,0.5,2.0),trans=inversesqrt(axial),longitudinal=dot(off,ru);vec3 scaled=(off-ru*longitudinal)*trans+ru*longitudinal*axial;vec3 candidate=s+fiberAlign(ref,sv,qrot(fq,scaled));float gate=smoothstep(0.0,0.18,t)*smoothstep(0.0,0.18,1.0-t)*smoothstep(-.995,-.95,dot(ref,sv))*fiberAlpha;vec3 nn=(normal-ru*dot(normal,ru))/trans+ru*dot(normal,ru)/axial;p.xyz=mix(p.xyz,candidate,gate);n=mix(n,fiberAlign(ref,sv,qrot(fq,nn)),gate);}}';
+ const branch='vec3 fiberBase=p.xyz;if(fiberAlpha>0.0&&skinWeight>0.0&&skinWeight<1.0){float t=skinWeight;vec3 r,s,rt,st;fiberCurveRest(fiberLane,t,r,rt);fiberCurveNow(fiberLane,t,s,st);float lr=length(rt),ls=length(st);if(lr>0.00001&&ls>0.00001){vec3 ru=rt/lr,sv=st/ls;vec4 fq=normalize(mix(fiberQA,fiberQB*(dot(fiberQA,fiberQB)<0.0?-1.0:1.0),t));vec3 ref=qrot(fq,ru),off=rest.xyz-r;float axial=clamp(ls/lr,0.5,2.0),trans=inversesqrt(axial),longitudinal=dot(off,ru);vec3 scaled=(off-ru*longitudinal)*trans+ru*longitudinal*axial;vec3 candidate=s+fiberAlign(ref,sv,qrot(fq,scaled));float gate=smoothstep(0.0,0.18,t)*smoothstep(0.0,0.18,1.0-t)*smoothstep(-.995,-.95,dot(ref,sv))*fiberAlpha;vec3 nn=(normal-ru*dot(normal,ru))/trans+ru*dot(normal,ru)/axial;p.xyz=mix(p.xyz,candidate,gate);n=mix(n,fiberAlign(ref,sv,qrot(fq,nn)),gate);}}';
  return shaderVS.replace('varying vec3 N;varying vec3 W;',declarations+'varying vec3 N;varying vec3 W;').replace('void main(){',functions+'void main(){').replace('}vec4 wp=model*p;',branch+'}vec4 wp=model*p;');
+}
+function v69BuildShader(vs){
+ if(!v69Engine)return vs;
+ const declarations='uniform float pecSoftKind;uniform float pecScale;uniform vec3 pecChestCenter;uniform vec3 pecChestRadii;';
+ const functions=
+ 'float pecSmooth(float x){x=clamp(x,0.0,1.0);return x*x*(3.0-2.0*x);}'+
+ 'float pecFascia(float t,float a,float b){return t<=a?1.0:(t>=b?0.0:1.0-pecSmooth((t-a)/(b-a)));}'+
+ 'float pecTendon(float t,float a){return t<=a?0.0:pecSmooth((t-a)/(1.0-a));}';
+ const branch=
+ 'if(pecSoftKind>0.5&&fiberAlpha>0.0&&skinWeight>0.0&&skinWeight<1.0){'+
+  'float t=skinWeight;float fFull=pecSoftKind<1.5?0.46:(pecSoftKind<2.5?0.50:0.52);float fEnd=pecSoftKind<1.5?0.76:(pecSoftKind<2.5?0.76:0.78);'+
+  'float outMm=pecSoftKind<1.5?8.0:(pecSoftKind<2.5?9.0:10.0);float inMm=pecSoftKind<1.5?5.0:(pecSoftKind<2.5?5.0:6.0);float maxF=pecSoftKind<1.5?8.0:(pecSoftKind<2.5?9.0:10.0);'+
+  'float tendStart=pecSoftKind<1.5?0.70:(pecSoftKind<2.5?0.66:0.63);float baseBlend=pecSoftKind<1.5?0.62:(pecSoftKind<2.5?0.66:0.68);'+
+  'float bStart=pecSoftKind<1.5?0.48:(pecSoftKind<2.5?0.46:0.44);float bEnd=pecSoftKind<1.5?0.93:(pecSoftKind<2.5?0.94:0.95);float bMm=pecSoftKind<1.5?9.0:(pecSoftKind<2.5?10.0:11.0);'+
+  'float fw=pecFascia(t,fFull,fEnd);vec3 rv=(rest.xyz-pecChestCenter)/pecChestRadii,pv0=(p.xyz-pecChestCenter)/pecChestRadii;float l0=length(rv),l1=length(pv0),avgR=(pecChestRadii.x+pecChestRadii.y+pecChestRadii.z)/3.0;'+
+  'if(fw>0.0&&l1>0.00001){float lo=l0-inMm*pecScale/avgR,hi=l0+outMm*pecScale/avgR,target=clamp(l1,lo,hi),excess=abs(l1-target)*avgR/pecScale;if(excess>0.75){float ramp=0.74*pecSmooth((excess-0.75)/5.5)*fw;vec3 tp=pecChestCenter+(p.xyz-pecChestCenter)*(target/l1);vec3 d=(tp-p.xyz)*ramp;float dl=length(d),cap=maxF*pecScale;if(dl>cap)d*=cap/dl;p.xyz+=d;}}'+
+  'float bw=0.0;if(t>bStart&&t<bEnd){float aa=pecSmooth((t-bStart)/max(0.08,(bEnd-bStart)*0.35));float bb=1.0-pecSmooth((t-(bEnd-0.12))/0.12);bw=clamp(aa*bb,0.0,1.0);}vec3 bd=p.xyz-fiberBase;float br=length(bd),blim=bMm*pecScale;if(bw>0.0&&br>blim){float k=0.58*bw*pecSmooth((br-blim)/(8.0*pecScale));p.xyz=mix(p.xyz,fiberBase+bd*(blim/br),k);}'+
+  'float tw=pecTendon(t,tendStart);if(tw>0.0){vec3 rc,rt,nc,nt;fiberCurveRest(fiberLane,t,rc,rt);fiberCurveNow(fiberLane,t,nc,nt);p.xyz=mix(p.xyz,fiberBase,baseBlend*tw);float rr0=length(rest.xyz-rc);vec3 vv=p.xyz-nc;float rr=length(vv),maxR=rr0*(1.0+0.08*(1.0-tw))+0.8*pecScale;if(rr>maxR&&rr>0.00001)p.xyz=mix(p.xyz,nc+vv*(maxR/rr),0.82*tw);}'+
+  'vec3 fd=p.xyz-fiberBase;float fl=length(fd),fcap=(14.0+5.0*(1.0-t))*pecScale;if(fl>fcap)p.xyz=fiberBase+fd*(fcap/fl);'+
+ '}';
+ return vs.replace('varying vec3 N;varying vec3 W;',declarations+'varying vec3 N;varying vec3 W;').replace('void main(){',functions+'void main(){').replace('}vec4 wp=model*p;',branch+'}vec4 wp=model*p;');
 }
 function v65BuildShader(vs){
  if(!v65Engine)return vs;
@@ -662,12 +684,15 @@ function v65BuildShader(vs){
 function v64MakeProgram(vs){const p=gl.createProgram();gl.attachShader(p,shader(gl.VERTEX_SHADER,vs));gl.attachShader(p,shader(gl.FRAGMENT_SHADER,shaderFS));gl.linkProgram(p);if(!gl.getProgramParameter(p,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(p));return p}
 let program;
 if(!SOFTWARE&&v64Engine){
- try{program=v64MakeProgram(v65BuildShader(v64BuildShader()));v64GPU=true;v65GPU=Boolean(v65Engine)}
- catch(e65){console.warn('v0.65 slip shader unavailable; v0.64 retained',e65);try{program=v64MakeProgram(v64BuildShader());v64GPU=true;v65GPU=false}catch(e64){console.warn('Fiber shader unavailable; v0.63 rendering retained',e64)}}
+ try{program=v64MakeProgram(v69BuildShader(v65BuildShader(v64BuildShader())));v64GPU=true;v65GPU=Boolean(v65Engine);v69GPU=Boolean(v69Engine)}
+ catch(e69){console.warn('v0.69 pectoral shader unavailable; v0.68.2 rendering retained',e69);
+  try{program=v64MakeProgram(v65BuildShader(v64BuildShader()));v64GPU=true;v65GPU=Boolean(v65Engine);v69GPU=false}
+  catch(e65){console.warn('v0.65 slip shader unavailable; v0.64 retained',e65);try{program=v64MakeProgram(v64BuildShader());v64GPU=true;v65GPU=false;v69GPU=false}catch(e64){console.warn('Fiber shader unavailable; v0.63 rendering retained',e64)}}
+ }
 }
 if(!program)program=v64MakeProgram(shaderVS);
 gl.useProgram(program);
-let attrib={p:gl.getAttribLocation(program,'pos'),n:gl.getAttribLocation(program,'normal'),weight:gl.getAttribLocation(program,'skinWeight'),fiberLane:v64GPU?gl.getAttribLocation(program,'fiberLane'):-1,serrSlip:v65GPU?gl.getAttribLocation(program,'serrSlip'):-1},uni={mvp:gl.getUniformLocation(program,'mvp'),model:gl.getUniformLocation(program,'model'),color:gl.getUniformLocation(program,'color'),opacity:gl.getUniformLocation(program,'opacity'),kind:gl.getUniformLocation(program,'kind'),skinOn:gl.getUniformLocation(program,'skinOn'),skinA:gl.getUniformLocation(program,'skinA'),skinB:gl.getUniformLocation(program,'skinB'),wrapOn:gl.getUniformLocation(program,'wrapOn'),wrapCenter:gl.getUniformLocation(program,'wrapCenter'),dqOn:gl.getUniformLocation(program,'dqOn'),dqA:gl.getUniformLocation(program,'dqA'),dqB:gl.getUniformLocation(program,'dqB'),dualA:gl.getUniformLocation(program,'dualA'),dualB:gl.getUniformLocation(program,'dualB'),routeKind:gl.getUniformLocation(program,'routeKind'),routeRest:gl.getUniformLocation(program,'routeRest'),routeNow:gl.getUniformLocation(program,'routeNow'),routeRadii:gl.getUniformLocation(program,'routeRadii'),routeRadius:gl.getUniformLocation(program,'routeRadius'),fiberAlpha:v64GPU?gl.getUniformLocation(program,'fiberAlpha'):null,fiberRest:v64GPU?gl.getUniformLocation(program,'fiberRest[0]'):null,fiberNow:v64GPU?gl.getUniformLocation(program,'fiberNow[0]'):null,fiberQA:v64GPU?gl.getUniformLocation(program,'fiberQA'):null,fiberQB:v64GPU?gl.getUniformLocation(program,'fiberQB'):null,serrAlpha:v65GPU?gl.getUniformLocation(program,'serrAlpha'):null,serrRest:v65GPU?gl.getUniformLocation(program,'serrRest[0]'):null,serrNow:v65GPU?gl.getUniformLocation(program,'serrNow[0]'):null,serrQA:v65GPU?gl.getUniformLocation(program,'serrQA'):null,serrQB:v65GPU?gl.getUniformLocation(program,'serrQB'):null};
+let attrib={p:gl.getAttribLocation(program,'pos'),n:gl.getAttribLocation(program,'normal'),weight:gl.getAttribLocation(program,'skinWeight'),fiberLane:v64GPU?gl.getAttribLocation(program,'fiberLane'):-1,serrSlip:v65GPU?gl.getAttribLocation(program,'serrSlip'):-1},uni={mvp:gl.getUniformLocation(program,'mvp'),model:gl.getUniformLocation(program,'model'),color:gl.getUniformLocation(program,'color'),opacity:gl.getUniformLocation(program,'opacity'),kind:gl.getUniformLocation(program,'kind'),skinOn:gl.getUniformLocation(program,'skinOn'),skinA:gl.getUniformLocation(program,'skinA'),skinB:gl.getUniformLocation(program,'skinB'),wrapOn:gl.getUniformLocation(program,'wrapOn'),wrapCenter:gl.getUniformLocation(program,'wrapCenter'),dqOn:gl.getUniformLocation(program,'dqOn'),dqA:gl.getUniformLocation(program,'dqA'),dqB:gl.getUniformLocation(program,'dqB'),dualA:gl.getUniformLocation(program,'dualA'),dualB:gl.getUniformLocation(program,'dualB'),routeKind:gl.getUniformLocation(program,'routeKind'),routeRest:gl.getUniformLocation(program,'routeRest'),routeNow:gl.getUniformLocation(program,'routeNow'),routeRadii:gl.getUniformLocation(program,'routeRadii'),routeRadius:gl.getUniformLocation(program,'routeRadius'),fiberAlpha:v64GPU?gl.getUniformLocation(program,'fiberAlpha'):null,fiberRest:v64GPU?gl.getUniformLocation(program,'fiberRest[0]'):null,fiberNow:v64GPU?gl.getUniformLocation(program,'fiberNow[0]'):null,fiberQA:v64GPU?gl.getUniformLocation(program,'fiberQA'):null,fiberQB:v64GPU?gl.getUniformLocation(program,'fiberQB'):null,serrAlpha:v65GPU?gl.getUniformLocation(program,'serrAlpha'):null,serrRest:v65GPU?gl.getUniformLocation(program,'serrRest[0]'):null,serrNow:v65GPU?gl.getUniformLocation(program,'serrNow[0]'):null,serrQA:v65GPU?gl.getUniformLocation(program,'serrQA'):null,serrQB:v65GPU?gl.getUniformLocation(program,'serrQB'):null,pecSoftKind:v69GPU?gl.getUniformLocation(program,'pecSoftKind'):null,pecScale:v69GPU?gl.getUniformLocation(program,'pecScale'):null,pecChestCenter:v69GPU?gl.getUniformLocation(program,'pecChestCenter'):null,pecChestRadii:v69GPU?gl.getUniformLocation(program,'pecChestRadii'):null};
 function gpu(m){let mn=[Infinity,Infinity,Infinity],mx=[-Infinity,-Infinity,-Infinity];for(let p of m.vertices)for(let k=0;k<3;k++){mn[k]=Math.min(mn[k],p[k]);mx[k]=Math.max(mx[k],p[k])}let box=[mn,mx];if(SOFTWARE)return {cpu:m,count:m.faces.length,box};let vbo=gl.createBuffer(),nbo=gl.createBuffer(),ibo=gl.createBuffer();let longIndex=m.vertices.length>65535;let indexType=longIndex?gl.UNSIGNED_INT:gl.UNSIGNED_SHORT;if(longIndex&&!gl.getExtension('OES_element_index_uint'))throw Error('この端末では大きな骨格メッシュ用の32bitインデックスが使えません');gl.bindBuffer(gl.ARRAY_BUFFER,vbo);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(m.vertices.flat()),gl.STATIC_DRAW);gl.bindBuffer(gl.ARRAY_BUFFER,nbo);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(m.normals.flat()),gl.STATIC_DRAW);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ibo);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,(longIndex?new Uint32Array(m.faces):new Uint16Array(m.faces)),gl.STATIC_DRAW);return {vbo,nbo,ibo,count:m.faces.length,box,indexType}}
 const shape={scapula:gpu(scapula()),scapSpine:gpu(tube([[-.67,-.38,-.12,.045],[-.39,-.33,-.025,.069],[-.18,-.25,.08,.083],[.04,-.075,.10,.066]],{sides:13,rough:.018})),acromion:gpu(tube([[-.03,-.14,.09,.078],[.05,-.01,.09,.11],[.16,.055,.025,.11],[.17,-.09,-.02,.067]],{rough:.018})),coracoid:gpu(tube([[-.10,-.16,.06,.075],[-.02,-.11,.22,.095],[.14,-.16,.32,.059]],{rough:.015})),glenoid:gpu(ball([.095,-.302,.047],[.112,.156,.042])),humerus:gpu(tube([[.07,-.10,-.015,.105],[.095,-.22,-.015,.113],[.072,-.43,-.02,.098],[.02,-.75,-.03,.080],[.012,-1.07,-.013,.074],[.025,-1.31,.018,.095],[.008,-1.46,.040,.137]],{sides:22,steps:12,ellipticity:.78,rough:.015})),head:gpu(ball([-.117,-.015,-.006],[.183,.186,.176],24,32)),neck:gpu(tube([[-.11,-.035,-.015,.105],[.012,-.15,-.013,.108],[.076,-.27,-.019,.092]],{rough:.012})),gt:gpu(ball([.142,.008,-.033],[.104,.116,.103])),lt:gpu(ball([.070,-.055,.145],[.066,.093,.070])),deltoidBump:gpu(tube([[.085,-.50,.00,.026],[.139,-.64,.014,.043],[.067,-.75,.015,.023]],{rough:.012})),condyleL:gpu(ball([-.115,-1.462,.045],[.133,.100,.130])),condyleR:gpu(ball([.128,-1.458,.040],[.120,.103,.130])),trochlea:gpu(ball([-.038,-1.502,.050],[.122,.088,.127])),ulna:gpu(tube([[-.13,-.075,-.03,.075],[-.135,-.22,-.02,.087],[-.11,-.48,-.018,.067],[-.105,-.77,-.013,.051],[-.11,-1.04,-.022,.048],[-.13,-1.28,-.015,.063]],{sides:18,steps:12,ellipticity:.74,rough:.012})),olecranon:gpu(ball([-.12,.005,-.090],[.099,.120,.113])),ulnaDistal:gpu(ball([-.12,-1.29,-.015],[.082,.086,.079])),radialHead:gpu(ball([.135,-.092,.06],[.087,.051,.092])),torso:gpu(ball([-.34,.72,-.08],[.92,1.16,.41],28,36)),sternum:gpu(tube([[.0,1.78,.30,.09],[.0,1.44,.35,.095],[.0,1.1,.36,.085],[.0,.87,.32,.065]],{sides:12}))};
 let ribShapes=[];for(let side of [-1,1])for(let i=0;i<6;i++){let y=1.53-i*.24,radx=(.42+i*.055),points=[];for(let j=0;j<=10;j++){let t=j/10, x=side*(.13+radx*Math.sin(t*Math.PI*.78)),z=.18-.44*t+.02*Math.sin(t*Math.PI), yy=y-.12*Math.sin(t*Math.PI);points.push([x,yy,z,.025+i*.001])}ribShapes.push(gpu(tube(points,{sides:7,steps:3}))) }
@@ -2358,6 +2383,7 @@ state.scene={SC,AC,qS,joint,qHum,elbow,qFore,scAngle,GH:Math.acos(clamp(dot([0,-
 }
 const ID=Q(),OR=[0,0,0],motion=()=>state.scene;
 function drawPart(g,q,p,color,alpha,kind,skin=null){if(!g)return;if(SOFTWARE){drawCalls.push({g,q,p,color,alpha,kind,mirror:v56DrawMirror});return;}gl.uniform1f(uni.skinOn,skin?1:0);gl.uniform1f(uni.dqOn,skin&&skin[3]?1:0);gl.uniform1f(uni.routeKind,skin&&skin[4]?skin[4].kind:0);
+ if(v69GPU){const pec=skin?.[7];gl.uniform1f(uni.pecSoftKind,pec?.kind||0);if(pec){gl.uniform1f(uni.pecScale,pec.scale);gl.uniform3fv(uni.pecChestCenter,pec.center);gl.uniform3fv(uni.pecChestRadii,pec.radii)}}
  if(v65GPU){const z=skin?.[6];gl.uniform1f(uni.serrAlpha,z?.alpha||0);if(z&&z.alpha>0&&g.serrSlipBuffer){gl.uniform3fv(uni.serrRest,z.restFlat);gl.uniform3fv(uni.serrNow,z.nowFlat);gl.uniform4fv(uni.serrQA,z.a.q);gl.uniform4fv(uni.serrQB,z.b.q);gl.bindBuffer(gl.ARRAY_BUFFER,g.serrSlipBuffer);gl.enableVertexAttribArray(attrib.serrSlip);gl.vertexAttribPointer(attrib.serrSlip,1,gl.FLOAT,false,0,0)}else if(attrib.serrSlip>=0)gl.disableVertexAttribArray(attrib.serrSlip)}
  if(v64GPU){const f=skin?.[5];gl.uniform1f(uni.fiberAlpha,f?.alpha||0);if(f&&f.alpha>0&&g.fiberLaneBuffer){gl.uniform3fv(uni.fiberRest,f.restFlat);gl.uniform3fv(uni.fiberNow,f.nowFlat);gl.uniform4fv(uni.fiberQA,f.a.q);gl.uniform4fv(uni.fiberQB,f.b.q);gl.bindBuffer(gl.ARRAY_BUFFER,g.fiberLaneBuffer);gl.enableVertexAttribArray(attrib.fiberLane);gl.vertexAttribPointer(attrib.fiberLane,1,gl.FLOAT,false,0,0)}else if(attrib.fiberLane>=0)gl.disableVertexAttribArray(attrib.fiberLane)}
  if(skin&&skin[3]){const [a,b]=skin[3];gl.uniform4fv(uni.dqA,a.q);gl.uniform4fv(uni.dqB,b.q);gl.uniform4fv(uni.dualA,a.d);gl.uniform4fv(uni.dualB,b.d)}
@@ -3812,7 +3838,7 @@ function v572Preset(name){
  feedbackJoint({forward:'両腕：前ならえ',t:'両腕：T字',up:'両腕：バンザイ',neutral:'両腕：基本肢位'}[name]);
 }
 for(const [id,p] of [['v572Forward','forward'],['v572T','t'],['v572Up','up'],['v572Neutral','neutral']])$(id).addEventListener('click',()=>v572Preset(p));
-window.__labPerformance=()=>({version:'v0.68.2',moving:v572Moving,mode:$('v572Quality').value,pixelRatio:v572RenderScale(),pendingPose:v572Pending,geometryUnchanged:true,autoFitOnJointEnd:$('v572Fit').checked,dragEngine:v681DragEngine?.version||null});
+window.__labPerformance=()=>({version:'v0.69.0',moving:v572Moving,mode:$('v572Quality').value,pixelRatio:v572RenderScale(),pendingPose:v572Pending,geometryUnchanged:true,autoFitOnJointEnd:$('v572Fit').checked,dragEngine:v681DragEngine?.version||null});
 window.__labForwardPose=()=>({realReady,forwardAxis:realReady?'world -Z':'world +Z',palm:v572ChoosePalm(),clinicalValidation:false});
 
 
@@ -3941,7 +3967,7 @@ async function v58Load(fetcher=null){
     const g=gpu(parsed.data),fiber=v64BuildField(spec,parsed.data,parsed.weights),serratus=v65BuildSerratus(spec,parsed.data,parsed.weights);
     if(!SOFTWARE){g.weightBuffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,g.weightBuffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(parsed.weights),gl.STATIC_DRAW);if(v64GPU&&fiber){g.fiberLaneBuffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,g.fiberLaneBuffer);gl.bufferData(gl.ARRAY_BUFFER,fiber.uv,gl.STATIC_DRAW)}if(v65GPU&&serratus){g.serrSlipBuffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,g.serrSlipBuffer);gl.bufferData(gl.ARRAY_BUFFER,serratus.slip,gl.STATIC_DRAW)}}
     v58Meshes.set(spec.id,{g,box:parsed.box,triangles:g.count/3,originalTriangles:parsed.originalTriangles,bounds:parsed.bounds||v60WeightBounds(parsed.data.vertices,parsed.weights),samples:parsed.samples||[],selection:parsed.selection||null,nonlinear:parsed.nonlinear||null,attachmentMode:parsed.attachmentMode||'synthetic',volume:v63VolumeSource(spec,parsed.data,parsed.weights),fiber,fiberCache:new Map(),serratus,serratusCache:new Map()});
-    v64UpdateStatus();v65UpdateStatus();v68UpdateStatus();request();
+    v64UpdateStatus();v65UpdateStatus();v68UpdateStatus();v69UpdateStatus();request();
    }catch(e){v58Failed.push(spec.id);console.warn('Deep mesh:',spec.id,e)}
    v58Status();await new Promise(resolve=>setTimeout(resolve,0));
   }
@@ -3957,7 +3983,7 @@ function v58DrawDeep(){
   if(!m||!v58Visible(spec))continue;
   const a=anchor(spec.a),b=anchor(spec.b),mode=v62Mode(spec,m),route=v62RouteFor(spec,b.a,mode.route,false,mode.guided);
   const wrap=spec.id==='v58Serratus'&&$('v59Guard').checked?(chest??=v59ChestCenter()):null,z=v65SerratusField(spec,m,a.a,b.a,mode,route,wrap),f=z&&z.alpha>0?null:v64Field(spec,m,a.a,b.a,mode,route,wrap);
-  drawPart(m.g,ID,OR,spec.id==='v58Subscap'?[.73,.30,.32]:[.62,.23,.28],1,1,[a.m,b.m,wrap,mode.dual?[a.dq,b.dq]:null,route,f,z]);
+  drawPart(m.g,ID,OR,spec.id==='v58Subscap'?[.73,.30,.32]:[.62,.23,.28],1,1,[a.m,b.m,wrap,mode.dual?[a.dq,b.dq]:null,route,f,z,v69PectoralUniform(spec)]);
  }
 }
 function v58DeepBounds(){
@@ -4414,7 +4440,7 @@ function v61Guide(q,ac,elev,data=v61GuideData()){
  return {q:after<=base?corrected:q,before:base,after:Math.min(base,after),angles:after<=base?[a,b]:[0,0]};
 }
 function v61RefreshGuide(){
- v61GuideCache=null;v63GuideCache.clear();v66Last=null;const d=v61GuideData();
+ v61GuideCache=null;v63GuideCache.clear();v66Last=null;for(const m of v58Meshes.values())m.fiberCache?.clear();const d=v61GuideData();
  $('v61ScapStatus').textContent=d?'実肋骨の横断面近似・肩甲骨肋骨面候補 '+d.v.length+'点。v0.66で上・中・下3領域、局所離開、胸郭接線整合を評価しSC/AC連結を維持（実接触未検証）。':'データ不足：基本肩甲帯運動を使用。';
  if(realReady){makeRealPose();v56Other.key=null;request()}
 }
@@ -4932,17 +4958,32 @@ function v68RefineMuscle(spec,field,posed,b){
  if(!v68Engine||!$('v62Route').checked||!v68Engine.config?.[spec.id])return {posed,stats:{enabled:false,id:spec.id,reason:!v68Engine?'engine-missing':!$('v62Route').checked?'route-off':'unregistered'}};
  try{return v68Engine.refine(spec.id,field,posed,v68RouteEnv(spec,b))}catch(e){console.warn('v0.68 route refinement unavailable:',spec.id,e);return {posed,stats:{enabled:false,id:spec.id,reason:String(e)}}}
 }
+const V69_PEC_KIND=Object.freeze({v60PecClav:1,v60PecStern:2,v60PecAbd:3});
+function v69PectoralEnv(spec){
+ if(!v69Engine||!$('v62Route').checked||!v69Engine.config?.[spec.id])return null;
+ const d=v61GuideData(),e=d?.e;if(!e)return null;
+ const normalFn=p=>norm([(p[0]-e.c[0])/Math.max(e.r[0]*e.r[0],1e-9),(p[1]-e.c[1])/Math.max(e.r[1]*e.r[1],1e-9),(p[2]-e.c[2])/Math.max(e.r[2]*e.r[2],1e-9)]);
+ return {scale:atlasScale,e,gapFn:p=>v61Radial(p,e),normalFn};
+}
+function v69PectoralUniform(spec){
+ const env=v69PectoralEnv(spec),kind=V69_PEC_KIND[spec.id]||0;
+ return env&&kind?{kind,scale:env.scale,center:env.e.c,radii:env.e.r}:null;
+}
 function v64Field(spec,m,a,b,mode,route,wrap){
  if(!mode.fiber||!v64GPU||!m.fiber)return null;
  const key=JSON.stringify([a.q,a.p,b.q,b.p,mode.dual,mode.route,route?.kind,wrap,v57State.parts.length]);
  if(m.fiberCache.has(key))return m.fiberCache.get(key);
  const pair=mode.dual?[v62DQ(a),v62DQ(b)]:null,baseline=(p,t)=>v62Point(a,b,p,t,mode.dual,route,wrap,pair);
  const posed0=v64Engine.pose(m.fiber,a,b,v64Wrap(spec)),r68=v68RefineMuscle(spec,m.fiber,posed0,b),posed=r68.posed,stats=v64Engine.assess(m.fiber,posed,a,b,baseline,v64Constraint(spec,b));
- const f={...stats,field:m.fiber,posed,a,b,basePoint:baseline,route068:r68.stats,restFlat:Float32Array.from(m.fiber.controls.flat(2)),nowFlat:Float32Array.from(posed.flat(2))};
+ const f={...stats,specId:spec.id,field:m.fiber,posed,a,b,basePoint:baseline,route068:r68.stats,pectoral069:v69PectoralEnv(spec),restFlat:Float32Array.from(m.fiber.controls.flat(2)),nowFlat:Float32Array.from(posed.flat(2))};
  if(m.fiberCache.size>=2)m.fiberCache.delete(m.fiberCache.keys().next().value);
  m.fiberCache.set(key,f);return f;
 }
-function v64Point(f,p,w,l=v64Engine.lane(p,f.field)){return v64Engine.point(p,w,l,f.field,f.posed,f.a,f.b,f.basePoint(p,w),f.alpha)}
+function v64Point(f,p,w,l=v64Engine.lane(p,f.field)){
+ const base=f.basePoint(p,w),candidate=v64Engine.point(p,w,l,f.field,f.posed,f.a,f.b,base,f.alpha);
+ if(!f.pectoral069||!v69Engine)return candidate;
+ return v69Engine.refinePoint(f.specId,p,candidate,base,w,l,f.field,f.posed,f.pectoral069).point;
+}
 function v64Edge(f,e){return len(sub(v64Point(f,e.p,e.w[0]),v64Point(f,e.q,e.w[1])))/e.rest}
 function v65BuildSerratus(spec,data,weights){
  if(spec.id!=='v58Serratus'||!v65Engine||!v65GPU)return null;
@@ -4975,6 +5016,35 @@ function v65Audit(){
 }
 $('v65Audit').addEventListener('click',()=>{const r=v65Audit();$('v65AuditOut').textContent=r.ready?r.sides.map(x=>(x.side==='right'?'右':'左')+'：'+(x.reason||('スリップ '+x.slips+'／新方式 '+Math.round(x.alpha*100)+'%／局所損失 '+x.lossBefore.toFixed(3)+'→'+x.lossAfter.toFixed(3)+(Number.isFinite(x.contactAfter)?'／胸郭包絡 '+x.contactBefore.toFixed(2)+'→'+x.contactAfter.toFixed(2):'')+(x.scapula?'／肩甲骨 RMS '+x.scapula.rms.toFixed(1)+'mm 最大離開 '+x.scapula.maxOutMm.toFixed(1)+'mm 最大内方 '+x.scapula.maxInMm.toFixed(1)+'mm':'')))).join('\n')+'\n肋骨別区域・距離指標は近似。真の接触・筋力・正常値ではありません。':'実骨未取得'});
 window.__labSerratusV065=v65Audit;
+function v69UpdateStatus(){
+ const n=$('v69Status');if(!n)return;
+ const loaded=['v60PecClav','v60PecStern','v60PecAbd'].filter(id=>v58Meshes.get(id)?.fiber).length;
+ n.textContent=!v69Engine?'v0.69大胸筋軟部組織：エンジン未取得／v0.68.2へフォールバック':!v69GPU?'v0.69大胸筋軟部組織：GPU層未使用／CPU監査のみ':$('v62Mode').value!=='fiber'||!$('v62Route').checked?'v0.69大胸筋軟部組織：比較モードまたは経路補正OFF':'v0.69大胸筋軟部組織：'+loaded+'/3 部位。筋膜包絡＋腋窩移行＋遠位腱保護';
+}
+function v69AuditSide(side){
+ const rows=[];
+ for(const spec of V60_CHEST.filter(x=>V69_PEC_KIND[x.id])){
+  const m=v58Meshes.get(spec.id);if(!m?.fiber){rows.push({name:spec.name,reason:'筋束データ未取得'});continue}
+  const a=v58Anchor(spec.a),b=v58Anchor(spec.b),mode=v62Mode(spec,m),route=v62RouteFor(spec,b,mode.route,false,mode.guided),f=v64Field(spec,m,a,b,mode,route,null),env=f?.pectoral069;
+  if(!f||!env){rows.push({name:spec.name,reason:'v0.69停止中'});continue}
+  const q=v69Engine.audit(spec.id,f.field,f.posed,f.field.bounds||[],env,(sample,kind)=>{
+   const base=f.basePoint(sample.p,sample.w);
+   if(kind==='base')return base;
+   return v64Engine.point(sample.p,sample.w,sample.l,f.field,f.posed,f.a,f.b,base,f.alpha);
+  });
+  rows.push({name:spec.name,...q});
+ }
+ return {side,rows};
+}
+function v69Audit(){
+ if(!realReady)return {ready:false,sides:[],skinValidated:false,fasciaValidated:false};
+ v572FlushPose();v56RefreshOther();const sides=[v69AuditSide(v56Side)];if($('v56Both').checked)sides.push(v56WithOther(()=>v69AuditSide(v56Inactive())));
+ return {ready:true,version:'v0.69.0',gpu:v69GPU,sides,skinValidated:false,fasciaValidated:false,tendonForceValidated:false};
+}
+$('v69Audit').addEventListener('click',()=>{
+ const r=v69Audit();$('v69AuditOut').textContent=r.ready?r.sides.map(s=>(s.side==='right'?'右':'左')+'\n'+s.rows.map(x=>x.reason?x.name+'：'+x.reason:x.name+'：筋膜 '+x.maxFasciaShiftMm.toFixed(1)+'mm／腋窩 '+x.maxBridgeShiftMm.toFixed(1)+'mm／腱保護 '+x.maxTendonShiftMm.toFixed(1)+'mm／総補正最大 '+x.maxTotalShiftMm.toFixed(1)+'mm（筋膜 '+x.fasciaActiveSamples+'/'+x.n+'、腱 '+x.tendonActiveSamples+'/'+x.n+' sample）').join('\n')).join('\n\n')+'\n軟部組織包絡は解剖学的形態を守るための連続拘束。実際の皮膚・筋膜接触圧や筋力ではありません。':'実骨未取得';
+});
+window.__labPectoralV069=v69Audit;
 function v68UpdateStatus(){
  const n=$('v68Status');if(!n)return;
  const registered=v68Engine?.config?Object.keys(v68Engine.config).length:0,loaded=[...v58Meshes].filter(([id,m])=>v68Engine?.config?.[id]&&m.fiber).length;
