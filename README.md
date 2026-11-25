@@ -2,7 +2,7 @@
 
 スマートフォン対応の上肢骨格・筋肉・腱を観察する教育用Webアプリ。動作と形態は**解剖学的に未検証の近似を含み、臨床用・診断用ではありません**。
 
-**現在のバージョン：v0.70.0**
+**現在のバージョン：v0.71.0**
 
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
@@ -11,6 +11,12 @@
 - **v0.54の保存ブランチ**：[`archive/v0.54-before-anatomy-rebuild`](../../tree/archive/v0.54-before-anatomy-rebuild)
 - **v0.53の保存ブランチ**：[`archive/v0.53-before-review`](../../tree/archive/v0.53-before-review)
 - **v0.51の保存ブランチ**：[`archive/v0.51-before-scapular-fix`](../../tree/archive/v0.51-before-scapular-fix)
+
+## v0.71：肩直接操作の方向ロック
+
+腕を直接スワイプして挙上する際、従来はpointer-down位置は固定していても、画面方向→`挙上角 / 挙上面` の変換を現在姿勢から毎回再計算していた。これにより、特に腕下垂位付近からの挙上で挙上面が途中で再解釈され、上腕〜前腕がねじれて見えることがあった。
+
+v0.71では、**最初の約7px以上のスワイプ方向で画面→肩運動の関係を一度だけ決め、指を離すまで固定**する。腕下垂位では最初の方向から挙上面を一度だけ選び、その後は固定。中間姿勢では最初に求めた `挙上角:挙上面` 比率の1本の関節空間ray上だけを移動する。途中の指の横ブレは最初のscreen directionへ射影して無視し、このgestureでは軸回旋を変更しない。詳細は [DIRECTION_LOCK_V071](./docs/DIRECTION_LOCK_V071.md)。
 
 ## v0.70：大胸筋 Fan-sheet（2D扇状筋）変形
 
