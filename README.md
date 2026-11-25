@@ -2,7 +2,7 @@
 
 スマートフォン対応の上肢骨格・筋肉・腱を観察する教育用Webアプリ。動作と形態は**解剖学的に未検証の近似を含み、臨床用・診断用ではありません**。
 
-**現在のバージョン：v0.72.0**
+**現在の公開バージョン：v0.73.0（検証継続中）**
 
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
@@ -12,10 +12,12 @@
 - **v0.53の保存ブランチ**：[`archive/v0.53-before-review`](../../tree/archive/v0.53-before-review)
 - **v0.51の保存ブランチ**：[`archive/v0.51-before-scapular-fix`](../../tree/archive/v0.51-before-scapular-fix)
 
-## v0.73.0 開発ブランチ（未公開）
+## v0.73.0 公開版（検証継続中）
 
-作業ブランチ：`feature/v0.73.0-common-engine`。公開版はv0.72.0を維持しています。共通筋変形エンジン、CPU/GPUカーネル、骨ローカル付着領域、頸椎階層と頭部ドラッグ／±75°スライダーを実装中です。全筋・腱の材料座標への移行、厳密な接触、体積・高挙上形状・実機性能の検証が未完了のため、完成版として公開していません。
+2026-11-26のユーザー指示により、開発成果をmainとGitHub Pagesへ先行公開しました。共通筋変形エンジン、CPU/GPUカーネル、骨ローカル付着領域、頸椎階層と頭部ドラッグ／±75°スライダーを追加しています。**公開は全要件・形状品質の合格を意味しません。** 高挙上時の局所変形、全筋・腱の移行、厳密な接触、体積、実機性能は引き続き修正・検証が必要です。
 
+- **[通常チャット向け引き継ぎ指示書](HANDOFF_V073.md)**
+- [公開コミットの確認](https://szkawaharu.github.io/upper-limb-anatomy-lab/build-info.json)
 - [共通エンジン](docs/MUSCLE_ENGINE_V073.md)
 - [頭部・頸椎回旋](docs/CERVICAL_KINEMATICS_V073.md)
 - [検証結果・公開判定](docs/VALIDATION_V073.md)
@@ -31,6 +33,8 @@ npm run serve
 # 別のターミナルで（Chromeのパスは端末に合わせて指定）
 CHROME_PATH="/path/to/chrome" npm run test:browser
 ```
+
+`main`の更新は23本の回帰テスト後、GitHub Actionsで`_site/`の静的成果物をPagesへ配信します。公開版のバージョン・コミットは`build-info.json`で確認できます。
 
 ブラウザ試験は実アトラスを取得し、`test-results/`に画像・数値を保存します。実機スマートフォンの検証を代替しません。基準メッシュと再計算対象を共有し、医療用の筋活動・張力・筋力は生成しません。
 

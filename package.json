@@ -1,13 +1,14 @@
 {
   "name": "upper-limb-anatomy-lab",
-  "version": "0.73.0-dev.1",
+  "version": "0.73.0",
   "private": true,
   "scripts": {
     "test": "node scripts/run-tests.mjs",
     "test:browser": "node tests/browser-v073.mjs",
     "serve": "python3 -m http.server 8730",
     "test:browser:numeric": "QA_NUMERIC_ONLY=1 node tests/browser-v073.mjs",
-    "test:browser:compare": "node tests/browser-compare-v073.mjs"
+    "test:browser:compare": "node tests/browser-compare-v073.mjs",
+    "build:pages": "node scripts/prepare-pages.mjs"
   },
   "devDependencies": {
     "playwright": "1.65.1"

@@ -37,3 +37,13 @@ Working branch: `feature/v0.73.0-common-engine`.
 - Final numeric browser run: all 17 muscle charts created; 18,413 GPU readback samples (including six neck meshes), maximum CPU/GPU difference 0.00284415 mm, reverse-return drift 0 mm, page errors 0. Head drag at front/side/back preserved arm settings and camera angles.
 - Release still rejected: maximum sampled displacement 53.6984 mm per 3-degree step and priority edge ratio 16.0288, incomplete attachment anatomy and migration, contact/volume limitations. Numeric correctness does not imply shape acceptance.
 - Fixed-camera visual comparison completed: original archived v0.72 vs common CPU reference, neutral and unilateral forward 150 degrees, front/side/back. Both versions focus on the same six pectoral/deltoid subdivisions; 12 screenshots, identical yaw/pitch/zoom/target, page errors 0. Persistent bulge/local deformation remains visible; release is withheld.
+
+
+## Publication instruction update — 2026-11-26
+
+The user explicitly requested updating Git and deploying the existing development result, with continuation delegated to a normal chat. This overrides the earlier hold on main/Pages, not the recorded geometric quality findings. Publish as v0.73.0 with validation ongoing. No anatomical deformation algorithm changes were made for publication.
+
+- Preserve `archive/v0.72.0-before-common-engine` and development checkpoint `fa49f97`.
+- Add a curated `_site` artifact and Pages deployment after the existing 23-suite regression job. Replace the failing legacy Pages build configuration with workflow deployment.
+- Publish version/commit metadata at `build-info.json`; use it as the authoritative deployed revision for future chats.
+- Add root `HANDOFF_V073.md` with a ready-to-copy continuation prompt, architecture, quantitative limits, reproduction commands, priorities and rollback guidance.
