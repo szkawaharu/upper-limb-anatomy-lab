@@ -2,7 +2,7 @@
 
 スマートフォン対応の上肢骨格・筋肉・腱を観察する教育用Webアプリ。動作と形態は**解剖学的に未検証の近似を含み、臨床用・診断用ではありません**。
 
-**現在のバージョン：v0.67.0**
+**現在のバージョン：v0.68.0**
 
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
@@ -11,6 +11,10 @@
 - **v0.54の保存ブランチ**：[`archive/v0.54-before-anatomy-rebuild`](../../tree/archive/v0.54-before-anatomy-rebuild)
 - **v0.53の保存ブランチ**：[`archive/v0.53-before-review`](../../tree/archive/v0.53-before-review)
 - **v0.51の保存ブランチ**：[`archive/v0.51-before-scapular-fix`](../../tree/archive/v0.51-before-scapular-fix)
+
+## v0.68：肩甲帯周囲筋の順序付き経路補正
+
+v0.64筋束変形・v0.65前鋸筋9スリップ・v0.67肩甲上腕ガードを維持しつつ、16筋に胸郭→上腕骨頭の順序付き障害物補正を追加。起始・停止は固定し、経路指標または既存の局所変形品質が悪化する候補は採用しない。前鋸筋は専用9スリップ経路を継続。起動時は正面寄り斜位、関節操作終了時の自動フィットは初期OFF。詳細は [MUSCLE_ROUTE_V068](./docs/MUSCLE_ROUTE_V068.md)。
 
 ## v0.67：肩甲骨姿勢レンジ＋GH寄与ガード
 
