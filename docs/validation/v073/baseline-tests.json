@@ -1,0 +1,128 @@
+[
+  {
+    "test": "medical-anatomy-audit.mjs",
+    "code": 0,
+    "seconds": 0.306,
+    "tail": "PASS v0.55: medical anatomy regression, 13 facts records + missing muscle honesty + source links + syntax\n"
+  },
+  {
+    "test": "scapular-muscles-v051.mjs",
+    "code": 0,
+    "seconds": 0.47,
+    "tail": "PASS legacy compatibility on v0.55: 21 synthetic shoulder poses \u00d7 4 muscles; mesh seams; cleanup; cuff distinction; 6 UI controls. No anatomical accuracy certified.\n"
+  },
+  {
+    "test": "scapular-muscles-v053.mjs",
+    "code": 0,
+    "seconds": 0.438,
+    "tail": "PASS v0.55: 21 synthetic shoulder poses \u00d7 4 muscles, positive posterior clearance, 0 projected misses, 0 tendon seams, OFF cleanup and UI.\n"
+  },
+  {
+    "test": "scapular-muscles-v054.mjs",
+    "code": 0,
+    "seconds": 0.421,
+    "tail": "PASS v0.55: 21 synthetic poses \u00d7 4 muscles, teres strap widths, curved tendon continuity, posterior clearance, OFF cleanup.\n"
+  },
+  {
+    "test": "scapular-muscles-v055.mjs",
+    "code": 13,
+    "seconds": 2.914,
+    "tail": "PASS v0.55: 35 synthetic poses \u00d7 4 muscles, four distinct curved lofts, surface clearance, tendon continuity, cleanup and controls.\nWarning: Detected unsettled top-level await at file:///Users/suzukawaharuki/Documents/Codex/2026-11-25/3d-v0-73-0-1-https/tests/scapular-muscles-v055.mjs:164\nawait import('./upper-body-v056.mjs');\n^\n\n\n\n"
+  },
+  {
+    "test": "shoulder-kinematics-v050.mjs",
+    "code": 1,
+    "seconds": 0.333,
+    "tail": ":10)\n    at file:///Users/suzukawaharuki/Documents/Codex/2026-11-25/3d-v0-73-0-1-https/tests/shoulder-kinematics-v050.mjs:37:10\n    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)\n    at async node:internal/modules/esm/loader:650:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5)\n\nNode.js v26.13.0\n"
+  },
+  {
+    "test": "upper-body-v056.mjs",
+    "code": 13,
+    "seconds": 2.889,
+    "tail": "Warning: Detected unsettled top-level await at file:///Users/suzukawaharuki/Documents/Codex/2026-11-25/3d-v0-73-0-1-https/tests/upper-body-v056.mjs:340\nconst results=await win.__runV56Tests();\n              ^\n\n\n\n"
+  },
+  {
+    "test": "v063-synthetic.mjs",
+    "code": 1,
+    "seconds": 0.332,
+    "tail": "nymous>:126:15)\n    at file:///Users/suzukawaharuki/Documents/Codex/2026-11-25/3d-v0-73-0-1-https/tests/v063-synthetic.mjs:9:37\n    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)\n    at async node:internal/modules/esm/loader:650:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5)\n\nNode.js v26.13.0\n"
+  },
+  {
+    "test": "v064-engine.mjs",
+    "code": 0,
+    "seconds": 0.557,
+    "tail": "{\n  syntheticPoses: 7,\n  adopted: 5,\n  neutralError: 1.1188630228279524e-16,\n  tubeVolumeRatio: 0.9999634834272519,\n  areaSamples: 46\n}\n"
+  },
+  {
+    "test": "v064-shoulder.mjs",
+    "code": 1,
+    "seconds": 0.327,
+    "tail": "onymous>:126:15)\n    at file:///Users/suzukawaharuki/Documents/Codex/2026-11-25/3d-v0-73-0-1-https/tests/v064-shoulder.mjs:9:37\n    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)\n    at async node:internal/modules/esm/loader:650:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5)\n\nNode.js v26.13.0\n"
+  },
+  {
+    "test": "v065-serratus.mjs",
+    "code": 0,
+    "seconds": 0.424,
+    "tail": "{\n  version: '0.65.0',\n  slips: 9,\n  edges: 220,\n  poses: 5,\n  adopted: 5,\n  neutralError: 2.237726045655905e-16\n}\n"
+  },
+  {
+    "test": "v065-shoulder.mjs",
+    "code": 1,
+    "seconds": 0.292,
+    "tail": "onymous>:126:15)\n    at file:///Users/suzukawaharuki/Documents/Codex/2026-11-25/3d-v0-73-0-1-https/tests/v065-shoulder.mjs:9:37\n    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)\n    at async node:internal/modules/esm/loader:650:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5)\n\nNode.js v26.13.0\n"
+  },
+  {
+    "test": "v066-scapulothoracic.mjs",
+    "code": 0,
+    "seconds": 0.691,
+    "tail": "{\n  version: '0.66.0',\n  cases: 105,\n  nonWorse: 105,\n  maxClavicleError: 0,\n  regions: 3,\n  clinicalValidation: false\n}\n"
+  },
+  {
+    "test": "v067-scapulohumeral.mjs",
+    "code": 0,
+    "seconds": 0.956,
+    "tail": "{\n  version: '0.67.0',\n  cases: 105,\n  guarded: 72,\n  maxCorrectionDeg: 15.972284130037806,\n  baselineFalsePositives: 0,\n  clinicalValidation: false\n}\n"
+  },
+  {
+    "test": "v068-muscle-route.mjs",
+    "code": 0,
+    "seconds": 0.297,
+    "tail": "{\n  version: '0.68.0',\n  registered: 16,\n  cases: 80,\n  adopted: 57,\n  maxShiftMm: 26,\n  contactValidated: false\n}\n"
+  },
+  {
+    "test": "v0681-joint-drag.mjs",
+    "code": 0,
+    "seconds": 0.286,
+    "tail": "{\n  version: '0.68.1',\n  visibleMaxStep: 1,\n  signFlips: 0,\n  heldStates: 1,\n  finalShoulder: '27:88',\n  finalElbow: 53\n}\n"
+  },
+  {
+    "test": "v0682-muscle-continuity.mjs",
+    "code": 0,
+    "seconds": 0.505,
+    "tail": "{\n  version: '0.68.2',\n  cases: 1616,\n  noViolationExact: 787,\n  maxAdjacentJumpMm: 0.9369369369369537,\n  maxBendIncreaseDeg: 0.5298085317969736\n}\n"
+  },
+  {
+    "test": "v069-pectoral-soft-tissue.mjs",
+    "code": 0,
+    "seconds": 0.315,
+    "tail": "{\n  version: '0.69.0',\n  cases: 603,\n  maxAdjacentJumpMm: 2.5083028928592817,\n  fasciaReductions: 235,\n  tendonReductions: 108,\n  registered: 3\n}\n"
+  },
+  {
+    "test": "v070-pectoral-fan.mjs",
+    "code": 0,
+    "seconds": 0.496,
+    "tail": "{\n  version: '0.70.0',\n  cases: 121,\n  originWidth: 0.896547148970366,\n  distalWidth: 0.3058893348082912,\n  minLaneSpacing: 0.056473867833633555,\n  maxAdjacentJump: 0.0033183799640282207,\n  maxNormalFlip: 0.9551753208063496\n}\n"
+  },
+  {
+    "test": "v071-direction-lock.mjs",
+    "code": 0,
+    "seconds": 0.311,
+    "tail": "{\n  version: '0.71.0',\n  polePlane: 26,\n  poleFinal: { elev: 36, plane: 26, axial: 23 },\n  midDirection: [ 1, 0.07259409526749899 ],\n  midFinal: { elev: 90, plane: 26, axial: -17 },\n  maxRayError: 0.4181468889352889\n}\n"
+  },
+  {
+    "test": "v072-scapulothoracic-contact.mjs",
+    "code": 0,
+    "seconds": 0.76,
+    "tail": "{\n  version: '0.72.0',\n  cases: 30,\n  active: 25,\n  regionalRegressions: 0,\n  maxCorrection: 3.6961927427809327,\n  exampleLowerBefore: 7.825484094111657,\n  exampleLowerAfter: 6.637651031489389,\n  clinicalValidation: false\n}\n"
+  }
+]
