@@ -33,6 +33,23 @@ function regionPenalty(r,c){
  const tan=Number.isFinite(r.tangencyDrop)?Math.max(0,r.tangencyDrop-c.tan):0;
  return c.w*(.12*r.rms*r.rms+7.5*out*out+10*inside*inside+2.0*rms*rms+1500*tan*tan);
 }
+function violation(r,c){
+ if(!r||!Number.isFinite(r.rms))return {out:Infinity,inside:Infinity,rms:Infinity,tan:Infinity};
+ return {
+  out:Math.max(0,r.maxOut-c.out),
+  inside:Math.max(0,-r.maxIn-c.inward),
+  rms:Math.max(0,r.rms-c.rms),
+  tan:Number.isFinite(r.tangencyDrop)?Math.max(0,r.tangencyDrop-c.tan):0
+ };
+}
+function noRegionalRegression(m,base){
+ if(!m||!base)return false;
+ for(const k of ['upper','middle','lower']){
+  const a=violation(m.regions[k],CFG[k]),b=violation(base.regions[k],CFG[k]);
+  if(a.out>b.out+.5||a.inside>b.inside+.5||a.rms>b.rms+.5||a.tan>b.tan+.02)return false;
+ }
+ return true;
+}
 function contactScore(m){
  if(!m||!Number.isFinite(m.rms))return Infinity;
  let s=.12*m.rms*m.rms;
@@ -92,6 +109,7 @@ function refine(opts){
   const p=make(a),m=metrics(p.qS,p.AC),raw=contactScore(m);
   const audit=v67&&qH&&restShaft?v67.audit(p.qS,qH,restShaft,elev,plane,base.qS):null;
   if(audit&&!hardKinematicOK(audit))return {p,m,raw,total:Infinity,audit};
+  if(!noRegionalRegression(m,beforeM))return {p,m,raw,total:Infinity,audit};
   const reg=.20*(a[0]**2+a[1]**2)+.16*a[2]**2+.85*(a[3]**2+a[4]**2)+.65*a[5]**2;
   return {p,m,raw,total:raw+reg,audit};
  };
@@ -131,6 +149,6 @@ function refine(opts){
 }
 
 root.ScapulothoracicContactGuardV072=Object.freeze({
- version:'0.72.0',CFG,contactScore,contactOK,hardKinematicOK,refine
+ version:'0.72.0',CFG,violation,noRegionalRegression,contactScore,contactOK,hardKinematicOK,refine
 });
 })(globalThis);
