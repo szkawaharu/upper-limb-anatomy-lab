@@ -4,6 +4,7 @@ import { chromium } from "playwright";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import assert from "node:assert/strict";
+import { trackStep } from "./v073-step-diagnostics.mjs";
 const numericOnly = process.env.QA_NUMERIC_ONLY === "1";
 const out = process.env.QA_OUTPUT || "test-results/browser-v073",
   cache = process.env.ATLAS_CACHE || "/tmp/upper-limb-atlas";
@@ -50,7 +51,7 @@ await page.route("**/*.stl", async (route) => {
 });
 const instrument = String.raw`
 let qaSkipDraw=false;const qaOriginalRender=render;render=()=>{if(!qaSkipDraw)qaOriginalRender();else{lastW=canvas.clientWidth;lastH=canvas.clientHeight;proj=ortho(state.zoom,lastW/lastH,.01,100);const eye=add(state.target,[18*Math.sin(state.yaw)*Math.cos(state.pitch),18*Math.sin(state.pitch),18*Math.cos(state.yaw)*Math.cos(state.pitch)]);view=lookAt(eye,state.target);pv=mm(proj,view)}};
-const qaExport=(f,id)=>{const B=f.binding,samples=[];for(let i=0;i<B.weights.length;i+=Math.max(1,Math.floor(B.weights.length/80))){const p=Array.from(B.rest.slice(i*3,i*3+3)),t=B.weights[i],l=B.lane[i],materialT=B.material[i],q=MuscleDeformation.point(f,p,t,l,materialT);samples.push({p,t,l,materialT,q,originBlend:B.originBlend?.[i]||0})}return {id,samples,state:{a:f.a,b:f.b,rest:Array.from(f.restFlat),now:Array.from(f.nowFlat),sheet:B.sheet,blendRange:B.blendRange,lanes:B.field.controls.length,tendonStart:B.definition.tissues.tendonStart,reference:B.reference,contact:f.contact,multiBone:!!f.originAt,originMix:f.originMix}}};
+const qaExport=(f,id)=>{const B=f.binding,samples=[];for(let i=0;i<B.weights.length;i+=Math.max(1,Math.floor(B.weights.length/80))){const p=Array.from(B.rest.slice(i*3,i*3+3)),t=B.weights[i],l=B.lane[i],materialT=B.material[i],q=MuscleDeformation.point(f,p,t,l,materialT);samples.push({vertexId:i,p,t,l,materialT,q,originBlend:B.originBlend?.[i]||0,originAnchor:f.originAt?f.originAt(p):null})}return {id,samples,state:{a:f.a,b:f.b,rest:Array.from(f.restFlat),now:Array.from(f.nowFlat),sheet:B.sheet,blendRange:B.blendRange,lanes:B.field.controls.length,tendonStart:B.definition.tissues.tendonStart,reference:B.reference,contact:f.contact,multiBone:!!f.originAt,originMix:f.originMix}}};
 window.__qa={
  ensureGPU(){if(!v73Renderer)v73Renderer=new MuscleRenderer(gl,shaderFS,(v,f)=>gpu(mesh(v,f)))},
  skipRender(value){qaSkipDraw=value;if(!value)request()},
@@ -165,6 +166,7 @@ try {
   await page.evaluate(() => window.__qa.skipRender(true));
   let maxStepMm = 0,
     maxReturnMm = 0;
+  const maxima = { forward: {}, reverse: {} };
   for (const plane of [0, 90]) {
     console.log("Sweep", plane);
     let prior = null;
@@ -177,22 +179,21 @@ try {
           const q = samples[m].samples[i].q;
           assert(q.every(Number.isFinite));
           if (prior) {
-            const p = prior[m].samples[i].q;
-            maxStepMm = Math.max(
-              maxStepMm,
-              Math.hypot(...q.map((x, k) => x - p[k])) / 0.00555,
-            );
+            const d = trackStep(maxima.forward, prior[m], samples[m], i, {plane, fromElev:elev-3, toElev:elev, direction:"forward"});
+            maxStepMm = Math.max(maxStepMm, d);
           }
         }
       forward.push(samples);
       prior = samples;
     }
+    prior = null;
     for (let elev = 180; elev >= 0; elev -= 3) {
       await page.evaluate((p) => window.__qa.pose(p), { elev, plane });
       const samples = await page.evaluate(() => window.__qa.sample()),
         ref = forward[elev / 3];
       for (let m = 0; m < samples.length; m++)
-        for (let i = 0; i < samples[m].samples.length; i++)
+        for (let i = 0; i < samples[m].samples.length; i++) {
+          if (prior) trackStep(maxima.reverse, prior[m], samples[m], i, {plane, fromElev:elev+3, toElev:elev, direction:"reverse"});
           maxReturnMm = Math.max(
             maxReturnMm,
             Math.hypot(
@@ -201,8 +202,13 @@ try {
               ),
             ) / 0.00555,
           );
+        }
+      prior = samples;
     }
   }
+  const stepDiagnostics = { samplePolicy: "original stride floor(vertexCount/80), minimum 1; zero-based clustered mesh vertex IDs", scale: 0.00555, forward: Object.values(maxima.forward).sort((a,b)=>b.mm-a.mm), reverse: Object.values(maxima.reverse).sort((a,b)=>b.mm-a.mm) };
+  writeFileSync(join(out,"step-diagnostics.json"),JSON.stringify(stepDiagnostics,null,2));
+  console.log("Largest forward and reverse sampled steps", JSON.stringify({forward:stepDiagnostics.forward[0],reverse:stepDiagnostics.reverse[0]}));
   await page.evaluate((v) => window.__qa.skipRender(v), numericOnly);
   console.log("Neck gestures");
   const neck = [];
@@ -412,6 +418,7 @@ try {
         gpu,
         maxStepMm,
         maxReturnMm,
+        stepDiagnostics,
         errors,
         warnings,
         numericOnly,
