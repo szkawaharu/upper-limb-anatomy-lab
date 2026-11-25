@@ -71,10 +71,17 @@ function refine(opts){
  let chosen={qC:base.qC,qS:base.qS,AC:base.AC,t:0,geom:baseGeom,audit:baseAudit};
  // Keep as much of the v0.66 correction as possible, but do not accept
  // a kinematic guard violation or geometry worse than the uncorrected pose.
- for(const t of [1,.875,.75,.625,.5,.375,.25,.125]){
+ const trial=t=>{
   const qC=slerp(base.qC,candidate.qC,t),qS=slerp(base.qS,candidate.qS,t),AC=add(SC,qrot(qC,cv)),g=geom(qS,AC),a=audit(qS,qH,restShaft,elev,plane,base.qS);
-  if(g<=baseGeom+1e-8&&a.proxyOK&&a.ghOK&&a.correctionOK){chosen={qC,qS,AC,t,geom:g,audit:a};break}
+  return g<=baseGeom+1e-8&&a.proxyOK&&a.ghOK&&a.correctionOK?{qC,qS,AC,t,geom:g,audit:a}:null;
+ };
+ // Retain original coarse coverage, then refine the highest accepted bracket.
+ // Every returned pose still satisfies the original guards.
+ let hi=1;
+ for(const t of [1,.875,.75,.625,.5,.375,.25,.125,0]){
+  const p=trial(t);if(p){chosen=p;break}hi=t;
  }
+ if(chosen.t<hi){let lo=chosen.t;for(let i=0;i<12;i++){const mid=(lo+hi)/2,p=trial(mid);if(p){lo=mid;chosen=p}else hi=mid}}
  return {...chosen,before:baseGeom,after:chosen.geom,v66Before:candidate.before,v66After:candidate.after,
   v66CandidateGeom:candidateGeom,v67:{blend:chosen.t,...chosen.audit},fallback:chosen.t===0?'base-guard':null};
 }

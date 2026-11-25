@@ -1,0 +1,5 @@
+# v0.73 shoulder solver experiment — NOT approved for merge
+
+Baseline fd546cd9: 53.69837183795927 mm at right v59TrapLower vertex 6696, elevation 120→123°, plane 0°. Stage trace 122→123° AC: raw 0.270 mm, v66 27.998 mm, v67 15.553 mm, v72 33.078 mm. v66 and v72 discrete coordinate searches switch basins. v67 coarse blend changes 0.5→0.625. All 17 sampled muscle maxima coincide. This is upstream of material coordinates. See diagnostic Actions 45711706740 and 45712161182.
+
+Candidate replaces discrete greedy angle search with deterministic bounded line minimization, and refines v67 blend bracket with bisection. Existing objectives, contact, angle limits, hard guards, mesh and attachments unchanged. Solver is still local and may switch basins; no continuity guarantee. Four coordinate sweeps, nine bracket samples, ten refinements; these are optimizer resolution choices, not acceptance threshold changes. Must compare full actual atlas numerical report, stage trace, contact scores, regional guards, fixed-camera images, runtime and offline tests before approval. Do not deploy this branch. Independent antiparallel frame experiment not combined.

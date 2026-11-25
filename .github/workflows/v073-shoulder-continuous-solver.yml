@@ -1,0 +1,38 @@
+name: v073 shoulder continuous solver experiment (non-deploying)
+on:
+  push:
+    branches: ['experiment/v073-shoulder-continuous-solver']
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check public build identity
+        continue-on-error: true
+        run: |
+          curl -fsSL --max-time 20 https://szkawaharu.github.io/upper-limb-anatomy-lab/build-info.json
+          echo
+          echo "Expected main at diagnosis: fd546cd9ebc7d4caf7e37df926742d9ff088e76c"
+      - run: npm ci
+      - run: npm test
+      - run: npx playwright install --with-deps chromium
+      - name: Real-atlas bone stage trace and fixed-camera outlier images
+        run: |
+          export CHROME_PATH="$(node -e 'console.log(require("playwright").chromium.executablePath())')"
+          python3 -m http.server 8730 > /tmp/v073-server.log 2>&1 &
+          QA_TRACE_ONLY=1 QA_OUTPUT=test-results/shoulder-trace npm run test:browser:numeric
+          QA_OUTPUT=test-results/shoulder-full npm run test:browser:numeric
+      - name: Retain numeric data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v073-shoulder-solver-experiment
+          path: test-results/

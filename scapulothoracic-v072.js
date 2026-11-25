@@ -114,21 +114,7 @@ function refine(opts){
   return {p,m,raw,total:raw+reg,audit};
  };
 
- let a=[0,0,0,0,0,0],best=evaluate(a);
- for(const step of [4,2,1,.5,.25]){
-  let changed=true,loops=0;
-  while(changed&&loops++<3){
-   changed=false;
-   for(let axis=0;axis<6;axis++){
-    const from=a.slice();
-    for(const sign of [-1,1]){
-     const c=from.slice();c[axis]=clamp(c[axis]+sign*step,-limits[axis],limits[axis]);
-     const t=evaluate(c);
-     if(t.total<best.total-1e-7){a=c;best=t;changed=true}
-    }
-   }
-  }
- }
+ const {a,best}=v66.minimize(evaluate,limits,4);
 
  const improved=Number.isFinite(best.raw)&&(
   best.raw<beforeScore*.985 ||
