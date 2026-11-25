@@ -41,21 +41,22 @@ function applyBridge(base,q,cfg,env,t,diag){
  const excess=(r-limit)/env.scale,k=.58*w*smooth(excess/8),target=add(base,mul(d,limit/Math.max(r,1e-12))),out=mix(q,target,k);
  diag.bridgeShiftMm=Math.max(diag.bridgeShiftMm,len(sub(out,q))/env.scale);return out;
 }
-function applyTendon(rest,q,base,cfg,env,t,l,field,posed,diag){
+function applyTendon(rest,q,base,cfg,env,t,l,field,posed,diag,preserveFan=false){
  const tw=tendonWeight(cfg,t);if(tw<=0)return q;
  const restC=curve(laneCurve(field.controls,l),t),nowC=curve(laneCurve(posed,l),t);
- let out=mix(q,base,cfg.baselineBlend*tw);
+ let out=preserveFan?q:mix(q,base,cfg.baselineBlend*tw);
  const r0=len(sub(rest,restC)),v=sub(out,nowC),r=len(v);
  if(r>1e-10){const maxR=r0*(1+.08*(1-tw))+mm(.8,env.scale);if(r>maxR){const target=add(nowC,mul(v,maxR/r));out=mix(out,target,.82*tw)}}
  diag.tendonBlend=Math.max(diag.tendonBlend,tw);diag.tendonShiftMm=Math.max(diag.tendonShiftMm,len(sub(out,q))/env.scale);return out;
 }
-function refinePoint(id,rest,candidate,base,t,l,field,posed,env){
+function refinePoint(id,rest,candidate,base,t,l,field,posed,env,options=null){
  const cfg=CFG[id];
  if(!cfg||!env?.scale||!field?.controls||!posed)return {point:candidate,diag:{enabled:false,id}};
  if(t<=0||t>=1)return {point:base,diag:{enabled:true,id,fasciaShiftMm:0,bridgeShiftMm:0,tendonShiftMm:0,fasciaActive:0,tendonBlend:t>=1?1:0,totalShiftMm:len(sub(base,candidate))/env.scale}};
  const diag={enabled:true,id,fasciaShiftMm:0,bridgeShiftMm:0,tendonShiftMm:0,fasciaActive:0,tendonBlend:0,totalShiftMm:0};
- let q=candidate;q=applyFascia(rest,q,cfg,env,t,diag);q=applyBridge(base,q,cfg,env,t,diag);q=applyTendon(rest,q,base,cfg,env,t,l,field,posed,diag);
- const maxTotal=mm(14+5*(1-t),env.scale),dv=sub(q,base);if(len(dv)>maxTotal)q=add(base,capVector(dv,maxTotal));
+ const preserveFan=Boolean(options?.fan070);
+ let q=candidate;q=applyFascia(rest,q,cfg,env,t,diag);if(!preserveFan)q=applyBridge(base,q,cfg,env,t,diag);q=applyTendon(rest,q,base,cfg,env,t,l,field,posed,diag,preserveFan);
+ const maxTotal=mm((preserveFan?22:14)+(preserveFan?6:5)*(1-t),env.scale),dv=sub(q,base);if(len(dv)>maxTotal)q=add(base,capVector(dv,maxTotal));
  diag.totalShiftMm=len(sub(q,candidate))/env.scale;return {point:q,diag};
 }
 function audit(id,field,posed,samples,env,pointFn){
