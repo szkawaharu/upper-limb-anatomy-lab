@@ -83,8 +83,8 @@ function score(m){
 // Preserve the supplied objective and hard feasibility checks; never adopt a
 // non-finite or uphill trial. Continuous-valued trial angles replace a fixed lattice.
 // This is an experimental local optimizer, not a proof of global continuity.
-function minimize(evaluate,limits,passes=4){
- let a=limits.map(()=>0),best=evaluate(a);
+function minimize(evaluate,limits,passes=4,seed=null){
+ let a=seed?seed.slice():limits.map(()=>0),best=evaluate(a);
  for(let sweep=0;sweep<passes;sweep++){
   for(let axis=0;axis<a.length;axis++){
    const L=limits[axis];if(L<1e-10)continue;

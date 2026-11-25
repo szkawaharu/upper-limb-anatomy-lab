@@ -72,7 +72,7 @@ window.__qa={
 };
 `;
 await page.route("**/index.html", async (route) => {
-  const html = readFileSync("index.html", "utf8").replace(
+  const html = readFileSync(process.env.QA_INDEX || "index.html", "utf8").replace(
     /\}\)\(\);\s*<\/script>/,
     () =>
       instrument.replace(
@@ -108,19 +108,21 @@ try {
   );
   if(process.env.QA_TRACE_ONLY==="1") {
     const trace=[];
-    for(let elev=114;elev<=129;elev++)trace.push(await page.evaluate(e=>window.__qa.boneTrace(e,0),elev));
+    for(const [lo,hi,plane] of [[114,129,0],[126,141,90]])
+      for(let elev=lo;elev<=hi;elev++)trace.push(await page.evaluate(([e,p])=>window.__qa.boneTrace(e,p),[elev,plane]));
     writeFileSync(join(out,"bone-trace.json"),JSON.stringify(trace,null,2));
     for(const t of trace)console.log("BONE_TRACE "+JSON.stringify(t));
-    const cameras={};
+    const cameras=process.env.QA_CAMERA_REF?JSON.parse(readFileSync(process.env.QA_CAMERA_REF,"utf8")):{};
     await page.evaluate(()=>window.__qa.skipRender(false));
-    for(const elev of [120,123]){
-      await page.evaluate(e=>window.__qa.both({elev:e,plane:0},{elev:0,plane:0}),elev);
+    for(const [elev,plane] of [[120,0],[123,0],[132,90],[135,90]]){
+      await page.evaluate(([e,p])=>window.__qa.both({elev:e,plane:p},{elev:0,plane:0}),[elev,plane]);
       for(const [name,yaw] of [["back",0],["side",Math.PI/2],["front",Math.PI]]){
-        const camera=await page.evaluate(([y,c])=>window.__qa.camera(y,c),[yaw,cameras[name]||null]);
-        if(cameras[name])assert.deepEqual(camera,cameras[name]);else cameras[name]=camera;
+        const key=plane+"-"+name;
+        const camera=await page.evaluate(([y,c])=>window.__qa.camera(y,c),[yaw,cameras[key]||null]);
+        if(cameras[key])assert.deepEqual(camera,cameras[key]);else cameras[key]=camera;
         await page.evaluate(()=>window.__qa.render());
         const rect=await page.locator("#viewer").boundingBox();
-        await page.screenshot({clip:rect,path:join(out,`baseline-${elev}-0-${name}.png`),timeout:120000});
+        await page.screenshot({clip:rect,path:join(out,`pose-${elev}-${plane}-${name}.png`),timeout:120000});
       }
     }
     writeFileSync(join(out,"bone-trace-camera.json"),JSON.stringify(cameras,null,2));
