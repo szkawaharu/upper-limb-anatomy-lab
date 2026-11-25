@@ -64,11 +64,11 @@ function pose(field,a,b,wrap){
 }
 function frame(controls,l,t,reference=null){
  const c=laneCurve(controls,l),center=curve(c,t),T=tangent(c,t),dl=.25,l0=clamp(l-dl,0,N-1),l1=clamp(l+dl,0,N-1),U0=curve(laneCurve(controls,l0),t),U1=curve(laneCurve(controls,l1),t),U=sub(U1,U0);
- if(len(T)<1e-7||len(U)<1e-7)return null;const tn=norm(T),un0=norm(U);let nn=norm(cross(tn,un0));if(len(nn)<.5)return null;if(reference&&dot(nn,reference)<0)nn=mul(nn,-1);const un=norm(cross(nn,tn));
+ if(len(T)<1e-7||len(U)<1e-7)return null;let tn=norm(T);if(reference?.t&&dot(tn,reference.t)<0)tn=mul(tn,-1);let un=sub(U,mul(tn,dot(U,tn)));if(len(un)<1e-7)return null;un=norm(un);if(reference?.u&&dot(un,reference.u)<0)un=mul(un,-1);let nn=norm(cross(tn,un));if(len(nn)<.5)return null;if(reference?.n&&dot(nn,reference.n)<0){un=mul(un,-1);nn=mul(nn,-1)}
  return {center,T,U,t:tn,u:un,n:nn,tLen:len(T),uLen:len(U)/Math.max(l1-l0,1e-6)};
 }
 function point(p,t,l,field,posed,a,b,base,alpha=1){
- if(t<=0||t>=1||alpha<=0)return base;const R=frame(field.controls,l,t,field.n);if(!R)return base;const refN=qrot(qmix(a.q,b.q,smooth(t)),R.n),S=frame(posed,l,t,refN);if(!S)return base;
+ if(t<=0||t>=1||alpha<=0)return base;const R=frame(field.controls,l,t,{n:field.n});if(!R)return base;const q=qmix(a.q,b.q,smooth(t)),S=frame(posed,l,t,{t:qrot(q,R.t),u:qrot(q,R.u),n:qrot(q,R.n)});if(!S)return base;
  const off=sub(p,R.center),xt=dot(off,R.t),xu=dot(off,R.u),xn=dot(off,R.n),st=clamp(S.tLen/Math.max(R.tLen,1e-8),.68,1.45),su=clamp(S.uLen/Math.max(R.uLen,1e-8),.72,1.30),sn=clamp(1/(st*su),.68,1.35);
  const candidate=add(S.center,add(add(mul(S.t,xt*st),mul(S.u,xu*su)),mul(S.n,xn*sn))),gate=smooth(t/.14)*smooth((1-t)/.16)*clamp(alpha,0,1);
  return mix(base,candidate,gate);
