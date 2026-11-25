@@ -4,7 +4,7 @@ import { chromium } from "playwright";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import assert from "node:assert/strict";
-import { trackStep } from "./v073-step-diagnostics.mjs";
+import { trackStep } from "./browser-step-diagnostics.mjs";
 const numericOnly = process.env.QA_NUMERIC_ONLY === "1";
 const out = process.env.QA_OUTPUT || "test-results/browser-v073",
   cache = process.env.ATLAS_CACHE || "/tmp/upper-limb-atlas";
@@ -51,7 +51,7 @@ await page.route("**/*.stl", async (route) => {
 });
 const instrument = String.raw`
 let qaSkipDraw=false;const qaOriginalRender=render;render=()=>{if(!qaSkipDraw)qaOriginalRender();else{lastW=canvas.clientWidth;lastH=canvas.clientHeight;proj=ortho(state.zoom,lastW/lastH,.01,100);const eye=add(state.target,[18*Math.sin(state.yaw)*Math.cos(state.pitch),18*Math.sin(state.pitch),18*Math.cos(state.yaw)*Math.cos(state.pitch)]);view=lookAt(eye,state.target);pv=mm(proj,view)}};
-const qaExport=(f,id)=>{const B=f.binding,samples=[];for(let i=0;i<B.weights.length;i+=Math.max(1,Math.floor(B.weights.length/80))){const p=Array.from(B.rest.slice(i*3,i*3+3)),t=B.weights[i],l=B.lane[i],materialT=B.material[i],q=MuscleDeformation.point(f,p,t,l,materialT);samples.push({vertexId:i,p,t,l,materialT,q,originBlend:B.originBlend?.[i]||0,originAnchor:f.originAt?f.originAt(p):null})}return {id,samples,state:{a:f.a,b:f.b,rest:Array.from(f.restFlat),now:Array.from(f.nowFlat),sheet:B.sheet,blendRange:B.blendRange,lanes:B.field.controls.length,tendonStart:B.definition.tissues.tendonStart,reference:B.reference,contact:f.contact,multiBone:!!f.originAt,originMix:f.originMix}}};
+const qaExport=(f,id)=>{const B=f.binding,samples=[];for(let i=0;i<B.weights.length;i+=Math.max(1,Math.floor(B.weights.length/80))){const p=Array.from(B.rest.slice(i*3,i*3+3)),t=B.weights[i],l=B.lane[i],materialT=B.material[i],q=MuscleDeformation.point(f,p,t,l,materialT);samples.push({vertexId:i,p,t,l,materialT,q,originBlend:B.originBlend?.[i]||0,originAnchor:f.originAt?f.originAt(p):null})}return {id,name:B.definition.name||id,side:B.definition.side||"right",samples,state:{a:f.a,b:f.b,rest:Array.from(f.restFlat),now:Array.from(f.nowFlat),restControls:B.field.controls,posedControls:f.posed,sheet:B.sheet,blendRange:B.blendRange,lanes:B.field.controls.length,tendonStart:B.definition.tissues.tendonStart,reference:B.reference,contact:f.contact,multiBone:!!f.originAt,originMix:f.originMix}}};
 window.__qa={
  ensureGPU(){if(!v73Renderer)v73Renderer=new MuscleRenderer(gl,shaderFS,(v,f)=>gpu(mesh(v,f)))},
  skipRender(value){qaSkipDraw=value;if(!value)request()},

@@ -1,0 +1,31 @@
+name: v073 continuity diagnostics (non-deploying)
+on:
+  push:
+    branches: ['fix/v073-continuity-diagnostics']
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm test
+      - run: npx playwright install --with-deps chromium
+      - name: Real-atlas numeric sweep (baseline)
+        run: |
+          export CHROME_PATH="$(node -e 'console.log(require("playwright").chromium.executablePath())')"
+          python3 -m http.server 8730 > /tmp/v073-server.log 2>&1 &
+          npm run test:browser:numeric
+      - name: Retain numeric data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v073-continuity-diagnostics
+          path: test-results/
