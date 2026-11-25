@@ -49,7 +49,7 @@ for(let k=0;k<=120;k++){
  for(let lane=0;lane<6;lane++){
   let prevN=null;
   for(const t of [.18,.3,.45,.6,.78]){
-   const F=E.frame(posed,lane,t,field.n);assert(F,'valid sheet frame');
+   const F=E.frame(posed,lane,t,{n:field.n});assert(F,'valid sheet frame');
    if(prevN)maxNormalFlip=Math.min(maxNormalFlip,prevN[0]*F.n[0]+prevN[1]*F.n[1]+prevN[2]*F.n[2]);
    prevN=F.n;
   }
