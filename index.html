@@ -251,7 +251,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.66.0</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.66.0</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.68.0</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.68.0</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
@@ -261,7 +261,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.67.0</div><button id="v56QuickSide" type="button" aria-label="操作中の腕（直接操作で自動選択／手動切替も可）：右）">右</button>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.68.0</div><button id="v56QuickSide" type="button" aria-label="操作中の腕（直接操作で自動選択／手動切替も可）：右）">右</button>
 <nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
  <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
  <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
@@ -276,11 +276,11 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 
 </div>
 <section class="side" id="labTools">
-<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.66.0</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
-<details class="control-fold" open><summary>両上肢・胸郭<span class="fold-note">v0.66.0</span></summary><div class="fold-body">
+<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.68.0</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
+<details class="control-fold" open><summary>両上肢・胸郭<span class="fold-note">v0.68.0</span></summary><div class="fold-body">
 <div class="control"><label>両腕の姿勢（左右を同時設定）</label><div style="display:flex;flex-wrap:wrap;gap:6px"><button type="button" id="v572Forward">前ならえ</button><button type="button" id="v572T">T字</button><button type="button" id="v572Up">バンザイ</button><button type="button" id="v572Neutral">基本肢位</button></div><div class="detail">前ならえ：肩前方挙上90°、肘伸展、手首中立、手掌内向きの近似。</div></div>
 <div class="control"><label for="v572Quality">描画品質</label><select id="v572Quality"><option value="auto">自動（操作中軽量／停止後高精細）</option><option value="light">軽量優先</option><option value="high">常に高精細</option></select><div id="v572QualityStatus" class="detail" role="status">自動品質</div></div>
-<label class="switch"><input id="v572Fit" type="checkbox" checked>関節操作終了時、画面外の骨格を自動フィット</label>
+<label class="switch"><input id="v572Fit" type="checkbox">関節操作終了時、画面外の骨格を自動フィット</label>
 <div class="detail">骨・筋肉のメッシュ精度は変更しません。肩甲帯の前方移動は模式運動です。</div>
 <label for="v56Side">操作する腕（関節角度・直接操作）</label><select id="v56Side"><option value="right">右腕</option><option value="left">左腕</option></select>
 <label class="switch"><input id="v56Both" type="checkbox" checked>両腕を表示（OFF：選択中の腕だけ）</label>
@@ -298,10 +298,10 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <div style="display:flex;flex-wrap:wrap;gap:6px"><button id="v60LayerAll" type="button">胸・肩・背：全層</button><button id="v60LayerSurface" type="button">表層</button><button id="v60LayerDeep" type="button">深層</button></div>
 <div class="detail">胸・肩・背の筋群のみ切替。上腕・前腕の表示設定は維持。</div>
 <label class="switch"><input id="v61Scap" type="checkbox" checked>肩甲胸郭 v0.66 面拘束（実胸郭取得時）</label><div class="detail" id="v61ScapStatus">肋骨サンプルから胸郭面を近似し、肩甲骨肋骨面を上・中・下3領域で拘束します。実接触は未検証。</div><div class="detail" id="v66Status">v0.66肩甲胸郭：準備中</div><div class="detail" id="v67Status">v0.67肩甲上腕ガード：準備中</div><button type="button" id="v67Audit">v0.67 肩甲骨姿勢・GH監査</button><pre class="detail" id="v67AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOHUMERAL_V067.md" target="_blank" rel="noopener noreferrer">v0.67 仕様・文献・検証限界</a></div><button type="button" id="v66Audit">v0.66 肩甲胸郭・GH監査</button><pre class="detail" id="v66AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOTHORACIC_V066.md" target="_blank" rel="noopener noreferrer">v0.66 仕様・文献・検証限界</a></div>
-<div class="control"><label>筋メッシュ変形方式（研究用）</label><select id="v62Mode"><option value="fiber" selected>v0.65 筋束＋前鋸筋9スリップ（試験）</option><option value="guided">v0.63 肩・胸郭ガイド（比較）</option><option value="linear">従来の線形（比較用）</option><option value="auto">比較選択（補正上限あり・試験）</option><option value="dual">非線形 DQS（補正上限あり・試験）</option></select>
+<div class="control"><label>筋メッシュ変形方式（研究用）</label><select id="v62Mode"><option value="fiber" selected>v0.68 筋経路＋筋束＋前鋸筋9スリップ（試験）</option><option value="guided">v0.63 肩・胸郭ガイド（比較）</option><option value="linear">従来の線形（比較用）</option><option value="auto">比較選択（補正上限あり・試験）</option><option value="dual">非線形 DQS（補正上限あり・試験）</option></select>
 <label class="switch"><input id="v62Route" type="checkbox" checked>胸郭・肩周辺の経路近似補正（試験モードのみ）</label>
-<div class="detail">v0.65：共通筋束エンジンに加え、前鋸筋は第1〜9肋骨に対応する9本の連続スリップで変形。上・中・下部の解剖学的区域を保ちながら隣接スリップを補間します。実測筋束・筋力・真の接触・体積保存ではありません。</div>
-<div class="detail" id="v64Status">筋束エンジン：準備中</div><div class="detail" id="v65Status">前鋸筋9スリップ：準備中</div><button type="button" id="v65Audit">肩甲胸郭・前鋸筋v0.65検査</button><pre class="detail" id="v65AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAP_SERRATUS_V065.md" target="_blank" rel="noopener noreferrer">v0.65 仕様・文献・検証限界</a></div><button type="button" id="v64Audit">筋束エンジンの検査（左右）</button><pre class="detail" id="v64AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><button type="button" id="v63Volume">三角筋・大胸筋の体積変化を検査</button><pre class="detail" id="v63VolumeOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査（閉じた一貫したメッシュのみ）</pre><button type="button" id="v62Audit">新旧変形を比較（現在姿勢）</button><pre class="detail" id="v62Out" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre>
+<div class="detail">v0.68：v0.64筋束変形とv0.65前鋸筋9スリップを維持し、16筋に胸郭・上腕骨頭の順序付き経路補正を追加。付着点を固定し、経路指標が悪化する補正は採用しません。実接触・筋力・筋膜・腱滑走・有限要素解析ではありません。</div>
+<div class="detail" id="v68Status">v0.68筋経路：準備中</div><button type="button" id="v68Audit">v0.68 筋経路・障害物監査</button><pre class="detail" id="v68AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/MUSCLE_ROUTE_V068.md" target="_blank" rel="noopener noreferrer">v0.68 仕様・文献・検証限界</a></div><div class="detail" id="v64Status">筋束エンジン：準備中</div><div class="detail" id="v65Status">前鋸筋9スリップ：準備中</div><button type="button" id="v65Audit">肩甲胸郭・前鋸筋v0.65検査</button><pre class="detail" id="v65AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAP_SERRATUS_V065.md" target="_blank" rel="noopener noreferrer">v0.65 仕様・文献・検証限界</a></div><button type="button" id="v64Audit">筋束エンジンの検査（左右）</button><pre class="detail" id="v64AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><button type="button" id="v63Volume">三角筋・大胸筋の体積変化を検査</button><pre class="detail" id="v63VolumeOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査（閉じた一貫したメッシュのみ）</pre><button type="button" id="v62Audit">新旧変形を比較（現在姿勢）</button><pre class="detail" id="v62Out" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre>
 <div class="detail">局所辺長損失を比較。筋力・正常範囲の評価ではありません。<a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/NONLINEAR_V062.md" target="_blank" rel="noopener noreferrer">仕様と限界</a></div></div>
 <button type="button" id="v61Audit">幾何拘束・筋変形の検査</button><pre class="detail" id="v61Out" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre>
 <div class="detail">筋ごとに13姿勢の局所辺長損失が小さいウェイトを選択。衝突・体積・筋力は未検証。</div>
@@ -518,6 +518,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <script src="./serratus-v065.js?v=0650"></script>
 <script src="./scapulothoracic-v066.js?v=0660"></script>
 <script src="./scapulohumeral-v067.js?v=0670"></script>
+<script src="./muscle-route-v068.js?v=0680"></script>
 <script>
 (()=>{'use strict';
 const $=id=>document.getElementById(id), canvas=$('viewer'); let nativeGL=null;try{nativeGL=canvas.getContext('webgl',{antialias:true,alpha:false,preserveDrawingBuffer:false})||canvas.getContext('experimental-webgl',{antialias:true,alpha:false});}catch(e){console.warn('WebGL unavailable; 2D fallback requested:',e)}const SOFTWARE=!nativeGL;
@@ -632,7 +633,7 @@ void main(){vec4 p=vec4(pos,1.0);vec3 n=normal;if(skinOn>0.5){vec4 rest=p;p=mix(
  }vec4 wp=model*p;W=wp.xyz;N=normalize(mat3(model)*n);gl_Position=mvp*p;}`;
 const shaderFS=`precision mediump float;uniform vec3 color;uniform float opacity;uniform float kind;varying vec3 N;varying vec3 W;void main(){vec3 n=normalize(N);vec3 a=normalize(vec3(-0.42,0.78,0.63)),b=normalize(vec3(0.77,0.36,-0.33));float diffuse=.43+.40*max(0.,dot(n,a))+.20*max(0.,dot(n,b));float grain=sin(W.x*71.+sin(W.y*32.)*1.8)*sin(W.y*109.+W.z*57.);float weave=sin(W.y*64.+W.x*27.);float micro=kind<.5?(.97+.035*grain):kind<1.5?(.94+.055*weave+.028*grain):1.;vec3 rgb=color*diffuse*micro;rgb+=vec3(.055,.065,.078)*pow(max(0.,dot(reflect(-a,n),normalize(vec3(.4,.5,1.)))),22.);gl_FragColor=vec4(rgb,opacity);}`;
 function shader(type,src){let s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s}
-const v64Engine=globalThis.FiberEngineV064||null,v65Engine=globalThis.SerratusEngineV065||null,v66Engine=globalThis.ScapulothoracicEngineV066||null,v67Engine=globalThis.ScapulohumeralGuardV067||null;
+const v64Engine=globalThis.FiberEngineV064||null,v65Engine=globalThis.SerratusEngineV065||null,v66Engine=globalThis.ScapulothoracicEngineV066||null,v67Engine=globalThis.ScapulohumeralGuardV067||null,v68Engine=globalThis.MuscleRouteEngineV068||null;
 let v64GPU=false,v65GPU=false;
 function v64BuildShader(){
  const declarations='attribute float fiberLane;uniform float fiberAlpha;uniform vec3 fiberRest[24];uniform vec3 fiberNow[24];uniform vec4 fiberQA;uniform vec4 fiberQB;';
@@ -672,7 +673,8 @@ let ribShapes=[];for(let side of [-1,1])for(let i=0;i<6;i++){let y=1.53-i*.24,ra
 const ids=['scapula','clavicle','humerus','radius','ulna'],boneShown=Object.fromEntries(ids.map(x=>[x,true]));
 const cBone=[.97,.86,.73],cBone2=[.89,.78,.65],cCart=[.68,.68,.64],cMuscle=[.77,.30,.31],cMuscleDeep=[.60,.24,.28],cTendon=[.85,.77,.60],cTendonFCR=[.93,.97,.94];
 const settings={elev:0,plane:0,axial:0,elbow:0,pronation:0,wristFlex:0,wristDeviation:0,fingerCurl:0,thumbCurl:0,thumbOpposition:0,fdsPIPOnly:false,fdsPIPI:0,fdsPIPM:0,fdsPIPR:0,fdsPIPL:0,fdpDIPOnly:false,fdpDIPI:0,fdpDIPM:0,fdpDIPR:0,fdpDIPL:0,hand:true,sync:true,muscles:true,deltoid:true,scapularMuscles:true,cuffOnly:false,scapulaDisplay:'opaque',brachioradialis:true,pronatorTeres:true,supinator:true,flexorCarpiRadialis:true,flexorCarpiUlnaris:true,palmarisLongus:true,flexorDigitorumSuperficialis:true,flexorDigitorumProfundus:true,extensorCarpiRadialisLongus:true,extensorCarpiRadialisBrevis:true,extensorCarpiUlnaris:true,extensorDigitorum:true,extensorDigitiMinimi:true,anconeus:true,flexorPollicisLongus:true,pronatorQuadratus:true,abductorPollicisLongus:true,extensorPollicisBrevis:true,extensorPollicisLongus:true,extensorIndicis:true,forearmLayer:'both',forearmBulk:70,rib:true,showlabels:false,showDirection:false,reverseElbow:false,muscleEmphasis:true};
-const state={yaw:Math.PI/2,pitch:.10,zoom:5.4,target:[.49,.31,-.02]};let proj,view,pv,geomDynamic={},posPoints={},lastW=0,lastH=0;let directionGuideUntil=0;
+const V68_INITIAL_REAL_YAW=Math.PI*.78,V68_INITIAL_FALLBACK_YAW=Math.PI*.22,V68_INITIAL_PITCH=.10;
+const state={yaw:V68_INITIAL_FALLBACK_YAW,pitch:V68_INITIAL_PITCH,zoom:5.4,target:[.49,.31,-.02]};let proj,view,pv,geomDynamic={},posPoints={},lastW=0,lastH=0;let directionGuideUntil=0;
 function gdynamic(name,geom){if(geomDynamic[name]){let b=geomDynamic[name];gl.deleteBuffer(b.vbo);gl.deleteBuffer(b.nbo);gl.deleteBuffer(b.ibo)}geomDynamic[name]=gpu(geom)}
 
 // BodyParts3D source meshes (CC BY-SA 2.1 Japan). Original shared frame is Z-up, millimetres.
@@ -2325,7 +2327,7 @@ async function loadRealBones(){
  if(loading)loading.innerHTML='解剖学的な骨形状を取得中…<br>旧モデルはそのまま操作できます';
  try{
    const result=await Promise.all(ids.map(x=>loadOneBone(x,REAL_MODELS[x])));
-   ids.forEach((x,i)=>realMesh[x]=result[i]);realReady=true;state.yaw=0;makeRealPose();makeHandPose();updateScapularMuscleStatus();updateRadialAuditMetrics();const handTask=loadRealHand().catch(e=>{handModelWarning=String(e);updateHandStatus();refreshModelStatus()});updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateFDPStatus();updateAnteriorStatus();updateRadialAuditMetrics();autoFit=true;fitPose();request();const torsoTask=v57LoadTorso().catch(e=>console.warn('Thorax:',e)).then(()=>v58Load().catch(e=>console.warn('Deep muscles:',e)));
+   ids.forEach((x,i)=>realMesh[x]=result[i]);realReady=true;state.yaw=V68_INITIAL_REAL_YAW;state.pitch=V68_INITIAL_PITCH;makeRealPose();makeHandPose();updateScapularMuscleStatus();updateRadialAuditMetrics();const handTask=loadRealHand().catch(e=>{handModelWarning=String(e);updateHandStatus();refreshModelStatus()});updateDeltoidStatus();updateBrachioradialisStatus();updatePronatorTeresStatus();updateSupinatorStatus();updateFlexorCarpiRadialisStatus();updateFlexorCarpiUlnarisStatus();updatePalmarisLongusStatus();updateFDSStatus();updateFDPStatus();updateAnteriorStatus();updateRadialAuditMetrics();autoFit=false;fitPose();request();const torsoTask=v57LoadTorso().catch(e=>console.warn('Thorax:',e)).then(()=>v58Load().catch(e=>console.warn('Deep muscles:',e)));
    if(loading)loading.innerHTML='BodyParts3D 上肢5骨を読み込み済み<br>手の実骨27個を取得中（v0.41・橈尺回旋の検証パネル追加）';refreshModelStatus();
    const n=$('boneModeNote');if(n)n.textContent='骨の形はBodyParts3Dの公開解剖学的メッシュに変更しました。関節の回転中心・肩甲上腕リズムは推定値です。前腕の回内回外は橈骨頭から尺骨遠位部への斜め軸を用いた近似です。推定軸のままであり、靱帯や軟骨の拘束は未実装です。骨メッシュの面交差検査は検証パネルから実行できます。上腕二頭筋・三頭筋・上腕筋は骨表面に沿う近似経路を使い、肘角度に応じた簡易収縮・伸長を追加しました。三角筋は他の筋肉とは独立にON/OFFでき、3つの束を推定付着点に結び付けた近似表示です。腕橈骨筋も独立ON/OFFができ、上腕骨外側から橈骨遠位部までを推定経路で結び、肘屈曲・前腕回内回外に追従します。回外筋は上腕骨外側・尺骨近位部から橈骨近位部を包む概形として追加し、円回内筋と比較できます。橈側手根屈筋の腱は乳白色の細い楕円断面で、橈骨掌側から舟状骨・大菱形骨付近を通って第2中手骨基部へ至る推定経路で表示します。尺側手根屈筋は尺骨の掌側・尺側に沿い、豆状骨に腱が連結し、有鉤骨・第5中手骨への線維性連結を近似表示します。関節付近の滑走・骨との接触計算は行っていません。長掌筋は内側上顆→手掌腱膜の模式経路として追加しました（個体差・欠損あり）。浅指屈筋は上腕骨内側上顆付近から掌側前腕へ伸び、中節骨へ左右二分する4本の腱を模式表示します。筋・腱の正確な形状や付着点、筋張力は未検証です。腱の滑走や厳密な筋体積保存は未実装です。';
    await Promise.allSettled([handTask,torsoTask]);
@@ -2550,7 +2552,7 @@ function updateRadialAuditMetrics(){
  el.textContent=`現在 ${settings.pronation>0?'+':''}${settings.pronation}° ／ 推定軸上の参照点距離 ${mm(poseCheck.distalGapMm)} mm（0°との差 ${mm(poseCheck.distalGapDeltaMm)} mm）。この距離は軸回転の定義上ほぼ一定で、関節面の正常性を保証しません。骨メッシュの検査は下のボタンから実行できます。`;
 }
 function render(){const v601Started=v601Now();updateDirectionGuide();let w=canvas.clientWidth,h=canvas.clientHeight,pr=v572RenderScale();if(canvas.width!==Math.floor(w*pr)||canvas.height!==Math.floor(h*pr)){canvas.width=Math.floor(w*pr);canvas.height=Math.floor(h*pr)}lastW=w;lastH=h;gl.viewport(0,0,canvas.width,canvas.height);proj=ortho(state.zoom,w/h,.01,100);let eye=add(state.target,[18*Math.sin(state.yaw)*Math.cos(state.pitch),18*Math.sin(state.pitch),18*Math.cos(state.yaw)*Math.cos(state.pitch)]);view=lookAt(eye,state.target);pv=mm(proj,view);drawScene();labels();renderRadialAudit();$('viewerFallback').classList.add('hidden');$('launchTip').style.display='none';v601Record(v601Now()-v601Started,v572Moving)}
-let autoFit=true;let zoomScale=1;
+let autoFit=false;let zoomScale=1;
 // Determine a tight, rotated bounds for all visible mesh components, not just joints.
 // AABB corners conservatively enclose detailed mesh surfaces under arbitrary camera yaw/pitch.
 function armBoundingPoints(){
@@ -3938,7 +3940,7 @@ async function v58Load(fetcher=null){
     const g=gpu(parsed.data),fiber=v64BuildField(spec,parsed.data,parsed.weights),serratus=v65BuildSerratus(spec,parsed.data,parsed.weights);
     if(!SOFTWARE){g.weightBuffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,g.weightBuffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(parsed.weights),gl.STATIC_DRAW);if(v64GPU&&fiber){g.fiberLaneBuffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,g.fiberLaneBuffer);gl.bufferData(gl.ARRAY_BUFFER,fiber.uv,gl.STATIC_DRAW)}if(v65GPU&&serratus){g.serrSlipBuffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,g.serrSlipBuffer);gl.bufferData(gl.ARRAY_BUFFER,serratus.slip,gl.STATIC_DRAW)}}
     v58Meshes.set(spec.id,{g,box:parsed.box,triangles:g.count/3,originalTriangles:parsed.originalTriangles,bounds:parsed.bounds||v60WeightBounds(parsed.data.vertices,parsed.weights),samples:parsed.samples||[],selection:parsed.selection||null,nonlinear:parsed.nonlinear||null,attachmentMode:parsed.attachmentMode||'synthetic',volume:v63VolumeSource(spec,parsed.data,parsed.weights),fiber,fiberCache:new Map(),serratus,serratusCache:new Map()});
-    v64UpdateStatus();v65UpdateStatus();request();
+    v64UpdateStatus();v65UpdateStatus();v68UpdateStatus();request();
    }catch(e){v58Failed.push(spec.id);console.warn('Deep mesh:',spec.id,e)}
    v58Status();await new Promise(resolve=>setTimeout(resolve,0));
   }
@@ -4836,7 +4838,7 @@ function v63LoadStatus(){
  if(!n||$('v63Loading').hidden)return;
  const total=5+27+V57_MANIFEST.length+V60_ALL.length,done=(realReady?5:0)+handLoadCount+v57State.loaded+v58Meshes.size;
  bar.max=total;bar.value=Math.min(total,done);
- n.textContent='上肢骨 '+(realReady?5:0)+'/5　手 '+handLoadCount+'/27\n胸郭 '+v57State.loaded+'/'+V57_MANIFEST.length+'　筋 '+v58Meshes.size+'/'+V60_ALL.length+'\nキャッシュ利用 '+v63CacheHits+'件。通信環境により時間がかかることがあります。';
+ n.textContent='上肢骨 '+(realReady?5:0)+'/5　手 '+handLoadCount+'/27\n胸郭 '+v57State.loaded+'/'+V57_MANIFEST.length+'　筋 '+v58Meshes.size+'/'+V60_ALL.length+'\n端末キャッシュから再利用 '+v63CacheHits+'件（高速化用・サイズ検証済み）。通信環境により時間がかかることがあります。';
 }
 function v63FinishLoading(){
  v63LoadStatus();
@@ -4904,13 +4906,28 @@ function v64Constraint(spec,b){
  };
  return null;
 }
+function v68RouteEnv(spec,b){
+ const data=v61GuideData(),profile=data?.profile||null;
+ return {
+  scale:atlasScale,
+  gapFn:profile?(p=>v63Gap(p,profile)):null,
+  normalFn:profile?(p=>v66ThoraxNormal(p,profile)):null,
+  headRest:realAnchors.GH,
+  headNow:b?.p||realPose.humerus?.[1]||realAnchors.GH,
+  headRadius:v62HeadRadius()
+ };
+}
+function v68RefineMuscle(spec,field,posed,b){
+ if(!v68Engine||!$('v62Route').checked||!v68Engine.config?.[spec.id])return {posed,stats:{enabled:false,id:spec.id,reason:!v68Engine?'engine-missing':!$('v62Route').checked?'route-off':'unregistered'}};
+ try{return v68Engine.refine(spec.id,field,posed,v68RouteEnv(spec,b))}catch(e){console.warn('v0.68 route refinement unavailable:',spec.id,e);return {posed,stats:{enabled:false,id:spec.id,reason:String(e)}}}
+}
 function v64Field(spec,m,a,b,mode,route,wrap){
  if(!mode.fiber||!v64GPU||!m.fiber)return null;
  const key=JSON.stringify([a.q,a.p,b.q,b.p,mode.dual,mode.route,route?.kind,wrap,v57State.parts.length]);
  if(m.fiberCache.has(key))return m.fiberCache.get(key);
  const pair=mode.dual?[v62DQ(a),v62DQ(b)]:null,baseline=(p,t)=>v62Point(a,b,p,t,mode.dual,route,wrap,pair);
- const posed=v64Engine.pose(m.fiber,a,b,v64Wrap(spec)),stats=v64Engine.assess(m.fiber,posed,a,b,baseline,v64Constraint(spec,b));
- const f={...stats,field:m.fiber,posed,a,b,basePoint:baseline,restFlat:Float32Array.from(m.fiber.controls.flat(2)),nowFlat:Float32Array.from(posed.flat(2))};
+ const posed0=v64Engine.pose(m.fiber,a,b,v64Wrap(spec)),r68=v68RefineMuscle(spec,m.fiber,posed0,b),posed=r68.posed,stats=v64Engine.assess(m.fiber,posed,a,b,baseline,v64Constraint(spec,b));
+ const f={...stats,field:m.fiber,posed,a,b,basePoint:baseline,route068:r68.stats,restFlat:Float32Array.from(m.fiber.controls.flat(2)),nowFlat:Float32Array.from(posed.flat(2))};
  if(m.fiberCache.size>=2)m.fiberCache.delete(m.fiberCache.keys().next().value);
  m.fiberCache.set(key,f);return f;
 }
@@ -4947,6 +4964,31 @@ function v65Audit(){
 }
 $('v65Audit').addEventListener('click',()=>{const r=v65Audit();$('v65AuditOut').textContent=r.ready?r.sides.map(x=>(x.side==='right'?'右':'左')+'：'+(x.reason||('スリップ '+x.slips+'／新方式 '+Math.round(x.alpha*100)+'%／局所損失 '+x.lossBefore.toFixed(3)+'→'+x.lossAfter.toFixed(3)+(Number.isFinite(x.contactAfter)?'／胸郭包絡 '+x.contactBefore.toFixed(2)+'→'+x.contactAfter.toFixed(2):'')+(x.scapula?'／肩甲骨 RMS '+x.scapula.rms.toFixed(1)+'mm 最大離開 '+x.scapula.maxOutMm.toFixed(1)+'mm 最大内方 '+x.scapula.maxInMm.toFixed(1)+'mm':'')))).join('\n')+'\n肋骨別区域・距離指標は近似。真の接触・筋力・正常値ではありません。':'実骨未取得'});
 window.__labSerratusV065=v65Audit;
+function v68UpdateStatus(){
+ const n=$('v68Status');if(!n)return;
+ const registered=v68Engine?.config?Object.keys(v68Engine.config).length:0,loaded=[...v58Meshes].filter(([id,m])=>v68Engine?.config?.[id]&&m.fiber).length;
+ n.textContent=!v68Engine?'v0.68筋経路：エンジン未取得／v0.67表示':$('v62Mode').value!=='fiber'?'v0.68筋経路：比較モードでは停止':'v0.68筋経路：'+loaded+'/'+registered+' 対象筋を準備（前鋸筋はv0.65専用9スリップ）';
+}
+function v68AuditSide(side){
+ const rows=[];
+ for(const spec of V60_ALL){
+  if(spec.id==='v58Serratus')continue;
+  const m=v58Meshes.get(spec.id);if(!m?.fiber||!v68Engine?.config?.[spec.id])continue;
+  const a=v58Anchor(spec.a),b=v58Anchor(spec.b),mode=v62Mode(spec,m),route=v62RouteFor(spec,b,mode.route,false,mode.guided),wrap=null,f=v64Field(spec,m,a,b,mode,route,wrap);
+  const q=f?.route068;
+  rows.push({id:spec.id,name:spec.name,enabled:q?.enabled??false,adopted:q?.adopted??false,before:q?.before??null,after:q?.after??null,maxShiftMm:q?.maxShiftMm??null,distortionBefore:f?.baseline??null,distortionAfter:f?.score??null});
+ }
+ return {side,rows};
+}
+function v68Audit(){
+ if(!realReady)return {ready:false,sides:[],contactValidated:false};
+ v572FlushPose();v56RefreshOther();const sides=[v68AuditSide(v56Side)];if($('v56Both').checked)sides.push(v56WithOther(()=>v68AuditSide(v56Inactive())));
+ return {ready:true,version:'v0.68.0',sides,contactValidated:false,forceValidated:false,fasciaValidated:false};
+}
+$('v68Audit').addEventListener('click',()=>{
+ const r=v68Audit();$('v68AuditOut').textContent=r.ready?r.sides.map(s=>(s.side==='right'?'右':'左')+'\n'+s.rows.map(x=>x.name+'：'+(!x.enabled?'対象外/停止':('経路 '+(x.adopted?'補正採用':'維持')+(Number.isFinite(x.before)?' '+x.before.toFixed(2)+'→'+x.after.toFixed(2):'')+(Number.isFinite(x.maxShiftMm)?'／最大ガイド移動 '+x.maxShiftMm.toFixed(1)+'mm':'')+(Number.isFinite(x.distortionAfter)?'／局所損失 '+x.distortionBefore.toFixed(3)+'→'+x.distortionAfter.toFixed(3):'')))).join('\n')).join('\n\n')+'\n胸郭・上腕骨頭は簡略障害物。実接触、筋間接触、筋力、筋膜、腱滑走は未検証。':'実骨未取得';
+});
+window.__labMuscleRouteV068=v68Audit;
 function v64UpdateStatus(){
  const n=$('v64Status');if(!n)return;
  n.textContent=!v64GPU?'筋束GPU未対応／従来方式で表示':$('v62Mode').value!=='fiber'?'従来方式を比較表示中':'筋束ガイド '+[...v58Meshes.values()].filter(m=>m.fiber).length+'/'+V60_ALL.length+' 部位準備済み（実測筋束ではない）';
@@ -4971,8 +5013,8 @@ $('v64Audit').addEventListener('click',()=>{
  const r=v64Audit();$('v64AuditOut').textContent=r.ready?r.sides.map(s=>(s.side==='right'?'右':'左')+'\n'+s.rows.map(x=>x.name+'：'+(x.reason||('筋束 '+Math.round(x.alpha*100)+'%／局所損失 '+x.baseline.toFixed(3)+' → '+x.score.toFixed(3)+'／辺長比 '+x.minRatio.toFixed(2)+'–'+x.maxRatio.toFixed(2)+(Number.isFinite(x.areaScore)?'／面積損失 '+x.areaBaseline.toFixed(3)+' → '+x.areaScore.toFixed(3):'／面積未評価')+(Number.isFinite(x.contactScore)?'／包絡損失 '+x.contactBaseline.toFixed(2)+' → '+x.contactScore.toFixed(2):'')))).join('\n')).join('\n\n')+'\n局所辺長・別サンプル面積・近似包絡を比較。実接触・臨床精度・体積保存は未保証。':'実骨未取得';
 });
 window.__labFiberV064=v64Audit;
-v64UpdateStatus();v66UpdateStatus();v67UpdateStatus();
-state.yaw=Math.PI;
+v64UpdateStatus();v66UpdateStatus();v67UpdateStatus();v68UpdateStatus();
+state.yaw=V68_INITIAL_FALLBACK_YAW;state.pitch=V68_INITIAL_PITCH;autoFit=false;
 try{
  makeFallbackHand();gl.enable(gl.DEPTH_TEST);update();fitPose();frame();
  const timer=setInterval(v63LoadStatus,250);
