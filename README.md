@@ -2,7 +2,7 @@
 
 スマートフォン対応の上肢骨格・筋肉・腱を観察する教育用Webアプリ。動作と形態は**解剖学的に未検証の近似を含み、臨床用・診断用ではありません**。
 
-**現在のバージョン：v0.71.0**
+**現在のバージョン：v0.72.0**
 
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
@@ -11,6 +11,12 @@
 - **v0.54の保存ブランチ**：[`archive/v0.54-before-anatomy-rebuild`](../../tree/archive/v0.54-before-anatomy-rebuild)
 - **v0.53の保存ブランチ**：[`archive/v0.53-before-review`](../../tree/archive/v0.53-before-review)
 - **v0.51の保存ブランチ**：[`archive/v0.51-before-scapular-fix`](../../tree/archive/v0.51-before-scapular-fix)
+
+## v0.72：肩甲胸郭の接触優先post-refinement
+
+高挙上時に肩甲骨内側縁〜下角が胸郭から浮いて見える問題に対し、v0.66の胸郭面拘束とv0.67の姿勢/GHガードの後段へ接触優先ソルバーを追加した。v0.67が胸郭面補正を戻しすぎた場合でも、upper / middle / lower各領域の離開・食い込み・RMS・接線整合を監視し、局所的なwingingを増やすほどは戻さない。
+
+正常な接触域ではv0.72は介入しない。補正が必要なときも肩甲骨/鎖骨へ小さな追加補正だけを行い、上腕骨の命令姿勢は変更しない。領域間のトレードオフを禁止し、「上部を直す代わりに下角を浮かせる」候補を棄却する。詳細は [SCAPULOTHORACIC_V072](./docs/SCAPULOTHORACIC_V072.md)。
 
 ## v0.71：肩直接操作の方向ロック
 
