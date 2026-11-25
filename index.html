@@ -301,7 +301,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <div class="control"><label>筋メッシュ変形方式（研究用）</label><select id="v62Mode"><option value="fiber" selected>v0.70 大胸筋Fan-sheet＋筋経路（試験）</option><option value="guided">v0.63 肩・胸郭ガイド（比較）</option><option value="linear">従来の線形（比較用）</option><option value="auto">比較選択（補正上限あり・試験）</option><option value="dual">非線形 DQS（補正上限あり・試験）</option></select>
 <label class="switch"><input id="v62Route" type="checkbox" checked>胸郭・肩周辺の経路近似補正（試験モードのみ）</label>
 <div class="detail">v0.70：大胸筋3部は1D筋束変形を主役にせず、広い起始から上腕骨付着部へ収束する6レーンの2D Fan-sheet変形を使用。局所シート座標で長手・横断・厚みを別々に追従させ、v0.69の軟部組織包絡は最後の安全層として残します。実測筋力・筋膜接触圧・有限要素解析ではありません。</div>
-<div class="detail" id="v70Status">v0.70大胸筋Fan-sheet：準備中</div><button type="button" id="v70Audit">v0.70 扇状筋シート監査</button><pre class="detail" id="v70AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/PECTORAL_FAN_V070.md" target="_blank" rel="noopener noreferrer">v0.70 仕様・文献・検証限界</a></div><div class="detail" id="v69Status">v0.69大胸筋軟部組織：準備中</div><button type="button" id="v69Audit">v0.69 大胸筋膜・筋腱移行監査</button><pre class="detail" id="v69AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/PECTORAL_SOFT_TISSUE_V069.md" target="_blank" rel="noopener noreferrer">v0.69 仕様・文献・検証限界</a></div><div class="detail" id="v68Status">v0.68筋経路：準備中</div><button type="button" id="v68Audit">v0.68 筋経路・障害物監査</button><pre class="detail" id="v68AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/MUSCLE_ROUTE_V068.md" target="_blank" rel="noopener noreferrer">v0.68 仕様・文献・検証限界</a></div><div class="detail" id="v64Status">筋束エンジン：準備中</div><div class="detail" id="v65Status">前鋸筋9スリップ：準備中</div><button type="button" id="v65Audit">肩甲胸郭・前鋸筋v0.65検査</button><pre class="detail" id="v65AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAP_SERRATUS_V065.md" target="_blank" rel="noopener noreferrer">v0.65 仕様・文献・検証限界</a></div><button type="button" id="v64Audit">筋束エンジンの検査（左右）</button><pre class="detail" id="v64AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><button type="button" id="v63Volume">三角筋・大胸筋の体積変化を検査</button><pre class="detail" id="v63VolumeOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査（閉じた一貫したメッシュのみ）</pre><button type="button" id="v62Audit">新旧変形を比較（現在姿勢）</button><pre class="detail" id="v62Out" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre>
+<div class="detail" id="v70Status">v0.70大胸筋Fan-sheet：準備中</div><button type="button" id="v70Audit">v0.70 扇状筋シート監査</button><pre class="detail" id="v70AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/PECTORAL_FAN_V070.md" target="_blank" rel="noopener noreferrer">v0.70 仕様・文献・検証限界</a></div><div class="detail" id="v69Status">v0.69安全層：準備中</div><button type="button" id="v69Audit">v0.69 大胸筋膜・筋腱移行監査</button><pre class="detail" id="v69AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/PECTORAL_SOFT_TISSUE_V069.md" target="_blank" rel="noopener noreferrer">v0.69 仕様・文献・検証限界</a></div><div class="detail" id="v68Status">v0.68筋経路：準備中</div><button type="button" id="v68Audit">v0.68 筋経路・障害物監査</button><pre class="detail" id="v68AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/MUSCLE_ROUTE_V068.md" target="_blank" rel="noopener noreferrer">v0.68 仕様・文献・検証限界</a></div><div class="detail" id="v64Status">筋束エンジン：準備中</div><div class="detail" id="v65Status">前鋸筋9スリップ：準備中</div><button type="button" id="v65Audit">肩甲胸郭・前鋸筋v0.65検査</button><pre class="detail" id="v65AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAP_SERRATUS_V065.md" target="_blank" rel="noopener noreferrer">v0.65 仕様・文献・検証限界</a></div><button type="button" id="v64Audit">筋束エンジンの検査（左右）</button><pre class="detail" id="v64AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><button type="button" id="v63Volume">三角筋・大胸筋の体積変化を検査</button><pre class="detail" id="v63VolumeOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査（閉じた一貫したメッシュのみ）</pre><button type="button" id="v62Audit">新旧変形を比較（現在姿勢）</button><pre class="detail" id="v62Out" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre>
 <div class="detail">局所辺長損失を比較。筋力・正常範囲の評価ではありません。<a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/NONLINEAR_V062.md" target="_blank" rel="noopener noreferrer">仕様と限界</a></div></div>
 <button type="button" id="v61Audit">幾何拘束・筋変形の検査</button><pre class="detail" id="v61Out" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre>
 <div class="detail">筋ごとに13姿勢の局所辺長損失が小さいウェイトを選択。衝突・体積・筋力は未検証。</div>
@@ -658,6 +658,7 @@ function v64BuildShader(fan=true){
 }
 function v69BuildShader(vs){
  if(!v69Engine)return vs;
+ const fanAware=vs.includes('uniform float fanMode;'),fanExpr=fanAware?'fanMode>0.5':'false';
  const declarations='uniform float pecSoftKind;uniform float pecScale;uniform vec3 pecChestCenter;uniform vec3 pecChestRadii;';
  const functions=
  'float pecSmooth(float x){x=clamp(x,0.0,1.0);return x*x*(3.0-2.0*x);}'+
@@ -671,9 +672,9 @@ function v69BuildShader(vs){
   'float bStart=pecSoftKind<1.5?0.48:(pecSoftKind<2.5?0.46:0.44);float bEnd=pecSoftKind<1.5?0.93:(pecSoftKind<2.5?0.94:0.95);float bMm=pecSoftKind<1.5?9.0:(pecSoftKind<2.5?10.0:11.0);'+
   'float fw=pecFascia(t,fFull,fEnd);vec3 rv=(rest.xyz-pecChestCenter)/pecChestRadii,pv0=(p.xyz-pecChestCenter)/pecChestRadii;float l0=length(rv),l1=length(pv0),avgR=(pecChestRadii.x+pecChestRadii.y+pecChestRadii.z)/3.0;'+
   'if(fw>0.0&&l1>0.00001){float lo=l0-inMm*pecScale/avgR,hi=l0+outMm*pecScale/avgR,target=clamp(l1,lo,hi),excess=abs(l1-target)*avgR/pecScale;if(excess>0.75){float ramp=0.74*pecSmooth((excess-0.75)/5.5)*fw;vec3 tp=pecChestCenter+(p.xyz-pecChestCenter)*(target/l1);vec3 d=(tp-p.xyz)*ramp;float dl=length(d),cap=maxF*pecScale;if(dl>cap)d*=cap/dl;p.xyz+=d;}}'+
-  'float bw=0.0;if(t>bStart&&t<bEnd){float aa=pecSmooth((t-bStart)/max(0.08,(bEnd-bStart)*0.35));float bb=1.0-pecSmooth((t-(bEnd-0.12))/0.12);bw=clamp(aa*bb,0.0,1.0);}vec3 bd=p.xyz-fiberBase;float br=length(bd),blim=bMm*pecScale;if(bw>0.0&&br>blim){float k=0.58*bw*pecSmooth((br-blim)/(8.0*pecScale));p.xyz=mix(p.xyz,fiberBase+bd*(blim/br),k);}'+
-  'float tw=pecTendon(t,tendStart);if(tw>0.0){vec3 rc,rt,nc,nt;fiberCurveRest(fiberLane,t,rc,rt);fiberCurveNow(fiberLane,t,nc,nt);p.xyz=mix(p.xyz,fiberBase,baseBlend*tw);float rr0=length(rest.xyz-rc);vec3 vv=p.xyz-nc;float rr=length(vv),maxR=rr0*(1.0+0.08*(1.0-tw))+0.8*pecScale;if(rr>maxR&&rr>0.00001)p.xyz=mix(p.xyz,nc+vv*(maxR/rr),0.82*tw);}'+
-  'vec3 fd=p.xyz-fiberBase;float fl=length(fd),fcap=(14.0+5.0*(1.0-t))*pecScale;if(fl>fcap)p.xyz=fiberBase+fd*(fcap/fl);'+
+  'float bw=0.0;if(!('+fanExpr+')&&t>bStart&&t<bEnd){float aa=pecSmooth((t-bStart)/max(0.08,(bEnd-bStart)*0.35));float bb=1.0-pecSmooth((t-(bEnd-0.12))/0.12);bw=clamp(aa*bb,0.0,1.0);}vec3 bd=p.xyz-fiberBase;float br=length(bd),blim=bMm*pecScale;if(bw>0.0&&br>blim){float k=0.58*bw*pecSmooth((br-blim)/(8.0*pecScale));p.xyz=mix(p.xyz,fiberBase+bd*(blim/br),k);}'+
+  'float tw=pecTendon(t,tendStart);if(tw>0.0){vec3 rc,rt,nc,nt;fiberCurveRest(fiberLane,t,rc,rt);fiberCurveNow(fiberLane,t,nc,nt);if(!('+fanExpr+'))p.xyz=mix(p.xyz,fiberBase,baseBlend*tw);float rr0=length(rest.xyz-rc);vec3 vv=p.xyz-nc;float rr=length(vv),maxR=rr0*(1.0+0.08*(1.0-tw))+0.8*pecScale;if(rr>maxR&&rr>0.00001)p.xyz=mix(p.xyz,nc+vv*(maxR/rr),0.82*tw);}'+
+  'vec3 fd=p.xyz-fiberBase;float fl=length(fd),fcap=(('+fanExpr+')?(22.0+6.0*(1.0-t)):(14.0+5.0*(1.0-t)))*pecScale;if(fl>fcap)p.xyz=fiberBase+fd*(fcap/fl);'+
  '}';
  return vs.replace('varying vec3 N;varying vec3 W;',declarations+'varying vec3 N;varying vec3 W;').replace('void main(){',functions+'void main(){').replace('}vec4 wp=model*p;',branch+'}vec4 wp=model*p;');
 }
@@ -5004,7 +5005,7 @@ function v64RawPoint(f,p,w,l=null){
 function v64Point(f,p,w,l=null){
  const lane=l??(f.fan070?v70Engine.lane(p,w,f.field):v64Engine.lane(p,f.field)),base=f.basePoint(p,w),candidate=v64RawPoint(f,p,w,lane);
  if(!f.pectoral069||!v69Engine)return candidate;
- return v69Engine.refinePoint(f.specId,p,candidate,base,w,lane,f.field,f.posed,f.pectoral069).point;
+ return v69Engine.refinePoint(f.specId,p,candidate,base,w,lane,f.field,f.posed,f.pectoral069,{fan070:f.fan070}).point;
 }
 function v64Edge(f,e){return len(sub(v64Point(f,e.p,e.w[0]),v64Point(f,e.q,e.w[1])))/e.rest}
 function v65BuildSerratus(spec,data,weights){
@@ -5069,7 +5070,7 @@ window.__labPectoralFanV070=v70Audit;
 function v69UpdateStatus(){
  const n=$('v69Status');if(!n)return;
  const loaded=['v60PecClav','v60PecStern','v60PecAbd'].filter(id=>v58Meshes.get(id)?.fiber).length;
- n.textContent=!v69Engine?'v0.69大胸筋軟部組織：エンジン未取得／v0.68.2へフォールバック':!v69GPU?'v0.69大胸筋軟部組織：GPU層未使用／CPU監査のみ':$('v62Mode').value!=='fiber'||!$('v62Route').checked?'v0.69大胸筋軟部組織：比較モードまたは経路補正OFF':'v0.69大胸筋軟部組織：'+loaded+'/3 部位。筋膜包絡＋腋窩移行＋遠位腱保護';
+ n.textContent=!v69Engine?'v0.69安全層：エンジン未取得／v0.68.2へフォールバック':!v69GPU?'v0.69安全層：GPU層未使用／CPU監査のみ':$('v62Mode').value!=='fiber'||!$('v62Route').checked?'v0.69安全層：比較モードまたは経路補正OFF':'v0.69安全層：'+loaded+'/3 部位。筋膜包絡＋遠位太りすぎ抑制（v0.70時は旧腋窩コリドー停止）';
 }
 function v69AuditSide(side){
  const rows=[];
@@ -5081,7 +5082,7 @@ function v69AuditSide(side){
    const base=f.basePoint(sample.p,sample.w);
    if(kind==='base')return base;
    return v64RawPoint(f,sample.p,sample.w,sample.l);
-  });
+  },{fan070:f.fan070});
   rows.push({name:spec.name,...q});
  }
  return {side,rows};
