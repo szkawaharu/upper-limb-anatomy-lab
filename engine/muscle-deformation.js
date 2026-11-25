@@ -27,10 +27,48 @@
     const sheet = ["fan", "sheet", "pennate"].includes(definition.morphology),
       fan =
         sheet && root.PectoralFanEngineV070?.build(vertices, faces, weights);
-    const f =
-      regionalField ||
-      fan ||
-      root.FiberEngineV064?.build(vertices, faces, weights, 1);
+    let f = regionalField || fan,
+      fieldMethod = regionalField ? "regional" : fan ? "fan" : null;
+    // Thin or oblique surfaces can be degenerate when partitioned along one
+    // Cartesian lane axis. Try the other rest-space partitions without
+    // changing attachment masks, shape, or deformation constraints.
+    if (!f)
+      for (const axis of [definition.fibers.laneAxis ?? 1, 0, 2]) {
+        f = root.FiberEngineV064?.build(vertices, faces, weights, axis);
+        if (f) {
+          fieldMethod = "regional-axis-" + axis;
+          break;
+        }
+      }
+    let blendRange = [0, 1],
+      fitWeights = weights;
+    if (!f) {
+      let lo = Infinity,
+        hi = -Infinity;
+      for (const w of weights) {
+        lo = Math.min(lo, w);
+        hi = Math.max(hi, w);
+      }
+      // A partial attachment field may not span both bones. Fit the material
+      // chart to its observed range; keep the original bone weights and never
+      // invent a fixed insertion region to make fitting succeed.
+      if (hi - lo > 1e-6) {
+        fitWeights = Float32Array.from(weights, (w) => (w - lo) / (hi - lo));
+        f =
+          (sheet &&
+            root.PectoralFanEngineV070?.build(vertices, faces, fitWeights)) ||
+          null;
+        if (!f)
+          for (const axis of [1, 0, 2]) {
+            f = root.FiberEngineV064?.build(vertices, faces, fitWeights, axis);
+            if (f) break;
+          }
+        if (f) {
+          blendRange = [lo, hi];
+          fieldMethod = "partial-attachment-chart";
+        }
+      }
+    }
     if (!f) throw Error("No regional field " + definition.id);
     const lane = f.slip || f.uv;
     if (!lane) throw Error("Missing material coordinates");
@@ -42,9 +80,9 @@
     for (let i = 0; i < weights.length; i++) {
       const c = P.laneCurve(f.controls, lane[i]),
         p = vertices[i],
-        lo = Math.max(0, weights[i] - 0.25),
-        hi = Math.min(1, weights[i] + 0.25);
-      let best = weights[i],
+        lo = Math.max(0, fitWeights[i] - 0.25),
+        hi = Math.min(1, fitWeights[i] + 0.25);
+      let best = fitWeights[i],
         loss = Infinity;
       for (let k = 0; k <= 24; k++) {
         const t = lo + ((hi - lo) * k) / 24,
@@ -88,6 +126,8 @@
       definition: boundDefinition,
       weights: Float32Array.from(weights),
       field: f,
+      fieldMethod,
+      blendRange,
       lane,
       material: root.MaterialCoordinates.regularize(
         material,
@@ -105,7 +145,14 @@
     const f = binding.field,
       posed = f.controls.map((c) =>
         c.map((p, j) =>
-          mix(apply(originAt ? originAt(p) : a, p), apply(b, p), smooth(j / 3)),
+          mix(
+            apply(originAt ? originAt(p) : a, p),
+            apply(b, p),
+            smooth(
+              binding.blendRange[0] +
+                ((binding.blendRange[1] - binding.blendRange[0]) * j) / 3,
+            ),
+          ),
         ),
       );
     return {
@@ -144,7 +191,13 @@
         stretch: null,
         determinant: null,
       };
-    const S = P.transported(R, raw, a, b, materialT),
+    const S = P.transported(
+        R,
+        raw,
+        a,
+        b,
+        B.blendRange[0] + (B.blendRange[1] - B.blendRange[0]) * materialT,
+      ),
       tendon = root.TendonDeformation.fraction(t, B.definition.tissues),
       sc = root.VolumeConstraint.scales(
         S.tl / R.tl,

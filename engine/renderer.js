@@ -41,6 +41,7 @@
             "originAnchor",
             "originQA",
             "originMixOn",
+            "blendRange",
             "qa",
             "qb",
             "restControls[0]",
@@ -121,6 +122,7 @@
       }
       for (const n of ["mvp", "model", "anchorA", "anchorB"])
         gl.uniformMatrix4fv(u[n], false, matrices[n]);
+      gl.uniform2fv(u.blendRange, B.blendRange);
       gl.uniform1f(u.originMixOn, state.originMix ? 1 : 0);
       gl.uniform4fv(u.originQA, state.originMix?.q || state.a.q);
       gl.uniformMatrix4fv(

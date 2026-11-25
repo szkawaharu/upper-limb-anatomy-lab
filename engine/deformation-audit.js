@@ -55,6 +55,7 @@
       t = B.topology || (B.topology = topology(rest, faces));
     let nonfinite = 0,
       attachmentError = 0,
+      attachmentSamples = 0,
       maxStep = 0,
       minArea = Infinity,
       maxArea = 0,
@@ -73,6 +74,7 @@
         w = B.weights[i];
       if (![...p].every(Number.isFinite)) nonfinite++;
       if (w === 0 || w === 1) {
+        attachmentSamples++;
         const a = w ? state.b : state.originAt ? state.originAt(r) : state.a;
         attachmentError = Math.max(
           attachmentError,
@@ -128,7 +130,8 @@
       id: B.definition.id,
       topology: t,
       nonfinite,
-      attachmentMaxMm: attachmentError,
+      attachmentMaxMm: attachmentSamples ? attachmentError : null,
+      attachmentSamples,
       maxStepMm: previous ? maxStep : null,
       restVolume: validVolume ? Math.abs(v0) : null,
       volume: validVolume ? Math.abs(v) : null,

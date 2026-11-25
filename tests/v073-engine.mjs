@@ -125,3 +125,23 @@ assert.throws(
     ),
   /Invalid muscle faces/,
 );
+
+const partialWeights = weights.map((w) => 0.15 + 0.4 * w);
+const partial = E.bind(
+  D.create(
+    { id: "partial", a: "trunk", b: "humerus", morphology: "fan" },
+    vertices,
+    faces,
+    partialWeights,
+    [a, restB],
+  ),
+  partialWeights,
+);
+assert.equal(partial.fieldMethod, "partial-attachment-chart");
+assert(partial.weights.every((w) => w > 0 && w < 1));
+assert.equal(partial.definition.attachments[1].indices.length, 0);
+const partialNeutral = E.deform(E.pose(partial, a, restB));
+assert(
+  Math.max(...partialNeutral.map((x, i) => Math.abs(x - partial.rest[i]))) <
+    1e-6,
+);

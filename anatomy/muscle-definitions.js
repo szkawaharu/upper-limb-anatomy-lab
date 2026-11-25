@@ -9,6 +9,10 @@
     sourceUnits: "mm",
     worldUnitsPerMm: 0.00555,
   };
+  const neckOrigins = Object.freeze({
+    v58Levator: Object.freeze(["C1", "C2", "C3", "C4"]),
+    v59TrapUpper: Object.freeze(["C0", "C2", "C4", "C7", "T1"]),
+  });
   const configs = {
     v58RhomboidMajor: ["sheet", "thorax"],
     v58RhomboidMinor: ["sheet", "thorax"],
@@ -64,7 +68,7 @@
       },
       restMesh: { vertices, faces },
       attachments: [fixed(0), fixed(1)],
-      originBones: spec.originBones || [spec.a],
+      originBones: spec.originBones || neckOrigins[spec.id] || [spec.a],
       insertionBones: [spec.b],
       fibers: {
         arrangement: c[0],
@@ -107,5 +111,10 @@
       ],
     };
   }
-  root.MuscleDefinitions = Object.freeze({ source, configs, create });
+  root.MuscleDefinitions = Object.freeze({
+    source,
+    configs,
+    neckOrigins,
+    create,
+  });
 })(globalThis);
