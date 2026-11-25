@@ -2,7 +2,7 @@
 
 スマートフォン対応の上肢骨格・筋肉・腱を観察する教育用Webアプリ。動作と形態は**解剖学的に未検証の近似を含み、臨床用・診断用ではありません**。
 
-**現在のバージョン：v0.68.2**
+**現在のバージョン：v0.69.0**
 
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
@@ -11,6 +11,10 @@
 - **v0.54の保存ブランチ**：[`archive/v0.54-before-anatomy-rebuild`](../../tree/archive/v0.54-before-anatomy-rebuild)
 - **v0.53の保存ブランチ**：[`archive/v0.53-before-review`](../../tree/archive/v0.53-before-review)
 - **v0.51の保存ブランチ**：[`archive/v0.51-before-scapular-fix`](../../tree/archive/v0.51-before-scapular-fix)
+
+## v0.69：大胸筋の筋膜包絡＋筋腱移行
+
+大胸筋鎖骨部・胸肋部・腹部に、大胸筋膜／周囲軟部組織を模した柔らかい外方拘束を追加。胸郭側では中立形状からの過剰膨隆だけを連続的に押し戻し、前腋窩ひだでは保守的な経路から大きく外れる場合だけ補正する。上腕骨付着部へ近づくほどv0.64筋束変形を弱め、BodyParts3D由来の遠位腱テーパーを優先する。GPU表示とCPU監査の両方に実装。詳細は [PECTORAL_SOFT_TISSUE_V069](./docs/PECTORAL_SOFT_TISSUE_V069.md)。
 
 ## v0.68.2：筋経路のプルプル・過剰湾曲修正
 
