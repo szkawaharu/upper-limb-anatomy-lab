@@ -34,7 +34,7 @@ function poleLock(anchor,side,dir,point,project,ranges){
  const probe=12;
  for(const sign of [-1,1]){
   const e=bounded(anchor.elev+sign*probe,[elo,ehi]);
-  if(Math.abs(e-anchor.elev)<2)return best;
+  if(Math.abs(e-anchor.elev)<2)continue;
   for(let plane=plo;plane<=phi+1e-9;plane+=1){
    const q=projectPose({...anchor,elev:e,plane},'elev',side,point,project),v=sub2(q,base),m=len2(v);
    if(m<.05)continue;
