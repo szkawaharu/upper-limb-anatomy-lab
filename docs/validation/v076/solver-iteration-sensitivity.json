@@ -1,0 +1,38 @@
+[
+  {
+    "iterations": 8,
+    "poses": 183,
+    "ms": 758.7286,
+    "maxLastStep": 2,
+    "minClearance": 2.7246897092971643,
+    "maxOutside": 0,
+    "maxAcDifferenceFrom12Mm": null
+  },
+  {
+    "iterations": 12,
+    "poses": 183,
+    "ms": 1029.057679,
+    "maxLastStep": 0.7772782662043883,
+    "minClearance": 2.7247202119878065,
+    "maxOutside": 0,
+    "maxAcDifferenceFrom12Mm": 0
+  },
+  {
+    "iterations": 24,
+    "poses": 183,
+    "ms": 1859.1558790000001,
+    "maxLastStep": 0.03608058416471486,
+    "minClearance": 2.7247206435693294,
+    "maxOutside": 0,
+    "maxAcDifferenceFrom12Mm": 2.5214297995826422
+  },
+  {
+    "iterations": 48,
+    "poses": 183,
+    "ms": 3522.4151760000004,
+    "maxLastStep": 0.00014202254419143356,
+    "minClearance": 2.7247206435705587,
+    "maxOutside": 0,
+    "maxAcDifferenceFrom12Mm": 2.624441240660327
+  }
+]

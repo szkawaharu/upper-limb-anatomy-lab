@@ -1,6 +1,10 @@
 // v0.56 integration regression; offline synthetic/Canvas2D harness, not clinical or browser validation.
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import '../engine/math.js';
+import '../anatomy/shoulder-rig-data.js';
+import '../engine/joint-frames.js';
+import '../engine/shoulder-kinematics.js';
 const html=readFileSync('index.html','utf8');
 let js=html.match(/<script>([\s\S]*?)<\/script>/)[1];
 new Function(js);
@@ -130,7 +134,7 @@ window.__runV56Tests=async()=>{
  let v572p=window.__labUpperBody().poses;
  ok(v572p.right.elev===90&&v572p.left.elev===90&&v572p.right.plane===90&&v572p.left.plane===90,'bilateral forward preset');
  ok(v572p.right.elbow===0&&v572p.left.elbow===0&&v572p.right.wristFlex===0&&v572p.left.fingerCurl===0,'forward preset straight elbows and hands');
- ok(qr(shoulderPoseFor(90,90,0,true).qH,[0,-1,0])[2]<-.999999,'real anterior direction');
+ ok(dot(qr(shoulderPoseFor(90,90,0,true).qH,norm(sub(realAnchors.EL,realAnchors.GH))),AnatomyMath.qrot(v76ShoulderModel().thoraxFrame,[1,0,0]))>.999999,'real anatomical anterior direction');
  const palm=v572ChoosePalm();ok(Number.isFinite(palm.alignment)&&palm.pronation>=-90&&palm.pronation<=90,'bounded palm optimization');
  v572Preset('t');v572p=window.__labUpperBody().poses;ok(v572p.right.plane===0&&v572p.left.elev===90,'bilateral T preset');
  v572Preset('up');v572p=window.__labUpperBody().poses;ok(v572p.right.elev===180&&v572p.left.elev===180,'bilateral overhead preset');

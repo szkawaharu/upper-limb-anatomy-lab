@@ -1,0 +1,41 @@
+{
+  "atlasCommit": "2c83c698788cff57f6317bddcf712e7acfbea7d8",
+  "license": "CC BY-SA 2.1 Japan",
+  "files": [
+    {
+      "file": "FMA13322.stl",
+      "bytes": 255684,
+      "gitBlobSha": "a6a28a8836a5774ba6583e0ddb2a7ac50527bce2"
+    },
+    {
+      "file": "FMA13395.stl",
+      "bytes": 5662884,
+      "gitBlobSha": "0f8acdbc40243cd51c32b74b88c07ff943d874ea"
+    },
+    {
+      "file": "FMA23130.stl",
+      "bytes": 813484,
+      "gitBlobSha": "64fe01d3cde7968c55ece5efec913250e36e110f"
+    },
+    {
+      "file": "FMA7486.stl",
+      "bytes": 594184,
+      "gitBlobSha": "13a9334b67a3092084bf9b74b761563611a493a2"
+    },
+    {
+      "file": "FMA12525.stl",
+      "bytes": 261184,
+      "gitBlobSha": "0105ea0865b4307f9515035380746a5079e83c26"
+    },
+    {
+      "file": "FMA9991.stl",
+      "bytes": 260384,
+      "gitBlobSha": "9c7a5f71ad333163c3a9cb86675bcf0c231d2e79"
+    },
+    {
+      "file": "FMA7488.stl",
+      "bytes": 204384,
+      "gitBlobSha": "806cecafd4c3e2167a2a99a8a120891b830fe564"
+    }
+  ]
+}

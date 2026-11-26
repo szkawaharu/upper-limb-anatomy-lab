@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,minimum-scale=1">
-<meta name="app-version" content="0.75.0"><meta name="release-status" content="validation-in-progress">
+<meta name="app-version" content="0.76.0"><meta name="release-status" content="validation-in-progress">
 <meta name="theme-color" content="#0b1220"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="上肢3D"><title>上肢3D解剖ラボ | 両上肢・頭部・頸椎</title>
 <style>
 :root {color-scheme:dark; --bg:#090f1a;--panel:#111d2d;--border:#29394b;--txt:#e7edf5;--mute:#93a5bb;--accent:#63d7d0;--accent2:#e9b875}
@@ -252,7 +252,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.75.0</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.75.0</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.76.0</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.76.0</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
@@ -262,7 +262,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.75.0</div><button id="v56QuickSide" type="button" aria-label="操作中の腕（直接操作で自動選択／手動切替も可）：右）">右</button>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.76.0</div><button id="v56QuickSide" type="button" aria-label="操作中の腕（直接操作で自動選択／手動切替も可）：右）">右</button>
 <nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
  <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
  <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
@@ -277,7 +277,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 
 </div>
 <section class="side" id="labTools">
-<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.75.0</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
+<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.76.0</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
 <details class="control-fold" open><summary>両上肢・胸郭<span class="fold-note">v0.68.0</span></summary><div class="fold-body">
 <div class="control"><label>両腕の姿勢（左右を同時設定）</label><div style="display:flex;flex-wrap:wrap;gap:6px"><button type="button" id="v572Forward">前ならえ</button><button type="button" id="v572T">T字</button><button type="button" id="v572Up">バンザイ</button><button type="button" id="v572Neutral">基本肢位</button></div><div class="detail">前ならえ：肩前方挙上90°、肘伸展、手首中立、手掌内向きの近似。</div></div>
 <div class="control"><label for="v572Quality">描画品質</label><select id="v572Quality"><option value="auto">自動（操作中軽量／停止後高精細）</option><option value="light">軽量優先</option><option value="high">常に高精細</option></select><div id="v572QualityStatus" class="detail" role="status">自動品質</div></div>
@@ -298,7 +298,19 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <div class="detail">三角筋は従来の三角筋スイッチと連動。3部位の取得完了時に旧形状を一括置換。腹部は腰部未実装のため下端固定の近似。</div>
 <div style="display:flex;flex-wrap:wrap;gap:6px"><button id="v60LayerAll" type="button">胸・肩・背：全層</button><button id="v60LayerSurface" type="button">表層</button><button id="v60LayerDeep" type="button">深層</button></div>
 <div class="detail">胸・肩・背の筋群のみ切替。上腕・前腕の表示設定は維持。</div>
-<label class="switch"><input id="v61Scap" type="checkbox" checked>肩甲胸郭 v0.66 面拘束（実胸郭取得時）</label><div class="detail" id="v61ScapStatus">肋骨サンプルから胸郭面を近似し、肩甲骨肋骨面を上・中・下3領域で拘束します。実接触は未検証。</div><div class="detail" id="v66Status">v0.66肩甲胸郭：準備中</div><div class="detail" id="v67Status">v0.67肩甲上腕ガード：準備中</div><div class="detail" id="v72Status">v0.72肩甲胸郭接触：準備中</div><button type="button" id="v72Audit">v0.75 肩甲胸郭・翼状化監査</button><pre class="detail" id="v72AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOTHORACIC_V072.md" target="_blank" rel="noopener noreferrer">v0.72 仕様・文献・検証限界</a></div><button type="button" id="v67Audit">v0.67 肩甲骨姿勢・GH監査</button><pre class="detail" id="v67AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOHUMERAL_V067.md" target="_blank" rel="noopener noreferrer">v0.67 仕様・文献・検証限界</a></div><button type="button" id="v66Audit">v0.66 肩甲胸郭・GH監査</button><pre class="detail" id="v66AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOTHORACIC_V066.md" target="_blank" rel="noopener noreferrer">v0.66 仕様・文献・検証限界</a></div>
+<label class="switch"><input id="v61Scap" type="checkbox" checked>肩甲帯：胸郭曲面拘束（アトラス取得後）</label><div class="detail" id="v61ScapStatus">アトラスの肋骨面から連続な胸郭曲面を近似し、SC・ACを連成して評価します。関節中心と軟部組織間隔は推定です。</div><details class="diagnostic-fold"><summary>関節・骨格・筋経路の診断</summary><div class="diagnostic-stack">
+<label class="switch"><input id="rigAxes" type="checkbox">各骨の解剖座標軸・関節中心</label>
+<label class="switch"><input id="rigLandmarks" type="checkbox">肩甲骨ランドマーク（推定）</label>
+<label class="switch"><input id="rigSurface" type="checkbox">胸郭の拘束曲面</label>
+<label class="switch"><input id="rigAttachments" type="checkbox">選択筋の付着代表点・経路制御点</label>
+<label for="rigBackend">肩甲帯計算（検証）</label><select id="rigBackend"><option value="auto">事前計算曲面</option><option value="reference">CPU参照の数値解</option></select>
+<select id="rigMuscleSelect" aria-label="診断する筋肉"></select>
+<div class="btnrow"><button id="rigSelectOnly" type="button">選択筋のみ</button><button id="rigBoneOnly" type="button">骨格のみ</button><button id="rigRestore" type="button">表示を戻す</button><button id="rigAudit" type="button">数値診断</button></div>
+<pre id="rigAuditOut" class="detail" style="max-height:300px;overflow:auto;white-space:pre-wrap">未検査</pre>
+<div class="detail">X：赤（前方）、Y：緑（近位・上方）、Z：青。共有中心の誤差と、実関節面の距離は別に表示します。筋の経路長は幾何近似で、筋活動・筋力は未推定です。</div>
+</div></details>
+<details class="diagnostic-fold"><summary>旧モデルの比較監査（現在の計算には不使用）</summary><div class="diagnostic-stack"><div class="detail" id="v66Status">v0.66肩甲胸郭：準備中</div><div class="detail" id="v67Status">v0.67肩甲上腕ガード：準備中</div><div class="detail" id="v72Status">v0.72肩甲胸郭接触：準備中</div><button type="button" id="v72Audit">v0.75 肩甲胸郭・翼状化監査</button><pre class="detail" id="v72AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOTHORACIC_V072.md" target="_blank" rel="noopener noreferrer">v0.72 仕様・文献・検証限界</a></div><button type="button" id="v67Audit">v0.67 肩甲骨姿勢・GH監査</button><pre class="detail" id="v67AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOHUMERAL_V067.md" target="_blank" rel="noopener noreferrer">v0.67 仕様・文献・検証限界</a></div><button type="button" id="v66Audit">v0.66 肩甲胸郭・GH監査</button><pre class="detail" id="v66AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOTHORACIC_V066.md" target="_blank" rel="noopener noreferrer">v0.66 仕様・文献・検証限界</a></div>
+</div></details>
 <div class="control"><label for="neckRotation">頭部・頸椎の左右回旋<output id="neckRotationV">0°</output></label><input id="neckRotation" type="range" min="-75" max="75" step="1" value="0"><div class="ends"><span>右 75°</span><span>左 75°</span></div><button id="neckReset" type="button">首を中立位へ</button><label class="switch"><input id="v73HeadVisible" type="checkbox" checked>頭部を表示（頭部のドラッグで回旋）</label><label class="switch"><input id="v73NeckMusclesVisible" type="checkbox" checked>頸部筋を表示</label><p id="v73NeckStatus" class="detail">頭部データ取得待ち。回旋分配・関節中心は教育用の推定です。</p><button id="v73HeadRetry" type="button">頭部データを再取得</button></div>
 <div class="control"><label>共通エンジンの計算</label><select id="v73Backend"><option value="auto">自動（GPU／同方式CPU）</option><option value="cpu">CPU参照実装</option></select><button id="v73Audit" type="button">v0.73数値監査</button><pre id="v73AuditOut" style="max-height:240px;overflow:auto;white-space:pre-wrap;font-size:10px"></pre></div>
 <div class="control"><label>筋メッシュ変形方式（研究用）</label><select id="v62Mode"><option value="common" selected>v0.73 共通筋変形（検証継続中）</option><option value="fiber">v0.70 大胸筋Fan-sheet＋筋経路（試験）</option><option value="guided">v0.63 肩・胸郭ガイド（比較）</option><option value="linear">従来の線形（比較用）</option><option value="auto">比較選択（補正上限あり・試験）</option><option value="dual">非線形 DQS（補正上限あり・試験）</option></select>
@@ -527,19 +539,25 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <script src="./pectoral-soft-tissue-v069.js?v=0690"></script>
 <script src="./joint-drag-v0681.js?v=0681"></script>
 <script src="./joint-drag-v071.js?v=0710"></script>
-<script src="./engine/math.js?v=0730"></script>
+<script src="./engine/math.js?v=0760"></script>
 <script src="./anatomy/bone-transforms.js?v=0730"></script>
+<script src="./anatomy/shoulder-rig-data.js?v=0760"></script>
+<script src="./engine/joint-frames.js?v=0760"></script>
+<script src="./engine/pose-field.js?v=0760"></script>
+<script src="./anatomy/shoulder-pose-field-v076.js?v=0760"></script>
+<script src="./engine/shoulder-kinematics.js?v=0760"></script>
+<script src="./engine/rig-diagnostics.js?v=0760"></script>
 <script src="./anatomy/muscle-definitions.js?v=0740"></script>
-<script src="./engine/fiber-path.js?v=0730"></script>
+<script src="./engine/fiber-path.js?v=0760"></script>
 <script src="./engine/volume-constraint.js?v=0730"></script>
 <script src="./engine/contact-constraint.js?v=0740"></script>
 <script src="./engine/tendon-deformation.js?v=0730"></script>
 <script src="./engine/procedural-adapter.js?v=0730"></script>
 <script src="./engine/material-coordinates.js?v=0730"></script>
-<script src="./engine/muscle-deformation.js?v=0730"></script>
+<script src="./engine/muscle-deformation.js?v=0760"></script>
 <script src="./engine/deformation-audit.js?v=0730"></script>
-<script src="./engine/gpu-deformation.js?v=0740"></script>
-<script src="./engine/renderer.js?v=0740"></script>
+<script src="./engine/gpu-deformation.js?v=0760"></script>
+<script src="./engine/renderer.js?v=0760"></script>
 <script src="./engine/cervical-kinematics.js?v=0730"></script>
 <script src="./anatomy/cervical-data.js?v=0730"></script>
 <script>
@@ -747,11 +765,12 @@ const atlasScale=.00555; // uniform world scale: 1 model unit is about 180 mm
 const SOURCE_ORIGIN=[-14,-72,1341];
 function atlasToWorld(p){return [-(p[0]-SOURCE_ORIGIN[0])*atlasScale,1.70+(p[2]-SOURCE_ORIGIN[2])*atlasScale,(p[1]-SOURCE_ORIGIN[1])*atlasScale+.08]}
 // Pivots are approximations in the atlas's COMMON coordinate frame; morphology is not simulated joint contact.
-const realAnchors={SC:atlasToWorld([-15,-80,1343]),AC:atlasToWorld([-137,-92,1342]),GH:atlasToWorld([-172,-72,1320]),EL:atlasToWorld([-220,-80,1051])};
+const realAnchors=Object.fromEntries(['SC','AC','GH','EL'].map(id=>[id,atlasToWorld(ShoulderRigData.landmarks[id])]));
+var v76RigCache=null;
 const anchorFor={scapula:'AC',clavicle:'SC',humerus:'GH',ulna:'EL',radius:'EL'};
 // Hinge approximately passes through the distal humeral trochlea/capitellum.
 // BodyParts3D is a static pose atlas; these landmarks are estimated, NOT measured articular axes.
-const ELBOW_HINGE_LOCAL=norm([1,.018,-.035]);
+const ELBOW_HINGE_LOCAL=norm(sub(atlasToWorld(ShoulderRigData.elbowAxis[1]),atlasToWorld(ShoulderRigData.elbowAxis[0])));
 // Atlas mesh surface slices: radial head z=1025..1045 (centre ~[-232,-68,1039]);
 // distal ulnar head z=815..835 (centre ~[-240,-110,824]). These replace the
 // former axis endpoints, which missed the actual bone by roughly 3–4 cm.
@@ -980,6 +999,7 @@ function parseBinaryBone(buffer,name){
 // the diagnostic calculations. All articular pivots are estimates from a
 // static atlas; these rotations are NOT a validated shoulder dynamics model.
 function shoulderPoseFor(elev,plane,axial,sync,skipGuide=false){
+ if(globalThis.ShoulderKinematics)return v76ShoulderModel().pose({elev,plane,axial,sync,fit:!skipGuide&&$('v61Scap').checked,backend:$('rigBackend')?.value||'auto'});
  // Atlas anterior is -Z: negative Y rotation retracts the right clavicle.
  const k=clamp(elev/180,0,1),forward=clamp(Math.sin(rad(plane)),-1,1);
  const cv=sub(realAnchors.AC,realAnchors.SC);
@@ -1021,7 +1041,7 @@ function shoulderPoseMetrics(elev,plane=settings.plane,axial=settings.axial,sync
 }
 function makeRealPose(){
  if(!realReady)return;
- const {qC,AC,qS,GH,qH}=shoulderPoseFor(settings.elev,settings.plane,settings.axial,settings.sync);
+ const shoulder=shoulderPoseFor(settings.elev,settings.plane,settings.axial,settings.sync),{qC,AC,qS,GH,qH}=shoulder;
  // Separate fixed elbow hinge from forearm pronation.
  const EL=transform(qH,GH,sub(realAnchors.EL,realAnchors.GH));
  // Anatomical anterior is world -Z for the BodyParts3D atlas. Hinge sign is
@@ -1029,11 +1049,14 @@ function makeRealPose(){
  // In atlas coordinates +Y is posterior; after mapping to world, anterior is -Z.
  // Always choose the elbow sign from anatomical *wrist movement* rather than assuming
  // a screen-left/screen-right direction (which reverses when the camera rotates).
- const qU=qm(qH,qa(ELBOW_HINGE_LOCAL,ELBOW_FLEX_SIGN*rad(settings.elbow)*(settings.reverseElbow?-1:1)));
- const qR=qm(qU,qa(PRONATION_AXIS_LOCAL,rad(settings.pronation)));
+ const elbowRotation=qa(ELBOW_HINGE_LOCAL,ELBOW_FLEX_SIGN*rad(settings.elbow)*(settings.reverseElbow?-1:1));
+ const ulna=shoulder.bones?JointFrames.attach(shoulder.bones.humerus,realAnchors.EL,elbowRotation):null;
+ const qU=ulna?.q||qm(qH,elbowRotation);
+ const radius=ulna?JointFrames.attach(ulna,RADIAL_HEAD_REF,qa(PRONATION_AXIS_LOCAL,rad(settings.pronation)),realAnchors.EL):null;
+ const qR=radius?.q||qm(qU,qa(PRONATION_AXIS_LOCAL,rad(settings.pronation)));
  const radialHeadNow=transform(qU,EL,sub(RADIAL_HEAD_REF,realAnchors.EL));
  // The radial head MUST remain fixed at the proximal radioulnar articulation.
- const radOrigin=sub(radialHeadNow,qr(qR,sub(RADIAL_HEAD_REF,realAnchors.EL)));
+ const radOrigin=radius?.p||sub(radialHeadNow,qr(qR,sub(RADIAL_HEAD_REF,realAnchors.EL)));
  realPose={scapula:[qS,AC],clavicle:[qC,realAnchors.SC],humerus:[qH,GH],ulna:[qU,EL],radius:[qR,radOrigin]};
  const ulnaHeadNow=transform(qU,EL,sub(DISTAL_ULNA_REF,realAnchors.EL));
  const radialWrist0=atlasToWorld([-264,-111,825]);
@@ -2750,7 +2773,7 @@ function updateFDPStatus(){
  el.textContent=count===4?'深指屈筋：尺骨掌側の深層筋腹＋4本の腱→各指の末節骨へ（推定走行）。DIP個別操作に追従します。':'深指屈筋：骨は読み込み済み。筋・腱の生成を確認してください。';
 }
 // v0.42: grouped muscle controls; joint pose and camera settings are untouched.
-const muscleToggleIds=['v60PecClav','v60PecStern','v60PecAbd','v60PecMinor','v60Subclavius','v60DeltAnt','v60DeltMid','v60DeltPost','v59TrapUpper','v59TrapMiddle','v59TrapLower','v59Lat','v58RhomboidMajor','v58RhomboidMinor','v58Levator','v58Serratus','v58Subscap','muscles','deltoid','scapularMuscles','brachioradialis','pronatorTeres','supinator','flexorCarpiRadialis','flexorCarpiUlnaris','palmarisLongus','flexorDigitorumSuperficialis','flexorDigitorumProfundus',...V43_MUSCLES];
+const muscleToggleIds=['v60PecClav','v60PecStern','v60PecAbd','v60PecMinor','v60Subclavius','v60DeltAnt','v60DeltMid','v60DeltPost','v59TrapUpper','v59TrapMiddle','v59TrapLower','v59Lat','v58RhomboidMajor','v58RhomboidMinor','v58Levator','v58Serratus','v58Subscap','v73NeckMusclesVisible','muscles','deltoid','scapularMuscles','brachioradialis','pronatorTeres','supinator','flexorCarpiRadialis','flexorCarpiUlnaris','palmarisLongus','flexorDigitorumSuperficialis','flexorDigitorumProfundus',...V43_MUSCLES];
 let previousDisplayState=null,displayPreset=null;
 function captureDisplayState(){
  return {checks:Object.fromEntries([...muscleToggleIds,'cuffOnly','hand','rib','v56Back'].map(id=>[id,$(id).checked])),bones:{...boneShown},forearmLayer:settings.forearmLayer};
@@ -2952,8 +2975,7 @@ function updateShoulderAuditMetrics(){
  const v=shoulderPoseMetrics(settings.elev);
  const fmt=x=>Number.isFinite(x)?x.toFixed(2):'未評価';
  n.textContent='挙上 '+v.elev+'°／挙上面 '+v.plane+'°／上腕軸回旋 '+v.axial+
-  '°。肩甲骨上方回旋の設定値 '+fmt(v.assumedScapularUpDeg)+
-  '°、肩甲骨に対する上腕長軸の傾き（近似） '+fmt(v.relativeTiltDeg)+
+  '°。肩甲骨に対する上腕長軸の傾き（近似） '+fmt(v.relativeTiltDeg)+
   '°、肩甲上腕関節中心の移動 '+fmt(v.ghDisplacementMm)+
   ' mm。SC・AC・GHの共有中心の最大ずれ '+fmt(Math.max(v.scGapMm,v.acGapMm,v.ghGapMm))+
   ' mm。これらは推定運動学の内部整合性で、関節面の精度や正常運動の証明ではありません。';
@@ -3767,10 +3789,10 @@ function drawScene(){
  v56DrawMirror=false;
  if(settings.rib)for(const {g,color,id} of v57VisibleTorso()){const a=v73TorsoPose(id);drawPart(g,a?.q||ID,a?sub(a.p,qr(a.q,a.rest)):OR,color,1,0)}
  v56RefreshOther();
- v73DrawHead();
+ v73DrawHead();v76DrawSurfaceDiagnostics();
  try{
-  if($('v56Both').checked){v56DrawMirror=v56Inactive()==='left';v56WithOther(drawArm)}
-  v56DrawMirror=v56Side==='left';drawArm();
+  if($('v56Both').checked){v56DrawMirror=v56Inactive()==='left';v56WithOther(()=>{drawArm();v76DrawRigDiagnostics()})}
+  v56DrawMirror=v56Side==='left';drawArm();v76DrawRigDiagnostics();
  }finally{v56DrawMirror=false}
  if(SOFTWARE)drawSoftware();
 }
@@ -3872,7 +3894,7 @@ function v572Preset(name){
  feedbackJoint({forward:'両腕：前ならえ',t:'両腕：T字',up:'両腕：バンザイ',neutral:'両腕：基本肢位'}[name]);
 }
 for(const [id,p] of [['v572Forward','forward'],['v572T','t'],['v572Up','up'],['v572Neutral','neutral']])$(id).addEventListener('click',()=>v572Preset(p));
-window.__labPerformance=()=>({version:'v0.75.0',moving:v572Moving,mode:$('v572Quality').value,pixelRatio:v572RenderScale(),pendingPose:v572Pending,geometryUnchanged:true,autoFitOnJointEnd:$('v572Fit').checked,dragEngine:v71DragEngine?.version||v681DragEngine?.version||null});
+window.__labPerformance=()=>({version:'v0.76.0',moving:v572Moving,mode:$('v572Quality').value,pixelRatio:v572RenderScale(),pendingPose:v572Pending,geometryUnchanged:true,autoFitOnJointEnd:$('v572Fit').checked,dragEngine:v71DragEngine?.version||v681DragEngine?.version||null});
 window.__labForwardPose=()=>({realReady,forwardAxis:realReady?'world -Z':'world +Z',palm:v572ChoosePalm(),clinicalValidation:false});
 
 
@@ -4490,7 +4512,7 @@ function v61Guide(q,ac,elev,data=v61GuideData()){
 }
 function v61RefreshGuide(){
  v61GuideCache=null;v63GuideCache.clear();v66Last=null;for(const m of v58Meshes.values())m.fiberCache?.clear();const d=v61GuideData();
- $('v61ScapStatus').textContent=d?'実肋骨の横断面近似・肩甲骨肋骨面候補 '+d.v.length+'点。v0.66で上・中・下3領域、局所離開、胸郭接線整合を評価しSC/AC連結を維持（実接触未検証）。':'データ不足：基本肩甲帯運動を使用。';
+ $('v61ScapStatus').textContent=d?'連続な胸郭断面と肩甲骨面候補 '+d.v.length+'点をSC・ACの連成計算に使用。基準の軟部組織間隔を保持する近似で、真の接触は未検証。':'アトラス取得待ち：文献に基づく肩甲帯の近似運動を表示。';
  if(realReady){makeRealPose();v56Other.key=null;request()}
 }
 $('v61Scap').addEventListener('change',()=>{v61RefreshGuide();update()});
@@ -4557,6 +4579,7 @@ function v62DQBlend(a,b,p,w,pair=null){
 // cache by array identity. No assumption that GH is a measured sphere center.
 let v62HeadCache=null;
 function v62HeadRadius(){
+ if(globalThis.ShoulderRigData?.headSphere)return ShoulderRigData.headSphere.radiusMm*atlasScale;
  const v=realSurfaceVertices.humerus;if(!v?.length)return null;
  if(v62HeadCache?.v===v)return v62HeadCache.r;
  const s=v.filter(p=>len(p)<atlasScale*40).map(p=>len(p)).sort((a,b)=>a-b);
@@ -4832,6 +4855,83 @@ function v63ShoulderGuide(qC,qS,AC,elev,plane,data=v61GuideData()){
  if(v63GuideCache.size>=256)v63GuideCache.delete(v63GuideCache.keys().next().value);
  v63GuideCache.set(key,result);return result;
 }
+
+// v0.76: source-surface joint calibration, a single linked solver and one final
+// pose. The historical diagnostics below remain available as comparisons.
+function v76ShoulderModel(){
+ const data=realReady&&v571HasCore()?v61GuideData():null;
+ if(v76RigCache?.data===data)return v76RigCache.model;
+ const landmarks=Object.fromEntries(Object.entries(ShoulderRigData.landmarks).map(([id,p])=>[id,atlasToWorld(p)]));
+ const points=data?.v.map(v=>add(realAnchors.AC,v.p))||[];
+ const gaps=points.map(p=>ShoulderKinematics.clearance(p,data.profile)/atlasScale).sort((a,b)=>a-b),median=gaps.length?gaps[Math.floor(gaps.length/2)]:0;
+ const deviations=gaps.map(x=>Math.abs(x-median)).sort((a,b)=>a-b);
+ const uncertaintyMm=deviations.length?Math.max(.05,1.4826*deviations[Math.floor(deviations.length/2)]):null;
+ const model=new ShoulderKinematics.ShoulderModel({landmarks,scale:atlasScale,contact:data?{ellipsoid:data.e,surface:data.profile,points,uncertaintyMm}:null});
+ v76RigCache={model,data};return model;
+}
+function v76SelectedMuscle(){const spec=V60_ALL.find(s=>s.id===$('rigMuscleSelect').value),m=spec&&v58Meshes.get(spec.id);return m?.common?v73MuscleState(spec,m):null}
+window.__labShoulderV076=()=>{
+ const model=v76ShoulderModel(),pose=model.pose({elev:settings.elev,plane:settings.plane,axial:settings.axial,sync:settings.sync,fit:$('v61Scap').checked,backend:$('rigBackend').value||'auto'}),bones=Object.fromEntries(ids.map(id=>[id,v58Anchor(id)])),frames=RigDiagnostics.frames(model,bones),left=v56Side==='left';
+ const actual=Object.fromEntries(Object.entries(bones).map(([id,a])=>[id,left?{q:[a.q[0],-a.q[1],-a.q[2],a.q[3]],p:v56Reflect(a.p),rest:v56Reflect(a.rest)}:a]));
+ const displayFrames=Object.fromEntries(Object.entries(frames).map(([id,f])=>{if(!left)return [id,f];const axes=f.axes.map((a,j)=>[-a[0],a[1],a[2]].map(x=>j===2?-x:x));return [id,{origin:v56Reflect(f.origin),axes,q:JointFrames.basis(...axes)}]}));
+ const connections=RigDiagnostics.connections(model,bones,RADIAL_HEAD_REF,DISTAL_ULNA_REF).map(r=>left?{...r,restPivot:v56Reflect(r.restPivot),parentMeshLocal:[-r.parentMeshLocal[0],...r.parentMeshLocal.slice(1)],childMeshLocal:[-r.childMeshLocal[0],...r.childMeshLocal.slice(1)],parentWorld:v56Reflect(r.parentWorld),childWorld:v56Reflect(r.childWorld)}:r);
+ const selected=v76SelectedMuscle();
+ return {version:'0.76.0',side:v56Side,units:{source:'mm',worldUnitsPerMm:atlasScale},landmarks:model.landmarks,landmarkCoordinateSpace:'canonical right rest world',calibration:ShoulderRigData.confidence,frames:displayFrames,bones:actual,worldMatrices:Object.fromEntries(Object.entries(actual).map(([id,a])=>[id,RigDiagnostics.matrix(a)])),connections,hierarchy:{clavicle:'thorax/SC',scapula:'clavicle/AC',humerus:'scapula/GH',ulna:'humerus/elbow',radius:'ulna/PRUJ-DRUJ axis'},poseCanonicalRight:pose,contact:model.contact?{surface:model.contact.surface,ellipsoid:model.contact.ellipsoid,samples:model.samples.length,numericalScaleMm:model.sigmaMm,scaleMethod:'1.4826 × MAD of source clearance, floor0.05mm; numerical weight, not tissue thickness'}:null,muscle:selected?RigDiagnostics.muscle(selected):null,exactBoneCollision:false,medicalValidation:false};
+};
+let v76Marker=null,v76Axes=null,v76Surface=null,v76SurfaceKey=null;
+const v76Paths=new Map();
+function v76DeleteGeometry(g){if(!g||SOFTWARE)return;for(const k of ['vbo','nbo','ibo'])if(g[k])gl.deleteBuffer(g[k])}
+function v76PrepareMarkers(){
+ if(v76Marker)return;
+ v76Marker=gpu(ball([0,0,0],[.009,.009,.009],6,8));
+ const axis=(v)=>gpu(tube([[0,0,0,.003],[...mul(v,.12),.003],[...mul(v,.14),.0002]],{sides:6,steps:2}));
+ v76Axes=[axis([1,0,0]),axis([0,1,0]),axis([0,0,1]),axis([0,0,-1])];
+}
+function v76DrawRigDiagnostics(){
+ if(!realReady||!($('rigAxes').checked||$('rigLandmarks').checked||$('rigAttachments').checked))return;
+ v76PrepareMarkers();if(!SOFTWARE)gl.useProgram(program);
+ const model=v76ShoulderModel(),bones=Object.fromEntries(ids.map(id=>[id,v58Anchor(id)]));
+ if($('rigAxes').checked){
+  const frames=RigDiagnostics.frames(model,bones);
+  for(const [id,f] of Object.entries(frames)){if(id==='thorax')continue;for(let j=0;j<3;j++)drawPart(v76Axes[j===2&&v56DrawMirror?3:j],f.q,f.origin,[[1,.3,.3],[.35,1,.4],[.35,.65,1]][j],1,0)}
+  for(const r of RigDiagnostics.connections(model,bones,RADIAL_HEAD_REF,DISTAL_ULNA_REF))drawPart(v76Marker,ID,r.parentWorld,[1,.85,.25],1,0);
+ }
+ if($('rigLandmarks').checked){const a=bones.scapula;for(const id of ['TS','AA','AI','PC'])drawPart(v76Marker,ID,AnatomyMath.apply(a,model.landmarks[id]),[1,.45,.8],1,0)}
+ if($('rigAttachments').checked){
+  const f=v76SelectedMuscle();if(!f)return;const B=f.binding;
+  for(let end=0;end<2;end++){const ii=B.definition.attachments[end].indices,step=Math.max(1,Math.ceil(ii.length/6));for(let k=0;k<ii.length;k+=step){const p=Array.from(B.rest.slice(ii[k]*3,ii[k]*3+3)),a=end?f.b:f.originAt?f.originAt(p):f.a;drawPart(v76Marker,ID,AnatomyMath.apply(a,p),end?[.4,1,1]:[1,.6,.2],1,0)}}
+  const key=B.definition.id+':'+v56Side;let cache=v76Paths.get(key);
+  if(cache?.poseKey!==f.key){
+   const vv=[],ff=[];
+   for(const c of f.posed){const nodes=[];for(let k=0;k<=16;k++)nodes.push([...FiberPath.curve(c,k/16),.002]);const m=tube(nodes,{sides:5,steps:1}),offset=vv.length;vv.push(...m.vertices);ff.push(...m.faces.map(i=>i+offset))}
+   v76DeleteGeometry(cache?.g);cache={poseKey:f.key,g:gpu(mesh(vv,ff))};v76Paths.set(key,cache);
+  }
+  drawPart(cache.g,ID,OR,[.45,1,.7],1,0);
+  for(const c of f.posed)for(const p of c)drawPart(v76Marker,ID,p,[.6,.75,1],1,0);
+ }
+}
+function v76DrawSurfaceDiagnostics(){
+ if(!realReady||!$('rigSurface').checked)return;const model=v76ShoulderModel(),surface=model.contact?.surface;if(!surface)return;
+ if(v76SurfaceKey!==surface){
+  const vv=[],ff=[],table=surface.rows.map(r=>[r.y,...r.c,...r.r]);
+  const addLine=nodes=>{const m=tube(nodes,{sides:5,steps:1}),n=vv.length;vv.push(...m.vertices);ff.push(...m.faces.map(i=>i+n))};
+  for(let k=0;k<=12;k++){const y=surface.rows[0].y+(surface.rows.at(-1).y-surface.rows[0].y)*k/12,nodes=[];for(let j=0;j<=40;j++){const a=j*Math.PI/20,cx=ShoulderKinematics.interpolate(table,y,1),cz=ShoulderKinematics.interpolate(table,y,2),rx=ShoulderKinematics.interpolate(table,y,3),rz=ShoulderKinematics.interpolate(table,y,4);nodes.push([cx+rx*Math.cos(a),y,cz+rz*Math.sin(a),.0015])}addLine(nodes)}
+  v76DeleteGeometry(v76Surface);v76Surface=gpu(mesh(vv,ff));v76SurfaceKey=surface;
+ }
+ if(!SOFTWARE)gl.useProgram(program);drawPart(v76Surface,ID,OR,[.3,.65,.9],1,0);
+}
+function v76InitDiagnostics(){
+for(const spec of V60_ALL){const o=document.createElement('option');o.value=spec.id;o.textContent=spec.name;$('rigMuscleSelect').appendChild(o)}
+$('rigMuscleSelect').value='v60PecStern';$('rigBackend').value='auto';
+$('rigBackend').addEventListener('change',()=>{v56Other.key=null;update()});
+for(const id of ['rigAxes','rigLandmarks','rigSurface','rigAttachments','rigMuscleSelect'])$(id).addEventListener('change',request);
+$('rigAudit').addEventListener('click',()=>{$('rigAuditOut').textContent=JSON.stringify(window.__labShoulderV076(),null,2)});
+$('rigBoneOnly').addEventListener('click',()=>setDisplayPreset('skeleton'));
+$('rigRestore').addEventListener('click',()=>$('restoreDisplayState').click());
+$('rigSelectOnly').addEventListener('click',()=>{const id=$('rigMuscleSelect').value;setDisplayPreset('off');$(id).checked=true;update()});
+
+}
+
 function v66ThoraxNormal(p,profile){
  if(!profile?.rows?.length)return null;
  const rows=profile.rows;if(p[1]<rows[0].y-profile.dy||p[1]>rows[rows.length-1].y+profile.dy)return null;
@@ -5322,11 +5422,12 @@ function v73MuscleState(spec,m,side=v56Side){
 }
 function v73DrawMuscle(spec,m){
  const f=v73MuscleState(spec,m,v56DrawMirror?'left':'right');if(!f)return false;
+ if(f.liftSingular)v73RecordFallback(spec.id,'ambiguous-joint-quaternion-lift');
  if(!v73Renderer){v73Renderer=new MuscleRenderer(gl,shaderFS,(v,f)=>gpu(mesh(v,f)));if(v73Renderer.reason)v73System.fallback('renderer',v73Renderer.reason)}
  const model=v56DrawMirror?v56ReflectionMatrix():mat4(ID,OR),matrices={model:Float32Array.from(model),mvp:Float32Array.from(mm(pv,model)),anchorA:Float32Array.from(v58AnchorMatrix(f.a)),anchorB:Float32Array.from(v58AnchorMatrix(f.b))};
  const gpuOn=$('v73Backend').value!=='cpu'&&v73Renderer.draw(f,m.g,matrices,[.67,.26,.30]);
  if(gpuOn){gl.useProgram(program);return true}
- if($('v73Backend').value!=='cpu')v73RecordFallback(spec.id,f.originAt?'multi-bone-origin-cpu':v73Renderer.reason||'gpu-unavailable');
+ if($('v73Backend').value!=='cpu')v73RecordFallback(spec.id,f.liftSingular?'ambiguous-joint-quaternion-lift':f.originAt?'multi-bone-origin-cpu':v73Renderer.reason||'gpu-unavailable');
  gl.useProgram(program);drawPart(v73Renderer.cpuGeometry(f,f.key),ID,OR,[.67,.26,.30],1,1);return true;
 }
 function v73AuditSide(side){return {side,rows:V60_ALL.map(spec=>{const m=v58Meshes.get(spec.id),f=m?.common&&v73MuscleState(spec,m,side);if(!f)return {id:spec.id,status:'unavailable'};const start=v601Now(),now=MuscleDeformation.deform(f),r=DeformationAudit.audit(f,now);r.cpuMs=v601Now()-start;return r})}}
@@ -5336,6 +5437,7 @@ $('v73Audit').addEventListener('click',()=>{const r=window.__labMuscleEngineV073
 $('v73Backend').addEventListener('change',()=>{v56Other.key=null;request()});
 function v73NeckAngleValue(){return typeof v73NeckAngle==='number'?v73NeckAngle:0}
 
+v76InitDiagnostics();
 state.yaw=V68_INITIAL_FALLBACK_YAW;state.pitch=V68_INITIAL_PITCH;autoFit=false;
 try{
  makeFallbackHand();gl.enable(gl.DEPTH_TEST);update();fitPose();frame();
