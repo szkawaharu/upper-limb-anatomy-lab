@@ -4926,7 +4926,12 @@ function v72ShoulderGuide(qC,qS,AC,elev,plane,qH,axial,data=v61GuideData()){
  const normal=p=>v66ThoraxNormal(p,data.profile),gap=p=>v63Gap(p,data.profile),model=v66Engine.build(data.v,realAnchors.AC,normal);
  if(!model)return v72ShoulderGuideDiscrete(qC,qS,AC,elev,plane,qH,axial,data);
  model.restAC=realAnchors.AC.slice();
- const before=v66Engine.metrics(model,qS,AC,gap,normal,atlasScale),after=v66Engine.metrics(model,out.qS,out.AC,gap,normal,atlasScale);
+ const before=v66Engine.metrics(model,qS,AC,gap,normal,atlasScale);
+ const legacy=v72ShoulderGuideDiscrete(qC,qS,AC,elev,plane,qH,axial,data);
+ const referenceMetrics=legacy.v72?.after;
+ const projected=v72Engine.refine({v66:v66Engine,v67:v67Engine,input:out,base:raw,SC:realAnchors.SC,cv,restAC:realAnchors.AC,elev,plane,qH,restShaft:norm(sub(realAnchors.EL,realAnchors.GH)),points:data.v,gapFn:gap,normalFn:normal,scale:atlasScale,referenceMetrics});
+ Object.assign(out,{qC:projected.qC,qS:projected.qS,AC:projected.AC});
+ const after=v66Engine.metrics(model,out.qS,out.AC,gap,normal,atlasScale);
  const audit=v67Engine.audit(out.qS,qH,norm(sub(realAnchors.EL,realAnchors.GH)),elev,plane,qS);
  const hardOK=v72Engine.hardKinematicOK(audit),regionalOK=v72Engine.noRegionalRegression(after,before);
  // Do not snap back to a different pose when a constraint fails. Report

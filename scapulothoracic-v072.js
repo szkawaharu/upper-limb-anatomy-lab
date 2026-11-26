@@ -91,8 +91,9 @@ function refine(opts){
  model.restAC=restAC.slice();
  const metrics=(qS,AC)=>v66.metrics(model,qS,AC,gapFn,normalFn,scale);
  const beforeM=metrics(input.qS,input.AC),beforeScore=contactScore(beforeM);
+ const referenceM=opts.referenceMetrics||beforeM;
  if(!Number.isFinite(beforeScore))return {...input,fallback072:'metrics-unavailable',v72:null};
- if(contactOK(beforeM)){
+ if(contactOK(beforeM)&&noRegionalRegression(beforeM,referenceM)){
   return {...input,v72:{active:false,reason:'contact-within-guard',before:beforeM,after:beforeM,beforeScore,afterScore:beforeScore,params:[0,0,0,0,0,0],correctionDeg:0}};
  }
 
@@ -109,7 +110,7 @@ function refine(opts){
   const p=make(a),m=metrics(p.qS,p.AC),raw=contactScore(m);
   const audit=v67&&qH&&restShaft?v67.audit(p.qS,qH,restShaft,elev,plane,base.qS):null;
   if(audit&&!hardKinematicOK(audit))return {p,m,raw,total:Infinity,audit};
-  if(!noRegionalRegression(m,beforeM))return {p,m,raw,total:Infinity,audit};
+  if(!noRegionalRegression(m,beforeM)||!noRegionalRegression(m,referenceM))return {p,m,raw,total:Infinity,audit};
   const reg=.20*(a[0]**2+a[1]**2)+.16*a[2]**2+.85*(a[3]**2+a[4]**2)+.65*a[5]**2;
   return {p,m,raw,total:raw+reg,audit};
  };
@@ -130,7 +131,8 @@ function refine(opts){
   }
  }
 
- const improved=Number.isFinite(best.raw)&&(
+ const improved=Number.isFinite(best.total)&&(
+  (!noRegionalRegression(beforeM,referenceM)&&noRegionalRegression(best.m,referenceM)) ||
   best.raw<beforeScore*.985 ||
   maxOut(best.m)<maxOut(beforeM)-.75 ||
   lowerOut(best.m)<lowerOut(beforeM)-.75
