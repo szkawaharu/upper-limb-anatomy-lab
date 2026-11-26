@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,minimum-scale=1">
-<meta name="app-version" content="0.74.0"><meta name="release-status" content="validation-in-progress">
+<meta name="app-version" content="0.75.0"><meta name="release-status" content="validation-in-progress">
 <meta name="theme-color" content="#0b1220"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="上肢3D"><title>上肢3D解剖ラボ | 両上肢・頭部・頸椎</title>
 <style>
 :root {color-scheme:dark; --bg:#090f1a;--panel:#111d2d;--border:#29394b;--txt:#e7edf5;--mute:#93a5bb;--accent:#63d7d0;--accent2:#e9b875}
@@ -252,7 +252,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.74.0</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.74.0</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.75.0</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.75.0</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
@@ -262,7 +262,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.74.0</div><button id="v56QuickSide" type="button" aria-label="操作中の腕（直接操作で自動選択／手動切替も可）：右）">右</button>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.75.0</div><button id="v56QuickSide" type="button" aria-label="操作中の腕（直接操作で自動選択／手動切替も可）：右）">右</button>
 <nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
  <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
  <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
@@ -277,7 +277,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 
 </div>
 <section class="side" id="labTools">
-<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.74.0</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
+<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.75.0</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
 <details class="control-fold" open><summary>両上肢・胸郭<span class="fold-note">v0.68.0</span></summary><div class="fold-body">
 <div class="control"><label>両腕の姿勢（左右を同時設定）</label><div style="display:flex;flex-wrap:wrap;gap:6px"><button type="button" id="v572Forward">前ならえ</button><button type="button" id="v572T">T字</button><button type="button" id="v572Up">バンザイ</button><button type="button" id="v572Neutral">基本肢位</button></div><div class="detail">前ならえ：肩前方挙上90°、肘伸展、手首中立、手掌内向きの近似。</div></div>
 <div class="control"><label for="v572Quality">描画品質</label><select id="v572Quality"><option value="auto">自動（操作中軽量／停止後高精細）</option><option value="light">軽量優先</option><option value="high">常に高精細</option></select><div id="v572QualityStatus" class="detail" role="status">自動品質</div></div>
@@ -298,7 +298,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <div class="detail">三角筋は従来の三角筋スイッチと連動。3部位の取得完了時に旧形状を一括置換。腹部は腰部未実装のため下端固定の近似。</div>
 <div style="display:flex;flex-wrap:wrap;gap:6px"><button id="v60LayerAll" type="button">胸・肩・背：全層</button><button id="v60LayerSurface" type="button">表層</button><button id="v60LayerDeep" type="button">深層</button></div>
 <div class="detail">胸・肩・背の筋群のみ切替。上腕・前腕の表示設定は維持。</div>
-<label class="switch"><input id="v61Scap" type="checkbox" checked>肩甲胸郭 v0.66 面拘束（実胸郭取得時）</label><div class="detail" id="v61ScapStatus">肋骨サンプルから胸郭面を近似し、肩甲骨肋骨面を上・中・下3領域で拘束します。実接触は未検証。</div><div class="detail" id="v66Status">v0.66肩甲胸郭：準備中</div><div class="detail" id="v67Status">v0.67肩甲上腕ガード：準備中</div><div class="detail" id="v72Status">v0.72肩甲胸郭接触：準備中</div><button type="button" id="v72Audit">v0.72 肩甲胸郭・翼状化監査</button><pre class="detail" id="v72AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOTHORACIC_V072.md" target="_blank" rel="noopener noreferrer">v0.72 仕様・文献・検証限界</a></div><button type="button" id="v67Audit">v0.67 肩甲骨姿勢・GH監査</button><pre class="detail" id="v67AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOHUMERAL_V067.md" target="_blank" rel="noopener noreferrer">v0.67 仕様・文献・検証限界</a></div><button type="button" id="v66Audit">v0.66 肩甲胸郭・GH監査</button><pre class="detail" id="v66AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOTHORACIC_V066.md" target="_blank" rel="noopener noreferrer">v0.66 仕様・文献・検証限界</a></div>
+<label class="switch"><input id="v61Scap" type="checkbox" checked>肩甲胸郭 v0.66 面拘束（実胸郭取得時）</label><div class="detail" id="v61ScapStatus">肋骨サンプルから胸郭面を近似し、肩甲骨肋骨面を上・中・下3領域で拘束します。実接触は未検証。</div><div class="detail" id="v66Status">v0.66肩甲胸郭：準備中</div><div class="detail" id="v67Status">v0.67肩甲上腕ガード：準備中</div><div class="detail" id="v72Status">v0.72肩甲胸郭接触：準備中</div><button type="button" id="v72Audit">v0.75 肩甲胸郭・翼状化監査</button><pre class="detail" id="v72AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOTHORACIC_V072.md" target="_blank" rel="noopener noreferrer">v0.72 仕様・文献・検証限界</a></div><button type="button" id="v67Audit">v0.67 肩甲骨姿勢・GH監査</button><pre class="detail" id="v67AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOHUMERAL_V067.md" target="_blank" rel="noopener noreferrer">v0.67 仕様・文献・検証限界</a></div><button type="button" id="v66Audit">v0.66 肩甲胸郭・GH監査</button><pre class="detail" id="v66AuditOut" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status">未検査</pre><div class="detail"><a href="https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/main/docs/SCAPULOTHORACIC_V066.md" target="_blank" rel="noopener noreferrer">v0.66 仕様・文献・検証限界</a></div>
 <div class="control"><label for="neckRotation">頭部・頸椎の左右回旋<output id="neckRotationV">0°</output></label><input id="neckRotation" type="range" min="-75" max="75" step="1" value="0"><div class="ends"><span>右 75°</span><span>左 75°</span></div><button id="neckReset" type="button">首を中立位へ</button><label class="switch"><input id="v73HeadVisible" type="checkbox" checked>頭部を表示（頭部のドラッグで回旋）</label><label class="switch"><input id="v73NeckMusclesVisible" type="checkbox" checked>頸部筋を表示</label><p id="v73NeckStatus" class="detail">頭部データ取得待ち。回旋分配・関節中心は教育用の推定です。</p><button id="v73HeadRetry" type="button">頭部データを再取得</button></div>
 <div class="control"><label>共通エンジンの計算</label><select id="v73Backend"><option value="auto">自動（GPU／同方式CPU）</option><option value="cpu">CPU参照実装</option></select><button id="v73Audit" type="button">v0.73数値監査</button><pre id="v73AuditOut" style="max-height:240px;overflow:auto;white-space:pre-wrap;font-size:10px"></pre></div>
 <div class="control"><label>筋メッシュ変形方式（研究用）</label><select id="v62Mode"><option value="common" selected>v0.73 共通筋変形（検証継続中）</option><option value="fiber">v0.70 大胸筋Fan-sheet＋筋経路（試験）</option><option value="guided">v0.63 肩・胸郭ガイド（比較）</option><option value="linear">従来の線形（比較用）</option><option value="auto">比較選択（補正上限あり・試験）</option><option value="dual">非線形 DQS（補正上限あり・試験）</option></select>
@@ -519,9 +519,9 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 </div>
 <script src="./muscle-fiber-v064.js?v=0640r2"></script>
 <script src="./serratus-v065.js?v=0650"></script>
-<script src="./scapulothoracic-v066.js?v=0660"></script>
+<script src="./scapulothoracic-v066.js?v=0750"></script>
 <script src="./scapulohumeral-v067.js?v=0670"></script>
-<script src="./scapulothoracic-v072.js?v=0720"></script>
+<script src="./scapulothoracic-v072.js?v=0750"></script>
 <script src="./muscle-route-v0682.js?v=0682"></script>
 <script src="./pectoral-fan-v070.js?v=0700"></script>
 <script src="./pectoral-soft-tissue-v069.js?v=0690"></script>
@@ -3872,7 +3872,7 @@ function v572Preset(name){
  feedbackJoint({forward:'両腕：前ならえ',t:'両腕：T字',up:'両腕：バンザイ',neutral:'両腕：基本肢位'}[name]);
 }
 for(const [id,p] of [['v572Forward','forward'],['v572T','t'],['v572Up','up'],['v572Neutral','neutral']])$(id).addEventListener('click',()=>v572Preset(p));
-window.__labPerformance=()=>({version:'v0.74.0',moving:v572Moving,mode:$('v572Quality').value,pixelRatio:v572RenderScale(),pendingPose:v572Pending,geometryUnchanged:true,autoFitOnJointEnd:$('v572Fit').checked,dragEngine:v71DragEngine?.version||v681DragEngine?.version||null});
+window.__labPerformance=()=>({version:'v0.75.0',moving:v572Moving,mode:$('v572Quality').value,pixelRatio:v572RenderScale(),pendingPose:v572Pending,geometryUnchanged:true,autoFitOnJointEnd:$('v572Fit').checked,dragEngine:v71DragEngine?.version||v681DragEngine?.version||null});
 window.__labForwardPose=()=>({realReady,forwardAxis:realReady?'world -Z':'world +Z',palm:v572ChoosePalm(),clinicalValidation:false});
 
 
@@ -4455,12 +4455,15 @@ function v61GuideData(){
   const [lo,hi]=v58Box(scap),cand=scap.filter(p=>p[0]<lo[0]+.62*(hi[0]-lo[0])&&p[1]<lo[1]+.84*(hi[1]-lo[1]));
   const profile=v63Profile(points,e);
   // Atlas anterior = -Z: retain the most costal point in each blade cell.
-  const cells=new Map(),nx=8,ny=9;
+  const cells=new Map(),nx=10,ny=11;
   for(const p of cand){
    const ix=clamp(Math.floor((p[0]-lo[0])/Math.max(hi[0]-lo[0],1e-8)*nx),0,nx-1),iy=clamp(Math.floor((p[1]-lo[1])/Math.max(hi[1]-lo[1],1e-8)*ny),0,ny-1),key=ix+':'+iy;
-   const old=cells.get(key);if(!old||p[2]<old[2])cells.set(key,p);
+   const gap=v63Gap(add(realAnchors.AC,p),profile);
+   const old=cells.get(key);
+   // Select the thorax-facing point by radial clearance rather than global Z.
+   if(Number.isFinite(gap)&&(!old||gap<old.gap))cells.set(key,{p,gap});
   }
-  const surface=[...cells.values()],step=Math.max(1,Math.ceil(cand.length/48));
+  const surface=[...cells.values()].map(x=>x.p),step=Math.max(1,Math.ceil(cand.length/48));
   const sample=surface.length>=12?surface:cand.filter((_,i)=>i%step===0);
   const v=sample.map(p=>({p,rest:v61Radial(add(realAnchors.AC,p),e),sliceRest:v63Gap(add(realAnchors.AC,p),profile),weight:1+.7*(1-clamp((p[1]-lo[1])/Math.max(hi[1]-lo[1],1e-8),0,1))}));
   if(v.length>=8)data={e,v,profile};
@@ -4890,8 +4893,11 @@ function v67ShoulderGuide(qC,qS,AC,elev,plane,qH,axial,data=v61GuideData()){
  v67Last=g;return g;
 }
 
-let v72Last=null;
+let v72Last=null,v75CacheData=null;const v75PoseCache=new Map();
 function v72ShoulderGuide(qC,qS,AC,elev,plane,qH,axial,data=v61GuideData()){
+ if(data!==v75CacheData){v75PoseCache.clear();v75CacheData=data;}
+ const cacheKey=JSON.stringify([elev,plane,axial,qC,qS,qH]);
+ if(data?.profile&&v75PoseCache.has(cacheKey)){v72Last=v75PoseCache.get(cacheKey);return v72Last;}
  const rawBase={qC,qS,AC};
  const guarded=v67ShoulderGuide(qC,qS,AC,elev,plane,qH,axial,data);
  if(!v72Engine||!v66Engine||!data?.profile){
@@ -4904,7 +4910,8 @@ function v72ShoulderGuide(qC,qS,AC,elev,plane,qH,axial,data=v61GuideData()){
   elev,plane,axial,qH,restShaft,points:data.v,
   gapFn:p=>v63Gap(p,data.profile),normalFn:p=>v66ThoraxNormal(p,data.profile),scale:atlasScale
  });
- v72Last=g;return g;
+ if(v75PoseCache.size>=128)v75PoseCache.delete(v75PoseCache.keys().next().value);
+ v75PoseCache.set(cacheKey,g);v72Last=g;return g;
 }
 function v67AuditSide(side){
  const data=v61GuideData();if(!realReady||!data?.profile)return {side,reason:'胸郭または肩甲骨データ未取得'};
@@ -4948,7 +4955,7 @@ function v72Audit(){
 }
 function v72UpdateStatus(){
  const n=$('v72Status');if(!n)return;
- n.textContent=!v72Engine?'v0.72肩甲胸郭接触：未取得のためv0.67を使用':!realReady?'v0.72肩甲胸郭接触：骨データ待ち':'v0.72肩甲胸郭接触：v0.67後に局所離開が大きい時だけ接触優先補正';
+ n.textContent=!v72Engine?'v0.72肩甲胸郭接触：未取得のためv0.67を使用':!realReady?'v0.72肩甲胸郭接触：骨データ待ち':'v0.75肩甲胸郭接触：評価範囲外を監視し肩甲骨と鎖骨を協調補正';
 }
 $('v72Audit')?.addEventListener('click',()=>{
  const r=v72Audit(),out=$('v72AuditOut');if(!out)return;
@@ -4956,7 +4963,7 @@ $('v72Audit')?.addEventListener('click',()=>{
   const head=x.side==='right'?'右':'左';if(x.reason)return head+'：'+x.reason;
   const d=x.v72;if(!d)return head+'：v0.72指標なし';
   const fmt=m=>m?['upper','middle','lower'].map(k=>{
-   const q=m.regions[k];return ({upper:'上部',middle:'中央',lower:'下角側'}[k])+' 離開 '+q.maxOut.toFixed(1)+'mm／RMS '+q.rms.toFixed(1)+'mm';
+   const q=m.regions[k];return ({upper:'上部',middle:'中央',lower:'下角側'}[k])+' 離開 '+q.maxOut.toFixed(1)+'mm／RMS '+q.rms.toFixed(1)+'mm／評価 '+q.n+'/'+(q.expected??q.n)+'点'+(q.missing?'（範囲外 '+q.missing+'点）':'');
   }).join('；'):'—';
   return head+'：'+(d.active?'補正ON '+d.reason:'補正なし '+d.reason)+'／肩甲骨追加補正 '+(d.correctionDeg||0).toFixed(1)+'°\n前 '+fmt(d.before)+'\n後 '+fmt(d.after);
  }).join('\n\n')+'\n※mm閾値は数値安定化用の工学的ガードで、正常/異常診断基準ではありません。';

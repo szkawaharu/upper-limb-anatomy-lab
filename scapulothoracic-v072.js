@@ -31,7 +31,7 @@ function regionPenalty(r,c){
  if(!r||!Number.isFinite(r.rms))return Infinity;
  const out=Math.max(0,r.maxOut-c.out),inside=Math.max(0,-r.maxIn-c.inward),rms=Math.max(0,r.rms-c.rms);
  const tan=Number.isFinite(r.tangencyDrop)?Math.max(0,r.tangencyDrop-c.tan):0;
- return c.w*(.12*r.rms*r.rms+7.5*out*out+10*inside*inside+2.0*rms*rms+1500*tan*tan);
+ return c.w*(10000*(r.missing||0)/Math.max(1,r.expected||r.n||1)+.12*r.rms*r.rms+7.5*out*out+10*inside*inside+2.0*rms*rms+1500*tan*tan);
 }
 function violation(r,c){
  if(!r||!Number.isFinite(r.rms))return {out:Infinity,inside:Infinity,rms:Infinity,tan:Infinity};
@@ -45,6 +45,7 @@ function violation(r,c){
 function noRegionalRegression(m,base){
  if(!m||!base)return false;
  for(const k of ['upper','middle','lower']){
+  if((m.regions[k]?.missing||0)>(base.regions[k]?.missing||0))return false;
   const a=violation(m.regions[k],CFG[k]),b=violation(base.regions[k],CFG[k]);
   if(a.out>b.out+.5||a.inside>b.inside+.5||a.rms>b.rms+.5||a.tan>b.tan+.02)return false;
  }
@@ -61,7 +62,7 @@ function contactOK(m){
  if(!m||!Number.isFinite(m.rms))return false;
  for(const k of ['upper','middle','lower']){
   const r=m.regions[k],c=CFG[k];if(!r||!Number.isFinite(r.rms))return false;
-  if(r.maxOut>c.out||r.maxIn<-c.inward||r.rms>c.rms)return false;
+  if((r.missing||0)>0||r.maxOut>c.out||r.maxIn<-c.inward||r.rms>c.rms)return false;
   if(Number.isFinite(r.tangencyDrop)&&r.tangencyDrop>c.tan)return false;
  }
  return true;
@@ -130,8 +131,19 @@ function refine(opts){
   }
  }
 
- const improved=Number.isFinite(best.raw)&&(
-  best.raw<beforeScore*.985 ||
+ // v0.75: coordinated scapula/clavicle moves can cross a coordinate-wise
+ // local minimum without accepting an intermediate regional regression.
+ if(!contactOK(best.m)){
+  for(const step of [3,1.5,.75]){
+   const from=a.slice();
+   for(const [i,j] of [[0,4],[1,3],[2,3],[0,1],[1,2]])for(const si of [-1,1])for(const sj of [-1,1]){
+    const c=from.slice();c[i]=clamp(c[i]+si*step,-limits[i],limits[i]);c[j]=clamp(c[j]+sj*step,-limits[j],limits[j]);
+    const t=evaluate(c);if(t.total<best.total-1e-7&&t.raw<best.raw-1e-7){a=c;best=t;}
+   }
+  }
+ }
+ const improved=Number.isFinite(best.raw)&&best.raw<beforeScore-1e-7&&(
+  (best.m.missing||0)<(beforeM.missing||0) || best.raw<beforeScore*.985 ||
   maxOut(best.m)<maxOut(beforeM)-.75 ||
   lowerOut(best.m)<lowerOut(beforeM)-.75
  );

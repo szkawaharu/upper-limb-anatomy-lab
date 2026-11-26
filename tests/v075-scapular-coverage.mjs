@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import '../scapulothoracic-v066.js';
+import '../scapulothoracic-v072.js';
+const E=globalThis.ScapulothoracicEngineV066,G=globalThis.ScapulothoracicContactGuardV072;
+const points=[];
+for(const [region,y] of [['lower',0],['middle',1],['upper',2]])for(const x of [0,.1,.2])points.push({region,p:[x,y,0],sliceRest:0,weight:1});
+const normal=()=>[0,0,1],full=()=>0,partial=p=>p[0]>.15?null:0;
+const model=E.build(points,[0,0,0],normal);model.restAC=[0,0,0];
+const m=E.metrics(model,[0,0,0,1],[0,0,0],full,normal,.001);
+const n=E.metrics(model,[0,0,0,1],[0,0,0],partial,normal,.001);
+assert.equal(m.missing,0);assert.equal(n.missing,3);assert.equal(n.expected,9);
+assert.equal(n.regions.lower.n,2);assert.equal(n.regions.lower.coverage,2/3);
+assert.ok(E.score(n)>E.score(m));assert.ok(G.contactScore(n)>G.contactScore(m));
+assert.ok(G.contactOK(m));assert.ok(!G.contactOK(n));assert.ok(!G.noRegionalRegression(n,m));
+assert.ok(G.noRegionalRegression(m,n));
+console.log('v0.75: lost contact samples cannot improve contact objective or pass guard');

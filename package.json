@@ -1,6 +1,6 @@
 {
   "name": "upper-limb-anatomy-lab",
-  "version": "0.74.0",
+  "version": "0.75.0",
   "private": true,
   "scripts": {
     "test": "node scripts/run-tests.mjs",

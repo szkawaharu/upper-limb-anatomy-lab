@@ -47,20 +47,21 @@ function build(points,restAC,profileNormal){
 function metrics(model,qS,AC,gapFn,normalFn,scale){
  const regions={},all=[];let globalW=0,globalSq=0,maxOut=-Infinity,maxIn=Infinity;
  for(const name of ['upper','middle','lower']){
-  const arr=model.groups[name];let w=0,sq=0,out=-Infinity,inside=Infinity,n=0;
+  const arr=model.groups[name];let w=0,sq=0,out=-Infinity,inside=Infinity,n=0,expected=0,missing=0;
   for(const v of arr){
-   if(v.sliceRest==null)continue;
-   const p=transform(qS,AC,v.p),g=gapFn(p);if(g==null)continue;
+   if(!Number.isFinite(v.sliceRest))continue;
+   expected++;
+   const p=transform(qS,AC,v.p),g=gapFn(p);if(!Number.isFinite(g)){missing++;continue;}
    const d=(g-v.sliceRest)/scale,k=v.weight||1;w+=k;sq+=k*d*d;out=Math.max(out,d);inside=Math.min(inside,d);n++;all.push({d,k});
   }
   const c=transform(qS,AC,sub(model.centroid[name],AC)); // only used if AC is rest-like; replaced below by local centroid calc
   // exact transformed centroid using rest local coordinates:
   const local=sub(model.centroid[name],model.restAC||AC),world=transform(qS,AC,local),tn=normalFn(world);
   const sn=qrot(qS,model.restNormal),tangency=tn?Math.abs(dot(norm(sn),norm(tn))):null,rest=model.restTangency[name];
-  regions[name]={n,rms:w?Math.sqrt(sq/w):Infinity,maxOut:out,maxIn:inside,tangency,tangencyDrop:tangency!=null&&rest!=null?Math.max(0,rest-tangency):null};
+  regions[name]={n,expected,missing,coverage:expected?n/expected:0,rms:w?Math.sqrt(sq/w):Infinity,maxOut:out,maxIn:inside,tangency,tangencyDrop:tangency!=null&&rest!=null?Math.max(0,rest-tangency):null};
   globalW+=w;globalSq+=sq;maxOut=Math.max(maxOut,out);maxIn=Math.min(maxIn,inside);
  }
- return {regions,rms:globalW?Math.sqrt(globalSq/globalW):Infinity,maxOut,maxIn};
+ return {regions,missing:Object.values(regions).reduce((s,r)=>s+r.missing,0),expected:Object.values(regions).reduce((s,r)=>s+r.expected,0),rms:globalW?Math.sqrt(globalSq/globalW):Infinity,maxOut,maxIn};
 }
 function score(m){
  if(!Number.isFinite(m.rms))return Infinity;
@@ -72,7 +73,7 @@ function score(m){
  let c=.55*m.rms*m.rms;
  for(const name of ['upper','middle','lower']){
   const r=m.regions[name],g=cfg[name];if(!r||!Number.isFinite(r.rms))return Infinity;
-  c+=g.w*r.rms*r.rms;
+  c+=g.w*(r.rms*r.rms+10000*(r.missing||0)/Math.max(1,r.expected||r.n));
   c+=g.w*3.2*Math.max(0,r.maxOut-g.out)**2;
   c+=g.w*4.3*Math.max(0,-r.maxIn-g.inward)**2;
   if(Number.isFinite(r.tangencyDrop))c+=g.tan*900*r.tangencyDrop*r.tangencyDrop;
