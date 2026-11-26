@@ -1,0 +1,170 @@
+{
+  "sourceManifestVerified": true,
+  "beforeReference": "6c5ed7ce68aaea64da458e6ba5b58bbbb748df68",
+  "beforeMaxSampleStepMm": 19.389059656631993,
+  "maxSampleStepMm": 21.16474444567407,
+  "worst": {
+    "id": "v58Levator",
+    "name": "肩甲挙筋",
+    "vertexId": 78,
+    "plane": 90,
+    "from": 90,
+    "to": 93
+  },
+  "refinement": [
+    {
+      "id": "v58Levator",
+      "vertexId": 78,
+      "plane": 90,
+      "from": 90,
+      "to": 93,
+      "rows": [
+        {
+          "stepDeg": 3,
+          "maxMm": 21.16474444567407
+        },
+        {
+          "stepDeg": 1.5,
+          "maxMm": 12.751843892609033
+        },
+        {
+          "stepDeg": 0.75,
+          "maxMm": 6.6521101121745225
+        },
+        {
+          "stepDeg": 0.375,
+          "maxMm": 3.4107041875981796
+        }
+      ],
+      "ratio": 0.1611502655443262
+    },
+    {
+      "id": "v59TrapLower",
+      "vertexId": 6696,
+      "plane": 0,
+      "from": 120,
+      "to": 123,
+      "rows": [
+        {
+          "stepDeg": 3,
+          "maxMm": 1.5088307584995575
+        },
+        {
+          "stepDeg": 1.5,
+          "maxMm": 0.8042502877385836
+        },
+        {
+          "stepDeg": 0.75,
+          "maxMm": 0.41446080310737465
+        },
+        {
+          "stepDeg": 0.375,
+          "maxMm": 0.21029854587786193
+        }
+      ],
+      "ratio": 0.13937848542204384
+    }
+  ],
+  "maxReturnMm": 0,
+  "gpu": {
+    "available": true,
+    "count": 18413,
+    "maxMm": 0.0027711835754498856,
+    "error": 0
+  },
+  "maxEdge": {
+    "id": "v60DeltPost",
+    "topology": {
+      "closed": false,
+      "boundary": 323,
+      "nonmanifold": 502,
+      "inconsistent": 8,
+      "degenerate": 0
+    },
+    "nonfinite": 0,
+    "attachmentMaxMm": 0.000012326353361674875,
+    "attachmentSamples": 235,
+    "maxStepMm": null,
+    "restVolume": null,
+    "volume": null,
+    "volumeRatio": null,
+    "volumeStatus": "not-evaluable",
+    "areaRatio": [
+      0.03203059708472808,
+      1360.1420224543895
+    ],
+    "edgeRatio": [
+      0.06235646459505872,
+      18.38040981768322
+    ],
+    "newDegenerateFaces": 0,
+    "stretch": [
+      1,
+      2.8
+    ],
+    "localDeterminantApprox": [
+      0.9344956724384987,
+      2.8000000000000003
+    ],
+    "boundedVertices": 1282,
+    "invalidFrames": 0,
+    "volumetricJacobian": null,
+    "newIntersections": null,
+    "newInversions": null,
+    "boneDistance": null,
+    "clinicalValidation": false,
+    "input": {
+      "elev": 90,
+      "plane": 90
+    }
+  },
+  "maxArea": {
+    "id": "v60DeltPost",
+    "topology": {
+      "closed": false,
+      "boundary": 323,
+      "nonmanifold": 502,
+      "inconsistent": 8,
+      "degenerate": 0
+    },
+    "nonfinite": 0,
+    "attachmentMaxMm": 0.000012326353361674875,
+    "attachmentSamples": 235,
+    "maxStepMm": null,
+    "restVolume": null,
+    "volume": null,
+    "volumeRatio": null,
+    "volumeStatus": "not-evaluable",
+    "areaRatio": [
+      0.03203059708472808,
+      1360.1420224543895
+    ],
+    "edgeRatio": [
+      0.06235646459505872,
+      18.38040981768322
+    ],
+    "newDegenerateFaces": 0,
+    "stretch": [
+      1,
+      2.8
+    ],
+    "localDeterminantApprox": [
+      0.9344956724384987,
+      2.8000000000000003
+    ],
+    "boundedVertices": 1282,
+    "invalidFrames": 0,
+    "volumetricJacobian": null,
+    "newIntersections": null,
+    "newInversions": null,
+    "boneDistance": null,
+    "clinicalValidation": false,
+    "input": {
+      "elev": 90,
+      "plane": 90
+    }
+  },
+  "releaseAccepted": false,
+  "medicalValidation": false,
+  "exactBoneCollisionEvaluated": false
+}

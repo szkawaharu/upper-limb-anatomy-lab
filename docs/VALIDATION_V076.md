@@ -1,5 +1,7 @@
 # v0.76 検証と採否 — 根本改修は未完了
 
+**最新追記：** 共通骨格の接触残差を空間平均へ修正した追加検証は[CONTACT_AGGREGATION_V076.md](CONTACT_AGGREGATION_V076.md)とvalidation/v076/contact-rms以下。以下のaccepted-*と64画像は6c5ed7c時点の採用構成の記録であり、追加修正後の結果ではない。
+
 基準：v0.75.0 / c81256f653c04c042ed917279b4fa3e4bde0f841。保存ブランチarchive/v0.75.0-before-linked-rig。骨格改修0d79173、共通Quaternion修正d1a1e51。公開版の完全SHAはbuild-info.jsonで照合する。
 
 **公開判定：保留。** 本版のコード・試験・画像はredesign/v076-shoulderに保存。局所筋変形が不合格のためmainへ統合せず、Pagesの配信も実行していない。公開中のv0.75.0とmainが一致することは[HTTP確認記録](validation/v076/public-status.json)に保存した。環境やGitHub権限の欠如による保留ではない。

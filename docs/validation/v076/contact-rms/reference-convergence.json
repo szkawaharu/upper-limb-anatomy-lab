@@ -1,0 +1,37 @@
+{
+  "samples": 184,
+  "iterations": [
+    24,
+    48
+  ],
+  "maxRigidDifferenceBoundMm": 0.000009983007189717433,
+  "worst": {
+    "input": {
+      "elev": 111,
+      "plane": 40
+    },
+    "acMm": 1.8009259480510128e-9,
+    "ghMm": 4.697813008836023e-9,
+    "boundMm": 0.000009983007189717433
+  },
+  "times": {
+    "auto": {
+      "samples": 184,
+      "medianMs": 0.09094900000036432,
+      "p95Ms": 0.15491800000017975,
+      "maxMs": 0.653573999999935
+    },
+    "reference": {
+      "samples": 184,
+      "medianMs": 9.331968999999845,
+      "p95Ms": 10.824928,
+      "maxMs": 65.1889799999999
+    }
+  },
+  "environment": {
+    "node": "v26.13.0",
+    "physicalPhone": false,
+    "renderingMeasured": false
+  },
+  "clinicalValidation": false
+}

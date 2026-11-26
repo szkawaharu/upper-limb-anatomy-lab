@@ -1,0 +1,87 @@
+{
+  "files": [
+    {
+      "photo": 1,
+      "name": "1-写真1.jpg",
+      "sha256": "35b4598e503b576e221be8f926760b49e6067053752ae119b4f69f7de7560f36",
+      "dimensions": [
+        590,
+        1280
+      ],
+      "displayedVersion": "0.75.0"
+    },
+    {
+      "photo": 2,
+      "name": "2-写真2.jpg",
+      "sha256": "a3f94909d70b3ce6281ab990c9a60a367f131913ef6fc5ccbdba827148861c67",
+      "dimensions": [
+        590,
+        1280
+      ],
+      "displayedVersion": "0.75.0"
+    },
+    {
+      "photo": 3,
+      "name": "3-写真3.jpg",
+      "sha256": "7276d411f9a8890575ba400579ceff4835d70b6008158e17d453c01d77e6a69f",
+      "dimensions": [
+        590,
+        1280
+      ],
+      "displayedVersion": "0.75.0"
+    },
+    {
+      "photo": 4,
+      "name": "4-写真4.jpg",
+      "sha256": "f0c4ab28bdf1083e5a6741235f4ac9c7d20e320ba4d90d07331478bcad6c5f97",
+      "dimensions": [
+        590,
+        1280
+      ],
+      "displayedVersion": "0.75.0"
+    },
+    {
+      "photo": 5,
+      "name": "5-写真5.jpg",
+      "sha256": "375a6b587ebf98d72a8efef4a7a1e08ee3dbd2eeb22c17f48f3ead20e712c879",
+      "dimensions": [
+        590,
+        1280
+      ],
+      "displayedVersion": "0.75.0"
+    },
+    {
+      "photo": 6,
+      "name": "6-写真6.jpg",
+      "sha256": "0202f040440683f28082e361a73747b326da6ede001517ec4ad174a066641008",
+      "dimensions": [
+        590,
+        1280
+      ],
+      "displayedVersion": "0.75.0"
+    },
+    {
+      "photo": 7,
+      "name": "7-写真7.jpg",
+      "sha256": "2bb236f463e1bfa9afba205a8941849633a76ff69e7c03f84d33bbc8c32953b4",
+      "dimensions": [
+        590,
+        1280
+      ],
+      "displayedVersion": "0.75.0"
+    },
+    {
+      "photo": 8,
+      "name": "8-写真8.jpg",
+      "sha256": "1f4b61d3f6b166555cbefadebf92a621acb1ab41c01218277219ebaf9468e67d",
+      "dimensions": [
+        590,
+        1280
+      ],
+      "displayedVersion": "0.75.0"
+    }
+  ],
+  "exactPoseAnglesRecovered": false,
+  "medicalDiagnosis": null,
+  "sourceImagesNotRepublished": true
+}
