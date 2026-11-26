@@ -138,7 +138,7 @@ function refine(opts){
    const from=a.slice();
    for(const [i,j] of [[0,4],[1,3],[2,3],[0,1],[1,2]])for(const si of [-1,1])for(const sj of [-1,1]){
     const c=from.slice();c[i]=clamp(c[i]+si*step,-limits[i],limits[i]);c[j]=clamp(c[j]+sj*step,-limits[j],limits[j]);
-    const t=evaluate(c);if(t.total<best.total-1e-7&&t.raw<best.raw-1e-7){a=c;best=t;}
+    const t=evaluate(c);if(t.total<best.total-1e-7&&t.raw<best.raw-1e-7&&lowerOut(t.m)<=lowerOut(best.m)+1e-8){a=c;best=t;}
    }
   }
  }
