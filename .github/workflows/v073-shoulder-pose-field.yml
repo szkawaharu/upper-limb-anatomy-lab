@@ -20,6 +20,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: npm
       - name: Check public build identity
         continue-on-error: true
         run: |
@@ -31,6 +32,10 @@ jobs:
         id: regression
         continue-on-error: true
         run: npm test
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('package-lock.json') }}
       - run: npx playwright install --with-deps chromium
       - name: Real-atlas bone stage trace and exact fixed-camera before/after images
         run: |
@@ -38,9 +43,20 @@ jobs:
           python3 -m http.server 8730 > /tmp/v073-server.log 2>&1 &
           git worktree add --detach "$RUNNER_TEMP/v073-baseline" fd546cd9ebc7d4caf7e37df926742d9ff088e76c
           python3 -m http.server 8731 --directory "$RUNNER_TEMP/v073-baseline" > /tmp/v073-base-server.log 2>&1 &
-          QA_URL=http://localhost:8731/index.html QA_INDEX="$RUNNER_TEMP/v073-baseline/index.html" QA_TRACE_ONLY=1 QA_OUTPUT=test-results/baseline-trace npm run test:browser:numeric
-          QA_CAMERA_REF=test-results/baseline-trace/bone-trace-camera.json QA_TRACE_ONLY=1 QA_OUTPUT=test-results/shoulder-trace npm run test:browser:numeric
-          QA_OUTPUT=test-results/shoulder-full npm run test:browser:numeric
+          # Independent browser processes, separate output directories; preserve both exit statuses.
+          QA_OUTPUT=test-results/shoulder-full npm run test:browser:numeric &
+          full_pid=$!
+          (
+            QA_URL=http://localhost:8731/index.html QA_INDEX="$RUNNER_TEMP/v073-baseline/index.html" QA_TRACE_ONLY=1 QA_OUTPUT=test-results/baseline-trace npm run test:browser:numeric &&
+            QA_CAMERA_REF=test-results/baseline-trace/bone-trace-camera.json QA_TRACE_ONLY=1 QA_OUTPUT=test-results/shoulder-trace npm run test:browser:numeric
+          ) &
+          trace_pid=$!
+          full_status=0
+          trace_status=0
+          wait "$full_pid" || full_status=$?
+          wait "$trace_pid" || trace_status=$?
+          echo "Parallel audit exit statuses: full=$full_status trace=$trace_status"
+          test "$full_status" -eq 0 && test "$trace_status" -eq 0
       - name: Reject contact or linkage regression (experimental gate)
         run: |
           node --input-type=module -e 'import fs from "node:fs"; const rows=JSON.parse(fs.readFileSync("test-results/shoulder-full/pose-field-audit.json")); const failures=rows.filter(x=>!x.hardOK||!x.originalGuardOK||!x.publishedRegionalOK||!x.connected); console.log("Contact and rigid-link gate",failures.length,"/",rows.length); if(failures.length) process.exit(1);'
