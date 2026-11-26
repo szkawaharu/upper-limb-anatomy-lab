@@ -67,7 +67,8 @@
       minDet = Infinity,
       maxDet = -Infinity,
       bounded = 0,
-      invalidFrames = 0;
+      invalidFrames = 0,
+      stretchSamples = 0;
     let worstEdge = null, worstArea = null;
     for (let i = 0; i < B.weights.length; i++) {
       const p = now.slice(3 * i, 3 * i + 3),
@@ -87,7 +88,7 @@
           maxStep,
           len(sub(p, previous.slice(3 * i, 3 * i + 3))) / scale,
         );
-      const e = root.MuscleDeformation.evaluate(
+      const e = state.vertexDiagnostics ? state.vertexDiagnostics(i) : root.MuscleDeformation.evaluate(
         state,
         r,
         w,
@@ -98,6 +99,7 @@
       if (e.invalidFrame) invalidFrames++;
       if (e.bounded) bounded++;
       if (e.stretch != null) {
+        stretchSamples++;
         minStretch = Math.min(minStretch, e.stretch);
         maxStretch = Math.max(maxStretch, e.stretch);
         minDet = Math.min(minDet, e.determinant);
@@ -143,8 +145,8 @@
       worstEdge,
       worstArea,
       newDegenerateFaces: Math.max(0, degenerate - t.degenerate),
-      stretch: [minStretch, maxStretch],
-      localDeterminantApprox: [minDet, maxDet],
+      stretch: stretchSamples ? [minStretch, maxStretch] : null,
+      localDeterminantApprox: stretchSamples ? [minDet, maxDet] : null,
       boundedVertices: bounded,
       invalidFrames,
       volumetricJacobian: null,

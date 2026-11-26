@@ -7,6 +7,7 @@ import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 import assert from 'node:assert/strict';
 import { staticServer } from './helpers/static-server.mjs';
+import {sourcePreview} from './helpers/source-preview.mjs';
 const reference=process.env.QA_REFERENCE||'c81256f653c04c042ed917279b4fa3e4bde0f841',out=process.env.QA_OUTPUT||'test-results/comparison-v076',cache=process.env.ATLAS_CACHE||'/tmp/upper-limb-atlas',baseLabel=process.env.QA_BASE_LABEL||'v075',currentLabel=process.env.QA_CURRENT_LABEL||'v076',margin=Number(process.env.QA_CAMERA_MARGIN||1);
 assert(Number.isFinite(margin)&&margin>=1);
 mkdirSync(out,{recursive:true});
@@ -28,14 +29,15 @@ window.__compare={
  diagnostics(){for(const id of ['rigAxes','rigLandmarks','rigSurface','rigAttachments'])if($(id)){$(id).checked=true;$(id).dispatchEvent(new Event('change'))}request();comparisonRender()}
 };`;
 const modes=(process.env.QA_COMPARE_MODES||'bones,muscles').split(',');
+const versions=(process.env.QA_COMPARE_ONLY||[baseLabel,currentLabel].join(',')).split(',');
 const previous=process.env.QA_COMPARE_RESUME==='1'?JSON.parse(readFileSync(join(out,'comparison.json'))):[];
-const results=previous.filter(r=>!modes.includes(r.mode)),cameras=new Map(results.map(r=>[[r.name,r.mode,r.view].join('-'),r.camera]));
+const results=previous.filter(r=>!modes.includes(r.mode)||!versions.includes(r.version)),cameras=new Map(results.map(r=>[[r.name,r.mode,r.view].join('-'),r.camera]));
 const poses=process.env.QA_POSE_SET==='contact'?[
  ['side120',{right:{elev:120}}],['front120',{right:{elev:120,plane:90}}],['both180',{right:{elev:180},left:{elev:180},neck:30}]
 ]:[['neutral',{}],['side90',{right:{elev:90}}],['front150',{right:{elev:150,plane:90}}],['asymmetric',{right:{elev:120,plane:40,axial:30,elbow:90,pronation:45},left:{elev:75,plane:90,axial:-30,elbow:30,pronation:-45},neck:60}]];
 const views=([['front',Math.PI],['side',Math.PI/2],['back',0],['oblique',Math.PI*.75]]).filter(([id])=>!process.env.QA_VIEWS||process.env.QA_VIEWS.split(',').includes(id));
 try{
- for(const version of [baseLabel,currentLabel]){
+ for(const version of versions){
   const isReference=version===baseLabel;
   const page=await browser.newPage({viewport:{width:1280,height:900}}),errors=[];
   page.on('pageerror',e=>{errors.push(String(e));console.log('PAGE ERROR',version,String(e))});
@@ -44,12 +46,13 @@ try{
    assert(existsSync(p),'Missing pinned atlas cache '+file);
    await route.fulfill({body:readFileSync(p),contentType:'application/octet-stream',headers:{'access-control-allow-origin':'*'}});
   });
+  if(!isReference&&process.env.QA_PREVIEW_SOURCE==='1')await page.route('**/source-preview/*.json.gz',route=>route.fulfill({body:readFileSync(join('test-results/v076-source-clean/packets',new URL(route.request().url()).pathname.split('/').at(-1))),contentType:'application/octet-stream'}));
   if(isReference)await page.route(/\/[^?]+\.js(?:\?.*)?$/,async route=>{
    const p=decodeURIComponent(new URL(route.request().url()).pathname).slice(1);
    await route.fulfill({body:execFileSync('git',['show',reference+':'+p]),contentType:'text/javascript'});
   });
   const source=isReference?execFileSync('git',['show',reference+':index.html'],{encoding:'utf8'}):readFileSync('index.html','utf8');
-  await page.route('**/index.html',route=>route.fulfill({body:source.replace(/\}\)\(\);\s*<\/script>/,()=>instrument+'})();</script>'),contentType:'text/html'}));
+  await page.route('**/index.html',route=>route.fulfill({body:source.replace(/\}\)\(\);\s*<\/script>/,()=>instrument+(!isReference&&process.env.QA_PREVIEW_SOURCE==='1'?sourcePreview:'')+'})();</script>'),contentType:'text/html'}));
   await page.goto(server.url,{waitUntil:'domcontentloaded',timeout:120000});
   await page.waitForFunction(()=>window.__labDeepMuscles?.().loaded.length===17&&window.__labCervicalV073?.().neckMuscles===6,null,{timeout:240000});
   console.log('Atlas loaded',version);
@@ -59,7 +62,7 @@ try{
    await page.evaluate(()=>window.__compare.draw());
    const audit=await page.evaluate(()=>window.__compare.audit());
    assert.equal(audit.glError,0);assert.deepEqual(errors,[]);
-   if(!isReference)assert.equal(audit.rig.poseCanonicalRight.diagnostics.backend,'validated-field','Unexpected CPU rig fallback: '+JSON.stringify(audit.rig));
+   if(!isReference&&process.env.QA_ALLOW_REFERENCE!=='1')assert.equal(audit.rig.poseCanonicalRight.diagnostics.backend,'validated-field','Unexpected CPU rig fallback: '+JSON.stringify(audit.rig));
    await page.screenshot({clip:await page.locator('#viewer').boundingBox(),path:join(out,version+'-'+key+'.png'),timeout:120000});
    results.push({version,reference:isReference?reference:'working-tree',name,mode,visibility:mode==='bones'?'all muscle toggles off':'all muscle toggles including v56Back and neck on',view,pose,camera,cameraMargin:margin,audit,errors});
    writeFileSync(join(out,'comparison.json'),JSON.stringify(results,null,2));console.log(version,key);

@@ -1,7 +1,7 @@
 name: Upper limb anatomy regression
 on:
   push:
-    branches: [main, feature/v0.73.0-common-engine]
+    branches: [main, feature/v0.73.0-common-engine, redesign/v076-shoulder]
   pull_request:
     branches: [main]
   workflow_dispatch:
