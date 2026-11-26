@@ -4924,6 +4924,7 @@ function v72ShoulderGuide(qC,qS,AC,elev,plane,qH,axial,data=v61GuideData()){
   return v72ShoulderGuideDiscrete(qC,qS,AC,elev,plane,qH,axial,data);
  const field=v73FieldFor(data),cv=sub(realAnchors.AC,realAnchors.SC),out=field.sample(elev,plane,axial,raw,realAnchors.SC,cv);
  const normal=p=>v66ThoraxNormal(p,data.profile),gap=p=>v63Gap(p,data.profile),model=v66Engine.build(data.v,realAnchors.AC,normal);
+ if(!model)return v72ShoulderGuideDiscrete(qC,qS,AC,elev,plane,qH,axial,data);
  model.restAC=realAnchors.AC.slice();
  const before=v66Engine.metrics(model,qS,AC,gap,normal,atlasScale),after=v66Engine.metrics(model,out.qS,out.AC,gap,normal,atlasScale);
  const audit=v67Engine.audit(out.qS,qH,norm(sub(realAnchors.EL,realAnchors.GH)),elev,plane,qS);

@@ -130,8 +130,6 @@ function refine(opts){
   }
  }
 
- // Refine a feasible legacy solution rather than restarting on an infeasible line.
- const refined=v66.minimize(evaluate,limits,2,a);if(refined.best.total<best.total){a=refined.a;best=refined.best}
  const improved=Number.isFinite(best.raw)&&(
   best.raw<beforeScore*.985 ||
   maxOut(best.m)<maxOut(beforeM)-.75 ||

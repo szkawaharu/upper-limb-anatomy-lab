@@ -1,7 +1,7 @@
-name: v073 continuous shoulder pose field (non-deploying)
+name: v073 continuous pose field from published nodes (non-deploying)
 on:
   push:
-    branches: ['experiment/v073-shoulder-pose-field']
+    branches: ['experiment/v073-shoulder-pose-field-baseline']
 permissions:
   contents: read
 jobs:
@@ -36,6 +36,9 @@ jobs:
           QA_URL=http://localhost:8731/index.html QA_INDEX="$RUNNER_TEMP/v073-baseline/index.html" QA_TRACE_ONLY=1 QA_OUTPUT=test-results/baseline-trace npm run test:browser:numeric
           QA_CAMERA_REF=test-results/baseline-trace/bone-trace-camera.json QA_TRACE_ONLY=1 QA_OUTPUT=test-results/shoulder-trace npm run test:browser:numeric
           QA_OUTPUT=test-results/shoulder-full npm run test:browser:numeric
+      - name: Reject contact or linkage regression (experimental gate)
+        run: |
+          node --input-type=module -e 'import fs from "node:fs"; const rows=JSON.parse(fs.readFileSync("test-results/shoulder-full/pose-field-audit.json")); const failures=rows.filter(x=>!x.hardOK||!x.originalGuardOK||!x.publishedRegionalOK||!x.connected); console.log("Contact and rigid-link gate",failures.length,"/",rows.length); if(failures.length) process.exit(1);'
       - name: Preserve failed regression status
         if: always() && steps.regression.outcome == 'failure'
         run: exit 1
@@ -43,5 +46,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: v073-shoulder-pose-field
+          name: v073-shoulder-pose-field-baseline
           path: test-results/

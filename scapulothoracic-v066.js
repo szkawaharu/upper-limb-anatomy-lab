@@ -79,34 +79,6 @@ function score(m){
  }
  return c;
 }
-// Deterministic bounded coordinate line minimization. No pose-history state.
-// Preserve the supplied objective and hard feasibility checks; never adopt a
-// non-finite or uphill trial. Continuous-valued trial angles replace a fixed lattice.
-// This is an experimental local optimizer, not a proof of global continuity.
-function minimize(evaluate,limits,passes=4,seed=null){
- let a=seed?seed.slice():limits.map(()=>0),best=evaluate(a);
- for(let sweep=0;sweep<passes;sweep++){
-  for(let axis=0;axis<a.length;axis++){
-   const L=limits[axis];if(L<1e-10)continue;
-   const from=a.slice();
-   const at=x=>{const p=from.slice();p[axis]=x;return {p,r:evaluate(p)}};
-   const accept=o=>{if(o.r.total<best.total-1e-8){a=o.p;best=o.r}};
-   // Survey the complete bounded line so the bracket is not tied to the
-   // previous pose or the sign/order of greedy trial steps.
-   const xs=Array.from({length:9},(_,i)=>-L+2*L*i/8).concat(from[axis]).sort((x,y)=>x-y);
-   const vals=xs.map(at);let j=0;for(let i=1;i<vals.length;i++)if(vals[i].r.total<vals[j].r.total)j=i;
-   for(const o of vals)accept(o);
-   let lo=xs[Math.max(0,j-1)],hi=xs[Math.min(xs.length-1,j+1)];
-   // Golden-section line refinement, including feasible incumbent.
-   for(let k=0;k<10&&hi-lo>1e-6;k++){
-    const x=lo+(hi-lo)*.3819660112501051,y=hi-(hi-lo)*.3819660112501051;
-    const u=at(x),v=at(y);accept(u);accept(v);
-    if(u.r.total<=v.r.total)hi=y;else lo=x;
-   }
-  }
- }
- return {a,best};
-}
 function solve(opts){
  const {baseQC,baseQS,SC,cv,restAC,elev=0,plane=0,points,gapFn,normalFn,scale=1}=opts;
  const identity={qC:baseQC,qS:baseQS,AC:add(SC,qrot(baseQC,cv)),before:null,after:null,params:[0,0,0,0,0,0],metrics:null};
@@ -128,7 +100,19 @@ function solve(opts){
   const reg=.10*(a[0]**2+a[1]**2)+.08*a[2]**2+.75*(a[3]**2+a[4]**2)+.55*a[5]**2+.002*Math.abs(plane)*a[0]*a[0];
   return {p,m,raw,total:raw+reg};
  };
- const {a,best}=minimize(evaluate,limits,4);
+ let a=[0,0,0,0,0,0],best=evaluate(a);
+ for(const step of [8,4,2,1,.5]){
+  let changed=true,loops=0;
+  while(changed&&loops++<2){changed=false;
+   for(let axis=0;axis<a.length;axis++){
+    const from=a.slice();
+    for(const sign of [-1,1]){
+     const c=from.slice();c[axis]=clamp(c[axis]+sign*step,-limits[axis],limits[axis]);
+     const t=evaluate(c);if(t.total<best.total-1e-8){a=c;best=t;changed=true}
+    }
+   }
+  }
+ }
  // Never adopt a solution that worsens the geometry-only objective.
  if(best.raw>baseScore+1e-8)return {...identity,before:baseScore,after:baseScore,metrics:baseM};
  return {...best.p,before:baseScore,after:best.raw,params:a,metrics:best.m,model};
@@ -138,5 +122,5 @@ function humeralAudit(qS,qH,restShaft){
  // Descriptive only: angle to scapular-plane normal proxy.
  return {shaftWorld:shaft,shaftInScapula:local,planeNormalAngleDeg:Math.acos(clamp(Math.abs(local[2]),-1,1))*180/Math.PI};
 }
-root.ScapulothoracicEngineV066=Object.freeze({version:'0.66.0',build,metrics,score,solve,humeralAudit,regionOf,minimize});
+root.ScapulothoracicEngineV066=Object.freeze({version:'0.66.0',build,metrics,score,solve,humeralAudit,regionOf});
 })(globalThis);
