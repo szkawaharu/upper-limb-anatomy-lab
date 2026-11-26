@@ -48,7 +48,7 @@ class ShoulderModel{
   // The proxy is calibrated against the source separation. This preserves the
   // intervening soft-tissue space, rather than forcing bone surfaces together.
   this.sigmaMm=contact?.uncertaintyMm??null;
-  this.fieldSignature=root.ShoulderPoseField?.signature({method:'linked-SC-AC-loft-v1',landmarks,contact,scale,curves:D.curves,prior:D.priorStdDeg,iterations:solverIterations});
+  this.fieldSignature=root.ShoulderPoseField?.signature({method:'linked-SC-AC-loft-mean-contact-v2',landmarks,contact,scale,curves:D.curves,prior:D.priorStdDeg,iterations:solverIterations});
   this.field=root.ShoulderPoseFieldData?.signature===this.fieldSignature?root.ShoulderPoseFieldData:null;
   this.fieldReason=this.field?'validated-field':!contact?'contact-data-unavailable':root.ShoulderPoseFieldData?'calibration-signature-mismatch':'field-not-provided';
   if(this.samples.length&&(!Number.isFinite(this.sigmaMm)||this.sigmaMm<=0))throw Error('Contact uncertainty scale must be calibrated');
@@ -61,7 +61,12 @@ class ShoulderModel{
  }
  residual(params,target){
   const r=params.map((x,j)=>(x-target[j])/D.priorStdDeg[j]);
-  if(this.samples.length){const p=this.forward(params);for(const v of this.samples){const d=(clearance(add(p.AC,qrot(p.qS,v.local)),this.contact.surface||this.contact.ellipsoid)-v.rest)/this.scale;r.push(d/this.sigmaMm);const surface=this.contact.surface,world=add(p.AC,qrot(p.qS,v.local));if(surface?.rows)r.push(Math.max(0,surface.rows[0].y-world[1],world[1]-surface.rows.at(-1).y)/(this.scale*this.sigmaMm))}}
+  // Samples approximate a spatial mean over occupied blade cells; they are
+  // not independent anatomical measurements. Squared residuals must therefore
+  // integrate to a mean, not grow with discretization density. Each channel
+  // (normal clearance and profile domain) uses 1/sqrt(N) in least squares.
+  // No anatomical angle, gap limit, prior scale or muscle coefficient changes.
+  if(this.samples.length){const p=this.forward(params),denominator=this.sigmaMm*Math.sqrt(this.samples.length);for(const v of this.samples){const d=(clearance(add(p.AC,qrot(p.qS,v.local)),this.contact.surface||this.contact.ellipsoid)-v.rest)/this.scale;r.push(d/denominator);const surface=this.contact.surface,world=add(p.AC,qrot(p.qS,v.local));if(surface?.rows)r.push(Math.max(0,surface.rows[0].y-world[1],world[1]-surface.rows.at(-1).y)/(this.scale*denominator))}}
   return r;
  }
  pose({elev=0,plane=0,axial=0,sync=true,fit=true,backend="auto"}={}){

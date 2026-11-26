@@ -1,0 +1,29 @@
+{
+  "version": "0.76.0",
+  "method": "joint-space-bicubic-v1",
+  "signature": "fnv1a32-dba3f6b7",
+  "elevationStep": 3,
+  "planeStep": 5,
+  "elevationMax": 180,
+  "planeMax": 90,
+  "elevationCount": 61,
+  "planeCount": 19,
+  "sourceAtlas": "2c83c698788cff57f6317bddcf712e7acfbea7d8",
+  "license": "CC BY-SA 2.1 Japan",
+  "referenceIterations": 24,
+  "validation": {
+    "kind": "sampled conservative bound for rigid points within source boxes; not clinical accuracy",
+    "samples": 9720,
+    "maxRigidErrorBoundMm": 0.8457468474867235,
+    "worst": {
+      "elev": 130.5,
+      "plane": 88.75,
+      "acMm": 0.18962844316248514,
+      "ghMm": 0.17451307352307427,
+      "rigidPointBoundMm": 0.8457468474867235
+    },
+    "totalMs": 104872.706375,
+    "physicalPhoneTested": false
+  },
+  "referenceSourceHash": "7d1fa43efd423827b0644b697e382908dad4164c3980ff05d77fe518470b87ae"
+}

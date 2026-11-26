@@ -1,7 +1,7 @@
 {
   "version": "0.76.0",
   "method": "joint-space-bicubic-v1",
-  "signature": "fnv1a32-dba3f6b7",
+  "signature": "fnv1a32-cb39dd9b",
   "elevationStep": 3,
   "planeStep": 5,
   "elevationMax": 180,
@@ -14,16 +14,16 @@
   "validation": {
     "kind": "sampled conservative bound for rigid points within source boxes; not clinical accuracy",
     "samples": 9720,
-    "maxRigidErrorBoundMm": 0.8457468474867235,
+    "maxRigidErrorBoundMm": 0.3672600338402756,
     "worst": {
       "elev": 130.5,
       "plane": 88.75,
-      "acMm": 0.18962844316248514,
-      "ghMm": 0.17451307352307427,
-      "rigidPointBoundMm": 0.8457468474867235
+      "acMm": 0.07480700053216673,
+      "ghMm": 0.08369894533535736,
+      "rigidPointBoundMm": 0.3672600338402756
     },
-    "totalMs": 104872.706375,
+    "totalMs": 108155.303782,
     "physicalPhoneTested": false
   },
-  "referenceSourceHash": "7d1fa43efd423827b0644b697e382908dad4164c3980ff05d77fe518470b87ae"
+  "referenceSourceHash": "1de1f7c78fb2602204f8947008d6a00f066617f96e2662d7d5451600037c4b5a"
 }

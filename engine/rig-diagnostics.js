@@ -17,9 +17,23 @@ function connections(model,bones,radialHead=null,distalUlna=null){
  }
  return rows;
 }
+function shoulderMotion(model,pose,input){
+ const degrees=x=>x*180/Math.PI,relative=q=>qmul(F.conjugate(model.thoraxFrame),q),st=q=>F.yxz(relative(qmul(q,model.scapulaFrame)));
+ const current=st(pose.qS),rest=st([0,0,0,1]),prior=model.pose({...input,fit:false,backend:'reference'}),reference=st(prior.qS);
+ const named=a=>({internalRotation:degrees(a[0]),upwardRotation:-degrees(a[1]),posteriorTilt:degrees(a[2])});
+ const delta=(a,b)=>a.map((x,i)=>Math.atan2(Math.sin(x-b[i]),Math.cos(x-b[i])));
+ const shaft=norm(sub(model.landmarks.EL,model.landmarks.GH)),world=qrot(pose.qH,shaft),thoraxUp=qrot(model.thoraxFrame,[0,1,0]);
+ const scapulaUp=qrot(qmul(pose.qS,model.scapulaFrame),[0,1,0]);
+ return {coordinateSystem:'canonical-right anatomical thorax; ST Y-X-Z decomposition',units:'degrees',
+  humerothoracicElevation:degrees(Math.acos(M.clamp(-dot(world,thoraxUp),-1,1))),
+  scapulothoracic:named(current),scapulothoracicChangeFromRest:named(delta(current,rest)),
+  unconstrainedPriorScapulothoracic:named(reference),contactChangeFromPrior:named(delta(current,reference)),
+  humeralProximalAxisToScapularYAxis:degrees(Math.acos(M.clamp(-dot(world,scapulaUp),-1,1))),
+  contributionsAreNotAdditive:true,clinicalROMorDiseaseClassification:null};
+}
 function muscle(state){
  const B=state.binding,length=c=>{let n=0,p=root.FiberPath.curve(c,0);for(let i=1;i<=32;i++){const q=root.FiberPath.curve(c,i/32);n+=M.len(sub(q,p));p=q}return n/B.definition.source.worldUnitsPerMm};
  return {id:B.definition.id,curves:B.field.controls.map((c,i)=>{const restMm=length(c),currentMm=length(state.posed[i]);return {lane:i,referenceLengthMm:restMm,currentLengthMm:currentMm,ratio:currentMm/restMm}}),attachments:B.definition.attachments.map(a=>({bone:a.bone,vertices:a.indices.length,confidence:a.confidence,coordinateFrame:'mesh-rest-atlas',units:'world'})),activation:null,force:null,anatomicalViaPointsVerified:false};
 }
-root.RigDiagnostics=Object.freeze({longBone,matrix,frames,connections,muscle});
+root.RigDiagnostics=Object.freeze({longBone,matrix,frames,connections,muscle,shoulderMotion});
 })(globalThis);
