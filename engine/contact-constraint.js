@@ -3,6 +3,7 @@
   const { sub, add, mul, len, clamp, smooth } = root.AnatomyMath;
   // Rest-relative ellipsoid envelope. This is a conservative radial proxy, not
   // exact signed distance, collision response, or an inter-muscle solver.
+  // Bone obstacles oppose new penetration, not separation; preserve rest overlap.
   function project(rest, p, t, env) {
     if (!env || t <= 0 || t >= 1) return p;
     const r = sub(rest, env.restCenter || env.center),
@@ -17,11 +18,10 @@
         smooth(t / 0.12) *
         smooth((1 - t) / 0.12) *
         (env.proximal ? 1 - smooth((t - 0.45) / 0.4) : 1),
-      target = clamp(
-        l,
-        l0 - ((env.inMm ?? 2) * scale) / avg,
-        l0 + ((env.outMm ?? 6) * scale) / avg,
-      ),
+      target = env.unilateral
+        ? Math.max(l, Math.min(l0, 1) - ((env.inMm ?? 2) * scale) / avg)
+        : clamp(l, l0 - ((env.inMm ?? 2) * scale) / avg,
+                   l0 + ((env.outMm ?? 6) * scale) / avg),
       d = mul(v, target / l - 1),
       cap = (env.maxMm ?? 20) * scale,
       n = len(d);

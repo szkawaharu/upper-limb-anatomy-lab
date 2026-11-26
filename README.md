@@ -2,7 +2,7 @@
 
 スマートフォン対応の上肢骨格・筋肉・腱を観察する教育用Webアプリ。動作と形態は**解剖学的に未検証の近似を含み、臨床用・診断用ではありません**。
 
-**現在の公開バージョン：v0.73.0（検証継続中）**
+**バージョン：v0.74.0（検証継続中）**
 
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
@@ -11,6 +11,9 @@
 - **v0.54の保存ブランチ**：[`archive/v0.54-before-anatomy-rebuild`](../../tree/archive/v0.54-before-anatomy-rebuild)
 - **v0.53の保存ブランチ**：[`archive/v0.53-before-review`](../../tree/archive/v0.53-before-review)
 - **v0.51の保存ブランチ**：[`archive/v0.51-before-scapular-fix`](../../tree/archive/v0.51-before-scapular-fix)
+
+## v0.74.0 肩周辺の手動修正（検証継続中）
+上腕骨頭の接触近似を片側拘束へ変更。骨格・元メッシュ・厚みの式は変更なし。肩甲帯の不連続と医学的正確性は未解決。[修正内容と限界](docs/MANUAL_V074_HEAD_CONTACT.md)
 
 ## v0.73.0 公開版（検証継続中）
 

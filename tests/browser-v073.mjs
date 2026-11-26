@@ -50,6 +50,8 @@ await page.route("**/*.stl", async (route) => {
 });
 const instrument = String.raw`
 let qaSkipDraw=false;const qaOriginalRender=render;render=()=>{if(!qaSkipDraw)qaOriginalRender();else{lastW=canvas.clientWidth;lastH=canvas.clientHeight;proj=ortho(state.zoom,lastW/lastH,.01,100);const eye=add(state.target,[18*Math.sin(state.yaw)*Math.cos(state.pitch),18*Math.sin(state.pitch),18*Math.cos(state.yaw)*Math.cos(state.pitch)]);view=lookAt(eye,state.target);pv=mm(proj,view)}};
+const qaContactCurrent=v73Contact;let qaLegacyHead=false;
+v73Contact=(spec,b)=>{const c=qaContactCurrent(spec,b);return qaLegacyHead&&c?.unilateral?{...c,unilateral:false}:c};
 const qaExport=(f,id)=>{const B=f.binding,samples=[];for(let i=0;i<B.weights.length;i+=Math.max(1,Math.floor(B.weights.length/80))){const p=Array.from(B.rest.slice(i*3,i*3+3)),t=B.weights[i],l=B.lane[i],materialT=B.material[i],q=MuscleDeformation.point(f,p,t,l,materialT);samples.push({p,t,l,materialT,q,originBlend:B.originBlend?.[i]||0})}return {id,samples,state:{a:f.a,b:f.b,rest:Array.from(f.restFlat),now:Array.from(f.nowFlat),sheet:B.sheet,blendRange:B.blendRange,lanes:B.field.controls.length,tendonStart:B.definition.tissues.tendonStart,reference:B.reference,contact:f.contact,multiBone:!!f.originAt,originMix:f.originMix}}};
 window.__qa={
  ensureGPU(){if(!v73Renderer)v73Renderer=new MuscleRenderer(gl,shaderFS,(v,f)=>gpu(mesh(v,f)))},
@@ -58,6 +60,9 @@ window.__qa={
  both(right,left){v56ChooseSide('right');this.pose(right);v56ChooseSide('left');this.pose(left);v56ChooseSide('right')},
  neck(n){v73SetNeck(n)},
  view(yaw){state.yaw=yaw;state.pitch=.1;fitPose();request()},
+ legacyHead(value){qaLegacyHead=value;v56Other.key=null;v56RefreshOther();request()},
+ camera(yaw,prior){if(prior)Object.assign(state,prior);else{state.yaw=yaw;state.pitch=.1;fitPose()}return {yaw:state.yaw,pitch:state.pitch,zoom:state.zoom,target:state.target.slice()}},
+ headContactAudit(){return V60_ALL.filter(s=>MuscleDefinitions.configs[s.id]?.[1]==='head').map(s=>{const m=v58Meshes.get(s.id),f=v73MuscleState(s,m),B=f.binding,now=MuscleDeformation.deform(f),env=f.contact;let outward=0,inward=0,newPenetration=0,largestCorrection=0;for(let i=0;i<B.weights.length;i++){const p=Array.from(B.rest.slice(i*3,i*3+3)),q=Array.from(now.slice(i*3,i*3+3)),pre=MuscleDeformation.point({...f,contact:null},p,B.weights[i],B.lane[i],B.material[i]);const a=len(sub(pre,env.center)),b=len(sub(q,env.center)),rr=len(sub(p,env.restCenter)),c=(b-a)/atlasScale;if(c>1e-4)outward++;if(c< -1e-4)inward++;largestCorrection=Math.max(largestCorrection,Math.abs(c));newPenetration=Math.max(newPenetration,(Math.min(rr,env.radii[0])-b)/atlasScale)}return {id:s.id,outward,inward,largestCorrection,newPenetration,geometry:DeformationAudit.audit(f,now)}})},
  sample(){return V60_ALL.map(spec=>{const m=v58Meshes.get(spec.id);return m?.common?qaExport(v73MuscleState(spec,m),spec.id):{id:spec.id,error:'missing'}})},
  neckSamples(){return [...v73NeckMuscles.values()].map(m=>qaExport(v73NeckMuscleState(m),m.spec.id))},
 
@@ -103,6 +108,29 @@ try {
     [],
     "missing common binding",
   );
+  if(process.env.QA_HEAD_COMPARE==="1"){
+    const result=[];
+    await page.evaluate(()=>window.__qa.skipRender(false));
+    for(const [elev,plane] of [[0,0],[90,0],[150,0],[180,0],[150,90],[180,90]]){
+      await page.evaluate(([e,p])=>window.__qa.both({elev:e,plane:p},{elev:0,plane:0}),[elev,plane]);
+      const cameras={};
+      for(const legacy of [true,false]){
+        await page.evaluate(x=>window.__qa.legacyHead(x),legacy);
+        const metrics=await page.evaluate(()=>window.__qa.headContactAudit());
+        result.push({elev,plane,legacy,metrics});
+        for(const [name,yaw] of [["front",Math.PI],["side",Math.PI/2],["back",0]]){
+          const cam=await page.evaluate(([y,c])=>window.__qa.camera(y,c),[yaw,cameras[name]||null]);
+          if(cameras[name])assert.deepEqual(cam,cameras[name]);else cameras[name]=cam;
+          await page.evaluate(()=>window.__qa.render());
+          await page.screenshot({path:join(out,`${elev}-${plane}-${legacy?"before":"after"}-${name}.png`)});
+        }
+      }
+    }
+    writeFileSync(join(out,"head-contact-compare.json"),JSON.stringify(result,null,2));
+    assert.equal(errors.length,0,errors.join("\n"));
+    console.log("HEAD_CONTACT_COMPARE "+JSON.stringify(result.map(x=>({...x,metrics:x.metrics.map(({geometry,...m})=>m)}))));
+  }
+  await page.evaluate(()=>{window.__qa.legacyHead(false);window.__qa.skipRender(true)});
   const rows = [],
     paths = [],
     cases = [
@@ -358,6 +386,7 @@ try {
           if (c) {
             for (const [name, v] of Object.entries({
               contactProximal: c.proximal ? 1 : 0,
+              contactUnilateral: c.unilateral ? 1 : 0,
               unitScale: c.scale,
               contactIn: c.inMm ?? 2,
               contactOut: c.outMm ?? 6,

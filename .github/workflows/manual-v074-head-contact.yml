@@ -1,0 +1,29 @@
+name: Manual v0.74 shoulder contact check
+on:
+  push:
+    branches: ['fix/v074-head-contact']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci
+      - run: npm test
+      - run: npm run build:pages
+      - run: npx playwright install --with-deps chromium
+      - name: Actual mesh before and after, same bones and camera
+        run: |
+          export CHROME_PATH="$(node -e 'console.log(require("playwright").chromium.executablePath())')"
+          python3 -m http.server 8730 > /tmp/anatomy-server.log 2>&1 &
+          QA_HEAD_COMPARE=1 npm run test:browser:numeric
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: manual-v074-head-contact
+          path: test-results/

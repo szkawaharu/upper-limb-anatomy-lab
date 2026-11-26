@@ -1,0 +1,14 @@
+import assert from "node:assert/strict";
+import "../engine/math.js";
+import "../engine/contact-constraint.js";
+const C=globalThis.ContactConstraint,env={center:[0,0,0],restCenter:[0,0,0],radii:[1,1,1],scale:0.01,inMm:1,outMm:10,maxMm:15,unilateral:true};
+const eq=(a,b)=>assert(Math.hypot(...a.map((x,i)=>x-b[i]))<1e-10);
+eq(C.project([3,0,0],[2,0,0],.5,env),[2,0,0]);
+eq(C.project([1,0,0],[1.5,0,0],.5,env),[1.5,0,0]);
+eq(C.project([2,0,0],[.95,0,0],.5,env),[.99,0,0]);
+eq(C.project([.8,0,0],[.76,0,0],.5,env),[.79,0,0]);
+eq(C.project([.8,0,0],[.8,0,0],.5,env),[.8,0,0]);
+eq(C.project([2,0,0],[.95,0,0],0,env),[.95,0,0]);
+eq(C.project([2,0,0],[.95,0,0],1,env),[.95,0,0]);
+assert(C.project([3,0,0],[2,0,0],.5,{...env,unilateral:false})[0]>2);
+console.log("unilateral shoulder obstacle: separation free, inward only, rest and attachment preserved");

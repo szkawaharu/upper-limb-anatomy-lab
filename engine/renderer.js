@@ -52,6 +52,7 @@
             "reference",
             "contactOn",
             "contactProximal",
+            "contactUnilateral",
             "unitScale",
             "contactIn",
             "contactOut",
@@ -142,6 +143,7 @@
       gl.uniform1f(u.contactOn, c ? 1 : 0);
       if (c) {
         gl.uniform1f(u.contactProximal, c.proximal ? 1 : 0);
+        gl.uniform1f(u.contactUnilateral, c.unilateral ? 1 : 0);
         gl.uniform1f(u.unitScale, c.scale || 0.00555);
         gl.uniform1f(u.contactIn, c.inMm ?? 2);
         gl.uniform1f(u.contactOut, c.outMm ?? 6);

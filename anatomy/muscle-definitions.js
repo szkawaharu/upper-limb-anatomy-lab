@@ -85,7 +85,7 @@
         aponeurosis: null,
       },
       viaPoints: [],
-      obstacles: c[1] ? [{ kind: c[1], method: "rest-relative-envelope" }] : [],
+      obstacles: c[1] ? [{ kind: c[1], method: c[1] === "head" ? "unilateral-bone-envelope" : "rest-relative-envelope" }] : [],
       fascia:
         c[1] === "thorax"
           ? { kind: "rest-relative-envelope", measured: false }

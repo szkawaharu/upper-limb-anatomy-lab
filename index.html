@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,minimum-scale=1">
-<meta name="app-version" content="0.73.0"><meta name="release-status" content="validation-in-progress">
+<meta name="app-version" content="0.74.0"><meta name="release-status" content="validation-in-progress">
 <meta name="theme-color" content="#0b1220"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="上肢3D"><title>上肢3D解剖ラボ | 両上肢・頭部・頸椎</title>
 <style>
 :root {color-scheme:dark; --bg:#090f1a;--panel:#111d2d;--border:#29394b;--txt:#e7edf5;--mute:#93a5bb;--accent:#63d7d0;--accent2:#e9b875}
@@ -252,7 +252,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 </head>
 <body>
 <div class="app">
-<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.73.0</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.73.0</div></header>
+<header class="header"><div><div class="eyebrow">INTERACTIVE ANATOMY / BIOMECHANICS</div><h1>上肢 3D 解剖ラボ <span style="font-size:10px;color:#79b5b8;vertical-align:middle">v0.74.0</span></h1><p class="sub">肩甲骨・鎖骨・上腕骨・橈骨・尺骨 — 肩・肘・前腕の連動を探る</p></div><div class="pill">ANATOMICAL MESH · v0.74.0</div></header>
 <main class="layout">
 <div class="viewer-column">
 <div class="sr-only" aria-live="polite" aria-label="モデルの読み込み状況"><span id="modelLoadState">実骨格メッシュを読み込み中…</span><span class="badgeLive">3D描画準備中</span></div>
@@ -262,7 +262,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
  <button type="button" id="controlToggle" class="view-action" aria-expanded="false" aria-controls="labTools">☷ 調節</button>
  <button type="button" id="immersiveToggle" class="view-action" aria-pressed="false">⛶ 全画面</button>
 </div><button type="button" id="edgeMenuButton" aria-label="設定メニューを開く" aria-controls="labTools" aria-expanded="false">☰</button>
-<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.73.0</div><button id="v56QuickSide" type="button" aria-label="操作中の腕（直接操作で自動選択／手動切替も可）：右）">右</button>
+<div id="edgeBrand" aria-hidden="true">上肢3D解剖ラボ · v0.74.0</div><button id="v56QuickSide" type="button" aria-label="操作中の腕（直接操作で自動選択／手動切替も可）：右）">右</button>
 <nav class="edge-rail" aria-label="3Dモデルのクイック操作（つかむ・ひねる・移動）">
  <button type="button" id="edgeQuickGrab" aria-label="骨をつかんで曲げ伸ばし" aria-pressed="false" title="曲げ伸ばし：骨をドラッグ">✋</button>
  <button type="button" id="edgeQuickTwist" aria-label="前腕の回内・回外や肩の回旋を操作する" aria-pressed="false" title="ひねる：前腕や上腕を左右にドラッグ">↻</button>
@@ -277,7 +277,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 
 </div>
 <section class="side" id="labTools">
-<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.73.0</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
+<div class="edge-drawer-head"><div><strong>☰ 操作メニュー</strong><small>上肢3D 解剖ラボ v0.74.0</small></div><button type="button" id="edgeMenuClose" aria-label="メニューを閉じる">×</button></div>
 <details class="control-fold" open><summary>両上肢・胸郭<span class="fold-note">v0.68.0</span></summary><div class="fold-body">
 <div class="control"><label>両腕の姿勢（左右を同時設定）</label><div style="display:flex;flex-wrap:wrap;gap:6px"><button type="button" id="v572Forward">前ならえ</button><button type="button" id="v572T">T字</button><button type="button" id="v572Up">バンザイ</button><button type="button" id="v572Neutral">基本肢位</button></div><div class="detail">前ならえ：肩前方挙上90°、肘伸展、手首中立、手掌内向きの近似。</div></div>
 <div class="control"><label for="v572Quality">描画品質</label><select id="v572Quality"><option value="auto">自動（操作中軽量／停止後高精細）</option><option value="light">軽量優先</option><option value="high">常に高精細</option></select><div id="v572QualityStatus" class="detail" role="status">自動品質</div></div>
@@ -529,17 +529,17 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <script src="./joint-drag-v071.js?v=0710"></script>
 <script src="./engine/math.js?v=0730"></script>
 <script src="./anatomy/bone-transforms.js?v=0730"></script>
-<script src="./anatomy/muscle-definitions.js?v=0730"></script>
+<script src="./anatomy/muscle-definitions.js?v=0740"></script>
 <script src="./engine/fiber-path.js?v=0730"></script>
 <script src="./engine/volume-constraint.js?v=0730"></script>
-<script src="./engine/contact-constraint.js?v=0730"></script>
+<script src="./engine/contact-constraint.js?v=0740"></script>
 <script src="./engine/tendon-deformation.js?v=0730"></script>
 <script src="./engine/procedural-adapter.js?v=0730"></script>
 <script src="./engine/material-coordinates.js?v=0730"></script>
 <script src="./engine/muscle-deformation.js?v=0730"></script>
 <script src="./engine/deformation-audit.js?v=0730"></script>
-<script src="./engine/gpu-deformation.js?v=0730"></script>
-<script src="./engine/renderer.js?v=0730"></script>
+<script src="./engine/gpu-deformation.js?v=0740"></script>
+<script src="./engine/renderer.js?v=0740"></script>
 <script src="./engine/cervical-kinematics.js?v=0730"></script>
 <script src="./anatomy/cervical-data.js?v=0730"></script>
 <script>
@@ -3872,7 +3872,7 @@ function v572Preset(name){
  feedbackJoint({forward:'両腕：前ならえ',t:'両腕：T字',up:'両腕：バンザイ',neutral:'両腕：基本肢位'}[name]);
 }
 for(const [id,p] of [['v572Forward','forward'],['v572T','t'],['v572Up','up'],['v572Neutral','neutral']])$(id).addEventListener('click',()=>v572Preset(p));
-window.__labPerformance=()=>({version:'v0.73.0',moving:v572Moving,mode:$('v572Quality').value,pixelRatio:v572RenderScale(),pendingPose:v572Pending,geometryUnchanged:true,autoFitOnJointEnd:$('v572Fit').checked,dragEngine:v71DragEngine?.version||v681DragEngine?.version||null});
+window.__labPerformance=()=>({version:'v0.74.0',moving:v572Moving,mode:$('v572Quality').value,pixelRatio:v572RenderScale(),pendingPose:v572Pending,geometryUnchanged:true,autoFitOnJointEnd:$('v572Fit').checked,dragEngine:v71DragEngine?.version||v681DragEngine?.version||null});
 window.__labForwardPose=()=>({realReady,forwardAxis:realReady?'world -Z':'world +Z',palm:v572ChoosePalm(),clinicalValidation:false});
 
 
@@ -5302,7 +5302,7 @@ function v73Contact(spec,b){
  if(!$('v62Route').checked)return null;
  const kind=MuscleDefinitions.configs[spec.id]?.[1];
  if(kind==='thorax'){const e=v61GuideData()?.e;if(e)return {center:e.c,radii:e.r,scale:atlasScale,proximal:MuscleDefinitions.configs[spec.id]?.[0]==='fan',inMm:2,outMm:6,maxMm:20}}
- if(kind==='head'){const radius=v62HeadRadius();if(radius)return {center:b.p,restCenter:realAnchors.GH,radii:[radius,radius,radius],scale:atlasScale,inMm:1,outMm:10,maxMm:15}}
+ if(kind==='head'){const radius=v62HeadRadius();if(radius)return {center:b.p,restCenter:realAnchors.GH,radii:[radius,radius,radius],scale:atlasScale,inMm:1,outMm:10,maxMm:15,unilateral:true}}
  return null;
 }
 function v73MuscleState(spec,m,side=v56Side){
