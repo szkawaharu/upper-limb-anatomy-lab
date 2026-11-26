@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-for (const p of ['engine/math.js','anatomy/shoulder-rig-data.js','engine/joint-frames.js','engine/shoulder-kinematics.js']) await import('../'+p);
+for (const p of ['engine/math.js','anatomy/shoulder-rig-data.js','engine/joint-frames.js','anatomy/thorax-contact-data-v076.js','engine/convex-contact.js','engine/shoulder-kinematics.js']) await import('../'+p);
 const M=globalThis.AnatomyMath,F=globalThis.JointFrames,K=globalThis.ShoulderKinematics,D=globalThis.ShoulderRigData;
 const scale=.00555,map=p=>[-(p[0]+14)*scale,1.7+(p[2]-1341)*scale,(p[1]+72)*scale+.08],L=Object.fromEntries(Object.entries(D.landmarks).map(([k,p])=>[k,map(p)]));
 const fixture=JSON.parse(readFileSync(new URL('./fixtures/shoulder-v076-atlas.json',import.meta.url))),original=JSON.stringify(fixture);

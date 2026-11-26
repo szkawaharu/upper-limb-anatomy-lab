@@ -68,6 +68,7 @@
       maxDet = -Infinity,
       bounded = 0,
       invalidFrames = 0;
+    let worstEdge = null, worstArea = null;
     for (let i = 0; i < B.weights.length; i++) {
       const p = now.slice(3 * i, 3 * i + 3),
         r = rest.slice(3 * i, 3 * i + 3),
@@ -112,14 +113,14 @@
       if (a < 1e-12) degenerate++;
       if (a0 > 1e-12) {
         minArea = Math.min(minArea, a / a0);
-        maxArea = Math.max(maxArea, a / a0);
+        if(a/a0>maxArea){maxArea=a/a0;worstArea={triangle:i/3,vertices:ids.slice(),restAreaMm2:a0/(2*scale*scale),ratio:a/a0};}
       }
       for (let j = 0; j < 3; j++) {
         const d0 = len(sub(r[j], r[(j + 1) % 3]));
         if (d0 > 1e-9) {
           const q = len(sub(p[j], p[(j + 1) % 3])) / d0;
           minEdge = Math.min(minEdge, q);
-          maxEdge = Math.max(maxEdge, q);
+          if(q>maxEdge){maxEdge=q;worstEdge={vertices:[ids[j],ids[(j+1)%3]],restLengthMm:d0/scale,ratio:q};}
         }
       }
     }
@@ -139,6 +140,8 @@
       volumeStatus: validVolume ? "closed-oriented-proxy" : "not-evaluable",
       areaRatio: [minArea, maxArea],
       edgeRatio: [minEdge, maxEdge],
+      worstEdge,
+      worstArea,
       newDegenerateFaces: Math.max(0, degenerate - t.degenerate),
       stretch: [minStretch, maxStretch],
       localDeterminantApprox: [minDet, maxDet],

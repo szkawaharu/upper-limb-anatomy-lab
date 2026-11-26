@@ -545,9 +545,12 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <script src="./engine/joint-frames.js?v=0760"></script>
 <script src="./engine/pose-field.js?v=0760"></script>
 <script src="./anatomy/shoulder-pose-field-v076.js?v=0760"></script>
+<script src="./anatomy/thorax-contact-data-v076.js?v=0760"></script>
+<script src="./engine/convex-contact.js?v=0760"></script>
 <script src="./engine/shoulder-kinematics.js?v=0760"></script>
 <script src="./engine/rig-diagnostics.js?v=0760"></script>
 <script src="./anatomy/muscle-definitions.js?v=0740"></script>
+<script src="./anatomy/rest-attachments-v076.js?v=0760"></script>
 <script src="./engine/fiber-path.js?v=0760"></script>
 <script src="./engine/volume-constraint.js?v=0730"></script>
 <script src="./engine/contact-constraint.js?v=0740"></script>
@@ -3973,11 +3976,12 @@ function v58Parse(buffer,spec){
  const oldWeights=vertices.map(p=>spec.layer?v60Weight(spec,p,box,context):v59Weight(spec,p,box,context));
  const refined=vertices.map((p,i)=>v601Weight(spec,p,box,context,oldWeights[i]));
  const v601Weights=v601SmoothWeights(vertices,faces,refined);
+ const commonWeights=RestAttachmentsV076.field(spec.id,oldWeights,v601Weights,(values,passes)=>v601SmoothWeights(vertices,faces,values,passes));
  const selection=v61SelectWeights(spec,vertices,faces,oldWeights,v601Weights);
  const weights=selection.weights;
  const samples=v601EdgeSamples(vertices,faces,oldWeights,weights);
  const nonlinear=v62SelectMode(spec,samples);
- return {data,box,weights,nonlinear,bounds:v60WeightBounds(vertices,weights),samples,selection:selection.report,originalTriangles:count,attachmentMode:context.mode+' / v0.66.0'};
+ return {data,box,weights,commonWeights,nonlinear,bounds:v60WeightBounds(vertices,weights),samples,selection:selection.report,originalTriangles:count,attachmentMode:context.mode+' / v0.66.0'};
 }
 function v58Anchor(name){
  if(name==='trunk')return {q:ID,p:OR,rest:OR};
@@ -4871,12 +4875,14 @@ function v76ShoulderModel(){
 }
 function v76SelectedMuscle(){const spec=V60_ALL.find(s=>s.id===$('rigMuscleSelect').value),m=spec&&v58Meshes.get(spec.id);return m?.common?v73MuscleState(spec,m):null}
 window.__labShoulderV076=()=>{
+ v572FlushPose();
  const model=v76ShoulderModel(),pose=model.pose({elev:settings.elev,plane:settings.plane,axial:settings.axial,sync:settings.sync,fit:$('v61Scap').checked,backend:$('rigBackend').value||'auto'}),bones=Object.fromEntries(ids.map(id=>[id,v58Anchor(id)])),frames=RigDiagnostics.frames(model,bones),left=v56Side==='left';
  const actual=Object.fromEntries(Object.entries(bones).map(([id,a])=>[id,left?{q:[a.q[0],-a.q[1],-a.q[2],a.q[3]],p:v56Reflect(a.p),rest:v56Reflect(a.rest)}:a]));
  const displayFrames=Object.fromEntries(Object.entries(frames).map(([id,f])=>{if(!left)return [id,f];const axes=f.axes.map((a,j)=>[-a[0],a[1],a[2]].map(x=>j===2?-x:x));return [id,{origin:v56Reflect(f.origin),axes,q:JointFrames.basis(...axes)}]}));
  const connections=RigDiagnostics.connections(model,bones,RADIAL_HEAD_REF,DISTAL_ULNA_REF).map(r=>left?{...r,restPivot:v56Reflect(r.restPivot),parentMeshLocal:[-r.parentMeshLocal[0],...r.parentMeshLocal.slice(1)],childMeshLocal:[-r.childMeshLocal[0],...r.childMeshLocal.slice(1)],parentWorld:v56Reflect(r.parentWorld),childWorld:v56Reflect(r.childWorld)}:r);
  const selected=v76SelectedMuscle();
- return {version:'0.76.0',side:v56Side,units:{source:'mm',worldUnitsPerMm:atlasScale},landmarks:model.landmarks,landmarkCoordinateSpace:'canonical right rest world',calibration:ShoulderRigData.confidence,frames:displayFrames,bones:actual,worldMatrices:Object.fromEntries(Object.entries(actual).map(([id,a])=>[id,RigDiagnostics.matrix(a)])),connections,hierarchy:{clavicle:'thorax/SC',scapula:'clavicle/AC',humerus:'scapula/GH',ulna:'humerus/elbow',radius:'ulna/PRUJ-DRUJ axis'},motion:RigDiagnostics.shoulderMotion(model,pose,{elev:settings.elev,plane:settings.plane,axial:settings.axial,sync:settings.sync}),poseCanonicalRight:pose,contact:model.contact?{surface:model.contact.surface,ellipsoid:model.contact.ellipsoid,samples:model.samples.length,numericalScaleMm:model.sigmaMm,scaleMethod:'1.4826 × MAD of source clearance, floor0.05mm; numerical weight, not tissue thickness'}:null,muscle:selected?RigDiagnostics.muscle(selected):null,exactBoneCollision:false,medicalValidation:false};
+ const sourceBoneSafeguard=model.body?{enabled:settings.sync&&$('v61Scap').checked,method:'source-conservative target-tangent halfspaces',sourceAtlas:model.body.sourceCommit,samples:model.bodySamples.length,minimumTangentSupportMm:Math.min(...model.bodySamples.map((v,i)=>dot(model.bodyPlanes(pose.prior)[i].n,add(pose.AC,qr(pose.qS,v)))/atlasScale-model.bodyPlanes(pose.prior)[i].h)),supportIsNotEuclideanDistance:true,numericalResidualScaleMm:model.body.residualScaleMm,liveExactTriangleCollision:false}:null;
+ return {sourceBoneSafeguard,version:'0.76.0',side:v56Side,units:{source:'mm',worldUnitsPerMm:atlasScale},landmarks:model.landmarks,landmarkCoordinateSpace:'canonical right rest world',calibration:ShoulderRigData.confidence,frames:displayFrames,bones:actual,worldMatrices:Object.fromEntries(Object.entries(actual).map(([id,a])=>[id,RigDiagnostics.matrix(a)])),connections,hierarchy:{clavicle:'thorax/SC',scapula:'clavicle/AC',humerus:'scapula/GH',ulna:'humerus/elbow',radius:'ulna/PRUJ-DRUJ axis'},motion:RigDiagnostics.shoulderMotion(model,pose,{elev:settings.elev,plane:settings.plane,axial:settings.axial,sync:settings.sync}),poseCanonicalRight:pose,contact:model.contact?{surface:model.contact.surface,ellipsoid:model.contact.ellipsoid,samples:model.samples.length,numericalScaleMm:model.sigmaMm,scaleMethod:'1.4826 × MAD of source clearance, floor0.05mm; numerical weight, not tissue thickness'}:null,muscle:selected?RigDiagnostics.muscle(selected):null,exactBoneCollision:false,medicalValidation:false};
 };
 let v76Marker=null,v76Axes=null,v76Surface=null,v76SurfaceKey=null;
 const v76Paths=new Map();
@@ -5401,9 +5407,10 @@ function v73SkeletonSnapshot(side){const transforms={trunk:{q:ID,p:OR,rest:OR}};
 function v73Enabled(){return Boolean(v73System&&$('v62Mode').value==='common')}
 function v73Binding(spec,parsed){
  if(!v73System)return null;
- const a=v58Anchor(spec.a),b=v58Anchor(spec.b),def=MuscleDefinitions.create(spec,parsed.data.vertices,parsed.data.faces,parsed.weights,[a,b]);
- const field=spec.id==='v58Serratus'?v65BuildSerratus(spec,parsed.data,parsed.weights):null;
- try{return v73System.register(MuscleDeformation.bind(def,parsed.weights,field))}catch(e){v73System.fallback(spec.id,String(e));return null}
+ const weights=parsed.commonWeights||parsed.weights,a=v58Anchor(spec.a),b=v58Anchor(spec.b),def=MuscleDefinitions.create(spec,parsed.data.vertices,parsed.data.faces,weights,[a,b]);
+ def.attachmentFieldSource={commit:RestAttachmentsV076.sourceCommit,choice:RestAttachmentsV076.choices[spec.id],confidence:RestAttachmentsV076.confidence,poseDependent:false};
+ const field=spec.id==='v58Serratus'?v65BuildSerratus(spec,parsed.data,weights):null;
+ try{return v73System.register(MuscleDeformation.bind(def,weights,field))}catch(e){v73System.fallback(spec.id,String(e));return null}
 }
 function v73Contact(spec,b){
  if(!$('v62Route').checked)return null;

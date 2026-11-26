@@ -1,0 +1,1143 @@
+{
+  "method": "Locate missing fixed ends and source-surface distances. Minimum-distance\nregions are candidates, not histologically measured anatomical footprints.\n",
+  "muscles": [
+    {
+      "id": "v58RhomboidMajor",
+      "name": "\u5927\u83f1\u5f62\u7b4b",
+      "fixedOrigin": 0,
+      "fixedInsertion": 0,
+      "weightRange": [
+        0.13258814811706543,
+        0.6941310167312622
+      ],
+      "ends": [
+        {
+          "bone": "trunk",
+          "centroidMm": [
+            -4.667958573035532,
+            0.14455590204080232,
+            1297.8685028986242
+          ],
+          "candidateBoxMm": [
+            [
+              -7.800000027493314,
+              -1.0765596939636737,
+              1293.1999616880673
+            ],
+            [
+              -1.3999996228261047,
+              0.7015649950182166,
+              1303.1999457075788
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask"
+        },
+        {
+          "bone": "scapula",
+          "centroidMm": [
+            -82.40072945164168,
+            4.508742285008288,
+            1210.2082166627195
+          ],
+          "candidateBoxMm": [
+            [
+              -85.41089654183602,
+              2.1015599654601544,
+              1206.2900425163475
+            ],
+            [
+              -79.39999901711404,
+              7.199996295275994,
+              1216.4000320090904
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.00021728671585871618,
+            "max": 2.8254443473704622,
+            "median": 0.7072650913425416
+          },
+          "nearestBonePatchMm": [
+            -83.09769243544416,
+            4.767036010829318,
+            1210.593412094626
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v58RhomboidMinor",
+      "name": "\u5c0f\u83f1\u5f62\u7b4b",
+      "fixedOrigin": 0,
+      "fixedInsertion": 0,
+      "weightRange": [
+        0.03266153112053871,
+        0.6315946578979492
+      ],
+      "ends": [
+        {
+          "bone": "trunk",
+          "centroidMm": [
+            -12.398156021092397,
+            -16.203448009204575,
+            1377.1448041669596
+          ],
+          "candidateBoxMm": [
+            [
+              -16.200000726424896,
+              -18.999998565192698,
+              1374.4000243796959
+            ],
+            [
+              -10.399999604568826,
+              -14.239101727803543,
+              1380.4000319747236
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask"
+        },
+        {
+          "bone": "scapula",
+          "centroidMm": [
+            -61.56148419938647,
+            -7.453688990962396,
+            1328.0790667720028
+          ],
+          "candidateBoxMm": [
+            [
+              -62.668298635396866,
+              -8.154691807858583,
+              1324.8000460787935
+            ],
+            [
+              -60.20000048800632,
+              -6.199997755858277,
+              1330.5999753797375
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.0004795090429803251,
+            "max": 2.4154682439977013,
+            "median": 0.4070049657270908
+          },
+          "nearestBonePatchMm": [
+            -62.177699926918564,
+            -7.2067940027973965,
+            1327.8922316958733
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v58Levator",
+      "name": "\u80a9\u7532\u6319\u7b4b",
+      "fixedOrigin": 3729,
+      "fixedInsertion": 0,
+      "weightRange": [
+        0.0,
+        0.9375855922698975
+      ],
+      "ends": [
+        {
+          "bone": "trunk",
+          "centroidMm": [
+            -36.04536220463685,
+            -72.47398931137074,
+            1436.732503191762
+          ],
+          "candidateBoxMm": [
+            [
+              -41.770300706227616,
+              -82.48979960583351,
+              1400.219961767798
+            ],
+            [
+              -31.369400273572218,
+              -58.14110151926676,
+              1476.5699676651138
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask"
+        },
+        {
+          "bone": "scapula",
+          "centroidMm": [
+            -71.15474844336862,
+            -29.891694678531046,
+            1353.619743971716
+          ],
+          "candidateBoxMm": [
+            [
+              -75.06980212099917,
+              -34.01490260459281,
+              1350.0500556670868
+            ],
+            [
+              -65.3932028332272,
+              -26.424798810804212,
+              1359.260015023721
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 7.245349327982903,
+            "max": 15.859105074679468,
+            "median": 10.288111611461131
+          },
+          "nearestBonePatchMm": [
+            -78.24722769493422,
+            -22.932744560054317,
+            1350.0082140279042
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v58Serratus",
+      "name": "\u524d\u92f8\u7b4b",
+      "fixedOrigin": 56807,
+      "fixedInsertion": 0,
+      "weightRange": [
+        0.0,
+        0.4701906740665436
+      ],
+      "ends": [
+        {
+          "bone": "trunk",
+          "centroidMm": [
+            -112.53937996231892,
+            -79.36256667840242,
+            1242.9380701932382
+          ],
+          "candidateBoxMm": [
+            [
+              -141.85499160354203,
+              -157.2299947996397,
+              1099.5400407378738
+            ],
+            [
+              -63.948396983447374,
+              -0.8859375962265972,
+              1364.020009736757
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask"
+        },
+        {
+          "bone": "scapula",
+          "centroidMm": [
+            -86.5329803081092,
+            -27.96089894724416,
+            1295.5172817320472
+          ],
+          "candidateBoxMm": [
+            [
+              -136.19799531472694,
+              -68.40000194042652,
+              1146.5999751563543
+            ],
+            [
+              -63.50159841829592,
+              -4.379682643993476,
+              1350.5400380658673
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 2.6379020211601387e-05,
+            "max": 82.60201388313398,
+            "median": 1.1264508895697958
+          },
+          "nearestBonePatchMm": [
+            -80.18274198234596,
+            -15.5484011535276,
+            1306.2639738419957
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v58Subscap",
+      "name": "\u80a9\u7532\u4e0b\u7b4b",
+      "fixedOrigin": 12377,
+      "fixedInsertion": 0,
+      "weightRange": [
+        0.0,
+        0.8788349628448486
+      ],
+      "ends": [
+        {
+          "bone": "scapula",
+          "centroidMm": [
+            -107.07039944890441,
+            -40.81249318329457,
+            1299.890327151323
+          ],
+          "candidateBoxMm": [
+            [
+              -145.08098829114758,
+              -80.75579846334887,
+              1225.640019219201
+            ],
+            [
+              -63.69950194831367,
+              3.24935748126056,
+              1331.780039950534
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.00128587618617837,
+            "max": 12.833411504367524,
+            "median": 2.5918652640032205
+          },
+          "nearestBonePatchMm": [
+            -109.0727544937912,
+            -39.17278296461959,
+            1300.906271866947
+          ]
+        },
+        {
+          "bone": "humerus",
+          "centroidMm": [
+            -162.8955726607708,
+            -93.15749601864697,
+            1318.0171091476282
+          ],
+          "candidateBoxMm": [
+            [
+              -164.33199980452252,
+              -94.3909986180228,
+              1316.0600505519556
+            ],
+            [
+              -160.83999456800856,
+              -91.35720073210226,
+              1320.1600339047543
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.0002673519795057435,
+            "max": 1.1271779238860298,
+            "median": 0.07542441665334385
+          },
+          "nearestBonePatchMm": [
+            -162.95641275721982,
+            -93.02348976076496,
+            1318.10241448831
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v59TrapUpper",
+      "name": "\u50e7\u5e3d\u7b4b\u4e0a\u90e8",
+      "fixedOrigin": 9683,
+      "fixedInsertion": 0,
+      "weightRange": [
+        0.0,
+        0.9478105902671814
+      ],
+      "ends": [
+        {
+          "bone": "trunk",
+          "centroidMm": [
+            -10.345305976128943,
+            -34.77353577720857,
+            1450.0253044559774
+          ],
+          "candidateBoxMm": [
+            [
+              -35.09999860729183,
+              -51.299999894322575,
+              1381.800043054529
+            ],
+            [
+              2.6039101712338564,
+              -16.563301619108728,
+              1511.6999357756192
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask"
+        },
+        {
+          "bone": "clavicle",
+          "centroidMm": [
+            -93.07206542690406,
+            -80.8699336528116,
+            1362.676684266553
+          ],
+          "candidateBoxMm": [
+            [
+              -104.70000132998905,
+              -89.22550202865858,
+              1359.199959316769
+            ],
+            [
+              -86.09999604268117,
+              -68.40000194042652,
+              1365.6700381373498
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.0010694361739144221,
+            "max": 3.590453880324357,
+            "median": 0.34224137962769974
+          },
+          "nearestBonePatchMm": [
+            -93.5010120530645,
+            -81.11521390447498,
+            1362.2341896690932
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v59TrapMiddle",
+      "name": "\u50e7\u5e3d\u7b4b\u4e2d\u90e8",
+      "fixedOrigin": 0,
+      "fixedInsertion": 275,
+      "weightRange": [
+        0.029380299150943756,
+        1.0
+      ],
+      "ends": [
+        {
+          "bone": "trunk",
+          "centroidMm": [
+            -0.6063781058501214,
+            -14.320865135426484,
+            1375.84823060374
+          ],
+          "candidateBoxMm": [
+            [
+              -3.5999996780275225,
+              -17.13050156670647,
+              1373.0999772699029
+            ],
+            [
+              2.099999885301333,
+              -11.369497857652263,
+              1378.660027409459
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask"
+        },
+        {
+          "bone": "scapula",
+          "centroidMm": [
+            -140.22573824517903,
+            -49.48685483551205,
+            1357.0518278539625
+          ],
+          "candidateBoxMm": [
+            [
+              -147.8999980204814,
+              -60.59999716818869,
+              1353.6800537109375
+            ],
+            [
+              -129.6000081483308,
+              -39.90000211011182,
+              1361.4000258230947
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.0001276707747773876,
+            "max": 17.216064307045183,
+            "median": 4.5578897677578025
+          },
+          "nearestBonePatchMm": [
+            -145.3009947314603,
+            -48.891911120751026,
+            1354.2946016624703
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v59TrapLower",
+      "name": "\u50e7\u5e3d\u7b4b\u4e0b\u90e8",
+      "fixedOrigin": 2052,
+      "fixedInsertion": 0,
+      "weightRange": [
+        0.0,
+        0.9993271231651306
+      ],
+      "ends": [
+        {
+          "bone": "trunk",
+          "centroidMm": [
+            -4.732405052069094,
+            -9.155019689497516,
+            1102.5407469668999
+          ],
+          "candidateBoxMm": [
+            [
+              -18.480899655604148,
+              -21.23009829478221,
+              1071.9100337930627
+            ],
+            [
+              0.8197753472371136,
+              -1.3167288238937829,
+              1132.599971754057
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask"
+        },
+        {
+          "bone": "scapula",
+          "centroidMm": [
+            -126.7983364763129,
+            -25.986730779983812,
+            1342.846175898896
+          ],
+          "candidateBoxMm": [
+            [
+              -133.7400071599462,
+              -31.169999758402504,
+              1336.9399335019223
+            ],
+            [
+              -116.09899764877181,
+              -21.00200044786608,
+              1345.7800218736802
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.00029294901109493853,
+            "max": 7.863181153798486,
+            "median": 2.1644212210356555
+          },
+          "nearestBonePatchMm": [
+            -128.26613501466315,
+            -24.75507163110818,
+            1341.6355847585244
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v59Lat",
+      "name": "\u5e83\u80cc\u7b4b",
+      "fixedOrigin": 93799,
+      "fixedInsertion": 0,
+      "weightRange": [
+        0.0,
+        0.9141573309898376
+      ],
+      "ends": [
+        {
+          "bone": "trunk",
+          "centroidMm": [
+            -74.84041166172875,
+            -22.34285805763088,
+            1094.250933086278
+          ],
+          "candidateBoxMm": [
+            [
+              -155.10000283868462,
+              -78.63980135509559,
+              889.0709870656331
+            ],
+            [
+              1.3148402501870908,
+              17.72269694010417,
+              1241.23998312048
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask"
+        },
+        {
+          "bone": "humerus",
+          "centroidMm": [
+            -172.0897470586378,
+            -78.30305286535675,
+            1276.4299203047326
+          ],
+          "candidateBoxMm": [
+            [
+              -178.19999234311214,
+              -81.11949922641118,
+              1264.499992301872
+            ],
+            [
+              -165.6820074201704,
+              -74.07890293619654,
+              1286.189939962851
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.002049418911454197,
+            "max": 4.450628214832472,
+            "median": 1.4597781762736273
+          },
+          "nearestBonePatchMm": [
+            -171.6236246186432,
+            -78.94111861363243,
+            1276.2552878740578
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v60PecClav",
+      "name": "\u5927\u80f8\u7b4b\u9396\u9aa8\u90e8",
+      "fixedOrigin": 0,
+      "fixedInsertion": 477,
+      "weightRange": [
+        0.040066976100206375,
+        1.0
+      ],
+      "ends": [
+        {
+          "bone": "clavicle",
+          "centroidMm": [
+            -85.6435125982626,
+            -112.53308687348293,
+            1348.733478949577
+          ],
+          "candidateBoxMm": [
+            [
+              -88.93749932125881,
+              -116.50399897120019,
+              1342.9999968039021
+            ],
+            [
+              -81.49999952745867,
+              -107.5000005112038,
+              1351.9999974568684
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.0004937137933160152,
+            "max": 4.79370041934318,
+            "median": 0.09913047343486701
+          },
+          "nearestBonePatchMm": [
+            -85.46449123925369,
+            -112.48799659137435,
+            1349.1509674898543
+          ]
+        },
+        {
+          "bone": "humerus",
+          "centroidMm": [
+            -181.9471313743278,
+            -91.73249136320324,
+            1275.995865196141
+          ],
+          "candidateBoxMm": [
+            [
+              -187.83199554305892,
+              -98.99999959619196,
+              1264.0000006185994
+            ],
+            [
+              -175.08200356766983,
+              -83.50000000053697,
+              1292.99999078974
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.22928039175845094,
+            "max": 16.23236747023508,
+            "median": 8.969979842477928
+          },
+          "nearestBonePatchMm": [
+            -182.28491084074668,
+            -82.91995391974532,
+            1276.3212547590617
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v60PecStern",
+      "name": "\u5927\u80f8\u7b4b\u80f8\u808b\u90e8",
+      "fixedOrigin": 2052,
+      "fixedInsertion": 720,
+      "weightRange": [
+        0.0,
+        1.0
+      ],
+      "ends": [
+        {
+          "bone": "trunk",
+          "centroidMm": [
+            -45.828680539501846,
+            -165.0409108613943,
+            1294.0970566981546
+          ],
+          "candidateBoxMm": [
+            [
+              -81.49999952745867,
+              -191.5269906843031,
+              1218.5000056704957
+            ],
+            [
+              -10.000000082694733,
+              -138.31599653948535,
+              1337.0500571104856
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask"
+        },
+        {
+          "bone": "humerus",
+          "centroidMm": [
+            -178.4503998684811,
+            -89.52746922839691,
+            1275.5662214376546
+          ],
+          "candidateBoxMm": [
+            [
+              -187.84800825033102,
+              -102.50000044676634,
+              1259.2900308488724
+            ],
+            [
+              -168.00000520654626,
+              -82.49999985340479,
+              1293.5000039521638
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.009883472979059794,
+            "max": 20.743159070304984,
+            "median": 6.648308813991538
+          },
+          "nearestBonePatchMm": [
+            -179.37630399519023,
+            -82.69647329941192,
+            1276.1085831561463
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v60PecAbd",
+      "name": "\u5927\u80f8\u7b4b\u8179\u90e8",
+      "fixedOrigin": 0,
+      "fixedInsertion": 368,
+      "weightRange": [
+        0.024031469598412514,
+        1.0
+      ],
+      "ends": [
+        {
+          "bone": "trunk",
+          "centroidMm": [
+            -58.971307989510144,
+            -203.2057297276789,
+            1131.1027010454873
+          ],
+          "candidateBoxMm": [
+            [
+              -63.00000116846583,
+              -204.1679974461461,
+              1127.500005034713
+            ],
+            [
+              -55.49999972936269,
+              -202.45700047467204,
+              1136.0000032648309
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask"
+        },
+        {
+          "bone": "humerus",
+          "centroidMm": [
+            -174.19267469303495,
+            -84.98926439855563,
+            1280.5408070752126
+          ],
+          "candidateBoxMm": [
+            [
+              -180.50000134029904,
+              -93.49999979380014,
+              1270.9999915801727
+            ],
+            [
+              -166.49999793800148,
+              -82.05079663014627,
+              1290.9499561550379
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.010977025006501707,
+            "max": 11.997878356481097,
+            "median": 1.9509189502928161
+          },
+          "nearestBonePatchMm": [
+            -175.3575291524564,
+            -82.12120532471495,
+            1281.0539892367397
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v60PecMinor",
+      "name": "\u5c0f\u80f8\u7b4b",
+      "fixedOrigin": 10598,
+      "fixedInsertion": 0,
+      "weightRange": [
+        0.0,
+        0.9761577248573303
+      ],
+      "ends": [
+        {
+          "bone": "trunk",
+          "centroidMm": [
+            -99.90186819794121,
+            -153.76341610244515,
+            1249.8944734725262
+          ],
+          "candidateBoxMm": [
+            [
+              -119.09800266575168,
+              -171.1419981191824,
+              1209.5999797271177
+            ],
+            [
+              -74.76560364113197,
+              -113.81700010557432,
+              1304.3599917093911
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask"
+        },
+        {
+          "bone": "scapula",
+          "centroidMm": [
+            -128.15076951494737,
+            -100.46167353252508,
+            1332.0483672973737
+          ],
+          "candidateBoxMm": [
+            [
+              -130.79800781043798,
+              -103.80000325580974,
+              1327.5999823217992
+            ],
+            [
+              -125.39999638806592,
+              -97.59999858473871,
+              1336.4000335555893
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.0002184409130314413,
+            "max": 7.523791074246165,
+            "median": 3.5181336201151856
+          },
+          "nearestBonePatchMm": [
+            -129.77894731446472,
+            -98.09705092910967,
+            1333.6140234371953
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v60Subclavius",
+      "name": "\u9396\u9aa8\u4e0b\u7b4b",
+      "fixedOrigin": 1625,
+      "fixedInsertion": 0,
+      "weightRange": [
+        0.0,
+        0.9107460975646973
+      ],
+      "ends": [
+        {
+          "bone": "trunk",
+          "centroidMm": [
+            -59.670179432039845,
+            -127.87942447211292,
+            1338.2942407066755
+          ],
+          "candidateBoxMm": [
+            [
+              -77.16179627770777,
+              -139.92799610275404,
+              1332.8100511705552
+            ],
+            [
+              -40.757099606969334,
+              -106.20800002845557,
+              1346.6199855632608
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask"
+        },
+        {
+          "bone": "clavicle",
+          "centroidMm": [
+            -97.95964497918479,
+            -86.24416026869012,
+            1354.5185084901418
+          ],
+          "candidateBoxMm": [
+            [
+              -99.32790450362471,
+              -88.00759891239372,
+              1353.5300218393136
+            ],
+            [
+              -96.3571016122629,
+              -85.57790375010924,
+              1354.8800079758103
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.002958127083678151,
+            "max": 0.9010024281348848,
+            "median": 0.13470525223296032
+          },
+          "nearestBonePatchMm": [
+            -97.92528932952374,
+            -86.23400621665141,
+            1354.7122011439567
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v60DeltAnt",
+      "name": "\u4e09\u89d2\u7b4b\u524d\u90e8",
+      "fixedOrigin": 4218,
+      "fixedInsertion": 0,
+      "weightRange": [
+        0.0,
+        0.9776645302772522
+      ],
+      "ends": [
+        {
+          "bone": "clavicle",
+          "centroidMm": [
+            -120.40685870877775,
+            -89.22466079906604,
+            1348.036072380537
+          ],
+          "candidateBoxMm": [
+            [
+              -154.22099005209432,
+              -104.81500189153996,
+              1331.939930752591
+            ],
+            [
+              -87.45910007889206,
+              -70.32279945279026,
+              1359.8000438449617
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.04828321096095609,
+            "max": 37.61590576232381,
+            "median": 13.256924212009379
+          },
+          "nearestBonePatchMm": [
+            -115.27020623091815,
+            -81.88953876715394,
+            1357.3429624930575
+          ]
+        },
+        {
+          "bone": "humerus",
+          "centroidMm": [
+            -202.6103321358667,
+            -78.95963378934323,
+            1225.2256542465336
+          ],
+          "candidateBoxMm": [
+            [
+              -204.26900196934605,
+              -82.00000011545043,
+              1214.150026476061
+            ],
+            [
+              -200.15999737301388,
+              -76.12030026719377,
+              1233.329963477882
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.0017785705611193614,
+            "max": 5.103250004996445,
+            "median": 1.894100079420242
+          },
+          "nearestBonePatchMm": [
+            -201.07160648932327,
+            -77.61245337213074,
+            1225.104770814899
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v60DeltMid",
+      "name": "\u4e09\u89d2\u7b4b\u4e2d\u90e8",
+      "fixedOrigin": 392,
+      "fixedInsertion": 0,
+      "weightRange": [
+        0.0,
+        0.972359299659729
+      ],
+      "ends": [
+        {
+          "bone": "scapula",
+          "centroidMm": [
+            -165.75893920919805,
+            -77.64385756676997,
+            1352.3807441487572
+          ],
+          "candidateBoxMm": [
+            [
+              -175.2409922453734,
+              -84.09799954080367,
+              1345.3100580438836
+            ],
+            [
+              -155.3149984033258,
+              -71.95040093456302,
+              1356.8100600715156
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.0007720649009618875,
+            "max": 18.96841414668083,
+            "median": 7.8305559179564455
+          },
+          "nearestBonePatchMm": [
+            -161.07800188199326,
+            -73.19136818085485,
+            1355.4885208685942
+          ]
+        },
+        {
+          "bone": "humerus",
+          "centroidMm": [
+            -204.90168938196751,
+            -72.61341676364886,
+            1218.4010774890146
+          ],
+          "candidateBoxMm": [
+            [
+              -208.6609943836659,
+              -75.83339720266359,
+              1215.3800085944097
+            ],
+            [
+              -199.910989572336,
+              -67.8122021443135,
+              1221.9599532737388
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.004078048344606606,
+            "max": 4.336312242522814,
+            "median": 0.9670661716161568
+          },
+          "nearestBonePatchMm": [
+            -204.20417152627903,
+            -72.64607213752416,
+            1218.296235620622
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v60DeltPost",
+      "name": "\u4e09\u89d2\u7b4b\u5f8c\u90e8",
+      "fixedOrigin": 0,
+      "fixedInsertion": 559,
+      "weightRange": [
+        0.02732580341398716,
+        1.0
+      ],
+      "ends": [
+        {
+          "bone": "scapula",
+          "centroidMm": [
+            -166.52219971626337,
+            -39.30070949137747,
+            1346.1601822507084
+          ],
+          "candidateBoxMm": [
+            [
+              -170.6340042664124,
+              -41.58529927709081,
+              1342.0200105271897
+            ],
+            [
+              -150.72799677462191,
+              -28.97180193823737,
+              1349.5400332201707
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.007333728683391133,
+            "max": 3.711094612071433,
+            "median": 1.1315435228684199
+          },
+          "nearestBonePatchMm": [
+            -166.3919637557657,
+            -39.378499189587465,
+            1346.0991815417658
+          ]
+        },
+        {
+          "bone": "humerus",
+          "centroidMm": [
+            -209.15198659545382,
+            -60.358495446085236,
+            1207.1636870284235
+          ],
+          "candidateBoxMm": [
+            [
+              -216.87301089312578,
+              -65.6352002191114,
+              1198.0000029898977
+            ],
+            [
+              -203.92900848388672,
+              -55.2797993410815,
+              1213.829954903405
+            ]
+          ],
+          "regionMethod": "1% extreme weights for audit only; not a new attachment mask",
+          "boneVertexTriangleDistanceMm": {
+            "min": 0.001157202904778592,
+            "max": 13.947669440147482,
+            "median": 4.062735490769736
+          },
+          "nearestBonePatchMm": [
+            -204.83916847500006,
+            -62.35992560611603,
+            1206.768523508282
+          ]
+        }
+      ]
+    }
+  ]
+}

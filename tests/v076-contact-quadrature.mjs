@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {readFileSync}from'node:fs';
-for(const p of ['engine/math.js','anatomy/shoulder-rig-data.js','engine/joint-frames.js','engine/shoulder-kinematics.js','engine/rig-diagnostics.js'])await import('../'+p);
+for(const p of ['engine/math.js','anatomy/shoulder-rig-data.js','engine/joint-frames.js','anatomy/thorax-contact-data-v076.js','engine/convex-contact.js','engine/shoulder-kinematics.js','engine/rig-diagnostics.js'])await import('../'+p);
 const fixture=JSON.parse(readFileSync(new URL('./fixtures/shoulder-v076-field-calibration.json',import.meta.url))),K=ShoulderKinematics,M=AnatomyMath,F=JointFrames;
 const base=new K.ShoulderModel(fixture),copies=[2,4].map(n=>new K.ShoulderModel({...fixture,contact:{...fixture.contact,points:Array.from({length:n},()=>fixture.contact.points).flat()}}));
 const error=(a,b)=>M.len(M.sub(a,b))/fixture.scale;

@@ -1,0 +1,7119 @@
+{
+  "method": "Independent exact source-triangle proximity; not a cartilage/force solver.\nInside classification uses closed source rib shells. Surface distances are\nvertex-to-triangle, never claimed exact triangle-to-triangle gap/contact.\n",
+  "sources": [
+    {
+      "file": "FMA13395.stl",
+      "sha256": "c0a3afd469db1fec9527bb81ec1f0956876d3d64d3acbf3a083619d4e7ce297b"
+    },
+    {
+      "file": "FMA7857.stl",
+      "sha256": "60aaf884bbba890b825cc96036ab3af04ab8ba9a8d283752ba5c86105927b265"
+    },
+    {
+      "file": "FMA7882.stl",
+      "sha256": "be841be06ebe7f2554655e222a5c5237a40103335816eb6c2d51dae28bb9a7b0"
+    },
+    {
+      "file": "FMA7909.stl",
+      "sha256": "942b53665d37f1541b49772e092d557ffee0407fa917205eb204c612c707710a"
+    },
+    {
+      "file": "FMA7957.stl",
+      "sha256": "f09aed293efeaca491348e4b0d68aba243ad69b12da16c99ca0af8dfdbbe1537"
+    },
+    {
+      "file": "FMA8066.stl",
+      "sha256": "692ce079c288c646d05f30bd656554c2ea5efb382390a2cfa5f1f3215a57fb4c"
+    },
+    {
+      "file": "FMA8175.stl",
+      "sha256": "c7ceddf05e6f5b31a51f5cd5017659f10496fc004007052c45c0fddce2cbcf90"
+    },
+    {
+      "file": "FMA8229.stl",
+      "sha256": "035891a2b0a602bc07206e6a560c43ace3270f9111fda00d3407a95991a69e3f"
+    },
+    {
+      "file": "FMA8283.stl",
+      "sha256": "bb77ea1b25858457b67e2be43a09077a2de0e2a3c662c3bc2b1528f28b458b84"
+    },
+    {
+      "file": "FMA8364.stl",
+      "sha256": "22f08d07eb9edcd51a3de7d3bb59df3cf848cc091808ec9e7080a937620a06fe"
+    },
+    {
+      "file": "FMA8445.stl",
+      "sha256": "74b03c2cd1d227d262d848aa0564b2022f1944bcaf6d3b469cceb5310da07c70"
+    },
+    {
+      "file": "FMA8531.stl",
+      "sha256": "e2bc61ccb59923b00048f093cb5d105c5a4a03f5d4cabce2be147df0192af269"
+    },
+    {
+      "file": "FMA8533.stl",
+      "sha256": "eb47b3d7b6b8440a90fe27f333c8f30f72c6ae82694f4d0737ca6279b04e0b74"
+    }
+  ],
+  "ribShellsClosed": true,
+  "poses": [
+    {
+      "elev": 0,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.313537216835592,
+        "max": 23.880207878101128,
+        "median": 9.798400800770779
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 1,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.32564323050898,
+        "max": 23.911159933952433,
+        "median": 9.750721155133974
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 2,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.374424808681485,
+        "max": 23.990748486146323,
+        "median": 9.73700756642716
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 3,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.460054431417464,
+        "max": 24.114003793347205,
+        "median": 9.82194610003333
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 4,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.5827598559621965,
+        "max": 24.273685810389207,
+        "median": 9.94914189694779
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 5,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.735764788886871,
+        "max": 24.464684469651388,
+        "median": 10.256895362335477
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 6,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.924383864510932,
+        "max": 24.675371614095134,
+        "median": 10.605242946327266
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 7,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.200570609496036,
+        "max": 24.92212502570419,
+        "median": 10.783246023775739
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 8,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.546633891600734,
+        "max": 25.197400115290513,
+        "median": 11.099176404558492
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 9,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.3370585500937295,
+        "max": 25.469551403354988,
+        "median": 11.326530011808977
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 10,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.148455746944656,
+        "max": 25.729547371166316,
+        "median": 11.470166478899262
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 11,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.045640026248167,
+        "max": 26.01383233679198,
+        "median": 11.939844124551207
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 12,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.7969608428794235,
+        "max": 26.235255524570142,
+        "median": 12.11735925033005
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 13,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.685692616470108,
+        "max": 26.33951004101027,
+        "median": 12.258973035836332
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 14,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.671928817063627,
+        "max": 26.379545367111326,
+        "median": 12.401075660154206
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 15,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.698929184899502,
+        "max": 26.363877718548512,
+        "median": 12.537935181792822
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 16,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.729595297250946,
+        "max": 26.286153515702,
+        "median": 12.6534241752144
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 17,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.674450190597307,
+        "max": 26.16894903613069,
+        "median": 12.750138892184808
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 18,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.636544649685408,
+        "max": 26.047395964347423,
+        "median": 12.71934192383017
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 19,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.622150590845963,
+        "max": 25.938166138508112,
+        "median": 12.7734589754992
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 20,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.622627815941477,
+        "max": 25.823254920218144,
+        "median": 12.820518079166145
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 21,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.628413063406466,
+        "max": 25.70544268955459,
+        "median": 12.862121725808514
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 22,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.6477484845578525,
+        "max": 25.584690061990784,
+        "median": 12.978697322717698
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 23,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.678203784547195,
+        "max": 25.4611155512705,
+        "median": 13.03576961243117
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 24,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.709318534515498,
+        "max": 25.34274226748717,
+        "median": 12.79446206496263
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 25,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.741225640611007,
+        "max": 25.236371834868386,
+        "median": 12.65090187247042
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 26,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.773652745936775,
+        "max": 25.136563788260574,
+        "median": 12.495833090466274
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 27,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.800116751432501,
+        "max": 25.042949133257,
+        "median": 12.25835520793109
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 28,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.56928236056919,
+        "max": 24.959807492079094,
+        "median": 12.127425616540656
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 29,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.350017699034089,
+        "max": 24.884171949635142,
+        "median": 12.00241619802609
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 30,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.164606400044629,
+        "max": 24.813327901801163,
+        "median": 11.88736315234922
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 31,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.000774639182978,
+        "max": 24.742945138367904,
+        "median": 11.917993725733536
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 32,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.8538731545782947,
+        "max": 24.68601480603596,
+        "median": 12.010986713981733
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 33,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.723189874853708,
+        "max": 24.63131857994188,
+        "median": 12.112115395985732
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 34,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.60909148683787,
+        "max": 24.578480407023427,
+        "median": 12.205464498237735
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 35,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.511204662629162,
+        "max": 24.53112421633204,
+        "median": 12.285604845767532
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 36,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.4158704194250573,
+        "max": 24.487929521785198,
+        "median": 12.298553546412222
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 37,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.326133905720554,
+        "max": 24.44823276143625,
+        "median": 12.31362650208315
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 38,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.2484093953634705,
+        "max": 24.41627117931447,
+        "median": 12.331222861535347
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 39,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.1772696911133336,
+        "max": 24.390523525536974,
+        "median": 12.347427109081128
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 40,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.114551197613179,
+        "max": 24.368833726083356,
+        "median": 12.360269629756157
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 41,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.0499501388568047,
+        "max": 24.354499847200675,
+        "median": 12.37155104285027
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 42,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.993260839867742,
+        "max": 24.338443588339505,
+        "median": 12.386084761647178
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 43,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.9531529085730233,
+        "max": 24.32702527633088,
+        "median": 12.404539512889919
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 44,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.924204744562012,
+        "max": 24.32463515530352,
+        "median": 12.424302165842414
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 45,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.9009848615921507,
+        "max": 24.320933560708138,
+        "median": 12.482361208254053
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 46,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.8808591851463903,
+        "max": 24.32347493821228,
+        "median": 12.622308869424188
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 47,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.871960589504503,
+        "max": 24.330087389013062,
+        "median": 12.762976050771538
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 48,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.8806674150275757,
+        "max": 24.32798557268499,
+        "median": 12.855707597693169
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 49,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.902529747728771,
+        "max": 24.321191255161605,
+        "median": 12.96973725416542
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 50,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.933596858622686,
+        "max": 24.313262316578488,
+        "median": 13.011402959299872
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 51,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.9651392278452886,
+        "max": 24.443086814251323,
+        "median": 12.860157866894713
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 52,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.004238425336791,
+        "max": 24.62061256833146,
+        "median": 12.76921160617004
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 53,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.0554433503577396,
+        "max": 24.788557397794683,
+        "median": 12.666785100099325
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 54,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.024338859099349,
+        "max": 24.944042401041457,
+        "median": 12.558367254776018
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 55,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.9121077238867623,
+        "max": 25.074765363331498,
+        "median": 12.436878813278547
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 56,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.8080324237008423,
+        "max": 25.192641709549477,
+        "median": 12.302722930827766
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 57,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.7166082618058582,
+        "max": 25.331028169024933,
+        "median": 12.289020283340744
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 58,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.643688784461149,
+        "max": 25.503286264253347,
+        "median": 12.291346477125055
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 59,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.594073928916706,
+        "max": 25.69095385748482,
+        "median": 12.301245339612647
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 60,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.56636493457107,
+        "max": 25.885891335246423,
+        "median": 12.319075358040163
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 61,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.55749288950108,
+        "max": 26.107552329353048,
+        "median": 12.414910902837772
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 62,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.5659783129890275,
+        "max": 26.340589636775167,
+        "median": 12.53766966680717
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 63,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.606766080159713,
+        "max": 26.530133282800023,
+        "median": 12.724351321558629
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 64,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.706851207274356,
+        "max": 26.640817391266427,
+        "median": 12.804259055981111
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 65,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.7578497777771043,
+        "max": 26.70377230845978,
+        "median": 12.841730235000167
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 66,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.6588394783226916,
+        "max": 26.76849469321644,
+        "median": 13.079905240237633
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 67,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.591478619146124,
+        "max": 26.856380500888942,
+        "median": 13.233063665243712
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 68,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.5540091770155375,
+        "max": 26.952064698864188,
+        "median": 13.180581096917207
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 69,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.5595471776519325,
+        "max": 27.038363357697396,
+        "median": 13.307423481843458
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 70,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.6038542881634057,
+        "max": 27.104670395107387,
+        "median": 13.396601691995892
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 71,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.6817575964447844,
+        "max": 27.16645453825275,
+        "median": 13.376032960468109
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 72,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.779999071151433,
+        "max": 27.239210036611677,
+        "median": 13.354339944890834
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 73,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.8967004003789536,
+        "max": 27.305891630469844,
+        "median": 13.49095246387359
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 74,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.013177722784228,
+        "max": 27.26404251563919,
+        "median": 13.586220617336146
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 75,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.116928086803617,
+        "max": 27.261050949632534,
+        "median": 13.654491828877905
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 76,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.200226745898769,
+        "max": 27.32523744889635,
+        "median": 13.694259697504279
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 77,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.274151218146605,
+        "max": 27.42775420610031,
+        "median": 13.74445012606716
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 78,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.3682239364936812,
+        "max": 27.48489733580387,
+        "median": 13.834104573176234
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 79,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.423627314382627,
+        "max": 27.438033468482914,
+        "median": 13.972934519688852
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 80,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.2069086132957505,
+        "max": 27.333859616199362,
+        "median": 14.146321487949635
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 81,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.0294881194542733,
+        "max": 27.256953717918208,
+        "median": 14.339648697017985
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 82,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.9214873836011623,
+        "max": 27.244741468704508,
+        "median": 14.450984461281116
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 83,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.8426844891710368,
+        "max": 27.26406199201898,
+        "median": 14.523308433969724
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 84,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.800748306908533,
+        "max": 27.30028601059008,
+        "median": 14.54333603068184
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 85,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.791056718905194,
+        "max": 27.366506031689823,
+        "median": 14.624933878475911
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 86,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.7983205622624054,
+        "max": 27.449937041284564,
+        "median": 14.686785764865991
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 87,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.7892763373203784,
+        "max": 27.496912806592608,
+        "median": 14.781213722802434
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 88,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.7512801496857615,
+        "max": 27.573390902322306,
+        "median": 14.943505556221286
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 89,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.70369238564014,
+        "max": 27.631006365587748,
+        "median": 15.088853488501606
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 90,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.665457523078273,
+        "max": 27.698229712164487,
+        "median": 15.228684612729367
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 91,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.6557070531753917,
+        "max": 27.788811325716967,
+        "median": 15.357521543759729
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 92,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.6572339564279153,
+        "max": 27.888342418508277,
+        "median": 15.486273136628563
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 93,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.668498853089138,
+        "max": 27.987933924617504,
+        "median": 15.621545206824731
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 94,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.6872393133707617,
+        "max": 28.083254251169414,
+        "median": 15.763308484779001
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 95,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.7196307533157222,
+        "max": 28.17784495886005,
+        "median": 15.907848525256945
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 96,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.754843679039513,
+        "max": 28.27279849478532,
+        "median": 16.002009074971586
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 97,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.7956103091457423,
+        "max": 28.36774769742694,
+        "median": 16.082955276731354
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 98,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.841890908396509,
+        "max": 28.462115041134386,
+        "median": 16.160261190950262
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 99,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.895795237366757,
+        "max": 28.555315920752996,
+        "median": 16.1739395706224
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 100,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.951482892176236,
+        "max": 28.646094696180647,
+        "median": 16.184758388984065
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 101,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.0138842064876545,
+        "max": 28.736380105149035,
+        "median": 16.193816048462466
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 102,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.0829584774749494,
+        "max": 28.83065437450235,
+        "median": 16.204762428295822
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 103,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.1514099306117394,
+        "max": 28.930728617043954,
+        "median": 16.221658284745246
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 104,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.2271651873585454,
+        "max": 29.033867034671232,
+        "median": 16.240447006100172
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 105,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.3044149607415223,
+        "max": 29.13198112975963,
+        "median": 16.299031863594863
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 106,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.3827726929965194,
+        "max": 29.237273007543774,
+        "median": 16.38772272935327
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 107,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.461042031309365,
+        "max": 29.33780400870986,
+        "median": 16.581901860990847
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 108,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.548103387403932,
+        "max": 29.389100753097356,
+        "median": 16.83696496306967
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 109,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.677760091590327,
+        "max": 29.3616309790781,
+        "median": 16.9230636690245
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 110,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.821102448107949,
+        "max": 29.29002912745395,
+        "median": 16.9544520816483
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 111,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.956807264269079,
+        "max": 29.22165492887316,
+        "median": 17.058269615628802
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 112,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.084116355161042,
+        "max": 29.180772084488172,
+        "median": 17.159128446915254
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 113,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.218454630756786,
+        "max": 29.14436659243491,
+        "median": 17.256619684723013
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 114,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.3531484521417765,
+        "max": 29.072569403200557,
+        "median": 17.352212562368287
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 115,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.50306579044113,
+        "max": 28.924889576981457,
+        "median": 17.55442083809701
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 116,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.663263356590942,
+        "max": 29.08391069005547,
+        "median": 17.866090264826497
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 117,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.831859432785177,
+        "max": 29.241159698981026,
+        "median": 18.15304502444944
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 118,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.95782616176651,
+        "max": 29.345672265672782,
+        "median": 18.367329821275973
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 119,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.069404236260139,
+        "max": 29.416700687965317,
+        "median": 18.531510219468487
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 120,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.171168900368892,
+        "max": 29.466659390159496,
+        "median": 18.69061484073979
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 121,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.27865488045682,
+        "max": 29.49190310102463,
+        "median": 18.970596237222807
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 122,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.376111701178428,
+        "max": 29.49104853477792,
+        "median": 19.083603722691926
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 123,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.463501393537053,
+        "max": 29.479925065820282,
+        "median": 19.135413978922003
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 124,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.539648348816488,
+        "max": 29.461549031119844,
+        "median": 19.20299097581718
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 125,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.607767973851705,
+        "max": 29.43417454330852,
+        "median": 19.266725548222503
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 126,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.643152921022889,
+        "max": 29.425665382117447,
+        "median": 19.28471384882905
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 127,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.611533494662509,
+        "max": 29.473569433816436,
+        "median": 19.267719134568758
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 128,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.589030525938717,
+        "max": 29.62931291724847,
+        "median": 19.250567617982234
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 129,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.568472504813914,
+        "max": 29.7794209907388,
+        "median": 19.248796543360484
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 130,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.557947343136045,
+        "max": 29.905325048208038,
+        "median": 19.25382194899717
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 131,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.5511283978701265,
+        "max": 30.016503945455145,
+        "median": 19.23976571856066
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 132,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.544795760352071,
+        "max": 30.119788530254844,
+        "median": 19.228137324976956
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 133,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.54173578571829,
+        "max": 30.218263321981105,
+        "median": 19.2491506472472
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 134,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.541842592233368,
+        "max": 30.294376547987003,
+        "median": 19.266899494996554
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 135,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.54068525139972,
+        "max": 30.341732469116405,
+        "median": 19.282784876591002
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 136,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.54038263559048,
+        "max": 30.35569714258498,
+        "median": 19.29210152757667
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 137,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.54022660223205,
+        "max": 30.358341153349496,
+        "median": 19.293920952854748
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 138,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 139,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540091028694832,
+        "max": 30.360344419478324,
+        "median": 19.295308920038433
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 140,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540111269030455,
+        "max": 30.359698376699853,
+        "median": 19.29487541348427
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 141,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 142,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 143,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 144,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 145,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 146,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 147,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 148,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 149,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 150,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 151,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 152,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 153,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 154,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 155,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 156,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 157,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 158,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 159,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 160,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 161,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 162,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 163,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 164,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 165,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 166,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 167,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 168,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 169,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 170,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 171,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 172,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 173,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 174,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 175,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 176,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 177,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 178,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 179,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 180,
+      "plane": 0,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.540131527349617,
+        "max": 30.359052637270274,
+        "median": 19.294442024201548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 0,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.313537216835592,
+        "max": 23.880207878101128,
+        "median": 9.798400800770779
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 1,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.321362789309644,
+        "max": 23.913604489490044,
+        "median": 9.768512420833787
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 2,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.346797191379983,
+        "max": 24.00168878939058,
+        "median": 9.724570129567642
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 3,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.392751223720196,
+        "max": 24.127945361715653,
+        "median": 9.78804924939138
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 4,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.458397589679291,
+        "max": 24.305207298989558,
+        "median": 9.879488054223174
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 5,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.543699122820764,
+        "max": 24.520387128056637,
+        "median": 10.04726408359765
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 6,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.64201993590578,
+        "max": 24.749446711395624,
+        "median": 10.128388569460999
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 7,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.746180204568306,
+        "max": 24.9835772559448,
+        "median": 10.287698826152289
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 8,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.869436415527822,
+        "max": 25.24625678126098,
+        "median": 10.544816834356453
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 9,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.990021436257888,
+        "max": 25.508385038972257,
+        "median": 10.587395079173918
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 10,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.121317454752124,
+        "max": 25.75433583720353,
+        "median": 10.589102470652383
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 11,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.262045669621434,
+        "max": 25.99076447045388,
+        "median": 10.714769498153029
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 12,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.379027231732571,
+        "max": 26.19776706113221,
+        "median": 10.794377859712899
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 13,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.4609412084130735,
+        "max": 26.337422230881906,
+        "median": 10.863294708438623
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 14,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.376006320599105,
+        "max": 26.423842056917245,
+        "median": 10.867517063326055
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 15,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.266240451560958,
+        "max": 26.469493806447097,
+        "median": 10.876000114473426
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 16,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.159524286294289,
+        "max": 26.46926441480234,
+        "median": 10.908556516351812
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 17,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.059991280492126,
+        "max": 26.43206845322711,
+        "median": 10.874477945194917
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 18,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.978006548925624,
+        "max": 26.391338549167397,
+        "median": 10.799945317128614
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 19,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.887626576148229,
+        "max": 26.360308703351404,
+        "median": 10.590098341685852
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 20,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.659254167592303,
+        "max": 26.32889801922819,
+        "median": 10.3800956606248
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 21,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.418095242961106,
+        "max": 26.29712106367524,
+        "median": 10.304864543557148
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 22,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.192090015503395,
+        "max": 26.26108661336873,
+        "median": 10.421524417483141
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 23,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.968815956922389,
+        "max": 26.22158376261879,
+        "median": 10.448770032556395
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 24,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.75096703279945,
+        "max": 26.188317555987705,
+        "median": 10.470943524155441
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 25,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.538420742867209,
+        "max": 26.16931699542788,
+        "median": 10.394559544099488
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 26,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.3507620091020955,
+        "max": 26.156659854486623,
+        "median": 10.350466462216826
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 27,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.2005063159467646,
+        "max": 26.136427174951425,
+        "median": 10.329078480504567
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 28,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.094396495649964,
+        "max": 26.099108305577055,
+        "median": 10.283586298371027
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 29,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.0129382416719346,
+        "max": 26.054189113875935,
+        "median": 10.2354626652038
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 30,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.95158038803892,
+        "max": 26.016284639521675,
+        "median": 10.280482233538429
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 31,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.8967799037375186,
+        "max": 25.990287145995335,
+        "median": 10.339051619564936
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 32,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.8503046777185075,
+        "max": 25.97139605970125,
+        "median": 10.407776751902702
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 33,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.8082669228263266,
+        "max": 25.94413946947355,
+        "median": 10.405059764941024
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 34,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.77581280611374,
+        "max": 25.930118145459797,
+        "median": 10.405568081608717
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 35,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.752314776119061,
+        "max": 25.927640430020006,
+        "median": 10.453693400342186
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 36,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.73805478403562,
+        "max": 25.928636496911615,
+        "median": 10.509673587808354
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 37,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.744623310349272,
+        "max": 25.931598445405964,
+        "median": 10.600912475021971
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 38,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.7626681520292298,
+        "max": 25.93759271183827,
+        "median": 10.64826301727313
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 39,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.789749965442951,
+        "max": 25.9449759593225,
+        "median": 10.789083362892711
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 40,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.8269838115796686,
+        "max": 25.955394130792715,
+        "median": 10.953029132859118
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 41,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.868314126151895,
+        "max": 25.967953298633297,
+        "median": 11.119577299596887
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 42,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.9207416300243003,
+        "max": 25.98281819658414,
+        "median": 11.28648771351974
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 43,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.978745105841468,
+        "max": 25.999988350638276,
+        "median": 11.38650580945247
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 44,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.0352900160536067,
+        "max": 26.015909550293273,
+        "median": 11.464105297827063
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 45,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.090013516208557,
+        "max": 26.03350742442357,
+        "median": 11.540656500970886
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 46,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.140375531361182,
+        "max": 26.056829606195517,
+        "median": 11.575750839932727
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 47,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.18657736552406,
+        "max": 26.08164753631445,
+        "median": 11.615877056131325
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 48,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.2457121444559416,
+        "max": 26.110560018081365,
+        "median": 11.68604182892612
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 49,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.3190623211198442,
+        "max": 26.147511927618044,
+        "median": 11.771777489078683
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 50,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.3989260955996072,
+        "max": 26.188753404985995,
+        "median": 11.863540956821915
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 51,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.4754659497362517,
+        "max": 26.225744177049382,
+        "median": 11.966323688208249
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 52,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.5527299333960576,
+        "max": 26.252612457455808,
+        "median": 12.066794781350838
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 53,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.6139299220062995,
+        "max": 26.27894304729366,
+        "median": 12.189808883849846
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 54,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.5585065071016886,
+        "max": 26.31571921270927,
+        "median": 12.341146195128314
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 55,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.490121049742465,
+        "max": 26.367868414525905,
+        "median": 12.423107845279846
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 56,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.4133229681338757,
+        "max": 26.427735339256156,
+        "median": 12.555889153231462
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 57,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.347547110538786,
+        "max": 26.47862276300691,
+        "median": 12.72480066446974
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 58,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.2848442119610795,
+        "max": 26.522960366222915,
+        "median": 12.753344731657911
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 59,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.223542217753764,
+        "max": 26.564697170617944,
+        "median": 12.74922825263467
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 60,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.1679461945254856,
+        "max": 26.601119193988414,
+        "median": 12.775717675718568
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 61,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.12058864315381,
+        "max": 26.623330423759814,
+        "median": 12.825881006161126
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 62,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.0772966321670805,
+        "max": 26.631689886927933,
+        "median": 12.886005392143584
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 63,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.0311845729207265,
+        "max": 26.64320616984609,
+        "median": 12.94374635300484
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 64,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.982487909957159,
+        "max": 26.65875094366786,
+        "median": 12.99812375630933
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 65,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.9328287301950047,
+        "max": 26.678352202052434,
+        "median": 13.051395582433969
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 66,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.8859745699265766,
+        "max": 26.712197462551718,
+        "median": 13.105525805518738
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 67,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.839531121773126,
+        "max": 26.770454034294513,
+        "median": 13.159991333055912
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 68,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.822221075606215,
+        "max": 26.842012665961136,
+        "median": 13.226565696508292
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 69,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.815810231646582,
+        "max": 26.90487600395696,
+        "median": 13.397219283794563
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 70,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.8339514774634598,
+        "max": 26.944736299202965,
+        "median": 13.55973114574903
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 71,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.859618743688764,
+        "max": 26.976601152910526,
+        "median": 13.719964710813212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 72,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.8966585344804745,
+        "max": 27.013302665522467,
+        "median": 13.878516211856926
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 73,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.9400344434127956,
+        "max": 27.060911323890217,
+        "median": 14.029424533476613
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 74,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 2.987411219070891,
+        "max": 27.111797717058238,
+        "median": 14.184362905453
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 75,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.031861338508273,
+        "max": 27.158524174732595,
+        "median": 14.274342930684673
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 76,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.075363058159482,
+        "max": 27.202228672960953,
+        "median": 14.351413824511436
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 77,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.1295349790163187,
+        "max": 27.242704892365133,
+        "median": 14.427681967174681
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 78,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.1809960112943947,
+        "max": 27.27154634903598,
+        "median": 14.511784633176811
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 79,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.2268105228896906,
+        "max": 27.268519547539697,
+        "median": 14.60954598640283
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 80,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.2693081360744207,
+        "max": 27.220015684648516,
+        "median": 14.692907835097484
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 81,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.320495582592933,
+        "max": 27.17761870930923,
+        "median": 14.782553882214819
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 82,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.3881188673895797,
+        "max": 27.214483115146287,
+        "median": 14.951671207073439
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 83,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.4637301468050254,
+        "max": 27.47892070603914,
+        "median": 15.107222064417437
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 84,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.5502801776965245,
+        "max": 27.751553873847165,
+        "median": 15.150892241385174
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 85,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.637836045236515,
+        "max": 28.022378820557012,
+        "median": 15.196507603114004
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 86,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.7226506782112914,
+        "max": 28.301112075515267,
+        "median": 15.24575495860353
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 87,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.79643452330162,
+        "max": 28.580078461139497,
+        "median": 15.298439390546378
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 88,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.8602902578470393,
+        "max": 28.859263630793706,
+        "median": 15.355870634305152
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 89,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.921381079760831,
+        "max": 29.140082026044524,
+        "median": 15.41664469830291
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 90,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.9826583675280935,
+        "max": 29.417177738276326,
+        "median": 15.476504586971288
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 91,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.041016463372681,
+        "max": 29.698649342035367,
+        "median": 15.53735379664419
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 92,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.099031055447591,
+        "max": 29.97662581574558,
+        "median": 15.59727043902394
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 93,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.155557343894402,
+        "max": 30.2215747761661,
+        "median": 15.646214658302341
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 94,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.205218395331418,
+        "max": 30.418116800007812,
+        "median": 15.679305766295332
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 95,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.247563432017703,
+        "max": 30.58140486780532,
+        "median": 15.716800715565693
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 96,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.286491879642106,
+        "max": 30.728892545525095,
+        "median": 15.757871274282175
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 97,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.322473867406844,
+        "max": 30.823359323034897,
+        "median": 15.818380597123806
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 98,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.35516036310696,
+        "max": 30.7943787001069,
+        "median": 15.902505651075211
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 99,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.387191382746557,
+        "max": 30.764823083430343,
+        "median": 15.999765509027327
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 100,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.419921134273014,
+        "max": 30.73887520556632,
+        "median": 16.112953247489298
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 101,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.452229186217981,
+        "max": 30.712559724929395,
+        "median": 16.22627284650141
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 102,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.484788082420236,
+        "max": 30.683541841397947,
+        "median": 16.339356070577058
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 103,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.519288222662116,
+        "max": 30.64975145686142,
+        "median": 16.381118606858664
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 104,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.555767779000557,
+        "max": 30.61216392259348,
+        "median": 16.436563158620434
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 105,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.591282670450894,
+        "max": 30.573342387287067,
+        "median": 16.488077089297686
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 106,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.6253555170140315,
+        "max": 30.53378240702918,
+        "median": 16.54019788923966
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 107,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.658614419872635,
+        "max": 30.492961140343006,
+        "median": 16.59504311169755
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 108,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.691565683601597,
+        "max": 30.451553634660844,
+        "median": 16.652466509389864
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 109,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.724425533128485,
+        "max": 30.409896513447517,
+        "median": 16.712727610074037
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 110,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.758924213619486,
+        "max": 30.367764355116506,
+        "median": 16.77596895446255
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 111,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.797174820297996,
+        "max": 30.325075629402537,
+        "median": 16.84267117993366
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 112,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.836481487636493,
+        "max": 30.282689329345498,
+        "median": 16.91289237551683
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 113,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.876023589628915,
+        "max": 30.24058402696575,
+        "median": 16.98467588923397
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 114,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.916391193535934,
+        "max": 30.198514925643046,
+        "median": 17.055061546927362
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 115,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.95655254589245,
+        "max": 30.156889603342314,
+        "median": 17.12587145386116
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 116,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.998983204543638,
+        "max": 30.115317644758736,
+        "median": 17.199948581568428
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 117,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.0541846023853125,
+        "max": 30.070749401346912,
+        "median": 17.272904867362968
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 118,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.111247461031712,
+        "max": 30.017570138842885,
+        "median": 17.356126213429086
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 119,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.171365843769266,
+        "max": 29.96361849879357,
+        "median": 17.47477339189348
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 120,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.241648939642057,
+        "max": 29.927193044576224,
+        "median": 17.609916043844738
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 121,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.332672182180231,
+        "max": 29.877860291009274,
+        "median": 17.760129931035834
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 122,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.449828253881516,
+        "max": 29.852685234941177,
+        "median": 17.926447981144705
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 123,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.634343285710196,
+        "max": 29.989451628512235,
+        "median": 18.128324911771927
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 124,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.914819133885174,
+        "max": 30.408967061755927,
+        "median": 18.41827349740808
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 125,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.310803115247078,
+        "max": 30.990864704585537,
+        "median": 18.969412327002775
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 126,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.533942060752571,
+        "max": 31.703792768856456,
+        "median": 19.187153142880724
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 127,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.488675089005339,
+        "max": 32.20149128236042,
+        "median": 19.505130698661013
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 128,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.464092259931928,
+        "max": 32.573640753013635,
+        "median": 19.767732416897672
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 129,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.490851374818031,
+        "max": 32.88316417985017,
+        "median": 19.819749432697048
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 130,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.4949848138628665,
+        "max": 33.23698067277264,
+        "median": 19.76236319696286
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 131,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.508958741097169,
+        "max": 33.578021512514965,
+        "median": 19.68676246943037
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 132,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.525100583009902,
+        "max": 33.90317291927019,
+        "median": 19.633433088398192
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 133,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.536317265857181,
+        "max": 34.18568084800841,
+        "median": 19.669496953671306
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 134,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.5418520185922935,
+        "max": 34.42527509974722,
+        "median": 19.752729424866196
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 135,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.485451318772708,
+        "max": 34.82987627992712,
+        "median": 19.82651664301119
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 136,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.439334281240172,
+        "max": 35.12705622850903,
+        "median": 19.881065883161213
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 137,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.401121161029893,
+        "max": 35.384125050390935,
+        "median": 19.927546656136066
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 138,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.375169130121673,
+        "max": 35.5673654509452,
+        "median": 19.961274929415932
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 139,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.3652629405645795,
+        "max": 35.639488437795166,
+        "median": 19.974999223391094
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 140,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.366065438865016,
+        "max": 35.63356706475098,
+        "median": 19.973752844567663
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 141,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 142,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.36714406520297,
+        "max": 35.62563458701594,
+        "median": 19.972130687342098
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 143,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367419127508709,
+        "max": 35.62362183332399,
+        "median": 19.97175357226002
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 144,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 145,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 146,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 147,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 148,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 149,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 150,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 151,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 152,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 153,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 154,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 155,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 156,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 157,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 158,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 159,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 160,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 161,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 162,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 163,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 164,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 165,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 166,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 167,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 168,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 169,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 170,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 171,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 172,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 173,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 174,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 175,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 176,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 177,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 178,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 179,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 180,
+      "plane": 40,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.367694309051904,
+        "max": 35.621609327441625,
+        "median": 19.971376655647212
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 0,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.313537216835592,
+        "max": 23.880207878101128,
+        "median": 9.798400800770779
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 1,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.327973519021493,
+        "max": 23.9754107736879,
+        "median": 9.787955147676598
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 2,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.366574321361546,
+        "max": 24.22978679650741,
+        "median": 9.867148611684312
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 3,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.4221021593593886,
+        "max": 24.59679624872182,
+        "median": 9.950494528856535
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 4,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.367247911128005,
+        "max": 25.087208058202158,
+        "median": 9.81168398920608
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 5,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.295260975679883,
+        "max": 25.701279761309337,
+        "median": 9.90346397931671
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 6,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.226274193726281,
+        "max": 26.35742655571137,
+        "median": 9.828331121422092
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 7,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.157667835137793,
+        "max": 27.05397662410085,
+        "median": 10.02993121890786
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 8,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.113065795880277,
+        "max": 27.79914369200425,
+        "median": 10.411119250196203
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 9,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.069389600729912,
+        "max": 28.51725954311373,
+        "median": 10.606554207004653
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 10,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.029215255811274,
+        "max": 29.20075749559895,
+        "median": 10.749518685819666
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 11,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.001533820628555,
+        "max": 29.85261351188447,
+        "median": 10.767028124731818
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 12,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.99160825950627,
+        "max": 29.99947195564902,
+        "median": 10.950648504101823
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 13,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.995875038627251,
+        "max": 30.114848452077055,
+        "median": 11.126597577835561
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 14,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.9973676028914777,
+        "max": 30.20026569634687,
+        "median": 11.126132036395866
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 15,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.996387425683584,
+        "max": 30.240067759458157,
+        "median": 11.11798064704453
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 16,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.9666527073172033,
+        "max": 30.22065526141258,
+        "median": 11.101274473936874
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 17,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.954393153133492,
+        "max": 30.15257914396336,
+        "median": 11.116830309994846
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 18,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.972983690841796,
+        "max": 30.057781384447978,
+        "median": 11.167079500337817
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 19,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.9759928510675495,
+        "max": 29.939313890400513,
+        "median": 11.32529179455721
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 20,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.982781536616835,
+        "max": 29.79602620953968,
+        "median": 11.51171376041691
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 21,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.97535302579767,
+        "max": 29.64300958545974,
+        "median": 11.681925941603883
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 22,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.9391213644236487,
+        "max": 29.481023663369392,
+        "median": 11.7660404979843
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 23,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.903719394847809,
+        "max": 29.309054474722267,
+        "median": 11.678293947177707
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 24,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.8784209285466327,
+        "max": 29.14130314466793,
+        "median": 11.598170579051544
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 25,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.8717688147644362,
+        "max": 28.97763271047411,
+        "median": 11.463336232936667
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 26,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.870564394441709,
+        "max": 28.818443704292307,
+        "median": 11.297004738187542
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 27,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.8909418847441475,
+        "max": 28.675750312946697,
+        "median": 11.164005240176907
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 28,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.9249077073989196,
+        "max": 28.50474578588039,
+        "median": 11.164647067067234
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 29,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 3.9661947995234788,
+        "max": 28.333413299566423,
+        "median": 11.175035532231822
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 30,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.016763180258771,
+        "max": 28.19886721408628,
+        "median": 11.188137112444542
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 31,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.076321843827644,
+        "max": 28.109415813605796,
+        "median": 11.236499733365548
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 32,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.1480784644408635,
+        "max": 28.05719800279861,
+        "median": 11.313067326689481
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 33,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.227197878880461,
+        "max": 28.021946954190074,
+        "median": 11.406102145024292
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 34,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.310281974278152,
+        "max": 27.994119780507436,
+        "median": 11.508821770217693
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 35,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.30791616930426,
+        "max": 27.98258300025106,
+        "median": 11.629063243862305
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 36,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.232144833804811,
+        "max": 27.955235441632695,
+        "median": 11.77655539780391
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 37,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.164601832495772,
+        "max": 27.91602655831156,
+        "median": 11.963035028417831
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 38,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.121363152609626,
+        "max": 27.886925132157497,
+        "median": 12.163016531683104
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 39,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.088469011135568,
+        "max": 27.86401017562704,
+        "median": 12.278014726627223
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 40,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.072626682139645,
+        "max": 27.8468068682095,
+        "median": 12.398201601340768
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 41,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.0682810686452555,
+        "max": 27.836489458106634,
+        "median": 12.523809936254112
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 42,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.11160577205454,
+        "max": 27.831657428355992,
+        "median": 12.653603717898957
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 43,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.156852151782682,
+        "max": 27.83340358841954,
+        "median": 12.791886465568272
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 44,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.215729716345939,
+        "max": 27.83880367363845,
+        "median": 12.935161653837696
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 45,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.265667925568789,
+        "max": 27.842702234731536,
+        "median": 13.074942954590817
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 46,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.296016000028874,
+        "max": 27.840243371727354,
+        "median": 13.30404623856449
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 47,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.316702327200949,
+        "max": 27.837011624759107,
+        "median": 13.476384700034846
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 48,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.34177205377238,
+        "max": 27.839367741858958,
+        "median": 13.59542425372976
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 49,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.383295248133191,
+        "max": 27.845234721295032,
+        "median": 13.78099244509615
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 50,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.440221132184786,
+        "max": 27.852337501952313,
+        "median": 14.028805129824903
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 51,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.5032520825284905,
+        "max": 27.865278939371347,
+        "median": 14.121818110786634
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 52,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.571007511462922,
+        "max": 27.885713017133074,
+        "median": 14.21697946452735
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 53,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.656398998967066,
+        "max": 27.912893200989302,
+        "median": 14.319787317943394
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 54,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.744717601692635,
+        "max": 27.94743692822947,
+        "median": 14.434081549389752
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 55,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.827670600700568,
+        "max": 27.993116118025863,
+        "median": 14.553671418656458
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 56,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.913036050806116,
+        "max": 28.046883618030744,
+        "median": 14.68950827171797
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 57,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 4.984647761989724,
+        "max": 28.09896869875066,
+        "median": 14.802557963428976
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 58,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.037899727478537,
+        "max": 28.146968472858067,
+        "median": 14.887214133514002
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 59,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.075270295314213,
+        "max": 28.192670379500587,
+        "median": 14.960971647312435
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 60,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.092487343022395,
+        "max": 28.232014481037027,
+        "median": 15.061910096128827
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 61,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.106829371414734,
+        "max": 28.27747566646662,
+        "median": 15.239040198905421
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 62,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.116222408348575,
+        "max": 28.491728910040816,
+        "median": 15.39585470942106
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 63,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.130419128825262,
+        "max": 28.684558459306228,
+        "median": 15.49384529308194
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 64,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.146598253783615,
+        "max": 28.851541121437133,
+        "median": 15.58078232293337
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 65,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.16943939731618,
+        "max": 28.993668402377953,
+        "median": 15.654804393576121
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 66,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.193792690617394,
+        "max": 29.127585286777244,
+        "median": 15.722766726239072
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 67,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.216144790228951,
+        "max": 29.258998891173185,
+        "median": 15.789054999470324
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 68,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.236327572508655,
+        "max": 29.382412201060806,
+        "median": 15.829603229542313
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 69,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.256353260224894,
+        "max": 29.497970389016807,
+        "median": 15.856524711491247
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 70,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.276177987803153,
+        "max": 29.599883958337685,
+        "median": 15.878652357907864
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 71,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.297341996494399,
+        "max": 29.693599337063894,
+        "median": 15.898581408959865
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 72,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.3241115647305195,
+        "max": 29.796190490655086,
+        "median": 15.924575059954748
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 73,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.352634566996101,
+        "max": 29.896901255036106,
+        "median": 15.952754156556287
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 74,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.3851624464811465,
+        "max": 30.006785385759894,
+        "median": 15.986923525307171
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 75,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.43451048724738,
+        "max": 30.177569423464575,
+        "median": 16.048647071624174
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 76,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.513363308130327,
+        "max": 30.444680023254108,
+        "median": 16.15587859531047
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 77,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.601674138101527,
+        "max": 30.64064707158081,
+        "median": 16.338600277584124
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 78,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.672876267979429,
+        "max": 30.76642436695971,
+        "median": 16.54060349155673
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 79,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.741233126531076,
+        "max": 30.91584612396479,
+        "median": 16.68101269931172
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 80,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 5.881821146119497,
+        "max": 31.09550751643688,
+        "median": 16.809389430493944
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 81,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.065661857255896,
+        "max": 31.269442429538685,
+        "median": 16.925529466106823
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 82,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.1929136449241975,
+        "max": 31.416136723092755,
+        "median": 17.017792935185454
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 83,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.259896468583005,
+        "max": 31.542290203908774,
+        "median": 17.093521134033512
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 84,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.289927888834856,
+        "max": 31.654639914666305,
+        "median": 17.155912207574158
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 85,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.317119569743677,
+        "max": 31.75273326862103,
+        "median": 17.204814698000668
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 86,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.342120149397758,
+        "max": 31.83674998031773,
+        "median": 17.241291420132796
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 87,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.3654506813359495,
+        "max": 31.912346518900726,
+        "median": 17.252449702651894
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 88,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.380780771930245,
+        "max": 31.979564702376877,
+        "median": 17.198427121451353
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 89,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.391307201061003,
+        "max": 32.038214497193756,
+        "median": 17.144947823253297
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 90,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.411296861491307,
+        "max": 32.0937427201163,
+        "median": 17.090593823824864
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 91,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.43872514770959,
+        "max": 32.1481934876188,
+        "median": 17.1406787669943
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 92,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.4717575539865555,
+        "max": 32.19898854044865,
+        "median": 17.27513526928703
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 93,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.494386267985191,
+        "max": 32.244832414073784,
+        "median": 17.332344104861395
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 94,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.5092096576911995,
+        "max": 32.28591335243648,
+        "median": 17.3774262865208
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 95,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.521780273810858,
+        "max": 32.322753613808246,
+        "median": 17.42067544971789
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 96,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.5325413766298706,
+        "max": 32.35659377212456,
+        "median": 17.46094801975238
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 97,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.541562616621201,
+        "max": 32.38734127510103,
+        "median": 17.49850039445321
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 98,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.549088641083328,
+        "max": 32.41482432332668,
+        "median": 17.53383442369497
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 99,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.5558574191204455,
+        "max": 32.440299862166206,
+        "median": 17.567955996217698
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 100,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.5624169264295045,
+        "max": 32.464163701550476,
+        "median": 17.60126247738758
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 101,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.569302565564925,
+        "max": 32.485831481009406,
+        "median": 17.63335172588391
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 102,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.574592681429272,
+        "max": 32.50519256592428,
+        "median": 17.66384501811302
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 103,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.578160650273788,
+        "max": 32.52210562584471,
+        "median": 17.692740919645697
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 104,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.583203541042336,
+        "max": 32.53664720784741,
+        "median": 17.73006555275403
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 105,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.588720699647284,
+        "max": 32.549133675055195,
+        "median": 17.79410755364239
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 106,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.593911311724512,
+        "max": 32.55962405157688,
+        "median": 17.860999060972674
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 107,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.598106001925096,
+        "max": 32.56807102787023,
+        "median": 17.893876900792772
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 108,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.602001468931425,
+        "max": 32.574709981323366,
+        "median": 17.871077227968094
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 109,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.6056586279748055,
+        "max": 32.579590598238994,
+        "median": 17.849182260586282
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 110,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.609320748052442,
+        "max": 32.58276037595484,
+        "median": 17.828285262882297
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 111,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.613264699244834,
+        "max": 32.58392764809803,
+        "median": 17.840523743370866
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 112,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.617787432389804,
+        "max": 32.58318917799812,
+        "median": 17.873019664000655
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 113,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.622868237583709,
+        "max": 32.58041449550639,
+        "median": 17.867268884793944
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 114,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.628275935873908,
+        "max": 32.576021270563274,
+        "median": 17.940777963423137
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 115,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.6364885377528955,
+        "max": 32.57116664123772,
+        "median": 18.130653529506674
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 116,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.648895951938487,
+        "max": 32.565829077059284,
+        "median": 18.312970942764807
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 117,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.661851197732772,
+        "max": 32.55960183463232,
+        "median": 18.49416638143932
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 118,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.674379374837397,
+        "max": 32.559148575389116,
+        "median": 18.607306780886297
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 119,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.686112227287276,
+        "max": 32.55649763791043,
+        "median": 18.721814112197414
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 120,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.696850689018434,
+        "max": 32.5307253323285,
+        "median": 18.826615851450327
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 121,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.706993589554425,
+        "max": 32.47646793513544,
+        "median": 18.846104974150713
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 122,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.7184899978306305,
+        "max": 32.400164017315284,
+        "median": 18.779549029871937
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 123,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.738824765866429,
+        "max": 32.29979115154123,
+        "median": 18.64685589910458
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 124,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.719911751434224,
+        "max": 32.165300873717136,
+        "median": 18.697547451619847
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 125,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.667419840343198,
+        "max": 32.083023871039636,
+        "median": 18.710238194876496
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 126,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.59680570072512,
+        "max": 32.02007107805069,
+        "median": 18.497476118138692
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 127,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.5254220013245705,
+        "max": 31.93471763541333,
+        "median": 18.490781622996337
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 128,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.467565984023593,
+        "max": 31.850889173251957,
+        "median": 18.566365444378096
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 129,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.433127656475309,
+        "max": 31.781481573512636,
+        "median": 18.55607290357847
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 130,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.410136749720256,
+        "max": 31.73555024681903,
+        "median": 18.486389739039915
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 131,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400298052629751,
+        "max": 31.71558767706291,
+        "median": 18.457463278515988
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 132,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 133,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400773031593236,
+        "max": 31.716592876685336,
+        "median": 18.459102310803832
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 134,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 135,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 136,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 137,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 138,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 139,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 140,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 141,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 142,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 143,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 144,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 145,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 146,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 147,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 148,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 149,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 150,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 151,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 152,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 153,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 154,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 155,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 156,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 157,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 158,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 159,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 160,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 161,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 162,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 163,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 164,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 165,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 166,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 167,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 168,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 169,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 170,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 171,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 172,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 173,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 174,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 175,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 176,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 177,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 178,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 179,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    },
+    {
+      "elev": 180,
+      "plane": 90,
+      "scapularVertices": 56630,
+      "insideRibVertices": 0,
+      "maxInsideDepthMm": 0,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "max": 31.71676060654544,
+        "median": 18.45934126192553
+      },
+      "triangleTriangleIntersections": null
+    }
+  ]
+}

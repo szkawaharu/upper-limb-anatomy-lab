@@ -37,7 +37,7 @@ function clearance(p,e){
 }
 function linear(A,b){const n=b.length,a=A.map((r,i)=>[...r,b[i]]);for(let j=0;j<n;j++){let k=j;for(let i=j+1;i<n;i++)if(Math.abs(a[i][j])>Math.abs(a[k][j]))k=i;[a[j],a[k]]=[a[k],a[j]];const d=a[j][j];if(!Number.isFinite(d)||Math.abs(d)<1e-12)return null;for(let k=j;k<=n;k++)a[j][k]/=d;for(let i=0;i<n;i++)if(i!==j){const d=a[i][j];for(let k=j;k<=n;k++)a[i][k]-=d*a[j][k]}}return a.map(r=>r[n])}
 class ShoulderModel{
- constructor({landmarks,scale=.00555,contact=null,solverIterations=24}){
+ constructor({landmarks,scale=.00555,contact=null,solverIterations=48}){
   this.landmarks=landmarks;this.scale=scale;this.contact=contact;this.solverIterations=solverIterations;
   if(!Number.isFinite(scale)||scale<=0||!Number.isInteger(solverIterations)||solverIterations<1)throw Error('Invalid rig numerical settings');
   const L=landmarks;this.thoraxFrame=L.IJ&&L.C7&&L.PX&&L.T8?F.thorax(L.IJ,L.C7,L.PX,L.T8):thoraxFrame;this.clavicleFrame=F.clavicle(L.SC,L.AC,qrot(this.thoraxFrame,[0,1,0]));this.scapulaFrame=F.scapula(L.TS,L.AA,L.AI);
@@ -48,7 +48,10 @@ class ShoulderModel{
   // The proxy is calibrated against the source separation. This preserves the
   // intervening soft-tissue space, rather than forcing bone surfaces together.
   this.sigmaMm=contact?.uncertaintyMm??null;
-  this.fieldSignature=root.ShoulderPoseField?.signature({method:'linked-SC-AC-loft-mean-contact-v2',landmarks,contact,scale,curves:D.curves,prior:D.priorStdDeg,iterations:solverIterations});
+  this.body=contact&&root.ThoraxContactDataV076&&root.ConvexContact?root.ConvexContact.fromAtlas(root.ThoraxContactDataV076,L.SC,D.landmarks.SC,scale):null;
+  this.bodySamples=(this.body?.points||[]).map(p=>sub(p,L.AC));
+  this.bodyPlaneCache=new Map();
+  this.fieldSignature=root.ShoulderPoseField?.signature({method:'linked-SC-AC-source-tangent-envelope-v4',landmarks,contact,body:this.body,scale,curves:D.curves,prior:D.priorStdDeg,iterations:solverIterations});
   this.field=root.ShoulderPoseFieldData?.signature===this.fieldSignature?root.ShoulderPoseFieldData:null;
   this.fieldReason=this.field?'validated-field':!contact?'contact-data-unavailable':root.ShoulderPoseFieldData?'calibration-signature-mismatch':'field-not-provided';
   if(this.samples.length&&(!Number.isFinite(this.sigmaMm)||this.sigmaMm<=0))throw Error('Contact uncertainty scale must be calibrated');
@@ -59,7 +62,18 @@ class ShoulderModel{
   const AC=add(L.SC,qrot(qC,sub(L.AC,L.SC))),GH=add(AC,qrot(qS,sub(L.GH,L.AC)));
   return {qC,qS,AC,GH,SC:L.SC};
  }
- residual(params,target){
+ bodyPlanes(target){
+  if(!this.body)return [];
+  const key=JSON.stringify(target);if(this.bodyPlaneCache.has(key))return this.bodyPlaneCache.get(key);
+  const p=this.forward(target),planes=this.bodySamples.map(v=>{const world=add(p.AC,qrot(p.qS,v)),e=root.ConvexContact.evaluate(world,this.body,this.scale,true);return {n:e.gradient,h:dot(e.gradient,world)/this.scale-e.gap};});
+  // The smooth support function is convex. Its affine tangent lies below it:
+  // a separating tangent halfspace is a conservative bone safeguard. Normals
+  // follow the smooth anatomical target, and stay fixed during the joint fit;
+  // they never switch between competing envelope faces during optimization.
+  if(this.bodyPlaneCache.size>=256)this.bodyPlaneCache.delete(this.bodyPlaneCache.keys().next().value);
+  this.bodyPlaneCache.set(key,planes);return planes;
+ }
+ residual(params,target,includeBody=true){
   const r=params.map((x,j)=>(x-target[j])/D.priorStdDeg[j]);
   // Samples approximate a spatial mean over occupied blade cells; they are
   // not independent anatomical measurements. Squared residuals must therefore
@@ -67,7 +81,26 @@ class ShoulderModel{
   // (normal clearance and profile domain) uses 1/sqrt(N) in least squares.
   // No anatomical angle, gap limit, prior scale or muscle coefficient changes.
   if(this.samples.length){const p=this.forward(params),denominator=this.sigmaMm*Math.sqrt(this.samples.length);for(const v of this.samples){const d=(clearance(add(p.AC,qrot(p.qS,v.local)),this.contact.surface||this.contact.ellipsoid)-v.rest)/this.scale;r.push(d/denominator);const surface=this.contact.surface,world=add(p.AC,qrot(p.qS,v.local));if(surface?.rows)r.push(Math.max(0,surface.rows[0].y-world[1],world[1]-surface.rows.at(-1).y)/(this.scale*denominator))}}
+  if(includeBody&&this.body){const p=this.forward(params),planes=this.bodyPlanes(target),denominator=this.body.residualScaleMm*Math.sqrt(this.bodySamples.length);for(let i=0;i<this.bodySamples.length;i++){const world=add(p.AC,qrot(p.qS,this.bodySamples[i])),plane=planes[i];r.push(Math.min(0,dot(plane.n,world)/this.scale-plane.h)/denominator);}}
   return r;
+ }
+ jacobian(params,target){
+  const r=this.residual(params,target,false),J=[],derivatives=[];
+  for(let j=0;j<6;j++){
+   const lo=params.slice(),hi=params.slice();lo[j]-=.05;hi[j]+=.05;
+   const x=this.residual(lo,target,false),y=this.residual(hi,target,false);
+   J.push(r.map((_,i)=>(y[i]-x[i])/.1));
+   if(this.body){const a=this.forward(lo),b=this.forward(hi),columns=[[1,0,0],[0,1,0],[0,0,1]].map(v=>mul(sub(qrot(b.qS,v),qrot(a.qS,v)),10));derivatives.push({columns,p:mul(sub(b.AC,a.AC),10)});}
+  }
+  if(this.body){
+   const p=this.forward(params),planes=this.bodyPlanes(target),denominator=this.body.residualScaleMm*Math.sqrt(this.bodySamples.length);
+   for(let i=0;i<this.bodySamples.length;i++){
+    const v=this.bodySamples[i],plane=planes[i],world=add(p.AC,qrot(p.qS,v)),e={gap:dot(plane.n,world)/this.scale-plane.h,gradient:plane.n};
+    r.push(Math.min(0,e.gap)/denominator);
+    for(let j=0;j<6;j++){const d=derivatives[j],c=d.columns,dp=[d.p[0]+c[0][0]*v[0]+c[1][0]*v[1]+c[2][0]*v[2],d.p[1]+c[0][1]*v[0]+c[1][1]*v[1]+c[2][1]*v[2],d.p[2]+c[0][2]*v[0]+c[1][2]*v[1]+c[2][2]*v[2]];J[j].push(e.gap<0?dot(e.gradient,dp)/(this.scale*denominator):0);}
+   }
+  }
+  return {r,J};
  }
  pose({elev=0,plane=0,axial=0,sync=true,fit=true,backend="auto"}={}){
   if(![elev,plane,axial].every(Number.isFinite))throw Error('Non-finite joint input');
@@ -78,11 +111,19 @@ class ShoulderModel{
   const useField=fit&&sync&&this.field&&backend!=='reference';
   if(!cached&&useField)a=root.ShoulderPoseField.sample(this.field,elev,plane);
   if(!cached&&!useField&&fit&&sync&&this.samples.length)for(let k=0;k<this.solverIterations;k++){
-   const r=this.residual(a,target),J=[];
-   for(let j=0;j<6;j++){const lo=a.slice(),hi=a.slice();lo[j]-=.05;hi[j]+=.05;const x=this.residual(lo,target),y=this.residual(hi,target);J.push(r.map((_,i)=>(y[i]-x[i])/.1))}
+   const {r,J}=this.jacobian(a,target);
    const H=J.map((v,j)=>J.map((w,k)=>v.reduce((s,x,i)=>s+x*w[i],0)+(j===k?.05:0))),g=J.map(v=>-v.reduce((s,x,i)=>s+x*r[i],0)),d=linear(H,g);
    if(!d||!d.every(Number.isFinite))throw Error('Shoulder fit failed');
-   const gain=Math.min(1,2/Math.max(Math.hypot(...d),1e-12));lastStep=Math.hypot(...d)*gain;a=a.map((x,j)=>x+d[j]*gain);
+   let gain=Math.min(1,2/Math.max(Math.hypot(...d),1e-12));
+   const loss=r.reduce((s,x)=>s+x*x,0);let next=a;
+   // A full GN step may cross several active bone-support constraints.
+   // Backtracking prevents an energy-increasing step from producing an
+   // unconverged, posture-dependent branch in the precomputed joint field.
+   for(let search=0;search<12;search++){
+    const candidate=a.map((x,j)=>x+d[j]*gain),residual=this.residual(candidate,target),cost=residual.reduce((s,x)=>s+x*x,0);
+    if(cost<=loss){next=candidate;break;}gain*=.5;
+   }
+   lastStep=next===a?0:Math.hypot(...d)*gain;a=next;
   }
   if(!cached){if(this.girdleCache.size>=256)this.girdleCache.delete(this.girdleCache.keys().next().value);this.girdleCache.set(gkey,{a,lastStep})}
   const p=this.forward(a),L=this.landmarks,shaft=norm(sub(L.EL,L.GH)),axis=qrot(this.thoraxFrame,[-Math.cos(rad(plane)),0,Math.sin(rad(plane))]),qH=qmul(qaxis(axis,rad(elev)),qmul(this.neutralH,qaxis(shaft,rad(axial)))),qGH=qmul(F.conjugate(p.qS),qH);

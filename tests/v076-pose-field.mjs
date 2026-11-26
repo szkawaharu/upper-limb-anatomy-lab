@@ -1,14 +1,17 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
-for(const p of ['engine/math.js','anatomy/shoulder-rig-data.js','engine/joint-frames.js','engine/pose-field.js','anatomy/shoulder-pose-field-v076.js','engine/shoulder-kinematics.js'])await import('../'+p);
+for(const p of ['engine/math.js','anatomy/shoulder-rig-data.js','engine/joint-frames.js','engine/pose-field.js','anatomy/shoulder-pose-field-v076.js','anatomy/thorax-contact-data-v076.js','engine/convex-contact.js','engine/shoulder-kinematics.js'])await import('../'+p);
 const fixture=JSON.parse(readFileSync(new URL('./fixtures/shoulder-v076-field-calibration.json',import.meta.url))),M=AnatomyMath,K=ShoulderKinematics;
 const rig=new K.ShoulderModel(fixture),field=ShoulderPoseFieldData;
 assert.equal(createHash('sha256').update(readFileSync(new URL('../engine/shoulder-kinematics.js',import.meta.url))).digest('hex'),field.referenceSourceHash,'Regenerate the pose field after changing its reference solver');
+for(const [path,hash]of Object.entries(field.referenceDependencyHashes))assert.equal(createHash('sha256').update(readFileSync(path)).digest('hex'),hash,'Stale reference dependency '+path);
 assert.equal(rig.fieldReason,'validated-field');
 assert.equal(rig.fieldSignature,field.signature);
-assert.equal(field.values.length,61*19*6);
-assert(field.validation.samples===9720&&field.validation.maxRigidErrorBoundMm<1);
+assert.equal(field.method,ShoulderPoseField.method);
+assert.equal(field.values.length,field.elevationCount*field.planeCount*6);
+assert.equal(field.validation.samples,(field.elevationCount-1)*(field.planeCount-1)*9);
+assert(field.validation.maxRigidErrorBoundMm<1);
 const error=(a,b)=>M.len(M.sub(a,b))/rig.scale;
 let max=0;
 for(const [elev,plane] of [[0,0],[6.75,2.5],[42.75,41.25],[90,40],[120.75,86.25],[130.5,88.75],[150,90],[179.25,88.75],[180,90]]){
@@ -30,9 +33,9 @@ assert.equal(fallback.fieldReason,'calibration-signature-mismatch');
 assert.equal(fallback.pose({elev:90,plane:40}).diagnostics.backend,'reference');
 assert.equal(rig.pose({elev:90,plane:40,fit:false}).diagnostics.backend,'reference');
 // C1 interpolation: derivatives from both sides of a cell boundary agree.
-for(const [e,p,axis]of [[60,42.5,0],[61.5,40,1],[120,87.5,0]]){
+for(const [e,p,axis]of [[60,42.5,0],[61.5,40,1],[120,87.5,0],[127.5,31.25,0],[126.75,32.5,1]]){
  const h=.0001,at=d=>ShoulderPoseField.sample(field,e+(axis===0?d:0),p+(axis===1?d:0));
  const a=at(-h),b=at(0),c=at(h);
  for(let j=0;j<6;j++)assert(Math.abs((b[j]-a[j])/h-(c[j]-b[j])/h)<.001,'joint derivative discontinuity');
 }
-console.log(JSON.stringify({fieldNodes:61*19,validationSamples:9720,maxRigidErrorBoundMm:field.validation.maxRigidErrorBoundMm,maxSampleJointErrorMm:max,clinicalValidation:false}));
+console.log(JSON.stringify({fieldNodes:field.elevationCount*field.planeCount,validationSamples:field.validation.samples,maxRigidErrorBoundMm:field.validation.maxRigidErrorBoundMm,maxSampleJointErrorMm:max,clinicalValidation:false}));
