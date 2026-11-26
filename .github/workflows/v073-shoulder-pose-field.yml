@@ -1,7 +1,7 @@
-name: v073 continuous pose field from published nodes (non-deploying)
+name: v073 contact-projected pose field (non-deploying)
 on:
   push:
-    branches: ['experiment/v073-shoulder-pose-field-baseline']
+    branches: ['experiment/v073-contact-projection']
 permissions:
   contents: read
 jobs:
@@ -46,5 +46,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: v073-shoulder-pose-field-baseline
+          name: v073-contact-projection
           path: test-results/
