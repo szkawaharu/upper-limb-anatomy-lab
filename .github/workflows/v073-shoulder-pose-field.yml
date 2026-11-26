@@ -1,12 +1,17 @@
 name: v073 contact-projected pose field (non-deploying)
 on:
-  push:
-    branches: ['experiment/v073-contact-projection']
+  pull_request:
+    branches: ['experiment/v073-shoulder-pose-field-baseline']
+    types: [opened, synchronize, reopened]
+concurrency:
+  group: v073-contact-projection-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
   diagnose:
     runs-on: ubuntu-latest
+    if: github.head_ref == 'experiment/v073-contact-projection'
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
