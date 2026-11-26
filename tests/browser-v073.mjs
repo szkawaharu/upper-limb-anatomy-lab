@@ -1,7 +1,8 @@
 // Actual-atlas desktop Chromium QA. Optional network/cache, no phone claims.
 // npm ci; npm run serve; CHROME_PATH=... npm run test:browser
 import { chromium } from "playwright";
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { join } from "node:path";
 import assert from "node:assert/strict";
 import { staticServer } from "./helpers/static-server.mjs";
@@ -10,6 +11,8 @@ const out = process.env.QA_OUTPUT || "test-results/browser-v073",
   cache = process.env.ATLAS_CACHE || "/tmp/upper-limb-atlas";
 mkdirSync(out, { recursive: true });
 mkdirSync(cache, { recursive: true });
+const sourceFiles=['index.html',...['anatomy','engine'].flatMap(dir=>readdirSync(dir).filter(f=>f.endsWith('.js')).map(f=>dir+'/'+f))];
+writeFileSync(join(out,'source-manifest.json'),JSON.stringify({kind:'browser inputs SHA256; source checkout must remain unchanged during audit',files:Object.fromEntries(sourceFiles.map(f=>[f,createHash('sha256').update(readFileSync(f)).digest('hex')]))},null,2)+'\n');
 const browser = await chromium.launch({
   executablePath:
     process.env.CHROME_PATH ||

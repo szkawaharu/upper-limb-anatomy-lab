@@ -5,6 +5,7 @@ import '../engine/math.js';
 import '../anatomy/shoulder-rig-data.js';
 import '../engine/joint-frames.js';
 import '../engine/shoulder-kinematics.js';
+import '../engine/rig-diagnostics.js';
 const html=readFileSync('index.html','utf8');
 let js=html.match(/<script>([\s\S]*?)<\/script>/)[1];
 new Function(js);
@@ -76,6 +77,19 @@ window.__runV56Tests=async()=>{
  ok(v56BackIds.every(id=>geomDynamic[id]?.cpu?.vertices.every(p=>p.every(Number.isFinite))),'finite real-ready back meshes');
  ok(poseBoundingPoints().every(p=>p.every(Number.isFinite)),'finite real-ready bilateral bounds');
  ok(geomDynamic!==v56Other.geom&&geomDynamic.bicepsLong!==v56Other.geom.bicepsLong,'independent real-ready muscle buffers');
+ // The public diagnostic must describe actual left/right rigid transforms,
+ // including reflected pivots, rather than relabel canonical right values.
+ for(const side of ['right','left']){
+  v56ChooseSide(side);const diag=window.__labShoulderV076();
+  ok(diag.side===side&&diag.exactBoneCollision===false,'diagnostic side and unmeasured collision');
+  ok(diag.connections.every(r=>r.sharedPivotErrorMm<1e-7&&r.articularSurfaceGapMm===null),'shared pivots separated from articular accuracy');
+  for(const f of Object.values(diag.frames))ok(Math.abs(dot(f.axes[0],cross(f.axes[1],f.axes[2]))-1)<1e-9,'proper displayed '+side+' frame');
+  for(const [id,a]of Object.entries(diag.bones)){
+   const p=[.2,1.3,-.4],m=diag.worldMatrices[id],q=[0,1,2].map(r=>m[r]*p[0]+m[4+r]*p[1]+m[8+r]*p[2]+m[12+r]);
+   ok(len(sub(q,AnatomyMath.apply(a,p)))<1e-9,'actual '+side+' world matrix '+id);
+  }
+ }
+ v56ChooseSide('right');
  const arm=realPose.humerus[1].slice();v56RefreshOther();
  ok(len(sub(realPose.humerus[1],arm))<1e-9,'inactive refresh preserves active joint center');
 

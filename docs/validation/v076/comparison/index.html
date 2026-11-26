@@ -1,0 +1,18 @@
+<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>v0.75 / v0.76 同条件比較</title>
+<style>body{margin:0;background:#101825;color:#e9eff7;font:16px/1.6 system-ui,sans-serif}main{max-width:1500px;margin:auto;padding:20px}h1{font-size:24px}p{max-width:1000px}.note{border-left:4px solid #e8b66d;padding:10px 16px;background:#253044}label{display:inline-block;margin:8px 14px 14px 0}select{font:inherit;padding:6px;background:#26364c;color:inherit;border:1px solid #7291ac;border-radius:5px}.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}figure{margin:0}img{width:100%;height:auto;display:block;border:1px solid #3b4b60}figcaption{padding:6px}a{color:#9de8e4}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}details{margin-top:20px}@media(max-width:650px){.pair{grid-template-columns:1fr}}</style>
+<main><h1>上肢3D解剖ラボ：v0.75 / v0.76 比較</h1>
+<p class="note">根本改修は未完了です。筋の局所変形・体積・実骨間交差・医学的正確性は合格としていません。同一UI入力・同一カメラで比較しますが、中立校正の変更により同一の実骨姿勢ではありません。</p>
+<label>姿勢 <select id="pose"><option value="neutral">安静</option><option value="side90" selected>側方90°</option><option value="front150">前方150°</option><option value="asymmetric">左右非対称・肘・回内外・首60°</option></select></label>
+<label>表示 <select id="mode"><option value="bones">骨格のみ</option><option value="muscles">全筋表示</option></select></label>
+<label>視点 <select id="view"><option value="front">正面</option><option value="side">側面</option><option value="back" selected>背面</option><option value="oblique">斜め</option></select></label>
+<div class="pair"><figure><a id="oldLink"><img id="old" alt="v0.75 基準の同条件画像"></a><figcaption>v0.75.0 — c81256f</figcaption></figure><figure><a id="newLink"><img id="new" alt="v0.76 改修の同条件画像"></a><figcaption>v0.76.0 — SC/AC/GH階層と共通Quaternion修正</figcaption></figure></div>
+<p>viewer領域のスクリーンショット原画像です。骨格／筋表示は双方で同じ条件にしています。全64枚と数値条件を保存しています。</p>
+<details><summary>入力・カメラ条件</summary><pre id="conditions">取得中</pre></details>
+<details><summary>v0.76 診断表示（推定軸・関節中心・胸郭曲面・選択筋経路）</summary><img src="v076-diagnostics.png" loading="lazy" alt="推定ランドマークと近似胸郭曲面を含む診断表示"></details>
+<p><a href="../../../VALIDATION_V076.md">試験結果・採否</a> ／ <a href="../../../KNOWN_ISSUES_V076.md">未解決事項</a> ／ <a href="comparison.json">全比較条件JSON</a></p>
+</main><script>
+let rows=[];const $=id=>document.getElementById(id);
+function update(){const name=$('pose').value,mode=$('mode').value,view=$('view').value,key=[name,mode,view].join('-');for(const [id,v]of [['old','v075'],['new','v076']]){$(id).src=v+'-'+key+'.png';$(id+'Link').href=$(id).src}$('conditions').textContent=JSON.stringify(rows.filter(r=>r.name===name&&r.mode===mode&&r.view===view).map(r=>({version:r.version,pose:r.pose,camera:r.camera,errors:r.errors})),null,2)}
+for(const id of ['pose','mode','view'])$(id).addEventListener('change',update);
+fetch('comparison.json').then(r=>r.json()).then(r=>{rows=r;update()}).catch(e=>{$('conditions').textContent=String(e);update()});update();
+</script></html>

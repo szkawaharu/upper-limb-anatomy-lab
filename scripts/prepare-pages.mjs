@@ -19,7 +19,7 @@ if (!/^[0-9a-f]{40}$/.test(commit)) throw Error("Invalid deployment commit");
 rmSync(output, { recursive: true, force: true });
 mkdirSync(output, { recursive: true });
 const publicFiles = readdirSync(".").filter((name) => /\.(html|js|zip)$/.test(name));
-for (const name of [...publicFiles, "anatomy", "engine", "docs", "README.md", "HANDOFF_V073.md"]) {
+for (const name of [...publicFiles, "anatomy", "engine", "docs", "README.md", "HANDOFF_V073.md", "HANDOFF_V076.md"]) {
   if (!existsSync(name)) throw Error("Missing public source: " + name);
   cpSync(name, resolve(output, name), { recursive: true });
 }
@@ -29,8 +29,8 @@ writeFileSync(resolve(output, "build-info.json"), JSON.stringify({
   commit,
   builtAt: new Date().toISOString(),
   validationStatus: "in-progress-with-known-issues",
-  handoff: "HANDOFF_V073.md",
-  knownIssues: "docs/KNOWN_ISSUES_V073.md",
+  handoff: "HANDOFF_V076.md",
+  knownIssues: "docs/KNOWN_ISSUES_V076.md",
 }, null, 2) + "\n");
 
 const html = readFileSync(resolve(output, "index.html"), "utf8");

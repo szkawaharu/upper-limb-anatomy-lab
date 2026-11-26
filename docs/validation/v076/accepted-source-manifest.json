@@ -1,0 +1,27 @@
+{
+  "kind": "browser inputs SHA256; source checkout must remain unchanged during audit",
+  "files": {
+    "index.html": "d1d7c3d9a08100826971bfe1ccf4a704b8c0acbcf83d3a893a842a545779fd79",
+    "anatomy/bone-transforms.js": "6143a9b2165cb6b7678b5eca1124a135234069bb81aa0ba1b717c8ab621b5bc4",
+    "anatomy/cervical-data.js": "047b89aab74b9ebd8ad4b90b9ad54a76f34af84381047fe3eae2fa4d3e7918a8",
+    "anatomy/muscle-definitions.js": "af7ae95d8cc28d480ff2aec3a47adbeea70bc75a1ecb99d1633414faf07f96a6",
+    "anatomy/shoulder-pose-field-v076.js": "216ebe20fa3d009e7ce8947cc0d40f93f795a837351cb224bbc7b60b6d5f1187",
+    "anatomy/shoulder-rig-data.js": "083759619dd6c5106868e9a814bc75493acf37e67962614feb39178f4f4cb41b",
+    "engine/cervical-kinematics.js": "a0ab9cfecaa6b49773fee89dbd863a35cf58e2314a74591575fac529759f3abd",
+    "engine/contact-constraint.js": "d59172ae9076dbe6c54d6116f6fdb447df824f0b6e067b6d3b180ebc43e0627d",
+    "engine/deformation-audit.js": "838278cf26e4eed753b313d5a6b457cff3182eb27c743b8a6d445c3e01a2dbf9",
+    "engine/fiber-path.js": "a8c6b994d0f051bc8c693f4780bf243ddb122eec911131a23116f10fa0ee54da",
+    "engine/gpu-deformation.js": "c0606ddc6e4e8bed1707961cf5c505c7f1b8ec168cebaf7e76e00e4a795773c4",
+    "engine/joint-frames.js": "dc67fc8488ee532ba7f93c90a5c823e068a50c7fb089d85be8d1dade63388577",
+    "engine/material-coordinates.js": "8721f99467b4772177a3c1d7edd7b80776bff62e4265047b7c24bdc3db0510ce",
+    "engine/math.js": "058dfbbe8c0130f1d605c63b2c97be35d17956cac0df1c347d1d5dc9f17e2e5c",
+    "engine/muscle-deformation.js": "f596e91c7df1962503786e956bb0b42b2148defcbb55209ec760ad5469599fbf",
+    "engine/pose-field.js": "4a1ad965a7f746b964032d0d749af048b7642dbe28dba9b9a7bfebf75b381c70",
+    "engine/procedural-adapter.js": "b5208b8670d67ce27032abc351fbc4d0a854d86ce551ffa8f2d39ba0ed650c42",
+    "engine/renderer.js": "f63049d1a97149587fae54f7e5efdfe2b8840c8999105392553c82e09126c062",
+    "engine/rig-diagnostics.js": "bc47fdefbf96a39e92581579b06dfba4f131cd3f9041342f671dd2d0047a047e",
+    "engine/shoulder-kinematics.js": "7d1fa43efd423827b0644b697e382908dad4164c3980ff05d77fe518470b87ae",
+    "engine/tendon-deformation.js": "f9a91d3a6b8e6a395c8d57be947a3d995daffb52a7b96a2c6173163884f566b1",
+    "engine/volume-constraint.js": "62bb7d3b6edf30ec89e1a4172cb8690725b5f95ae9cd74628eb1cf84e4e8388a"
+  }
+}

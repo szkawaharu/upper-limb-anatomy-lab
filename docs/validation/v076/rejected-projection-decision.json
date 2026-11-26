@@ -1,0 +1,8 @@
+{
+  "adopted": false,
+  "reason": "single vertex improvement accompanied by severe full-mesh edge/area regressions; restore previous material chart",
+  "candidateMaxSampleStepMm": 20.54756751164918,
+  "maxEdgeRatio": 96.45150239617294,
+  "maxAreaRatio": 1815.0387916903899,
+  "thresholdsRelaxed": false
+}
