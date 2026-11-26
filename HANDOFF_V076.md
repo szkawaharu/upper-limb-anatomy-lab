@@ -1,6 +1,8 @@
 # 上肢3D解剖ラボ v0.76 — 根本改修の引き継ぎ
 
-2026-11-26。実装・検証の途中記録。根本改修の完了条件を満たしたとは判定していない。公開状態は必ずPagesのbuild-info.jsonとorigin/mainのSHAを照合する。
+2026-11-26。**本版は未公開。根本改修の完了条件を満たしていないため、mainへの統合とPages更新を保留した。** 公開中はv0.75.0 / c81256f653c04c042ed917279b4fa3e4bde0f841。HTTPでbuild-info.jsonと実ページの版を照合し、origin/mainも確認した。GitHub・実行環境は利用できており、保留理由は形状品質である。
+
+次のチャットはmainの古い引き継ぎだけで再開せず、[この作業ブランチの指示書](https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/redesign/v076-shoulder/HANDOFF_V076.md)と比較画像を読む。branchをfetchして切り替え、未完了部分の改修を続ける。
 
 ## 出発点と保存
 
@@ -22,6 +24,8 @@
 ## 再開コマンド
 
 ```sh
+git fetch origin
+git switch redesign/v076-shoulder
 npm ci
 npm test
 npm run build:pages
@@ -45,3 +49,13 @@ CHROME_PATH="/path/to/chrome" node tests/browser-v076-compare.mjs
 6. 95手作業部品の材料写像移行、頸部の全付着照合、スマートフォン／Safariのタッチと30fps、全手指・弓道複合運動の実機試験は未完了。筋力・活動率はnullのままとする。
 
 mainへ反映する場合も履歴を強制リセットしない。最新origin/mainをfetchして差分を確認し、保存ブランチを保持する。公開確認はbuild-info.jsonの版と完全SHA、Actionsの成功、実ページのメタ情報で行う。公開・試験通過と医学的正確性の合格は別である。
+
+次の依頼文：
+
+```text
+上肢3D解剖ラボの根本改修を継続してください。
+作業ブランチ：redesign/v076-shoulder（v0.76、未公開）
+引き継ぎ：https://github.com/szkawaharu/upper-limb-anatomy-lab/blob/redesign/v076-shoulder/HANDOFF_V076.md
+公開mainはv0.75.0 / c81256f。v0.76はSC/AC/GH階層とQuaternionの有限ジャンプを修正済みですが、材料チャートと局所形状が不合格のため公開していません。
+まず引き継ぎ・検証JSON・同条件64画像・実コードを読んでください。僧帽筋上部168の外転6→9°、三角筋後部の前方90°／150°の局所破綻を優先し、隣接チャートの連続性・基準曲線の折返し・条件数と骨ローカル付着を直してください。独立近接投影案は全体を悪化させたため不採用です。厚み一律削減・筋別係数・閾値緩和で隠さず、実装と全体回帰・視覚比較を続けてください。合格前に完成扱い・無理なmain反映をしないでください。
+```

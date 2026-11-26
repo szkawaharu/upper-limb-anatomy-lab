@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-11-26T09:04:11.849Z",
+  "url": "https://szkawaharu.github.io/upper-limb-anatomy-lab/",
+  "published": {
+    "version": "0.75.0",
+    "commit": "c81256f653c04c042ed917279b4fa3e4bde0f841",
+    "builtAt": "2026-11-26T07:09:45.297Z",
+    "validationStatus": "in-progress-with-known-issues",
+    "handoff": "HANDOFF_V073.md",
+    "knownIssues": "docs/KNOWN_ISSUES_V073.md"
+  },
+  "appVersion": "0.75.0",
+  "mainExpected": "c81256f653c04c042ed917279b4fa3e4bde0f841",
+  "workVersion": "0.76.0",
+  "workBranch": "redesign/v076-shoulder",
+  "deploymentAttempted": false,
+  "reason": "Material chart and muscle local shape quality remain below acceptance; preserve current main/site",
+  "webToolCouldNotOpenJson": true
+}

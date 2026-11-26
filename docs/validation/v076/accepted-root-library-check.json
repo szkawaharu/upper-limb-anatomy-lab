@@ -1,0 +1,17 @@
+{
+  "method": "Core manifest captured at audit start and manually verified at end. Root JS libraries separately checked byte-for-byte against unchanged baseline c81256f.",
+  "files": {
+    "joint-drag-v0681.js": "630c1a2f7f297b9f918a787ef4d219263bfb28ee52760c265b0bb5391aaed6ed",
+    "joint-drag-v071.js": "59e5063612b25803eabd14c137101f4df466e7dfe08d6176d723474dc69ac8ce",
+    "muscle-fiber-v064.js": "1280254ca2d59620ecdfb6c54841d2e68c4a25938a264e3e91e804eefe0d9abb",
+    "muscle-route-v068.js": "07514eb87f8551bf9e2708807536e328522cbb215b9bdf0242343bfce35bba23",
+    "muscle-route-v0682.js": "3aa7aab9c905ed2001dfe02cf1ffc5a66e49d231d45ce60ee681c60f4fd871dd",
+    "pectoral-fan-v070.js": "886d7d09c36869196859c21ff7263296689cb8dce0e5b8386499aec00fdc4559",
+    "pectoral-soft-tissue-v069.js": "e50d2716a7f570cc8e7e590efa15bec85af92ad405bdc229c692a6cf9ffc25d6",
+    "scapulohumeral-v067.js": "03ae2cb8e5a0882bac7de22be61cde6aef1fc87e9bfd8862fba7d227579e4108",
+    "scapulothoracic-v066.js": "7f79cfd5b4f2294a5ab92895fae30f074911ea61ea8c7eeb50f1aa77947eed7b",
+    "scapulothoracic-v072.js": "c97e290ec436b2eec2e55073c7709098afcb0c0a5c1e07e18929bca83c5e216f",
+    "serratus-v065.js": "4fa950b0deee04af44d6458d254815d8c0f057f6915f1d192476c8880cbbcad9"
+  },
+  "rootLibrariesUnchanged": true
+}

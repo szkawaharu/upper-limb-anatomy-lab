@@ -11,8 +11,9 @@ const out = process.env.QA_OUTPUT || "test-results/browser-v073",
   cache = process.env.ATLAS_CACHE || "/tmp/upper-limb-atlas";
 mkdirSync(out, { recursive: true });
 mkdirSync(cache, { recursive: true });
-const sourceFiles=['index.html',...['anatomy','engine'].flatMap(dir=>readdirSync(dir).filter(f=>f.endsWith('.js')).map(f=>dir+'/'+f))];
-writeFileSync(join(out,'source-manifest.json'),JSON.stringify({kind:'browser inputs SHA256; source checkout must remain unchanged during audit',files:Object.fromEntries(sourceFiles.map(f=>[f,createHash('sha256').update(readFileSync(f)).digest('hex')]))},null,2)+'\n');
+const sourceFiles=['index.html',...readdirSync('.').filter(f=>f.endsWith('.js')),...['anatomy','engine'].flatMap(dir=>readdirSync(dir).filter(f=>f.endsWith('.js')).map(f=>dir+'/'+f))];
+const sourceHashes=Object.fromEntries(sourceFiles.map(f=>[f,createHash('sha256').update(readFileSync(f)).digest('hex')]));
+writeFileSync(join(out,'source-manifest.json'),JSON.stringify({kind:'browser input files SHA256; source checkout must remain unchanged during audit',files:sourceHashes},null,2)+'\n');
 const browser = await chromium.launch({
   executablePath:
     process.env.CHROME_PATH ||
@@ -459,6 +460,7 @@ try {
   );
   assert(maxReturnMm < 0.001, "return drift");
   assert.equal(errors.length, 0, errors.join("\n"));
+  for(const [file,hash]of Object.entries(sourceHashes))assert.equal(createHash('sha256').update(readFileSync(file)).digest('hex'),hash,'Source changed during audit: '+file);
   writeFileSync(
     join(out, "report.json"),
     JSON.stringify(
