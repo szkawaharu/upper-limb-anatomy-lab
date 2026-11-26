@@ -1,0 +1,23 @@
+{
+  "sourceVertices": 14841,
+  "nodes": 14842,
+  "tets": 51352,
+  "boundaryFaces": 29678,
+  "sourceBoundaryExact": true,
+  "sourcePrefixMaxError": 0.0,
+  "referenceTetSignCounts": {
+    "positive": 51352,
+    "negative": 0,
+    "zero": 0
+  },
+  "tetVolumeSum": 0.015787478211292328,
+  "sourceSurfaceVolume": 0.015787478211292328,
+  "relativeVolumeDifference": 0.0,
+  "conditionNumberQuantiles": [
+    1.306946654392932,
+    21.01218002009158,
+    123.62578457488786,
+    267.57811198687443,
+    14819.612726414822
+  ]
+}

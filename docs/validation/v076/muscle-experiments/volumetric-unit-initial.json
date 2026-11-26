@@ -1,0 +1,10 @@
+{
+  "command": "python scripts/experimental/test-volumetric-reference.py",
+  "exitCode": 0,
+  "stdout": "PASS continuum: rigid invariance, analytic stress finite differences, orientation rejection, 8x volume, constrained relaxation; no source-muscle validation implied\n",
+  "inputsSha256": {
+    "scripts/experimental/volumetric_reference.py": "ba7936d078cc3bef724a17afe4fe9db70380545b696bd3e9e70249da938f2c79",
+    "scripts/experimental/test-volumetric-reference.py": "5a384ef3a0053c806d40c4a89de5b52dc603175b8c6f70bb080f99ff225f9d5a"
+  },
+  "sourceMuscleAccepted": false
+}

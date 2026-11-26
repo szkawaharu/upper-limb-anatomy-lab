@@ -1,0 +1,13 @@
+{
+  "experimental": true,
+  "productionEnabled": false,
+  "input": "test-results/v076-material-baseline/bindings.json",
+  "inputSha256": "514c93411e724591f2032aaa868ed2a6b3172c98462c984e26782d3a1a83a0b8",
+  "engineSha256": "2fed5ca4b5d9608fc45174e0de9a3111a82377b43a5f230c3a901fa8438b8efc",
+  "runnerSha256": "6dd3df86bdeb8625e195efed1f3f27045c74195f5e79420fce3e7f65ba97cceb",
+  "options": {
+    "QA_CHART_BINDINGS": "test-results/v076-material-baseline/bindings.json",
+    "QA_CHART_OUTPUT": "test-results/v076-differential-chart-captured",
+    "QA_CHART_FILTER": "v60Pec|v60Delt"
+  }
+}

@@ -70,3 +70,11 @@ scripts/experimental以下は製品既定に統合していない。
 - `QA_BONE_FIELD=1 QA_BONE_SWEEP=1 node scripts/calibration/audit-bone-surfaces.mjs outdir`、Python audit-bone-surfaces.pyで実骨内外。QA_BONE_EDGES=1で双方の辺→面も検査。
 
 GitHubは利用可能。mainへforce reset/pushしない。公開build-info SHAは最後にfetchして確認。ユーザーから実装・GitHub・公開は許可済みで、通常判断の確認は不要。サブエージェントは開発者指示により禁止。
+
+## 次の継続で追加した試作（2026-11-27朝）
+
+- チャートの全2方向微分とsource辺間隔によるridge逆写像を試した（differential-chart.js）。僧帽筋上部168の保存例は19.1166→7.4351mmへ減るが、元表面の大胸筋・三角筋全体は悪化し、体積比0.135や辺長比92超が残るため不採用。原型・旧クラスタの両方を比較し、単一点の改善を採用理由にしていない。
+- volumetric_reference.pyは曲線を使わない四面体の静的参照。三角筋中部の全原型頂点・面を保持する51,352四面体を生成し、source境界完全一致・正体積・全体積一致を確認。合成四面体の独立数値微分・剛体不変性・反転拒否テスト通過。
+- 初回基本肢位：体積比1.000450、非正要素0、付着誤差0、辺長比0.767〜1.264。ただし局所J=0.377〜2.184が残り、停止残差もbulkでスケールしていたので強化が必要。90°試行はその見直しで途中停止。未完了を合格としない。docs/VOLUMETRIC_REFERENCE_V076.md。
+- 大きい参照データはtest-results/v076-volumetric。Python venvへ研究ツールtetgen0.8.4とPDF閲覧用pypdfium2を追加したがWebランタイム依存にはしていない。TetGen wrapper MIT／core AGPLv3を記録。生成物の元アトラスの出典を維持し、バイナリを公開物へ入れない。
+- Liu2017の著者PDFは/tmp/liu-2017-quasi-newton.pdf、本文は同.txt。p5〜7のアルゴリズムとp10/12を確認。動的シミュレーションや実測材料定数を再現したとは主張しない。

@@ -44,3 +44,16 @@ node tests/v076-deformation-graph.mjs
 `build-shoulder-field-uniform.mjs`は不採用の均一格子実験。採用済みの肩甲帯補間を生成する場合はscripts/calibration/build-shoulder-field.mjsを使い、1mmの判定を維持する。
 
 `pack-source-bindings.mjs`とtests/helpers/source-preview.mjsは原型をCPU描画するテスト専用。QA_PREVIEW_SOURCE=1で明示した比較だけに使用し、製品版やGPU変形の比較と混同しない。
+
+## 原型に一致する四面体参照（試作）
+
+[参照計算の状態](../../docs/VOLUMETRIC_REFERENCE_V076.md)。既定へ統合していない。Python研究環境でtetgen==0.8.4を別途使用する。optional生成ツールbuild-volumetric-reference.pyはAGPL-3.0-or-later、同梱したcoreのライセンスはlicenses/tetgen-license.txt。Webアプリへこの生成ツールやTetGenバイナリを同梱せず、既存ファイルのライセンスも変更しない。元の解剖データの出典は保持する。
+
+```sh
+python scripts/experimental/build-volumetric-reference.py
+node scripts/experimental/export-volumetric-targets.mjs
+python scripts/experimental/test-volumetric-reference.py
+python scripts/experimental/run-volumetric-reference.py test-results/v076-volumetric 0 0 100
+```
+
+生成は境界の修復・簡略化をしない。元の全表面頂点・面の完全一致と元の閉鎖体積との一致を検査し、失敗したら停止する。最初のdriverは監査済み三角筋中部に限定。参照データを再生成する場合は過去の解を上書きせず別ディレクトリへ出す。局所の体積外れ値・停止量・骨接触・性能の問題が残り、非反転だけで完成としない。

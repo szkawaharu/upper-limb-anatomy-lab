@@ -1,0 +1,9 @@
+{
+  "experimental": true,
+  "productionEnabled": false,
+  "input": "test-results/v076-source-refit/bindings.json",
+  "inputSha256": "cf5272632ca6d48b53f6d23998c4cf57376c3090dc26d5cc3919eeb2f0edb504",
+  "engineSha256": "2fed5ca4b5d9608fc45174e0de9a3111a82377b43a5f230c3a901fa8438b8efc",
+  "runnerSha256": "6dd3df86bdeb8625e195efed1f3f27045c74195f5e79420fce3e7f65ba97cceb",
+  "options": {}
+}

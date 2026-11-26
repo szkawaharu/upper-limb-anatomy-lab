@@ -1,0 +1,6 @@
+import{readFileSync,writeFileSync,mkdirSync}from'node:fs';import{createHash}from'node:crypto';
+for(const f of ['engine/math','anatomy/shoulder-rig-data','engine/joint-frames','engine/pose-field','anatomy/shoulder-pose-field-v076','anatomy/thorax-contact-data-v076','engine/convex-contact','engine/shoulder-kinematics'])await import('../../'+f+'.js');
+const input=process.argv[2]||'test-results/v076-source-refit/bindings.json',id=process.argv[3]||'v60DeltMid',out=process.argv[4]||'test-results/v076-volumetric',B=JSON.parse(readFileSync(input)).find(x=>x.spec.id===id),fixture=JSON.parse(readFileSync('docs/validation/v076/contact-rms/rig-calibration.json')),rig=new ShoulderKinematics.ShoulderModel(fixture),poses=[];
+mkdirSync(out,{recursive:true});
+for(const plane of[0,90])for(const elev of[0,30,60,90,120,150,180]){const p=rig.pose({elev,plane}),bone=id=>id==='trunk'?AnatomyMath.identity():p.bones[id];poses.push({elev,plane,a:bone(B.spec.a),b:bone(B.spec.b),backend:p.diagnostics.backend});}
+writeFileSync(out+'/targets.json',JSON.stringify({id,name:B.spec.name,worldUnitsPerMm:fixture.scale,inputSha256:createHash('sha256').update(readFileSync(input)).digest('hex'),source:B.meshPreparation,poses},null,2));

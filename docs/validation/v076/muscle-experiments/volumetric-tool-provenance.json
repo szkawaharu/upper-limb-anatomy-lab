@@ -1,0 +1,21 @@
+{
+  "status": "offline research tool only; not linked or bundled into the web application",
+  "wrapper": {
+    "name": "pyvista/tetgen",
+    "version": "0.8.4",
+    "license": "MIT",
+    "source": "https://github.com/pyvista/tetgen"
+  },
+  "core": {
+    "name": "TetGen",
+    "version": "1.6.0 per wrapper project",
+    "license": "AGPLv3 per wrapper license files",
+    "source": "https://github.com/pyvista/tetgen/blob/main/src/tetgen-license"
+  },
+  "atlas": {
+    "commit": "2c83c698788cff57f6317bddcf712e7acfbea7d8",
+    "license": "CC BY-SA 2.1 Japan"
+  },
+  "runtimeDependencyAdded": false,
+  "generatedMeshRedistributed": false
+}

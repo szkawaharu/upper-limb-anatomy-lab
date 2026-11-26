@@ -1,0 +1,10 @@
+import{readFileSync,writeFileSync,mkdirSync}from'node:fs';import{createHash}from'node:crypto';
+for(const f of ['engine/math','anatomy/shoulder-rig-data','engine/joint-frames','engine/pose-field','anatomy/shoulder-pose-field-v076','anatomy/thorax-contact-data-v076','engine/convex-contact','engine/shoulder-kinematics','engine/fiber-path','engine/volume-constraint','engine/contact-constraint','engine/tendon-deformation','engine/muscle-deformation','engine/deformation-audit','scripts/experimental/differential-chart'])await import('../../'+f+'.js');
+const input=process.env.QA_CHART_BINDINGS||'test-results/v076-source-refit/bindings.json',out=process.env.QA_CHART_OUTPUT||'test-results/v076-differential-chart',all=JSON.parse(readFileSync(input)),fixture=JSON.parse(readFileSync('docs/validation/v076/contact-rms/rig-calibration.json')),rig=new ShoulderKinematics.ShoulderModel(fixture),rows=[];mkdirSync(out,{recursive:true});
+const sha=p=>createHash('sha256').update(readFileSync(p)).digest('hex');writeFileSync(out+'/manifest.json',JSON.stringify({experimental:true,productionEnabled:false,input,inputSha256:sha(input),engineSha256:sha('scripts/experimental/differential-chart.js'),runnerSha256:sha('scripts/experimental/audit-differential-chart.mjs'),options:Object.fromEntries(Object.entries(process.env).filter(([k])=>k.startsWith('QA_CHART_')))},null,2));
+for(const raw of all.filter(x=>new RegExp(process.env.QA_CHART_FILTER||'v60Pec|v60Delt').test(x.spec.id))){
+ const B=DifferentialChart.prepare({...raw,rest:Float32Array.from(raw.rest),faces:Uint32Array.from(raw.faces),weights:Float32Array.from(raw.weights)});
+ for(const plane of[0,90])for(const elev of[0,90,180]){
+  const p=rig.pose({elev,plane}),bone=id=>id==='trunk'?AnatomyMath.identity():p.bones[id],state=DifferentialChart.pose(B,bone(B.spec.a),bone(B.spec.b)),now=DifferentialChart.deform(state),r={elev,plane,...DeformationAudit.audit(state,now)};rows.push(r);console.log(JSON.stringify(r));writeFileSync(out+'/report.json',JSON.stringify(rows,null,2));
+ }
+}

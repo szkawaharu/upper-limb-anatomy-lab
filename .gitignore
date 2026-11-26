@@ -2,3 +2,5 @@ node_modules/
 test-results/
 _site/
 .DS_Store
+__pycache__/
+*.pyc
