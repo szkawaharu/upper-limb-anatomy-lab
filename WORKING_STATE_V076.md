@@ -89,3 +89,16 @@ GitHubは利用可能。mainへforce reset/pushしない。公開build-info SHA�
 - sourceの厳密な線形弾性接線応答から12ベクトルモードを作成。独立微分、剛体の無ひずみ、固定端0、密行列、完全空間への射影テストは通過。しかし実メッシュの中立へ向かう進捗0.749707でJ最小0.02676、全FEM残差47.04mmとなり停止。不採用。小さな射影勾配や全体体積約1だけを採用理由にしない。
 - 新しいPythonの5試験をCIへ追加（numpy/scipyのみ、TetGenはCI・Web依存に含めない）。全35 Node試験と区別する。CI結果は次のコミットのActionsを確認すること。
 - 大きいデータは `test-results/v076-volumetric` と `test-results/v076-volumetric-quality`。研究参照コードはscripts/experimental。Webはこの試作をロードしていない。筋・接触・性能の合格は未達でありmainへ出さない。
+
+## 収束比較・新しい引継ぎ（b08e40f以降）
+
+- b08e40f57aa7b490366d51233840b98d0f0e1af8をpush。Actions 45907316836で35 Node＋5 Python、Pages組立検査が成功。作業ブランチの公開ジョブはskip。mainと公開はc81256fのまま。
+- source-rest連成前処理、節点polar回転で運ぶ前処理はいずれも実データでCG250上限へ達し、途中停止した。現在の変形勾配の連成SPD行列を組んで因子化する `frozen` 前処理へ変更。独立した行列不要演算と一致。これは線形解法の変更だけで、エネルギー・固定端・停止条件を変えない。
+- 新分割基本肢位を厳密残差0.000599213mmへ再収束。J=0.7550179〜1.3191062、体積比1.0000087638、固定端変化0、非正要素0、Float32後も非正0。辺長比0.322990〜1.693932、面積比0.264614〜1.984910。局所形状・体積はまだ未達。
+- 元分割と新分割の全source表面差は最大0.659523mm／RMS0.354994mm。固定領域差は丸め誤差のみ。最大Jの要素の条件数は約81.58で、最高条件数sliverだけに起因する問題ではない。分割2例によるメッシュ収束性の証明としない。
+- 現在の収束解：`test-results/v076-volumetric-quality/neutral-refined-gn-k3000-frozen-v2.npz/json`。旧分割は`test-results/v076-volumetric/neutral-refined-gn-k3000.npz/json`。compact結果と独立監査はdocs/validation/v076/muscle-experiments/continuum-v2。
+- 同じsourceと骨姿勢の静止比較をtests/browser-v076-solid.mjsへ追加。最初の旧分割previewは重複した体積集計のTypedArray.map誤りで追加欄がnull（共通監査は有効）になったため採用しない。修正済みコードと新分割で再撮影する。`test-results/v076-solid-neutral`を正式な新比較と誤用しない。
+- HANDOFF_V076.mdを現状中心に書き換えた。古い21.165mmを最新最大とする依頼文や、実骨未監査とする再開手順は廃止。継続時はこの指示書と既知の問題を読む。
+
+- 修正後の新分割比較は完了：6組12画像、最終骨a/b・カメラ一致、例外0／GLエラー0。全筋／診断用の三角筋中部、正面／側面／背面。両パネルを目視確認。輪郭の差は小さく、挙上の改善とは扱わない。曲線方式に比べ体積比と最大辺／面積は下がるが最小辺／面積は悪化する。docs/validation/v076/solid-neutralに入力SHAと原画像を保存。描画runtimeがb08e40fから不変なことも照合した。
+- 状態依存連成行列の追加後、5 Python試験を再実行し全通過。独立の4要素共有節点組立、現在変形の行列不要演算との一致も追加確認。35 Nodeはこの継続で再実行し全通過。以降の変更は研究コード・ブラウザ比較試験・文書だけであり、製品runtimeは変更していない。

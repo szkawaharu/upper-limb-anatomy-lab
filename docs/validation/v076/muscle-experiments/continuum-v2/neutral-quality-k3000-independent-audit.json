@@ -1,0 +1,85 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "input": "test-results/v076-volumetric-quality/neutral-refined-gn-k3000-frozen-v2.npz",
+  "inputSha256": "db8cb7fc181e220e70a10b509d5af0bacd2e6988d24912b24043406b5aa74bf7",
+  "worldUnitsPerMm": 0.00555,
+  "sourceSurfaceVertices": 14841,
+  "sourceSurfaceTriangles": 29678,
+  "sourceBoundaryEdgeMultiplicities": {
+    "2": 44517
+  },
+  "tetrahedra": 56083,
+  "nonfiniteCoordinates": 0,
+  "nonPositiveElements": 0,
+  "JQuantiles": [
+    0.7550179154059642,
+    0.9876455882529095,
+    1.0000000000000067,
+    1.013643407765895,
+    1.3191062038394208
+  ],
+  "tetVolumeRatio": 1.0000087638270674,
+  "surfaceVolumeRatio": 1.0000087638270674,
+  "tetVsSurfaceDeformedVolumeRelativeError": 0.0,
+  "edgeRatioMinMax": [
+    0.3229895118124764,
+    1.6939318767540548
+  ],
+  "areaRatioMinMax": [
+    0.2646140937878736,
+    1.9849098985097628
+  ],
+  "float32": {
+    "referenceNonPositiveElements": 0,
+    "deformedNonPositiveElements": 0,
+    "JQuantiles": [
+      0.7550213462230025,
+      0.9876361961714836,
+      1.0000003321743678,
+      1.0136438535457948,
+      1.3190814805326108
+    ]
+  },
+  "worstElements": [
+    {
+      "tetrahedron": 10086,
+      "vertices": [
+        12205,
+        11920,
+        11918,
+        11917
+      ],
+      "J": 0.7550179154059642,
+      "referenceVolumeMm3": 0.010504440768472541,
+      "referenceCondition": 39.936517347815204,
+      "fixedVertices": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "tetrahedron": 26588,
+      "vertices": [
+        10925,
+        11261,
+        11263,
+        10939
+      ],
+      "J": 1.3191062038394208,
+      "referenceVolumeMm3": 0.010004442981372638,
+      "referenceCondition": 81.57529783689857,
+      "fixedVertices": [
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  ],
+  "boneCollisionEvaluated": false,
+  "selfCollisionEvaluated": false,
+  "medicalValidation": false
+}

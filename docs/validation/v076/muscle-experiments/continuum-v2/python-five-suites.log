@@ -1,0 +1,5 @@
+PASS continuum: rigid invariance, analytic stress finite differences, orientation rejection, 8x volume, constrained relaxation; no source-muscle validation implied
+PASS matrix-free metric: symmetry, positive eigenvalues, independent dense solve, world-rotation covariance, energy decrease, exact-J line-search rejection; no anatomical certification
+PASS transfer: independent affine reproduction, exact source boundary, inactive generated node retained, outside points and changed source rejected
+PASS reduced solid: exact pins, inactive node, rank/whitening, rigid invariance, finite-difference gradient, independent full-metric projection, complete-space continuum convergence
+PASS exact rest elasticity: independent stress derivative, infinitesimal rigid null mode, boundary response/dense solve, rank, zero attachment modes; vector reduction: independent energy gradient/full metric and complete-space equilibrium

@@ -1,0 +1,22 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "sameSourceVertices": 14841,
+  "sameSourceFaces": 29678,
+  "maxSurfaceDifferenceMm": 0.659523348947467,
+  "worstSourceVertex": 12542,
+  "rmsSurfaceDifferenceMm": 0.3549941362692059,
+  "quantilesMm": [
+    0.0,
+    0.32769104358195283,
+    0.5687428523035791,
+    0.6023269696402923,
+    0.659523348947467
+  ],
+  "maxFixedDifferenceMm": 5.001004615428633e-15,
+  "inputs": {
+    "test-results/v076-volumetric/neutral-refined-gn-k3000.npz": "e51757ee0c1122f569cc7598ab3c20518b28540ae5021f023d452b5b99220a86",
+    "test-results/v076-volumetric-quality/neutral-refined-gn-k3000-frozen-v2.npz": "db8cb7fc181e220e70a10b509d5af0bacd2e6988d24912b24043406b5aa74bf7"
+  },
+  "limitation": "same isotropic penalty and source footprints; internal discretization and local stationary solutions may differ; not a mesh convergence study"
+}

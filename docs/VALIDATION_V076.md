@@ -2,6 +2,8 @@
 
 **2026-11-27の追記：** 実骨メッシュとの監査・追加拘束・1°掃引は[BONE_CONTACT_V076.md](BONE_CONTACT_V076.md)、原型と筋変形の再監査は[MUSCLE_DEFORMATION_V076.md](MUSCLE_DEFORMATION_V076.md)。21.165mm等は57e3530時点、以下のaccepted-*と64画像は6c5ed7c時点の履歴であり、現在の最大値と読み替えない。最新の実ブラウザ結果と同条件36画像はvalidation/v076/source-bones以下へ保存する。
 
+最新の数値参照は[VOLUMETRIC_REFERENCE_V076.md](VOLUMETRIC_REFERENCE_V076.md)。35 Node＋5 Python試験はb08e40fのCIで成功。元表面を保持する中立参照は収束しても局所体積・形状が未達であり、公開合格とは区別する。以下の旧試験件数・採用構成の数値表は過去履歴で、現在値は上記の追加監査を使う。
+
 基準：v0.75.0 / c81256f653c04c042ed917279b4fa3e4bde0f841。保存ブランチarchive/v0.75.0-before-linked-rig。骨格改修0d79173、共通Quaternion修正d1a1e51。公開版の完全SHAはbuild-info.jsonで照合する。
 
 **公開判定：保留。** 本版のコード・試験・画像はredesign/v076-shoulderに保存。局所筋変形が不合格のためmainへ統合せず、Pagesの配信も実行していない。公開中のv0.75.0とmainが一致することは[HTTP確認記録](validation/v076/public-status.json)に保存した。環境やGitHub権限の欠如による保留ではない。

@@ -76,3 +76,13 @@ python scripts/experimental/run-vector-continuation.py test-results/v076-volumet
 `requirements-reference.txt`はTetGenなしの代数テスト用。体積分割の生成環境とは区別する。`build-volumetric-reference.py`のquality／出力引数は実コードを確認して別ディレクトリへ出す。
 
 `reduced_volume_basis.py`のsource 4チャンネルFEM調和liftingは、両方の元固定領域と共通剛体運動を厳密に保つ。スカラー場を筋活動と解釈しない。`linear_elastic_modes.py`は元のエネルギーの厳密なrest接線応答を使うが、`vector_reduced_solid.py`の少ない自由度が全FEMを再現したとは限らない。結果には射影残差と全FEM残差を別々に出す。どちらの縮約案も実メッシュ中立への継続で局所破綻し、不採用。途中停止したNPZを中立位の完成結果として表示しない。
+
+現在変形での連成前処理は `refine-volumetric-gn.py INPUT.npz 3000 100 OUTPUT frozen`。不採用の `coupled`（restだけ）と `warped`（節点回転だけ）から区別する。エネルギー・固定端・停止閾値は同一。独立監査は `audit-solid-reference.py INPUT.npz OUTPUT.json`。
+
+```sh
+python scripts/experimental/prepare-solid-preview.py test-results/v076-source-refit/bindings.json test-results/v076-volumetric-quality/neutral-refined-gn-k3000-frozen-v2.npz test-results/v076-volumetric-quality/neutral-refined-gn-k3000-frozen-v2.json test-results/v076-volumetric-quality/neutral-preview.json.gz
+QA_SOLID_INPUT=test-results/v076-volumetric-quality/neutral-preview.json.gz QA_OUTPUT=test-results/v076-solid-quality-neutral node tests/browser-v076-solid.mjs
+python scripts/experimental/build-solid-panels.py test-results/v076-solid-quality-neutral
+```
+
+previewの生成が完了してからブラウザを起動する。元の全表面点・面・固定領域と、宣言した中立の骨境界が合わなければexportを停止する。静止snapshotをインタラクティブな変形の実装完了と呼ばない。パネル生成のみ追加でmatplotlibが必要（研究venv）、CIの5代数試験には不要。

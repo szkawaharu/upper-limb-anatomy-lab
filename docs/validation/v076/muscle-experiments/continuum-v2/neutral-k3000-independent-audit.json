@@ -1,0 +1,85 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "input": "test-results/v076-volumetric/neutral-refined-gn-k3000.npz",
+  "inputSha256": "e51757ee0c1122f569cc7598ab3c20518b28540ae5021f023d452b5b99220a86",
+  "worldUnitsPerMm": 0.00555,
+  "sourceSurfaceVertices": 14841,
+  "sourceSurfaceTriangles": 29678,
+  "sourceBoundaryEdgeMultiplicities": {
+    "2": 44517
+  },
+  "tetrahedra": 51352,
+  "nonfiniteCoordinates": 0,
+  "nonPositiveElements": 0,
+  "JQuantiles": [
+    0.7962957442670423,
+    0.9841904079440925,
+    1.0,
+    1.0174579021583274,
+    1.666430153141033
+  ],
+  "tetVolumeRatio": 1.0000051973352475,
+  "surfaceVolumeRatio": 1.0000051973352468,
+  "tetVsSurfaceDeformedVolumeRelativeError": 6.592748139509987e-16,
+  "edgeRatioMinMax": [
+    0.24415940111877282,
+    2.223709364620685
+  ],
+  "areaRatioMinMax": [
+    0.22714173323002082,
+    2.621539198064267
+  ],
+  "float32": {
+    "referenceNonPositiveElements": 0,
+    "deformedNonPositiveElements": 0,
+    "JQuantiles": [
+      0.7962713151395711,
+      0.9841450293758162,
+      1.0,
+      1.0174309380393112,
+      1.6665662568607449
+    ]
+  },
+  "worstElements": [
+    {
+      "tetrahedron": 8955,
+      "vertices": [
+        12205,
+        11920,
+        11918,
+        11917
+      ],
+      "J": 0.7962957442670423,
+      "referenceVolumeMm3": 0.010504440768472541,
+      "referenceCondition": 39.936517347815204,
+      "fixedVertices": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "tetrahedron": 23219,
+      "vertices": [
+        10925,
+        11261,
+        11263,
+        10939
+      ],
+      "J": 1.666430153141033,
+      "referenceVolumeMm3": 0.010004442981372638,
+      "referenceCondition": 81.57529783689857,
+      "fixedVertices": [
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  ],
+  "boneCollisionEvaluated": false,
+  "selfCollisionEvaluated": false,
+  "medicalValidation": false
+}

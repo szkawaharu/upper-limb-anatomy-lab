@@ -1,0 +1,67 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "evidenceSource": "test-results/v076-volumetric-quality/neutral-refined-gn-k3000-frozen.json",
+  "evidenceSha256": "9fdd5ff9e2b6bad778c67d4fd99c6004a65770ac619ee088a60aa2e4ad264ebd",
+  "data": {
+    "method": "matrix-free SPD strain/volume quasi-Newton; approximate Hessian",
+    "reason": "iteration-limit",
+    "converged": false,
+    "energy": 0.006467727763405111,
+    "bulkPenalty": 3000.0,
+    "minJ": 0.7550133391536453,
+    "maxJ": 1.3191123760185821,
+    "JQuantiles": [
+      0.7550133391536453,
+      0.9876795197699049,
+      1.0000000000000084,
+      1.0137620781103893,
+      1.3191123760185821
+    ],
+    "volumeRatio": 1.0000087637465356,
+    "nonPositiveElements": 0,
+    "preconditionedGradientMaxMm": 0.042715444484041125,
+    "residualToleranceMm": 0.001,
+    "linearPreconditioner": {
+      "method": "frozen-pose coupled strain/volume metric sparse LU",
+      "matrixShape": [
+        45351,
+        45351
+      ],
+      "matrixNonzeros": 1604277,
+      "factorNonzeros": 11105982,
+      "bulkPenalty": 3000.0,
+      "setupSeconds": 43.11535620689392,
+      "pose": "initial-current"
+    },
+    "cgRelativeTolerance": 0.001,
+    "iterations": 20,
+    "activation": null,
+    "force": null,
+    "boneContactEvaluated": false,
+    "input": "test-results/v076-volumetric-quality/neutral-refined-gn-k3000-native.npz",
+    "inputSha256": "17ef7a39d740780012aeae02bdbe707857336c270d78177d5ea35a6ec65ed684",
+    "seconds": 59.708718061447144,
+    "fixedDeltaMm": 0.0,
+    "codeSha256": {
+      "volumetric_reference.py": "c67753c3c6f860e23ce650edfbaca156f8eeb61bff8159cd6e946cb553ea8d45",
+      "volumetric_gauss_newton.py": "0d6e5175d1e2797be1634563668ef1d3d380363c692a05b32af98c2f18dc723d",
+      "volumetric_preconditioner.py": "912a4e25dac3331b4109872d437ef96aa7d59a6dd3b392b82368dc1517bdbf87",
+      "refine-volumetric-gn.py": "fe41de0b54b257eb9c8af02ab5cc8b6272c0bb652bf67cac2c314b6b8f81d899"
+    },
+    "experimental": true,
+    "accepted": false,
+    "iterationOrStageCount": 20,
+    "lastRow": {
+      "iteration": 20,
+      "cgIterations": 9,
+      "cgInfo": 0,
+      "gain": 1.0,
+      "energy": 0.006467727763405111,
+      "volumeRatio": 1.0000087637465356,
+      "minJ": 0.7550133391536453,
+      "maxJ": 1.3191123760185821,
+      "previousResidualMaxMm": 0.03862043318261551
+    }
+  }
+}

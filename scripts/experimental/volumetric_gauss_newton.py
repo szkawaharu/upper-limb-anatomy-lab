@@ -26,7 +26,7 @@ def linearize(solid,x,bulk):
     return LinearOperator((n,n),matvec=multiply,dtype=float)
 
 
-def minimize(solid,initial,bulk=3000.,iterations=30,cg_iterations=250,residual_tolerance_mm=.001,callback=None,preconditioner=None,preconditioner_info=None,cg_rtol=1e-3):
+def minimize(solid,initial,bulk=3000.,iterations=30,cg_iterations=250,residual_tolerance_mm=.001,callback=None,preconditioner=None,preconditioner_info=None,cg_rtol=1e-3,preconditioner_factory=None):
     x=initial.copy();rows=[];reason='iteration-limit';n=len(solid.free)*3
     if preconditioner is None:
         preconditioner=LinearOperator((n,n),matvec=lambda v:solid.factor.solve(v.reshape(-1,3)).ravel(),dtype=float)
@@ -35,6 +35,7 @@ def minimize(solid,initial,bulk=3000.,iterations=30,cg_iterations=250,residual_t
         energy,fullg,J=solid.evaluate(x,bulk);g=fullg[solid.free]
         residual=float(np.linalg.norm(solid.factor.solve(g),axis=1).max(initial=0))
         if residual<residual_tolerance_mm:reason='residual-tolerance';break
+        if preconditioner_factory is not None:preconditioner=preconditioner_factory(x)
         H=linearize(solid,x,bulk);count=[0]
         def progress(_):count[0]+=1
         direction,info=cg(H,-g.ravel(),M=preconditioner,rtol=cg_rtol,atol=0,maxiter=cg_iterations,callback=progress)
