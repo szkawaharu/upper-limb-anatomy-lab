@@ -1,0 +1,4133 @@
+{
+  "method": "Final SC/AC/ST/GH numerical coordinate report; source collision safeguards and prior deviation reported separately; no clinical certification",
+  "sourceSha256": {
+    "tests/fixtures/shoulder-v076-field-calibration.json": "26bf85c4b62e17eb1064e44571fe6b8a7ef0cba03087abd90460f7b6fad88fa8",
+    "engine/math.js": "058dfbbe8c0130f1d605c63b2c97be35d17956cac0df1c347d1d5dc9f17e2e5c",
+    "anatomy/shoulder-rig-data.js": "083759619dd6c5106868e9a814bc75493acf37e67962614feb39178f4f4cb41b",
+    "engine/joint-frames.js": "dc67fc8488ee532ba7f93c90a5c823e068a50c7fb089d85be8d1dade63388577",
+    "engine/pose-field.js": "29c3dc16695f331d199dae492bcb26da53e18b445b7d03a82d052c0668e42b78",
+    "anatomy/shoulder-pose-field-v076.js": "f0f29f8d935ca180ae48f42040d1da67e2a1590a2a16d0d38e856fbd5b0cd626",
+    "anatomy/thorax-contact-data-v076.js": "f9094fcf921fc7dca5a00d21c10c499894b699b317253d054f08abe8bea08558",
+    "engine/convex-contact.js": "ada76949fa7c1e7ae4ecf412cac6d7f8f99ca70d34fe615f0a87aa30f1c64cc8",
+    "engine/shoulder-kinematics.js": "06613a3d8ce92c804e39668054dc7a97547f8330c19bf19594b3d72bad998778",
+    "engine/rig-diagnostics.js": "916bf9f6c684500c76be3fa6dbe429aa71de8fc1914360977ec624907f3d7b45"
+  },
+  "rows": [
+    {
+      "input": {
+        "elev": 0,
+        "plane": 0
+      },
+      "parameters": [
+        1.2848260288585237e-16,
+        -5.088253439703078e-16,
+        6.729044667598528e-16,
+        -3.1806940555093336e-15,
+        2.122840854551424e-16,
+        1.5240749582032535e-15
+      ],
+      "prior": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parameterDelta": [
+        1.2848260288585237e-16,
+        -5.088253439703078e-16,
+        6.729044667598528e-16,
+        -3.1806940555093336e-15,
+        2.122840854551424e-16,
+        1.5240749582032535e-15
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 0,
+        "scapulothoracic": {
+          "internalRotation": 26.540675258518505,
+          "upwardRotation": 11.773687175200715,
+          "posteriorTilt": -12.303074835794513
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": -1.2722218725854067e-14,
+          "upwardRotation": 3.1805546814635168e-15,
+          "posteriorTilt": 4.770832022195275e-15
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 26.540675258518515,
+          "upwardRotation": 11.773687175200712,
+          "posteriorTilt": -12.303074835794515
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": -1.2722218725854067e-14,
+          "upwardRotation": 3.1805546814635168e-15,
+          "posteriorTilt": 3.1805546814635168e-15
+        },
+        "humeralProximalAxisToScapularYAxis": 16.965915638672172,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          1.2848260189801582e-16,
+          -5.088253350725396e-16,
+          6.72904482591945e-16,
+          -3.1806940003806673e-15,
+          2.1228408514570125e-16,
+          1.5240749901652086e-15
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 0,
+          "scapulothoracic": {
+            "internalRotation": 26.540675258518505,
+            "upwardRotation": 11.773687175200715,
+            "posteriorTilt": -12.303074835794513
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": -1.2722218725854067e-14,
+            "upwardRotation": 3.1805546814635168e-15,
+            "posteriorTilt": 4.770832022195275e-15
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 26.540675258518515,
+            "upwardRotation": 11.773687175200712,
+            "posteriorTilt": -12.303074835794515
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": -1.2722218725854067e-14,
+            "upwardRotation": 3.1805546814635168e-15,
+            "posteriorTilt": 3.1805546814635168e-15
+          },
+          "humeralProximalAxisToScapularYAxis": 16.965915638672172,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.7390595895000001,
+            1.790368874,
+            0.13461521900000006
+          ],
+          "childWorld": [
+            0.7390595895000001,
+            1.790368874,
+            0.13461521900000006
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000005
+          ],
+          "childWorld": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000005
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 30,
+        "plane": 0
+      },
+      "parameters": [
+        11.767484664916992,
+        8.579198837280273,
+        2.7160470485687256,
+        -1.0953330993652344,
+        3.7312285900115967,
+        7.47357702255249
+      ],
+      "prior": [
+        11.8,
+        8.6,
+        2.9,
+        -1.6000000000000014,
+        3.8000000000000007,
+        7.9
+      ],
+      "parameterDelta": [
+        -0.03251533508300852,
+        -0.020801162719726207,
+        -0.18395295143127433,
+        0.504666900634767,
+        -0.06877140998840403,
+        -0.4264229774475101
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 30.000000000000014,
+        "scapulothoracic": {
+          "internalRotation": 16.593956419501552,
+          "upwardRotation": 22.78020042898785,
+          "posteriorTilt": -10.56026536279588
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": -9.946718839016965,
+          "upwardRotation": 11.00651325378714,
+          "posteriorTilt": 1.7428094729986352
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 16.069192412146233,
+          "upwardRotation": 23.109841730087705,
+          "posteriorTilt": -9.936862087191944
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 0.5247640073553168,
+          "upwardRotation": -0.3296413010998557,
+          "posteriorTilt": -0.6234032756039365
+        },
+        "humeralProximalAxisToScapularYAxis": 6.530349494267095,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          11.767484309290069,
+          8.5791988209871,
+          2.7160471263371595,
+          -1.095333111112777,
+          3.731228497183169,
+          7.473576972821657
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 30.000000000000004,
+          "scapulothoracic": {
+            "internalRotation": 16.593956740406533,
+            "upwardRotation": 22.780200392890286,
+            "posteriorTilt": -10.560265341211213
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": -9.946718518111984,
+            "upwardRotation": 11.006513217689571,
+            "posteriorTilt": 1.7428094945833046
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 16.069192412146233,
+            "upwardRotation": 23.109841730087705,
+            "posteriorTilt": -9.936862087191944
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": 0.5247643282602981,
+            "upwardRotation": -0.329641337197421,
+            "posteriorTilt": -0.6234032540192678
+          },
+          "humeralProximalAxisToScapularYAxis": 6.530349425477091,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.6276049640001173,
+            1.899436052605678,
+            0.2702609208978395
+          ],
+          "childWorld": [
+            0.6276049640001173,
+            1.899436052605678,
+            0.2702609208978395
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.74824061901948,
+            1.7447626356737507,
+            0.2166891418413299
+          ],
+          "childWorld": [
+            0.74824061901948,
+            1.7447626356737507,
+            0.2166891418413299
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 60,
+        "plane": 0
+      },
+      "parameters": [
+        17.83020782470703,
+        11.091137886047363,
+        8.462478637695312,
+        2.0514750480651855,
+        9.772374153137207,
+        12.926074981689453
+      ],
+      "prior": [
+        17.8,
+        10.799999999999999,
+        8.9,
+        0.7999999999999972,
+        9.5,
+        15.4
+      ],
+      "parameterDelta": [
+        0.03020782470703054,
+        0.29113788604736435,
+        -0.43752136230468786,
+        1.2514750480651884,
+        0.27237415313720703,
+        -2.4739250183105472
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 59.99999999999999,
+        "scapulothoracic": {
+          "internalRotation": 16.8625992300469,
+          "upwardRotation": 33.96617773023457,
+          "posteriorTilt": -5.910724098679917
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": -9.678076028471617,
+          "upwardRotation": 22.192490555033856,
+          "posteriorTilt": 6.3923507371146
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 15.242977852691755,
+          "upwardRotation": 34.18484436005967,
+          "posteriorTilt": -2.4087357689247644
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 1.6196213773551456,
+          "upwardRotation": -0.21866662982510204,
+          "posteriorTilt": -3.5019883297551524
+        },
+        "humeralProximalAxisToScapularYAxis": 25.98165324675983,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          17.792103596400217,
+          10.948654555724158,
+          8.614491312222176,
+          1.6893423136704317,
+          9.651593425081519,
+          13.931073005354737
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 59.99999999999993,
+          "scapulothoracic": {
+            "internalRotation": 16.379684083008172,
+            "upwardRotation": 33.98511524413614,
+            "posteriorTilt": -4.528790373768416
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": -10.160991175510343,
+            "upwardRotation": 22.21142806893542,
+            "posteriorTilt": 7.774284462026098
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 15.242977852691755,
+            "upwardRotation": 34.18484436005967,
+            "posteriorTilt": -2.4087357689247644
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": 1.1367062303164184,
+            "upwardRotation": -0.1997291159235377,
+            "posteriorTilt": -2.1200546048436517
+          },
+          "humeralProximalAxisToScapularYAxis": 26.418000236779974,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.5641141378683352,
+            1.9287461427568673,
+            0.3282914942020655
+          ],
+          "childWorld": [
+            0.5641141378683352,
+            1.9287461427568673,
+            0.3282914942020655
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.7064309179187431,
+            1.8044185101868915,
+            0.25322261533567414
+          ],
+          "childWorld": [
+            0.7064309179187431,
+            1.8044185101868915,
+            0.25322261533567414
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 90,
+        "plane": 0
+      },
+      "parameters": [
+        20.773372650146484,
+        13.053674697875977,
+        14.677621841430664,
+        5.8687214851379395,
+        14.19593620300293,
+        17.156038284301758
+      ],
+      "prior": [
+        20.8,
+        12.1,
+        15.700000000000001,
+        1.6000000000000014,
+        13.8,
+        21.5
+      ],
+      "parameterDelta": [
+        -0.026627349853516336,
+        0.9536746978759769,
+        -1.022378158569337,
+        4.268721485137938,
+        0.395936203002929,
+        -4.343961715698242
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 90.00000000000013,
+        "scapulothoracic": {
+          "internalRotation": 21.460938303570984,
+          "upwardRotation": 43.50289877120247,
+          "posteriorTilt": -3.3249424376737586
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": -5.079736954947531,
+          "upwardRotation": 31.72921159600175,
+          "posteriorTilt": 8.978132398120758
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 15.048858906763236,
+          "upwardRotation": 44.49374218354809,
+          "posteriorTilt": 5.0994392158761235
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 6.41207939680775,
+          "upwardRotation": -0.9908434123456281,
+          "posteriorTilt": -8.424381653549881
+        },
+        "humeralProximalAxisToScapularYAxis": 48.63874168691564,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          20.849543124507584,
+          12.456735452258805,
+          15.417507384310202,
+          3.1316422355180467,
+          14.266735990162763,
+          19.28878255344072
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 89.99999999999991,
+          "scapulothoracic": {
+            "internalRotation": 17.42853257132181,
+            "upwardRotation": 44.58120625981508,
+            "posteriorTilt": 1.3483367993074522
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": -9.112142687196707,
+            "upwardRotation": 32.80751908461437,
+            "posteriorTilt": 13.651411635101969
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 15.048858906763236,
+            "upwardRotation": 44.49374218354809,
+            "posteriorTilt": 5.0994392158761235
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": 2.3796736645585743,
+            "upwardRotation": 0.08746407626698995,
+            "posteriorTilt": -3.7511024165686715
+          },
+          "humeralProximalAxisToScapularYAxis": 48.512091002026196,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.528571234971673,
+            1.9533105280449323,
+            0.3513477991951215
+          ],
+          "childWorld": [
+            0.528571234971673,
+            1.9533105280449323,
+            0.3513477991951215
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.6794158871213062,
+            1.8593953456525114,
+            0.252491377488272
+          ],
+          "childWorld": [
+            0.6794158871213062,
+            1.8593953456525114,
+            0.252491377488272
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 120,
+        "plane": 0
+      },
+      "parameters": [
+        23.12549591064453,
+        15.007939338684082,
+        24.2050838470459,
+        8.957996368408203,
+        15.276503562927246,
+        20.050689697265625
+      ],
+      "prior": [
+        24.500000000000004,
+        13.6,
+        24.9,
+        2.299999999999997,
+        14.600000000000001,
+        23.1
+      ],
+      "parameterDelta": [
+        -1.3745040893554723,
+        1.4079393386840824,
+        -0.6949161529541001,
+        6.657996368408206,
+        0.6765035629272447,
+        -3.0493103027343764
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 120.00000000000006,
+        "scapulothoracic": {
+          "internalRotation": 26.541265493155414,
+          "upwardRotation": 52.77992011405687,
+          "posteriorTilt": -1.653701642289432
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": 0.0005902346368992539,
+          "upwardRotation": 41.00623293885615,
+          "posteriorTilt": 10.649373193505085
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 13.032018804880426,
+          "upwardRotation": 53.53948973455023,
+          "posteriorTilt": 9.788727619709793
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 13.50924668827499,
+          "upwardRotation": -0.7595696204933546,
+          "posteriorTilt": -11.442429261999223
+        },
+        "humeralProximalAxisToScapularYAxis": 71.00105715089818,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          24.5680160290813,
+          13.86184096524516,
+          24.670203006574855,
+          4.072198079131085,
+          14.906800806544805,
+          21.8440276636844
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 119.99999999999994,
+          "scapulothoracic": {
+            "internalRotation": 16.13722596026301,
+            "upwardRotation": 53.50122614363255,
+            "posteriorTilt": 6.369229855503739
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": -10.403449298255506,
+            "upwardRotation": 41.727538968431844,
+            "posteriorTilt": 18.672304691298255
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 13.032018804880426,
+            "upwardRotation": 53.53948973455023,
+            "posteriorTilt": 9.788727619709793
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": 3.105207155382582,
+            "upwardRotation": -0.03826359091767726,
+            "posteriorTilt": -3.4194977642060547
+          },
+          "humeralProximalAxisToScapularYAxis": 69.98023341120815,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.49784498289788065,
+            1.9781300826257615,
+            0.3664912029708802
+          ],
+          "childWorld": [
+            0.49784498289788065,
+            1.9781300826257615,
+            0.3664912029708802
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.6495661941761885,
+            1.9160777278930752,
+            0.24617103841397836
+          ],
+          "childWorld": [
+            0.6495661941761885,
+            1.9160777278930752,
+            0.24617103841397836
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 150,
+        "plane": 0
+      },
+      "parameters": [
+        24.878856658935547,
+        15.253960609436035,
+        29.87061309814453,
+        11.224953651428223,
+        14.472579002380371,
+        21.8667049407959
+      ],
+      "prior": [
+        25.900000000000002,
+        13.499999999999998,
+        30.9,
+        3.5,
+        14.399999999999999,
+        23.9
+      ],
+      "parameterDelta": [
+        -1.0211433410644553,
+        1.753960609436037,
+        -1.0293869018554673,
+        7.724953651428223,
+        0.07257900238037251,
+        -2.0332950592041
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 150.0000000000001,
+        "scapulothoracic": {
+          "internalRotation": 29.078565731972077,
+          "upwardRotation": 56.566760882708735,
+          "posteriorTilt": -0.2229230614258652
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": 2.5378904734535603,
+          "upwardRotation": 44.79307370750802,
+          "posteriorTilt": 12.080151774368652
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 12.18822568100437,
+          "upwardRotation": 58.223991233622925,
+          "posteriorTilt": 13.786503741307968
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 16.890340050967705,
+          "upwardRotation": -1.6572303509141855,
+          "posteriorTilt": -14.009426802733836
+        },
+        "humeralProximalAxisToScapularYAxis": 96.40372838319746,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          26.00336972825219,
+          13.75205304334572,
+          30.6910767641036,
+          5.397438485400891,
+          14.640383655552828,
+          22.97290449287001
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 150.0000000000001,
+          "scapulothoracic": {
+            "internalRotation": 15.888657740513352,
+            "upwardRotation": 58.20086912322537,
+            "posteriorTilt": 10.087329115663142
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": -10.652017518005161,
+            "upwardRotation": 46.42718194802466,
+            "posteriorTilt": 22.390403951457657
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 12.18822568100437,
+            "upwardRotation": 58.223991233622925,
+            "posteriorTilt": 13.786503741307968
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": 3.700432059508981,
+            "upwardRotation": -0.023122110397551764,
+            "posteriorTilt": -3.699174625644826
+          },
+          "humeralProximalAxisToScapularYAxis": 94.06392960706773,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.47898980763922766,
+            1.9801097291588654,
+            0.3804526491406659
+          ],
+          "childWorld": [
+            0.47898980763922766,
+            1.9801097291588654,
+            0.3804526491406659
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.6262796958155196,
+            1.9321066285437756,
+            0.24874025848974418
+          ],
+          "childWorld": [
+            0.6262796958155196,
+            1.9321066285437756,
+            0.24874025848974418
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 180,
+        "plane": 0
+      },
+      "parameters": [
+        24.878856658935547,
+        15.253960609436035,
+        29.87061309814453,
+        11.224953651428223,
+        14.472579002380371,
+        21.8667049407959
+      ],
+      "prior": [
+        25.900000000000002,
+        13.499999999999998,
+        30.9,
+        3.5,
+        14.399999999999999,
+        23.9
+      ],
+      "parameterDelta": [
+        -1.0211433410644553,
+        1.753960609436037,
+        -1.0293869018554673,
+        7.724953651428223,
+        0.07257900238037251,
+        -2.0332950592041
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 180,
+        "scapulothoracic": {
+          "internalRotation": 29.078565731972077,
+          "upwardRotation": 56.566760882708735,
+          "posteriorTilt": -0.2229230614258652
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": 2.5378904734535603,
+          "upwardRotation": 44.79307370750802,
+          "posteriorTilt": 12.080151774368652
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 12.18822568100437,
+          "upwardRotation": 58.223991233622925,
+          "posteriorTilt": 13.786503741307968
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 16.890340050967705,
+          "upwardRotation": -1.6572303509141855,
+          "posteriorTilt": -14.009426802733836
+        },
+        "humeralProximalAxisToScapularYAxis": 123.4329528056634,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          26.00336972825219,
+          13.75205304334572,
+          30.6910767641036,
+          5.397438485400891,
+          14.640383655552828,
+          22.97290449287001
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 180,
+          "scapulothoracic": {
+            "internalRotation": 15.888657740513352,
+            "upwardRotation": 58.20086912322537,
+            "posteriorTilt": 10.087329115663142
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": -10.652017518005161,
+            "upwardRotation": 46.42718194802466,
+            "posteriorTilt": 22.390403951457657
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 12.18822568100437,
+            "upwardRotation": 58.223991233622925,
+            "posteriorTilt": 13.786503741307968
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": 3.700432059508981,
+            "upwardRotation": -0.023122110397551764,
+            "posteriorTilt": -3.699174625644826
+          },
+          "humeralProximalAxisToScapularYAxis": 121.25161713697328,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.47898980763922766,
+            1.9801097291588654,
+            0.3804526491406659
+          ],
+          "childWorld": [
+            0.47898980763922766,
+            1.9801097291588654,
+            0.3804526491406659
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.6262796958155196,
+            1.9321066285437756,
+            0.24874025848974418
+          ],
+          "childWorld": [
+            0.6262796958155196,
+            1.9321066285437756,
+            0.24874025848974418
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 0,
+        "plane": 40
+      },
+      "parameters": [
+        1.2848260288585237e-16,
+        -5.088253439703078e-16,
+        6.729044667598528e-16,
+        -3.1806940555093336e-15,
+        2.122840854551424e-16,
+        1.5240749582032535e-15
+      ],
+      "prior": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parameterDelta": [
+        1.2848260288585237e-16,
+        -5.088253439703078e-16,
+        6.729044667598528e-16,
+        -3.1806940555093336e-15,
+        2.122840854551424e-16,
+        1.5240749582032535e-15
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 0,
+        "scapulothoracic": {
+          "internalRotation": 26.540675258518505,
+          "upwardRotation": 11.773687175200715,
+          "posteriorTilt": -12.303074835794513
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": -1.2722218725854067e-14,
+          "upwardRotation": 3.1805546814635168e-15,
+          "posteriorTilt": 4.770832022195275e-15
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 26.540675258518515,
+          "upwardRotation": 11.773687175200712,
+          "posteriorTilt": -12.303074835794515
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": -1.2722218725854067e-14,
+          "upwardRotation": 3.1805546814635168e-15,
+          "posteriorTilt": 3.1805546814635168e-15
+        },
+        "humeralProximalAxisToScapularYAxis": 16.965915638672172,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          1.2848260189801582e-16,
+          -5.088253350725396e-16,
+          6.72904482591945e-16,
+          -3.1806940003806673e-15,
+          2.1228408514570125e-16,
+          1.5240749901652086e-15
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 0,
+          "scapulothoracic": {
+            "internalRotation": 26.540675258518505,
+            "upwardRotation": 11.773687175200715,
+            "posteriorTilt": -12.303074835794513
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": -1.2722218725854067e-14,
+            "upwardRotation": 3.1805546814635168e-15,
+            "posteriorTilt": 4.770832022195275e-15
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 26.540675258518515,
+            "upwardRotation": 11.773687175200712,
+            "posteriorTilt": -12.303074835794515
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": -1.2722218725854067e-14,
+            "upwardRotation": 3.1805546814635168e-15,
+            "posteriorTilt": 3.1805546814635168e-15
+          },
+          "humeralProximalAxisToScapularYAxis": 16.965915638672172,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.7390595895000001,
+            1.790368874,
+            0.13461521900000006
+          ],
+          "childWorld": [
+            0.7390595895000001,
+            1.790368874,
+            0.13461521900000006
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000005
+          ],
+          "childWorld": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000005
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 30,
+        "plane": 40
+      },
+      "parameters": [
+        6.489053726196289,
+        5.596351623535156,
+        1.6421719789505005,
+        -0.22655603289604187,
+        5.630592346191406,
+        5.943579196929932
+      ],
+      "prior": [
+        6.400000000000002,
+        5.6,
+        1.9,
+        -0.7999999999999972,
+        5.800000000000001,
+        6.3
+      ],
+      "parameterDelta": [
+        0.08905372619628693,
+        -0.0036483764648433947,
+        -0.2578280210494994,
+        0.5734439671039553,
+        -0.16940765380859446,
+        -0.3564208030700682
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 30.000000000000014,
+        "scapulothoracic": {
+          "internalRotation": 22.131043498415,
+          "upwardRotation": 21.929627841805743,
+          "posteriorTilt": -10.389452690932941
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": -4.409631760103515,
+          "upwardRotation": 10.155940666605035,
+          "posteriorTilt": 1.9136221448615738
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 21.664845908601247,
+          "upwardRotation": 22.407486119649562,
+          "posteriorTilt": -9.795681567341587
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 0.46619758981375503,
+          "upwardRotation": -0.4778582778438162,
+          "posteriorTilt": -0.5937711235913551
+        },
+        "humeralProximalAxisToScapularYAxis": 20.391172082772705,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          6.463590559646277,
+          5.569895869597829,
+          1.702810360595065,
+          -0.3282980006050008,
+          5.653955310409422,
+          6.096888076606187
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 30.00000000000003,
+          "scapulothoracic": {
+            "internalRotation": 22.048236326955287,
+            "upwardRotation": 22.004717216034337,
+            "posteriorTilt": -10.16106344365437
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": -4.49243893156323,
+            "upwardRotation": 10.231030040833625,
+            "posteriorTilt": 2.1420113921401462
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 21.664845908601247,
+            "upwardRotation": 22.407486119649562,
+            "posteriorTilt": -9.795681567341587
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": 0.3833904183540405,
+            "upwardRotation": -0.4027689036152259,
+            "posteriorTilt": -0.36538187631278213
+          },
+          "humeralProximalAxisToScapularYAxis": 20.18503665862319,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.6798101075778704,
+            1.8628782248274602,
+            0.21358321446073392
+          ],
+          "childWorld": [
+            0.6798101075778704,
+            1.8628782248274602,
+            0.21358321446073392
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.7936511810467524,
+            1.7073227773048274,
+            0.14885705733616772
+          ],
+          "childWorld": [
+            0.7936511810467524,
+            1.7073227773048274,
+            0.14885705733616772
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 60,
+        "plane": 40
+      },
+      "parameters": [
+        10.736512184143066,
+        8.666640281677246,
+        6.0597429275512695,
+        3.269897699356079,
+        10.6160249710083,
+        11.108654975891113
+      ],
+      "prior": [
+        10.5,
+        8.4,
+        6.9,
+        1.3999999999999986,
+        11,
+        12.700000000000003
+      ],
+      "parameterDelta": [
+        0.2365121841430664,
+        0.26664028167724574,
+        -0.8402570724487308,
+        1.8698976993560805,
+        -0.3839750289916992,
+        -1.5913450241088896
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 60.00000000000001,
+        "scapulothoracic": {
+          "internalRotation": 24.100027963322223,
+          "upwardRotation": 31.37255463315458,
+          "posteriorTilt": -6.961023320522479
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": -2.4406472951962925,
+          "upwardRotation": 19.59886745795386,
+          "posteriorTilt": 5.342051515272037
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 22.224498918341872,
+          "upwardRotation": 32.68792773571255,
+          "posteriorTilt": -4.15665265310515
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 1.8755290449803488,
+          "upwardRotation": -1.3153731025579716,
+          "posteriorTilt": -2.8043706674173294
+        },
+        "humeralProximalAxisToScapularYAxis": 34.370151695076196,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          10.621776535305438,
+          8.418162088856477,
+          6.622959610281668,
+          1.9831980216537715,
+          10.911701051318955,
+          12.041663323026006
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 60.000000000000085,
+          "scapulothoracic": {
+            "internalRotation": 22.74192878346246,
+            "upwardRotation": 32.27023891256389,
+            "posteriorTilt": -5.147903721452838
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": -3.798746475056056,
+            "upwardRotation": 20.496551737363184,
+            "posteriorTilt": 7.1551711143416785
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 22.224498918341872,
+            "upwardRotation": 32.68792773571255,
+            "posteriorTilt": -4.15665265310515
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": 0.5174298651205856,
+            "upwardRotation": -0.41768882314865624,
+            "posteriorTilt": -0.9912510683476888
+          },
+          "humeralProximalAxisToScapularYAxis": 33.092008112233614,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.6360367330822292,
+            1.901689712162385,
+            0.2589017102788334
+          ],
+          "childWorld": [
+            0.6360367330822292,
+            1.901689712162385,
+            0.2589017102788334
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.7653314190210501,
+            1.7712795848692289,
+            0.17159280142073102
+          ],
+          "childWorld": [
+            0.7653314190210501,
+            1.7712795848692289,
+            0.17159280142073102
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 90,
+        "plane": 40
+      },
+      "parameters": [
+        12.398889541625977,
+        10.257466316223145,
+        13.828413009643555,
+        7.1135945320129395,
+        12.249302864074707,
+        12.948667526245117
+      ],
+      "prior": [
+        13.000000000000004,
+        9.7,
+        14.9,
+        3,
+        12.7,
+        14.4
+      ],
+      "parameterDelta": [
+        -0.601110458374027,
+        0.5574663162231452,
+        -1.0715869903564457,
+        4.1135945320129395,
+        -0.45069713592529226,
+        -1.4513324737548832
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 90.00000000000014,
+        "scapulothoracic": {
+          "internalRotation": 28.412762348496727,
+          "upwardRotation": 39.57412818313729,
+          "posteriorTilt": -4.6235246724865835
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": 1.87208708997821,
+          "upwardRotation": 27.800441007936573,
+          "posteriorTilt": 7.679550163307932
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 22.43523571493948,
+          "upwardRotation": 41.41347859340486,
+          "posteriorTilt": -0.10981522313601957
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 5.977526633557248,
+          "upwardRotation": -1.8393504102675786,
+          "posteriorTilt": -4.513709449350563
+        },
+        "humeralProximalAxisToScapularYAxis": 52.70848545436085,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          13.225191746617902,
+          9.700091463328478,
+          14.578190338192542,
+          3.835868144606902,
+          12.50927388962733,
+          14.059980864979824
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 90,
+          "scapulothoracic": {
+            "internalRotation": 23.224616008108377,
+            "upwardRotation": 40.82644200375819,
+            "posteriorTilt": -1.009362776702141
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": -3.316059250410142,
+            "upwardRotation": 29.05275482855747,
+            "posteriorTilt": 11.293712059092375
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 22.43523571493948,
+            "upwardRotation": 41.41347859340486,
+            "posteriorTilt": -0.10981522313601957
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": 0.789380293168896,
+            "upwardRotation": -0.5870365896466826,
+            "posteriorTilt": -0.8995475535661213
+          },
+          "humeralProximalAxisToScapularYAxis": 51.62787886336839,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.6163504102646956,
+            1.9222446232326111,
+            0.27451842978124774
+          ],
+          "childWorld": [
+            0.6163504102646956,
+            1.9222446232326111,
+            0.27451842978124774
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.7511536796336999,
+            1.817179983347522,
+            0.16435372267469656
+          ],
+          "childWorld": [
+            0.7511536796336999,
+            1.817179983347522,
+            0.16435372267469656
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 120,
+        "plane": 40
+      },
+      "parameters": [
+        16.217870712280273,
+        12.376492500305176,
+        22.580543518066406,
+        10.304268836975098,
+        12.198432922363281,
+        16.770654678344727
+      ],
+      "prior": [
+        17.3,
+        10.999999999999998,
+        23.9,
+        3.6000000000000014,
+        12.6,
+        18.9
+      ],
+      "parameterDelta": [
+        -1.0821292877197273,
+        1.3764925003051776,
+        -1.3194564819335923,
+        6.704268836975096,
+        -0.4015670776367184,
+        -2.129345321655272
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 120.00000000000023,
+        "scapulothoracic": {
+          "internalRotation": 30.952380384163252,
+          "upwardRotation": 47.36614566748087,
+          "posteriorTilt": -1.6192205577842933
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": 4.411705125644734,
+          "upwardRotation": 35.59245849228016,
+          "posteriorTilt": 10.683854278010221
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 19.03577951104569,
+          "upwardRotation": 49.432634725401556,
+          "posteriorTilt": 7.903069883961443
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 11.916600873117565,
+          "upwardRotation": -2.06648905792069,
+          "posteriorTilt": -9.522290441745735
+        },
+        "humeralProximalAxisToScapularYAxis": 73.34635840186904,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          17.51440679879165,
+          11.284160226716,
+          23.586195071594585,
+          5.333056231356097,
+          12.771827592591002,
+          17.545515608494636
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 119.99999999999994,
+          "scapulothoracic": {
+            "internalRotation": 21.68539334702433,
+            "upwardRotation": 49.27507264824523,
+            "posteriorTilt": 4.624716667395431
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": -4.855281911494185,
+            "upwardRotation": 37.501385473044515,
+            "posteriorTilt": 16.927791503189948
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 19.03577951104569,
+            "upwardRotation": 49.432634725401556,
+            "posteriorTilt": 7.903069883961443
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": 2.649613835978643,
+            "upwardRotation": -0.15756207715633813,
+            "posteriorTilt": -3.2783532165660128
+          },
+          "humeralProximalAxisToScapularYAxis": 71.46803517723386,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.5745260912046266,
+            1.9479811398915776,
+            0.30965127184277286
+          ],
+          "childWorld": [
+            0.5745260912046266,
+            1.9479811398915776,
+            0.30965127184277286
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.7104082765326634,
+            1.8693056207095802,
+            0.18045004479539445
+          ],
+          "childWorld": [
+            0.7104082765326634,
+            1.8693056207095802,
+            0.18045004479539445
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 150,
+        "plane": 40
+      },
+      "parameters": [
+        17.477689743041992,
+        13.29111099243164,
+        31.468772888183594,
+        11.932048797607422,
+        13.823610305786133,
+        20.945152282714844
+      ],
+      "prior": [
+        19.7,
+        11.799999999999999,
+        31.9,
+        4.299999999999997,
+        13.3,
+        22.200000000000003
+      ],
+      "parameterDelta": [
+        -2.222310256958007,
+        1.4911109924316417,
+        -0.43122711181640483,
+        7.632048797607425,
+        0.5236103057861321,
+        -1.254847717285159
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 150.00000000000043,
+        "scapulothoracic": {
+          "internalRotation": 34.622956967134655,
+          "upwardRotation": 56.88872024442345,
+          "posteriorTilt": 2.3727932614645564
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": 8.082281708616133,
+          "upwardRotation": 45.11503306922275,
+          "posteriorTilt": 14.67586809725907
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 16.96857543412152,
+          "upwardRotation": 57.19505927296474,
+          "posteriorTilt": 14.905282751078095
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 17.654381533013133,
+          "upwardRotation": -0.30633902854128203,
+          "posteriorTilt": -12.53248948961354
+        },
+        "humeralProximalAxisToScapularYAxis": 93.10295723296775,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          19.980904701465377,
+          12.135909577265933,
+          31.613858882916606,
+          6.454255371701702,
+          13.477921171693533,
+          21.146753085203276
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 149.99999999999997,
+          "scapulothoracic": {
+            "internalRotation": 20.977092619963585,
+            "upwardRotation": 57.148869106664016,
+            "posteriorTilt": 10.681711695991448
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": -5.563582638554929,
+            "upwardRotation": 45.375181931463295,
+            "posteriorTilt": 22.98478653178596
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 16.96857543412152,
+            "upwardRotation": 57.19505927296474,
+            "posteriorTilt": 14.905282751078095
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": 4.008517185842068,
+            "upwardRotation": -0.0461901663007228,
+            "posteriorTilt": -4.22357105508665
+          },
+          "humeralProximalAxisToScapularYAxis": 92.36201730848876,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.5593669630490546,
+            1.9594228055064709,
+            0.3198155203614168
+          ],
+          "childWorld": [
+            0.5593669630490546,
+            1.9594228055064709,
+            0.3198155203614168
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.6876816693927018,
+            1.9152427255962818,
+            0.16838824622065662
+          ],
+          "childWorld": [
+            0.6876816693927018,
+            1.9152427255962818,
+            0.16838824622065662
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 180,
+        "plane": 40
+      },
+      "parameters": [
+        17.477689743041992,
+        13.29111099243164,
+        31.468772888183594,
+        11.932048797607422,
+        13.823610305786133,
+        20.945152282714844
+      ],
+      "prior": [
+        19.7,
+        11.799999999999999,
+        31.9,
+        4.299999999999997,
+        13.3,
+        22.200000000000003
+      ],
+      "parameterDelta": [
+        -2.222310256958007,
+        1.4911109924316417,
+        -0.43122711181640483,
+        7.632048797607425,
+        0.5236103057861321,
+        -1.254847717285159
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 180,
+        "scapulothoracic": {
+          "internalRotation": 34.622956967134655,
+          "upwardRotation": 56.88872024442345,
+          "posteriorTilt": 2.3727932614645564
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": 8.082281708616133,
+          "upwardRotation": 45.11503306922275,
+          "posteriorTilt": 14.67586809725907
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 16.96857543412152,
+          "upwardRotation": 57.19505927296474,
+          "posteriorTilt": 14.905282751078095
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 17.654381533013133,
+          "upwardRotation": -0.30633902854128203,
+          "posteriorTilt": -12.53248948961354
+        },
+        "humeralProximalAxisToScapularYAxis": 123.07924743879781,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          19.980904701465377,
+          12.135909577265933,
+          31.613858882916606,
+          6.454255371701702,
+          13.477921171693533,
+          21.146753085203276
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 180,
+          "scapulothoracic": {
+            "internalRotation": 20.977092619963585,
+            "upwardRotation": 57.148869106664016,
+            "posteriorTilt": 10.681711695991448
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": -5.563582638554929,
+            "upwardRotation": 45.375181931463295,
+            "posteriorTilt": 22.98478653178596
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 16.96857543412152,
+            "upwardRotation": 57.19505927296474,
+            "posteriorTilt": 14.905282751078095
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": 4.008517185842068,
+            "upwardRotation": -0.0461901663007228,
+            "posteriorTilt": -4.22357105508665
+          },
+          "humeralProximalAxisToScapularYAxis": 122.21233307300261,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.5593669630490546,
+            1.9594228055064709,
+            0.3198155203614168
+          ],
+          "childWorld": [
+            0.5593669630490546,
+            1.9594228055064709,
+            0.3198155203614168
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.6876816693927018,
+            1.9152427255962818,
+            0.16838824622065662
+          ],
+          "childWorld": [
+            0.6876816693927018,
+            1.9152427255962818,
+            0.16838824622065662
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 0,
+        "plane": 90
+      },
+      "parameters": [
+        1.2848260288585237e-16,
+        -5.088253439703078e-16,
+        6.729044667598528e-16,
+        -3.1806940555093336e-15,
+        2.122840854551424e-16,
+        1.5240749582032535e-15
+      ],
+      "prior": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "parameterDelta": [
+        1.2848260288585237e-16,
+        -5.088253439703078e-16,
+        6.729044667598528e-16,
+        -3.1806940555093336e-15,
+        2.122840854551424e-16,
+        1.5240749582032535e-15
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 0,
+        "scapulothoracic": {
+          "internalRotation": 26.540675258518505,
+          "upwardRotation": 11.773687175200715,
+          "posteriorTilt": -12.303074835794513
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": -1.2722218725854067e-14,
+          "upwardRotation": 3.1805546814635168e-15,
+          "posteriorTilt": 4.770832022195275e-15
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 26.540675258518515,
+          "upwardRotation": 11.773687175200712,
+          "posteriorTilt": -12.303074835794515
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": -1.2722218725854067e-14,
+          "upwardRotation": 3.1805546814635168e-15,
+          "posteriorTilt": 3.1805546814635168e-15
+        },
+        "humeralProximalAxisToScapularYAxis": 16.965915638672172,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          1.2848260189801582e-16,
+          -5.088253350725396e-16,
+          6.72904482591945e-16,
+          -3.1806940003806673e-15,
+          2.1228408514570125e-16,
+          1.5240749901652086e-15
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 0,
+          "scapulothoracic": {
+            "internalRotation": 26.540675258518505,
+            "upwardRotation": 11.773687175200715,
+            "posteriorTilt": -12.303074835794513
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": -1.2722218725854067e-14,
+            "upwardRotation": 3.1805546814635168e-15,
+            "posteriorTilt": 4.770832022195275e-15
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 26.540675258518515,
+            "upwardRotation": 11.773687175200712,
+            "posteriorTilt": -12.303074835794515
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": -1.2722218725854067e-14,
+            "upwardRotation": 3.1805546814635168e-15,
+            "posteriorTilt": 3.1805546814635168e-15
+          },
+          "humeralProximalAxisToScapularYAxis": 16.965915638672172,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.7390595895000001,
+            1.790368874,
+            0.13461521900000006
+          ],
+          "childWorld": [
+            0.7390595895000001,
+            1.790368874,
+            0.13461521900000006
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000005
+          ],
+          "childWorld": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000005
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 30,
+        "plane": 90
+      },
+      "parameters": [
+        2.0022549629211426,
+        4.1039042472839355,
+        -0.4467615485191345,
+        1.2316139936447144,
+        7.221634387969971,
+        6.806039333343506
+      ],
+      "prior": [
+        1.8000000000000007,
+        4.1,
+        -0.1,
+        0.7999999999999972,
+        7.5,
+        7.2
+      ],
+      "parameterDelta": [
+        0.20225496292114187,
+        0.003904247283935902,
+        -0.34676154851913454,
+        0.4316139936447172,
+        -0.2783656120300293,
+        -0.3939606666564943
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 30.000000000000004,
+        "scapulothoracic": {
+          "internalRotation": 27.916297931685854,
+          "upwardRotation": 20.70471717404271,
+          "posteriorTilt": -9.730282765861364
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": 1.3756226731673382,
+          "upwardRotation": 8.931029998841998,
+          "posteriorTilt": 2.572792069933151
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 27.736046184833715,
+          "upwardRotation": 21.33806031729343,
+          "posteriorTilt": -9.101930948704792
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 0.18025174685213968,
+          "upwardRotation": -0.6333431432507155,
+          "posteriorTilt": -0.6283518171565728
+        },
+        "humeralProximalAxisToScapularYAxis": 36.35686136950452,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          1.9753913538255463,
+          4.032951083418873,
+          -0.2493990008699077,
+          0.8986287730419351,
+          7.3670448989353465,
+          7.045080282105567
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 30.000000000000014,
+          "scapulothoracic": {
+            "internalRotation": 27.61231176833421,
+            "upwardRotation": 21.03086896964679,
+            "posteriorTilt": -9.285391271021773
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": 1.0716365098156926,
+            "upwardRotation": 9.25718179444608,
+            "posteriorTilt": 3.0176835647727436
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 27.736046184833715,
+            "upwardRotation": 21.33806031729343,
+            "posteriorTilt": -9.101930948704792
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": -0.12373441649950584,
+            "upwardRotation": -0.30719134764663597,
+            "posteriorTilt": -0.1834603223169801
+          },
+          "humeralProximalAxisToScapularYAxis": 36.066517687627915,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.7163331864323049,
+            1.84665239795163,
+            0.16009298444371994
+          ],
+          "childWorld": [
+            0.7163331864323049,
+            1.84665239795163,
+            0.16009298444371994
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.820363696780743,
+            1.6895286607746607,
+            0.08369568860928515
+          ],
+          "childWorld": [
+            0.820363696780743,
+            1.6895286607746607,
+            0.08369568860928515
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 60,
+        "plane": 90
+      },
+      "parameters": [
+        3.3027145862579346,
+        6.876461982727051,
+        6.242314338684082,
+        6.158735275268555,
+        11.496108055114746,
+        11.703669548034668
+      ],
+      "prior": [
+        3.8000000000000007,
+        6.6,
+        6.9,
+        4,
+        11.7,
+        13.100000000000001
+      ],
+      "parameterDelta": [
+        -0.49728541374206614,
+        0.27646198272705114,
+        -0.6576856613159183,
+        2.1587352752685547,
+        -0.2038919448852532,
+        -1.3963304519653335
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 60.00000000000001,
+        "scapulothoracic": {
+          "internalRotation": 33.927218535575925,
+          "upwardRotation": 31.012738159646855,
+          "posteriorTilt": -5.2595645813298555
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": 7.386543277057408,
+          "upwardRotation": 19.239050984446138,
+          "posteriorTilt": 7.04351025446466
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 30.95674844120779,
+          "upwardRotation": 32.03798645803454,
+          "posteriorTilt": -2.7067602819870107
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 2.9704700943681335,
+          "upwardRotation": -1.0252482983876885,
+          "posteriorTilt": -2.552804299342845
+        },
+        "humeralProximalAxisToScapularYAxis": 52.49395890160372,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          4.150544015518057,
+          6.612607341024939,
+          6.630477516588953,
+          4.260481150916919,
+          11.62396268229808,
+          12.237345405858427
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 60.00000000000001,
+          "scapulothoracic": {
+            "internalRotation": 30.89010570739907,
+            "upwardRotation": 31.69486609727607,
+            "posteriorTilt": -3.7867170237229315
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": 4.349430448880554,
+            "upwardRotation": 19.921178922075352,
+            "posteriorTilt": 8.516357812071586
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 30.95674844120779,
+            "upwardRotation": 32.03798645803454,
+            "posteriorTilt": -2.7067602819870107
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": -0.06664273380872156,
+            "upwardRotation": -0.3431203607584733,
+            "posteriorTilt": -1.0799567417359204
+          },
+          "humeralProximalAxisToScapularYAxis": 52.51848683301499,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.6990059958442674,
+            1.884393253362114,
+            0.17483127415756178
+          ],
+          "childWorld": [
+            0.6990059958442674,
+            1.884393253362114,
+            0.17483127415756178
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.8093306998730583,
+            1.7556748978694185,
+            0.06255123444059434
+          ],
+          "childWorld": [
+            0.8093306998730583,
+            1.7556748978694185,
+            0.06255123444059434
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 90,
+        "plane": 90
+      },
+      "parameters": [
+        4.433530330657959,
+        8.500782012939453,
+        14.22836971282959,
+        9.05196762084961,
+        12.594454765319824,
+        14.53841495513916
+      ],
+      "prior": [
+        5.5,
+        8,
+        14.9,
+        5.5,
+        12.8,
+        15.4
+      ],
+      "parameterDelta": [
+        -1.066469669342041,
+        0.5007820129394531,
+        -0.6716302871704105,
+        3.5519676208496094,
+        -0.2055452346801765,
+        -0.8615850448608402
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 90.00000000000007,
+        "scapulothoracic": {
+          "internalRotation": 37.45245216385351,
+          "upwardRotation": 39.26372988535676,
+          "posteriorTilt": -1.6303653253405443
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": 10.911776905334992,
+          "upwardRotation": 27.490042710156043,
+          "posteriorTilt": 10.672709510453974
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 31.72054791472038,
+          "upwardRotation": 40.40315180583839,
+          "posteriorTilt": 1.7067342716572969
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 5.731904249133124,
+          "upwardRotation": -1.139421920481633,
+          "posteriorTilt": -3.337099596997841
+        },
+        "humeralProximalAxisToScapularYAxis": 68.76951588605695,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          6.000941118346734,
+          8.062116861255177,
+          14.570276650779745,
+          6.191545243155182,
+          12.698822717311474,
+          14.53313449288826
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 90.00000000000006,
+          "scapulothoracic": {
+            "internalRotation": 32.112943421356476,
+            "upwardRotation": 39.948390229610965,
+            "posteriorTilt": 0.2891254357968106
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": 5.572268162837961,
+            "upwardRotation": 28.17470305441025,
+            "posteriorTilt": 12.592200271591325
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 31.72054791472038,
+            "upwardRotation": 40.40315180583839,
+            "posteriorTilt": 1.7067342716572969
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": 0.39239550663609507,
+            "upwardRotation": -0.4547615762274272,
+            "posteriorTilt": -1.4176088358604861
+          },
+          "humeralProximalAxisToScapularYAxis": 69.78143661748238,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.685428549545899,
+            1.9059379469550493,
+            0.18711115088054547
+          ],
+          "childWorld": [
+            0.685428549545899,
+            1.9059379469550493,
+            0.18711115088054547
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.7953387776256431,
+            1.803415321819378,
+            0.05016000711979665
+          ],
+          "childWorld": [
+            0.7953387776256431,
+            1.803415321819378,
+            0.05016000711979665
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 120,
+        "plane": 90
+      },
+      "parameters": [
+        10.564741134643555,
+        10.033651351928711,
+        24.098806381225586,
+        12.106880187988281,
+        13.232558250427246,
+        17.562768936157227
+      ],
+      "prior": [
+        12.3,
+        8.799999999999999,
+        24.7,
+        6.200000000000003,
+        12.9,
+        19.9
+      ],
+      "parameterDelta": [
+        -1.735258865356446,
+        1.233651351928712,
+        -0.6011936187744134,
+        5.906880187988278,
+        0.33255825042724574,
+        -2.337231063842772
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 120.00000000000006,
+        "scapulothoracic": {
+          "internalRotation": 36.97300701759985,
+          "upwardRotation": 48.78994858201955,
+          "posteriorTilt": 1.6429542130579988
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": 10.432331759081329,
+          "upwardRotation": 37.01626140681884,
+          "posteriorTilt": 13.946029048852516
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 25.38014939403845,
+          "upwardRotation": 49.256788370803775,
+          "posteriorTilt": 10.448440891161205
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 11.592857623561395,
+          "upwardRotation": -0.4668397887842182,
+          "posteriorTilt": -8.805486678103206
+        },
+        "humeralProximalAxisToScapularYAxis": 85.28242708423453,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          12.578624272985598,
+          9.225352345253361,
+          24.457862421610837,
+          7.9223034390742955,
+          13.250638057113026,
+          17.92491071938774
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 120.00000000000006,
+          "scapulothoracic": {
+            "internalRotation": 28.114419510368787,
+            "upwardRotation": 49.427547337205894,
+            "posteriorTilt": 6.404054998420061
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": 1.5737442518502718,
+            "upwardRotation": 37.65386016200518,
+            "posteriorTilt": 18.707129834214577
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 25.38014939403845,
+            "upwardRotation": 49.256788370803775,
+            "posteriorTilt": 10.448440891161205
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": 2.734270116330336,
+            "upwardRotation": 0.1707589664021224,
+            "posteriorTilt": -4.044385892741145
+          },
+          "humeralProximalAxisToScapularYAxis": 85.98168215324601,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.6326380020369,
+            1.9209411534111533,
+            0.2551005325936362
+          ],
+          "childWorld": [
+            0.6326380020369,
+            1.9209411534111533,
+            0.2551005325936362
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.7487630090293007,
+            1.8501087055441192,
+            0.10395652921008547
+          ],
+          "childWorld": [
+            0.7487630090293007,
+            1.8501087055441192,
+            0.10395652921008547
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 150,
+        "plane": 90
+      },
+      "parameters": [
+        13.841537475585938,
+        10.2597074508667,
+        29.602872848510742,
+        14.7242431640625,
+        13.793761253356934,
+        20.991863250732422
+      ],
+      "prior": [
+        15.500000000000004,
+        8.7,
+        29.9,
+        8.5,
+        13,
+        24.5
+      ],
+      "parameterDelta": [
+        -1.658462524414066,
+        1.5597074508667,
+        -0.2971271514892564,
+        6.2242431640625,
+        0.7937612533569336,
+        -3.508136749267578
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 150.00000000000037,
+        "scapulothoracic": {
+          "internalRotation": 38.2689724690354,
+          "upwardRotation": 54.0256478732129,
+          "posteriorTilt": 4.369163136929306
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": 11.728297210516883,
+          "upwardRotation": 42.251960698012184,
+          "posteriorTilt": 16.67223797272382
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 24.524153534020368,
+          "upwardRotation": 53.738501040151824,
+          "posteriorTilt": 16.5024799803905
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 13.744818935015028,
+          "upwardRotation": 0.2871468330610736,
+          "posteriorTilt": -12.133316843461195
+        },
+        "humeralProximalAxisToScapularYAxis": 103.14710329672198,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          15.546014884791175,
+          9.343474737037923,
+          29.966575272493653,
+          10.368332774226072,
+          13.850382543851474,
+          21.58627998959051
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 150.00000000000043,
+          "scapulothoracic": {
+            "internalRotation": 28.39308454929901,
+            "upwardRotation": 54.759611594326564,
+            "posteriorTilt": 10.735143326155747
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": 1.8524092907804965,
+            "upwardRotation": 42.985924419125844,
+            "posteriorTilt": 23.03821816195026
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 24.524153534020368,
+            "upwardRotation": 53.738501040151824,
+            "posteriorTilt": 16.5024799803905
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": 3.868931015278642,
+            "upwardRotation": 1.0211105541747396,
+            "posteriorTilt": -5.7673366542347555
+          },
+          "humeralProximalAxisToScapularYAxis": 102.60561057670404,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.6037391947412735,
+            1.9208835848137835,
+            0.2897026358888385
+          ],
+          "childWorld": [
+            0.6037391947412735,
+            1.9208835848137835,
+            0.2897026358888385
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.714817567690774,
+            1.8692123898975872,
+            0.12741139965763554
+          ],
+          "childWorld": [
+            0.714817567690774,
+            1.8692123898975872,
+            0.12741139965763554
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    },
+    {
+      "input": {
+        "elev": 180,
+        "plane": 90
+      },
+      "parameters": [
+        13.841537475585938,
+        10.2597074508667,
+        29.602872848510742,
+        14.7242431640625,
+        13.793761253356934,
+        20.991863250732422
+      ],
+      "prior": [
+        15.500000000000004,
+        8.7,
+        29.9,
+        8.5,
+        13,
+        24.5
+      ],
+      "parameterDelta": [
+        -1.658462524414066,
+        1.5597074508667,
+        -0.2971271514892564,
+        6.2242431640625,
+        0.7937612533569336,
+        -3.508136749267578
+      ],
+      "motion": {
+        "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+        "units": "degrees",
+        "humerothoracicElevation": 180,
+        "scapulothoracic": {
+          "internalRotation": 38.2689724690354,
+          "upwardRotation": 54.0256478732129,
+          "posteriorTilt": 4.369163136929306
+        },
+        "scapulothoracicChangeFromRest": {
+          "internalRotation": 11.728297210516883,
+          "upwardRotation": 42.251960698012184,
+          "posteriorTilt": 16.67223797272382
+        },
+        "unconstrainedPriorScapulothoracic": {
+          "internalRotation": 24.524153534020368,
+          "upwardRotation": 53.738501040151824,
+          "posteriorTilt": 16.5024799803905
+        },
+        "contactChangeFromPrior": {
+          "internalRotation": 13.744818935015028,
+          "upwardRotation": 0.2871468330610736,
+          "posteriorTilt": -12.133316843461195
+        },
+        "humeralProximalAxisToScapularYAxis": 125.8535835893012,
+        "contributionsAreNotAdditive": true,
+        "clinicalROMorDiseaseClassification": null
+      },
+      "loftOnlyAblation": {
+        "parameters": [
+          15.546014884791175,
+          9.343474737037923,
+          29.966575272493653,
+          10.368332774226072,
+          13.850382543851474,
+          21.58627998959051
+        ],
+        "motion": {
+          "coordinateSystem": "canonical-right anatomical thorax; ST Y-X-Z decomposition",
+          "units": "degrees",
+          "humerothoracicElevation": 180,
+          "scapulothoracic": {
+            "internalRotation": 28.39308454929901,
+            "upwardRotation": 54.759611594326564,
+            "posteriorTilt": 10.735143326155747
+          },
+          "scapulothoracicChangeFromRest": {
+            "internalRotation": 1.8524092907804965,
+            "upwardRotation": 42.985924419125844,
+            "posteriorTilt": 23.03821816195026
+          },
+          "unconstrainedPriorScapulothoracic": {
+            "internalRotation": 24.524153534020368,
+            "upwardRotation": 53.738501040151824,
+            "posteriorTilt": 16.5024799803905
+          },
+          "contactChangeFromPrior": {
+            "internalRotation": 3.868931015278642,
+            "upwardRotation": 1.0211105541747396,
+            "posteriorTilt": -5.7673366542347555
+          },
+          "humeralProximalAxisToScapularYAxis": 124.53501736844014,
+          "contributionsAreNotAdditive": true,
+          "clinicalROMorDiseaseClassification": null
+        },
+        "sourceBoneCollisionCertified": false
+      },
+      "connections": [
+        {
+          "joint": "SC",
+          "parent": "thorax",
+          "child": "clavicle",
+          "restPivot": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "parentMeshLocal": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "childWorld": [
+            0.005051832,
+            1.7020786415000002,
+            -0.24003891850000003
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "AC",
+          "parent": "clavicle",
+          "child": "scapula",
+          "restPivot": [
+            0.7390595895000001,
+            1.790368874,
+            0.134615219
+          ],
+          "parentMeshLocal": [
+            0.7340077575,
+            0.0882902324999999,
+            0.37465413750000004
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.6037391947412735,
+            1.9208835848137835,
+            0.2897026358888385
+          ],
+          "childWorld": [
+            0.6037391947412735,
+            1.9208835848137835,
+            0.2897026358888385
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        },
+        {
+          "joint": "GH",
+          "parent": "scapula",
+          "child": "humerus",
+          "restPivot": [
+            0.824725116,
+            1.61447228,
+            0.07922055800000001
+          ],
+          "parentMeshLocal": [
+            0.08566552649999992,
+            -0.17589659400000013,
+            -0.055394661
+          ],
+          "childMeshLocal": [
+            0,
+            0,
+            0
+          ],
+          "parentWorld": [
+            0.714817567690774,
+            1.8692123898975872,
+            0.12741139965763554
+          ],
+          "childWorld": [
+            0.714817567690774,
+            1.8692123898975872,
+            0.12741139965763554
+          ],
+          "sharedPivotErrorMm": 0,
+          "articularSurfaceGapMm": null
+        }
+      ],
+      "backend": "validated-field"
+    }
+  ]
+}

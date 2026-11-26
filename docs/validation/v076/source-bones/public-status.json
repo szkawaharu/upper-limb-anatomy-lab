@@ -1,0 +1,16 @@
+{
+  "checkedAtUTC": "2026-11-26T15:46:19.194163+00:00",
+  "url": "https://szkawaharu.github.io/upper-limb-anatomy-lab/build-info.json",
+  "httpFetch": "curl -fsSL succeeded; web parser could not open the JSON endpoint",
+  "remoteMain": "c81256f653c04c042ed917279b4fa3e4bde0f841",
+  "build": {
+    "version": "0.75.0",
+    "commit": "c81256f653c04c042ed917279b4fa3e4bde0f841",
+    "builtAt": "2026-11-26T07:09:45.297Z",
+    "validationStatus": "in-progress-with-known-issues",
+    "handoff": "HANDOFF_V073.md",
+    "knownIssues": "docs/KNOWN_ISSUES_V073.md"
+  },
+  "mainMatchesPublic": true,
+  "deployedV076": false
+}

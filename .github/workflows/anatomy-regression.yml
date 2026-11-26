@@ -19,6 +19,8 @@ jobs:
           node-version: '22'
       - name: Run every offline regression entry point
         run: node scripts/run-tests.mjs
+      - name: Validate curated Pages files without deploying
+        run: node scripts/prepare-pages.mjs
       - name: Retain per-suite results
         if: always()
         uses: actions/upload-artifact@v4

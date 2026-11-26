@@ -1,0 +1,20 @@
+{
+  "experimental": true,
+  "productionEnabled": false,
+  "options": {
+    "QA_GRAPH_VOLUME": "1",
+    "QA_GRAPH_VOLUME_DIR": "test-results/v076-source-graphs/volume",
+    "QA_GRAPH_CONTACT": "1",
+    "QA_GRAPH_ELEVATIONS": "0,90,180",
+    "QA_GRAPH_TAG": "exact-mid-final",
+    "QA_GRAPH_FILTER": "v60DeltMid"
+  },
+  "elevations": [
+    0,
+    90,
+    180
+  ],
+  "bindingsSha256": "b1bde87483bb17cd6cee3ac31f1252818d6e48789286c4260d3b0076479d6796",
+  "engineSha256": "f24f0527db0544a08d5f51a4f38b2ed339cd6e6802e94a5e965a51b42dc82dbe",
+  "runnerSha256": "730aeac342015f07f73b3b837d7822a984e69be5eec62dc2f13ddcdcc4ce604c"
+}

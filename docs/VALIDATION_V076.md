@@ -1,6 +1,6 @@
 # v0.76 検証と採否 — 根本改修は未完了
 
-**最新追記：** 共通骨格の接触残差を空間平均へ修正した追加検証は[CONTACT_AGGREGATION_V076.md](CONTACT_AGGREGATION_V076.md)とvalidation/v076/contact-rms以下。以下のaccepted-*と64画像は6c5ed7c時点の採用構成の記録であり、追加修正後の結果ではない。
+**2026-11-27の追記：** 実骨メッシュとの監査・追加拘束・1°掃引は[BONE_CONTACT_V076.md](BONE_CONTACT_V076.md)、原型と筋変形の再監査は[MUSCLE_DEFORMATION_V076.md](MUSCLE_DEFORMATION_V076.md)。21.165mm等は57e3530時点、以下のaccepted-*と64画像は6c5ed7c時点の履歴であり、現在の最大値と読み替えない。最新の実ブラウザ結果と同条件36画像はvalidation/v076/source-bones以下へ保存する。
 
 基準：v0.75.0 / c81256f653c04c042ed917279b4fa3e4bde0f841。保存ブランチarchive/v0.75.0-before-linked-rig。骨格改修0d79173、共通Quaternion修正d1a1e51。公開版の完全SHAはbuild-info.jsonで照合する。
 

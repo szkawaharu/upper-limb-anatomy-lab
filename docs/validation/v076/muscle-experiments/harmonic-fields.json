@@ -1,0 +1,676 @@
+{
+  "method": "Pose-independent Dirichlet harmonic bone blend fields. Original exact\nattachment masks remain unchanged. Components without BOTH anchor values keep\ntheir prior estimated field, rather than inventing new anatomical attachment.\n",
+  "meshes": [
+    {
+      "id": "v58RhomboidMajor",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 24113,
+          "free": 22363,
+          "status": "harmonic",
+          "relativeResidual": 9.937079514895198e-11
+        },
+        {
+          "vertices": 16,
+          "free": 16,
+          "status": "retained-insufficient-attachment-data"
+        }
+      ],
+      "fixedVertices": 1750,
+      "maxRestFieldChange": 0.45919138193130493,
+      "poseDependent": false
+    },
+    {
+      "id": "v58RhomboidMinor",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 7535,
+          "free": 7327,
+          "status": "harmonic",
+          "relativeResidual": 9.75228099450849e-11
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        }
+      ],
+      "fixedVertices": 208,
+      "maxRestFieldChange": 0.35953497886657715,
+      "poseDependent": false
+    },
+    {
+      "id": "v58Levator",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 15613,
+          "free": 11372,
+          "status": "harmonic",
+          "relativeResidual": 9.73308241944243e-11
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 4,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 3,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 17,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        }
+      ],
+      "fixedVertices": 4273,
+      "maxRestFieldChange": 0.23387372493743896,
+      "poseDependent": false
+    },
+    {
+      "id": "v58Serratus",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 124308,
+          "free": 67192,
+          "status": "harmonic",
+          "relativeResidual": 9.92788891156189e-11
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        }
+      ],
+      "fixedVertices": 57116,
+      "maxRestFieldChange": 0.9071169942617416,
+      "poseDependent": false
+    },
+    {
+      "id": "v58Subscap",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 15278,
+          "free": 1765,
+          "status": "harmonic",
+          "relativeResidual": 9.879382357354857e-11
+        }
+      ],
+      "fixedVertices": 13513,
+      "maxRestFieldChange": 0.5509966611862183,
+      "poseDependent": false
+    },
+    {
+      "id": "v59TrapUpper",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 23209,
+          "free": 12521,
+          "status": "harmonic",
+          "relativeResidual": 9.383150353728387e-11
+        }
+      ],
+      "fixedVertices": 10688,
+      "maxRestFieldChange": 0.24383781850337982,
+      "poseDependent": false
+    },
+    {
+      "id": "v59TrapMiddle",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 15206,
+          "free": 14584,
+          "status": "harmonic",
+          "relativeResidual": 8.732705135596348e-11
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 8,
+          "free": 8,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 7,
+          "free": 7,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 8,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 10,
+          "free": 10,
+          "status": "retained-insufficient-attachment-data"
+        }
+      ],
+      "fixedVertices": 631,
+      "maxRestFieldChange": 0.30579913407564163,
+      "poseDependent": false
+    },
+    {
+      "id": "v59TrapLower",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 34497,
+          "free": 32261,
+          "status": "harmonic",
+          "relativeResidual": 9.479948504779812e-11
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 18,
+          "free": 18,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 7,
+          "free": 7,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 8,
+          "free": 8,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 7,
+          "free": 7,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 8,
+          "free": 8,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 182,
+          "free": 182,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 9,
+          "free": 9,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 7,
+          "free": 7,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 7,
+          "free": 7,
+          "status": "retained-insufficient-attachment-data"
+        }
+      ],
+      "fixedVertices": 2236,
+      "maxRestFieldChange": 0.662232331931591,
+      "poseDependent": false
+    },
+    {
+      "id": "v59Lat",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 69837,
+          "free": 9202,
+          "status": "harmonic",
+          "relativeResidual": 9.721646486449565e-11
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 38287,
+          "free": 5249,
+          "status": "harmonic",
+          "relativeResidual": 9.461888802982973e-11
+        },
+        {
+          "vertices": 5774,
+          "free": 3186,
+          "status": "harmonic",
+          "relativeResidual": 9.634388434782781e-11
+        }
+      ],
+      "fixedVertices": 96283,
+      "maxRestFieldChange": 0.3001825213432312,
+      "poseDependent": false
+    },
+    {
+      "id": "v60PecClav",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 4618,
+          "free": 3504,
+          "status": "harmonic",
+          "relativeResidual": 8.859149322966359e-11
+        },
+        {
+          "vertices": 6,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        }
+      ],
+      "fixedVertices": 1154,
+      "maxRestFieldChange": 0.2059422731399536,
+      "poseDependent": false
+    },
+    {
+      "id": "v60PecStern",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 16875,
+          "free": 14524,
+          "status": "harmonic",
+          "relativeResidual": 9.508183443752591e-11
+        },
+        {
+          "vertices": 1117,
+          "free": 696,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 6,
+          "status": "retained-insufficient-attachment-data"
+        }
+      ],
+      "fixedVertices": 2772,
+      "maxRestFieldChange": 0.3758051097393036,
+      "poseDependent": false
+    },
+    {
+      "id": "v60PecAbd",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 3775,
+          "free": 3407,
+          "status": "retained-insufficient-attachment-data"
+        }
+      ],
+      "fixedVertices": 368,
+      "maxRestFieldChange": 0.0,
+      "poseDependent": false
+    },
+    {
+      "id": "v60PecMinor",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 22198,
+          "free": 11190,
+          "status": "harmonic",
+          "relativeResidual": 9.79633491694481e-11
+        },
+        {
+          "vertices": 5,
+          "free": 5,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 156,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 40,
+          "free": 40,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 195,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 11,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 40,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        }
+      ],
+      "fixedVertices": 11416,
+      "maxRestFieldChange": 0.2526698708534241,
+      "poseDependent": false
+    },
+    {
+      "id": "v60Subclavius",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 4073,
+          "free": 2130,
+          "status": "harmonic",
+          "relativeResidual": 9.530449504403549e-11
+        }
+      ],
+      "fixedVertices": 1943,
+      "maxRestFieldChange": 0.47996556758880615,
+      "poseDependent": false
+    },
+    {
+      "id": "v60DeltAnt",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 14543,
+          "free": 10080,
+          "status": "harmonic",
+          "relativeResidual": 9.819326986327884e-11
+        }
+      ],
+      "fixedVertices": 4463,
+      "maxRestFieldChange": 0.2537279725074768,
+      "poseDependent": false
+    },
+    {
+      "id": "v60DeltMid",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 14836,
+          "free": 13953,
+          "status": "harmonic",
+          "relativeResidual": 9.639274747095224e-11
+        },
+        {
+          "vertices": 5,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        }
+      ],
+      "fixedVertices": 888,
+      "maxRestFieldChange": 0.5086336135864258,
+      "poseDependent": false
+    },
+    {
+      "id": "v60DeltPost",
+      "method": "positive inverse-edge graph Dirichlet harmonic solve; no fidelity term",
+      "components": [
+        {
+          "vertices": 21971,
+          "free": 20324,
+          "status": "harmonic",
+          "relativeResidual": 9.930259192030415e-11
+        },
+        {
+          "vertices": 6,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 9,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 5,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 10,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        },
+        {
+          "vertices": 6,
+          "free": 0,
+          "status": "retained-insufficient-attachment-data"
+        }
+      ],
+      "fixedVertices": 1689,
+      "maxRestFieldChange": 0.34505143761634827,
+      "poseDependent": false
+    }
+  ]
+}

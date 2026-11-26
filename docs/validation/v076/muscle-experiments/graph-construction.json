@@ -1,0 +1,467 @@
+{
+  "method": "Embedded deformation graphs from unchanged source surfaces. Node classes\nseparate fixed attachment regions from free tissue; no anatomical mesh is\nreplaced by the graph. Graph topology follows the source mesh components.\n",
+  "meshes": [
+    {
+      "id": "v58RhomboidMajor",
+      "nodes": 205,
+      "freeNodes": 172,
+      "sourceVertices": 24129,
+      "edges": 653,
+      "factorNonzeros": 2794,
+      "unanchored": [
+        {
+          "component": 1,
+          "nodes": 1,
+          "vertices": 16,
+          "method": "rigid continuous bone blend; attachment data absent"
+        }
+      ]
+    },
+    {
+      "id": "v58RhomboidMinor",
+      "nodes": 219,
+      "freeNodes": 212,
+      "sourceVertices": 7540,
+      "edges": 730,
+      "factorNonzeros": 4552,
+      "unanchored": [
+        {
+          "component": 1,
+          "nodes": 1,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        }
+      ]
+    },
+    {
+      "id": "v58Levator",
+      "nodes": 276,
+      "freeNodes": 202,
+      "sourceVertices": 15675,
+      "edges": 867,
+      "factorNonzeros": 3216,
+      "unanchored": [
+        {
+          "component": 1,
+          "nodes": 1,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 4,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 5,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 6,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        }
+      ]
+    },
+    {
+      "id": "v58Serratus",
+      "nodes": 344,
+      "freeNodes": 171,
+      "sourceVertices": 124319,
+      "edges": 1240,
+      "factorNonzeros": 2746,
+      "unanchored": [
+        {
+          "component": 1,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 2,
+          "nodes": 1,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        }
+      ]
+    },
+    {
+      "id": "v58Subscap",
+      "nodes": 214,
+      "freeNodes": 19,
+      "sourceVertices": 15278,
+      "edges": 743,
+      "factorNonzeros": 154,
+      "unanchored": []
+    },
+    {
+      "id": "v59TrapUpper",
+      "nodes": 236,
+      "freeNodes": 156,
+      "sourceVertices": 23209,
+      "edges": 809,
+      "factorNonzeros": 2934,
+      "unanchored": []
+    },
+    {
+      "id": "v59TrapMiddle",
+      "nodes": 225,
+      "freeNodes": 189,
+      "sourceVertices": 15301,
+      "edges": 704,
+      "factorNonzeros": 4784,
+      "unanchored": [
+        {
+          "component": 1,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 2,
+          "nodes": 1,
+          "vertices": 8,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 4,
+          "nodes": 1,
+          "vertices": 7,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 5,
+          "nodes": 1,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 6,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 7,
+          "nodes": 2,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 8,
+          "nodes": 1,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 9,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 10,
+          "nodes": 1,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 11,
+          "nodes": 1,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 12,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 13,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 15,
+          "nodes": 1,
+          "vertices": 10,
+          "method": "rigid continuous bone blend; attachment data absent"
+        }
+      ]
+    },
+    {
+      "id": "v59TrapLower",
+      "nodes": 203,
+      "freeNodes": 157,
+      "sourceVertices": 34831,
+      "edges": 565,
+      "factorNonzeros": 3268,
+      "unanchored": [
+        {
+          "component": 1,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 2,
+          "nodes": 1,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 3,
+          "nodes": 1,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 4,
+          "nodes": 1,
+          "vertices": 18,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 5,
+          "nodes": 1,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 6,
+          "nodes": 1,
+          "vertices": 7,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 7,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 8,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 9,
+          "nodes": 2,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 10,
+          "nodes": 2,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 11,
+          "nodes": 1,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 12,
+          "nodes": 1,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 13,
+          "nodes": 1,
+          "vertices": 8,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 14,
+          "nodes": 1,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 15,
+          "nodes": 1,
+          "vertices": 7,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 16,
+          "nodes": 1,
+          "vertices": 8,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 17,
+          "nodes": 3,
+          "vertices": 182,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 18,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 19,
+          "nodes": 1,
+          "vertices": 9,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 20,
+          "nodes": 1,
+          "vertices": 7,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 21,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 22,
+          "nodes": 1,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 23,
+          "nodes": 1,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 24,
+          "nodes": 1,
+          "vertices": 7,
+          "method": "rigid continuous bone blend; attachment data absent"
+        }
+      ]
+    },
+    {
+      "id": "v59Lat",
+      "nodes": 193,
+      "freeNodes": 36,
+      "sourceVertices": 113926,
+      "edges": 547,
+      "factorNonzeros": 192,
+      "unanchored": [
+        {
+          "component": 1,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        }
+      ]
+    },
+    {
+      "id": "v60PecClav",
+      "nodes": 265,
+      "freeNodes": 211,
+      "sourceVertices": 4658,
+      "edges": 853,
+      "factorNonzeros": 5010,
+      "unanchored": []
+    },
+    {
+      "id": "v60PecStern",
+      "nodes": 279,
+      "freeNodes": 215,
+      "sourceVertices": 18004,
+      "edges": 864,
+      "factorNonzeros": 5246,
+      "unanchored": [
+        {
+          "component": 2,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 3,
+          "nodes": 1,
+          "vertices": 6,
+          "method": "rigid continuous bone blend; attachment data absent"
+        }
+      ]
+    },
+    {
+      "id": "v60PecAbd",
+      "nodes": 215,
+      "freeNodes": 198,
+      "sourceVertices": 3775,
+      "edges": 743,
+      "factorNonzeros": 3306,
+      "unanchored": []
+    },
+    {
+      "id": "v60PecMinor",
+      "nodes": 293,
+      "freeNodes": 139,
+      "sourceVertices": 22651,
+      "edges": 937,
+      "factorNonzeros": 2288,
+      "unanchored": [
+        {
+          "component": 1,
+          "nodes": 1,
+          "vertices": 5,
+          "method": "rigid continuous bone blend; attachment data absent"
+        },
+        {
+          "component": 4,
+          "nodes": 1,
+          "vertices": 40,
+          "method": "rigid continuous bone blend; attachment data absent"
+        }
+      ]
+    },
+    {
+      "id": "v60Subclavius",
+      "nodes": 273,
+      "freeNodes": 124,
+      "sourceVertices": 4073,
+      "edges": 846,
+      "factorNonzeros": 1472,
+      "unanchored": []
+    },
+    {
+      "id": "v60DeltAnt",
+      "nodes": 265,
+      "freeNodes": 180,
+      "sourceVertices": 14543,
+      "edges": 865,
+      "factorNonzeros": 3794,
+      "unanchored": []
+    },
+    {
+      "id": "v60DeltMid",
+      "nodes": 261,
+      "freeNodes": 233,
+      "sourceVertices": 14841,
+      "edges": 815,
+      "factorNonzeros": 7646,
+      "unanchored": []
+    },
+    {
+      "id": "v60DeltPost",
+      "nodes": 273,
+      "freeNodes": 241,
+      "sourceVertices": 22013,
+      "edges": 857,
+      "factorNonzeros": 9704,
+      "unanchored": []
+    }
+  ]
+}

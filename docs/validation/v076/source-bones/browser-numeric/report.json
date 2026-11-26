@@ -1,0 +1,5198 @@
+{
+  "initial": {
+    "loaded": {
+      "version": "v0.66.0",
+      "loaded": [
+        "v58RhomboidMajor",
+        "v58RhomboidMinor",
+        "v58Levator",
+        "v58Serratus",
+        "v58Subscap",
+        "v59TrapUpper",
+        "v59TrapMiddle",
+        "v59TrapLower",
+        "v59Lat",
+        "v60PecClav",
+        "v60PecStern",
+        "v60PecAbd",
+        "v60PecMinor",
+        "v60Subclavius",
+        "v60DeltAnt",
+        "v60DeltMid",
+        "v60DeltPost"
+      ],
+      "failed": [],
+      "available": 17,
+      "visible": [
+        "v58RhomboidMajor",
+        "v58RhomboidMinor",
+        "v58Levator",
+        "v58Serratus",
+        "v58Subscap",
+        "v60PecClav",
+        "v60PecStern",
+        "v60PecAbd",
+        "v60PecMinor",
+        "v60Subclavius",
+        "v60DeltAnt",
+        "v60DeltMid",
+        "v60DeltPost"
+      ],
+      "triangles": [
+        {
+          "id": "v58RhomboidMajor",
+          "triangles": 19729,
+          "source": 48254
+        },
+        {
+          "id": "v58RhomboidMinor",
+          "triangles": 6390,
+          "source": 15092
+        },
+        {
+          "id": "v58Levator",
+          "triangles": 13005,
+          "source": 31336
+        },
+        {
+          "id": "v58Serratus",
+          "triangles": 60276,
+          "source": 248640
+        },
+        {
+          "id": "v58Subscap",
+          "triangles": 14163,
+          "source": 30620
+        },
+        {
+          "id": "v59TrapUpper",
+          "triangles": 27213,
+          "source": 46450
+        },
+        {
+          "id": "v59TrapMiddle",
+          "triangles": 17811,
+          "source": 30584
+        },
+        {
+          "id": "v59TrapLower",
+          "triangles": 40443,
+          "source": 69632
+        },
+        {
+          "id": "v59Lat",
+          "triangles": 91183,
+          "source": 227978
+        },
+        {
+          "id": "v60PecClav",
+          "triangles": 7318,
+          "source": 9330
+        },
+        {
+          "id": "v60PecStern",
+          "triangles": 28491,
+          "source": 36014
+        },
+        {
+          "id": "v60PecAbd",
+          "triangles": 6129,
+          "source": 7546
+        },
+        {
+          "id": "v60PecMinor",
+          "triangles": 16936,
+          "source": 45360
+        },
+        {
+          "id": "v60Subclavius",
+          "triangles": 3143,
+          "source": 8154
+        },
+        {
+          "id": "v60DeltAnt",
+          "triangles": 17708,
+          "source": 29082
+        },
+        {
+          "id": "v60DeltMid",
+          "triangles": 18267,
+          "source": 29682
+        },
+        {
+          "id": "v60DeltPost",
+          "triangles": 26250,
+          "source": 44010
+        }
+      ],
+      "gpuSkinning": true,
+      "clinicalValidation": false
+    },
+    "head": {
+      "angle": 0,
+      "range": [
+        -75,
+        75
+      ],
+      "relative": {
+        "C7": 0,
+        "C6": 0,
+        "C5": 0,
+        "C4": 0,
+        "C3": 0,
+        "C2": 0,
+        "C1": 0,
+        "C0": 0
+      },
+      "transforms": {
+        "T1": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            0,
+            0,
+            0
+          ],
+          "rest": [
+            0,
+            0,
+            0
+          ]
+        },
+        "C7": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            -0.0777,
+            1.9775,
+            0.08
+          ],
+          "rest": [
+            -0.0777,
+            1.9775,
+            0.08
+          ]
+        },
+        "C6": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            -0.0777,
+            2.0496499999999997,
+            0.052250000000000005
+          ],
+          "rest": [
+            -0.0777,
+            2.0496499999999997,
+            0.052250000000000005
+          ]
+        },
+        "C5": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            -0.0777,
+            2.11625,
+            0.03005
+          ],
+          "rest": [
+            -0.0777,
+            2.11625,
+            0.03005
+          ]
+        },
+        "C4": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            -0.0777,
+            2.19395,
+            0.013399999999999995
+          ],
+          "rest": [
+            -0.0777,
+            2.19395,
+            0.013399999999999995
+          ]
+        },
+        "C3": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            -0.0777,
+            2.26055,
+            0.007849999999999996
+          ],
+          "rest": [
+            -0.0777,
+            2.26055,
+            0.007849999999999996
+          ]
+        },
+        "C2": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            -0.0777,
+            2.3327,
+            0.007849999999999996
+          ],
+          "rest": [
+            -0.0777,
+            2.3327,
+            0.007849999999999996
+          ]
+        },
+        "C1": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            -0.0777,
+            2.47145,
+            0.01895
+          ],
+          "rest": [
+            -0.0777,
+            2.47145,
+            0.01895
+          ]
+        },
+        "C0": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            -0.0777,
+            2.5324999999999998,
+            0.03005
+          ],
+          "rest": [
+            -0.0777,
+            2.5324999999999998,
+            0.03005
+          ]
+        }
+      },
+      "skullParts": 22,
+      "neckMuscles": 6,
+      "failed": [],
+      "distributionMeasured": false,
+      "clinicalValidation": false
+    },
+    "arms": {
+      "version": "v0.66.0",
+      "activeSide": "right",
+      "both": true,
+      "thorax": true,
+      "back": false,
+      "poses": {
+        "right": {
+          "elev": 0,
+          "plane": 0,
+          "axial": 0,
+          "elbow": 0,
+          "pronation": 0,
+          "wristFlex": 0,
+          "wristDeviation": 0,
+          "fingerCurl": 0,
+          "thumbCurl": 0,
+          "thumbOpposition": 0,
+          "fdsPIPI": 0,
+          "fdsPIPM": 0,
+          "fdsPIPR": 0,
+          "fdsPIPL": 0,
+          "fdpDIPI": 0,
+          "fdpDIPM": 0,
+          "fdpDIPR": 0,
+          "fdpDIPL": 0,
+          "fdsPIPOnly": false,
+          "fdpDIPOnly": false,
+          "reverseElbow": false
+        },
+        "left": {
+          "elev": 0,
+          "plane": 0,
+          "axial": 0,
+          "elbow": 0,
+          "pronation": 0,
+          "wristFlex": 0,
+          "wristDeviation": 0,
+          "fingerCurl": 0,
+          "thumbCurl": 0,
+          "thumbOpposition": 0,
+          "fdsPIPI": 0,
+          "fdsPIPM": 0,
+          "fdsPIPR": 0,
+          "fdsPIPL": 0,
+          "fdpDIPI": 0,
+          "fdpDIPM": 0,
+          "fdpDIPR": 0,
+          "fdpDIPL": 0,
+          "fdsPIPOnly": false,
+          "fdpDIPOnly": false,
+          "reverseElbow": false
+        }
+      },
+      "mirrorPlane": -0.0777,
+      "activeBuffers": 98,
+      "otherBuffers": 98,
+      "ribPairs": 12,
+      "staticBoneMeshShared": true,
+      "thoraxProcedural": false,
+      "thoraxSource": {
+        "version": "v0.66.0",
+        "mode": "atlas",
+        "loaded": 79,
+        "total": 79,
+        "failed": [],
+        "sourceCommit": "2c83c698788cff57f6317bddcf712e7acfbea7d8",
+        "groups": {
+          "ribs": 24,
+          "spine": 19,
+          "sternum": 3,
+          "cartilage": 16,
+          "discs": 17
+        },
+        "rendered": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5",
+          "T6",
+          "T7",
+          "T8",
+          "T9",
+          "T10",
+          "T11",
+          "T12",
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7",
+          "R8",
+          "R9",
+          "R10",
+          "R11",
+          "R12",
+          "L1",
+          "L4",
+          "L2",
+          "L3",
+          "L5",
+          "L6",
+          "L7",
+          "L8",
+          "L9",
+          "L10",
+          "L11",
+          "L12",
+          "manubrium",
+          "sternalBody",
+          "xiphoid",
+          "cartilageR",
+          "cartilageL",
+          "cartR1",
+          "cartR2",
+          "cartR3",
+          "cartR4",
+          "cartR5",
+          "cartR6",
+          "cartR7",
+          "cartL1",
+          "cartL2",
+          "cartL3",
+          "cartL4",
+          "cartL5",
+          "cartL6",
+          "cartL7",
+          "discC2",
+          "discC3",
+          "discC4",
+          "discC5",
+          "discC6",
+          "discC7",
+          "discT1",
+          "discT2",
+          "discT3",
+          "discT4",
+          "discT5",
+          "discT6",
+          "discT7",
+          "discT8",
+          "discT9",
+          "discT10",
+          "discT11"
+        ],
+        "coreReady": true,
+        "sourceBytes": 56893736,
+        "layer": "all",
+        "actualLeftRightRibs": true,
+        "clinicalValidation": false
+      },
+      "anatomyValidated": false
+    },
+    "camera": {
+      "yaw": 2.4504422698000385,
+      "pitch": 0.1
+    },
+    "backend": "gpu",
+    "reason": null,
+    "glError": 0,
+    "render": {
+      "moving": null,
+      "still": {
+        "n": 1,
+        "median": 4973.099999904633,
+        "p95": 4973.099999904633
+      }
+    }
+  },
+  "rows": [
+    {
+      "elev": 0,
+      "plane": 0,
+      "audit": [
+        {
+          "id": "v60PecClav",
+          "topology": {
+            "closed": false,
+            "boundary": 37,
+            "nonmanifold": 48,
+            "inconsistent": 0,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000011701540598439047,
+          "attachmentSamples": 355,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.15475636889847602,
+            6.250046120532379
+          ],
+          "edgeRatio": [
+            0.4949684379026692,
+            1.5405992857126818
+          ],
+          "worstEdge": {
+            "vertices": [
+              3356,
+              3372
+            ],
+            "restLengthMm": 0.542520548204717,
+            "ratio": 1.5405992857126818
+          },
+          "worstArea": {
+            "triangle": 6429,
+            "vertices": [
+              3178,
+              3182,
+              3084
+            ],
+            "restAreaMm2": 0.035728076891961454,
+            "ratio": 6.250046120532379
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.8963151779281372,
+            1.0294643561479766
+          ],
+          "localDeterminantApprox": [
+            0.9016669876696808,
+            1.0052542516488359
+          ],
+          "boundedVertices": 9,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60PecStern",
+          "topology": {
+            "closed": false,
+            "boundary": 58,
+            "nonmanifold": 92,
+            "inconsistent": 1,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000011733297772897371,
+          "attachmentSamples": 2117,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.019495264518076406,
+            36.14674033075947
+          ],
+          "edgeRatio": [
+            0.19207843162748955,
+            2.121217117625239
+          ],
+          "worstEdge": {
+            "vertices": [
+              8185,
+              8566
+            ],
+            "restLengthMm": 1.5904640509886447,
+            "ratio": 2.121217117625239
+          },
+          "worstArea": {
+            "triangle": 7158,
+            "vertices": [
+              3258,
+              3682,
+              3723
+            ],
+            "restAreaMm2": 0.028650684683660523,
+            "ratio": 36.14674033075947
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.8905064298451483,
+            1.243560036826815
+          ],
+          "localDeterminantApprox": [
+            0.6073239235945752,
+            1
+          ],
+          "boundedVertices": 1053,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60PecAbd",
+          "topology": {
+            "closed": false,
+            "boundary": 15,
+            "nonmanifold": 16,
+            "inconsistent": 1,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.00001132345220921655,
+          "attachmentSamples": 297,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.03388906122928082,
+            7.149475396609543
+          ],
+          "edgeRatio": [
+            0.13425780905161638,
+            4.427486246393565
+          ],
+          "worstEdge": {
+            "vertices": [
+              2822,
+              2785
+            ],
+            "restLengthMm": 1.1335672922729703,
+            "ratio": 4.427486246393565
+          },
+          "worstArea": {
+            "triangle": 5735,
+            "vertices": [
+              2891,
+              2822,
+              2785
+            ],
+            "restAreaMm2": 0.6639063357242988,
+            "ratio": 7.149475396609543
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.35,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.3515396890688663,
+            2.529955032837174
+          ],
+          "boundedVertices": 562,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltAnt",
+          "topology": {
+            "closed": false,
+            "boundary": 235,
+            "nonmanifold": 341,
+            "inconsistent": 6,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 1.0002009230857266e-14,
+          "attachmentSamples": 2508,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.13539429173625467,
+            5.075426033063047
+          ],
+          "edgeRatio": [
+            0.25981124154213264,
+            1.774522527480698
+          ],
+          "worstEdge": {
+            "vertices": [
+              504,
+              742
+            ],
+            "restLengthMm": 0.4779315189278387,
+            "ratio": 1.774522527480698
+          },
+          "worstArea": {
+            "triangle": 1401,
+            "vertices": [
+              725,
+              715,
+              750
+            ],
+            "restAreaMm2": 0.41068637593943147,
+            "ratio": 5.075426033063047
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.8646902564096811,
+            2.4484409085248613
+          ],
+          "localDeterminantApprox": [
+            0.6055484955382351,
+            2.200727742485617
+          ],
+          "boundedVertices": 93,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltMid",
+          "topology": {
+            "closed": false,
+            "boundary": 268,
+            "nonmanifold": 429,
+            "inconsistent": 5,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 1.2502511538571582e-14,
+          "attachmentSamples": 220,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.28579644684468786,
+            2.152534122673378
+          ],
+          "edgeRatio": [
+            0.647140495001083,
+            1.3490854229960825
+          ],
+          "worstEdge": {
+            "vertices": [
+              1832,
+              2223
+            ],
+            "restLengthMm": 1.4251607309393581,
+            "ratio": 1.3490854229960825
+          },
+          "worstArea": {
+            "triangle": 8678,
+            "vertices": [
+              3563,
+              4406,
+              4405
+            ],
+            "restAreaMm2": 0.3255931360106049,
+            "ratio": 2.152534122673378
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            1,
+            1.4442796784637915
+          ],
+          "localDeterminantApprox": [
+            0.9999999999999999,
+            1.31651555110019
+          ],
+          "boundedVertices": 0,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltPost",
+          "topology": {
+            "closed": false,
+            "boundary": 323,
+            "nonmanifold": 502,
+            "inconsistent": 8,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000007116744447695982,
+          "attachmentSamples": 235,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.10268789959708625,
+            122.66202598161388
+          ],
+          "edgeRatio": [
+            0.11284978599274748,
+            5.848330145810018
+          ],
+          "worstEdge": {
+            "vertices": [
+              12801,
+              12745
+            ],
+            "restLengthMm": 0.4675422771427955,
+            "ratio": 5.848330145810018
+          },
+          "worstArea": {
+            "triangle": 25827,
+            "vertices": [
+              12739,
+              12742,
+              12821
+            ],
+            "restAreaMm2": 0.03184416739629082,
+            "ratio": 122.66202598161388
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.6114811597961134,
+            1.4727073294692088
+          ],
+          "localDeterminantApprox": [
+            0.684159368009115,
+            1.388750955539724
+          ],
+          "boundedVertices": 40,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        }
+      ]
+    },
+    {
+      "elev": 90,
+      "plane": 0,
+      "audit": [
+        {
+          "id": "v60PecClav",
+          "topology": {
+            "closed": false,
+            "boundary": 37,
+            "nonmanifold": 48,
+            "inconsistent": 0,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000014659034242052619,
+          "attachmentSamples": 355,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.14428082569667397,
+            19.89291733471674
+          ],
+          "edgeRatio": [
+            0.5474283124804313,
+            2.604542727596216
+          ],
+          "worstEdge": {
+            "vertices": [
+              3364,
+              3367
+            ],
+            "restLengthMm": 1.0224203484241898,
+            "ratio": 2.604542727596216
+          },
+          "worstArea": {
+            "triangle": 6429,
+            "vertices": [
+              3178,
+              3182,
+              3084
+            ],
+            "restAreaMm2": 0.035728076891961454,
+            "ratio": 19.89291733471674
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.9391325675839352,
+            1.8813746540931746
+          ],
+          "localDeterminantApprox": [
+            0.9391351374928512,
+            1.1402356657188837
+          ],
+          "boundedVertices": 1,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60PecStern",
+          "topology": {
+            "closed": false,
+            "boundary": 58,
+            "nonmanifold": 92,
+            "inconsistent": 1,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000014405844793568779,
+          "attachmentSamples": 2117,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.1121256674519438,
+            33.8588150987621
+          ],
+          "edgeRatio": [
+            0.3131879376806267,
+            4.551692398501624
+          ],
+          "worstEdge": {
+            "vertices": [
+              8097,
+              8084
+            ],
+            "restLengthMm": 0.9230750631286883,
+            "ratio": 4.551692398501624
+          },
+          "worstArea": {
+            "triangle": 7158,
+            "vertices": [
+              3258,
+              3682,
+              3723
+            ],
+            "restAreaMm2": 0.028650684683660523,
+            "ratio": 33.8588150987621
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            1,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.9999999999999999,
+            1.2853544562050645
+          ],
+          "boundedVertices": 541,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60PecAbd",
+          "topology": {
+            "closed": false,
+            "boundary": 15,
+            "nonmanifold": 16,
+            "inconsistent": 1,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000011233821410936269,
+          "attachmentSamples": 297,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.021274262494144283,
+            23.457525350282815
+          ],
+          "edgeRatio": [
+            0.021837745135452856,
+            5.8086658673552085
+          ],
+          "worstEdge": {
+            "vertices": [
+              2546,
+              2551
+            ],
+            "restLengthMm": 1.1324291643259352,
+            "ratio": 5.8086658673552085
+          },
+          "worstArea": {
+            "triangle": 3276,
+            "vertices": [
+              1680,
+              1676,
+              1653
+            ],
+            "restAreaMm2": 0.8006801077874317,
+            "ratio": 23.457525350282815
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.7264529255681121,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.7264588294691006,
+            2.8545123331983144
+          ],
+          "boundedVertices": 1584,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltAnt",
+          "topology": {
+            "closed": false,
+            "boundary": 235,
+            "nonmanifold": 341,
+            "inconsistent": 6,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000011861237489132454,
+          "attachmentSamples": 2508,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.03735160593843589,
+            37.597627464315586
+          ],
+          "edgeRatio": [
+            0.12108937871009225,
+            6.635480576653758
+          ],
+          "worstEdge": {
+            "vertices": [
+              713,
+              718
+            ],
+            "restLengthMm": 0.6639836628560117,
+            "ratio": 6.635480576653758
+          },
+          "worstArea": {
+            "triangle": 1322,
+            "vertices": [
+              716,
+              713,
+              718
+            ],
+            "restAreaMm2": 0.13297364162437292,
+            "ratio": 37.597627464315586
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.5695782559753003,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.3969411226422379,
+            3.417918813819719
+          ],
+          "boundedVertices": 1938,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltMid",
+          "topology": {
+            "closed": false,
+            "boundary": 268,
+            "nonmanifold": 429,
+            "inconsistent": 5,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000021168644315723938,
+          "attachmentSamples": 220,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.10733341241364872,
+            4.751425479026042
+          ],
+          "edgeRatio": [
+            0.12455357052569128,
+            2.882158029373887
+          ],
+          "worstEdge": {
+            "vertices": [
+              2577,
+              2578
+            ],
+            "restLengthMm": 0.9824897246469712,
+            "ratio": 2.882158029373887
+          },
+          "worstArea": {
+            "triangle": 5312,
+            "vertices": [
+              2718,
+              2282,
+              2732
+            ],
+            "restAreaMm2": 0.7576133279744737,
+            "ratio": 4.751425479026042
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.6325611492820706,
+            1.4427676514509618
+          ],
+          "localDeterminantApprox": [
+            0.7581997940603616,
+            1.4675174204363517
+          ],
+          "boundedVertices": 596,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltPost",
+          "topology": {
+            "closed": false,
+            "boundary": 323,
+            "nonmanifold": 502,
+            "inconsistent": 8,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.00002315611080300394,
+          "attachmentSamples": 235,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.01262709273595067,
+            103.85254593932443
+          ],
+          "edgeRatio": [
+            0.21173218495398252,
+            10.862100062785336
+          ],
+          "worstEdge": {
+            "vertices": [
+              12745,
+              12748
+            ],
+            "restLengthMm": 0.7246500403057166,
+            "ratio": 10.862100062785336
+          },
+          "worstArea": {
+            "triangle": 25827,
+            "vertices": [
+              12739,
+              12742,
+              12821
+            ],
+            "restAreaMm2": 0.03184416739629082,
+            "ratio": 103.85254593932443
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.43681236428454995,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.5497260476274191,
+            2.4865496887646255
+          ],
+          "boundedVertices": 2580,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        }
+      ]
+    },
+    {
+      "elev": 150,
+      "plane": 0,
+      "audit": [
+        {
+          "id": "v60PecClav",
+          "topology": {
+            "closed": false,
+            "boundary": 37,
+            "nonmanifold": 48,
+            "inconsistent": 0,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000022006923320458385,
+          "attachmentSamples": 355,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.12455098995397738,
+            31.76016927565885
+          ],
+          "edgeRatio": [
+            0.33299668386191955,
+            4.032769837510814
+          ],
+          "worstEdge": {
+            "vertices": [
+              3364,
+              3367
+            ],
+            "restLengthMm": 1.0224203484241898,
+            "ratio": 4.032769837510814
+          },
+          "worstArea": {
+            "triangle": 6429,
+            "vertices": [
+              3178,
+              3182,
+              3084
+            ],
+            "restAreaMm2": 0.035728076891961454,
+            "ratio": 31.76016927565885
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.8214844145463608,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.9233389679878676,
+            1.4523474484623142
+          ],
+          "boundedVertices": 176,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60PecStern",
+          "topology": {
+            "closed": false,
+            "boundary": 58,
+            "nonmanifold": 92,
+            "inconsistent": 1,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.00002199882014621,
+          "attachmentSamples": 2117,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.03139177779556314,
+            32.70555409135126
+          ],
+          "edgeRatio": [
+            0.1351287372676173,
+            7.200127576331355
+          ],
+          "worstEdge": {
+            "vertices": [
+              8097,
+              8084
+            ],
+            "restLengthMm": 0.9230750631286883,
+            "ratio": 7.200127576331355
+          },
+          "worstArea": {
+            "triangle": 15855,
+            "vertices": [
+              8086,
+              7671,
+              7668
+            ],
+            "restAreaMm2": 0.6214013021218416,
+            "ratio": 32.70555409135126
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            1,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.9999999999999999,
+            1.3606330900007249
+          ],
+          "boundedVertices": 1284,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60PecAbd",
+          "topology": {
+            "closed": false,
+            "boundary": 15,
+            "nonmanifold": 16,
+            "inconsistent": 1,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000021794077443228955,
+          "attachmentSamples": 297,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.014801737330106786,
+            36.04414877650952
+          ],
+          "edgeRatio": [
+            0.024507552883713476,
+            7.336984143751945
+          ],
+          "worstEdge": {
+            "vertices": [
+              574,
+              572
+            ],
+            "restLengthMm": 1.7304606377263074,
+            "ratio": 7.336984143751945
+          },
+          "worstArea": {
+            "triangle": 3276,
+            "vertices": [
+              1680,
+              1676,
+              1653
+            ],
+            "restAreaMm2": 0.8006801077874317,
+            "ratio": 36.04414877650952
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            1,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.9999999999999999,
+            2.918347058900146
+          ],
+          "boundedVertices": 2293,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltAnt",
+          "topology": {
+            "closed": false,
+            "boundary": 235,
+            "nonmanifold": 341,
+            "inconsistent": 6,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.00002140064183334178,
+          "attachmentSamples": 2508,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.011759270027506317,
+            16.089270539984657
+          ],
+          "edgeRatio": [
+            0.05033767933122373,
+            4.088469616580442
+          ],
+          "worstEdge": {
+            "vertices": [
+              431,
+              432
+            ],
+            "restLengthMm": 0.8096921025461796,
+            "ratio": 4.088469616580442
+          },
+          "worstArea": {
+            "triangle": 1016,
+            "vertices": [
+              582,
+              237,
+              235
+            ],
+            "restAreaMm2": 0.10793293422310811,
+            "ratio": 16.089270539984657
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.35,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.32091850298676267,
+            3.4299955882033073
+          ],
+          "boundedVertices": 3846,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltMid",
+          "topology": {
+            "closed": false,
+            "boundary": 268,
+            "nonmanifold": 429,
+            "inconsistent": 5,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000022003950252190197,
+          "attachmentSamples": 220,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.009953108382503028,
+            10.548730543340278
+          ],
+          "edgeRatio": [
+            0.029318773092381737,
+            4.290924901238414
+          ],
+          "worstEdge": {
+            "vertices": [
+              2566,
+              2545
+            ],
+            "restLengthMm": 0.5122048313472681,
+            "ratio": 4.290924901238414
+          },
+          "worstArea": {
+            "triangle": 2955,
+            "vertices": [
+              1528,
+              1527,
+              1520
+            ],
+            "restAreaMm2": 0.07224412862862045,
+            "ratio": 10.548730543340278
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.48452765019329896,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.4093802820665377,
+            2.88962178109663
+          ],
+          "boundedVertices": 6047,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltPost",
+          "topology": {
+            "closed": false,
+            "boundary": 323,
+            "nonmanifold": 502,
+            "inconsistent": 8,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000021650847296479354,
+          "attachmentSamples": 235,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.008158350219674159,
+            156.5439845272614
+          ],
+          "edgeRatio": [
+            0.03542521764322362,
+            10.999201026477056
+          ],
+          "worstEdge": {
+            "vertices": [
+              12745,
+              12748
+            ],
+            "restLengthMm": 0.7246500403057166,
+            "ratio": 10.999201026477056
+          },
+          "worstArea": {
+            "triangle": 25827,
+            "vertices": [
+              12739,
+              12742,
+              12821
+            ],
+            "restAreaMm2": 0.03184416739629082,
+            "ratio": 156.5439845272614
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.51337720666934,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.3285614122683776,
+            3.0751669517957603
+          ],
+          "boundedVertices": 7557,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        }
+      ]
+    },
+    {
+      "elev": 180,
+      "plane": 0,
+      "audit": [
+        {
+          "id": "v60PecClav",
+          "topology": {
+            "closed": false,
+            "boundary": 37,
+            "nonmanifold": 48,
+            "inconsistent": 0,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000022029782306260796,
+          "attachmentSamples": 355,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.09101566368988051,
+            32.93458056705109
+          ],
+          "edgeRatio": [
+            0.30530787371973517,
+            4.640835784378139
+          ],
+          "worstEdge": {
+            "vertices": [
+              3364,
+              3367
+            ],
+            "restLengthMm": 1.0224203484241898,
+            "ratio": 4.640835784378139
+          },
+          "worstArea": {
+            "triangle": 6429,
+            "vertices": [
+              3178,
+              3182,
+              3084
+            ],
+            "restAreaMm2": 0.035728076891961454,
+            "ratio": 32.93458056705109
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.6906156973013974,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.8708743933322955,
+            1.3882592365782311
+          ],
+          "boundedVertices": 244,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60PecStern",
+          "topology": {
+            "closed": false,
+            "boundary": 58,
+            "nonmanifold": 92,
+            "inconsistent": 1,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000021641688074059537,
+          "attachmentSamples": 2117,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.0031889078066942925,
+            37.921665327623934
+          ],
+          "edgeRatio": [
+            0.06970507561033709,
+            8.13806341498993
+          ],
+          "worstEdge": {
+            "vertices": [
+              8097,
+              8084
+            ],
+            "restLengthMm": 0.9230750631286883,
+            "ratio": 8.13806341498993
+          },
+          "worstArea": {
+            "triangle": 15855,
+            "vertices": [
+              8086,
+              7671,
+              7668
+            ],
+            "restAreaMm2": 0.6214013021218416,
+            "ratio": 37.921665327623934
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            1,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.9999999999999999,
+            1.3199835025400284
+          ],
+          "boundedVertices": 2031,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60PecAbd",
+          "topology": {
+            "closed": false,
+            "boundary": 15,
+            "nonmanifold": 16,
+            "inconsistent": 1,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.00002198651073013349,
+          "attachmentSamples": 297,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.01391724424904874,
+            29.82385946774623
+          ],
+          "edgeRatio": [
+            0.05803374610226833,
+            7.971447383689525
+          ],
+          "worstEdge": {
+            "vertices": [
+              574,
+              572
+            ],
+            "restLengthMm": 1.7304606377263074,
+            "ratio": 7.971447383689525
+          },
+          "worstArea": {
+            "triangle": 1304,
+            "vertices": [
+              676,
+              585,
+              681
+            ],
+            "restAreaMm2": 1.0402977315350015,
+            "ratio": 29.82385946774623
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            1,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.9999999999999999,
+            2.918347058900146
+          ],
+          "boundedVertices": 2394,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltAnt",
+          "topology": {
+            "closed": false,
+            "boundary": 235,
+            "nonmanifold": 341,
+            "inconsistent": 6,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.00002140064183334178,
+          "attachmentSamples": 2508,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.005775719816620593,
+            16.808253834213826
+          ],
+          "edgeRatio": [
+            0.01958802916561639,
+            4.1885290984047385
+          ],
+          "worstEdge": {
+            "vertices": [
+              1428,
+              1430
+            ],
+            "restLengthMm": 1.0819793665167976,
+            "ratio": 4.1885290984047385
+          },
+          "worstArea": {
+            "triangle": 7681,
+            "vertices": [
+              3901,
+              3662,
+              3908
+            ],
+            "restAreaMm2": 0.07845872400330059,
+            "ratio": 16.808253834213826
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.35,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.23864891457115972,
+            3.4299955882033073
+          ],
+          "boundedVertices": 4473,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltMid",
+          "topology": {
+            "closed": false,
+            "boundary": 268,
+            "nonmanifold": 429,
+            "inconsistent": 5,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000022003950252190197,
+          "attachmentSamples": 220,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.006451547567285022,
+            17.0990649766785
+          ],
+          "edgeRatio": [
+            0.03843947737087436,
+            4.749765012103554
+          ],
+          "worstEdge": {
+            "vertices": [
+              1827,
+              1829
+            ],
+            "restLengthMm": 0.8648888373885001,
+            "ratio": 4.749765012103554
+          },
+          "worstArea": {
+            "triangle": 10182,
+            "vertices": [
+              5153,
+              5143,
+              5154
+            ],
+            "restAreaMm2": 0.12375801308890808,
+            "ratio": 17.0990649766785
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.4042045015303817,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.3255896042054363,
+            2.8978840064148454
+          ],
+          "boundedVertices": 6252,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltPost",
+          "topology": {
+            "closed": false,
+            "boundary": 323,
+            "nonmanifold": 502,
+            "inconsistent": 8,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000021963797527889232,
+          "attachmentSamples": 235,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.0053514609748491725,
+            182.5958298727549
+          ],
+          "edgeRatio": [
+            0.03444683488960172,
+            11.150131499547415
+          ],
+          "worstEdge": {
+            "vertices": [
+              12745,
+              12748
+            ],
+            "restLengthMm": 0.7246500403057166,
+            "ratio": 11.150131499547415
+          },
+          "worstArea": {
+            "triangle": 25827,
+            "vertices": [
+              12739,
+              12742,
+              12821
+            ],
+            "restAreaMm2": 0.03184416739629082,
+            "ratio": 182.5958298727549
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.3534905392802683,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.22991014797568454,
+            2.878442442526017
+          ],
+          "boundedVertices": 8539,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        }
+      ]
+    },
+    {
+      "elev": 90,
+      "plane": 90,
+      "audit": [
+        {
+          "id": "v60PecClav",
+          "topology": {
+            "closed": false,
+            "boundary": 37,
+            "nonmanifold": 48,
+            "inconsistent": 0,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000011858784349095553,
+          "attachmentSamples": 355,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.012606568343927593,
+            27.999862753760937
+          ],
+          "edgeRatio": [
+            0.03802197071902119,
+            2.973059539377235
+          ],
+          "worstEdge": {
+            "vertices": [
+              1487,
+              1482
+            ],
+            "restLengthMm": 0.9055748908283852,
+            "ratio": 2.973059539377235
+          },
+          "worstArea": {
+            "triangle": 6429,
+            "vertices": [
+              3178,
+              3182,
+              3084
+            ],
+            "restAreaMm2": 0.035728076891961454,
+            "ratio": 27.999862753760937
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.4760312468340549,
+            2.142425321206548
+          ],
+          "localDeterminantApprox": [
+            0.5062509259216864,
+            1.0145005367127664
+          ],
+          "boundedVertices": 1696,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60PecStern",
+          "topology": {
+            "closed": false,
+            "boundary": 58,
+            "nonmanifold": 92,
+            "inconsistent": 1,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000019499983486959312,
+          "attachmentSamples": 2117,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.0007868178107938401,
+            33.07129837644021
+          ],
+          "edgeRatio": [
+            0.041724877872172515,
+            8.222415669997236
+          ],
+          "worstEdge": {
+            "vertices": [
+              8097,
+              8084
+            ],
+            "restLengthMm": 0.9230750631286883,
+            "ratio": 8.222415669997236
+          },
+          "worstArea": {
+            "triangle": 16713,
+            "vertices": [
+              8510,
+              8093,
+              8092
+            ],
+            "restAreaMm2": 1.3158707115597528,
+            "ratio": 33.07129837644021
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.6002191709953777,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.6205928537813351,
+            1.1572709178596952
+          ],
+          "boundedVertices": 2634,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60PecAbd",
+          "topology": {
+            "closed": false,
+            "boundary": 15,
+            "nonmanifold": 16,
+            "inconsistent": 1,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000011956555890594544,
+          "attachmentSamples": 297,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.007860467721921765,
+            47.243497216411726
+          ],
+          "edgeRatio": [
+            0.05275411298098859,
+            6.993544000193751
+          ],
+          "worstEdge": {
+            "vertices": [
+              683,
+              684
+            ],
+            "restLengthMm": 0.7083464742525803,
+            "ratio": 6.993544000193751
+          },
+          "worstArea": {
+            "triangle": 3276,
+            "vertices": [
+              1680,
+              1676,
+              1653
+            ],
+            "restAreaMm2": 0.8006801077874317,
+            "ratio": 47.243497216411726
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            1,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.9999999999999999,
+            2.8365414872714325
+          ],
+          "boundedVertices": 2188,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltAnt",
+          "topology": {
+            "closed": false,
+            "boundary": 235,
+            "nonmanifold": 341,
+            "inconsistent": 6,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000011930411231641328,
+          "attachmentSamples": 2508,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.04059634186206435,
+            15.545412082094229
+          ],
+          "edgeRatio": [
+            0.15317156628170303,
+            3.416866372001505
+          ],
+          "worstEdge": {
+            "vertices": [
+              431,
+              432
+            ],
+            "restLengthMm": 0.8096921025461796,
+            "ratio": 3.416866372001505
+          },
+          "worstArea": {
+            "triangle": 7681,
+            "vertices": [
+              3901,
+              3662,
+              3908
+            ],
+            "restAreaMm2": 0.07845872400330059,
+            "ratio": 15.545412082094229
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.6142197561865639,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.6564771446543616,
+            3.4299955882033073
+          ],
+          "boundedVertices": 1021,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltMid",
+          "topology": {
+            "closed": false,
+            "boundary": 268,
+            "nonmanifold": 429,
+            "inconsistent": 5,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000011773022239945271,
+          "attachmentSamples": 220,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.034892627942565264,
+            7.386129689659038
+          ],
+          "edgeRatio": [
+            0.07092490027101714,
+            2.522483402219037
+          ],
+          "worstEdge": {
+            "vertices": [
+              2235,
+              2238
+            ],
+            "restLengthMm": 0.9534819968248144,
+            "ratio": 2.522483402219037
+          },
+          "worstArea": {
+            "triangle": 2955,
+            "vertices": [
+              1528,
+              1527,
+              1520
+            ],
+            "restAreaMm2": 0.07224412862862045,
+            "ratio": 7.386129689659038
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.7416123791952702,
+            2.610156961558047
+          ],
+          "localDeterminantApprox": [
+            0.7082292053746002,
+            2.1247175636175024
+          ],
+          "boundedVertices": 1068,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltPost",
+          "topology": {
+            "closed": false,
+            "boundary": 323,
+            "nonmanifold": 502,
+            "inconsistent": 8,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000012040373953003998,
+          "attachmentSamples": 235,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.03090324940248552,
+            1335.024595293762
+          ],
+          "edgeRatio": [
+            0.053377466525557984,
+            18.19876991821273
+          ],
+          "worstEdge": {
+            "vertices": [
+              12745,
+              12748
+            ],
+            "restLengthMm": 0.7246500403057166,
+            "ratio": 18.19876991821273
+          },
+          "worstArea": {
+            "triangle": 25827,
+            "vertices": [
+              12739,
+              12742,
+              12821
+            ],
+            "restAreaMm2": 0.03184416739629082,
+            "ratio": 1335.024595293762
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            1,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.890132517548603,
+            2.8000000000000003
+          ],
+          "boundedVertices": 1348,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        }
+      ]
+    },
+    {
+      "elev": 150,
+      "plane": 90,
+      "audit": [
+        {
+          "id": "v60PecClav",
+          "topology": {
+            "closed": false,
+            "boundary": 37,
+            "nonmanifold": 48,
+            "inconsistent": 0,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000022021877788513627,
+          "attachmentSamples": 355,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.0065109880569022924,
+            34.96581078899599
+          ],
+          "edgeRatio": [
+            0.07632780120350427,
+            3.2840128172583953
+          ],
+          "worstEdge": {
+            "vertices": [
+              1027,
+              1033
+            ],
+            "restLengthMm": 0.7249953288668316,
+            "ratio": 3.2840128172583953
+          },
+          "worstArea": {
+            "triangle": 6429,
+            "vertices": [
+              3178,
+              3182,
+              3084
+            ],
+            "restAreaMm2": 0.035728076891961454,
+            "ratio": 34.96581078899599
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.7272450359539503,
+            2.4282204393490137
+          ],
+          "localDeterminantApprox": [
+            0.6500853121856894,
+            1.1254405335112925
+          ],
+          "boundedVertices": 2204,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60PecStern",
+          "topology": {
+            "closed": false,
+            "boundary": 58,
+            "nonmanifold": 92,
+            "inconsistent": 1,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000021841744587783035,
+          "attachmentSamples": 2117,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.00523186920557763,
+            69.36292935674399
+          ],
+          "edgeRatio": [
+            0.061669209339863085,
+            10.679358939492754
+          ],
+          "worstEdge": {
+            "vertices": [
+              8097,
+              8084
+            ],
+            "restLengthMm": 0.9230750631286883,
+            "ratio": 10.679358939492754
+          },
+          "worstArea": {
+            "triangle": 12173,
+            "vertices": [
+              6240,
+              5337,
+              6242
+            ],
+            "restAreaMm2": 0.18993057411948908,
+            "ratio": 69.36292935674399
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.7138124865692834,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.714295594844181,
+            1.1295385821382802
+          ],
+          "boundedVertices": 5981,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60PecAbd",
+          "topology": {
+            "closed": false,
+            "boundary": 15,
+            "nonmanifold": 16,
+            "inconsistent": 1,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000021763754469786676,
+          "attachmentSamples": 297,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.02707888350975113,
+            43.684592336797756
+          ],
+          "edgeRatio": [
+            0.047475493880161056,
+            8.982733326508525
+          ],
+          "worstEdge": {
+            "vertices": [
+              2939,
+              2857
+            ],
+            "restLengthMm": 0.7073935176494305,
+            "ratio": 8.982733326508525
+          },
+          "worstArea": {
+            "triangle": 5650,
+            "vertices": [
+              2854,
+              2853,
+              2849
+            ],
+            "restAreaMm2": 0.4313106761175254,
+            "ratio": 43.684592336797756
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            1,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.8768598269257135,
+            2.915238573540344
+          ],
+          "boundedVertices": 2267,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltAnt",
+          "topology": {
+            "closed": false,
+            "boundary": 235,
+            "nonmanifold": 341,
+            "inconsistent": 6,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.00001187655184799103,
+          "attachmentSamples": 2508,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.009735807730941006,
+            14.982858723135404
+          ],
+          "edgeRatio": [
+            0.04315496757095152,
+            3.6282307928011908
+          ],
+          "worstEdge": {
+            "vertices": [
+              174,
+              427
+            ],
+            "restLengthMm": 0.981319238478549,
+            "ratio": 3.6282307928011908
+          },
+          "worstArea": {
+            "triangle": 7041,
+            "vertices": [
+              3584,
+              3317,
+              3313
+            ],
+            "restAreaMm2": 0.06989619087132196,
+            "ratio": 14.982858723135404
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.35,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.3169345134069903,
+            3.4299955882033073
+          ],
+          "boundedVertices": 4023,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltMid",
+          "topology": {
+            "closed": false,
+            "boundary": 268,
+            "nonmanifold": 429,
+            "inconsistent": 5,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000021882925447883916,
+          "attachmentSamples": 220,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.011562447719429988,
+            10.16978560958315
+          ],
+          "edgeRatio": [
+            0.08964069504116845,
+            2.9553107296527354
+          ],
+          "worstEdge": {
+            "vertices": [
+              1830,
+              1828
+            ],
+            "restLengthMm": 0.9426832733324637,
+            "ratio": 2.9553107296527354
+          },
+          "worstArea": {
+            "triangle": 10182,
+            "vertices": [
+              5153,
+              5143,
+              5154
+            ],
+            "restAreaMm2": 0.12375801308890808,
+            "ratio": 10.16978560958315
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.5490186900914286,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.47234232384739294,
+            2.3303550252557956
+          ],
+          "boundedVertices": 3196,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltPost",
+          "topology": {
+            "closed": false,
+            "boundary": 323,
+            "nonmanifold": 502,
+            "inconsistent": 8,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.00002180204623868312,
+          "attachmentSamples": 235,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.004688852429375843,
+            1198.4054926662277
+          ],
+          "edgeRatio": [
+            0.05122089465120038,
+            17.249550957979213
+          ],
+          "worstEdge": {
+            "vertices": [
+              12745,
+              12748
+            ],
+            "restLengthMm": 0.7246500403057166,
+            "ratio": 17.249550957979213
+          },
+          "worstArea": {
+            "triangle": 25827,
+            "vertices": [
+              12739,
+              12742,
+              12821
+            ],
+            "restAreaMm2": 0.03184416739629082,
+            "ratio": 1198.4054926662277
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            1,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.6816294825952374,
+            2.8000000000000003
+          ],
+          "boundedVertices": 4112,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        }
+      ]
+    },
+    {
+      "elev": 180,
+      "plane": 90,
+      "audit": [
+        {
+          "id": "v60PecClav",
+          "topology": {
+            "closed": false,
+            "boundary": 37,
+            "nonmanifold": 48,
+            "inconsistent": 0,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.00002172623469975124,
+          "attachmentSamples": 355,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.0023793707610552223,
+            31.582418857325404
+          ],
+          "edgeRatio": [
+            0.08323632957551177,
+            3.4062772159272363
+          ],
+          "worstEdge": {
+            "vertices": [
+              1027,
+              1033
+            ],
+            "restLengthMm": 0.7249953288668316,
+            "ratio": 3.4062772159272363
+          },
+          "worstArea": {
+            "triangle": 6429,
+            "vertices": [
+              3178,
+              3182,
+              3084
+            ],
+            "restAreaMm2": 0.035728076891961454,
+            "ratio": 31.582418857325404
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.8694435328066533,
+            2.271351649901854
+          ],
+          "localDeterminantApprox": [
+            0.6010788449438634,
+            1.244168747872571
+          ],
+          "boundedVertices": 1976,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60PecStern",
+          "topology": {
+            "closed": false,
+            "boundary": 58,
+            "nonmanifold": 92,
+            "inconsistent": 1,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000022107188985263714,
+          "attachmentSamples": 2117,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.005615482540673606,
+            89.86764717767326
+          ],
+          "edgeRatio": [
+            0.04496904245458162,
+            10.035163704046042
+          ],
+          "worstEdge": {
+            "vertices": [
+              8097,
+              8084
+            ],
+            "restLengthMm": 0.9230750631286883,
+            "ratio": 10.035163704046042
+          },
+          "worstArea": {
+            "triangle": 7158,
+            "vertices": [
+              3258,
+              3682,
+              3723
+            ],
+            "restAreaMm2": 0.028650684683660523,
+            "ratio": 89.86764717767326
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.8585187032023844,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.858800862266386,
+            1.1820303930136762
+          ],
+          "boundedVertices": 5808,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60PecAbd",
+          "topology": {
+            "closed": false,
+            "boundary": 15,
+            "nonmanifold": 16,
+            "inconsistent": 1,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000021815513514031882,
+          "attachmentSamples": 297,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.016252693611684518,
+            122.15263719942259
+          ],
+          "edgeRatio": [
+            0.06623316623623346,
+            9.175142287269848
+          ],
+          "worstEdge": {
+            "vertices": [
+              2939,
+              2857
+            ],
+            "restLengthMm": 0.7073935176494305,
+            "ratio": 9.175142287269848
+          },
+          "worstArea": {
+            "triangle": 3058,
+            "vertices": [
+              1455,
+              1454,
+              1566
+            ],
+            "restAreaMm2": 0.334069280731784,
+            "ratio": 122.15263719942259
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            1,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.9999999999999999,
+            2.918347058900146
+          ],
+          "boundedVertices": 2362,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltAnt",
+          "topology": {
+            "closed": false,
+            "boundary": 235,
+            "nonmanifold": 341,
+            "inconsistent": 6,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.00001187655184799103,
+          "attachmentSamples": 2508,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.004468462896134742,
+            50.55000387563617
+          ],
+          "edgeRatio": [
+            0.03595684662331492,
+            3.5625985582272874
+          ],
+          "worstEdge": {
+            "vertices": [
+              174,
+              427
+            ],
+            "restLengthMm": 0.981319238478549,
+            "ratio": 3.5625985582272874
+          },
+          "worstArea": {
+            "triangle": 4145,
+            "vertices": [
+              2144,
+              1849,
+              2123
+            ],
+            "restAreaMm2": 0.15139795860399924,
+            "ratio": 50.55000387563617
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.35,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.29728877477887,
+            3.4299955882033073
+          ],
+          "boundedVertices": 4515,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltMid",
+          "topology": {
+            "closed": false,
+            "boundary": 268,
+            "nonmanifold": 429,
+            "inconsistent": 5,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000021882925447883916,
+          "attachmentSamples": 220,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.014802194277192503,
+            18.152892251696315
+          ],
+          "edgeRatio": [
+            0.02913079549537426,
+            3.479591041272567
+          ],
+          "worstEdge": {
+            "vertices": [
+              1827,
+              1829
+            ],
+            "restLengthMm": 0.8648888373885001,
+            "ratio": 3.479591041272567
+          },
+          "worstArea": {
+            "triangle": 10182,
+            "vertices": [
+              5153,
+              5143,
+              5154
+            ],
+            "restAreaMm2": 0.12375801308890808,
+            "ratio": 18.152892251696315
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.44607190881990105,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.386137427325846,
+            2.3210940006896377
+          ],
+          "boundedVertices": 4213,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        },
+        {
+          "id": "v60DeltPost",
+          "topology": {
+            "closed": false,
+            "boundary": 323,
+            "nonmanifold": 502,
+            "inconsistent": 8,
+            "degenerate": 0
+          },
+          "nonfinite": 0,
+          "attachmentMaxMm": 0.000021650065054961402,
+          "attachmentSamples": 235,
+          "maxStepMm": null,
+          "restVolume": null,
+          "volume": null,
+          "volumeRatio": null,
+          "volumeStatus": "not-evaluable",
+          "areaRatio": [
+            0.01330304309772269,
+            1086.9991088003017
+          ],
+          "edgeRatio": [
+            0.028698433477222268,
+            16.604273750382877
+          ],
+          "worstEdge": {
+            "vertices": [
+              12745,
+              12748
+            ],
+            "restLengthMm": 0.7246500403057166,
+            "ratio": 16.604273750382877
+          },
+          "worstArea": {
+            "triangle": 25827,
+            "vertices": [
+              12739,
+              12742,
+              12821
+            ],
+            "restAreaMm2": 0.03184416739629082,
+            "ratio": 1086.9991088003017
+          },
+          "newDegenerateFaces": 0,
+          "stretch": [
+            0.9243860567490658,
+            2.8
+          ],
+          "localDeterminantApprox": [
+            0.5916070763194021,
+            2.8000000000000003
+          ],
+          "boundedVertices": 4979,
+          "invalidFrames": 0,
+          "volumetricJacobian": null,
+          "newIntersections": null,
+          "newInversions": null,
+          "boneDistance": null,
+          "clinicalValidation": false
+        }
+      ]
+    }
+  ],
+  "neck": [
+    {
+      "angle": -75,
+      "range": [
+        -75,
+        75
+      ],
+      "relative": {
+        "C7": -1.5,
+        "C6": -3,
+        "C5": -5.250000000000001,
+        "C4": -6,
+        "C3": -6,
+        "C2": -5.250000000000001,
+        "C1": -45,
+        "C0": -3
+      },
+      "transforms": {
+        "T1": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            0,
+            0,
+            0
+          ],
+          "rest": [
+            0,
+            0,
+            0
+          ]
+        },
+        "C7": {
+          "q": [
+            0,
+            -0.01308959557134444,
+            0,
+            0.999914327574007
+          ],
+          "p": [
+            -0.0777,
+            1.9775,
+            0.08
+          ],
+          "rest": [
+            -0.0777,
+            1.9775,
+            0.08
+          ]
+        },
+        "C6": {
+          "q": [
+            0,
+            -0.0392598157590686,
+            0,
+            0.9992290362407229
+          ],
+          "p": [
+            -0.07697358968445653,
+            2.0496499999999997,
+            0.05225950923192829
+          ],
+          "rest": [
+            -0.0777,
+            2.0496499999999997,
+            0.052250000000000005
+          ]
+        },
+        "C5": {
+          "q": [
+            0,
+            -0.08498217737244165,
+            0,
+            0.9963824715083254
+          ],
+          "p": [
+            -0.07523179775929838,
+            2.11625,
+            0.030127944423052846
+          ],
+          "rest": [
+            -0.0777,
+            2.11625,
+            0.03005
+          ]
+        },
+        "C4": {
+          "q": [
+            0,
+            -0.13701234168196802,
+            0,
+            0.9905693404435773
+          ],
+          "p": [
+            -0.07241212852021212,
+            2.19395,
+            0.013718436039735847
+          ],
+          "rest": [
+            -0.0777,
+            2.19395,
+            0.013399999999999995
+          ]
+        },
+        "C3": {
+          "q": [
+            0,
+            -0.18866696468655522,
+            0,
+            0.9820411276703038
+          ],
+          "p": [
+            -0.07090563402346095,
+            2.26055,
+            0.008376809477418104
+          ],
+          "rest": [
+            -0.0777,
+            2.26055,
+            0.007849999999999996
+          ]
+        },
+        "C2": {
+          "q": [
+            0,
+            -0.2334453638559054,
+            0,
+            0.9723699203976766
+          ],
+          "p": [
+            -0.07090563402346095,
+            2.3327,
+            0.008376809477418104
+          ],
+          "rest": [
+            -0.0777,
+            2.3327,
+            0.007849999999999996
+          ]
+        },
+        "C1": {
+          "q": [
+            0,
+            -0.5877852522924731,
+            0,
+            0.8090169943749473
+          ],
+          "p": [
+            -0.07594492857056992,
+            2.47145,
+            0.018266981895908994
+          ],
+          "rest": [
+            -0.0777,
+            2.47145,
+            0.01895
+          ]
+        },
+        "C0": {
+          "q": [
+            0,
+            -0.6087614290087207,
+            0,
+            0.793353340291235
+          ],
+          "p": [
+            -0.08650165590144612,
+            2.5324999999999998,
+            0.02169707053347091
+          ],
+          "rest": [
+            -0.0777,
+            2.5324999999999998,
+            0.03005
+          ]
+        }
+      },
+      "skullParts": 22,
+      "neckMuscles": 6,
+      "failed": [],
+      "distributionMeasured": false,
+      "clinicalValidation": false
+    },
+    {
+      "angle": -60,
+      "range": [
+        -75,
+        75
+      ],
+      "relative": {
+        "C7": -1.2,
+        "C6": -2.4,
+        "C5": -4.2,
+        "C4": -4.8,
+        "C3": -4.8,
+        "C2": -4.2,
+        "C1": -36,
+        "C0": -2.4
+      },
+      "transforms": {
+        "T1": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            0,
+            0,
+            0
+          ],
+          "rest": [
+            0,
+            0,
+            0
+          ]
+        },
+        "C7": {
+          "q": [
+            0,
+            -0.010471784116245792,
+            0,
+            0.9999451693655121
+          ],
+          "p": [
+            -0.0777,
+            1.9775,
+            0.08
+          ],
+          "rest": [
+            -0.0777,
+            1.9775,
+            0.08
+          ]
+        },
+        "C6": {
+          "q": [
+            0,
+            -0.03141075907812829,
+            0,
+            0.9995065603657316
+          ],
+          "p": [
+            -0.07711884784823685,
+            2.0496499999999997,
+            0.05225608603357304
+          ],
+          "rest": [
+            -0.0777,
+            2.0496499999999997,
+            0.052250000000000005
+          ]
+        },
+        "C5": {
+          "q": [
+            0,
+            -0.06801529066524817,
+            0,
+            0.9976842788356053
+          ],
+          "p": [
+            -0.0757248983146861,
+            2.11625,
+            0.03009989266246541
+          ],
+          "rest": [
+            -0.0777,
+            2.11625,
+            0.03005
+          ]
+        },
+        "C4": {
+          "q": [
+            0,
+            -0.10973431109104527,
+            0,
+            0.9939609554551797
+          ],
+          "p": [
+            -0.07346523403365493,
+            2.19395,
+            0.013603941118615868
+          ],
+          "rest": [
+            -0.0777,
+            2.19395,
+            0.013399999999999995
+          ]
+        },
+        "C3": {
+          "q": [
+            0,
+            -0.1512608202472192,
+            0,
+            0.9884938868086836
+          ],
+          "p": [
+            -0.07225453904390412,
+            2.26055,
+            0.00818760308985582
+          ],
+          "rest": [
+            -0.0777,
+            2.26055,
+            0.007849999999999996
+          ]
+        },
+        "C2": {
+          "q": [
+            0,
+            -0.18738131458572463,
+            0,
+            0.9822872507286887
+          ],
+          "p": [
+            -0.07225453904390412,
+            2.3327,
+            0.00818760308985582
+          ],
+          "rest": [
+            -0.0777,
+            2.3327,
+            0.007849999999999996
+          ]
+        },
+        "C1": {
+          "q": [
+            0,
+            -0.4817536741017152,
+            0,
+            0.8763066800438636
+          ],
+          "p": [
+            -0.07634072157870406,
+            2.47145,
+            0.018508122083215416
+          ],
+          "rest": [
+            -0.0777,
+            2.47145,
+            0.01895
+          ]
+        },
+        "C0": {
+          "q": [
+            0,
+            -0.49999999999999994,
+            0,
+            0.8660254037844387
+          ],
+          "p": [
+            -0.08571276155177643,
+            2.5324999999999998,
+            0.02445579950748228
+          ],
+          "rest": [
+            -0.0777,
+            2.5324999999999998,
+            0.03005
+          ]
+        }
+      },
+      "skullParts": 22,
+      "neckMuscles": 6,
+      "failed": [],
+      "distributionMeasured": false,
+      "clinicalValidation": false
+    },
+    {
+      "angle": -45,
+      "range": [
+        -75,
+        75
+      ],
+      "relative": {
+        "C7": -0.9,
+        "C6": -1.8,
+        "C5": -3.1500000000000004,
+        "C4": -3.6,
+        "C3": -3.6,
+        "C2": -3.1500000000000004,
+        "C1": -27,
+        "C0": -1.8
+      },
+      "transforms": {
+        "T1": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            0,
+            0,
+            0
+          ],
+          "rest": [
+            0,
+            0,
+            0
+          ]
+        },
+        "C7": {
+          "q": [
+            0,
+            -0.007853900888711334,
+            0,
+            0.9999691576447897
+          ],
+          "p": [
+            -0.0777,
+            1.9775,
+            0.08
+          ],
+          "rest": [
+            -0.0777,
+            1.9775,
+            0.08
+          ]
+        },
+        "C6": {
+          "q": [
+            0,
+            -0.023559764833610154,
+            0,
+            0.9997224302180004
+          ],
+          "p": [
+            -0.07726412194459698,
+            2.0496499999999997,
+            0.05225342344863392
+          ],
+          "rest": [
+            -0.0777,
+            2.0496499999999997,
+            0.052250000000000005
+          ]
+        },
+        "C5": {
+          "q": [
+            0,
+            -0.0510287087739516,
+            0,
+            0.9986971867792874
+          ],
+          "p": [
+            -0.0762183587388429,
+            2.11625,
+            0.030078068224478186
+          ],
+          "rest": [
+            -0.0777,
+            2.11625,
+            0.03005
+          ]
+        },
+        "C4": {
+          "q": [
+            0,
+            -0.08237336591248569,
+            0,
+            0.9966015395273317
+          ],
+          "p": [
+            -0.07452131654985532,
+            2.19395,
+            0.013514779064145433
+          ],
+          "rest": [
+            -0.0777,
+            2.19395,
+            0.013399999999999995
+          ]
+        },
+        "C3": {
+          "q": [
+            0,
+            -0.11363673048392114,
+            0,
+            0.9935223668770243
+          ],
+          "p": [
+            -0.07361007955139813,
+            2.26055,
+            0.008040096686815884
+          ],
+          "rest": [
+            -0.0777,
+            2.26055,
+            0.007849999999999996
+          ]
+        },
+        "C2": {
+          "q": [
+            0,
+            -0.14090123193758267,
+            0,
+            0.9900236577165574
+          ],
+          "p": [
+            -0.07361007955139813,
+            2.3327,
+            0.008040096686815884
+          ],
+          "rest": [
+            -0.0777,
+            2.3327,
+            0.007849999999999996
+          ]
+        },
+        "C1": {
+          "q": [
+            0,
+            -0.3681245526846779,
+            0,
+            0.9297764858882512
+          ],
+          "p": [
+            -0.07670688082843358,
+            2.47145,
+            0.01869935659782996
+          ],
+          "rest": [
+            -0.0777,
+            2.47145,
+            0.01895
+          ]
+        },
+        "C0": {
+          "q": [
+            0,
+            -0.3826834323650897,
+            0,
+            0.9238795325112866
+          ],
+          "p": [
+            -0.08430535370424203,
+            2.5324999999999998,
+            0.026790908362207627
+          ],
+          "rest": [
+            -0.0777,
+            2.5324999999999998,
+            0.03005
+          ]
+        }
+      },
+      "skullParts": 22,
+      "neckMuscles": 6,
+      "failed": [],
+      "distributionMeasured": false,
+      "clinicalValidation": false
+    },
+    {
+      "angle": -30,
+      "range": [
+        -75,
+        75
+      ],
+      "relative": {
+        "C7": -0.6,
+        "C6": -1.2,
+        "C5": -2.1,
+        "C4": -2.4,
+        "C3": -2.4,
+        "C2": -2.1,
+        "C1": -18,
+        "C0": -1.2
+      },
+      "transforms": {
+        "T1": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            0,
+            0,
+            0
+          ],
+          "rest": [
+            0,
+            0,
+            0
+          ]
+        },
+        "C7": {
+          "q": [
+            0,
+            -0.00523596383141958,
+            0,
+            0.9999862922474267
+          ],
+          "p": [
+            -0.0777,
+            1.9775,
+            0.08
+          ],
+          "rest": [
+            -0.0777,
+            1.9775,
+            0.08
+          ]
+        },
+        "C6": {
+          "q": [
+            0,
+            -0.015707317311820672,
+            0,
+            0.9998766324816606
+          ],
+          "p": [
+            -0.07740940799077418,
+            2.0496499999999997,
+            0.05225152155010704
+          ],
+          "rest": [
+            -0.0777,
+            2.0496499999999997,
+            0.052250000000000005
+          ]
+        },
+        "C5": {
+          "q": [
+            0,
+            -0.034027350502167444,
+            0,
+            0.9994209020316729
+          ],
+          "p": [
+            -0.07671208913923974,
+            2.11625,
+            0.030062475909987795
+          ],
+          "rest": [
+            -0.0777,
+            2.11625,
+            0.03005
+          ]
+        },
+        "C4": {
+          "q": [
+            0,
+            -0.054950179912445746,
+            0,
+            0.9984890974505379
+          ],
+          "p": [
+            -0.07557963454966336,
+            2.19395,
+            0.013451032667374963
+          ],
+          "rest": [
+            -0.0777,
+            2.19395,
+            0.013399999999999995
+          ]
+        },
+        "C3": {
+          "q": [
+            0,
+            -0.07584890635769402,
+            0,
+            0.997119322550888
+          ],
+          "p": [
+            -0.07497060912310806,
+            2.26055,
+            0.007934549364598715
+          ],
+          "rest": [
+            -0.0777,
+            2.26055,
+            0.007849999999999996
+          ]
+        },
+        "C2": {
+          "q": [
+            0,
+            -0.09410831331851433,
+            0,
+            0.99556196460308
+          ],
+          "p": [
+            -0.07497060912310806,
+            2.3327,
+            0.007934549364598715
+          ],
+          "rest": [
+            -0.0777,
+            2.3327,
+            0.007849999999999996
+          ]
+        },
+        "C1": {
+          "q": [
+            0,
+            -0.2486898871648548,
+            0,
+            0.9685831611286311
+          ],
+          "p": [
+            -0.07705054171500961,
+            2.47145,
+            0.018837937847687163
+          ],
+          "rest": [
+            -0.0777,
+            2.47145,
+            0.01895
+          ]
+        },
+        "C0": {
+          "q": [
+            0,
+            -0.25881904510252074,
+            0,
+            0.9659258262890682
+          ],
+          "p": [
+            -0.08239800749753864,
+            2.5324999999999998,
+            0.02856494199617405
+          ],
+          "rest": [
+            -0.0777,
+            2.5324999999999998,
+            0.03005
+          ]
+        }
+      },
+      "skullParts": 22,
+      "neckMuscles": 6,
+      "failed": [],
+      "distributionMeasured": false,
+      "clinicalValidation": false
+    },
+    {
+      "angle": -15,
+      "range": [
+        -75,
+        75
+      ],
+      "relative": {
+        "C7": -0.3,
+        "C6": -0.6,
+        "C5": -1.05,
+        "C4": -1.2,
+        "C3": -1.2,
+        "C2": -1.05,
+        "C1": -9,
+        "C0": -0.6
+      },
+      "transforms": {
+        "T1": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            0,
+            0,
+            0
+          ],
+          "rest": [
+            0,
+            0,
+            0
+          ]
+        },
+        "C7": {
+          "q": [
+            0,
+            -0.0026179908874179934,
+            0,
+            0.9999965730559848
+          ],
+          "p": [
+            -0.0777,
+            1.9775,
+            0.08
+          ],
+          "rest": [
+            -0.0777,
+            1.9775,
+            0.08
+          ]
+        },
+        "C6": {
+          "q": [
+            0,
+            -0.007853900888711334,
+            0,
+            0.9999691576447897
+          ],
+          "p": [
+            -0.07755470200367812,
+            2.0496499999999997,
+            0.05225038039013391
+          ],
+          "rest": [
+            -0.0777,
+            2.0496499999999997,
+            0.052250000000000005
+          ]
+        },
+        "C5": {
+          "q": [
+            0,
+            -0.01701613893230685,
+            0,
+            0.9998552150265739
+          ],
+          "p": [
+            -0.0772059995593557,
+            2.11625,
+            0.03005311914904104
+          ],
+          "rest": [
+            -0.0777,
+            2.11625,
+            0.03005
+          ]
+        },
+        "C4": {
+          "q": [
+            0,
+            -0.027485473885873454,
+            0,
+            0.9996222029973468
+          ],
+          "p": [
+            -0.07663944417349461,
+            2.19395,
+            0.013412761130213682
+          ],
+          "rest": [
+            -0.0777,
+            2.19395,
+            0.013399999999999995
+          ]
+        },
+        "C3": {
+          "q": [
+            0,
+            -0.037951794747495333,
+            0,
+            0.9992795711288428
+          ],
+          "p": [
+            -0.07633447067498053,
+            2.26055,
+            0.007871146639363197
+          ],
+          "rest": [
+            -0.0777,
+            2.26055,
+            0.007849999999999996
+          ]
+        },
+        "C2": {
+          "q": [
+            0,
+            -0.04710645070964266,
+            0,
+            0.99888987496197
+          ],
+          "p": [
+            -0.07633447067498053,
+            2.3327,
+            0.007871146639363197
+          ],
+          "rest": [
+            -0.0777,
+            2.3327,
+            0.007849999999999996
+          ]
+        },
+        "C1": {
+          "q": [
+            0,
+            -0.12533323356430426,
+            0,
+            0.9921147013144778
+          ],
+          "p": [
+            -0.07737907295281604,
+            2.47145,
+            0.018921884446457392
+          ],
+          "rest": [
+            -0.0777,
+            2.47145,
+            0.01895
+          ]
+        },
+        "C0": {
+          "q": [
+            0,
+            -0.1305261922200516,
+            0,
+            0.9914448613738104
+          ],
+          "p": [
+            -0.08013953070034593,
+            2.5324999999999998,
+            0.029673157534985194
+          ],
+          "rest": [
+            -0.0777,
+            2.5324999999999998,
+            0.03005
+          ]
+        }
+      },
+      "skullParts": 22,
+      "neckMuscles": 6,
+      "failed": [],
+      "distributionMeasured": false,
+      "clinicalValidation": false
+    },
+    {
+      "angle": 0,
+      "range": [
+        -75,
+        75
+      ],
+      "relative": {
+        "C7": 0,
+        "C6": 0,
+        "C5": 0,
+        "C4": 0,
+        "C3": 0,
+        "C2": 0,
+        "C1": 0,
+        "C0": 0
+      },
+      "transforms": {
+        "T1": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            0,
+            0,
+            0
+          ],
+          "rest": [
+            0,
+            0,
+            0
+          ]
+        },
+        "C7": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            -0.0777,
+            1.9775,
+            0.08
+          ],
+          "rest": [
+            -0.0777,
+            1.9775,
+            0.08
+          ]
+        },
+        "C6": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            -0.0777,
+            2.0496499999999997,
+            0.052250000000000005
+          ],
+          "rest": [
+            -0.0777,
+            2.0496499999999997,
+            0.052250000000000005
+          ]
+        },
+        "C5": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            -0.0777,
+            2.11625,
+            0.03005
+          ],
+          "rest": [
+            -0.0777,
+            2.11625,
+            0.03005
+          ]
+        },
+        "C4": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            -0.0777,
+            2.19395,
+            0.013399999999999995
+          ],
+          "rest": [
+            -0.0777,
+            2.19395,
+            0.013399999999999995
+          ]
+        },
+        "C3": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            -0.0777,
+            2.26055,
+            0.007849999999999996
+          ],
+          "rest": [
+            -0.0777,
+            2.26055,
+            0.007849999999999996
+          ]
+        },
+        "C2": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            -0.0777,
+            2.3327,
+            0.007849999999999996
+          ],
+          "rest": [
+            -0.0777,
+            2.3327,
+            0.007849999999999996
+          ]
+        },
+        "C1": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            -0.0777,
+            2.47145,
+            0.01895
+          ],
+          "rest": [
+            -0.0777,
+            2.47145,
+            0.01895
+          ]
+        },
+        "C0": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            -0.0777,
+            2.5324999999999998,
+            0.03005
+          ],
+          "rest": [
+            -0.0777,
+            2.5324999999999998,
+            0.03005
+          ]
+        }
+      },
+      "skullParts": 22,
+      "neckMuscles": 6,
+      "failed": [],
+      "distributionMeasured": false,
+      "clinicalValidation": false
+    },
+    {
+      "angle": 15,
+      "range": [
+        -75,
+        75
+      ],
+      "relative": {
+        "C7": 0.3,
+        "C6": 0.6,
+        "C5": 1.05,
+        "C4": 1.2,
+        "C3": 1.2,
+        "C2": 1.05,
+        "C1": 9,
+        "C0": 0.6
+      },
+      "transforms": {
+        "T1": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            0,
+            0,
+            0
+          ],
+          "rest": [
+            0,
+            0,
+            0
+          ]
+        },
+        "C7": {
+          "q": [
+            0,
+            0.0026179908874179934,
+            0,
+            0.9999965730559848
+          ],
+          "p": [
+            -0.0777,
+            1.9775,
+            0.08
+          ],
+          "rest": [
+            -0.0777,
+            1.9775,
+            0.08
+          ]
+        },
+        "C6": {
+          "q": [
+            0,
+            0.007853900888711334,
+            0,
+            0.9999691576447897
+          ],
+          "p": [
+            -0.0778452979963219,
+            2.0496499999999997,
+            0.05225038039013391
+          ],
+          "rest": [
+            -0.0777,
+            2.0496499999999997,
+            0.052250000000000005
+          ]
+        },
+        "C5": {
+          "q": [
+            0,
+            0.01701613893230685,
+            0,
+            0.9998552150265739
+          ],
+          "p": [
+            -0.07819400044064431,
+            2.11625,
+            0.03005311914904104
+          ],
+          "rest": [
+            -0.0777,
+            2.11625,
+            0.03005
+          ]
+        },
+        "C4": {
+          "q": [
+            0,
+            0.027485473885873454,
+            0,
+            0.9996222029973468
+          ],
+          "p": [
+            -0.0787605558265054,
+            2.19395,
+            0.013412761130213682
+          ],
+          "rest": [
+            -0.0777,
+            2.19395,
+            0.013399999999999995
+          ]
+        },
+        "C3": {
+          "q": [
+            0,
+            0.037951794747495333,
+            0,
+            0.9992795711288428
+          ],
+          "p": [
+            -0.07906552932501948,
+            2.26055,
+            0.007871146639363197
+          ],
+          "rest": [
+            -0.0777,
+            2.26055,
+            0.007849999999999996
+          ]
+        },
+        "C2": {
+          "q": [
+            0,
+            0.04710645070964266,
+            0,
+            0.99888987496197
+          ],
+          "p": [
+            -0.07906552932501948,
+            2.3327,
+            0.007871146639363197
+          ],
+          "rest": [
+            -0.0777,
+            2.3327,
+            0.007849999999999996
+          ]
+        },
+        "C1": {
+          "q": [
+            0,
+            0.12533323356430426,
+            0,
+            0.9921147013144778
+          ],
+          "p": [
+            -0.07802092704718397,
+            2.47145,
+            0.018921884446457392
+          ],
+          "rest": [
+            -0.0777,
+            2.47145,
+            0.01895
+          ]
+        },
+        "C0": {
+          "q": [
+            0,
+            0.1305261922200516,
+            0,
+            0.9914448613738104
+          ],
+          "p": [
+            -0.07526046929965408,
+            2.5324999999999998,
+            0.029673157534985194
+          ],
+          "rest": [
+            -0.0777,
+            2.5324999999999998,
+            0.03005
+          ]
+        }
+      },
+      "skullParts": 22,
+      "neckMuscles": 6,
+      "failed": [],
+      "distributionMeasured": false,
+      "clinicalValidation": false
+    },
+    {
+      "angle": 30,
+      "range": [
+        -75,
+        75
+      ],
+      "relative": {
+        "C7": 0.6,
+        "C6": 1.2,
+        "C5": 2.1,
+        "C4": 2.4,
+        "C3": 2.4,
+        "C2": 2.1,
+        "C1": 18,
+        "C0": 1.2
+      },
+      "transforms": {
+        "T1": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            0,
+            0,
+            0
+          ],
+          "rest": [
+            0,
+            0,
+            0
+          ]
+        },
+        "C7": {
+          "q": [
+            0,
+            0.00523596383141958,
+            0,
+            0.9999862922474267
+          ],
+          "p": [
+            -0.0777,
+            1.9775,
+            0.08
+          ],
+          "rest": [
+            -0.0777,
+            1.9775,
+            0.08
+          ]
+        },
+        "C6": {
+          "q": [
+            0,
+            0.015707317311820672,
+            0,
+            0.9998766324816606
+          ],
+          "p": [
+            -0.07799059200922583,
+            2.0496499999999997,
+            0.05225152155010704
+          ],
+          "rest": [
+            -0.0777,
+            2.0496499999999997,
+            0.052250000000000005
+          ]
+        },
+        "C5": {
+          "q": [
+            0,
+            0.034027350502167444,
+            0,
+            0.9994209020316729
+          ],
+          "p": [
+            -0.07868791086076027,
+            2.11625,
+            0.030062475909987795
+          ],
+          "rest": [
+            -0.0777,
+            2.11625,
+            0.03005
+          ]
+        },
+        "C4": {
+          "q": [
+            0,
+            0.054950179912445746,
+            0,
+            0.9984890974505379
+          ],
+          "p": [
+            -0.07982036545033665,
+            2.19395,
+            0.013451032667374963
+          ],
+          "rest": [
+            -0.0777,
+            2.19395,
+            0.013399999999999995
+          ]
+        },
+        "C3": {
+          "q": [
+            0,
+            0.07584890635769402,
+            0,
+            0.997119322550888
+          ],
+          "p": [
+            -0.08042939087689195,
+            2.26055,
+            0.007934549364598715
+          ],
+          "rest": [
+            -0.0777,
+            2.26055,
+            0.007849999999999996
+          ]
+        },
+        "C2": {
+          "q": [
+            0,
+            0.09410831331851433,
+            0,
+            0.99556196460308
+          ],
+          "p": [
+            -0.08042939087689195,
+            2.3327,
+            0.007934549364598715
+          ],
+          "rest": [
+            -0.0777,
+            2.3327,
+            0.007849999999999996
+          ]
+        },
+        "C1": {
+          "q": [
+            0,
+            0.2486898871648548,
+            0,
+            0.9685831611286311
+          ],
+          "p": [
+            -0.0783494582849904,
+            2.47145,
+            0.018837937847687163
+          ],
+          "rest": [
+            -0.0777,
+            2.47145,
+            0.01895
+          ]
+        },
+        "C0": {
+          "q": [
+            0,
+            0.25881904510252074,
+            0,
+            0.9659258262890682
+          ],
+          "p": [
+            -0.07300199250246137,
+            2.5324999999999998,
+            0.02856494199617405
+          ],
+          "rest": [
+            -0.0777,
+            2.5324999999999998,
+            0.03005
+          ]
+        }
+      },
+      "skullParts": 22,
+      "neckMuscles": 6,
+      "failed": [],
+      "distributionMeasured": false,
+      "clinicalValidation": false
+    },
+    {
+      "angle": 45,
+      "range": [
+        -75,
+        75
+      ],
+      "relative": {
+        "C7": 0.9,
+        "C6": 1.8,
+        "C5": 3.1500000000000004,
+        "C4": 3.6,
+        "C3": 3.6,
+        "C2": 3.1500000000000004,
+        "C1": 27,
+        "C0": 1.8
+      },
+      "transforms": {
+        "T1": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            0,
+            0,
+            0
+          ],
+          "rest": [
+            0,
+            0,
+            0
+          ]
+        },
+        "C7": {
+          "q": [
+            0,
+            0.007853900888711334,
+            0,
+            0.9999691576447897
+          ],
+          "p": [
+            -0.0777,
+            1.9775,
+            0.08
+          ],
+          "rest": [
+            -0.0777,
+            1.9775,
+            0.08
+          ]
+        },
+        "C6": {
+          "q": [
+            0,
+            0.023559764833610154,
+            0,
+            0.9997224302180004
+          ],
+          "p": [
+            -0.07813587805540304,
+            2.0496499999999997,
+            0.05225342344863392
+          ],
+          "rest": [
+            -0.0777,
+            2.0496499999999997,
+            0.052250000000000005
+          ]
+        },
+        "C5": {
+          "q": [
+            0,
+            0.0510287087739516,
+            0,
+            0.9986971867792874
+          ],
+          "p": [
+            -0.0791816412611571,
+            2.11625,
+            0.030078068224478186
+          ],
+          "rest": [
+            -0.0777,
+            2.11625,
+            0.03005
+          ]
+        },
+        "C4": {
+          "q": [
+            0,
+            0.08237336591248569,
+            0,
+            0.9966015395273317
+          ],
+          "p": [
+            -0.08087868345014469,
+            2.19395,
+            0.013514779064145433
+          ],
+          "rest": [
+            -0.0777,
+            2.19395,
+            0.013399999999999995
+          ]
+        },
+        "C3": {
+          "q": [
+            0,
+            0.11363673048392114,
+            0,
+            0.9935223668770243
+          ],
+          "p": [
+            -0.08178992044860188,
+            2.26055,
+            0.008040096686815884
+          ],
+          "rest": [
+            -0.0777,
+            2.26055,
+            0.007849999999999996
+          ]
+        },
+        "C2": {
+          "q": [
+            0,
+            0.14090123193758267,
+            0,
+            0.9900236577165574
+          ],
+          "p": [
+            -0.08178992044860188,
+            2.3327,
+            0.008040096686815884
+          ],
+          "rest": [
+            -0.0777,
+            2.3327,
+            0.007849999999999996
+          ]
+        },
+        "C1": {
+          "q": [
+            0,
+            0.3681245526846779,
+            0,
+            0.9297764858882512
+          ],
+          "p": [
+            -0.07869311917156643,
+            2.47145,
+            0.01869935659782996
+          ],
+          "rest": [
+            -0.0777,
+            2.47145,
+            0.01895
+          ]
+        },
+        "C0": {
+          "q": [
+            0,
+            0.3826834323650897,
+            0,
+            0.9238795325112866
+          ],
+          "p": [
+            -0.07109464629575798,
+            2.5324999999999998,
+            0.026790908362207627
+          ],
+          "rest": [
+            -0.0777,
+            2.5324999999999998,
+            0.03005
+          ]
+        }
+      },
+      "skullParts": 22,
+      "neckMuscles": 6,
+      "failed": [],
+      "distributionMeasured": false,
+      "clinicalValidation": false
+    },
+    {
+      "angle": 60,
+      "range": [
+        -75,
+        75
+      ],
+      "relative": {
+        "C7": 1.2,
+        "C6": 2.4,
+        "C5": 4.2,
+        "C4": 4.8,
+        "C3": 4.8,
+        "C2": 4.2,
+        "C1": 36,
+        "C0": 2.4
+      },
+      "transforms": {
+        "T1": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            0,
+            0,
+            0
+          ],
+          "rest": [
+            0,
+            0,
+            0
+          ]
+        },
+        "C7": {
+          "q": [
+            0,
+            0.010471784116245792,
+            0,
+            0.9999451693655121
+          ],
+          "p": [
+            -0.0777,
+            1.9775,
+            0.08
+          ],
+          "rest": [
+            -0.0777,
+            1.9775,
+            0.08
+          ]
+        },
+        "C6": {
+          "q": [
+            0,
+            0.03141075907812829,
+            0,
+            0.9995065603657316
+          ],
+          "p": [
+            -0.07828115215176316,
+            2.0496499999999997,
+            0.05225608603357304
+          ],
+          "rest": [
+            -0.0777,
+            2.0496499999999997,
+            0.052250000000000005
+          ]
+        },
+        "C5": {
+          "q": [
+            0,
+            0.06801529066524817,
+            0,
+            0.9976842788356053
+          ],
+          "p": [
+            -0.07967510168531391,
+            2.11625,
+            0.03009989266246541
+          ],
+          "rest": [
+            -0.0777,
+            2.11625,
+            0.03005
+          ]
+        },
+        "C4": {
+          "q": [
+            0,
+            0.10973431109104527,
+            0,
+            0.9939609554551797
+          ],
+          "p": [
+            -0.08193476596634508,
+            2.19395,
+            0.013603941118615868
+          ],
+          "rest": [
+            -0.0777,
+            2.19395,
+            0.013399999999999995
+          ]
+        },
+        "C3": {
+          "q": [
+            0,
+            0.1512608202472192,
+            0,
+            0.9884938868086836
+          ],
+          "p": [
+            -0.08314546095609589,
+            2.26055,
+            0.00818760308985582
+          ],
+          "rest": [
+            -0.0777,
+            2.26055,
+            0.007849999999999996
+          ]
+        },
+        "C2": {
+          "q": [
+            0,
+            0.18738131458572463,
+            0,
+            0.9822872507286887
+          ],
+          "p": [
+            -0.08314546095609589,
+            2.3327,
+            0.00818760308985582
+          ],
+          "rest": [
+            -0.0777,
+            2.3327,
+            0.007849999999999996
+          ]
+        },
+        "C1": {
+          "q": [
+            0,
+            0.4817536741017152,
+            0,
+            0.8763066800438636
+          ],
+          "p": [
+            -0.07905927842129595,
+            2.47145,
+            0.018508122083215416
+          ],
+          "rest": [
+            -0.0777,
+            2.47145,
+            0.01895
+          ]
+        },
+        "C0": {
+          "q": [
+            0,
+            0.49999999999999994,
+            0,
+            0.8660254037844387
+          ],
+          "p": [
+            -0.06968723844822358,
+            2.5324999999999998,
+            0.02445579950748228
+          ],
+          "rest": [
+            -0.0777,
+            2.5324999999999998,
+            0.03005
+          ]
+        }
+      },
+      "skullParts": 22,
+      "neckMuscles": 6,
+      "failed": [],
+      "distributionMeasured": false,
+      "clinicalValidation": false
+    },
+    {
+      "angle": 75,
+      "range": [
+        -75,
+        75
+      ],
+      "relative": {
+        "C7": 1.5,
+        "C6": 3,
+        "C5": 5.250000000000001,
+        "C4": 6,
+        "C3": 6,
+        "C2": 5.250000000000001,
+        "C1": 45,
+        "C0": 3
+      },
+      "transforms": {
+        "T1": {
+          "q": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "p": [
+            0,
+            0,
+            0
+          ],
+          "rest": [
+            0,
+            0,
+            0
+          ]
+        },
+        "C7": {
+          "q": [
+            0,
+            0.01308959557134444,
+            0,
+            0.999914327574007
+          ],
+          "p": [
+            -0.0777,
+            1.9775,
+            0.08
+          ],
+          "rest": [
+            -0.0777,
+            1.9775,
+            0.08
+          ]
+        },
+        "C6": {
+          "q": [
+            0,
+            0.0392598157590686,
+            0,
+            0.9992290362407229
+          ],
+          "p": [
+            -0.07842641031554348,
+            2.0496499999999997,
+            0.05225950923192829
+          ],
+          "rest": [
+            -0.0777,
+            2.0496499999999997,
+            0.052250000000000005
+          ]
+        },
+        "C5": {
+          "q": [
+            0,
+            0.08498217737244165,
+            0,
+            0.9963824715083254
+          ],
+          "p": [
+            -0.08016820224070163,
+            2.11625,
+            0.030127944423052846
+          ],
+          "rest": [
+            -0.0777,
+            2.11625,
+            0.03005
+          ]
+        },
+        "C4": {
+          "q": [
+            0,
+            0.13701234168196802,
+            0,
+            0.9905693404435773
+          ],
+          "p": [
+            -0.0829878714797879,
+            2.19395,
+            0.013718436039735847
+          ],
+          "rest": [
+            -0.0777,
+            2.19395,
+            0.013399999999999995
+          ]
+        },
+        "C3": {
+          "q": [
+            0,
+            0.18866696468655522,
+            0,
+            0.9820411276703038
+          ],
+          "p": [
+            -0.08449436597653906,
+            2.26055,
+            0.008376809477418104
+          ],
+          "rest": [
+            -0.0777,
+            2.26055,
+            0.007849999999999996
+          ]
+        },
+        "C2": {
+          "q": [
+            0,
+            0.2334453638559054,
+            0,
+            0.9723699203976766
+          ],
+          "p": [
+            -0.08449436597653906,
+            2.3327,
+            0.008376809477418104
+          ],
+          "rest": [
+            -0.0777,
+            2.3327,
+            0.007849999999999996
+          ]
+        },
+        "C1": {
+          "q": [
+            0,
+            0.5877852522924731,
+            0,
+            0.8090169943749473
+          ],
+          "p": [
+            -0.07945507142943009,
+            2.47145,
+            0.018266981895908994
+          ],
+          "rest": [
+            -0.0777,
+            2.47145,
+            0.01895
+          ]
+        },
+        "C0": {
+          "q": [
+            0,
+            0.6087614290087207,
+            0,
+            0.793353340291235
+          ],
+          "p": [
+            -0.06889834409855389,
+            2.5324999999999998,
+            0.02169707053347091
+          ],
+          "rest": [
+            -0.0777,
+            2.5324999999999998,
+            0.03005
+          ]
+        }
+      },
+      "skullParts": 22,
+      "neckMuscles": 6,
+      "failed": [],
+      "distributionMeasured": false,
+      "clinicalValidation": false
+    }
+  ],
+  "drag": [
+    {
+      "yaw": 0,
+      "angle": -24.999989827473957
+    },
+    {
+      "yaw": 1.5707963267948966,
+      "angle": 25
+    },
+    {
+      "yaw": 3.141592653589793,
+      "angle": 25
+    }
+  ],
+  "gpu": {
+    "available": true,
+    "count": 18413,
+    "maxMm": 0.0027708101199121647,
+    "error": 0
+  },
+  "maxStepMm": 19.116553303188255,
+  "maxReturnMm": 0,
+  "worstStep": {
+    "id": "v59TrapUpper",
+    "name": "僧帽筋上部",
+    "vertexId": 168,
+    "plane": 0,
+    "from": 3,
+    "to": 6
+  },
+  "refinement": [
+    {
+      "id": "v59TrapUpper",
+      "vertexId": 168,
+      "plane": 0,
+      "from": 3,
+      "to": 6,
+      "rows": [
+        {
+          "stepDeg": 3,
+          "maxMm": 19.116553303188255
+        },
+        {
+          "stepDeg": 1.5,
+          "maxMm": 11.215181542336143
+        },
+        {
+          "stepDeg": 0.75,
+          "maxMm": 5.916704170039027
+        },
+        {
+          "stepDeg": 0.375,
+          "maxMm": 3.0182819483933314
+        }
+      ],
+      "ratio": 0.1578883965390321
+    },
+    {
+      "id": "v59TrapLower",
+      "vertexId": 6696,
+      "plane": 0,
+      "from": 120,
+      "to": 123,
+      "rows": [
+        {
+          "stepDeg": 3,
+          "maxMm": 1.3104851944774005
+        },
+        {
+          "stepDeg": 1.5,
+          "maxMm": 0.6789810978075216
+        },
+        {
+          "stepDeg": 0.75,
+          "maxMm": 0.35941629247183804
+        },
+        {
+          "stepDeg": 0.375,
+          "maxMm": 0.18657889168199115
+        }
+      ],
+      "ratio": 0.1423739027867428
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "[.WebGL-0x1240409aa00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+  ],
+  "numericOnly": true,
+  "device": "desktop Chromium / SwiftShader; physical smartphone untested"
+}

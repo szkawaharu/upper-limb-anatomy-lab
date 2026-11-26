@@ -1,0 +1,1339 @@
+[
+  {
+    "id": "v60PecClav",
+    "elev": 0,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0.06191868937935209,
+      "status": "solved",
+      "iterations": 6,
+      "ratio": 0.999999264301227
+    },
+    "rawRatio": 0.9428457255917272,
+    "sourceRatio": 0.9999993018444252,
+    "maxEdge": 1.2824448243641071,
+    "maxArea": 2.4024698657170753,
+    "worstEdge": {
+      "ids": [
+        2470,
+        2562
+      ],
+      "restMm": 0.7473836328196203,
+      "posedMm": 0.9584782717239663
+    },
+    "ms": 88.25096900000005
+  },
+  {
+    "id": "v60PecClav",
+    "elev": 90,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.07896689366044536,
+      "status": "solved",
+      "iterations": 7,
+      "ratio": 0.9999997198868134
+    },
+    "rawRatio": 1.081165825405787,
+    "sourceRatio": 0.9999996972390228,
+    "maxEdge": 2.2657556729504886,
+    "maxArea": 5.8258940730301,
+    "worstEdge": {
+      "ids": [
+        777,
+        653
+      ],
+      "restMm": 0.7208273490536227,
+      "posedMm": 1.6332186553361077
+    },
+    "ms": 75.39299899999992
+  },
+  {
+    "id": "v60PecClav",
+    "elev": 180,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.2523912357291984,
+      "status": "solved",
+      "iterations": 8,
+      "ratio": 0.9999998414114712
+    },
+    "rawRatio": 1.3094918146831767,
+    "sourceRatio": 0.9999998140276409,
+    "maxEdge": 3.6888974449286667,
+    "maxArea": 11.76982554693481,
+    "worstEdge": {
+      "ids": [
+        3397,
+        3547
+      ],
+      "restMm": 0.802564534634326,
+      "posedMm": 2.9605782612029294
+    },
+    "ms": 85.88836400000014
+  },
+  {
+    "id": "v60PecClav",
+    "elev": 0,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0.06191868937935209,
+      "status": "solved",
+      "iterations": 6,
+      "ratio": 0.999999264301227
+    },
+    "rawRatio": 0.9428457255917272,
+    "sourceRatio": 0.9999993018444252,
+    "maxEdge": 1.2824448243641071,
+    "maxArea": 2.4024698657170753,
+    "worstEdge": {
+      "ids": [
+        2470,
+        2562
+      ],
+      "restMm": 0.7473836328196203,
+      "posedMm": 0.9584782717239663
+    },
+    "ms": 64.73099000000002
+  },
+  {
+    "id": "v60PecClav",
+    "elev": 90,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0.2914963595491649,
+      "status": "solved",
+      "iterations": 5,
+      "ratio": 0.9999995526265966
+    },
+    "rawRatio": 0.8047133670132709,
+    "sourceRatio": 0.9999995625705592,
+    "maxEdge": 2.7321577468486304,
+    "maxArea": 9.114669683560189,
+    "worstEdge": {
+      "ids": [
+        1579,
+        1461
+      ],
+      "restMm": 0.6453315502231913,
+      "posedMm": 1.763147594228128
+    },
+    "ms": 62.14807700000006
+  },
+  {
+    "id": "v60PecClav",
+    "elev": 180,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0.3310425283068734,
+      "status": "solved",
+      "iterations": 5,
+      "ratio": 0.9999998447607926
+    },
+    "rawRatio": 0.8200576005521258,
+    "sourceRatio": 0.9999998019708535,
+    "maxEdge": 4.209501997879461,
+    "maxArea": 12.693333580666573,
+    "worstEdge": {
+      "ids": [
+        1579,
+        1461
+      ],
+      "restMm": 0.6453315502231913,
+      "posedMm": 2.7165244499591736
+    },
+    "ms": 65.24314900000013
+  },
+  {
+    "id": "v60PecStern",
+    "elev": 0,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.0013391723413465637,
+      "status": "solved",
+      "iterations": 6,
+      "ratio": 0.9999998394607433
+    },
+    "rawRatio": 1.0010748075031297,
+    "sourceRatio": 0.9999998404702869,
+    "maxEdge": 1.4857115161116963,
+    "maxArea": 3.1419234342850393,
+    "worstEdge": {
+      "ids": [
+        5292,
+        5921
+      ],
+      "restMm": 0.5276768214640813,
+      "posedMm": 0.7839755304344013
+    },
+    "ms": 624.6828449999998
+  },
+  {
+    "id": "v60PecStern",
+    "elev": 90,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.2862831922139501,
+      "status": "solved",
+      "iterations": 6,
+      "ratio": 0.9999995111330723
+    },
+    "rawRatio": 1.306934040904028,
+    "sourceRatio": 0.999999491017398,
+    "maxEdge": 4.062826586491881,
+    "maxArea": 16.10247659792412,
+    "worstEdge": {
+      "ids": [
+        952,
+        1142
+      ],
+      "restMm": 0.6321215422646701,
+      "posedMm": 2.568200207807153
+    },
+    "ms": 319.61765700000024
+  },
+  {
+    "id": "v60PecStern",
+    "elev": 180,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0,
+      "status": "unavailable",
+      "reason": "volume-projection-unbracketed",
+      "iterations": 0,
+      "ratio": 1.8992648026743422,
+      "bounds": [
+        1.0325304685726118,
+        2.885766328592181
+      ]
+    },
+    "rawRatio": 1.8992648138932366,
+    "sourceRatio": 1.8992648138932366,
+    "maxEdge": 9.441711539517136,
+    "maxArea": 35.52223997754874,
+    "worstEdge": {
+      "ids": [
+        2510,
+        2851
+      ],
+      "restMm": 0.7771856673326927,
+      "posedMm": 7.337962883602411
+    },
+    "ms": 335.74803199999997
+  },
+  {
+    "id": "v60PecStern",
+    "elev": 0,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.0013391723413465637,
+      "status": "solved",
+      "iterations": 6,
+      "ratio": 0.9999998394607433
+    },
+    "rawRatio": 1.0010748075031297,
+    "sourceRatio": 0.9999998404702869,
+    "maxEdge": 1.4857115161116963,
+    "maxArea": 3.1419234342850393,
+    "worstEdge": {
+      "ids": [
+        5292,
+        5921
+      ],
+      "restMm": 0.5276768214640813,
+      "posedMm": 0.7839755304344013
+    },
+    "ms": 351.5559189999999
+  },
+  {
+    "id": "v60PecStern",
+    "elev": 90,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0,
+      "status": "unavailable",
+      "reason": "volume-projection-unbracketed",
+      "iterations": 0,
+      "ratio": 1.65733514156523,
+      "bounds": [
+        1.3240285353328005,
+        2.067318232167797
+      ]
+    },
+    "rawRatio": 1.6573351451556988,
+    "sourceRatio": 1.6573351451556988,
+    "maxEdge": 5.589456790021711,
+    "maxArea": 24.696692707054215,
+    "worstEdge": {
+      "ids": [
+        5292,
+        5921
+      ],
+      "restMm": 0.5276768214640813,
+      "posedMm": 2.949426792669484
+    },
+    "ms": 225.90192400000024
+  },
+  {
+    "id": "v60PecStern",
+    "elev": 180,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0,
+      "status": "unavailable",
+      "reason": "volume-projection-unbracketed",
+      "iterations": 0,
+      "ratio": 2.1606690221376113,
+      "bounds": [
+        1.9141259771383905,
+        2.4733973941749063
+      ]
+    },
+    "rawRatio": 2.1606690287453683,
+    "sourceRatio": 2.1606690287453683,
+    "maxEdge": 10.474023227900139,
+    "maxArea": 40.476221331642776,
+    "worstEdge": {
+      "ids": [
+        2510,
+        2851
+      ],
+      "restMm": 0.7771856673326927,
+      "posedMm": 8.140260732033692
+    },
+    "ms": 254.86405300000024
+  },
+  {
+    "id": "v60PecAbd",
+    "elev": 0,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.0271480868503543,
+      "status": "solved",
+      "iterations": 5,
+      "ratio": 0.9999996479112424
+    },
+    "rawRatio": 1.0222073068060724,
+    "sourceRatio": 0.9999996809742594,
+    "maxEdge": 2.579732442343606,
+    "maxArea": 3.250803585002798,
+    "worstEdge": {
+      "ids": [
+        3301,
+        3305
+      ],
+      "restMm": 0.8533610034279095,
+      "posedMm": 2.2014430655738715
+    },
+    "ms": 77.93122499999936
+  },
+  {
+    "id": "v60PecAbd",
+    "elev": 90,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.24401136953201197,
+      "status": "solved",
+      "iterations": 6,
+      "ratio": 0.9999997958325668
+    },
+    "rawRatio": 1.2224134512191058,
+    "sourceRatio": 0.9999998348269267,
+    "maxEdge": 6.472657751758445,
+    "maxArea": 10.397798670044049,
+    "worstEdge": {
+      "ids": [
+        3301,
+        3305
+      ],
+      "restMm": 0.8533610034279095,
+      "posedMm": 5.5235137138860235
+    },
+    "ms": 112.16137399999934
+  },
+  {
+    "id": "v60PecAbd",
+    "elev": 180,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.41436157863239576,
+      "status": "solved",
+      "iterations": 6,
+      "ratio": 0.9999992741206387
+    },
+    "rawRatio": 1.387330747341072,
+    "sourceRatio": 0.9999993588672078,
+    "maxEdge": 12.215210546053283,
+    "maxArea": 36.574724987055376,
+    "worstEdge": {
+      "ids": [
+        3301,
+        3305
+      ],
+      "restMm": 0.8533610034279095,
+      "posedMm": 10.423984328663213
+    },
+    "ms": 112.03964600000018
+  },
+  {
+    "id": "v60PecAbd",
+    "elev": 0,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.0271480868503543,
+      "status": "solved",
+      "iterations": 5,
+      "ratio": 0.9999996479112424
+    },
+    "rawRatio": 1.0222073068060724,
+    "sourceRatio": 0.9999996809742594,
+    "maxEdge": 2.579732442343606,
+    "maxArea": 3.250803585002798,
+    "worstEdge": {
+      "ids": [
+        3301,
+        3305
+      ],
+      "restMm": 0.8533610034279095,
+      "posedMm": 2.2014430655738715
+    },
+    "ms": 103.53948800000035
+  },
+  {
+    "id": "v60PecAbd",
+    "elev": 90,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.31173552847304314,
+      "status": "solved",
+      "iterations": 5,
+      "ratio": 0.9999994242443121
+    },
+    "rawRatio": 1.3041735311513813,
+    "sourceRatio": 0.9999994228935878,
+    "maxEdge": 11.11524012244467,
+    "maxArea": 24.3979073055701,
+    "worstEdge": {
+      "ids": [
+        3301,
+        3305
+      ],
+      "restMm": 0.8533610034279095,
+      "posedMm": 9.485312464231543
+    },
+    "ms": 92.34667200000058
+  },
+  {
+    "id": "v60PecAbd",
+    "elev": 180,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.41151253977734065,
+      "status": "solved",
+      "iterations": 5,
+      "ratio": 0.9999997242498028
+    },
+    "rawRatio": 1.4058702455717587,
+    "sourceRatio": 0.9999998895042532,
+    "maxEdge": 14.288972912270884,
+    "maxArea": 53.35403461564817,
+    "worstEdge": {
+      "ids": [
+        3301,
+        3305
+      ],
+      "restMm": 0.8533610034279095,
+      "posedMm": 12.193652262369701
+    },
+    "ms": 90.13126000000011
+  },
+  {
+    "id": "v60PecMinor",
+    "elev": 0,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0,
+      "status": "solved",
+      "iterations": 0,
+      "ratio": 0.9999999999999992
+    },
+    "rawRatio": 1,
+    "sourceRatio": 1,
+    "maxEdge": 1,
+    "maxArea": 1,
+    "worstEdge": {
+      "ids": [
+        0,
+        1
+      ],
+      "restMm": 0.6006994043651513,
+      "posedMm": 0.6006994043651513
+    },
+    "ms": 306.74027899999965
+  },
+  {
+    "id": "v60PecMinor",
+    "elev": 90,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.4120107782059934,
+      "status": "solved",
+      "iterations": 10,
+      "ratio": 0.9999996590515177
+    },
+    "rawRatio": 1.3259330534354965,
+    "sourceRatio": 0.9999996643003256,
+    "maxEdge": 8.528208995208857,
+    "maxArea": 16.958773773960917,
+    "worstEdge": {
+      "ids": [
+        14127,
+        14133
+      ],
+      "restMm": 0.0020083006437834317,
+      "posedMm": 0.017127207615397603
+    },
+    "ms": 400.4825200000005
+  },
+  {
+    "id": "v60PecMinor",
+    "elev": 180,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.5202457969141034,
+      "status": "solved",
+      "iterations": 10,
+      "ratio": 0.9999994225441527
+    },
+    "rawRatio": 1.4199938170571995,
+    "sourceRatio": 0.9999994303722307,
+    "maxEdge": 10.59850088773082,
+    "maxArea": 23.337919961664955,
+    "worstEdge": {
+      "ids": [
+        14127,
+        14133
+      ],
+      "restMm": 0.0020083006437834317,
+      "posedMm": 0.02128497615596908
+    },
+    "ms": 328.79417099999955
+  },
+  {
+    "id": "v60PecMinor",
+    "elev": 0,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0,
+      "status": "solved",
+      "iterations": 0,
+      "ratio": 0.9999999999999992
+    },
+    "rawRatio": 1,
+    "sourceRatio": 1,
+    "maxEdge": 1,
+    "maxArea": 1,
+    "worstEdge": {
+      "ids": [
+        0,
+        1
+      ],
+      "restMm": 0.6006994043651513,
+      "posedMm": 0.6006994043651513
+    },
+    "ms": 258.7604879999999
+  },
+  {
+    "id": "v60PecMinor",
+    "elev": 90,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.386567022837934,
+      "status": "solved",
+      "iterations": 9,
+      "ratio": 0.9999994266806355
+    },
+    "rawRatio": 1.262453106898805,
+    "sourceRatio": 0.9999994369256172,
+    "maxEdge": 8.016585459293058,
+    "maxArea": 15.375733180173304,
+    "worstEdge": {
+      "ids": [
+        14127,
+        14133
+      ],
+      "restMm": 0.0020083006437834317,
+      "posedMm": 0.016099713738843145
+    },
+    "ms": 656.9159460000001
+  },
+  {
+    "id": "v60PecMinor",
+    "elev": 180,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.4616607000116563,
+      "status": "solved",
+      "iterations": 10,
+      "ratio": 0.9999996139663844
+    },
+    "rawRatio": 1.333121507547316,
+    "sourceRatio": 0.9999996226309802,
+    "maxEdge": 9.480552360437397,
+    "maxArea": 19.620807139876288,
+    "worstEdge": {
+      "ids": [
+        14127,
+        14133
+      ],
+      "restMm": 0.0020083006437834317,
+      "posedMm": 0.019039799408888957
+    },
+    "ms": 386.14294400000017
+  },
+  {
+    "id": "v60DeltAnt",
+    "elev": 0,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0.01939757848479397,
+      "status": "solved",
+      "iterations": 7,
+      "ratio": 0.9999994949655879
+    },
+    "rawRatio": 0.9835625537643055,
+    "sourceRatio": 0.9999994939119694,
+    "maxEdge": 1.5834503761109822,
+    "maxArea": 5.7969639759744895,
+    "worstEdge": {
+      "ids": [
+        2680,
+        2128
+      ],
+      "restMm": 1.2516074229882017,
+      "posedMm": 1.9818582446739652
+    },
+    "ms": 238.98973300000034
+  },
+  {
+    "id": "v60DeltAnt",
+    "elev": 90,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0.29662965094472193,
+      "status": "solved",
+      "iterations": 6,
+      "ratio": 0.9999999113002567
+    },
+    "rawRatio": 0.7893818957418649,
+    "sourceRatio": 0.9999999292223388,
+    "maxEdge": 7.666635341320532,
+    "maxArea": 28.89074351668505,
+    "worstEdge": {
+      "ids": [
+        2669,
+        2670
+      ],
+      "restMm": 0.7224260604841741,
+      "posedMm": 5.538577166798934
+    },
+    "ms": 209.5462350000007
+  },
+  {
+    "id": "v60DeltAnt",
+    "elev": 180,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0,
+      "status": "unavailable",
+      "reason": "volume-projection-unbracketed",
+      "iterations": 0,
+      "ratio": 0.6400463938263719,
+      "bounds": [
+        0.38536803025922695,
+        0.9983224207544035
+      ]
+    },
+    "rawRatio": 0.6400464487728587,
+    "sourceRatio": 0.6400464487728587,
+    "maxEdge": 13.81118494994146,
+    "maxArea": 75.59181786139452,
+    "worstEdge": {
+      "ids": [
+        2669,
+        2670
+      ],
+      "restMm": 0.7224260604841741,
+      "posedMm": 9.977559934004525
+    },
+    "ms": 189.74560200000087
+  },
+  {
+    "id": "v60DeltAnt",
+    "elev": 0,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0.01939757848479397,
+      "status": "solved",
+      "iterations": 7,
+      "ratio": 0.9999994949655879
+    },
+    "rawRatio": 0.9835625537643055,
+    "sourceRatio": 0.9999994939119694,
+    "maxEdge": 1.5834503761109822,
+    "maxArea": 5.7969639759744895,
+    "worstEdge": {
+      "ids": [
+        2680,
+        2128
+      ],
+      "restMm": 1.2516074229882017,
+      "posedMm": 1.9818582446739652
+    },
+    "ms": 218.65667099999882
+  },
+  {
+    "id": "v60DeltAnt",
+    "elev": 90,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0,
+      "status": "unavailable",
+      "reason": "volume-projection-unbracketed",
+      "iterations": 0,
+      "ratio": 0.6284765995244997,
+      "bounds": [
+        0.39402399255425624,
+        0.9707432012382914
+      ]
+    },
+    "rawRatio": 0.628476596249758,
+    "sourceRatio": 0.628476596249758,
+    "maxEdge": 9.525989413751097,
+    "maxArea": 30.767466001627692,
+    "worstEdge": {
+      "ids": [
+        2669,
+        2670
+      ],
+      "restMm": 0.7224260604841741,
+      "posedMm": 6.881823004390152
+    },
+    "ms": 527.7906519999997
+  },
+  {
+    "id": "v60DeltAnt",
+    "elev": 180,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0,
+      "status": "unavailable",
+      "reason": "volume-projection-unbracketed",
+      "iterations": 0,
+      "ratio": 0.3527990322045783,
+      "bounds": [
+        0.26865284525158517,
+        0.49857094272733626
+      ]
+    },
+    "rawRatio": 0.3527990387432571,
+    "sourceRatio": 0.3527990387432571,
+    "maxEdge": 12.532467618349491,
+    "maxArea": 61.1404510572462,
+    "worstEdge": {
+      "ids": [
+        2669,
+        2670
+      ],
+      "restMm": 0.7224260604841741,
+      "posedMm": 9.053781209669703
+    },
+    "ms": 378.8916420000005
+  },
+  {
+    "id": "v60DeltMid",
+    "elev": 0,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.06332950943022457,
+      "status": "solved",
+      "iterations": 8,
+      "ratio": 0.9999994409492604
+    },
+    "rawRatio": 1.0904492160551087,
+    "sourceRatio": 0.9999994536773223,
+    "maxEdge": 1.738006484992416,
+    "maxArea": 2.554208061064372,
+    "worstEdge": {
+      "ids": [
+        4176,
+        4177
+      ],
+      "restMm": 0.3031295194499299,
+      "posedMm": 0.5268410705966129
+    },
+    "ms": 228.93411600000036
+  },
+  {
+    "id": "v60DeltMid",
+    "elev": 90,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0.421471601461471,
+      "status": "solved",
+      "iterations": 5,
+      "ratio": 0.99999949863325
+    },
+    "rawRatio": 0.5311456006987219,
+    "sourceRatio": 0.9999995216242097,
+    "maxEdge": 3.68415222375833,
+    "maxArea": 9.836349204168672,
+    "worstEdge": {
+      "ids": [
+        6045,
+        6680
+      ],
+      "restMm": 0.30737866352882676,
+      "posedMm": 1.1324297867755906
+    },
+    "ms": 203.27244500000052
+  },
+  {
+    "id": "v60DeltMid",
+    "elev": 180,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0,
+      "status": "unavailable",
+      "reason": "volume-projection-unbracketed",
+      "iterations": 0,
+      "ratio": -0.2179264417658271,
+      "bounds": [
+        -0.32877827489090006,
+        0.0542081860794521
+      ]
+    },
+    "rawRatio": -0.21792642977196322,
+    "sourceRatio": -0.21792642977196322,
+    "maxEdge": 5.495181117546251,
+    "maxArea": 19.65438869857448,
+    "worstEdge": {
+      "ids": [
+        4176,
+        4177
+      ],
+      "restMm": 0.3031295194499299,
+      "posedMm": 1.6657516114521238
+    },
+    "ms": 173.1669810000003
+  },
+  {
+    "id": "v60DeltMid",
+    "elev": 0,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.06332950943022457,
+      "status": "solved",
+      "iterations": 8,
+      "ratio": 0.9999994409492604
+    },
+    "rawRatio": 1.0904492160551087,
+    "sourceRatio": 0.9999994536773223,
+    "maxEdge": 1.738006484992416,
+    "maxArea": 2.554208061064372,
+    "worstEdge": {
+      "ids": [
+        4176,
+        4177
+      ],
+      "restMm": 0.3031295194499299,
+      "posedMm": 0.5268410705966129
+    },
+    "ms": 221.96700799999962
+  },
+  {
+    "id": "v60DeltMid",
+    "elev": 90,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.011053503211273802,
+      "status": "solved",
+      "iterations": 8,
+      "ratio": 0.9999998033337443
+    },
+    "rawRatio": 1.0154617691419645,
+    "sourceRatio": 0.9999998195688093,
+    "maxEdge": 4.402507651511918,
+    "maxArea": 13.607884838787609,
+    "worstEdge": {
+      "ids": [
+        4176,
+        4177
+      ],
+      "restMm": 0.3031295194499299,
+      "posedMm": 1.3345300287774473
+    },
+    "ms": 231.72163399999954
+  },
+  {
+    "id": "v60DeltMid",
+    "elev": 180,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0.3661307868961323,
+      "status": "solved",
+      "iterations": 5,
+      "ratio": 0.999999420442899
+    },
+    "rawRatio": 0.5808417660245729,
+    "sourceRatio": 0.9999994173916739,
+    "maxEdge": 6.356395908614277,
+    "maxArea": 23.861573847048124,
+    "worstEdge": {
+      "ids": [
+        4176,
+        4177
+      ],
+      "restMm": 0.3031295194499299,
+      "posedMm": 1.9268112372117463
+    },
+    "ms": 214.69829899999968
+  },
+  {
+    "id": "v60DeltPost",
+    "elev": 0,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0.00040819592931985217,
+      "status": "solved",
+      "iterations": 8,
+      "ratio": 0.9999997462018327
+    },
+    "rawRatio": 0.9994543596204704,
+    "sourceRatio": 0.9999997358456156,
+    "maxEdge": 2.7165586199535774,
+    "maxArea": 2.9845556443965973,
+    "worstEdge": {
+      "ids": [
+        2073,
+        2074
+      ],
+      "restMm": 0.6022282810938175,
+      "posedMm": 1.6359884281852362
+    },
+    "ms": 350.4311809999999
+  },
+  {
+    "id": "v60DeltPost",
+    "elev": 90,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.05618007384812881,
+      "status": "solved",
+      "iterations": 8,
+      "ratio": 0.9999993356162447
+    },
+    "rawRatio": 1.0705547941814593,
+    "sourceRatio": 0.9999993499145398,
+    "maxEdge": 7.47165017589123,
+    "maxArea": 9.823183024710714,
+    "worstEdge": {
+      "ids": [
+        2073,
+        2074
+      ],
+      "restMm": 0.6022282810938175,
+      "posedMm": 4.499639042361295
+    },
+    "ms": 331.0398380000006
+  },
+  {
+    "id": "v60DeltPost",
+    "elev": 180,
+    "plane": 0,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.16440784243573314,
+      "status": "solved",
+      "iterations": 9,
+      "ratio": 0.9999992469542283
+    },
+    "rawRatio": 1.1980567268234747,
+    "sourceRatio": 0.9999992490553578,
+    "maxEdge": 15.924686309511708,
+    "maxArea": 25.331419418736285,
+    "worstEdge": {
+      "ids": [
+        2073,
+        2074
+      ],
+      "restMm": 0.6022282810938175,
+      "posedMm": 9.590296463135486
+    },
+    "ms": 359.5268780000006
+  },
+  {
+    "id": "v60DeltPost",
+    "elev": 0,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": 0.00040819592931985217,
+      "status": "solved",
+      "iterations": 8,
+      "ratio": 0.9999997462018327
+    },
+    "rawRatio": 0.9994543596204704,
+    "sourceRatio": 0.9999997358456156,
+    "maxEdge": 2.7165586199535774,
+    "maxArea": 2.9845556443965973,
+    "worstEdge": {
+      "ids": [
+        2073,
+        2074
+      ],
+      "restMm": 0.6022282810938175,
+      "posedMm": 1.6359884281852362
+    },
+    "ms": 323.48449900000014
+  },
+  {
+    "id": "v60DeltPost",
+    "elev": 90,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.03920163751886152,
+      "status": "solved",
+      "iterations": 8,
+      "ratio": 0.9999994286291282
+    },
+    "rawRatio": 1.0597900183003783,
+    "sourceRatio": 0.9999994234522342,
+    "maxEdge": 9.756710319231372,
+    "maxArea": 19.748397746634513,
+    "worstEdge": {
+      "ids": [
+        2073,
+        2074
+      ],
+      "restMm": 0.6022282810938175,
+      "posedMm": 5.875766884681021
+    },
+    "ms": 373.91107999999986
+  },
+  {
+    "id": "v60DeltPost",
+    "elev": 180,
+    "plane": 90,
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "volume": {
+      "mu": -0.11382966900362844,
+      "status": "solved",
+      "iterations": 9,
+      "ratio": 0.9999995456731918
+    },
+    "rawRatio": 1.1966224479733054,
+    "sourceRatio": 0.9999995530395981,
+    "maxEdge": 15.520452093012107,
+    "maxArea": 49.42187173555223,
+    "worstEdge": {
+      "ids": [
+        2073,
+        2074
+      ],
+      "restMm": 0.6022282810938175,
+      "posedMm": 9.346855185773626
+    },
+    "ms": 360.4150060000011
+  }
+]

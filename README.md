@@ -4,6 +4,8 @@
 
 **この実装：v0.76.0（根本改修・検証継続中）**。公開中の版とSHAは[build-info.json](https://szkawaharu.github.io/upper-limb-anatomy-lab/build-info.json)を確認してください。形状・体積・医学的正確性の合格を示す版番号ではありません。
 
+2026-11-27：実骨面の監査で見つかった肩甲骨の肋骨侵入に拘束を追加し、1°刻み543姿勢を再検証しました。[骨格の結果と限界](docs/BONE_CONTACT_V076.md)、[筋の再監査と不採用実験](docs/MUSCLE_DEFORMATION_V076.md)、[引継ぎ](WORKING_STATE_V076.md)。筋の形状が未達のためmain／公開サイトへの統合は保留中です。
+
 - **アプリ**：https://szkawaharu.github.io/upper-limb-anatomy-lab/
 - **公開ページのコード**：[`index.html`](./index.html)
 - **v0.55 肩甲骨筋の再設計・文献・検証限界**：[`docs/SCAPULAR_MUSCLES_V055.md`](./docs/SCAPULAR_MUSCLES_V055.md)

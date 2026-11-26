@@ -1,0 +1,32 @@
+{
+  "experimental": true,
+  "productionEnabled": false,
+  "contact": false,
+  "options": {
+    "QA_BINDINGS_DIR": "test-results/v076-source-graphs",
+    "QA_MATERIAL_DIR": "test-results/v076-source-refit/material",
+    "QA_VOLUME_DIR": "test-results/v076-source-graphs/volume",
+    "QA_TRANSPORT_KIND": "dqs"
+  },
+  "inputsSha256": {
+    "test-results/v076-source-graphs/bindings.json": "b1bde87483bb17cd6cee3ac31f1252818d6e48789286c4260d3b0076479d6796",
+    "scripts/experimental/audit-volume-transport.mjs": "94dfb4f888edd479946eca4af5ace74fc5c4febe93a43bde3092d554bd55901b",
+    "scripts/experimental/rest-transport.js": "4c9b730b17f98ecee9cdf2e7e030eabe0efb9590a475b718df79f8caba797580",
+    "engine/math.js": "058dfbbe8c0130f1d605c63b2c97be35d17956cac0df1c347d1d5dc9f17e2e5c",
+    "engine/shoulder-kinematics.js": "06613a3d8ce92c804e39668054dc7a97547f8330c19bf19594b3d72bad998778",
+    "test-results/v076-source-refit/material/v60PecClav.f32": "8fb87f15a6fe0a45efccbe3948ea7255b5fc2b3573e90013635bd361e5fca66e",
+    "test-results/v076-source-graphs/volume/v60PecClav-quadrature.json": "169460721738e6d55945499f6917c89e46cf7db8ebe26c2d763e94a38b73b11d",
+    "test-results/v076-source-refit/material/v60PecStern.f32": "7131a64ba46b725036554ef5fa84e2db5994344837a53d714a61c4dac6d08d70",
+    "test-results/v076-source-graphs/volume/v60PecStern-quadrature.json": "b88c587f67d7063b3813d29601e64494f3940c3f534cdae474dbcff2547869b9",
+    "test-results/v076-source-refit/material/v60PecAbd.f32": "c06b2e78e0dc555032a8d90f26003014dca5b513edbc33d994827b658557a318",
+    "test-results/v076-source-graphs/volume/v60PecAbd-quadrature.json": "46a6cff99dc765c9517487d6ae85835197f9c94b641a6eeb7393cb999e1f0e01",
+    "test-results/v076-source-refit/material/v60PecMinor.f32": "88e4943c027e50e0441f0db442ee9c286e176b760f280b6cd20b3980321ac309",
+    "test-results/v076-source-graphs/volume/v60PecMinor-quadrature.json": "11b6e40618a39aee24c919aa6bc9f9b0a134e6202eb1b71b19cbc994cf97b13b",
+    "test-results/v076-source-refit/material/v60DeltAnt.f32": "d18dab48b4606233d8e930394eeea93ac1b3930c4916fb4001d5e0d485711c9b",
+    "test-results/v076-source-graphs/volume/v60DeltAnt-quadrature.json": "884fbd622b06e831f88e3aa5ed479519b8a99e286cc2976eb8f7ececaf3a9986",
+    "test-results/v076-source-refit/material/v60DeltMid.f32": "424060ea80bbfffa7cf380e10be7eb405620d121835188711cca719e5525ab1f",
+    "test-results/v076-source-graphs/volume/v60DeltMid-quadrature.json": "ffd50bf97dc4a0b3cb2a95b9a860eeae6783ee1e01e0a3028cd159fa8a2ab9bf",
+    "test-results/v076-source-refit/material/v60DeltPost.f32": "2dfc54fcc485487759537413539f67897e505e2badc30d5d7053c44c292c6ba2",
+    "test-results/v076-source-graphs/volume/v60DeltPost-quadrature.json": "aa67da966034f5c57b62d15237b7feaa4441b06694153c8f1bb34a55c29cc557"
+  }
+}

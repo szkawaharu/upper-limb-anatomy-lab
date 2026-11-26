@@ -1,0 +1,610 @@
+{
+  "method": "Source-mesh terminal region candidates for absent Dirichlet ends.\nAnatomical target bone sets are explicit. Only the prior end's half-domain is\nsearched; candidates are within one measured mesh edge spacing of its minimum\nbone-surface distance. A muscle terminal with a tendon gap is NOT relabelled as\nan observed enthesis. Existing exact attachment masks are retained unchanged.\n",
+  "muscles": [
+    {
+      "id": "v58RhomboidMajor",
+      "ends": [
+        {
+          "end": 0,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "T1",
+            "T2",
+            "T3",
+            "T4",
+            "T5"
+          ],
+          "vertices": 586,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -1.9365485134396205,
+            -5.300706863593905,
+            1330.636741712138
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -1.641617594673523,
+            -5.865390869603623,
+            1330.4981319422964
+          ],
+          "minimumGapMm": 7.349656216505375e-05,
+          "candidateResolutionMm": 1.7363543561903678,
+          "maxGapMm": 1.7340494441892222,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        },
+        {
+          "end": 1,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "scapula:lower-medial"
+          ],
+          "vertices": 1164,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -67.70043977933133,
+            5.833215806001568,
+            1255.74308692569
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -67.65879591484934,
+            5.814383852237405,
+            1255.7591084731728
+          ],
+          "minimumGapMm": 1.5608957343787128e-06,
+          "candidateResolutionMm": 0.9683217109005324,
+          "maxGapMm": 0.9679823011694115,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        }
+      ]
+    },
+    {
+      "id": "v58RhomboidMinor",
+      "ends": [
+        {
+          "end": 0,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "C7",
+            "T1"
+          ],
+          "vertices": 195,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -0.6650353081921948,
+            -22.620254767522095,
+            1391.4798997106657
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -0.5589741105745157,
+            -25.458596128623206,
+            1389.2929907327584
+          ],
+          "minimumGapMm": 2.483827999113359,
+          "candidateResolutionMm": 2.0053632787608455,
+          "maxGapMm": 4.484269313588741,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        },
+        {
+          "end": 1,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "scapula:upper-medial"
+          ],
+          "vertices": 13,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -62.42119917469725,
+            -7.1853786040244625,
+            1329.8923133485282
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -63.116782255574954,
+            -7.0448219704546755,
+            1330.5469833055092
+          ],
+          "minimumGapMm": 0.6024128738777984,
+          "candidateResolutionMm": 1.0607679881062861,
+          "maxGapMm": 1.6485585868969364,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        }
+      ]
+    },
+    {
+      "id": "v58Levator",
+      "ends": [
+        {
+          "end": 0,
+          "status": "existing-region-retained",
+          "vertices": 3729
+        },
+        {
+          "end": 1,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "scapula:upper-medial"
+          ],
+          "vertices": 544,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -70.35818306635026,
+            -14.647549140039555,
+            1341.9162507094472
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -70.33210262654006,
+            -14.669673459100496,
+            1341.9028287862548
+          ],
+          "minimumGapMm": 8.087409004520545e-05,
+          "candidateResolutionMm": 1.005438243666691,
+          "maxGapMm": 1.0051479489537736,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        }
+      ]
+    },
+    {
+      "id": "v58Serratus",
+      "ends": [
+        {
+          "end": 0,
+          "status": "existing-region-retained",
+          "vertices": 56807
+        },
+        {
+          "end": 1,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "scapula:medial"
+          ],
+          "vertices": 309,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -82.24422045634606,
+            3.952102221178618,
+            1212.9655323690322
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -82.39215639658296,
+            4.351506990239522,
+            1212.9542338451977
+          ],
+          "minimumGapMm": 0.0796176998756309,
+          "candidateResolutionMm": 0.9264876031442971,
+          "maxGapMm": 1.0057784255478446,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        }
+      ]
+    },
+    {
+      "id": "v58Subscap",
+      "ends": [
+        {
+          "end": 0,
+          "status": "existing-region-retained",
+          "vertices": 12377
+        },
+        {
+          "end": 1,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "humerus"
+          ],
+          "vertices": 1136,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -158.66290589426262,
+            -91.90269029448795,
+            1323.428061906918
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -158.83565611795075,
+            -91.53782215372088,
+            1323.4434465296695
+          ],
+          "minimumGapMm": 1.7364968824275913e-05,
+          "candidateResolutionMm": 1.9084707541611015,
+          "maxGapMm": 1.9066641266523585,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        }
+      ]
+    },
+    {
+      "id": "v59TrapUpper",
+      "ends": [
+        {
+          "end": 0,
+          "status": "existing-region-retained",
+          "vertices": 9683
+        },
+        {
+          "end": 1,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "clavicle"
+          ],
+          "vertices": 1005,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -100.36502788739121,
+            -72.86977447951303,
+            1362.913872557623
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -100.71054044672864,
+            -73.1197031163632,
+            1362.3912720063424
+          ],
+          "minimumGapMm": 0.00018445655782789718,
+          "candidateResolutionMm": 2.4863694378951564,
+          "maxGapMm": 2.484828355930694,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        }
+      ]
+    },
+    {
+      "id": "v59TrapMiddle",
+      "ends": [
+        {
+          "end": 0,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "C7",
+            "T1",
+            "T2",
+            "T3",
+            "T4"
+          ],
+          "vertices": 247,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -0.6182134427731072,
+            -2.9372687194559286,
+            1331.0089866827966
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -0.8851702887648784,
+            -3.6614144631262744,
+            1330.870693920075
+          ],
+          "minimumGapMm": 0.0026442849672044235,
+          "candidateResolutionMm": 2.0705448631017047,
+          "maxGapMm": 2.0660334654258423,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        },
+        {
+          "end": 1,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "scapula:spine"
+          ],
+          "vertices": 126,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -141.94874545656083,
+            -36.45051325538648,
+            1351.326342914777
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -141.98564142677046,
+            -36.45000544065427,
+            1351.138868662401
+          ],
+          "minimumGapMm": 0.0001276707747773876,
+          "candidateResolutionMm": 1.254436958428931,
+          "maxGapMm": 1.251801586285444,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        }
+      ]
+    },
+    {
+      "id": "v59TrapLower",
+      "ends": [
+        {
+          "end": 0,
+          "status": "existing-region-retained",
+          "vertices": 2052
+        },
+        {
+          "end": 1,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "scapula:spine"
+          ],
+          "vertices": 184,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -119.16932188203829,
+            -17.338704408125647,
+            1339.3154351786916
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -119.16001547102859,
+            -17.439394618018685,
+            1339.2558814882987
+          ],
+          "minimumGapMm": 0.0003075218006154116,
+          "candidateResolutionMm": 1.2424586008990193,
+          "maxGapMm": 1.2162355878141073,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        }
+      ]
+    },
+    {
+      "id": "v59Lat",
+      "ends": [
+        {
+          "end": 0,
+          "status": "existing-region-retained",
+          "vertices": 93799
+        },
+        {
+          "end": 1,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "humerus"
+          ],
+          "vertices": 2484,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -172.49377075540536,
+            -75.730403069249,
+            1269.5151251590626
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -172.6426722258835,
+            -75.84820998740454,
+            1269.5487624773348
+          ],
+          "minimumGapMm": 0.00046369165711411314,
+          "candidateResolutionMm": 2.1878310485425367,
+          "maxGapMm": 2.1881359329700536,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        }
+      ]
+    },
+    {
+      "id": "v60PecClav",
+      "ends": [
+        {
+          "end": 0,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "clavicle"
+          ],
+          "vertices": 677,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -63.14163668875844,
+            -129.3211890344924,
+            1346.378110046428
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -62.89471416043758,
+            -129.00356384004283,
+            1346.6628579223327
+          ],
+          "minimumGapMm": 0.00015225141177917118,
+          "candidateResolutionMm": 3.14416165052424,
+          "maxGapMm": 3.1269100620319397,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        },
+        {
+          "end": 1,
+          "status": "existing-region-retained",
+          "vertices": 477
+        }
+      ]
+    },
+    {
+      "id": "v60PecStern",
+      "ends": [
+        {
+          "end": 0,
+          "status": "existing-region-retained",
+          "vertices": 2052
+        },
+        {
+          "end": 1,
+          "status": "existing-region-retained",
+          "vertices": 720
+        }
+      ]
+    },
+    {
+      "id": "v60PecAbd",
+      "ends": [
+        {
+          "end": 0,
+          "status": "missing-anatomical-target-surface"
+        },
+        {
+          "end": 1,
+          "status": "existing-region-retained",
+          "vertices": 368
+        }
+      ]
+    },
+    {
+      "id": "v60PecMinor",
+      "ends": [
+        {
+          "end": 0,
+          "status": "existing-region-retained",
+          "vertices": 10598
+        },
+        {
+          "end": 1,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "scapula"
+          ],
+          "vertices": 818,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -125.05337735905465,
+            -91.33202668723051,
+            1337.955600403809
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -125.10610945970978,
+            -91.3219270912556,
+            1338.0099079480738
+          ],
+          "minimumGapMm": 0.0002184409130314413,
+          "candidateResolutionMm": 1.0499654406904344,
+          "maxGapMm": 1.0499707498869004,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        }
+      ]
+    },
+    {
+      "id": "v60Subclavius",
+      "ends": [
+        {
+          "end": 0,
+          "status": "existing-region-retained",
+          "vertices": 1625
+        },
+        {
+          "end": 1,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "clavicle"
+          ],
+          "vertices": 318,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -92.50615218297797,
+            -91.97458068639195,
+            1352.2616307431895
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -92.5261942535663,
+            -92.12707929680796,
+            1352.9484995492433
+          ],
+          "minimumGapMm": 0.002958127083678151,
+          "candidateResolutionMm": 2.1183930439410745,
+          "maxGapMm": 2.1128302982215668,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        }
+      ]
+    },
+    {
+      "id": "v60DeltAnt",
+      "ends": [
+        {
+          "end": 0,
+          "status": "existing-region-retained",
+          "vertices": 4218
+        },
+        {
+          "end": 1,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "humerus"
+          ],
+          "vertices": 245,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -198.2311190033379,
+            -80.3613546938115,
+            1235.4267359567173
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -197.77224001812147,
+            -79.74353054347183,
+            1235.3976582549617
+          ],
+          "minimumGapMm": 0.0017785705611193614,
+          "candidateResolutionMm": 2.277862484458779,
+          "maxGapMm": 2.264411180073869,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        }
+      ]
+    },
+    {
+      "id": "v60DeltMid",
+      "ends": [
+        {
+          "end": 0,
+          "status": "existing-region-retained",
+          "vertices": 392
+        },
+        {
+          "end": 1,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "humerus"
+          ],
+          "vertices": 496,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -200.83351201742263,
+            -75.04931495769023,
+            1237.684474383492
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -200.35308800097184,
+            -74.99113907648977,
+            1237.597072783971
+          ],
+          "minimumGapMm": 0.0020422290293715534,
+          "candidateResolutionMm": 2.309311732850933,
+          "maxGapMm": 2.3108755472154274,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        }
+      ]
+    },
+    {
+      "id": "v60DeltPost",
+      "ends": [
+        {
+          "end": 0,
+          "status": "source-terminal-candidate",
+          "targetBones": [
+            "scapula"
+          ],
+          "vertices": 1130,
+          "overrodeOppositeLegacyPins": 0,
+          "centroidAtlasMm": [
+            -129.91466643313595,
+            -19.74188308028488,
+            1334.2711489375663
+          ],
+          "nearestBoneCentroidAtlasMm": [
+            -129.78761728071808,
+            -19.95902690127838,
+            1334.3701805526828
+          ],
+          "minimumGapMm": 2.9217711095185798e-05,
+          "candidateResolutionMm": 1.463246970750589,
+          "maxGapMm": 1.4619584051188852,
+          "method": "bone-near terminal half-domain; tolerance from measured source mesh edge spacing",
+          "confidence": "estimated muscle/tendon terminal, not measured enthesis"
+        },
+        {
+          "end": 1,
+          "status": "existing-region-retained",
+          "vertices": 559
+        }
+      ]
+    }
+  ]
+}

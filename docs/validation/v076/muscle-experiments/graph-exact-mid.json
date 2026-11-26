@@ -1,0 +1,494 @@
+[
+  {
+    "elev": 0,
+    "plane": 0,
+    "contact": true,
+    "projection": {
+      "ratio": 1.0000002092998266,
+      "method": "global source-integral constraint in graph energy metric; local incompressibility unproven"
+    },
+    "solveMs": 2461.066969,
+    "surfaceOrientation": {
+      "method": "posed triangle normal versus blended source-face rotation; orientation warning only, not a volumetric-Jacobian certificate",
+      "opposedFaces": 0,
+      "ambiguousFaces": 0,
+      "minCos": 0.8091026190395083,
+      "worst": {
+        "triangle": 20900,
+        "vertices": [
+          10571,
+          10233,
+          9853
+        ],
+        "sourceVertexIds": [
+          10577,
+          10239,
+          9859
+        ],
+        "cos": 0.8091026190395083
+      }
+    },
+    "id": "v60DeltMid",
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "nonfinite": 0,
+    "attachmentMaxMm": 0.000011766230026075663,
+    "attachmentSamples": 888,
+    "maxStepMm": null,
+    "restVolume": 0.015787478211292453,
+    "volume": 0.015787481522320963,
+    "volumeRatio": 1.0000002097249774,
+    "volumeStatus": "closed-oriented-proxy",
+    "areaRatio": [
+      0.5937492810805453,
+      2.0609822629177645
+    ],
+    "edgeRatio": [
+      0.7414443938645146,
+      1.760703017550561
+    ],
+    "worstEdge": {
+      "vertices": [
+        10571,
+        10233
+      ],
+      "restLengthMm": 0.8353195344209766,
+      "ratio": 1.760703017550561
+    },
+    "worstArea": {
+      "triangle": 20898,
+      "vertices": [
+        10232,
+        10570,
+        10572
+      ],
+      "restAreaMm2": 0.2675839101974276,
+      "ratio": 2.0609822629177645
+    },
+    "newDegenerateFaces": 0,
+    "stretch": null,
+    "localDeterminantApprox": null,
+    "boundedVertices": 0,
+    "invalidFrames": 0,
+    "volumetricJacobian": null,
+    "newIntersections": null,
+    "newInversions": null,
+    "boneDistance": null,
+    "clinicalValidation": false
+  },
+  {
+    "elev": 90,
+    "plane": 0,
+    "contact": true,
+    "projection": {
+      "ratio": 1.000000000005213,
+      "method": "global source-integral constraint in graph energy metric; local incompressibility unproven"
+    },
+    "solveMs": 3139.1240449999996,
+    "surfaceOrientation": {
+      "method": "posed triangle normal versus blended source-face rotation; orientation warning only, not a volumetric-Jacobian certificate",
+      "opposedFaces": 53,
+      "ambiguousFaces": 0,
+      "minCos": -0.9825384209690771,
+      "worst": {
+        "triangle": 24269,
+        "vertices": [
+          12243,
+          12244,
+          12239
+        ],
+        "sourceVertexIds": [
+          12249,
+          12250,
+          12245
+        ],
+        "cos": -0.9825384209690771
+      }
+    },
+    "id": "v60DeltMid",
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "nonfinite": 0,
+    "attachmentMaxMm": 0.000021168644395177007,
+    "attachmentSamples": 888,
+    "maxStepMm": null,
+    "restVolume": 0.015787478211292453,
+    "volume": 0.015787477756333962,
+    "volumeRatio": 0.9999999711823203,
+    "volumeStatus": "closed-oriented-proxy",
+    "areaRatio": [
+      0.0924547369402388,
+      8.681101835436491
+    ],
+    "edgeRatio": [
+      0.13008157984447602,
+      6.268210451152795
+    ],
+    "worstEdge": {
+      "vertices": [
+        10233,
+        10234
+      ],
+      "restLengthMm": 0.9482324071185476,
+      "ratio": 6.268210451152795
+    },
+    "worstArea": {
+      "triangle": 20900,
+      "vertices": [
+        10571,
+        10233,
+        9853
+      ],
+      "restAreaMm2": 0.7003298823708071,
+      "ratio": 8.681101835436491
+    },
+    "newDegenerateFaces": 0,
+    "stretch": null,
+    "localDeterminantApprox": null,
+    "boundedVertices": 0,
+    "invalidFrames": 0,
+    "volumetricJacobian": null,
+    "newIntersections": null,
+    "newInversions": null,
+    "boneDistance": null,
+    "clinicalValidation": false
+  },
+  {
+    "elev": 180,
+    "plane": 0,
+    "contact": true,
+    "projection": {
+      "ratio": 1.000000008431275,
+      "method": "global source-integral constraint in graph energy metric; local incompressibility unproven"
+    },
+    "solveMs": 4018.0125479999997,
+    "surfaceOrientation": {
+      "method": "posed triangle normal versus blended source-face rotation; orientation warning only, not a volumetric-Jacobian certificate",
+      "opposedFaces": 274,
+      "ambiguousFaces": 0,
+      "minCos": -0.9937912176028265,
+      "worst": {
+        "triangle": 21046,
+        "vertices": [
+          10320,
+          10648,
+          10319
+        ],
+        "sourceVertexIds": [
+          10326,
+          10654,
+          10325
+        ],
+        "cos": -0.9937912176028265
+      }
+    },
+    "id": "v60DeltMid",
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "nonfinite": 0,
+    "attachmentMaxMm": 0.000022003950252190197,
+    "attachmentSamples": 888,
+    "maxStepMm": null,
+    "restVolume": 0.015787478211292453,
+    "volume": 0.015787478386396037,
+    "volumeRatio": 1.0000000110912954,
+    "volumeStatus": "closed-oriented-proxy",
+    "areaRatio": [
+      0.036066624619181434,
+      18.241136249864287
+    ],
+    "edgeRatio": [
+      0.07952276716748503,
+      4.233402379059774
+    ],
+    "worstEdge": {
+      "vertices": [
+        13544,
+        13541
+      ],
+      "restLengthMm": 0.444289149446305,
+      "ratio": 4.233402379059774
+    },
+    "worstArea": {
+      "triangle": 19896,
+      "vertices": [
+        10069,
+        10067,
+        10072
+      ],
+      "restAreaMm2": 0.011380846419740593,
+      "ratio": 18.241136249864287
+    },
+    "newDegenerateFaces": 0,
+    "stretch": null,
+    "localDeterminantApprox": null,
+    "boundedVertices": 0,
+    "invalidFrames": 0,
+    "volumetricJacobian": null,
+    "newIntersections": null,
+    "newInversions": null,
+    "boneDistance": null,
+    "clinicalValidation": false
+  },
+  {
+    "elev": 0,
+    "plane": 90,
+    "contact": true,
+    "projection": {
+      "ratio": 1.0000002092998266,
+      "method": "global source-integral constraint in graph energy metric; local incompressibility unproven"
+    },
+    "solveMs": 2286.811716,
+    "surfaceOrientation": {
+      "method": "posed triangle normal versus blended source-face rotation; orientation warning only, not a volumetric-Jacobian certificate",
+      "opposedFaces": 0,
+      "ambiguousFaces": 0,
+      "minCos": 0.8091026190395083,
+      "worst": {
+        "triangle": 20900,
+        "vertices": [
+          10571,
+          10233,
+          9853
+        ],
+        "sourceVertexIds": [
+          10577,
+          10239,
+          9859
+        ],
+        "cos": 0.8091026190395083
+      }
+    },
+    "id": "v60DeltMid",
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "nonfinite": 0,
+    "attachmentMaxMm": 0.000011766230026075663,
+    "attachmentSamples": 888,
+    "maxStepMm": null,
+    "restVolume": 0.015787478211292453,
+    "volume": 0.015787481522320963,
+    "volumeRatio": 1.0000002097249774,
+    "volumeStatus": "closed-oriented-proxy",
+    "areaRatio": [
+      0.5937492810805453,
+      2.0609822629177645
+    ],
+    "edgeRatio": [
+      0.7414443938645146,
+      1.760703017550561
+    ],
+    "worstEdge": {
+      "vertices": [
+        10571,
+        10233
+      ],
+      "restLengthMm": 0.8353195344209766,
+      "ratio": 1.760703017550561
+    },
+    "worstArea": {
+      "triangle": 20898,
+      "vertices": [
+        10232,
+        10570,
+        10572
+      ],
+      "restAreaMm2": 0.2675839101974276,
+      "ratio": 2.0609822629177645
+    },
+    "newDegenerateFaces": 0,
+    "stretch": null,
+    "localDeterminantApprox": null,
+    "boundedVertices": 0,
+    "invalidFrames": 0,
+    "volumetricJacobian": null,
+    "newIntersections": null,
+    "newInversions": null,
+    "boneDistance": null,
+    "clinicalValidation": false
+  },
+  {
+    "elev": 90,
+    "plane": 90,
+    "contact": true,
+    "projection": {
+      "ratio": 1.0000000000019258,
+      "method": "global source-integral constraint in graph energy metric; local incompressibility unproven"
+    },
+    "solveMs": 3432.5551780000005,
+    "surfaceOrientation": {
+      "method": "posed triangle normal versus blended source-face rotation; orientation warning only, not a volumetric-Jacobian certificate",
+      "opposedFaces": 32,
+      "ambiguousFaces": 0,
+      "minCos": -0.9961479750094826,
+      "worst": {
+        "triangle": 28304,
+        "vertices": [
+          14252,
+          14253,
+          14254
+        ],
+        "sourceVertexIds": [
+          14258,
+          14259,
+          14260
+        ],
+        "cos": -0.9961479750094826
+      }
+    },
+    "id": "v60DeltMid",
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "nonfinite": 0,
+    "attachmentMaxMm": 0.000012407791597650827,
+    "attachmentSamples": 888,
+    "maxStepMm": null,
+    "restVolume": 0.015787478211292453,
+    "volume": 0.015787478254885356,
+    "volumeRatio": 1.0000000027612328,
+    "volumeStatus": "closed-oriented-proxy",
+    "areaRatio": [
+      0.08046229744208991,
+      6.18429941162272
+    ],
+    "edgeRatio": [
+      0.3007624143422322,
+      3.8225192990725447
+    ],
+    "worstEdge": {
+      "vertices": [
+        10233,
+        10234
+      ],
+      "restLengthMm": 0.9482324071185476,
+      "ratio": 3.8225192990725447
+    },
+    "worstArea": {
+      "triangle": 25634,
+      "vertices": [
+        12529,
+        12937,
+        12938
+      ],
+      "restAreaMm2": 0.13523108376503457,
+      "ratio": 6.18429941162272
+    },
+    "newDegenerateFaces": 0,
+    "stretch": null,
+    "localDeterminantApprox": null,
+    "boundedVertices": 0,
+    "invalidFrames": 0,
+    "volumetricJacobian": null,
+    "newIntersections": null,
+    "newInversions": null,
+    "boneDistance": null,
+    "clinicalValidation": false
+  },
+  {
+    "elev": 180,
+    "plane": 90,
+    "contact": true,
+    "projection": {
+      "ratio": 1.000000000033246,
+      "method": "global source-integral constraint in graph energy metric; local incompressibility unproven"
+    },
+    "solveMs": 3477.001418,
+    "surfaceOrientation": {
+      "method": "posed triangle normal versus blended source-face rotation; orientation warning only, not a volumetric-Jacobian certificate",
+      "opposedFaces": 99,
+      "ambiguousFaces": 0,
+      "minCos": -0.9941917436316703,
+      "worst": {
+        "triangle": 18405,
+        "vertices": [
+          9327,
+          8919,
+          9326
+        ],
+        "sourceVertexIds": [
+          9333,
+          8925,
+          9332
+        ],
+        "cos": -0.9941917436316703
+      }
+    },
+    "id": "v60DeltMid",
+    "topology": {
+      "closed": true,
+      "boundary": 0,
+      "nonmanifold": 0,
+      "inconsistent": 0,
+      "degenerate": 0
+    },
+    "nonfinite": 0,
+    "attachmentMaxMm": 0.000022029734082518207,
+    "attachmentSamples": 888,
+    "maxStepMm": null,
+    "restVolume": 0.015787478211292453,
+    "volume": 0.015787478029812823,
+    "volumeRatio": 0.9999999885048374,
+    "volumeStatus": "closed-oriented-proxy",
+    "areaRatio": [
+      0.02202067514568854,
+      9.022153166220622
+    ],
+    "edgeRatio": [
+      0.18752416669008776,
+      3.4579525057951663
+    ],
+    "worstEdge": {
+      "vertices": [
+        13807,
+        13805
+      ],
+      "restLengthMm": 0.3045491505146195,
+      "ratio": 3.4579525057951663
+    },
+    "worstArea": {
+      "triangle": 19896,
+      "vertices": [
+        10069,
+        10067,
+        10072
+      ],
+      "restAreaMm2": 0.011380846419740593,
+      "ratio": 9.022153166220622
+    },
+    "newDegenerateFaces": 0,
+    "stretch": null,
+    "localDeterminantApprox": null,
+    "boundedVertices": 0,
+    "invalidFrames": 0,
+    "volumetricJacobian": null,
+    "newIntersections": null,
+    "newInversions": null,
+    "boneDistance": null,
+    "clinicalValidation": false
+  }
+]
