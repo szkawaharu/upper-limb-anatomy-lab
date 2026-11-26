@@ -162,6 +162,7 @@
       posed,
       contact,
       originAt,
+      liftSingular: M.dot(a.q,b.q)+a.q[3]*b.q[3]<-.999999,
       restFlat: Float32Array.from(f.controls.flat(2)),
       nowFlat: Float32Array.from(posed.flat(2)),
       activation: null,
@@ -181,6 +182,7 @@
         determinant: 1,
         bounded: false,
       };
+    if (M.dot(a.q,b.q)+a.q[3]*b.q[3]<-.999999) return {point:root.ContactConstraint.project(p,base,t,state.contact),normal:baseN,invalidFrame:true,reason:'ambiguous-joint-quaternion-lift',stretch:null,determinant:null};
     const R = P.frame(B.field.controls, l, materialT, B.reference),
       raw = P.frame(posed, l, materialT, qrot(a.q, B.reference));
     if (!R || !raw)

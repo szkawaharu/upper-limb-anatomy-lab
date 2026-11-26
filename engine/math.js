@@ -35,6 +35,9 @@
         n = Math.hypot(...q);
       return q.map((x) => x / Math.max(n, 1e-12));
     };
+  // Bone joint parameters supply a continuous lift into quaternion space.
+  // A shortest-arc sign test against another bone changes branch at 180deg.
+  const qblendLift=(a,b,t)=>{const q=a.map((x,i)=>x*(1-t)+b[i]*t),n=Math.hypot(...q);return n<1e-12?a.slice():q.map(x=>x/n)};
   const apply = (a, p) => add(a.p, qrot(a.q, sub(p, a.rest))),
     identity = () => ({ q: [0, 0, 0, 1], p: [0, 0, 0], rest: [0, 0, 0] });
   function align(u, v, p, axis) {
@@ -59,6 +62,7 @@
     qmul,
     qaxis,
     qmix,
+    qblendLift,
     apply,
     identity,
     align,

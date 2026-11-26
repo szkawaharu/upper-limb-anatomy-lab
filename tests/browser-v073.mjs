@@ -4,6 +4,7 @@ import { chromium } from "playwright";
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import assert from "node:assert/strict";
+import { staticServer } from "./helpers/static-server.mjs";
 const numericOnly = process.env.QA_NUMERIC_ONLY === "1";
 const out = process.env.QA_OUTPUT || "test-results/browser-v073",
   cache = process.env.ATLAS_CACHE || "/tmp/upper-limb-atlas";
@@ -20,6 +21,7 @@ const browser = await chromium.launch({
     "--enable-unsafe-swiftshader",
   ],
 });
+const server = process.env.QA_URL ? null : await staticServer();
 const page = await browser.newPage({ viewport: { width: 1280, height: 900 } }),
   errors = [],
   warnings = [];
@@ -52,11 +54,13 @@ const instrument = String.raw`
 let qaSkipDraw=false;const qaOriginalRender=render;render=()=>{if(!qaSkipDraw)qaOriginalRender();else{lastW=canvas.clientWidth;lastH=canvas.clientHeight;proj=ortho(state.zoom,lastW/lastH,.01,100);const eye=add(state.target,[18*Math.sin(state.yaw)*Math.cos(state.pitch),18*Math.sin(state.pitch),18*Math.cos(state.yaw)*Math.cos(state.pitch)]);view=lookAt(eye,state.target);pv=mm(proj,view)}};
 const qaContactCurrent=v73Contact;let qaLegacyHead=false;
 v73Contact=(spec,b)=>{const c=qaContactCurrent(spec,b);return qaLegacyHead&&c?.unilateral?{...c,unilateral:false}:c};
-const qaExport=(f,id)=>{const B=f.binding,samples=[];for(let i=0;i<B.weights.length;i+=Math.max(1,Math.floor(B.weights.length/80))){const p=Array.from(B.rest.slice(i*3,i*3+3)),t=B.weights[i],l=B.lane[i],materialT=B.material[i],q=MuscleDeformation.point(f,p,t,l,materialT);samples.push({p,t,l,materialT,q,originBlend:B.originBlend?.[i]||0})}return {id,samples,state:{a:f.a,b:f.b,rest:Array.from(f.restFlat),now:Array.from(f.nowFlat),sheet:B.sheet,blendRange:B.blendRange,lanes:B.field.controls.length,tendonStart:B.definition.tissues.tendonStart,reference:B.reference,contact:f.contact,multiBone:!!f.originAt,originMix:f.originMix}}};
+const qaExport=(f,id)=>{const B=f.binding,samples=[];for(let i=0;i<B.weights.length;i+=Math.max(1,Math.floor(B.weights.length/80))){const p=Array.from(B.rest.slice(i*3,i*3+3)),t=B.weights[i],l=B.lane[i],materialT=B.material[i],q=MuscleDeformation.point(f,p,t,l,materialT);samples.push({vertexId:i,p,t,l,materialT,q,originBlend:B.originBlend?.[i]||0})}return {id,name:B.definition.name,input:{side:v56Side,elev:settings.elev,plane:settings.plane,axial:settings.axial,elbow:settings.elbow,pronation:settings.pronation,sync:settings.sync},samples,state:{a:f.a,b:f.b,rest:Array.from(f.restFlat),now:Array.from(f.nowFlat),sheet:B.sheet,blendRange:B.blendRange,lanes:B.field.controls.length,tendonStart:B.definition.tissues.tendonStart,reference:B.reference,contact:f.contact,multiBone:!!f.originAt,originMix:f.originMix}}};
 window.__qa={
+ rigFixture(){const model=v76ShoulderModel();return {landmarks:model.landmarks,contact:model.contact,scale:model.scale}},
+ vertex(id,i){const spec=V60_ALL.find(s=>s.id===id),f=v73MuscleState(spec,v58Meshes.get(id)),B=f.binding;return {id,vertexId:i,point:MuscleDeformation.point(f,Array.from(B.rest.slice(i*3,i*3+3)),B.weights[i],B.lane[i],B.material[i]),a:f.a,b:f.b,weight:B.weights[i],lane:B.lane[i],materialT:B.material[i]}},
  ensureGPU(){if(!v73Renderer)v73Renderer=new MuscleRenderer(gl,shaderFS,(v,f)=>gpu(mesh(v,f)))},
  skipRender(value){qaSkipDraw=value;if(!value)request()},
- pose(p){for(const [k,v] of Object.entries(p))$(k).value=v;update()},
+ pose(p){for(const [k,v] of Object.entries(p)){$(k).step='any';$(k).value=v}update()},
  both(right,left){v56ChooseSide('right');this.pose(right);v56ChooseSide('left');this.pose(left);v56ChooseSide('right')},
  neck(n){v73SetNeck(n)},
  view(yaw){state.yaw=yaw;state.pitch=.1;fitPose();request()},
@@ -85,7 +89,7 @@ await page.route("**/index.html", async (route) => {
   await route.fulfill({ body: html, contentType: "text/html" });
 });
 try {
-  await page.goto(process.env.QA_URL || "http://localhost:8730/index.html");
+  await page.goto(process.env.QA_URL || server.url);
   await page.waitForFunction(
     () =>
       window.__labDeepMuscles?.().loaded.length === 17 &&
@@ -101,6 +105,7 @@ try {
   console.log("Actual atlas loaded");
   await page.evaluate(() => window.__qa.ensureGPU());
   const initial = await page.evaluate(() => window.__qa.status());
+  writeFileSync(join(out,"rig-calibration.json"),JSON.stringify(await page.evaluate(()=>window.__qa.rigFixture()),null,2));
   assert.equal(initial.backend, "gpu");
   assert.equal(initial.glError, 0);
   assert.deepEqual(
@@ -192,8 +197,9 @@ try {
   writeFileSync(join(out, "pose-audit.json"), JSON.stringify(rows, null, 2));
   await page.evaluate(() => window.__qa.skipRender(true));
   let maxStepMm = 0,
-    maxReturnMm = 0;
-  for (const plane of [0, 90]) {
+    maxReturnMm = 0,
+    worstStep = null;
+  for (const plane of [0, 40, 90]) {
     console.log("Sweep", plane);
     let prior = null;
     const forward = [];
@@ -206,10 +212,11 @@ try {
           assert(q.every(Number.isFinite));
           if (prior) {
             const p = prior[m].samples[i].q;
-            maxStepMm = Math.max(
-              maxStepMm,
-              Math.hypot(...q.map((x, k) => x - p[k])) / 0.00555,
-            );
+            const stepMm = Math.hypot(...q.map((x,k)=>x-p[k]))/.00555;
+            if (stepMm > maxStepMm) {
+              maxStepMm=stepMm;
+              worstStep={stepMm,muscleId:samples[m].id,name:samples[m].name,vertexId:samples[m].samples[i].vertexId,plane,direction:"forward",from:{elev:elev-3,input:prior[m].input,sample:prior[m].samples[i],state:prior[m].state},to:{elev,input:samples[m].input,sample:samples[m].samples[i],state:samples[m].state}};
+            }
           }
         }
       forward.push(samples);
@@ -231,6 +238,25 @@ try {
           );
     }
   }
+  writeFileSync(join(out,"worst-step.json"),JSON.stringify(worstStep,null,2));
+  const refinement=[];
+  for (const item of [worstStep,{muscleId:"v59TrapLower",vertexId:6696,plane:0,from:{elev:120},to:{elev:123}}]) {
+    const rows=[];
+    for(const step of [3,1.5,.75,.375]) {
+      let last=null,maxMm=0;
+      for(let elev=item.from.elev;elev<=item.to.elev+1e-8;elev+=step) {
+        await page.evaluate(p=>window.__qa.pose(p),{elev,plane:item.plane});
+        const v=await page.evaluate(([id,i])=>window.__qa.vertex(id,i),[item.muscleId,item.vertexId]);
+        if(last)maxMm=Math.max(maxMm,Math.hypot(...v.point.map((x,k)=>x-last.point[k]))/.00555);
+        last=v;
+      }
+      rows.push({stepDeg:step,maxMm});
+    }
+    const ratio=rows.at(-1).maxMm/Math.max(rows[0].maxMm,1e-9);
+    refinement.push({id:item.muscleId,vertexId:item.vertexId,plane:item.plane,from:item.from.elev,to:item.to.elev,rows,ratio});
+    assert(ratio<.3,"Step refinement found an unresolved discontinuity: "+JSON.stringify(refinement.at(-1)));
+  }
+  writeFileSync(join(out,"continuity-refinement.json"),JSON.stringify(refinement,null,2));
   await page.evaluate((v) => window.__qa.skipRender(v), numericOnly);
   console.log("Neck gestures");
   const neck = [];
@@ -441,6 +467,8 @@ try {
         gpu,
         maxStepMm,
         maxReturnMm,
+        worstStep: {id:worstStep.muscleId,name:worstStep.name,vertexId:worstStep.vertexId,plane:worstStep.plane,from:worstStep.from.elev,to:worstStep.to.elev},
+        refinement,
         errors,
         warnings,
         numericOnly,
@@ -463,4 +491,5 @@ try {
   throw error;
 } finally {
   await browser.close();
+  if (server) await server.close();
 }

@@ -67,7 +67,7 @@
     );
   }
   function transported(R, S, a, b, t) {
-    const q = qmix(a.q, b.q, smooth(t)),
+    const q = M.qblendLift(a.q, b.q, smooth(t)),
       rt = qrot(q, R.t),
       ru = qrot(q, R.u),
       u = norm(align(rt, S.t, ru, ru));

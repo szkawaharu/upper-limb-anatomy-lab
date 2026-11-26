@@ -99,7 +99,7 @@
         B = state.binding,
         r = this.resource(B),
         u = this.uniforms;
-      if (this.backend !== "gpu" || (state.originAt && !state.originMix))
+      if (this.backend !== "gpu" || state.liftSingular || (state.originAt && !state.originMix))
         return false;
       gl.useProgram(this.program);
       r.rest.fill(0);
