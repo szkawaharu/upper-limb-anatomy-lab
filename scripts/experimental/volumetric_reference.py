@@ -71,7 +71,7 @@ class Solid:
         result[self.fixed] = target
         return result
 
-    def minimize(self, initial, bulk=30.0, iterations=200, step_tolerance_mm=.001):
+    def minimize(self, initial, bulk=30.0, iterations=200, residual_tolerance_mm=.001):
         """Preconditioned L-BFGS with a positive-J Armijo line search.
         Positions are in source millimetres. Quasi-static, no active force.
         An iteration limit is explicitly reported, never marked converged.
@@ -102,15 +102,17 @@ class Solid:
                 d = -self.factor.solve(g) / (1 + bulk)
                 slope = float(np.sum(g * d))
             max_direction = float(np.linalg.norm(d, axis=1).max(initial=0))
-            if max_direction < step_tolerance_mm:
+            if max_direction < residual_tolerance_mm:
                 # A small L-BFGS scaling must not manufacture convergence.
-                residual = self.factor.solve(g) / (1 + bulk)
-                if np.linalg.norm(residual, axis=1).max(initial=0) < step_tolerance_mm:
-                    reason = 'step-tolerance'
+                # Stopping uses the unscaled source-FEM metric; multiplying
+                # the bulk penalty or changing gamma cannot lower this test.
+                residual = self.factor.solve(g)
+                if np.linalg.norm(residual, axis=1).max(initial=0) < residual_tolerance_mm:
+                    reason = 'residual-tolerance'
                     break
                 history = []
                 gamma = 1 / (1 + bulk)
-                d = -residual
+                d = -residual / (1 + bulk)
                 slope = float(np.sum(g * d))
             trial = x.copy()
             gain = 1.0
@@ -140,14 +142,16 @@ class Solid:
             x, energy, g = trial, nextE, nextg
             accepted += 1
         _, final_gradient, J = self.evaluate(x, bulk)
-        residual = self.factor.solve(final_gradient[self.free]) / (1 + bulk)
+        residual = self.factor.solve(final_gradient[self.free])
         return x, {
-            'reason': reason, 'converged': reason == 'step-tolerance',
+            'reason': reason, 'converged': reason == 'residual-tolerance',
             'iterations': accepted, 'energy': energy, 'bulkPenalty': bulk,
             'minJ': float(J.min()), 'maxJ': float(J.max()),
             'JQuantiles': np.quantile(J, [0, .01, .5, .99, 1]).tolist(),
             'volumeRatio': float(np.dot(self.weights, J)),
             'nonPositiveElements': int((J <= 0).sum()),
             'preconditionedGradientMaxMm': float(np.linalg.norm(residual, axis=1).max(initial=0)),
+            'convergenceMetric': 'source FEM inverse times gradient, without bulk or L-BFGS scaling',
+            'residualToleranceMm': residual_tolerance_mm,
             'activation': None, 'force': None, 'boneContactEvaluated': False,
         }

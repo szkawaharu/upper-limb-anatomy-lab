@@ -1,0 +1,50 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "evidenceSource": "test-results/v076-volumetric-quality/reference-mesh-audit.json",
+  "evidenceSha256": "01b0391a31efad98078d463bad403f74cffd50491e3c120b963be637109ff54e",
+  "data": {
+    "id": "v60DeltMid",
+    "inputSha256": "cf5272632ca6d48b53f6d23998c4cf57376c3090dc26d5cc3919eeb2f0edb504",
+    "source": {
+      "atlas": "BodyParts3D",
+      "commit": "2c83c698788cff57f6317bddcf712e7acfbea7d8",
+      "license": "CC BY-SA 2.1 Japan",
+      "sourceUnits": "mm",
+      "worldUnitsPerMm": 0.00555,
+      "file": "FMA34682.stl",
+      "geometry": "atlas-surface"
+    },
+    "sourceSha256": "1d261c2d378ca98a352dca1511bb1c2aa005a0a4309b9f9998d23d8397d80d0b",
+    "tetgenWrapperVersion": "0.8.4",
+    "runtimeDependencyAdded": false,
+    "qualityRequested": true,
+    "minRadiusEdgeRatio": 2.0,
+    "steinerLimit": 20000,
+    "sourceVertices": 14841,
+    "nodes": 16006,
+    "tets": 56083,
+    "boundaryFaces": 29678,
+    "sourceBoundaryExact": true,
+    "sourcePrefixMaxError": 0,
+    "referenceTetSignCounts": {
+      "positive": 56083,
+      "negative": 0,
+      "zero": 0
+    },
+    "tetVolumeSum": 0.015787478211292328,
+    "sourceSurfaceVolume": 0.015787478211292328,
+    "relativeVolumeDifference": 0.0,
+    "conditionNumberQuantiles": [
+      1.147712674166883,
+      12.019900465638088,
+      100.07818581314656,
+      228.3128080053629,
+      14819.612726414822
+    ],
+    "unreferencedGeneratedNodes": [
+      14841
+    ],
+    "seconds": 6.457366943359375
+  }
+}

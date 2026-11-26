@@ -1,0 +1,101 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "evidenceSource": "test-results/v076-volumetric-quality/elastic-modes-k30.json",
+  "evidenceSha256": "c0222473f16b2a4d485704500328e883f527290af0ca6b521055341d318bfbfb",
+  "data": {
+    "experimental": true,
+    "accepted": false,
+    "bulk": 30.0,
+    "modes": 12,
+    "discardedNumericalModes": 0,
+    "reports": [
+      {
+        "mode": 0,
+        "cgInfo": 0,
+        "cgIterations": 146,
+        "preconditionedResidualMm": 1.1447543616387046e-05,
+        "relativeLinearResidual": 9.996495902238363e-08
+      },
+      {
+        "mode": 1,
+        "cgInfo": 0,
+        "cgIterations": 156,
+        "preconditionedResidualMm": 3.4458658325470504e-06,
+        "relativeLinearResidual": 9.642394421794388e-08
+      },
+      {
+        "mode": 2,
+        "cgInfo": 0,
+        "cgIterations": 159,
+        "preconditionedResidualMm": 6.550846720595277e-06,
+        "relativeLinearResidual": 9.412709019034546e-08
+      },
+      {
+        "mode": 3,
+        "cgInfo": 0,
+        "cgIterations": 160,
+        "preconditionedResidualMm": 7.10159288559284e-05,
+        "relativeLinearResidual": 9.188412466794986e-08
+      },
+      {
+        "mode": 4,
+        "cgInfo": 0,
+        "cgIterations": 146,
+        "preconditionedResidualMm": 0.000331536652994063,
+        "relativeLinearResidual": 9.234797010921927e-08
+      },
+      {
+        "mode": 5,
+        "cgInfo": 0,
+        "cgIterations": 160,
+        "preconditionedResidualMm": 6.517009210960247e-05,
+        "relativeLinearResidual": 8.526227619530615e-08
+      },
+      {
+        "mode": 6,
+        "cgInfo": 0,
+        "cgIterations": 160,
+        "preconditionedResidualMm": 3.4733290608757566e-05,
+        "relativeLinearResidual": 8.912204588898552e-08
+      },
+      {
+        "mode": 7,
+        "cgInfo": 0,
+        "cgIterations": 155,
+        "preconditionedResidualMm": 0.00029869008921808653,
+        "relativeLinearResidual": 9.028204985416766e-08
+      },
+      {
+        "mode": 8,
+        "cgInfo": 0,
+        "cgIterations": 159,
+        "preconditionedResidualMm": 4.028278335143807e-05,
+        "relativeLinearResidual": 9.670737227821822e-08
+      },
+      {
+        "mode": 9,
+        "cgInfo": 0,
+        "cgIterations": 166,
+        "preconditionedResidualMm": 1.6927832756040946e-05,
+        "relativeLinearResidual": 9.915222490855988e-08
+      },
+      {
+        "mode": 10,
+        "cgInfo": 0,
+        "cgIterations": 160,
+        "preconditionedResidualMm": 0.0004400026983970827,
+        "relativeLinearResidual": 9.958794874705115e-08
+      },
+      {
+        "mode": 11,
+        "cgInfo": 0,
+        "cgIterations": 145,
+        "preconditionedResidualMm": 9.028534416365442e-05,
+        "relativeLinearResidual": 9.996170212705123e-08
+      }
+    ],
+    "seconds": 128.63455414772034,
+    "codeSha256": "b90a603827965dbb72664be4d3a0499ab6fbac55dec1a3eb7422803b74dfd31c"
+  }
+}

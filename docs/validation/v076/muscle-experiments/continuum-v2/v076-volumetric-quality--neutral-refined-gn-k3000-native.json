@@ -1,0 +1,53 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "evidenceSource": "test-results/v076-volumetric-quality/neutral-refined-gn-k3000-native.json",
+  "evidenceSha256": "672ffa73ca0da4506293480ffd82a5ff9e92af3783536a972124c832b7fa7761",
+  "data": {
+    "method": "matrix-free SPD strain/volume quasi-Newton; approximate Hessian",
+    "reason": "iteration-limit",
+    "converged": false,
+    "energy": 0.006467806894950472,
+    "bulkPenalty": 3000.0,
+    "minJ": 0.7550219098904082,
+    "maxJ": 1.3191199991836804,
+    "JQuantiles": [
+      0.7550219098904082,
+      0.9876447112433785,
+      1.0000000000000098,
+      1.013778778657795,
+      1.3191199991836804
+    ],
+    "volumeRatio": 1.000008763734567,
+    "nonPositiveElements": 0,
+    "preconditionedGradientMaxMm": 0.0021991632399140206,
+    "residualToleranceMm": 0.001,
+    "iterations": 30,
+    "activation": null,
+    "force": null,
+    "boneContactEvaluated": false,
+    "input": "test-results/v076-volumetric-quality/reference-v2-e0-p0-i100-k30.npz",
+    "inputSha256": "c6be60a784516d8f79028ecd210ffeafd19bbf802be6ae023f77536e374f1810",
+    "seconds": 498.4075057506561,
+    "fixedDeltaMm": 0.0,
+    "codeSha256": {
+      "volumetric_reference.py": "c67753c3c6f860e23ce650edfbaca156f8eeb61bff8159cd6e946cb553ea8d45",
+      "volumetric_gauss_newton.py": "fa6404de789b3b4c934a2f74ecc1fcc1e8d478bf7e0aba98b3e5b9477ef97f5b",
+      "refine-volumetric-gn.py": "02be69c870175eb7fb5c5092319778e3add0ed4f2d81d1545af1017aa3f457c6"
+    },
+    "experimental": true,
+    "accepted": false,
+    "iterationOrStageCount": 30,
+    "lastRow": {
+      "iteration": 30,
+      "cgIterations": 250,
+      "cgInfo": 250,
+      "gain": 1.0,
+      "energy": 0.006467806894950472,
+      "volumeRatio": 1.000008763734567,
+      "minJ": 0.7550219098904082,
+      "maxJ": 1.3191199991836804,
+      "previousResidualMaxMm": 0.0020853477199458126
+    }
+  }
+}

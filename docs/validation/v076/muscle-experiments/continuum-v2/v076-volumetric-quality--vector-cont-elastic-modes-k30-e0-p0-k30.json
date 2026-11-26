@@ -1,0 +1,189 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "evidenceSource": "test-results/v076-volumetric-quality/vector-cont-elastic-modes-k30-e0-p0-k30.json",
+  "evidenceSha256": "5b7192a343dd488aa2e19399018b6a41c3e598e432a54f8467959ced10635a95",
+  "data": {
+    "experimental": true,
+    "accepted": false,
+    "target": {
+      "elev": 0,
+      "plane": 0,
+      "a": {
+        "q": [
+          4.85722573273506e-17,
+          -6.245004513516506e-17,
+          -6.93889390390723e-18,
+          1
+        ],
+        "p": [
+          0.7390595895000001,
+          1.790368874,
+          0.13461521900000006
+        ],
+        "rest": [
+          0.7390595895000001,
+          1.790368874,
+          0.134615219
+        ]
+      },
+      "b": {
+        "q": [
+          0.05855695513712375,
+          0.009682015736688204,
+          -0.10649425533008812,
+          0.9925403342726348
+        ],
+        "p": [
+          0.824725116,
+          1.61447228,
+          0.07922055800000005
+        ],
+        "rest": [
+          0.824725116,
+          1.61447228,
+          0.07922055800000001
+        ]
+      },
+      "backend": "validated-field"
+    },
+    "progress": 0.7497071373682325,
+    "allReducedStagesConverged": true,
+    "allFullStagesConverged": false,
+    "attachmentMaxMm": 0.0,
+    "seconds": 24.404345989227295,
+    "basisSha256": "7011845fb376b2472e6f3008dcca010a0329e274f5937cfa73692072a732493b",
+    "codeSha256": {
+      "vector_reduced_solid.py": "435ab58ada5c0232fda0d6da7b665d348db72ebaeac62f710b00cd0717f004df",
+      "volumetric_reference.py": "c67753c3c6f860e23ce650edfbaca156f8eeb61bff8159cd6e946cb553ea8d45",
+      "reduced_volume_model.py": "419e83b2c3ca9536cba94415a07e891d8ae4f904b4f3f24e0581db9d6b43aba3",
+      "run-vector-continuation.py": "3e2907fb99451b46268eeee0a7a93395e2f60d722fecd20753462d64e67be4a6"
+    },
+    "stages": [
+      {
+        "progress": 0.2142020392480664,
+        "step": 0.2142020392480664,
+        "elapsedSeconds": 6.099743127822876,
+        "method": "boundary-response vector reduced source solid",
+        "convergenceSpace": "reduced",
+        "converged": true,
+        "reason": "reduced-residual-tolerance",
+        "iterations": 13,
+        "energy": 7.487187023507393e-05,
+        "bulkPenalty": 30.0,
+        "volumeRatio": 1.0002741465690084,
+        "minJ": 0.7450224027470154,
+        "maxJ": 1.1142301666167207,
+        "JQuantiles": [
+          0.7450224027470154,
+          0.9930105747270193,
+          1.0004983767333289,
+          1.005939003628963,
+          1.1142301666167207
+        ],
+        "nonPositiveElements": 0,
+        "projectedResidualMaxMm": 0.0009719956859482382,
+        "fullResidualMaxMm": 1.196323210242818,
+        "fullReferenceConverged": false,
+        "modes": 12,
+        "metricWhiteningError": 7.228143692364155e-12,
+        "force": null,
+        "activation": null,
+        "boneContactEvaluated": false
+      },
+      {
+        "progress": 0.4284040784961328,
+        "step": 0.2142020392480664,
+        "elapsedSeconds": 11.21553087234497,
+        "method": "boundary-response vector reduced source solid",
+        "convergenceSpace": "reduced",
+        "converged": true,
+        "reason": "reduced-residual-tolerance",
+        "iterations": 13,
+        "energy": 0.00036490980860828326,
+        "bulkPenalty": 30.0,
+        "volumeRatio": 1.0009518300448168,
+        "minJ": 0.3788996382013205,
+        "maxJ": 1.2510542941788942,
+        "JQuantiles": [
+          0.3788996382013205,
+          0.9809031949033629,
+          1.001675769919692,
+          1.0133247641346628,
+          1.2510542941788942
+        ],
+        "nonPositiveElements": 0,
+        "projectedResidualMaxMm": 0.0007805406450632308,
+        "fullResidualMaxMm": 5.096274757665416,
+        "fullReferenceConverged": false,
+        "modes": 12,
+        "metricWhiteningError": 7.228143692364155e-12,
+        "force": null,
+        "activation": null,
+        "boneContactEvaluated": false
+      },
+      {
+        "progress": 0.6426061177441993,
+        "step": 0.2142020392480664,
+        "elapsedSeconds": 17.84315800666809,
+        "method": "boundary-response vector reduced source solid",
+        "convergenceSpace": "reduced",
+        "converged": true,
+        "reason": "reduced-residual-tolerance",
+        "iterations": 16,
+        "energy": 0.0011212121209846064,
+        "bulkPenalty": 30.0,
+        "volumeRatio": 1.002444325388872,
+        "minJ": 0.05252074054326676,
+        "maxJ": 1.4681269930717753,
+        "JQuantiles": [
+          0.05252074054326676,
+          0.9615713141671238,
+          1.0039260376226389,
+          1.0223762001596255,
+          1.4681269930717753
+        ],
+        "nonPositiveElements": 0,
+        "projectedResidualMaxMm": 0.0006739596624957575,
+        "fullResidualMaxMm": 18.936282665637602,
+        "fullReferenceConverged": false,
+        "modes": 12,
+        "metricWhiteningError": 7.228143692364155e-12,
+        "force": null,
+        "activation": null,
+        "boneContactEvaluated": false
+      },
+      {
+        "progress": 0.7497071373682325,
+        "step": 0.1071010196240332,
+        "elapsedSeconds": 24.402730226516724,
+        "method": "boundary-response vector reduced source solid",
+        "convergenceSpace": "reduced",
+        "converged": true,
+        "reason": "reduced-residual-tolerance",
+        "iterations": 13,
+        "energy": 0.001871494658660421,
+        "bulkPenalty": 30.0,
+        "volumeRatio": 1.0037032093652436,
+        "minJ": 0.02676305698576145,
+        "maxJ": 1.6155805326799555,
+        "JQuantiles": [
+          0.02676305698576145,
+          0.9469093853706071,
+          1.0057578468963633,
+          1.0278618809595998,
+          1.6155805326799555
+        ],
+        "nonPositiveElements": 0,
+        "projectedResidualMaxMm": 0.0006893516177181352,
+        "fullResidualMaxMm": 47.04098805420862,
+        "fullReferenceConverged": false,
+        "modes": 12,
+        "metricWhiteningError": 7.228143692364155e-12,
+        "force": null,
+        "activation": null,
+        "boneContactEvaluated": false
+      }
+    ]
+  }
+}

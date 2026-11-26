@@ -57,3 +57,22 @@ python scripts/experimental/run-volumetric-reference.py test-results/v076-volume
 ```
 
 生成は境界の修復・簡略化をしない。元の全表面頂点・面の完全一致と元の閉鎖体積との一致を検査し、失敗したら停止する。最初のdriverは監査済み三角筋中部に限定。参照データを再生成する場合は過去の解を上書きせず別ディレクトリへ出す。局所の体積外れ値・停止量・骨接触・性能の問題が残り、非反転だけで完成としない。
+
+## 体積参照の追加解法と軽量化の反例
+
+```sh
+python scripts/experimental/test-volumetric-gn.py
+python scripts/experimental/test-volumetric-transfer.py
+python scripts/experimental/test-reduced-volume.py
+python scripts/experimental/test-elastic-modes.py
+python scripts/experimental/refine-volumetric-gn.py INPUT.npz 3000 30 OUTPUT
+# 連成source-rest前処理（変形の許容値や物性は変えない）
+python scripts/experimental/refine-volumetric-gn.py INPUT.npz 3000 30 OUTPUT coupled
+python scripts/experimental/prepare-reduced-volume.py test-results/v076-volumetric-quality 24
+python scripts/experimental/prepare-elastic-modes.py test-results/v076-volumetric-quality 30
+python scripts/experimental/run-vector-continuation.py test-results/v076-volumetric-quality elastic-modes-k30 0 0 30 40
+```
+
+`requirements-reference.txt`はTetGenなしの代数テスト用。体積分割の生成環境とは区別する。`build-volumetric-reference.py`のquality／出力引数は実コードを確認して別ディレクトリへ出す。
+
+`reduced_volume_basis.py`のsource 4チャンネルFEM調和liftingは、両方の元固定領域と共通剛体運動を厳密に保つ。スカラー場を筋活動と解釈しない。`linear_elastic_modes.py`は元のエネルギーの厳密なrest接線応答を使うが、`vector_reduced_solid.py`の少ない自由度が全FEMを再現したとは限らない。結果には射影残差と全FEM残差を別々に出す。どちらの縮約案も実メッシュ中立への継続で局所破綻し、不採用。途中停止したNPZを中立位の完成結果として表示しない。

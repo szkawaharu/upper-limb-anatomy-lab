@@ -1,0 +1,18 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "evidenceSource": "test-results/v076-volumetric-quality/neutral-initial-from-original.json",
+  "evidenceSha256": "db3e269e2d774619417f6e71ccf24792643d5b8773277872aeb54e6d87cfb370",
+  "data": {
+    "transferredInteriorNodes": 1164,
+    "fullSearches": 1,
+    "maxReferenceReconstructionWorld": 5.23691153334427e-16,
+    "sourceBoundaryDeltaWorld": 0.0,
+    "minJ": -7.001996888517953,
+    "maxJ": 3.002221858167114,
+    "nonPositiveElements": 6,
+    "old": "test-results/v076-volumetric/neutral-refined-gn-k3000.npz",
+    "new": "test-results/v076-volumetric-quality/deltoid-mid-tetrahedra.npz",
+    "accepted": false
+  }
+}

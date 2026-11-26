@@ -17,6 +17,9 @@ bad=p.copy();bad[3,2]=-1
 assert not np.isfinite(solid.evaluate(bad)[0])
 scaled=p*2;assert abs(solid.evaluate(scaled)[2][0]-8)<1e-12
 start=p.copy();start[1:]*=1.1
-result,r=solid.minimize(start,iterations=300,step_tolerance_mm=1e-7)
+result,r=solid.minimize(start,iterations=300,residual_tolerance_mm=1e-7)
 assert r['converged'] and r['nonPositiveElements']==0 and abs(r['volumeRatio']-1)<1e-6,r
+for bulk in [3,3000]:
+ result,r=solid.minimize(start,bulk=bulk,iterations=1000,residual_tolerance_mm=1e-7)
+ assert r['converged'] and r['preconditionedGradientMaxMm']<1e-7,r
 print('PASS continuum: rigid invariance, analytic stress finite differences, orientation rejection, 8x volume, constrained relaxation; no source-muscle validation implied')
