@@ -528,6 +528,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <script src="./joint-drag-v0681.js?v=0681"></script>
 <script src="./joint-drag-v071.js?v=0710"></script>
 <script src="./engine/math.js?v=0730"></script>
+<script src="./engine/shoulder-pose-field.js?v=0731-experiment"></script>
 <script src="./anatomy/bone-transforms.js?v=0730"></script>
 <script src="./anatomy/muscle-definitions.js?v=0730"></script>
 <script src="./engine/fiber-path.js?v=0730"></script>
@@ -4891,7 +4892,7 @@ function v67ShoulderGuide(qC,qS,AC,elev,plane,qH,axial,data=v61GuideData()){
 }
 
 let v72Last=null;
-function v72ShoulderGuide(qC,qS,AC,elev,plane,qH,axial,data=v61GuideData()){
+function v72ShoulderGuideDiscrete(qC,qS,AC,elev,plane,qH,axial,data=v61GuideData()){
  const rawBase={qC,qS,AC};
  const guarded=v67ShoulderGuide(qC,qS,AC,elev,plane,qH,axial,data);
  if(!v72Engine||!v66Engine||!data?.profile){
@@ -4906,6 +4907,33 @@ function v72ShoulderGuide(qC,qS,AC,elev,plane,qH,axial,data=v61GuideData()){
  });
  v72Last=g;return g;
 }
+// The atlas geometry is immutable for a given guide-data object.
+let v73ShoulderFields=new WeakMap();
+function v73FieldFor(data){
+ let field=v73ShoulderFields.get(data);if(field)return field;
+ field=ShoulderPoseField.create((e,p,a)=>{
+  const raw=shoulderPoseFor(e,p,a,true,true);
+  const solved=v72ShoulderGuideDiscrete(raw.qC,raw.qS,raw.AC,e,p,raw.qH,a,data);
+  return {raw,solved};
+ });
+ v73ShoulderFields.set(data,field);return field;
+}
+function v72ShoulderGuide(qC,qS,AC,elev,plane,qH,axial,data=v61GuideData()){
+ const raw={qC,qS,AC};
+ if(!data?.profile||!v66Engine||!v67Engine||!v72Engine||!globalThis.ShoulderPoseField||elev<0||elev>180||plane<0||plane>90||axial< -90||axial>90)
+  return v72ShoulderGuideDiscrete(qC,qS,AC,elev,plane,qH,axial,data);
+ const field=v73FieldFor(data),cv=sub(realAnchors.AC,realAnchors.SC),out=field.sample(elev,plane,axial,raw,realAnchors.SC,cv);
+ const normal=p=>v66ThoraxNormal(p,data.profile),gap=p=>v63Gap(p,data.profile),model=v66Engine.build(data.v,realAnchors.AC,normal);
+ model.restAC=realAnchors.AC.slice();
+ const before=v66Engine.metrics(model,qS,AC,gap,normal,atlasScale),after=v66Engine.metrics(model,out.qS,out.AC,gap,normal,atlasScale);
+ const audit=v67Engine.audit(out.qS,qH,norm(sub(realAnchors.EL,realAnchors.GH)),elev,plane,qS);
+ const hardOK=v72Engine.hardKinematicOK(audit),regionalOK=v72Engine.noRegionalRegression(after,before);
+ // Do not snap back to a different pose when a constraint fails. Report
+ // actual constraint violation and reject experimental release in QA instead.
+ const result={...out,v72:{active:true,reason:'experimental-pose-field',before,after,beforeScore:v72Engine.contactScore(before),afterScore:v72Engine.contactScore(after),correctionDeg:v67Engine.qangle(qS,out.qS),audit,hardOK,regionalOK,fieldStats:field.stats()}};
+ v72Last=result;return result;
+}
+
 function v67AuditSide(side){
  const data=v61GuideData();if(!realReady||!data?.profile)return {side,reason:'胸郭または肩甲骨データ未取得'};
  const pose=side===v56Side?settings:v56PoseBySide[side],raw=shoulderPoseFor(pose.elev,pose.plane,pose.axial,pose.sync,true);

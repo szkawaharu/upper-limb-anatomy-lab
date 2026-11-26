@@ -1,0 +1,14 @@
+import assert from "node:assert/strict";
+import "../engine/math.js";
+import "../engine/shoulder-pose-field.js";
+const M=globalThis.AnatomyMath,F=globalThis.ShoulderPoseField,I=[0,0,0,1],raw={qC:I,qS:I},SC=[0,0,0],cv=[1,0,0];
+const solve=(e,p,a)=>({raw,solved:{qC:M.qaxis([0,0,1],e<120?.02:.3),qS:M.qaxis([0,1,0],(e+p+a)*.001)}});
+const f=F.create(solve);
+const get=(e,p=45,a=0)=>f.sample(e,p,a,raw,SC,cv);
+const d=(a,b)=>Math.hypot(...a.AC.map((x,i)=>x-b.AC[i]));
+for(const e of [15,30,45,60,75,90,105,120,135,150,165])assert(d(get(e-1e-6),get(e+1e-6))<1e-6);
+for(let e=0;e<=180;e++)assert(Math.abs(Math.hypot(...get(e).AC)-1)<1e-10);
+for(const p of [15,30,45,60,75])assert(d(get(100,p-1e-6),get(100,p+1e-6))<1e-6);
+const before=get(123,27,10);get(5,12,-90);get(180,90,90);assert.deepEqual(get(123,27,10),before);
+assert.throws(()=>get(181));
+console.log({fieldContinuity:true,rigidClavicle:true,historyIndependent:true,clinicalValidation:false});

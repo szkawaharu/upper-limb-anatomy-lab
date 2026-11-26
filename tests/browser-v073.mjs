@@ -59,7 +59,8 @@ window.__qa={
  both(right,left){v56ChooseSide('right');this.pose(right);v56ChooseSide('left');this.pose(left);v56ChooseSide('right')},
  neck(n){v73SetNeck(n)},
  view(yaw){state.yaw=yaw;state.pitch=.1;fitPose();request()},
- boneTrace(elev,plane,axial=0){const data=v61GuideData(),raw=shoulderPoseFor(elev,plane,axial,true,true),final=v72ShoulderGuide(raw.qC,raw.qS,raw.AC,elev,plane,raw.qH,axial,data);const compact=g=>({qC:g?.qC,qS:g?.qS,AC:g?.AC,params:g?.params,blend:g?.v67?.blend,reason:g?.v72?.reason,contactParams:g?.v72?.params,before:g?.v72?.beforeScore,after:g?.v72?.afterScore,regions:g?.v72?.after?.regions||g?.metrics?.regions});return {elev,plane,axial,raw:compact(raw),v66:compact(v66Last),v67:compact(v67Last),v72:compact(final)}},
+ boneTrace(elev,plane,axial=0){const data=v61GuideData(),raw=shoulderPoseFor(elev,plane,axial,true,true),final=v72ShoulderGuide(raw.qC,raw.qS,raw.AC,elev,plane,raw.qH,axial,data);const compact=g=>({hardOK:g?.v72?.hardOK,regionalOK:g?.v72?.regionalOK,fieldStats:g?.v72?.fieldStats,qC:g?.qC,qS:g?.qS,AC:g?.AC,params:g?.params,blend:g?.v67?.blend,reason:g?.v72?.reason,contactParams:g?.v72?.params,before:g?.v72?.beforeScore,after:g?.v72?.afterScore,regions:g?.v72?.after?.regions||g?.metrics?.regions});return {elev,plane,axial,raw:compact(raw),v66:compact(v66Last),v67:compact(v67Last),v72:compact(final)}},
+ fieldAudit(e,p,a){const raw=shoulderPoseFor(e,p,a,true,true),g=v72ShoulderGuide(raw.qC,raw.qS,raw.AC,e,p,raw.qH,a),cv=sub(realAnchors.AC,realAnchors.SC);return {elev:e,plane:p,axial:a,hardOK:g.v72?.hardOK,regionalOK:g.v72?.regionalOK,connected:Math.abs(len(sub(g.AC,realAnchors.SC))-len(cv))<1e-8,before:g.v72?.beforeScore,after:g.v72?.afterScore,regions:g.v72?.after?.regions,stats:g.v72?.fieldStats}},
  camera(yaw, prior){if(prior)Object.assign(state,prior);else{state.yaw=yaw;state.pitch=.1;fitPose()}return {yaw:state.yaw,pitch:state.pitch,zoom:state.zoom,target:state.target.slice()}},
  sample(){return V60_ALL.map(spec=>{const m=v58Meshes.get(spec.id);return m?.common?qaExport(v73MuscleState(spec,m),spec.id):{id:spec.id,error:'missing'}})},
  neckSamples(){return [...v73NeckMuscles.values()].map(m=>qaExport(v73NeckMuscleState(m),m.spec.id))},
@@ -108,13 +109,13 @@ try {
   );
   if(process.env.QA_TRACE_ONLY==="1") {
     const trace=[];
-    for(const [lo,hi,plane] of [[114,129,0],[126,141,90]])
+    for(const [lo,hi,plane] of [[114,129,0],[126,147,90]])
       for(let elev=lo;elev<=hi;elev++)trace.push(await page.evaluate(([e,p])=>window.__qa.boneTrace(e,p),[elev,plane]));
     writeFileSync(join(out,"bone-trace.json"),JSON.stringify(trace,null,2));
     for(const t of trace)console.log("BONE_TRACE "+JSON.stringify(t));
     const cameras=process.env.QA_CAMERA_REF?JSON.parse(readFileSync(process.env.QA_CAMERA_REF,"utf8")):{};
     await page.evaluate(()=>window.__qa.skipRender(false));
-    for(const [elev,plane] of [[120,0],[123,0],[132,90],[135,90]]){
+    for(const [elev,plane] of [[120,0],[123,0],[132,90],[135,90],[141,90],[144,90]]){
       await page.evaluate(([e,p])=>window.__qa.both({elev:e,plane:p},{elev:0,plane:0}),[elev,plane]);
       for(const [name,yaw] of [["back",0],["side",Math.PI/2],["front",Math.PI]]){
         const key=plane+"-"+name;
@@ -452,6 +453,16 @@ try {
       2,
     ),
   );
+  const fieldAudit=[];
+  if(await page.evaluate(()=>typeof v73FieldFor==='function'||!!window.ShoulderPoseField)){
+    for(const plane of [0,15,30,45,60,75,90])for(const axial of [-90,-45,0,45,90])for(const elev of [0,30,60,90,120,150,180]){
+      const r=await page.evaluate(([e,p,a])=>window.__qa.fieldAudit(e,p,a),[elev,plane,axial]);
+      fieldAudit.push(r);
+    }
+    writeFileSync(join(out,"pose-field-audit.json"),JSON.stringify(fieldAudit,null,2));
+    const failed=fieldAudit.filter(x=>!x.hardOK||!x.regionalOK||!x.connected);
+    console.log("FIELD_AUDIT "+JSON.stringify({cases:fieldAudit.length,failed:failed.length,examples:failed.slice(0,8),stats:fieldAudit.at(-1)?.stats}));
+  }
   console.log(JSON.stringify({ gpu, maxStepMm, maxReturnMm, errors }));
   }
 } catch (error) {
