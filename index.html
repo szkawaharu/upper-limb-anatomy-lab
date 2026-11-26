@@ -4838,11 +4838,11 @@ function v66ThoraxNormal(p,profile){
  return norm([(p[0]-cx)/Math.max(rx*rx,1e-9),0,(p[2]-cz)/Math.max(rz*rz,1e-9)]);
 }
 let v66Last=null;
-function v66ShoulderGuide(qC,qS,AC,elev,plane,data=v61GuideData()){
+function v66ShoulderGuide(qC,qS,AC,elev,plane,data=v61GuideData(),constraints=null){
  if(!v66Engine||!data?.profile){const g=v63ShoulderGuide(qC,qS,AC,elev,plane,data);v66Last={fallback:'v0.65',...g};return g}
  const g=v66Engine.solve({
   baseQC:qC,baseQS:qS,SC:realAnchors.SC,cv:sub(realAnchors.AC,realAnchors.SC),restAC:realAnchors.AC,elev,plane,points:data.v,
-  gapFn:p=>v63Gap(p,data.profile),normalFn:p=>v66ThoraxNormal(p,data.profile),scale:atlasScale
+  gapFn:p=>v63Gap(p,data.profile),normalFn:p=>v66ThoraxNormal(p,data.profile),scale:atlasScale,constraints
  });
  v66Last={fallback:null,...g};return g;
 }
@@ -4877,11 +4877,14 @@ $('v66Audit').addEventListener('click',()=>{
 window.__labScapulothoracicV066=v66Audit;
 let v67Last=null;
 function v67ShoulderGuide(qC,qS,AC,elev,plane,qH,axial,data=v61GuideData()){
- const base={qC,qS,AC},candidate=v66ShoulderGuide(qC,qS,AC,elev,plane,data);
+ const restShaft=norm(sub(realAnchors.EL,realAnchors.GH));
+ // Evaluate the existing v0.67 envelope during the v0.66 fit. Fitting an
+ // infeasible extreme and then backing it off can switch distant minima.
+ const constraints=v67Engine?.inequalities?(q=>v67Engine.inequalities(v67Engine.audit(q,qH,restShaft,elev,plane,qS))):null;
+ const base={qC,qS,AC},candidate=v66ShoulderGuide(qC,qS,AC,elev,plane,data,constraints);
  if(!v67Engine||!v66Engine||!data?.profile){
   v67Last={...candidate,fallback:'v0.66'};return candidate;
  }
- const restShaft=norm(sub(realAnchors.EL,realAnchors.GH));
  const g=v67Engine.refine({
   v66:v66Engine,base,candidate,SC:realAnchors.SC,cv:sub(realAnchors.AC,realAnchors.SC),restAC:realAnchors.AC,
   elev,plane,axial,qH,restShaft,points:data.v,gapFn:p=>v63Gap(p,data.profile),

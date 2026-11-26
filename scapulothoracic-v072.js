@@ -57,6 +57,15 @@ function contactScore(m){
  const globalOut=Math.max(0,m.maxOut-10),globalIn=Math.max(0,-m.maxIn-5);
  return s+5*globalOut*globalOut+7*globalIn*globalIn;
 }
+function contactResiduals(m){
+ const r=[Math.sqrt(.12)*m.rms];
+ for(const k of ['upper','middle','lower']){
+  const a=m.regions[k],c=CFG[k],v=violation(a,c);
+  r.push(Math.sqrt(c.w*.12)*a.rms,Math.sqrt(c.w*7.5)*v.out,Math.sqrt(c.w*10)*v.inside,Math.sqrt(c.w*2)*v.rms,Math.sqrt(c.w*1500)*v.tan);
+ }
+ r.push(Math.sqrt(5)*Math.max(0,m.maxOut-10),Math.sqrt(7)*Math.max(0,-m.maxIn-5));
+ return r;
+}
 function contactOK(m){
  if(!m||!Number.isFinite(m.rms))return false;
  for(const k of ['upper','middle','lower']){
@@ -79,6 +88,18 @@ function hardKinematicOK(a){
  const gh=a.ghDeg>=e.ghMinDeg-10 && a.ghDeg<=e.ghMaxDeg+10 &&
   Math.abs(a.ghDeg-a.baseGHDeg)<=e.ghDeviationFromBaseMaxDeg+10;
  return proxy&&gh&&a.correctionDeg<=e.maxCorrectionDeg+8;
+}
+function inequalities(m,base,a){
+ const values=[];
+ for(const k of ['upper','middle','lower']){
+  const x=violation(m.regions[k],CFG[k]),y=violation(base.regions[k],CFG[k]);
+  values.push(x.out-y.out-.5,x.inside-y.inside-.5,x.rms-y.rms-.5,x.tan-y.tan-.02);
+ }
+ if(a?.env&&a?.proxy&&Number.isFinite(a.correctionDeg)){
+  const e=a.env,p=a.proxy;
+  values.push(Math.abs(p.upwardDeg-e.center.upwardDeg)-e.tol.upwardDeg-8,Math.abs(p.tiltDeg-e.center.tiltDeg)-e.tol.tiltDeg-8,Math.abs(p.internalDeg-e.center.internalDeg)-e.tol.internalDeg-10,e.ghMinDeg-10-a.ghDeg,a.ghDeg-e.ghMaxDeg-10,Math.abs(a.ghDeg-a.baseGHDeg)-e.ghDeviationFromBaseMaxDeg-10,a.correctionDeg-e.maxCorrectionDeg-8);
+ }
+ return values;
 }
 
 function refine(opts){
@@ -108,33 +129,17 @@ function refine(opts){
  const evaluate=a=>{
   const p=make(a),m=metrics(p.qS,p.AC),raw=contactScore(m);
   const audit=v67&&qH&&restShaft?v67.audit(p.qS,qH,restShaft,elev,plane,base.qS):null;
-  if(audit&&!hardKinematicOK(audit))return {p,m,raw,total:Infinity,audit};
-  if(!noRegionalRegression(m,beforeM))return {p,m,raw,total:Infinity,audit};
+  const residuals=contactResiduals(m),constraints=inequalities(m,beforeM,audit);
+  if(audit&&!hardKinematicOK(audit))return {p,m,raw,total:Infinity,audit,residuals,constraints};
+  if(!noRegionalRegression(m,beforeM))return {p,m,raw,total:Infinity,audit,residuals,constraints};
   const reg=.20*(a[0]**2+a[1]**2)+.16*a[2]**2+.85*(a[3]**2+a[4]**2)+.65*a[5]**2;
-  return {p,m,raw,total:raw+reg,audit};
+  return {p,m,raw,total:raw+reg,audit,residuals,constraints};
  };
-
- let a=[0,0,0,0,0,0],best=evaluate(a);
- for(const step of [4,2,1,.5,.25]){
-  let changed=true,loops=0;
-  while(changed&&loops++<3){
-   changed=false;
-   for(let axis=0;axis<6;axis++){
-    const from=a.slice();
-    for(const sign of [-1,1]){
-     const c=from.slice();c[axis]=clamp(c[axis]+sign*step,-limits[axis],limits[axis]);
-     const t=evaluate(c);
-     if(t.total<best.total-1e-7){a=c;best=t;changed=true}
-    }
-   }
-  }
- }
-
- const improved=Number.isFinite(best.raw)&&(
-  best.raw<beforeScore*.985 ||
-  maxOut(best.m)<maxOut(beforeM)-.75 ||
-  lowerOut(best.m)<lowerOut(beforeM)-.75
- );
+ const {a,best,evaluations}=v66.leastSquares(evaluate,limits,[.20,.20,.16,.85,.85,.65]);
+ // Positive quadratic regularization makes the correction vanish with its
+ // benefit. A discrete 1.5%/0.75mm adoption cutoff introduced another jump.
+ // All regional and hard kinematic inequalities above are still enforced.
+ const improved=Number.isFinite(best.total)&&best.raw<beforeScore-1e-8;
  if(!improved){
   return {...input,v72:{active:false,reason:'no-safe-improvement',before:beforeM,after:beforeM,beforeScore,afterScore:beforeScore,params:[0,0,0,0,0,0],correctionDeg:0}};
  }
@@ -144,7 +149,7 @@ function refine(opts){
   v66Before:input.v66Before,v66After:input.v66After,v67:input.v67||null,
   fallback:input.fallback||null,
   v72:{active:true,reason:contactOK(best.m)?'contact-restored':'contact-improved',
-   before:beforeM,after:best.m,beforeScore,afterScore:best.raw,params:a,correctionDeg,audit:best.audit||null}
+   before:beforeM,after:best.m,beforeScore,afterScore:best.raw,params:a,correctionDeg,audit:best.audit||null,solver:{method:'bounded-least-squares',evaluations}}
  };
 }
 

@@ -61,6 +61,10 @@ function audit(qS,qH,restShaft,elev,plane,baseQS=qS){
   ghOK:gh>=env.ghMinDeg&&gh<=env.ghMaxDeg&&Math.abs(gh-baseGH)<=env.ghDeviationFromBaseMaxDeg,
   correctionOK:correctionDeg<=env.maxCorrectionDeg};
 }
+function inequalities(a){
+ const e=a.env,p=a.proxy;
+ return [Math.abs(p.upwardDeg-e.center.upwardDeg)-e.tol.upwardDeg,Math.abs(p.tiltDeg-e.center.tiltDeg)-e.tol.tiltDeg,Math.abs(p.internalDeg-e.center.internalDeg)-e.tol.internalDeg,e.ghMinDeg-a.ghDeg,a.ghDeg-e.ghMaxDeg,Math.abs(a.ghDeg-a.baseGHDeg)-e.ghDeviationFromBaseMaxDeg,a.correctionDeg-e.maxCorrectionDeg];
+}
 function refine(opts){
  const {v66,base,candidate,SC,cv,restAC,elev=0,plane=0,qH,restShaft,points,gapFn,normalFn,scale=1}=opts;
  if(!v66||!candidate||!qH||!restShaft)return {...candidate,fallback:'v0.66',v67:null};
@@ -75,8 +79,17 @@ function refine(opts){
   const qC=slerp(base.qC,candidate.qC,t),qS=slerp(base.qS,candidate.qS,t),AC=add(SC,qrot(qC,cv)),g=geom(qS,AC),a=audit(qS,qH,restShaft,elev,plane,base.qS);
   if(g<=baseGeom+1e-8&&a.proxyOK&&a.ghOK&&a.correctionOK){chosen={qC,qS,AC,t,geom:g,audit:a};break}
  }
+ // Refine the feasible boundary instead of quantizing a continuous requested
+ // pose to 1/8 of the scapulothoracic correction. The inequalities are unchanged.
+ if(chosen.t<1){
+  let lo=chosen.t,hi=Math.min(1,lo+.125);
+  for(let i=0;i<12;i++){
+   const t=(lo+hi)/2,qC=slerp(base.qC,candidate.qC,t),qS=slerp(base.qS,candidate.qS,t),AC=add(SC,qrot(qC,cv)),g=geom(qS,AC),a=audit(qS,qH,restShaft,elev,plane,base.qS);
+   if(g<=baseGeom+1e-8&&a.proxyOK&&a.ghOK&&a.correctionOK){lo=t;chosen={qC,qS,AC,t,geom:g,audit:a}}else hi=t;
+  }
+ }
  return {...chosen,before:baseGeom,after:chosen.geom,v66Before:candidate.before,v66After:candidate.after,
   v66CandidateGeom:candidateGeom,v67:{blend:chosen.t,...chosen.audit},fallback:chosen.t===0?'base-guard':null};
 }
-root.ScapulohumeralGuardV067=Object.freeze({version:'0.67.0',scapProxy,envelope,relativeGH,audit,refine,slerp,qangle});
+root.ScapulohumeralGuardV067=Object.freeze({version:'0.67.0',scapProxy,envelope,relativeGH,audit,inequalities,refine,slerp,qangle});
 })(globalThis);

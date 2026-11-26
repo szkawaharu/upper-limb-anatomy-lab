@@ -79,6 +79,60 @@ function score(m){
  }
  return c;
 }
+// The old 8/4/2-degree coordinate grid could switch distant clavicle solutions
+// between adjacent requested poses. Solve the same weighted residual objective
+// jointly, in bounded angle coordinates, without previous-frame state.
+function residuals(m){
+ const r=[Math.sqrt(.55)*m.rms];
+ for(const [name,w,out,inward,tan] of [['upper',1,10,5,1],['middle',1.35,8,4,1.4],['lower',2.15,6,4,2.1]]){
+  const g=m.regions[name];
+  r.push(Math.sqrt(w)*g.rms,Math.sqrt(w*3.2)*Math.max(0,g.maxOut-out),Math.sqrt(w*4.3)*Math.max(0,-g.maxIn-inward),Math.sqrt(tan*900)*(g.tangencyDrop||0));
+ }
+ return r;
+}
+function leastSquares(evaluate,limits,regularizer,iterations=24){
+ const n=limits.length;
+ let a=limits.map(()=>0),best=evaluate(a),damping=.5,evaluations=1;
+ for(let iteration=0;iteration<iterations;iteration++){
+  const r=best.residuals;
+  if(!r?.every(Number.isFinite))break;
+  const J=[],C=best.constraints||[],CJ=[];
+  for(let j=0;j<n;j++){
+   const lo=a.slice(),hi=a.slice();lo[j]=Math.max(-limits[j],a[j]-.05);hi[j]=Math.min(limits[j],a[j]+.05);
+   if(hi[j]===lo[j]){J.push(r.map(()=>0));CJ.push(C.map(()=>0));continue}
+   const x=evaluate(lo),y=evaluate(hi);evaluations+=2;
+   J.push(r.map((_,k)=>(y.residuals[k]-x.residuals[k])/(hi[j]-lo[j])));
+   CJ.push(C.map((_,k)=>(y.constraints[k]-x.constraints[k])/(hi[j]-lo[j])));
+  }
+  const H=Array.from({length:n},(_,j)=>Array.from({length:2*n+1},(_,k)=>k>n?(k-n-1===j?1:0):k===n?-J[j].reduce((s,v,i)=>s+v*r[i],0)-regularizer[j]*a[j]:J[j].reduce((s,v,i)=>s+v*J[k][i],0)+(j===k?regularizer[j]+damping:0)));
+  for(let j=0;j<n;j++){
+   let pivot=j;for(let k=j+1;k<n;k++)if(Math.abs(H[k][j])>Math.abs(H[pivot][j]))pivot=k;
+   [H[j],H[pivot]]=[H[pivot],H[j]];
+   const d=H[j][j];if(Math.abs(d)<1e-12)break;
+   for(let k=j;k<=2*n;k++)H[j][k]/=d;
+   for(let i=0;i<n;i++)if(i!==j){const v=H[i][j];for(let k=j;k<=2*n;k++)H[i][k]-=v*H[j][k]}
+  }
+  const delta=H.map(row=>row[n]),planes=C.map((c,k)=>({v:CJ.map(row=>row[k]),b:-c}));
+  for(let j=0;j<n;j++)for(const sign of [-1,1]){const v=limits.map(()=>0);v[j]=sign;planes.push({v,b:limits[j]-sign*a[j]})}
+  // H-metric projection of the quadratic step onto linearized inequalities.
+  // Dual coordinate ascent handles active contacts instead of repeatedly
+  // rejecting every step which points across their boundary.
+  for(const p of planes){p.h=H.map(row=>p.v.reduce((s,v,j)=>s+row[n+1+j]*v,0));p.d=dot(p.v,p.h);p.lambda=0}
+  for(let pass=0;pass<80;pass++){
+   let max=0;
+   for(const p of planes){if(p.d<1e-12)continue;const error=dot(p.v,delta)-p.b,change=Math.max(0,p.lambda+error/p.d)-p.lambda;p.lambda+=change;for(let j=0;j<n;j++)delta[j]-=p.h[j]*change;max=Math.max(max,Math.abs(change)*Math.sqrt(p.d))}
+   if(max<1e-7)break;
+  }
+  const step=Math.min(1,6/Math.max(Math.hypot(...delta),1e-12));
+  let accepted=false;
+  for(let line=0;line<8;line++){
+   const next=a.map((x,j)=>clamp(x+delta[j]*step*2**(-line),-limits[j],limits[j])),trial=evaluate(next);evaluations++;
+   if(trial.total<best.total){a=next;best=trial;accepted=true;break}
+  }
+  damping=accepted?Math.max(.05,damping*.5):Math.min(1e8,damping*4);
+ }
+ return {a,best,evaluations};
+}
 function solve(opts){
  const {baseQC,baseQS,SC,cv,restAC,elev=0,plane=0,points,gapFn,normalFn,scale=1}=opts;
  const identity={qC:baseQC,qS:baseQS,AC:add(SC,qrot(baseQC,cv)),before:null,after:null,params:[0,0,0,0,0,0],metrics:null};
@@ -98,29 +152,18 @@ function solve(opts){
   // Corrections remain small and continuous; geometry dominates. Plane-dependent
   // regularizer is deliberately weak because normal kinematics vary substantially.
   const reg=.10*(a[0]**2+a[1]**2)+.08*a[2]**2+.75*(a[3]**2+a[4]**2)+.55*a[5]**2+.002*Math.abs(plane)*a[0]*a[0];
-  return {p,m,raw,total:raw+reg};
+  const constraints=opts.constraints?opts.constraints(p.qS):[];
+  return {p,m,raw,total:constraints.some(x=>x>0)?Infinity:raw+reg,residuals:residuals(m),constraints};
  };
- let a=[0,0,0,0,0,0],best=evaluate(a);
- for(const step of [8,4,2,1,.5]){
-  let changed=true,loops=0;
-  while(changed&&loops++<2){changed=false;
-   for(let axis=0;axis<a.length;axis++){
-    const from=a.slice();
-    for(const sign of [-1,1]){
-     const c=from.slice();c[axis]=clamp(c[axis]+sign*step,-limits[axis],limits[axis]);
-     const t=evaluate(c);if(t.total<best.total-1e-8){a=c;best=t;changed=true}
-    }
-   }
-  }
- }
+ const {a,best,evaluations}=leastSquares(evaluate,limits,[.10+.002*Math.abs(plane),.10,.08,.75,.75,.55]);
  // Never adopt a solution that worsens the geometry-only objective.
  if(best.raw>baseScore+1e-8)return {...identity,before:baseScore,after:baseScore,metrics:baseM};
- return {...best.p,before:baseScore,after:best.raw,params:a,metrics:best.m,model};
+ return {...best.p,before:baseScore,after:best.raw,params:a,metrics:best.m,model,solver:{method:'bounded-least-squares',evaluations}};
 }
 function humeralAudit(qS,qH,restShaft){
  const shaft=norm(qrot(qH,restShaft)),local=norm(qrot([-qS[0],-qS[1],-qS[2],qS[3]],shaft));
  // Descriptive only: angle to scapular-plane normal proxy.
  return {shaftWorld:shaft,shaftInScapula:local,planeNormalAngleDeg:Math.acos(clamp(Math.abs(local[2]),-1,1))*180/Math.PI};
 }
-root.ScapulothoracicEngineV066=Object.freeze({version:'0.66.0',build,metrics,score,solve,humeralAudit,regionOf});
+root.ScapulothoracicEngineV066=Object.freeze({version:'0.66.0',build,metrics,score,solve,humeralAudit,regionOf,residuals,leastSquares});
 })(globalThis);
