@@ -1,0 +1,24 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "spacingMm": 18.0,
+  "nodes": 672,
+  "tets": 2772,
+  "sourceVertices": 14841,
+  "sourceTriangles": 29678,
+  "fixedNodes": 36,
+  "sourceAttachmentVertices": 993,
+  "sourceReconstructionMaxMm": 2.864633583298495e-14,
+  "materialQuadrature": {
+    "emptyElementRegularizer": 1.2722331150254716e-08,
+    "occupiedElements": 311,
+    "backgroundElements": 2772,
+    "sourceVolumeMm3": 92349.34400458794,
+    "quadrature": "positive symmetric 4-point source tetrahedra; cell-density approximation"
+  },
+  "sourceDirectory": "test-results/v076-acromial-volume-input",
+  "inputs": {
+    "test-results/v076-acromial-volume-input/deltoid-mid-source.npz": "8a1854d4c1741b69f7ae199147d637df886c187dd360c409586915b0c3270d4c",
+    "test-results/v076-acromial-volume-input/deltoid-mid-tetrahedra.npz": "a171a0110cfe054e362ae998c33546a03d8e4d6c0f6b24e8690f2d60f64c4c99"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "sourceDirectory": "test-results/v076-plc-surface-refined-mid-acromial-18",
+  "inputSha256": {
+    "cage.npz": "ff39df24b7298c66204c83bb34a2976f71cc6b31b55b52038274187c057879cd",
+    "conforming.npz": "5fc5ff4d72b7f05b12f72828d2880e269f01f1be1a280d1fb7012299037774d8"
+  },
+  "surfaceVertices": 38712,
+  "fixedControls": 993,
+  "declaredFixedSurfaceVertices": 993,
+  "unlabelledWithNoFreeSupport": 0,
+  "byBone": [
+    {
+      "end": 0,
+      "undeclaredRigidVertices": 0,
+      "firstVertices": []
+    },
+    {
+      "end": 1,
+      "undeclaredRigidVertices": 0,
+      "firstVertices": []
+    }
+  ],
+  "examples": [
+    {
+      "vertex": 12473,
+      "declaredWeight": 0.09792890399694443,
+      "controlVertices": [
+        1811,
+        1850,
+        1917,
+        2065
+      ],
+      "barycentric": [
+        0.22597710908803625,
+        0.38632011069223976,
+        0.35487290179987163,
+        0.032829878419852465
+      ],
+      "supportClasses": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "fixedInfluence": 0.0
+    },
+    {
+      "vertex": 28359,
+      "declaredWeight": 0.6463993402918117,
+      "controlVertices": [
+        1174,
+        1169,
+        1175,
+        1864
+      ],
+      "barycentric": [
+        0.09370587386506357,
+        -2.220446049250313e-16,
+        0.38216969254701505,
+        0.5241244335879216
+      ],
+      "supportClasses": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "fixedInfluence": 0.0
+    }
+  ],
+  "classificationTolerance": "1e-9 barycentric roundoff screening; not an anatomical or distance acceptance threshold"
+}

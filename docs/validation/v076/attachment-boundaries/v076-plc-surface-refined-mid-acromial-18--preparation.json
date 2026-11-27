@@ -1,0 +1,47 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "method": "PLC cage with source-boundary-directed free-control refinement",
+  "spacingMm": 18.0,
+  "nodes": 3044,
+  "tets": 18124,
+  "sourceVertices": 14841,
+  "sourceTriangles": 29678,
+  "fixedNodes": 993,
+  "sourceAttachmentVertices": 993,
+  "fixedSourceFacets": 1702,
+  "fixedFacetsExact": true,
+  "tetgenWrapperVersion": "0.8.4",
+  "generatorLicense": "AGPL-3.0-or-later",
+  "runtimeDependencyAdded": false,
+  "materialQuadrature": {
+    "emptyElementRegularizer": 1.2503743964187262e-08,
+    "occupiedElements": 4749,
+    "backgroundElements": 17410,
+    "sourceVolumeMm3": 92349.34400458794,
+    "quadrature": "positive symmetric 4-point source tetrahedra; cell-density approximation"
+  },
+  "sourceDirectory": "test-results/v076-acromial-volume-input",
+  "inputs": {
+    "test-results/v076-acromial-volume-input/deltoid-mid-source.npz": "8a1854d4c1741b69f7ae199147d637df886c187dd360c409586915b0c3270d4c",
+    "test-results/v076-acromial-volume-input/deltoid-mid-tetrahedra.npz": "a171a0110cfe054e362ae998c33546a03d8e4d6c0f6b24e8690f2d60f64c4c99"
+  },
+  "attachmentRefinement": {
+    "addedFreeEdgeControls": 17,
+    "addedFreeFaceControls": 80,
+    "addedFreeCellControls": 84,
+    "referenceVolumeDifference": 0.0,
+    "poseIndependent": true,
+    "originalControlPointsChanged": false
+  },
+  "unlabelledRigidSourceSamplesBefore": 57,
+  "targetedEdges": 17,
+  "targetedFaces": 24,
+  "targetedCells": 27,
+  "parentCellDensityPreserved": true,
+  "parentInputs": {
+    "cage.npz": "fdbd8aa2e8e547f9291dddefda399e5015ab4fbc9e3e4448f575cadce2bf5c3c",
+    "conforming.npz": "6b824c79c2e0e675c94f0e4cd29635fa4ef07227a84f0e9c9de277027a917e4a",
+    "preparation.json": "8d9ca7386978b87895546ac97a6503bd01b334c8563a66d84e6174fbb136c3f6"
+  }
+}

@@ -15,6 +15,6 @@ for isolated in [False,True]:
   assert pair[0]['camera']==pair[1]['camera']
   for col,item in enumerate(pair):
    axes[row,col].imshow(mpimg.imread(p/item['file']));axes[row,col].axis('off');axes[row,col].set_title(item['mode']+' / '+view,fontsize=11)
- fig.suptitle('Neutral / '+('isolated deltoid middle'if isolated else'all muscles')+'\nIdentical repaired source and final bones; experimental, not accepted',fontsize=12)
+ fig.suptitle(str(data['pose'])+' / '+('isolated deltoid middle'if isolated else'all muscles')+'\nIdentical rest surface and final bones; experimental, not accepted',fontsize=12)
  fig.subplots_adjust(top=.93,bottom=.01,left=.01,right=.99,wspace=.02,hspace=.08)
  file=p/('panel-'+('isolated'if isolated else'all')+'.png');fig.savefig(file,dpi=120);plt.close(fig);print(file)

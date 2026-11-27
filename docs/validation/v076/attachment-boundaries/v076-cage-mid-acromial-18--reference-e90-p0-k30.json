@@ -1,0 +1,1728 @@
+{
+  "sourceOpposedFaces": 0,
+  "experimental": true,
+  "accepted": false,
+  "target": {
+    "elev": 90,
+    "plane": 0,
+    "a": {
+      "q": [
+        0.17668584234599377,
+        -0.02522034077897274,
+        0.21740098483877934,
+        0.959626416537503
+      ],
+      "p": [
+        0.528571234971673,
+        1.9533105280449323,
+        0.3513477991951215
+      ],
+      "rest": [
+        0.7390595895000001,
+        1.790368874,
+        0.134615219
+      ]
+    },
+    "b": {
+      "q": [
+        0.049203092871623805,
+        -0.013565886043234547,
+        0.6274604891618984,
+        0.776973845717114
+      ],
+      "p": [
+        0.6794158871213062,
+        1.8593953456525114,
+        0.252491377488272
+      ],
+      "rest": [
+        0.824725116,
+        1.61447228,
+        0.07922055800000001
+      ]
+    },
+    "backend": "validated-field"
+  },
+  "progress": 1.0,
+  "bulk": 30.0,
+  "codeSha256": {
+    "run-conforming-reference.py": "c5c95edfe61bb473c15e7f06102458f1fca181574f042c35171c1cc23fd7d05e",
+    "continuation.py": "c743a404065214f25fc8778af711ba16107f21e22347a2757cc262019afe87a7",
+    "tetrahedral_cage.py": "1989b3b1f08ec0dc963cae001ebaa8ffb1394c1e9c26852387ad0374c2222c16",
+    "conforming_surface.py": "b8b0bb8d576cedf364f8d5db85dec3302c42a4bb968802800d86bbfe70de3028",
+    "cage_solver.py": "d4fa951a2deaaf23229fe687e971e3ab02e0fd0bca465df35aac04d3fe9fc2c5",
+    "projected_solid_metric.py": "2f46a1601b5c16206032a1082db8ff655ba83d34e02801d57bdef32f37bd69b1",
+    "constitutive_metric.py": "e47e86d3cb1072c0912fa77061e427c8c50af91181f86b8aefa069e1127a5717",
+    "volumetric_reference.py": "8622dceaa6d08c67032a69361c9690b5906adce519d595c3411daa116dc472ea"
+  },
+  "cageNodes": 672,
+  "sourceVertices": 29873,
+  "originalSourceVertices": 14841,
+  "surfaceVolumeRatio": 0.9975173969598906,
+  "surfaceEdgeRatio": [
+    0.3870488833830269,
+    1.8753177841665511
+  ],
+  "surfaceAreaRatio": [
+    0.5718391331226859,
+    2.0886617162100944
+  ],
+  "attachmentMaxMm": 2.847716647714797e-14,
+  "allStagesConverged": true,
+  "seconds": 78.2891948223114,
+  "stages": [
+    {
+      "progress": 0.05556705187387678,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 3,
+      "residualMaxMm": 0.0009290171454600195,
+      "energy": 0.0002574877249877119,
+      "cageJQuantiles": [
+        0.9925698390766048,
+        0.9950990584862291,
+        0.999987726931801,
+        1.0047822095280041,
+        1.0098239202222397
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9997272086057687,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.0002807269108948556,
+          "gain": 1.0,
+          "minJ": 0.989666216613795,
+          "maxJ": 1.007654270201185,
+          "previousResidualMm": 28.528156553468598
+        },
+        {
+          "iteration": 2,
+          "energy": 0.0002575221641821153,
+          "gain": 1.0,
+          "minJ": 0.992587063132755,
+          "maxJ": 1.0098195103567627,
+          "previousResidualMm": 2.1287367859483917
+        },
+        {
+          "iteration": 3,
+          "energy": 0.0002574877249877119,
+          "gain": 1.0,
+          "minJ": 0.9925698390766048,
+          "maxJ": 1.0098239202222397,
+          "previousResidualMm": 0.1928909026987992
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4114,
+        "minUnprojectedEigenvalue": -0.2490866104572458,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 0.11113410374775357,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 4,
+      "residualMaxMm": 0.0001819633340028048,
+      "energy": 0.0010582415498244992,
+      "cageJQuantiles": [
+        0.9850119011517774,
+        0.9902531432062004,
+        0.9999731121548763,
+        1.0095556938745738,
+        1.0199237128275565
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9994525970682225,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.0010821296783542602,
+          "gain": 1.0,
+          "minJ": 0.9824107081999515,
+          "maxJ": 1.0178753516856582,
+          "previousResidualMm": 29.673453547150846
+        },
+        {
+          "iteration": 2,
+          "energy": 0.0010583178117613066,
+          "gain": 1.0,
+          "minJ": 0.9850344536122435,
+          "maxJ": 1.0199444585098145,
+          "previousResidualMm": 2.0977227889848606
+        },
+        {
+          "iteration": 3,
+          "energy": 0.0010582424961957495,
+          "gain": 1.0,
+          "minJ": 0.9850148271504697,
+          "maxJ": 1.0199280527891825,
+          "previousResidualMm": 0.1907489305394123
+        },
+        {
+          "iteration": 4,
+          "energy": 0.0010582415498244992,
+          "gain": 1.0,
+          "minJ": 0.9850119011517774,
+          "maxJ": 1.0199237128275565,
+          "previousResidualMm": 0.0015544131434279485
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4328,
+        "minUnprojectedEigenvalue": -0.5202502764733429,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 0.16670115562163035,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 4,
+      "residualMaxMm": 0.0004957873020546607,
+      "energy": 0.002446209383758988,
+      "cageJQuantiles": [
+        0.9766990089592075,
+        0.9853644272591082,
+        0.9999583920568038,
+        1.0143588801526868,
+        1.030155595513954
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9991777635209126,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.002471092792515584,
+          "gain": 1.0,
+          "minJ": 0.974716035257365,
+          "maxJ": 1.0282553208851883,
+          "previousResidualMm": 30.811906611403703
+        },
+        {
+          "iteration": 2,
+          "energy": 0.0024463490172519234,
+          "gain": 1.0,
+          "minJ": 0.9766833896665599,
+          "maxJ": 1.0302051576452602,
+          "previousResidualMm": 2.0594724111560327
+        },
+        {
+          "iteration": 3,
+          "energy": 0.002446212898596366,
+          "gain": 1.0,
+          "minJ": 0.9767008537637072,
+          "maxJ": 1.0301635734558712,
+          "previousResidualMm": 0.18898388141533173
+        },
+        {
+          "iteration": 4,
+          "energy": 0.002446209383758988,
+          "gain": 1.0,
+          "minJ": 0.9766990089592075,
+          "maxJ": 1.030155595513954,
+          "previousResidualMm": 0.002945791232519468
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4313,
+        "minUnprojectedEigenvalue": -0.8140277018347799,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 0.22226820749550713,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 5,
+      "residualMaxMm": 0.00022466995052709883,
+      "energy": 0.004467666476993304,
+      "cageJQuantiles": [
+        0.9677030664933354,
+        0.9801516224961468,
+        0.9999373740790589,
+        1.0187925452916797,
+        1.0403871456956582
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9989039494244172,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.0044940376209916914,
+          "gain": 1.0,
+          "minJ": 0.9665975840749166,
+          "maxJ": 1.0386520313124812,
+          "previousResidualMm": 31.944795622762125
+        },
+        {
+          "iteration": 2,
+          "energy": 0.0044678997816640816,
+          "gain": 1.0,
+          "minJ": 0.9676905955004248,
+          "maxJ": 1.0404784259958721,
+          "previousResidualMm": 2.0635186254707802
+        },
+        {
+          "iteration": 3,
+          "energy": 0.0044676761850506,
+          "gain": 1.0,
+          "minJ": 0.9677080472188845,
+          "maxJ": 1.0404034034235619,
+          "previousResidualMm": 0.18847324628802128
+        },
+        {
+          "iteration": 4,
+          "energy": 0.004467666924818467,
+          "gain": 1.0,
+          "minJ": 0.9677040508078952,
+          "maxJ": 1.040390035340983,
+          "previousResidualMm": 0.004971031320749414
+        },
+        {
+          "iteration": 5,
+          "energy": 0.004467666476993304,
+          "gain": 1.0,
+          "minJ": 0.9677030664933354,
+          "maxJ": 1.0403871456956582,
+          "previousResidualMm": 0.0010098531493782682
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4307,
+        "minUnprojectedEigenvalue": -1.1685798658844928,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 0.2778352593693839,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 5,
+      "residualMaxMm": 0.0004796603131900586,
+      "energy": 0.007171645806011139,
+      "cageJQuantiles": [
+        0.9580930380844531,
+        0.974666614522507,
+        0.9999080266336036,
+        1.0232494202433047,
+        1.0505317044437534
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.998632681020827,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.00720018660489119,
+          "gain": 1.0,
+          "minJ": 0.9570701625696367,
+          "maxJ": 1.0490346299463893,
+          "previousResidualMm": 33.07274640532747
+        },
+        {
+          "iteration": 2,
+          "energy": 0.007172034085453681,
+          "gain": 1.0,
+          "minJ": 0.958081809811282,
+          "maxJ": 1.0506888397038758,
+          "previousResidualMm": 2.0641691330018426
+        },
+        {
+          "iteration": 3,
+          "energy": 0.00717166859757482,
+          "gain": 1.0,
+          "minJ": 0.9581004655397349,
+          "maxJ": 1.0505608098393695,
+          "previousResidualMm": 0.18948932148614442
+        },
+        {
+          "iteration": 4,
+          "energy": 0.007171647281024886,
+          "gain": 1.0,
+          "minJ": 0.9580948714716031,
+          "maxJ": 1.050537025700165,
+          "previousResidualMm": 0.007898003630607511
+        },
+        {
+          "iteration": 5,
+          "energy": 0.007171645806011139,
+          "gain": 1.0,
+          "minJ": 0.9580930380844531,
+          "maxJ": 1.0505317044437534,
+          "previousResidualMm": 0.0018136193879507774
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4302,
+        "minUnprojectedEigenvalue": -1.569931584474182,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 0.3334023112432607,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 5,
+      "residualMaxMm": 0.0009398809338204578,
+      "energy": 0.010610307981487446,
+      "cageJQuantiles": [
+        0.9478220265424946,
+        0.9698289066096614,
+        0.9999375798810841,
+        1.028659483472668,
+        1.0605468319197597
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9983656655475318,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.010642035870628203,
+          "gain": 1.0,
+          "minJ": 0.9469220225102601,
+          "maxJ": 1.0592559343661536,
+          "previousResidualMm": 34.197413830797245
+        },
+        {
+          "iteration": 2,
+          "energy": 0.0106109520784659,
+          "gain": 1.0,
+          "minJ": 0.9478139343856234,
+          "maxJ": 1.0607924216492013,
+          "previousResidualMm": 2.058657227818337
+        },
+        {
+          "iteration": 3,
+          "energy": 0.010610357198659152,
+          "gain": 1.0,
+          "minJ": 0.9478315551434188,
+          "maxJ": 1.060596568378267,
+          "previousResidualMm": 0.19187137324013823
+        },
+        {
+          "iteration": 4,
+          "energy": 0.010610312094068125,
+          "gain": 1.0,
+          "minJ": 0.9478248756255243,
+          "maxJ": 1.0605562566903959,
+          "previousResidualMm": 0.011973596915715246
+        },
+        {
+          "iteration": 5,
+          "energy": 0.010610307981487446,
+          "gain": 1.0,
+          "minJ": 0.9478220265424946,
+          "maxJ": 1.0605468319197597,
+          "previousResidualMm": 0.003193359895727753
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4327,
+        "minUnprojectedEigenvalue": -2.0221966027264298,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 0.3889693631171375,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 6,
+      "residualMaxMm": 0.0005904111140226688,
+      "energy": 0.014839074056745777,
+      "cageJQuantiles": [
+        0.9367873231139147,
+        0.9651157428619545,
+        0.9999042662896251,
+        1.0346531857784673,
+        1.070443767565038
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9981049772884989,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.014875135549215403,
+          "gain": 1.0,
+          "minJ": 0.936094971453004,
+          "maxJ": 1.0693464670963961,
+          "previousResidualMm": 35.31998222969794
+        },
+        {
+          "iteration": 2,
+          "energy": 0.014840127993451614,
+          "gain": 1.0,
+          "minJ": 0.936791912033579,
+          "maxJ": 1.0708027141977634,
+          "previousResidualMm": 2.047613984347487
+        },
+        {
+          "iteration": 3,
+          "energy": 0.014839174841088917,
+          "gain": 1.0,
+          "minJ": 0.9368013441539146,
+          "maxJ": 1.0705272125503749,
+          "previousResidualMm": 0.19499920949492783
+        },
+        {
+          "iteration": 4,
+          "energy": 0.014839085434581945,
+          "gain": 1.0,
+          "minJ": 0.9367932510591778,
+          "maxJ": 1.0704637940520532,
+          "previousResidualMm": 0.01739143719582163
+        },
+        {
+          "iteration": 5,
+          "energy": 0.014839075271005133,
+          "gain": 1.0,
+          "minJ": 0.936789062921962,
+          "maxJ": 1.0704480661362503,
+          "previousResidualMm": 0.005248819536840636
+        },
+        {
+          "iteration": 6,
+          "energy": 0.014839074056745777,
+          "gain": 1.0,
+          "minJ": 0.9367873231139147,
+          "maxJ": 1.070443767565038,
+          "previousResidualMm": 0.001738752484674607
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4291,
+        "minUnprojectedEigenvalue": -2.5312251523721843,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 0.44453641499101426,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 7,
+      "residualMaxMm": 0.0004265567520312689,
+      "energy": 0.0199163021321159,
+      "cageJQuantiles": [
+        0.9248155567711106,
+        0.9599153583990696,
+        0.9999025280340263,
+        1.039595951622503,
+        1.0802988163962766
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9978533275277724,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.019957998499472523,
+          "gain": 1.0,
+          "minJ": 0.9243356092014456,
+          "maxJ": 1.079326703243137,
+          "previousResidualMm": 36.44159623901462
+        },
+        {
+          "iteration": 2,
+          "energy": 0.019917991497245872,
+          "gain": 1.0,
+          "minJ": 0.9248455822171803,
+          "maxJ": 1.080780915367447,
+          "previousResidualMm": 2.0299106873600516
+        },
+        {
+          "iteration": 3,
+          "energy": 0.01991649718435415,
+          "gain": 1.0,
+          "minJ": 0.9248390771293091,
+          "maxJ": 1.0804234990618546,
+          "previousResidualMm": 0.19856551876645634
+        },
+        {
+          "iteration": 4,
+          "energy": 0.019916328940760994,
+          "gain": 1.0,
+          "minJ": 0.9248270436438478,
+          "maxJ": 1.0803321888643607,
+          "previousResidualMm": 0.02428071610019461
+        },
+        {
+          "iteration": 5,
+          "energy": 0.019916305948360843,
+          "gain": 1.0,
+          "minJ": 0.9248202843914377,
+          "maxJ": 1.080307957958751,
+          "previousResidualMm": 0.008153105761866312
+        },
+        {
+          "iteration": 6,
+          "energy": 0.019916302623032133,
+          "gain": 1.0,
+          "minJ": 0.9248170141947228,
+          "maxJ": 1.080300979638543,
+          "previousResidualMm": 0.0029901590212944714
+        },
+        {
+          "iteration": 7,
+          "energy": 0.0199163021321159,
+          "gain": 1.0,
+          "minJ": 0.9248155567711106,
+          "maxJ": 1.0802988163962766,
+          "previousResidualMm": 0.0011237416525948251
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4296,
+        "minUnprojectedEigenvalue": -3.105776693775445,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 0.500103466864891,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 7,
+      "residualMaxMm": 0.000823626225396422,
+      "energy": 0.025902304290196423,
+      "cageJQuantiles": [
+        0.9116420673504911,
+        0.9540148619385731,
+        0.999914885785793,
+        1.0451752046532299,
+        1.0902392258606537
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9976143011336305,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.025951118833952472,
+          "gain": 1.0,
+          "minJ": 0.9115694608716561,
+          "maxJ": 1.0893054902300876,
+          "previousResidualMm": 37.564261825690906
+        },
+        {
+          "iteration": 2,
+          "energy": 0.025904946303989984,
+          "gain": 1.0,
+          "minJ": 0.9117507088677845,
+          "maxJ": 1.0908316677468608,
+          "previousResidualMm": 2.0074406924604236
+        },
+        {
+          "iteration": 3,
+          "energy": 0.0259026644071055,
+          "gain": 1.0,
+          "minJ": 0.9116911822264726,
+          "maxJ": 1.0904075637328476,
+          "previousResidualMm": 0.2026793524259671
+        },
+        {
+          "iteration": 4,
+          "energy": 0.02590236226598895,
+          "gain": 1.0,
+          "minJ": 0.9116647808677909,
+          "maxJ": 1.0902875717216787,
+          "previousResidualMm": 0.032841243630940015
+        },
+        {
+          "iteration": 5,
+          "energy": 0.025902313935713035,
+          "gain": 1.0,
+          "minJ": 0.9116516909569179,
+          "maxJ": 1.0902532090612893,
+          "previousResidualMm": 0.012096909681089904
+        },
+        {
+          "iteration": 6,
+          "energy": 0.02590230572064045,
+          "gain": 1.0,
+          "minJ": 0.9116451647263034,
+          "maxJ": 1.0902426863424264,
+          "previousResidualMm": 0.0048453585147959334
+        },
+        {
+          "iteration": 7,
+          "energy": 0.025902304290196423,
+          "gain": 1.0,
+          "minJ": 0.9116420673504911,
+          "maxJ": 1.0902392258606537,
+          "previousResidualMm": 0.0019881320765331016
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4329,
+        "minUnprojectedEigenvalue": -3.759202785419208,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 0.5556705187387678,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 8,
+      "residualMaxMm": 0.0006661734495135909,
+      "energy": 0.03285766724597973,
+      "cageJQuantiles": [
+        0.8968956108334861,
+        0.9474278027163112,
+        0.9998943711722383,
+        1.051291079384573,
+        1.1004363850255876
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9973926634331625,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.03291537997481261,
+          "gain": 1.0,
+          "minJ": 0.8975562381258044,
+          "maxJ": 1.0993776258938706,
+          "previousResidualMm": 38.689777893587106
+        },
+        {
+          "iteration": 2,
+          "energy": 0.032861698053559554,
+          "gain": 1.0,
+          "minJ": 0.8971848334205164,
+          "maxJ": 1.1011089513678949,
+          "previousResidualMm": 1.9817821095431776
+        },
+        {
+          "iteration": 3,
+          "energy": 0.032858305529462443,
+          "gain": 1.0,
+          "minJ": 0.8970076349187684,
+          "maxJ": 1.1006478176579513,
+          "previousResidualMm": 0.20712969329425365
+        },
+        {
+          "iteration": 4,
+          "energy": 0.03285778581425783,
+          "gain": 1.0,
+          "minJ": 0.896945622774597,
+          "maxJ": 1.1005032988851011,
+          "previousResidualMm": 0.0433672223979758
+        },
+        {
+          "iteration": 5,
+          "energy": 0.03285769038584167,
+          "gain": 1.0,
+          "minJ": 0.8969182772212404,
+          "maxJ": 1.1004584109736208,
+          "previousResidualMm": 0.01731432373505771
+        },
+        {
+          "iteration": 6,
+          "energy": 0.032857671743899544,
+          "gain": 1.0,
+          "minJ": 0.8969050392118065,
+          "maxJ": 1.1004436093359125,
+          "previousResidualMm": 0.007489010481790835
+        },
+        {
+          "iteration": 7,
+          "energy": 0.03285766800501706,
+          "gain": 1.0,
+          "minJ": 0.8968986412684065,
+          "maxJ": 1.1004383605172219,
+          "previousResidualMm": 0.003317382656451679
+        },
+        {
+          "iteration": 8,
+          "energy": 0.03285766724597973,
+          "gain": 1.0,
+          "minJ": 0.8968956108334861,
+          "maxJ": 1.1004363850255876,
+          "previousResidualMm": 0.0014831343571262738
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4339,
+        "minUnprojectedEigenvalue": -4.511364601421979,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 0.6112375706126446,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 9,
+      "residualMaxMm": 0.0005814882017375958,
+      "energy": 0.040841189719496865,
+      "cageJQuantiles": [
+        0.8801141084934605,
+        0.9405691092307444,
+        0.9998724598535743,
+        1.057024487713066,
+        1.1110966460928726
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9971944105667224,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.04090968046214044,
+          "gain": 1.0,
+          "minJ": 0.8818000553818222,
+          "maxJ": 1.1097321594925311,
+          "previousResidualMm": 39.81962566725308
+        },
+        {
+          "iteration": 2,
+          "energy": 0.040847128388996276,
+          "gain": 1.0,
+          "minJ": 0.880724745343217,
+          "maxJ": 1.1118043247446243,
+          "previousResidualMm": 1.9529341085051026
+        },
+        {
+          "iteration": 3,
+          "energy": 0.04084226517389005,
+          "gain": 1.0,
+          "minJ": 0.8803451610196763,
+          "maxJ": 1.111344514929739,
+          "previousResidualMm": 0.23260069470248523
+        },
+        {
+          "iteration": 4,
+          "energy": 0.040841416523356176,
+          "gain": 1.0,
+          "minJ": 0.880214987410852,
+          "maxJ": 1.1111840968784532,
+          "previousResidualMm": 0.056711116143653005
+        },
+        {
+          "iteration": 5,
+          "energy": 0.04084124010320937,
+          "gain": 1.0,
+          "minJ": 0.8801607577300494,
+          "maxJ": 1.1111291999032202,
+          "previousResidualMm": 0.024003186114641067
+        },
+        {
+          "iteration": 6,
+          "energy": 0.04084120109502625,
+          "gain": 1.0,
+          "minJ": 0.8801353269175736,
+          "maxJ": 1.1111092396114017,
+          "previousResidualMm": 0.011109157952614215
+        },
+        {
+          "iteration": 7,
+          "energy": 0.040841192232213955,
+          "gain": 1.0,
+          "minJ": 0.8801229966856826,
+          "maxJ": 1.1111013849791591,
+          "previousResidualMm": 0.005263735527458882
+        },
+        {
+          "iteration": 8,
+          "energy": 0.040841190192152446,
+          "gain": 1.0,
+          "minJ": 0.8801170072425707,
+          "maxJ": 1.1110980896354552,
+          "previousResidualMm": 0.0025164877267135764
+        },
+        {
+          "iteration": 9,
+          "energy": 0.040841189719496865,
+          "gain": 1.0,
+          "minJ": 0.8801141084934605,
+          "maxJ": 1.1110966460928726,
+          "previousResidualMm": 0.0012082086211192484
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4357,
+        "minUnprojectedEigenvalue": -5.427763013526029,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 0.6668046224865214,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 10,
+      "residualMaxMm": 0.0005393515291737023,
+      "energy": 0.04990823490492542,
+      "cageJQuantiles": [
+        0.8607831383726984,
+        0.932725752166836,
+        0.9998868795192798,
+        1.0627679685074458,
+        1.1224076437692614
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.997026449290207,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.04998930871866389,
+          "gain": 1.0,
+          "minJ": 0.8638285383478256,
+          "maxJ": 1.120581511828453,
+          "previousResidualMm": 40.955629503500965
+        },
+        {
+          "iteration": 2,
+          "energy": 0.04991660373073602,
+          "gain": 1.0,
+          "minJ": 0.861893270598817,
+          "maxJ": 1.1231075974278226,
+          "previousResidualMm": 1.9213151211682762
+        },
+        {
+          "iteration": 3,
+          "energy": 0.04990994211942751,
+          "gain": 1.0,
+          "minJ": 0.8612087951251933,
+          "maxJ": 1.1226908741416277,
+          "previousResidualMm": 0.2652757982406888
+        },
+        {
+          "iteration": 4,
+          "energy": 0.049908639736008606,
+          "gain": 1.0,
+          "minJ": 0.860966984678077,
+          "maxJ": 1.1225237281824278,
+          "previousResidualMm": 0.07319585922360204
+        },
+        {
+          "iteration": 5,
+          "energy": 0.049908335993335246,
+          "gain": 1.0,
+          "minJ": 0.8608685304003312,
+          "maxJ": 1.1224581999753214,
+          "previousResidualMm": 0.0324730446991675
+        },
+        {
+          "iteration": 6,
+          "energy": 0.049908260659268316,
+          "gain": 1.0,
+          "minJ": 0.8608235589943877,
+          "maxJ": 1.122430682145094,
+          "previousResidualMm": 0.0159434948071338
+        },
+        {
+          "iteration": 7,
+          "energy": 0.0499082414721629,
+          "gain": 1.0,
+          "minJ": 0.8608018507049013,
+          "maxJ": 1.1224181600484222,
+          "previousResidualMm": 0.00801264297799984
+        },
+        {
+          "iteration": 8,
+          "energy": 0.04990823652359605,
+          "gain": 1.0,
+          "minJ": 0.8607911419552271,
+          "maxJ": 1.1224121348601457,
+          "previousResidualMm": 0.004062913833346617
+        },
+        {
+          "iteration": 9,
+          "energy": 0.04990823523931155,
+          "gain": 1.0,
+          "minJ": 0.8607858092668593,
+          "maxJ": 1.1224091468192068,
+          "previousResidualMm": 0.0020686495403940647
+        },
+        {
+          "iteration": 10,
+          "energy": 0.04990823490492542,
+          "gain": 1.0,
+          "minJ": 0.8607831383726984,
+          "maxJ": 1.1224076437692614,
+          "previousResidualMm": 0.0010555952655554872
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4402,
+        "minUnprojectedEigenvalue": -6.638855915481784,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 0.7223716743603982,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 10,
+      "residualMaxMm": 0.0009717279220851952,
+      "energy": 0.06011019405397891,
+      "cageJQuantiles": [
+        0.8384242118666064,
+        0.9256761956788029,
+        0.9999168518802337,
+        1.0689451740446823,
+        1.1344671635264791
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9968959511907597,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.06020498111147908,
+          "gain": 1.0,
+          "minJ": 0.8431476633194036,
+          "maxJ": 1.1320606291566093,
+          "previousResidualMm": 42.09920925061724
+        },
+        {
+          "iteration": 2,
+          "energy": 0.06012130997661339,
+          "gain": 1.0,
+          "minJ": 0.8402207082492352,
+          "maxJ": 1.1351223280441431,
+          "previousResidualMm": 1.8874692025090893
+        },
+        {
+          "iteration": 3,
+          "energy": 0.06011271309328502,
+          "gain": 1.0,
+          "minJ": 0.8391281622403115,
+          "maxJ": 1.13479241956609,
+          "previousResidualMm": 0.3006822380609704
+        },
+        {
+          "iteration": 4,
+          "energy": 0.060110862942999804,
+          "gain": 1.0,
+          "minJ": 0.8387271969231772,
+          "maxJ": 1.1346286197043782,
+          "previousResidualMm": 0.09285901730321956
+        },
+        {
+          "iteration": 5,
+          "energy": 0.060110380937244495,
+          "gain": 1.0,
+          "minJ": 0.8385642997985636,
+          "maxJ": 1.1345501777474976,
+          "previousResidualMm": 0.04306123634604089
+        },
+        {
+          "iteration": 6,
+          "energy": 0.06011024714996592,
+          "gain": 1.0,
+          "minJ": 0.838490924964563,
+          "maxJ": 1.1345103447876084,
+          "previousResidualMm": 0.022086076062046184
+        },
+        {
+          "iteration": 7,
+          "energy": 0.06011020908299487,
+          "gain": 1.0,
+          "minJ": 0.8384555858968885,
+          "maxJ": 1.1344889988078513,
+          "previousResidualMm": 0.011686687815682457
+        },
+        {
+          "iteration": 8,
+          "energy": 0.06011019813497616,
+          "gain": 1.0,
+          "minJ": 0.8384379168760472,
+          "maxJ": 1.1344772568481285,
+          "previousResidualMm": 0.006243836672550473
+        },
+        {
+          "iteration": 9,
+          "energy": 0.06011019497073074,
+          "gain": 1.0,
+          "minJ": 0.8384288894414063,
+          "maxJ": 1.1344707553916067,
+          "previousResidualMm": 0.0033513241498247383
+        },
+        {
+          "iteration": 10,
+          "energy": 0.06011019405397891,
+          "gain": 1.0,
+          "minJ": 0.8384242118666064,
+          "maxJ": 1.1344671635264791,
+          "previousResidualMm": 0.0018033027222827671
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4420,
+        "minUnprojectedEigenvalue": -8.162443564725232,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 0.777938726234275,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 11,
+      "residualMaxMm": 0.0009874050388342696,
+      "energy": 0.07149381320461975,
+      "cageJQuantiles": [
+        0.8126705127682399,
+        0.9153851037455474,
+        0.9999878256830148,
+        1.0759359529171013,
+        1.1472345483740094
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9968100688578221,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.07160327236883664,
+          "gain": 1.0,
+          "minJ": 0.8193571068130088,
+          "maxJ": 1.1441984971998393,
+          "previousResidualMm": 43.251705071191935
+        },
+        {
+          "iteration": 2,
+          "energy": 0.07150787920201643,
+          "gain": 1.0,
+          "minJ": 0.8153624625155225,
+          "maxJ": 1.1477959419932755,
+          "previousResidualMm": 1.854026431265084
+        },
+        {
+          "iteration": 3,
+          "energy": 0.0714973099085756,
+          "gain": 1.0,
+          "minJ": 0.8137650569437329,
+          "maxJ": 1.147606319466988,
+          "previousResidualMm": 0.33756305706472217
+        },
+        {
+          "iteration": 4,
+          "energy": 0.07149484972626118,
+          "gain": 1.0,
+          "minJ": 0.8131511782073588,
+          "maxJ": 1.1474607056075612,
+          "previousResidualMm": 0.1158636502862869
+        },
+        {
+          "iteration": 5,
+          "energy": 0.07149413716424152,
+          "gain": 1.0,
+          "minJ": 0.8128973587200707,
+          "maxJ": 1.1473704297136513,
+          "previousResidualMm": 0.056040298986511305
+        },
+        {
+          "iteration": 6,
+          "energy": 0.07149391615030819,
+          "gain": 1.0,
+          "minJ": 0.812782452989137,
+          "maxJ": 1.1473147834596717,
+          "previousResidualMm": 0.02967043876940338
+        },
+        {
+          "iteration": 7,
+          "energy": 0.0714938459800519,
+          "gain": 1.0,
+          "minJ": 0.8127265573286241,
+          "maxJ": 1.147280403471325,
+          "previousResidualMm": 0.01635232316603725
+        },
+        {
+          "iteration": 8,
+          "energy": 0.07149382350504474,
+          "gain": 1.0,
+          "minJ": 0.8126980233321479,
+          "maxJ": 1.1472593398400075,
+          "previousResidualMm": 0.00915114935874624
+        },
+        {
+          "iteration": 9,
+          "energy": 0.07149381628036672,
+          "gain": 1.0,
+          "minJ": 0.8126829964846758,
+          "maxJ": 1.1472466102334447,
+          "previousResidualMm": 0.005154458013348225
+        },
+        {
+          "iteration": 10,
+          "energy": 0.07149381395418894,
+          "gain": 1.0,
+          "minJ": 0.8126749180497145,
+          "maxJ": 1.1472390213326502,
+          "previousResidualMm": 0.002948902550692433
+        },
+        {
+          "iteration": 11,
+          "energy": 0.07149381320461975,
+          "gain": 1.0,
+          "minJ": 0.8126705127682399,
+          "maxJ": 1.1472345483740094,
+          "previousResidualMm": 0.0017113936719808504
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4510,
+        "minUnprojectedEigenvalue": -10.090102720192393,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 0.8335057781081517,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 13,
+      "residualMaxMm": 0.0006795415106917756,
+      "energy": 0.08409665270283453,
+      "cageJQuantiles": [
+        0.7833288705716226,
+        0.9051478061873975,
+        0.9999923501500356,
+        1.0836828657934445,
+        1.163767776513249
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9967763013774662,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.084222837885782,
+          "gain": 1.0,
+          "minJ": 0.792202936445798,
+          "maxJ": 1.1629255651477446,
+          "previousResidualMm": 44.41453921873576
+        },
+        {
+          "iteration": 2,
+          "energy": 0.08411400510193713,
+          "gain": 1.0,
+          "minJ": 0.787140375556009,
+          "maxJ": 1.160978392054681,
+          "previousResidualMm": 1.8222123469607778
+        },
+        {
+          "iteration": 3,
+          "energy": 0.08410128115426627,
+          "gain": 1.0,
+          "minJ": 0.7849588388285467,
+          "maxJ": 1.1616583948137817,
+          "previousResidualMm": 0.37837329802868536
+        },
+        {
+          "iteration": 4,
+          "energy": 0.08409816227019294,
+          "gain": 1.0,
+          "minJ": 0.7840725427608829,
+          "maxJ": 1.1624950034362027,
+          "previousResidualMm": 0.14268350804313495
+        },
+        {
+          "iteration": 5,
+          "energy": 0.08409717586593213,
+          "gain": 1.0,
+          "minJ": 0.7836924711061737,
+          "maxJ": 1.1630271894277662,
+          "previousResidualMm": 0.07102457531615243
+        },
+        {
+          "iteration": 6,
+          "energy": 0.08409683756663557,
+          "gain": 1.0,
+          "minJ": 0.7835162760343528,
+          "maxJ": 1.1633406056580442,
+          "previousResidualMm": 0.038694516296992325
+        },
+        {
+          "iteration": 7,
+          "energy": 0.08409671845486912,
+          "gain": 1.0,
+          "minJ": 0.7834286549696038,
+          "maxJ": 1.163522666076452,
+          "previousResidualMm": 0.02206223136751847
+        },
+        {
+          "iteration": 8,
+          "energy": 0.08409667611047549,
+          "gain": 1.0,
+          "minJ": 0.7833827337467729,
+          "maxJ": 1.1636285123919232,
+          "previousResidualMm": 0.012908792232893198
+        },
+        {
+          "iteration": 9,
+          "energy": 0.0840966609934683,
+          "gain": 1.0,
+          "minJ": 0.7833577781718676,
+          "maxJ": 1.1636902926378951,
+          "previousResidualMm": 0.008079209213299177
+        },
+        {
+          "iteration": 10,
+          "energy": 0.0840966555847784,
+          "gain": 1.0,
+          "minJ": 0.7833438775292284,
+          "maxJ": 1.1637264992421346,
+          "previousResidualMm": 0.004984391829918467
+        },
+        {
+          "iteration": 11,
+          "energy": 0.08409665364702244,
+          "gain": 1.0,
+          "minJ": 0.7833360014059075,
+          "maxJ": 1.163747792614133,
+          "previousResidualMm": 0.0030485192373718127
+        },
+        {
+          "iteration": 12,
+          "energy": 0.08409665295216366,
+          "gain": 1.0,
+          "minJ": 0.7833314843005453,
+          "maxJ": 1.1637603515721349,
+          "previousResidualMm": 0.0018543489367799848
+        },
+        {
+          "iteration": 13,
+          "energy": 0.08409665270283453,
+          "gain": 1.0,
+          "minJ": 0.7833288705716226,
+          "maxJ": 1.163767776513249,
+          "previousResidualMm": 0.0011239197661481895
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4525,
+        "minUnprojectedEigenvalue": -12.531012391311437,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 0.8890728299820285,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 14,
+      "residualMaxMm": 0.0008118158276575105,
+      "energy": 0.0979363576771537,
+      "cageJQuantiles": [
+        0.7504391742097791,
+        0.8903117641624645,
+        0.9999999999999987,
+        1.0909240094236883,
+        1.187047746003349
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9968022707165636,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.09808377610467539,
+          "gain": 1.0,
+          "minJ": 0.7616016873877434,
+          "maxJ": 1.1856615547906342,
+          "previousResidualMm": 45.59030274674776
+        },
+        {
+          "iteration": 2,
+          "energy": 0.09795777610908771,
+          "gain": 1.0,
+          "minJ": 0.7555589446650298,
+          "maxJ": 1.1834838364827316,
+          "previousResidualMm": 1.7950465621916132
+        },
+        {
+          "iteration": 3,
+          "energy": 0.09794225917308563,
+          "gain": 1.0,
+          "minJ": 0.7527512896876883,
+          "maxJ": 1.1844257718698963,
+          "previousResidualMm": 0.4364132587636079
+        },
+        {
+          "iteration": 4,
+          "energy": 0.09793840616661256,
+          "gain": 1.0,
+          "minJ": 0.7515395683333688,
+          "maxJ": 1.18541340082157,
+          "previousResidualMm": 0.17503009927644592
+        },
+        {
+          "iteration": 5,
+          "energy": 0.09793712752349523,
+          "gain": 1.0,
+          "minJ": 0.7509951830678484,
+          "maxJ": 1.1860637249006298,
+          "previousResidualMm": 0.08845488139445727
+        },
+        {
+          "iteration": 6,
+          "energy": 0.09793665556273638,
+          "gain": 1.0,
+          "minJ": 0.7507344146093278,
+          "maxJ": 1.186459029465883,
+          "previousResidualMm": 0.048942856225018316
+        },
+        {
+          "iteration": 7,
+          "energy": 0.09793647441058334,
+          "gain": 1.0,
+          "minJ": 0.7506014563941058,
+          "maxJ": 1.186695974839087,
+          "previousResidualMm": 0.02842801441255565
+        },
+        {
+          "iteration": 8,
+          "energy": 0.09793640369344053,
+          "gain": 1.0,
+          "minJ": 0.7505301582366897,
+          "maxJ": 1.1868382988670707,
+          "previousResidualMm": 0.017592699497424362
+        },
+        {
+          "iteration": 9,
+          "energy": 0.09793637583628487,
+          "gain": 1.0,
+          "minJ": 0.7504904688991912,
+          "maxJ": 1.1869242895440697,
+          "previousResidualMm": 0.0115839135773047
+        },
+        {
+          "iteration": 10,
+          "energy": 0.09793636479956687,
+          "gain": 1.0,
+          "minJ": 0.7504677710333592,
+          "maxJ": 1.1869765644604031,
+          "previousResidualMm": 0.0075284959593305174
+        },
+        {
+          "iteration": 11,
+          "energy": 0.09793636040937137,
+          "gain": 1.0,
+          "minJ": 0.7504545327432793,
+          "maxJ": 1.1870085195402773,
+          "previousResidualMm": 0.0048546860046599916
+        },
+        {
+          "iteration": 12,
+          "energy": 0.09793635865789968,
+          "gain": 1.0,
+          "minJ": 0.750446697361693,
+          "maxJ": 1.187028147213608,
+          "previousResidualMm": 0.003115580822511134
+        },
+        {
+          "iteration": 13,
+          "energy": 0.0979363579576123,
+          "gain": 1.0,
+          "minJ": 0.750442007060908,
+          "maxJ": 1.187040252919242,
+          "previousResidualMm": 0.00199347251147382
+        },
+        {
+          "iteration": 14,
+          "energy": 0.0979363576771537,
+          "gain": 1.0,
+          "minJ": 0.7504391742097791,
+          "maxJ": 1.187047746003349,
+          "previousResidualMm": 0.0012729934008340745
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4603,
+        "minUnprojectedEigenvalue": -15.615162616458033,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 0.9446398818559053,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 15,
+      "residualMaxMm": 0.0009436805385274168,
+      "energy": 0.11299693275285261,
+      "cageJQuantiles": [
+        0.7143867479626912,
+        0.8816918083410323,
+        0.9999999999999998,
+        1.0985324104708247,
+        1.2280699710249336
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9968927793952791,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.11317270173444666,
+          "gain": 1.0,
+          "minJ": 0.7276955321917071,
+          "maxJ": 1.2137623219993763,
+          "previousResidualMm": 46.782714777583266
+        },
+        {
+          "iteration": 2,
+          "energy": 0.11302389636542887,
+          "gain": 1.0,
+          "minJ": 0.7208740928887426,
+          "maxJ": 1.2238819357827972,
+          "previousResidualMm": 1.9579565245861705
+        },
+        {
+          "iteration": 3,
+          "energy": 0.11300428835945284,
+          "gain": 1.0,
+          "minJ": 0.7174649493765749,
+          "maxJ": 1.2271293611009364,
+          "previousResidualMm": 0.5566700203974402
+        },
+        {
+          "iteration": 4,
+          "energy": 0.11299951629895386,
+          "gain": 1.0,
+          "minJ": 0.7159064474898434,
+          "maxJ": 1.2281524892244706,
+          "previousResidualMm": 0.21492462738951015
+        },
+        {
+          "iteration": 5,
+          "energy": 0.11299794554303046,
+          "gain": 1.0,
+          "minJ": 0.7151745649061747,
+          "maxJ": 1.228417497903978,
+          "previousResidualMm": 0.10917317775785954
+        },
+        {
+          "iteration": 6,
+          "energy": 0.11299735033739033,
+          "gain": 1.0,
+          "minJ": 0.7148135086631476,
+          "maxJ": 1.2284286152353727,
+          "previousResidualMm": 0.06050365631175093
+        },
+        {
+          "iteration": 7,
+          "energy": 0.1129971096435947,
+          "gain": 1.0,
+          "minJ": 0.714625924392213,
+          "maxJ": 1.228365631215673,
+          "previousResidualMm": 0.03525368908837698
+        },
+        {
+          "iteration": 8,
+          "energy": 0.11299700891474243,
+          "gain": 1.0,
+          "minJ": 0.7145239618742235,
+          "maxJ": 1.2282918189028014,
+          "previousResidualMm": 0.021413191581213874
+        },
+        {
+          "iteration": 9,
+          "energy": 0.11299696585953387,
+          "gain": 1.0,
+          "minJ": 0.7144664897135784,
+          "maxJ": 1.2282274272735987,
+          "previousResidualMm": 0.014536392329180825
+        },
+        {
+          "iteration": 10,
+          "energy": 0.11299694718783115,
+          "gain": 1.0,
+          "minJ": 0.7144331600465413,
+          "maxJ": 1.2281769140103425,
+          "previousResidualMm": 0.009926033381761958
+        },
+        {
+          "iteration": 11,
+          "energy": 0.11299693900567459,
+          "gain": 1.0,
+          "minJ": 0.7144133926875932,
+          "maxJ": 1.2281393016325493,
+          "previousResidualMm": 0.006741563473986366
+        },
+        {
+          "iteration": 12,
+          "energy": 0.11299693539265421,
+          "gain": 1.0,
+          "minJ": 0.7144014552372503,
+          "maxJ": 1.2281121191862174,
+          "previousResidualMm": 0.004563207437033967
+        },
+        {
+          "iteration": 13,
+          "energy": 0.11299693378824069,
+          "gain": 1.0,
+          "minJ": 0.7143941381699502,
+          "maxJ": 1.22809284072884,
+          "previousResidualMm": 0.0030822082562199232
+        },
+        {
+          "iteration": 14,
+          "energy": 0.11299693307282618,
+          "gain": 1.0,
+          "minJ": 0.7143895967737698,
+          "maxJ": 1.2280793403953507,
+          "previousResidualMm": 0.00207906976006363
+        },
+        {
+          "iteration": 15,
+          "energy": 0.11299693275285261,
+          "gain": 1.0,
+          "minJ": 0.7143867479626912,
+          "maxJ": 1.2280699710249336,
+          "previousResidualMm": 0.0014011529617074332
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4651,
+        "minUnprojectedEigenvalue": -19.68498730436964,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    },
+    {
+      "progress": 1.0,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 16,
+      "residualMaxMm": 0.000984219614380128,
+      "energy": 0.12915766967433642,
+      "cageJQuantiles": [
+        0.676181968887661,
+        0.8705914321402727,
+        0.9999999999999998,
+        1.1100879981605134,
+        1.2818144815148769
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9970438209039596,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.12936794117302053,
+          "gain": 1.0,
+          "minJ": 0.6910279892838567,
+          "maxJ": 1.2622059646323673,
+          "previousResidualMm": 47.806411424442956
+        },
+        {
+          "iteration": 2,
+          "energy": 0.1291919497844473,
+          "gain": 1.0,
+          "minJ": 0.6837982862755642,
+          "maxJ": 1.274710137404031,
+          "previousResidualMm": 2.2229645644754807
+        },
+        {
+          "iteration": 3,
+          "energy": 0.12916670866805707,
+          "gain": 1.0,
+          "minJ": 0.6799346666922487,
+          "maxJ": 1.2793783382030404,
+          "previousResidualMm": 0.7133369640752483
+        },
+        {
+          "iteration": 4,
+          "energy": 0.12916071457879552,
+          "gain": 1.0,
+          "minJ": 0.6780817780643216,
+          "maxJ": 1.2811706271344643,
+          "previousResidualMm": 0.2625341305319199
+        },
+        {
+          "iteration": 5,
+          "energy": 0.12915884497003635,
+          "gain": 1.0,
+          "minJ": 0.6771810401538402,
+          "maxJ": 1.2818355029278927,
+          "previousResidualMm": 0.13684764084969747
+        },
+        {
+          "iteration": 6,
+          "energy": 0.12915816060922758,
+          "gain": 1.0,
+          "minJ": 0.6767273924558749,
+          "maxJ": 1.282048123812689,
+          "previousResidualMm": 0.07590763395308202
+        },
+        {
+          "iteration": 7,
+          "energy": 0.12915788537932305,
+          "gain": 1.0,
+          "minJ": 0.6764894276323878,
+          "maxJ": 1.282082488104451,
+          "previousResidualMm": 0.043877274607149554
+        },
+        {
+          "iteration": 8,
+          "energy": 0.12915776780903065,
+          "gain": 1.0,
+          "minJ": 0.6763597138243006,
+          "maxJ": 1.2820521344564635,
+          "previousResidualMm": 0.025904763706998696
+        },
+        {
+          "iteration": 9,
+          "energy": 0.12915771541129573,
+          "gain": 1.0,
+          "minJ": 0.6762865939364356,
+          "maxJ": 1.2820038817015849,
+          "previousResidualMm": 0.015663964537554052
+        },
+        {
+          "iteration": 10,
+          "energy": 0.12915769131671895,
+          "gain": 1.0,
+          "minJ": 0.6762441790578861,
+          "maxJ": 1.2819561811564941,
+          "previousResidualMm": 0.010880303370027492
+        },
+        {
+          "iteration": 11,
+          "energy": 0.1291576799755564,
+          "gain": 1.0,
+          "minJ": 0.676218965647257,
+          "maxJ": 1.2819153722319,
+          "previousResidualMm": 0.0077185362864454045
+        },
+        {
+          "iteration": 12,
+          "energy": 0.12915767454459595,
+          "gain": 1.0,
+          "minJ": 0.6762036564024954,
+          "maxJ": 1.281882740446764,
+          "previousResidualMm": 0.005479546469637998
+        },
+        {
+          "iteration": 13,
+          "energy": 0.12915767191108665,
+          "gain": 1.0,
+          "minJ": 0.6761941860135329,
+          "maxJ": 1.2818576157076877,
+          "previousResidualMm": 0.00388978314804355
+        },
+        {
+          "iteration": 14,
+          "energy": 0.12915767062257427,
+          "gain": 1.0,
+          "minJ": 0.6761882298103626,
+          "maxJ": 1.2818387198851655,
+          "previousResidualMm": 0.0027604006159005655
+        },
+        {
+          "iteration": 15,
+          "energy": 0.12915766998812417,
+          "gain": 1.0,
+          "minJ": 0.6761844279619436,
+          "maxJ": 1.281824728779989,
+          "previousResidualMm": 0.001958178684426047
+        },
+        {
+          "iteration": 16,
+          "energy": 0.12915766967433642,
+          "gain": 1.0,
+          "minJ": 0.676181968887661,
+          "maxJ": 1.2818144815148769,
+          "previousResidualMm": 0.0013885389472760685
+        }
+      ],
+      "metric": {
+        "negativeEigenvalues": 4707,
+        "minUnprojectedEigenvalue": -25.19284495729079,
+        "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+      }
+    }
+  ],
+  "rejectedTrials": [],
+  "boneContactEvaluated": false,
+  "selfCollisionEvaluated": false,
+  "activation": null,
+  "force": null
+}

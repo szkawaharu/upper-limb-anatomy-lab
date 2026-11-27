@@ -1,0 +1,116 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "sourceDirectory": "test-results/v076-cage-mid-acromial-18",
+  "inputSha256": {
+    "cage.npz": "fe4df8b5f460a1c78a02a1bbf6d331acf6bb2cbce2dc482fd61831225e3c67c2",
+    "conforming.npz": "dfd925eda8b9e96cbe6b6111f6913e53b07c34aec5ca65c511a8e9b2c1b9a04e"
+  },
+  "surfaceVertices": 29873,
+  "fixedControls": 36,
+  "declaredFixedSurfaceVertices": 1677,
+  "unlabelledWithNoFreeSupport": 4313,
+  "byBone": [
+    {
+      "end": 0,
+      "undeclaredRigidVertices": 2717,
+      "firstVertices": [
+        11561,
+        11866,
+        11880,
+        11900,
+        11902,
+        11920,
+        11929,
+        11930,
+        11947,
+        11949,
+        11950,
+        12173,
+        12175,
+        12183,
+        12185,
+        12186,
+        12187,
+        12188,
+        12190,
+        12194
+      ]
+    },
+    {
+      "end": 1,
+      "undeclaredRigidVertices": 1596,
+      "firstVertices": [
+        2955,
+        2957,
+        2973,
+        2974,
+        2976,
+        3006,
+        3008,
+        3009,
+        3011,
+        3012,
+        3013,
+        3022,
+        3023,
+        3024,
+        3025,
+        3026,
+        3027,
+        3028,
+        3029,
+        3030
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "vertex": 12473,
+      "declaredWeight": 0.09792890399694443,
+      "controlVertices": [
+        233,
+        234,
+        318,
+        325
+      ],
+      "barycentric": [
+        0.6022682340033763,
+        0.19635725638880616,
+        0.0035450520868087507,
+        0.1978294575210088
+      ],
+      "supportClasses": [
+        0,
+        0,
+        -1,
+        0
+      ],
+      "fixedInfluence": 0.9964549479131912
+    },
+    {
+      "vertex": 28359,
+      "declaredWeight": 0.09753976249613681,
+      "controlVertices": [
+        233,
+        234,
+        318,
+        325
+      ],
+      "barycentric": [
+        0.602491192297774,
+        0.1987653324172425,
+        0.0,
+        0.19874347528498346
+      ],
+      "supportClasses": [
+        0,
+        0,
+        -1,
+        0
+      ],
+      "fixedInfluence": 1.0
+    }
+  ],
+  "classificationTolerance": "1e-9 barycentric roundoff screening; not an anatomical or distance acceptance threshold"
+}

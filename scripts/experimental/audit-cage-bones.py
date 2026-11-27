@@ -6,6 +6,8 @@ from pathlib import Path
 import numpy as np,trimesh
 from scipy.spatial.transform import Rotation
 file=Path(sys.argv[1]);data=np.load(file);report=json.loads(file.with_suffix('.json').read_text())
+if 'snapshotSha256'in report:assert hashlib.sha256(file.read_bytes()).hexdigest()==report['snapshotSha256'],'Mixed or incomplete reference snapshot'
+if 'progress'in data:assert float(data['progress'])==report['progress']
 if report['progress']<1:raise ValueError('Only a completed target may be audited')
 cal=json.loads(Path('docs/validation/v076/source-bones/browser-numeric/rig-calibration.json').read_text());scale=cal['scale'];P=np.array([[-1,0,0],[0,0,1],[0,1,0]],float);atlasSC=np.array([-14.91024,-129.66467,1341.37453]);offset=np.array(cal['landmarks']['SC'])/scale-P@atlasSC
 rest=data['referenceWorld']/scale;now=data['sourceWorld']/scale;results=[]

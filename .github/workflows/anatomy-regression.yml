@@ -50,6 +50,12 @@ jobs:
           python scripts/experimental/test-projected-solid.py
           python scripts/experimental/test-conforming-surface.py
           python scripts/experimental/test-spline-cage.py
+          python scripts/experimental/test-landmark-registration.py
+          python scripts/experimental/test-continuation.py
+          python scripts/experimental/test-point-cage.py
+          python scripts/experimental/test-constrained-cage.py
+          python scripts/experimental/test-attachment-refinement.py
+          python scripts/experimental/test-cage-newton.py
   prepare-pages:
     name: Prepare GitHub Pages artifact
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'

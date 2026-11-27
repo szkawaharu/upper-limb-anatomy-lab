@@ -1,0 +1,1253 @@
+{
+  "experimental": true,
+  "adoptedIntoApplication": false,
+  "definesAttachmentFootprints": false,
+  "units": "render world axes, mm (offset inherited from calibrated atlas)",
+  "source": {
+    "sourceRepository": "https://github.com/ComputationalBiomechanicsLab/rmr-solver",
+    "sourceCommit": "b47b06cd23c872e69f92687270e47d4c560bb14b",
+    "sourcePath": "OpenSim Models/for RMR solver/TSM_subject_noWeight.osim",
+    "modelSha256": "c357e61eb266558c0bfe9212462fbc1d621e0398c2eafc4e1a4aa92fe5c7a9ff",
+    "license": "CC BY 4.0",
+    "copyright": "2023 Italo Belli, Sagar Joshi, J. Micah Prendergast, Irene Beck, Cosimo dell Santina, Luka Peternel, Ajay Seth",
+    "attribution": "Modified thoracoscapular shoulder model; Belli et al. 2023 DOI10.1371/journal.pone.0295003; based on Seth et al. 2019 DOI10.3389/fnbot.2019.00090"
+  },
+  "inputSha256": {
+    "docs/validation/v076/reference-model/subject-paths.json": "f7dec1d60384051986957a0e0278ae4b354f40467db50808939e432c6a438955",
+    "docs/validation/v076/source-bones/browser-numeric/rig-calibration.json": "128ba4a142da025d3b392923bd18e4c3ab25fff285e1d0c10010afaa7f590c32"
+  },
+  "registrations": {
+    "scapula": {
+      "rotation": [
+        [
+          -0.08787206511388632,
+          -0.21465168609292637,
+          0.9727297434694206
+        ],
+        [
+          0.19687219983717244,
+          0.9535035467830659,
+          0.2281936090327383
+        ],
+        [
+          -0.976483403393982,
+          0.2115552881153709,
+          -0.04152737610937035
+        ]
+      ],
+      "scale": 0.9962662360458595,
+      "translation": [
+        124.80472266816685,
+        320.0669038167781,
+        9.324552412852924
+      ],
+      "errors": [
+        12.261905021809387,
+        7.796146350422961,
+        8.140190534791241
+      ]
+    },
+    "humerus": {
+      "rotation": [
+        [
+          0.1496687012697351,
+          -0.2539969885784951,
+          0.9555547130611028
+        ],
+        [
+          -0.0014717380348790241,
+          0.9663822009679727,
+          0.25710557294514946
+        ],
+        [
+          -0.9887351080281247,
+          -0.0398869834075316,
+          0.1442633519202289
+        ]
+      ],
+      "scale": 1.1405540526910583,
+      "translation": [
+        148.59912,
+        290.8959063063063,
+        14.273974414414417
+      ]
+    }
+  },
+  "limitations": [
+    "Different atlas individuals; geometry is not clinically registered",
+    "Three estimated scapular landmarks; residuals are not independent holdout validation",
+    "Humeral transverse direction from fitted condylar centres; no false epicondylar-width scaling",
+    "Muscle line paths cannot independently define broad attachment masks",
+    "Paths on unregistered bones have been omitted"
+  ],
+  "paths": [
+    {
+      "name": "TrapeziusScapula_M",
+      "points": [
+        {
+          "name": "TrapeziusScapula5-P2",
+          "body": "scapula",
+          "positionAxisMm": [
+            96.03317940698594,
+            300.4302142993349,
+            59.755697997050106
+          ],
+          "sourceLocalMetres": [
+            -0.05077245236958017,
+            -0.0018858586464354705,
+            -0.03469170674054537
+          ],
+          "nearestBonePointAxisMm": [
+            100.56381435280294,
+            294.83871022670974,
+            63.875559048227366
+          ],
+          "nearestBoneFace": 30712,
+          "boneGapMm": 8.292455962346114
+        }
+      ]
+    },
+    {
+      "name": "TrapeziusScapula_S",
+      "points": [
+        {
+          "name": "TrapeziusScapula2-P2",
+          "body": "scapula",
+          "positionAxisMm": [
+            104.70914820748403,
+            312.220207774568,
+            55.57415466496776
+          ],
+          "sourceLocalMetres": [
+            -0.045109353374159535,
+            0.006640839691749241,
+            -0.023345921667295353
+          ],
+          "nearestBonePointAxisMm": [
+            112.52930784080012,
+            307.5553981787779,
+            63.93117138372784
+          ],
+          "nearestBoneFace": 36222,
+          "boneGapMm": 12.359412352258381
+        }
+      ]
+    },
+    {
+      "name": "TrapeziusScapula_I",
+      "points": [
+        {
+          "name": "TrapeziusScapula10-P2",
+          "body": "scapula",
+          "positionAxisMm": [
+            64.157694965507,
+            282.4291611023393,
+            74.53439134413674
+          ],
+          "sourceLocalMetres": [
+            -0.06600341225376201,
+            -0.009108256233972371,
+            -0.07055328285695303
+          ],
+          "nearestBonePointAxisMm": [
+            63.44611101777786,
+            281.97716467162786,
+            73.41831469797701
+          ],
+          "nearestBoneFace": 11573,
+          "boneGapMm": 1.3986706431983331
+        }
+      ]
+    },
+    {
+      "name": "SerratusAnterior_I",
+      "points": [
+        {
+          "name": "SerratusAnterior4-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            77.43560913190665,
+            179.35096455271943,
+            86.20166220716102
+          ],
+          "sourceLocalMetres": [
+            -0.09897942230024892,
+            -0.1081453170625503,
+            -0.08168532205128441
+          ],
+          "nearestBonePointAxisMm": [
+            76.54823430618404,
+            179.29279147557747,
+            84.4380687712196
+          ],
+          "nearestBoneFace": 47258,
+          "boneGapMm": 1.9751151853818638
+        }
+      ]
+    },
+    {
+      "name": "SerratusAnterior_M",
+      "points": [
+        {
+          "name": "SerratusAnterior7-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            60.85618378079608,
+            205.11365520892622,
+            87.62797740195614
+          ],
+          "sourceLocalMetres": [
+            -0.09382412080988195,
+            -0.07961342266027373,
+            -0.09203160255746494
+          ],
+          "nearestBonePointAxisMm": [
+            63.03752660139328,
+            205.70288886806713,
+            91.28170276191928
+          ],
+          "nearestBoneFace": 24091,
+          "boneGapMm": 4.295947137951452
+        }
+      ]
+    },
+    {
+      "name": "SerratusAnterior_S",
+      "points": [
+        {
+          "name": "SerratusAnterior12-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            48.30335619259121,
+            301.63378395124624,
+            55.63416118204104
+          ],
+          "sourceLocalMetres": [
+            -0.04228508269990983,
+            0.008674533418204714,
+            -0.08084645284699168
+          ],
+          "nearestBonePointAxisMm": [
+            58.65803943991826,
+            303.1917248674226,
+            66.83899416194785
+          ],
+          "nearestBoneFace": 5067,
+          "boneGapMm": 15.336066221765583
+        }
+      ]
+    },
+    {
+      "name": "Rhomboideus_S",
+      "points": [
+        {
+          "name": "Rhomboideus1-P2",
+          "body": "scapula",
+          "positionAxisMm": [
+            41.66428295648576,
+            262.8650972866292,
+            78.7950504969646
+          ],
+          "sourceLocalMetres": [
+            -0.07206157266143917,
+            -0.022081485659783906,
+            -0.09717401761467839
+          ],
+          "nearestBonePointAxisMm": [
+            46.80673951962493,
+            263.2343518364953,
+            85.52569995756318
+          ],
+          "nearestBoneFace": 4780,
+          "boneGapMm": 8.478375468674745
+        }
+      ]
+    },
+    {
+      "name": "Rhomboideus_I",
+      "points": [
+        {
+          "name": "Rhomboideus4-P2",
+          "body": "scapula",
+          "positionAxisMm": [
+            70.59770324841897,
+            183.95368104301485,
+            85.98638457051382
+          ],
+          "sourceLocalMetres": [
+            -0.09725576369486326,
+            -0.10231260769945211,
+            -0.08729846423248305
+          ],
+          "nearestBonePointAxisMm": [
+            71.63223077538612,
+            183.8666350255838,
+            87.475907884978
+          ],
+          "nearestBoneFace": 39321,
+          "boneGapMm": 1.8156276924346948
+        }
+      ]
+    },
+    {
+      "name": "LevatorScapulae",
+      "points": [
+        {
+          "name": "LevatorScapulae1-P2",
+          "body": "scapula",
+          "positionAxisMm": [
+            37.187845067694994,
+            276.9903469378066,
+            77.90149402230485
+          ],
+          "sourceLocalMetres": [
+            -0.06799964048427277,
+            -0.0077878024359216294,
+            -0.09827208305888474
+          ],
+          "nearestBonePointAxisMm": [
+            45.71689987182617,
+            278.0563063063064,
+            83.55362440014744
+          ],
+          "nearestBoneFace": 2047,
+          "boneGapMm": 10.287255369402313
+        }
+      ]
+    },
+    {
+      "name": "Coracobrachialis",
+      "points": [
+        {
+          "name": "Coracobrachialis2-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            106.91678143731527,
+            276.5291210222422,
+            -5.1968237926016165
+          ],
+          "sourceLocalMetres": [
+            0.007207264344682236,
+            -0.040898532962857816,
+            -0.02683232719462635
+          ],
+          "nearestBonePointAxisMm": [
+            115.10299682617188,
+            297.3063063063064,
+            -7.254988661757466
+          ],
+          "nearestBoneFace": 77036,
+          "boneGapMm": 22.426359342294386
+        },
+        {
+          "name": "Coracobrachialis2-P2",
+          "body": "humerus",
+          "positionAxisMm": [
+            173.25933853161467,
+            152.57382024308544,
+            21.451463796646472
+          ],
+          "sourceLocalMetres": [
+            -0.0028075819610468167,
+            -0.12294192571235656,
+            -0.009612646101892929
+          ],
+          "nearestBonePointAxisMm": [
+            173.3684390149407,
+            152.58126445339659,
+            21.42820859408395
+          ],
+          "nearestBoneFace": 8183,
+          "boneGapMm": 0.11179953566697416
+        }
+      ]
+    },
+    {
+      "name": "DeltoideusClavicle_A",
+      "points": [
+        {
+          "name": "DeltoideusClavicle2-P2",
+          "body": "scapula",
+          "positionAxisMm": [
+            134.2943287429289,
+            319.6384975710559,
+            -9.013296060370028
+          ],
+          "sourceLocalMetres": [
+            0.017052060493946055,
+            -0.006348619884316785,
+            0.009931667749015582
+          ],
+          "nearestBonePointAxisMm": [
+            122.36199951171875,
+            306.7462477125564,
+            -6.424483290663716
+          ],
+          "nearestBoneFace": 85521,
+          "boneGapMm": 17.756478785293194
+        },
+        {
+          "name": "DeltoideusClavicle2-P3",
+          "body": "humerus",
+          "positionAxisMm": [
+            178.23697502733884,
+            188.61231222936146,
+            9.598056011516364
+          ],
+          "sourceLocalMetres": [
+            0.008074705965578972,
+            -0.09310077164828069,
+            0.0011821853888155985
+          ],
+          "nearestBonePointAxisMm": [
+            177.4022218810374,
+            188.26719269711833,
+            7.909236384246742
+          ],
+          "nearestBoneFace": 7672,
+          "boneGapMm": 1.9152107038775066
+        }
+      ]
+    },
+    {
+      "name": "DeltoideusScapula_P",
+      "points": [
+        {
+          "name": "DeltoideusScapulaPost2-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            105.42991882988738,
+            297.9546765111451,
+            57.958396512596934
+          ],
+          "sourceLocalMetres": [
+            -0.05032883641040683,
+            -0.006661377963834946,
+            -0.0260090645633266
+          ],
+          "nearestBonePointAxisMm": [
+            106.75895355742688,
+            296.4941948286757,
+            59.13788751669253
+          ],
+          "nearestBoneFace": 35595,
+          "boneGapMm": 2.300117188444355
+        },
+        {
+          "name": "DeltoideusScapulaPost2-P2",
+          "body": "scapula",
+          "positionAxisMm": [
+            142.47901544898363,
+            282.6270713853979,
+            49.10198466129528
+          ],
+          "sourceLocalMetres": [
+            -0.047944956348407786,
+            -0.03119417530772128,
+            0.007023150193982473
+          ],
+          "nearestBonePointAxisMm": [
+            135.76100158691406,
+            282.7962965406814,
+            36.63141346836949
+          ],
+          "nearestBoneFace": 100254,
+          "boneGapMm": 14.165997786318135
+        },
+        {
+          "name": "DeltoideusScapulaPost2-P3",
+          "body": "humerus",
+          "positionAxisMm": [
+            175.77984244983918,
+            212.268835307826,
+            25.187382314157745
+          ],
+          "sourceLocalMetres": [
+            -0.0057924897496261785,
+            -0.07305478096373028,
+            0.006428116309330171
+          ],
+          "nearestBonePointAxisMm": [
+            175.94108824828317,
+            212.46653667048537,
+            27.048505298955877
+          ],
+          "nearestBoneFace": 8645,
+          "boneGapMm": 1.8785272957444927
+        }
+      ]
+    },
+    {
+      "name": "DeltoideusScapula_M",
+      "points": [
+        {
+          "name": "DeltoideusScapulaLat10-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            132.8262088655978,
+            320.88353383217765,
+            23.0147991204503
+          ],
+          "sourceLocalMetres": [
+            -0.01396453177357658,
+            0.0019603978281862162,
+            0.007448378424350175
+          ],
+          "nearestBonePointAxisMm": [
+            132.36064920469582,
+            321.7069387058565,
+            23.071563097423393
+          ],
+          "nearestBoneFace": 74994,
+          "boneGapMm": 0.9476093778235005
+        },
+        {
+          "name": "DeltoideusScapulaLat10-P2",
+          "body": "scapula",
+          "positionAxisMm": [
+            155.3085489789637,
+            319.75454054053307,
+            11.085880951215692
+          ],
+          "sourceLocalMetres": [
+            -0.00447855982803553,
+            -0.006497177803570212,
+            0.029638218598404417
+          ],
+          "nearestBonePointAxisMm": [
+            149.14980100741238,
+            320.9115542058855,
+            15.176687211398827
+          ],
+          "nearestBoneFace": 110784,
+          "boneGapMm": 7.483552168405947
+        },
+        {
+          "name": "DeltoideusScapulaLat10-P3",
+          "body": "humerus",
+          "positionAxisMm": [
+            176.69676909936555,
+            198.18807030044258,
+            24.711817351260827
+          ],
+          "sourceLocalMetres": [
+            -0.005241734446361114,
+            -0.08517286375207371,
+            0.003962055045324238
+          ],
+          "nearestBonePointAxisMm": [
+            175.06663776686815,
+            198.17142758053382,
+            27.93076900818745
+          ],
+          "nearestBoneFace": 8609,
+          "boneGapMm": 3.608220463184915
+        }
+      ]
+    },
+    {
+      "name": "LatissimusDorsi_S",
+      "points": [
+        {
+          "name": "LatissimusDorsi1-P5",
+          "body": "humerus",
+          "positionAxisMm": [
+            150.62189273081177,
+            272.04792286692657,
+            6.364335271144214
+          ],
+          "sourceLocalMetres": [
+            0.00714654685172168,
+            -0.016143594609523373,
+            -0.003554520375764696
+          ],
+          "nearestBonePointAxisMm": [
+            148.64118213152213,
+            270.7836013175914,
+            4.288754042408336
+          ],
+          "nearestBoneFace": 12079,
+          "boneGapMm": 3.135244949813713
+        }
+      ]
+    },
+    {
+      "name": "LatissimusDorsi_M",
+      "points": [
+        {
+          "name": "LatissimusDorsi3-P5",
+          "body": "humerus",
+          "positionAxisMm": [
+            158.7461864519681,
+            252.2658366718069,
+            7.7637886331753405
+          ],
+          "sourceLocalMetres": [
+            0.007025007559375865,
+            -0.03476298582505046,
+            -0.0010302977171656495
+          ],
+          "nearestBonePointAxisMm": [
+            157.30893755703644,
+            251.70917246176992,
+            4.612581058186651
+          ],
+          "nearestBoneFace": 10921,
+          "boneGapMm": 3.5079436439863834
+        }
+      ]
+    },
+    {
+      "name": "LatissimusDorsi_I",
+      "points": [
+        {
+          "name": "LatissimusDorsi6-P4",
+          "body": "humerus",
+          "positionAxisMm": [
+            161.5539386572461,
+            244.10591548321383,
+            10.38809835730556
+          ],
+          "sourceLocalMetres": [
+            0.0051289945987811345,
+            -0.042393872744140734,
+            -0.00018545274424484402
+          ],
+          "nearestBonePointAxisMm": [
+            156.0652042102795,
+            242.41566621008275,
+            9.107387115556714
+          ],
+          "nearestBoneFace": 11490,
+          "boneGapMm": 5.884162618366354
+        }
+      ]
+    },
+    {
+      "name": "PectoralisMajorClavicle_S",
+      "points": [
+        {
+          "name": "PectoralisMajorClavicle1-P2",
+          "body": "humerus",
+          "positionAxisMm": [
+            158.1210316467592,
+            250.70373699237635,
+            1.6495894878425101
+          ],
+          "sourceLocalMetres": [
+            0.012245326782425646,
+            -0.03573349741628025,
+            -0.002679539164480556
+          ],
+          "nearestBonePointAxisMm": [
+            158.97600982396145,
+            251.15597106256413,
+            4.103544155157902
+          ],
+          "nearestBoneFace": 10131,
+          "boneGapMm": 2.637687784209813
+        }
+      ]
+    },
+    {
+      "name": "PectoralisMajorThorax_I",
+      "points": [
+        {
+          "name": "PectoralisMajorThorax2-P2",
+          "body": "humerus",
+          "positionAxisMm": [
+            158.0426837749811,
+            262.8393429666069,
+            1.7250972612476616
+          ],
+          "sourceLocalMetres": [
+            0.012153929234581593,
+            -0.02543628973030093,
+            0.0
+          ],
+          "nearestBonePointAxisMm": [
+            158.14938261835627,
+            262.93241421956145,
+            2.567975722730282
+          ],
+          "nearestBoneFace": 10142,
+          "boneGapMm": 0.854687663497862
+        }
+      ]
+    },
+    {
+      "name": "PectoralisMajorThorax_M",
+      "points": [
+        {
+          "name": "PectoralisMajorThorax5-P2",
+          "body": "humerus",
+          "positionAxisMm": [
+            153.61083869105346,
+            265.4346814852334,
+            0.7905750011683423
+          ],
+          "sourceLocalMetres": [
+            0.012379141543298387,
+            -0.02221764391489968,
+            -0.0032461519606486015
+          ],
+          "nearestBonePointAxisMm": [
+            154.1075208110056,
+            265.90193188574295,
+            1.9372473473618201
+          ],
+          "nearestBoneFace": 10934,
+          "boneGapMm": 1.334119010651354
+        }
+      ]
+    },
+    {
+      "name": "TeresMajor",
+      "points": [
+        {
+          "name": "TeresMajor1-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            90.23735624991986,
+            179.06053580370778,
+            76.86169769253361
+          ],
+          "sourceLocalMetres": [
+            -0.09101144471898566,
+            -0.11316481902802325,
+            -0.06886321691239196
+          ],
+          "nearestBonePointAxisMm": [
+            90.29256924494136,
+            178.95011749060572,
+            76.71745284363412
+          ],
+          "nearestBoneFace": 70737,
+          "boneGapMm": 0.18986114695109652
+        },
+        {
+          "name": "TeresMajor1-P2",
+          "body": "humerus",
+          "positionAxisMm": [
+            157.1659837648223,
+            253.92646536802295,
+            9.569057025973226
+          ],
+          "sourceLocalMetres": [
+            0.005250533891126952,
+            -0.03306717664939121,
+            -0.001751507870689475
+          ],
+          "nearestBonePointAxisMm": [
+            153.82695586235667,
+            252.9437373575683,
+            7.129130620954346
+          ],
+          "nearestBoneFace": 11497,
+          "boneGapMm": 4.250659071001172
+        }
+      ]
+    },
+    {
+      "name": "Infraspinatus_I",
+      "points": [
+        {
+          "name": "Infraspinatus3-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            73.80881736190284,
+            211.4575144807938,
+            80.12318603501748
+          ],
+          "sourceLocalMetres": [
+            -0.08635718193804982,
+            -0.07792621364144461,
+            -0.07761909528054173
+          ],
+          "nearestBonePointAxisMm": [
+            75.52980662997972,
+            211.8802289747789,
+            82.82893718706094
+          ],
+          "nearestBoneFace": 33376,
+          "boneGapMm": 3.2344367208287417
+        },
+        {
+          "name": "Infraspinatus3-P2",
+          "body": "humerus",
+          "positionAxisMm": [
+            174.30141592242495,
+            293.07097687250126,
+            42.222957704837064
+          ],
+          "sourceLocalMetres": [
+            -0.02085873338534135,
+            -0.004858302771813058,
+            0.025558794616301322
+          ],
+          "nearestBonePointAxisMm": [
+            165.28599548339844,
+            293.1362623609939,
+            30.606415757187847
+          ],
+          "nearestBoneFace": 11087,
+          "boneGapMm": 14.704629023165413
+        }
+      ]
+    },
+    {
+      "name": "Infraspinatus_S",
+      "points": [
+        {
+          "name": "Infraspinatus5-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            57.40170323280843,
+            257.390892073366,
+            76.95111912458675
+          ],
+          "sourceLocalMetres": [
+            -0.07272407635366109,
+            -0.031103001185745327,
+            -0.08298538884835396
+          ],
+          "nearestBonePointAxisMm": [
+            58.56694127815934,
+            258.1199197604266,
+            79.73742144352556
+          ],
+          "nearestBoneFace": 13082,
+          "boneGapMm": 3.106886171612661
+        },
+        {
+          "name": "Infraspinatus5-P2",
+          "body": "humerus",
+          "positionAxisMm": [
+            169.88987188801954,
+            300.17466937159725,
+            37.57908787398941
+          ],
+          "sourceLocalMetres": [
+            -0.017421077546972218,
+            0.002305435616216995,
+            0.022876753388699475
+          ],
+          "nearestBonePointAxisMm": [
+            166.0306926298916,
+            297.739650201784,
+            29.499870412295774
+          ],
+          "nearestBoneFace": 11239,
+          "boneGapMm": 9.278811222191031
+        }
+      ]
+    },
+    {
+      "name": "PectoralisMinor",
+      "points": [
+        {
+          "name": "PectoralisMinor3-P2",
+          "body": "scapula",
+          "positionAxisMm": [
+            109.96172854357357,
+            284.8622475716737,
+            -6.108733838638306
+          ],
+          "sourceLocalMetres": [
+            0.00947920743415731,
+            -0.03377278379975801,
+            -0.02191261206877523
+          ],
+          "nearestBonePointAxisMm": [
+            115.0846669865761,
+            297.3078880446351,
+            -7.31644136589558
+          ],
+          "nearestBoneFace": 77036,
+          "boneGapMm": 13.512846574441713
+        }
+      ]
+    },
+    {
+      "name": "TeresMinor",
+      "points": [
+        {
+          "name": "TeresMinor2-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            105.71533906419086,
+            235.9852891257612,
+            69.12372446987578
+          ],
+          "sourceLocalMetres": [
+            -0.07354340164355501,
+            -0.06366141507334998,
+            -0.04038980704041129
+          ],
+          "nearestBonePointAxisMm": [
+            104.14140390460379,
+            232.54199566288494,
+            62.94475921083567
+          ],
+          "nearestBoneFace": 64170,
+          "boneGapMm": 7.246595989186602
+        },
+        {
+          "name": "TeresMinor2-P2",
+          "body": "humerus",
+          "positionAxisMm": [
+            159.78873237298214,
+            285.4590546704156,
+            38.22599879584564
+          ],
+          "sourceLocalMetres": [
+            -0.019288407234573337,
+            -0.007936124091663069,
+            0.011178638380113964
+          ],
+          "nearestBonePointAxisMm": [
+            157.53944890402337,
+            288.32630113377843,
+            32.7691318016874
+          ],
+          "nearestBoneFace": 12141,
+          "boneGapMm": 6.5618424087546865
+        }
+      ]
+    },
+    {
+      "name": "Subscapularis_S",
+      "points": [
+        {
+          "name": "Subscapularis3-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            53.704619358278535,
+            258.36393537205004,
+            73.35346663682724
+          ],
+          "sourceLocalMetres": [
+            -0.0686794913126463,
+            -0.030139119162614716,
+            -0.08622229480997096
+          ],
+          "nearestBonePointAxisMm": [
+            56.87984725598054,
+            259.8026666169871,
+            80.07829685988216
+          ],
+          "nearestBoneFace": 11300,
+          "boneGapMm": 7.5746525548315535
+        },
+        {
+          "name": "Subscapularis3-P2",
+          "body": "humerus",
+          "positionAxisMm": [
+            138.9157003059666,
+            287.0187364832727,
+            -12.422619588793397
+          ],
+          "sourceLocalMetres": [
+            0.02187731570083156,
+            -0.00019501211986869906,
+            -0.01236348193969802
+          ],
+          "nearestBonePointAxisMm": [
+            142.55382331356287,
+            289.2349287354248,
+            -6.21581102979243
+          ],
+          "nearestBoneFace": 12910,
+          "boneGapMm": 7.528075425033149
+        }
+      ]
+    },
+    {
+      "name": "Subscapularis_M",
+      "points": [
+        {
+          "name": "Subscapularis4-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            73.31250291921972,
+            239.27329937331731,
+            71.99109557975892
+          ],
+          "sourceLocalMetres": [
+            -0.07284611650749145,
+            -0.052924264721496354,
+            -0.07139354163165006
+          ],
+          "nearestBonePointAxisMm": [
+            76.1256841076442,
+            240.7758162754259,
+            76.96383270369502
+          ],
+          "nearestBoneFace": 27362,
+          "boneGapMm": 5.907593413886881
+        },
+        {
+          "name": "Subscapularis4-P2",
+          "body": "humerus",
+          "positionAxisMm": [
+            129.9412564932914,
+            285.88568585870644,
+            -11.523587777865972
+          ],
+          "sourceLocalMetres": [
+            0.019921748486987384,
+            0.0008120967291809926,
+            -0.020023959186845307
+          ],
+          "nearestBonePointAxisMm": [
+            135.2544431355958,
+            288.241743571882,
+            -2.0951403880618686
+          ],
+          "nearestBoneFace": 14099,
+          "boneGapMm": 11.075946028492547
+        }
+      ]
+    },
+    {
+      "name": "Subscapularis_I",
+      "points": [
+        {
+          "name": "Subscapularis9-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            73.16321575498193,
+            195.8672969717614,
+            73.48067104502017
+          ],
+          "sourceLocalMetres": [
+            -0.08287040757157818,
+            -0.09411867987723598,
+            -0.08154348569418352
+          ],
+          "nearestBonePointAxisMm": [
+            79.23867385102045,
+            195.79261575422893,
+            81.49222144462352
+          ],
+          "nearestBoneFace": 43555,
+          "boneGapMm": 10.05493451825305
+        },
+        {
+          "name": "Subscapularis9-P2",
+          "body": "humerus",
+          "positionAxisMm": [
+            129.78973163873218,
+            281.7899367103312,
+            -3.9593131317562733
+          ],
+          "sourceLocalMetres": [
+            0.013349754331972073,
+            -0.002888988990698978,
+            -0.020117407283240327
+          ],
+          "nearestBonePointAxisMm": [
+            133.48684547277696,
+            284.61191203746637,
+            0.6393440484259787
+          ],
+          "nearestBoneFace": 14039,
+          "boneGapMm": 6.540630192090583
+        }
+      ]
+    },
+    {
+      "name": "Supraspinatus_P",
+      "points": [
+        {
+          "name": "Supraspinatus2-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            83.93181397975772,
+            297.71594403890055,
+            62.327979320274366
+          ],
+          "sourceLocalMetres": [
+            -0.05276266576393787,
+            -0.0013300916544964022,
+            -0.04723610185911038
+          ],
+          "nearestBonePointAxisMm": [
+            80.37784355388878,
+            292.4573490139733,
+            58.673254361968944
+          ],
+          "nearestBoneFace": 20555,
+          "boneGapMm": 7.323970367567096
+        },
+        {
+          "name": "Supraspinatus2-P2",
+          "body": "humerus",
+          "positionAxisMm": [
+            170.87325459758824,
+            305.8743339463652,
+            3.3651909976314673
+          ],
+          "sourceLocalMetres": [
+            0.012360302952984787,
+            0.008112233874555282,
+            0.02065790200616015
+          ],
+          "nearestBonePointAxisMm": [
+            169.3817480080746,
+            305.1398935627413,
+            4.32615434991498
+          ],
+          "nearestBoneFace": 9400,
+          "boneGapMm": 1.9202721546937636
+        }
+      ]
+    },
+    {
+      "name": "Supraspinatus_A",
+      "points": [
+        {
+          "name": "Supraspinatus4-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            64.16433599870288,
+            297.8945970650017,
+            53.8829126346732
+          ],
+          "sourceLocalMetres": [
+            -0.042706469916778345,
+            0.0013066234740512167,
+            -0.06614364300092368
+          ],
+          "nearestBonePointAxisMm": [
+            68.55980723446403,
+            300.35789760798576,
+            58.88555799790583
+          ],
+          "nearestBoneFace": 13499,
+          "boneGapMm": 7.100315315515381
+        },
+        {
+          "name": "Supraspinatus4-P2",
+          "body": "humerus",
+          "positionAxisMm": [
+            158.79094016926513,
+            310.26040422294284,
+            -9.14003866441938
+          ],
+          "sourceLocalMetres": [
+            0.021609807718378417,
+            0.014956528186561896,
+            0.009942341701081535
+          ],
+          "nearestBonePointAxisMm": [
+            155.91105871107817,
+            301.8583793827803,
+            -4.120817116690882
+          ],
+          "nearestBoneFace": 11369,
+          "boneGapMm": 10.201976454251374
+        }
+      ]
+    },
+    {
+      "name": "TRIlong",
+      "points": [
+        {
+          "name": "TRIlong2-P2",
+          "body": "scapula",
+          "positionAxisMm": [
+            126.75506533085647,
+            262.541882868333,
+            34.99234164301706
+          ],
+          "sourceLocalMetres": [
+            -0.03669764859986402,
+            -0.050025583016899224,
+            -0.012341682689169345
+          ],
+          "nearestBonePointAxisMm": [
+            127.93514939912988,
+            262.04987439778193,
+            36.06789269716922
+          ],
+          "nearestBoneFace": 102127,
+          "boneGapMm": 1.6707725199363788
+        }
+      ]
+    },
+    {
+      "name": "BIC_long",
+      "points": [
+        {
+          "name": "BIC_long-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            113.10634717330268,
+            297.31641926694533,
+            25.8782603669267
+          ],
+          "sourceLocalMetres": [
+            -0.019688912360527732,
+            -0.01573833044007181,
+            -0.017322984963847696
+          ],
+          "nearestBonePointAxisMm": [
+            110.88301828966983,
+            299.14901261930817,
+            32.04107931991883
+          ],
+          "nearestBoneFace": 50132,
+          "boneGapMm": 6.803082181429204
+        },
+        {
+          "name": "BIC_long-P2",
+          "body": "humerus",
+          "positionAxisMm": [
+            166.6420815529959,
+            323.2254694532409,
+            0.37026801546853605
+          ],
+          "sourceLocalMetres": [
+            0.014378949059556443,
+            0.023860713425195922,
+            0.020645538421190577
+          ],
+          "nearestBonePointAxisMm": [
+            164.63445185345574,
+            310.02722291458156,
+            5.774433049647383
+          ],
+          "nearestBoneFace": 10846,
+          "boneGapMm": 14.402405647056009
+        }
+      ]
+    },
+    {
+      "name": "BIC_brevis",
+      "points": [
+        {
+          "name": "BIC_brevis2-P1",
+          "body": "scapula",
+          "positionAxisMm": [
+            109.51744536092447,
+            281.439960306427,
+            -5.578406683133849
+          ],
+          "sourceLocalMetres": [
+            0.008322319078768636,
+            -0.036839838856460846,
+            -0.023152375697260027
+          ],
+          "nearestBonePointAxisMm": [
+            115.10299682617188,
+            297.3063063063064,
+            -7.254988661757466
+          ],
+          "nearestBoneFace": 77047,
+          "boneGapMm": 16.904148830682423
+        }
+      ]
+    }
+  ]
+}

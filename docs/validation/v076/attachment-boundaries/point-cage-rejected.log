@@ -1,0 +1,17 @@
+{"experimental": true, "accepted": false, "method": "exact source attachment controls; unstructured Delaunay background", "spacingMm": 18.0, "nodes": 1665, "tets": 8796, "sourceVertices": 14841, "sourceTriangles": 29678, "fixedNodes": 993, "sourceAttachmentVertices": 993, "materialQuadrature": {"emptyElementRegularizer": 1.3107150724778721e-08, "occupiedElements": 3215, "backgroundElements": 8796, "sourceVolumeMm3": 92349.34400458794, "quadrature": "positive symmetric 4-point source tetrahedra; cell-density approximation"}, "sourceDirectory": "test-results/v076-acromial-volume-input", "inputs": {"test-results/v076-acromial-volume-input/deltoid-mid-source.npz": "8a1854d4c1741b69f7ae199147d637df886c187dd360c409586915b0c3270d4c", "test-results/v076-acromial-volume-input/deltoid-mid-tetrahedra.npz": "a171a0110cfe054e362ae998c33546a03d8e4d6c0f6b24e8690f2d60f64c4c99"}}
+face 4000
+face 8000
+face 10000
+face 12000
+face 18000
+face 20000
+face 26000
+face 28000
+Traceback (most recent call last):
+  File "/Users/suzukawaharuki/Documents/Codex/2026-11-25/3d-v0-73-0-1-https/scripts/experimental/prepare-point-cage.py", line 12, in <module>
+    r=conform(c,points,surface['faces'],surface['weights'],lambda i:print('face',i,flush=True));classes,ids,bary,t=c.fixed_patches(r['points'],r['weights'])
+                                                                                                                   ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/suzukawaharuki/Documents/Codex/2026-11-25/3d-v0-73-0-1-https/scripts/experimental/point_cage.py", line 66, in fixed_patches
+    if np.any(self.classes[support]!=end):raise ValueError('Fixed surface is not represented by its own fixed controls')
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Fixed surface is not represented by its own fixed controls

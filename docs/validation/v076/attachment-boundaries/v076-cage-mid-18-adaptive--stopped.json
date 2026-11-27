@@ -1,0 +1,8 @@
+{
+  "stoppedByDeveloper": true,
+  "reason": "Stop costly continuation with known invalid legacy attachment data; preserve last converged partial snapshot. No target completion claimed.",
+  "progress": 0.47580739359102564,
+  "completed": false,
+  "stages": 27,
+  "lastResidualMaxMm": 0.0009582746306802164
+}

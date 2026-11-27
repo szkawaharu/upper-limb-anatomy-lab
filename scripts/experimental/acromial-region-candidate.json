@@ -1,0 +1,16 @@
+{
+  "adopted": false,
+  "id": "v60DeltMid",
+  "end": "origin",
+  "bone": "scapula",
+  "anatomicalSite": "lateral wall of acromion; bone-near source tissue candidate",
+  "includedLandmarks": ["AA", "AC"],
+  "excludedLandmarks": ["PC", "GH", "TS", "AI"],
+  "outwardAxis": ["TS", "AA"],
+  "proximalAxis": ["EL", "GH"],
+  "proximalHalfSpaceOrigin": "GH",
+  "surfaceBand": "minimum source tissue gap plus measured muscle and bone median edge lengths",
+  "references": ["https://doi.org/10.1016/j.asmr.2020.06.014", "https://doi.org/10.1111/j.1469-7580.2010.01325.x"],
+  "confidence": "anatomical-site-informed geometric screening; not measured enthesis or classified tendon",
+  "unverified": ["acromion wall segmentation", "broad enthesis coverage", "fascial/aponeurotic attachments", "musculotendinous boundary", "insertion mask"]
+}

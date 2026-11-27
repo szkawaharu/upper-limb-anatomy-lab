@@ -1,0 +1,24 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "spacingMm": 12.0,
+  "nodes": 1440,
+  "tets": 6480,
+  "sourceVertices": 14841,
+  "sourceTriangles": 29678,
+  "fixedNodes": 47,
+  "sourceAttachmentVertices": 888,
+  "sourceReconstructionMaxMm": 1.5987211554602254e-14,
+  "materialQuadrature": {
+    "emptyElementRegularizer": 5.2759100230345596e-09,
+    "occupiedElements": 767,
+    "backgroundElements": 6480,
+    "sourceVolumeMm3": 92349.34400458794,
+    "quadrature": "positive symmetric 4-point source tetrahedra; cell-density approximation"
+  },
+  "sourceDirectory": "test-results/v076-volumetric",
+  "inputs": {
+    "test-results/v076-volumetric/deltoid-mid-source.npz": "4047c77191ad34684d93fb50cce7894d7958edf75c41925ffd3878313cb041d0",
+    "test-results/v076-volumetric/deltoid-mid-tetrahedra.npz": "a171a0110cfe054e362ae998c33546a03d8e4d6c0f6b24e8690f2d60f64c4c99"
+  }
+}

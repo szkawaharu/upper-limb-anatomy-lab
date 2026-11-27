@@ -1,0 +1,8 @@
+{
+  "stoppedByDeveloper": true,
+  "reason": "Grid support pinning fixes unlabeled neighboring tissue. Stop costly continuation; exact attachment controls are being tested.",
+  "progress": 0.6033464449987994,
+  "completed": false,
+  "stages": 30,
+  "lastResidualMaxMm": 0.000997095571225376
+}

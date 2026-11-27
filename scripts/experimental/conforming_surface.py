@@ -29,10 +29,12 @@ def conform(cage,points,faces,weights=None,callback=None):
  for face_id,face in enumerate(faces):
   src=points[face];same=source_cells[face]
   if np.all(same==same[0]):triangles.append(face.tolist());source_faces.append(face_id);cells.append(int(same[0]));continue
-  low=np.floor((src.min(0)-cage.origin)/cage.h).astype(int);high=np.floor((src.max(0)-cage.origin)/cage.h).astype(int)
-  for cell in itertools.product(*[range(low[k],high[k]+1)for k in range(3)]):
-   first=int(np.ravel_multi_index(cell,cage.cells)*6)
-   for tet in range(first,first+6):
+  if hasattr(cage,'candidate_elements'):candidates=cage.candidate_elements(src)
+  else:
+   low=np.floor((src.min(0)-cage.origin)/cage.h).astype(int);high=np.floor((src.max(0)-cage.origin)/cage.h).astype(int)
+   candidates=(int(np.ravel_multi_index(cell,cage.cells)*6)+i for cell in itertools.product(*[range(low[k],high[k]+1)for k in range(3)])for i in range(6))
+  emitted=set()
+  for tet in candidates:
     tail=(src-anchors[tet])@inv[tet].T;coordinates=np.column_stack([1-tail.sum(1),tail]);poly=[np.eye(3)[k]for k in range(3)]
     for plane in range(4):
      if not poly:break
@@ -43,11 +45,17 @@ def conform(cage,points,faces,weights=None,callback=None):
       if inb:clipped.append(b)
      poly=clipped
     if len(poly)<3:continue
+    # Canonical start makes the same polygon on a shared cell face use the
+    # same diagonal. Boundary-aligned source triangles are emitted once.
+    pivot=min(range(len(poly)),key=lambda k:tuple(np.round(poly[k],10)));poly=poly[pivot:]+poly[:pivot]
     for j in range(1,len(poly)-1):
      u=np.array([poly[0],poly[j],poly[j+1]]);area=np.linalg.det(np.column_stack([u[1,1:]-u[0,1:],u[2,1:]-u[0,1:]]))
      if abs(area)<1e-12:continue
      tri=[vertex(face_id,face,x)for x in u]
      if len(set(tri))<3:continue
+     key=tuple(sorted(tri))
+     if key in emitted:continue
+     emitted.add(key)
      triangles.append(tri);source_faces.append(face_id);cells.append(tet)
   if callback and face_id%2000==0:callback(face_id)
  v=np.array(vertices);f=np.array(triangles,np.int32);p=v[f];area=np.linalg.norm(np.cross(p[:,1]-p[:,0],p[:,2]-p[:,0]),axis=1);orig_p=points[faces];original_area=np.linalg.norm(np.cross(orig_p[:,1]-orig_p[:,0],orig_p[:,2]-orig_p[:,0]),axis=1);area_sum=np.bincount(source_faces,weights=area,minlength=len(faces));relative=np.abs(area_sum-original_area)/np.maximum(original_area,1e-30)

@@ -1,0 +1,14 @@
+{
+  "sourceAreaMaxRelativeError": 9.131919659192486e-13,
+  "maxMergeDistanceMm": 1.2405280544611435e-13,
+  "experimental": true,
+  "accepted": false,
+  "sourceVertices": 14841,
+  "conformingVertices": 38190,
+  "sourceTriangles": 29678,
+  "conformingTriangles": 76376,
+  "edgeMultiplicities": {
+    "2": 114564
+  },
+  "seconds": 99.20936965942383
+}
