@@ -281,7 +281,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <details class="control-fold" open><summary>両上肢・胸郭<span class="fold-note">v0.68.0</span></summary><div class="fold-body">
 <div class="control"><label>両腕の姿勢（左右を同時設定）</label><div style="display:flex;flex-wrap:wrap;gap:6px"><button type="button" id="v572Forward">前ならえ</button><button type="button" id="v572T">T字</button><button type="button" id="v572Up">バンザイ</button><button type="button" id="v572Neutral">基本肢位</button></div><div class="detail">前ならえ：肩前方挙上90°、肘伸展、手首中立、手掌内向きの近似。</div></div>
 <div class="control"><label for="v572Quality">描画品質</label><select id="v572Quality"><option value="auto">自動（操作中軽量／停止後高精細）</option><option value="light">軽量優先</option><option value="high">常に高精細</option></select><div id="v572QualityStatus" class="detail" role="status">自動品質</div></div>
-<label class="switch"><input id="v572Fit" type="checkbox">関節操作終了時、画面外の骨格を自動フィット</label>
+<label class="switch"><input id="v572Fit" type="checkbox" checked>関節・視点操作終了時、画面外の骨格を自動フィット（手動拡大・移動を尊重）</label>
 <div class="detail">骨・筋肉のメッシュ精度は変更しません。肩甲帯の前方移動は模式運動です。</div>
 <label for="v56Side">操作する腕（関節角度・直接操作）</label><select id="v56Side"><option value="right">右腕</option><option value="left">左腕</option></select>
 <label class="switch"><input id="v56Both" type="checkbox" checked>両腕を表示（OFF：選択中の腕だけ）</label>
@@ -540,6 +540,7 @@ body.edge-ui.drawer-open #v56QuickSide{opacity:.25;pointer-events:none}
 <script src="./joint-drag-v0681.js?v=0681"></script>
 <script src="./joint-drag-v071.js?v=0710"></script>
 <script src="./engine/math.js?v=0760"></script>
+<script src="./engine/camera-framing.js?v=0761"></script>
 <script src="./anatomy/bone-transforms.js?v=0730"></script>
 <script src="./anatomy/shoulder-rig-data.js?v=0760"></script>
 <script src="./engine/joint-frames.js?v=0760"></script>
@@ -2657,31 +2658,9 @@ function armBoundingPoints(){
  return pts;
 }
 function fitPose(){
- const pts=poseBoundingPoints();if(!pts.length)return;
- const outward=[Math.sin(state.yaw)*Math.cos(state.pitch),Math.sin(state.pitch),Math.cos(state.yaw)*Math.cos(state.pitch)];
- const right=norm(cross([0,1,0],outward)),up=cross(outward,right);
- // Camera-space bounds, including every visible bone's complete 3D mesh bounding box.
- let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;
- for(const p of pts){const x=dot(p,right),y=dot(p,up);minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxY=Math.max(maxY,y)}
- const w=Math.max(1,canvas.clientWidth),h=Math.max(1,canvas.clientHeight);
- // Both the status badge and the angle/reset bar are outside the canvas in v0.17.
- // Keep a modest frame margin; use almost the full height for the anatomy model.
- // v0.41: edge buttons, menu, top title and feedback are screen overlays,
- // not usable model space. Reserve enough room when explicitly fitting.
- // A manual pan/zoom never triggers this routine automatically by default.
- const edgeUI=document.body.classList.contains('edge-ui');
- const [leftPad,rightPad,topPad,bottomPad]=v64Insets(w,h,edgeUI);
- const areaW=Math.max(70,w-leftPad-rightPad),areaH=Math.max(80,h-topPad-bottomPad);
- const rangeX=maxX-minX,rangeY=maxY-minY;
- // Height-of-view is the sole zoom parameter; orthographic projection guarantees fit at any view angle.
- const span=Math.max(1.85,rangeX*h/areaW,rangeY*h/areaH)*1.04;
- const xMid=(minX+maxX)/2,yMid=(minY+maxY)/2;
- let base=mul(add(pts[0],pts[pts.length-1]),.5);
- // Choose target via x/y screen-space coordinates, retaining depth about the world origin.
- base=add(base,add(mul(right,xMid-dot(base,right)),mul(up,yMid-dot(base,up))));
- const wantedX=(leftPad+w-rightPad)/2,wantedY=(topPad+h-bottomPad)/2;
- base=add(base,add(mul(right,(w/2-wantedX)*span/h),mul(up,(wantedY-h/2)*span/h)));
- state.target=base;state.zoom=Math.min(65,span/zoomScale);
+ const pts=poseBoundingPoints(),w=Math.max(1,canvas.clientWidth),h=Math.max(1,canvas.clientHeight);
+ const fit=CameraFraming.fit(pts,state,w,h,v64Insets(w,h,document.body.classList.contains('edge-ui')),{zoomScale});
+ if(fit){state.target=fit.target;state.zoom=fit.zoom;v572ManualFraming=false}
 }let dirty=true;function request(){dirty=true}function frame(){if(dirty){render();dirty=false}requestAnimationFrame(frame)}
 // The front/back check does not depend on how the user rotates the camera.
 function updateAnteriorStatus(){
@@ -2933,7 +2912,7 @@ $('frontView').addEventListener('click',()=>{state.yaw=realReady?Math.PI:0;state
 $('backView').addEventListener('click',()=>{state.yaw=realReady?0:Math.PI;state.pitch=.12;autoFit=true;fitPose();request()});
 // Manual zoom works with or without automatic recentering. Automatic mode does
 // not discard the user's selected magnification during posture changes.
-function disableCameraAuto(){if($('cameraAuto').checked){$('cameraAuto').checked=false;}autoFit=false;}
+function disableCameraAuto(){if($('cameraAuto').checked){$('cameraAuto').checked=false;}autoFit=false;v572ManualFraming=true;}
 function setZoomPercent(raw){
  const old=zoomScale;zoomScale=clamp(Number(raw)||100,65,240)/100;
  $('zoomLevel').value=Math.round(zoomScale*100);$('zoomValue').textContent=Math.round(zoomScale*100)+'%';
@@ -3308,7 +3287,7 @@ canvas.addEventListener('pointermove',e=>{
   const dx=e.clientX-old[0],dy=e.clientY-old[1];
   if(cameraGesture==='pan')panCamera(dx,dy);
   else {const swipeSign=$('invertRotationSwipe').checked?-1:1;state.yaw+=dx*.008*swipeSign;state.pitch=clamp(state.pitch+dy*.008*swipeSign,-1.46,1.46);
-   if($('cameraAuto').checked){autoFit=true;fitPose()}else autoFit=false;}
+   if($('cameraAuto').checked){autoFit=true;fitPose()}else {autoFit=false;if(!v572ManualFraming)v572NeedsFit=true;}}
  }else if(pointers.size===2){
   const after=touchPair();
   if(before&&after){
@@ -3330,7 +3309,7 @@ canvas.addEventListener('wheel',e=>{e.preventDefault();v572Activity();
  if(e.shiftKey){panCamera(-e.deltaX,-e.deltaY);}
  else {disableCameraAuto();state.zoom=clamp(state.zoom*Math.exp(e.deltaY*.0012),.75,65)}
  request();},{passive:false});
-window.addEventListener('resize',()=>{if($('cameraAuto').checked){autoFit=true;fitPose()}request()});
+window.addEventListener('resize',()=>{if($('cameraAuto').checked){autoFit=true;fitPose()}else if(!v572ManualFraming)v572FitIfNeeded();request()});
 
 window.__labHand=()=>({enabled:settings.hand,source:handSource,ready:handReady,loaded:handLoadCount,rendered:HAND_NAMES.filter(n=>Boolean(handPose[n]&&handMeshSet()[n])).length,settings:Object.fromEntries(handFields.map(n=>[n,settings[n]])),wrist:handPose.mc3,thumb:handPose.tDist,indexTip:handPose.iDist,handPivot,handModelWarning});
 window.__labJointErrors=()=>{
@@ -3366,7 +3345,7 @@ window.__labFDS=()=>({enabled:settings.flexorDigitorumSuperficialis,handEnabled:
 window.__labFDP=()=>({enabled:settings.flexorDigitorumProfundus,handEnabled:settings.hand,realReady,handReady,geometryCount:['flexorDigitorumProfundus','fdpTendonI','fdpTendonM','fdpTendonR','fdpTendonL'].filter(n=>Boolean(geomDynamic[n])).length,data:muscleDiagnostics.flexorDigitorumProfundus||{visible:false},dipIsolation:settings.fdpDIPOnly});
 window.__labFCR=()=>({enabled:settings.flexorCarpiRadialis,handEnabled:settings.hand,realReady,handReady,geometryCount:['flexorCarpiRadialis','tendonFCR'].filter(n=>Boolean(geomDynamic[n])).length,data:muscleDiagnostics.flexorCarpiRadialis||{visible:false}});
 window.__labDirect=()=>({immersive:document.body.classList.contains('full-3d'),controlsOpen:document.body.classList.contains('controls-open'),grabMode,twistMode,invertTwistSwipe:$('invertTwistSwipe').checked,pairTwist:twistPair?.field||null,tripleSwipe:tripleSwipe?.field||null,tripleGestureLock,shoulderAxial:settings.axial,forearmPronation:settings.pronation,active:directDrag?.field||null,menu:$('directJointChoice').value,handles:skeletalHandles().map(h=>({field:h.id,from:h.a,to:h.b}))});
- window.__labCamera=()=>({gesture:cameraGesture,invertedSwipe:$('invertRotationSwipe').checked,zoom:state.zoom,zoomScale,cameraAuto:$('cameraAuto').checked,target:state.target,yaw:state.yaw,pitch:state.pitch,autoFit,canvas:[canvas.clientWidth,canvas.clientHeight]});
+ window.__labCamera=()=>({gesture:cameraGesture,invertedSwipe:$('invertRotationSwipe').checked,zoom:state.zoom,zoomScale,cameraAuto:$('cameraAuto').checked,target:state.target,yaw:state.yaw,pitch:state.pitch,autoFit,manualFraming:v572ManualFraming,protectOnJointEnd:$('v572Fit').checked,canvas:[canvas.clientWidth,canvas.clientHeight]});
 window.__labSurfaceAudit=()=>({ready:realReady,busy:surfaceAuditBusy,results:surfaceAuditResults,at:surfaceAuditAt,run:runForearmSurfaceAudit,segmentTriangle:auditSegmentTri,triangleCross:auditTriangleCross});
 window.__labForearmAudit=()=>({ready:realReady,pronation:settings.pronation,distalSeparationMm:poseCheck.distalGapMm??null,distalDifferenceMm:poseCheck.distalGapDeltaMm??null,radialHeadAxisErrorMm:realReady?poseCheck.radialHeadError/atlasScale:null,markerOverlay:$('showRadialAudit').checked,contactSolver:false,collisionsTested:!!surfaceAuditResults});
 window.__labJoints=()=>({...poseCheck,realReady,frontDirection:realReady?'world -Z':'world +Z',elbowHingeSign:realReady?ELBOW_FLEX_SIGN*(settings.reverseElbow?-1:1):-(settings.reverseElbow?-1:1),elbowCheck:window.__elbowVerification});
@@ -3822,7 +3801,7 @@ window.__labUpperBody=()=>{
 };
 
 // v0.66.0: adaptive framebuffer and coalesced pose updates.
-let v572Moving=false,v572Pending=false,v572NeedsFit=false,v572IdleTimer=null;
+let v572Moving=false,v572Pending=false,v572NeedsFit=false,v572IdleTimer=null,v572ManualFraming=false;
 function v572Scale(mode,active,dpr){
  const high=Math.min(Math.max(dpr||1,.5),2);
  return mode==='high'?high:mode==='light'?Math.min(high,1):active?Math.min(high,.85):high;
@@ -3846,15 +3825,12 @@ function v572QueuePose(){
 function v572FlushPose(){if(!v572Pending)return;v572Pending=false;update()}
 function v572FitIfNeeded(){
  if(!$('v572Fit').checked)return false;
- const pts=poseBoundingPoints();if(!pts.length)return false;
- const w=Math.max(1,canvas.clientWidth),h=Math.max(1,canvas.clientHeight);
- const outward=[Math.sin(state.yaw)*Math.cos(state.pitch),Math.sin(state.pitch),Math.cos(state.yaw)*Math.cos(state.pitch)];
- const right=norm(cross([0,1,0],outward)),up=cross(outward,right);
- const edge=document.body.classList.contains('edge-ui');
- const [L,R,T,B]=v64Insets(w,h,edge);
- const clipped=pts.some(p=>{const d=sub(p,state.target),x=w/2+dot(d,right)*h/state.zoom,y=h/2-dot(d,up)*h/state.zoom;return x<L||x>w-R||y<T||y>h-B});
- if(clipped){const previousZoom=state.zoom;zoomScale=1;$('zoomLevel').value=100;$('zoomValue').textContent='100%';fitPose();if(!$('cameraAuto').checked)state.zoom=Math.max(state.zoom,previousZoom);request()}
- return clipped;
+ const pts=poseBoundingPoints(),w=Math.max(1,canvas.clientWidth),h=Math.max(1,canvas.clientHeight);
+ const fit=CameraFraming.protect(pts,state,w,h,v64Insets(w,h,document.body.classList.contains('edge-ui')));
+ if(!fit)return false;
+ zoomScale=1;$('zoomLevel').value=100;$('zoomValue').textContent='100%';
+ state.target=fit.target;state.zoom=fit.zoom;v572ManualFraming=false;request();
+ return true;
 }
 function v572FinishInteraction(){
  if(v572IdleTimer!==null){clearTimeout(v572IdleTimer);v572IdleTimer=null}
@@ -5344,7 +5320,7 @@ v64UpdateStatus();v66UpdateStatus();v67UpdateStatus();v72UpdateStatus();v68Updat
 // Neck state is global to the torso, independent of either arm's settings.
 let v73NeckAngle=0,v73NeckPose=globalThis.CervicalKinematics?CervicalKinematics.pose(0,atlasToWorld):null,v73NeckDrag=null;
 const v73HeadParts=new Map(),v73NeckMuscles=new Map();let v73HeadBusy=false,v73HeadFailed=[];
-function v73SetNeck(angle){v73NeckAngle=clamp(Number(angle)||0,-75,75);v73NeckPose=CervicalKinematics.pose(v73NeckAngle,atlasToWorld);$('neckRotation').value=v73NeckAngle;$('neckRotationV').textContent=(v73NeckAngle>0?'左 ':v73NeckAngle<0?'右 ':'')+Math.abs(v73NeckAngle).toFixed(0)+'°';v572Activity();request()}
+function v73SetNeck(angle){v73NeckAngle=clamp(Number(angle)||0,-75,75);v73NeckPose=CervicalKinematics.pose(v73NeckAngle,atlasToWorld);$('neckRotation').value=v73NeckAngle;$('neckRotationV').textContent=(v73NeckAngle>0?'左 ':v73NeckAngle<0?'右 ':'')+Math.abs(v73NeckAngle).toFixed(0)+'°';v572Activity();v572NeedsFit=true;request()}
 function v73NeckOrigin(spec,side=v56Side){
  if(v73NeckAngle===0)return null;
  const ids=MuscleDefinitions.neckOrigins[spec.id];if(!ids)return null;
