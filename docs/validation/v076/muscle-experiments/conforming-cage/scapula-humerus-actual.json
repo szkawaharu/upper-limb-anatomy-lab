@@ -1,0 +1,23 @@
+{
+  "poses": [
+    {
+      "elev": 90,
+      "plane": 0,
+      "scapularSourceVertices": 56630,
+      "baselineInsideHumerus": 0,
+      "posedInsideHumerus": 0,
+      "newInsideVertices": 0,
+      "maxDepthMm": 0.0
+    },
+    {
+      "elev": 90,
+      "plane": 90,
+      "scapularSourceVertices": 56630,
+      "baselineInsideHumerus": 0,
+      "posedInsideHumerus": 0,
+      "newInsideVertices": 0,
+      "maxDepthMm": 0.0
+    }
+  ],
+  "method": "actual closed source humerus occupancy of all source scapular vertices; no new kinematics or muscle mask changes"
+}

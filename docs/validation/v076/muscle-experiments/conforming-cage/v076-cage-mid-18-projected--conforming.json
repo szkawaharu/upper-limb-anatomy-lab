@@ -1,0 +1,20 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "evidenceSource": "test-results/v076-cage-mid-18-projected/conforming.json",
+  "evidenceSha256": "816f8dc7ef7ba043af76841201f5bcfaa76de577b141209f6eb520d44ccb3405",
+  "data": {
+    "sourceAreaMaxRelativeError": 4.2337143397981766e-13,
+    "maxMergeDistanceMm": 8.418721353667469e-14,
+    "experimental": true,
+    "accepted": false,
+    "sourceVertices": 14841,
+    "conformingVertices": 29873,
+    "sourceTriangles": 29678,
+    "conformingTriangles": 59742,
+    "edgeMultiplicities": {
+      "2": 89613
+    },
+    "seconds": 17.10793900489807
+  }
+}

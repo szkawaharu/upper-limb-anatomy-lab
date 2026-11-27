@@ -1,0 +1,544 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "evidenceSource": "test-results/v076-cage-mid-18-projected/reference-e180-p0-k30.json",
+  "evidenceSha256": "922374c54f6a2c7938baeed73f8a624ad3e02a3a2b744f547727976a998e1291",
+  "data": {
+    "sourceOpposedFaces": 0,
+    "experimental": true,
+    "accepted": false,
+    "target": {
+      "elev": 180,
+      "plane": 0,
+      "a": {
+        "q": [
+          0.25686459921283333,
+          0.05383132253054945,
+          0.29762144339961893,
+          0.917902087814692
+        ],
+        "p": [
+          0.47898980763922766,
+          1.9801097291588654,
+          0.3804526491406659
+        ],
+        "rest": [
+          0.7390595895000001,
+          1.790368874,
+          0.134615219
+        ]
+      },
+      "b": {
+        "q": [
+          0.011026726112629587,
+          -0.028867075764638345,
+          0.9938573889561004,
+          0.10626661594968756
+        ],
+        "p": [
+          0.6262796958155196,
+          1.9321066285437756,
+          0.24874025848974418
+        ],
+        "rest": [
+          0.824725116,
+          1.61447228,
+          0.07922055800000001
+        ]
+      },
+      "backend": "validated-field"
+    },
+    "progress": 0.4493837041300674,
+    "bulk": 30.0,
+    "codeSha256": {
+      "run-conforming-reference.py": "99a8ba3171bd826c8edc6daa16534e95dc9056270112b37d8671e998f2dc489e",
+      "tetrahedral_cage.py": "1989b3b1f08ec0dc963cae001ebaa8ffb1394c1e9c26852387ad0374c2222c16",
+      "conforming_surface.py": "b8b0bb8d576cedf364f8d5db85dec3302c42a4bb968802800d86bbfe70de3028",
+      "cage_solver.py": "d4fa951a2deaaf23229fe687e971e3ab02e0fd0bca465df35aac04d3fe9fc2c5",
+      "projected_solid_metric.py": "2f46a1601b5c16206032a1082db8ff655ba83d34e02801d57bdef32f37bd69b1",
+      "constitutive_metric.py": "e47e86d3cb1072c0912fa77061e427c8c50af91181f86b8aefa069e1127a5717",
+      "volumetric_reference.py": "8622dceaa6d08c67032a69361c9690b5906adce519d595c3411daa116dc472ea"
+    },
+    "cageNodes": 672,
+    "sourceVertices": 29873,
+    "originalSourceVertices": 14841,
+    "surfaceVolumeRatio": 0.9944847029012645,
+    "surfaceEdgeRatio": [
+      0.2757550578891448,
+      4.237141698869703
+    ],
+    "surfaceAreaRatio": [
+      0.12149683270237185,
+      7.406819692157404
+    ],
+    "attachmentMaxMm": 2.95110562224397e-14,
+    "allStagesConverged": false,
+    "seconds": 77.12907433509827,
+    "boneContactEvaluated": false,
+    "selfCollisionEvaluated": false,
+    "activation": null,
+    "force": null,
+    "stages": [
+      {
+        "progress": 0.022469185206503366,
+        "seconds": 0.5586752891540527,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 3,
+        "residualMaxMm": 0.000884239458640508,
+        "energy": 0.0002983017092942756,
+        "cageJQuantiles": [
+          0.992252267670161,
+          0.9954112509740349,
+          0.9999780653697488,
+          1.0044309670667684,
+          1.0118128901578727
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.9996690709645016,
+        "metric": {
+          "negativeEigenvalues": 4071,
+          "minUnprojectedEigenvalue": -0.24774697017295869,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.04493837041300673,
+        "seconds": 2.0337610244750977,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 4,
+        "residualMaxMm": 0.00018691710132617769,
+        "energy": 0.0012297362737382087,
+        "cageJQuantiles": [
+          0.9844605899604152,
+          0.9908109911279048,
+          0.9999612427572073,
+          1.008893951488148,
+          1.0231536887907764
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.9993307496114421,
+        "metric": {
+          "negativeEigenvalues": 4311,
+          "minUnprojectedEigenvalue": -0.5273448347216763,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.06740755561951009,
+        "seconds": 3.440507173538208,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 4,
+        "residualMaxMm": 0.0005003901472723511,
+        "energy": 0.0028514452254917114,
+        "cageJQuantiles": [
+          0.976480115123562,
+          0.9863314546579438,
+          0.9999492106941494,
+          1.0132708685146787,
+          1.0341245262948253
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.9989858813371291,
+        "metric": {
+          "negativeEigenvalues": 4289,
+          "minUnprojectedEigenvalue": -0.833036280106879,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.08987674082601346,
+        "seconds": 4.828539133071899,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 4,
+        "residualMaxMm": 0.0009831716612066863,
+        "energy": 0.005223960306080008,
+        "cageJQuantiles": [
+          0.9681370536321987,
+          0.981838212123818,
+          0.9999409853239131,
+          1.0180681008417072,
+          1.0448417718037768
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.9986350424388495,
+        "metric": {
+          "negativeEigenvalues": 4312,
+          "minUnprojectedEigenvalue": -1.1686118814246298,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.11234592603251684,
+        "seconds": 6.394046068191528,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 5,
+        "residualMaxMm": 0.00048092156321374505,
+        "energy": 0.00841169784421578,
+        "cageJQuantiles": [
+          0.959542210821437,
+          0.9765761967457515,
+          0.9999018366583599,
+          1.0228869981180253,
+          1.0554124752901477
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.998278811655795,
+        "metric": {
+          "negativeEigenvalues": 4305,
+          "minUnprojectedEigenvalue": -1.5350861514386605,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.1348151112390202,
+        "seconds": 7.943511009216309,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 5,
+        "residualMaxMm": 0.0008234996377164157,
+        "energy": 0.012483754453270497,
+        "cageJQuantiles": [
+          0.9508622556329152,
+          0.9710806763593879,
+          0.9998935949139399,
+          1.0282990335065585,
+          1.0659732390031842
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.9979177880940797,
+        "metric": {
+          "negativeEigenvalues": 4306,
+          "minUnprojectedEigenvalue": -1.9304000611459087,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.15728429644552358,
+        "seconds": 9.6997230052948,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 6,
+        "residualMaxMm": 0.0004974090796219503,
+        "energy": 0.017515086712643395,
+        "cageJQuantiles": [
+          0.9422338643279565,
+          0.9658871758287119,
+          0.9998861534163109,
+          1.0337557382649982,
+          1.0765809498360297
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.997552303880384,
+        "metric": {
+          "negativeEigenvalues": 4303,
+          "minUnprojectedEigenvalue": -2.363137792666404,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.17975348165202695,
+        "seconds": 11.442677021026611,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 6,
+        "residualMaxMm": 0.000800213199888418,
+        "energy": 0.023588156001610433,
+        "cageJQuantiles": [
+          0.9338329573563452,
+          0.9610420202848957,
+          0.9998814678309849,
+          1.0393679922149694,
+          1.0872903690787197
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.9971825844843546,
+        "metric": {
+          "negativeEigenvalues": 4277,
+          "minUnprojectedEigenvalue": -3.0440962957856605,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.20222266685853033,
+        "seconds": 13.352964162826538,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 7,
+        "residualMaxMm": 0.0005815944625695395,
+        "energy": 0.03079504098809492,
+        "cageJQuantiles": [
+          0.9226231727859929,
+          0.9560276296874248,
+          0.999847538870947,
+          1.0451152913164532,
+          1.0980260568282847
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.9968085892163312,
+        "metric": {
+          "negativeEigenvalues": 4304,
+          "minUnprojectedEigenvalue": -3.8804873019186337,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.2246918520650337,
+        "seconds": 15.211644172668457,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 7,
+        "residualMaxMm": 0.0009815516471383123,
+        "energy": 0.03923999458021671,
+        "cageJQuantiles": [
+          0.9086052494199918,
+          0.9495686762100057,
+          0.9998541184533172,
+          1.0522185141280087,
+          1.1086704770045026
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.996430160995032,
+        "metric": {
+          "negativeEigenvalues": 4307,
+          "minUnprojectedEigenvalue": -4.909495296610929,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.24716103727153707,
+        "seconds": 17.33775520324707,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 8,
+        "residualMaxMm": 0.0008230561267574602,
+        "energy": 0.04904229572049523,
+        "cageJQuantiles": [
+          0.892969769143868,
+          0.9433264408176061,
+          0.999831033725612,
+          1.0584407573139545,
+          1.1189344156130268
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.9960470533913743,
+        "metric": {
+          "negativeEigenvalues": 4361,
+          "minUnprojectedEigenvalue": -6.174310909247935,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.2696302224780404,
+        "seconds": 19.595352172851562,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 9,
+        "residualMaxMm": 0.0007626796914482162,
+        "energy": 0.06033911774719849,
+        "cageJQuantiles": [
+          0.875759454635935,
+          0.9376564040203759,
+          0.9998606142900255,
+          1.0655616390839766,
+          1.1284743626494842
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.9956591580887748,
+        "metric": {
+          "negativeEigenvalues": 4392,
+          "minUnprojectedEigenvalue": -7.725690374402585,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.2920994076845438,
+        "seconds": 21.965529203414917,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 10,
+        "residualMaxMm": 0.0008146594337246754,
+        "energy": 0.07328778995020119,
+        "cageJQuantiles": [
+          0.8571472141679589,
+          0.9318554462205368,
+          0.9999862394791229,
+          1.072135752634103,
+          1.1498757895396863
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.995266788208953,
+        "metric": {
+          "negativeEigenvalues": 4431,
+          "minUnprojectedEigenvalue": -9.620193371796919,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.31456859289104716,
+        "seconds": 24.628297090530396,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 12,
+        "residualMaxMm": 0.0006337499429336303,
+        "energy": 0.08806616160097684,
+        "cageJQuantiles": [
+          0.8374255553408074,
+          0.9250573437412598,
+          0.9999961998211279,
+          1.07750266552607,
+          1.1733454059975135
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.994871260247981,
+        "metric": {
+          "negativeEigenvalues": 4434,
+          "minUnprojectedEigenvalue": -11.916908768516253,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.33703777809755053,
+        "seconds": 27.94356918334961,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 14,
+        "residualMaxMm": 0.0007807828883747812,
+        "energy": 0.10486805906089014,
+        "cageJQuantiles": [
+          0.8169481096473178,
+          0.915179248818418,
+          0.9999999999999996,
+          1.0832487800094814,
+          1.1983544312620553
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.994475803671483,
+        "metric": {
+          "negativeEigenvalues": 4470,
+          "minUnprojectedEigenvalue": -14.668925323039932,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.3595069633040539,
+        "seconds": 31.54152226448059,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 18,
+        "residualMaxMm": 0.0008105924511974294,
+        "energy": 0.12388610711345148,
+        "cageJQuantiles": [
+          0.7959042960965989,
+          0.9072691660214652,
+          0.9999999999999991,
+          1.0934101482267033,
+          1.2326284497883622
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.9940880361888107,
+        "metric": {
+          "negativeEigenvalues": 4533,
+          "minUnprojectedEigenvalue": -17.89428756308412,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.3819761485105573,
+        "seconds": 36.80337929725647,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 28,
+        "residualMaxMm": 0.000914465681736232,
+        "energy": 0.14525952013580284,
+        "cageJQuantiles": [
+          0.7739766182422797,
+          0.9002471743088745,
+          1.0,
+          1.100769274735587,
+          1.2748159389330982
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.9937265889943974,
+        "metric": {
+          "negativeEigenvalues": 4557,
+          "minUnprojectedEigenvalue": -21.489036768604493,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.40444533371706065,
+        "seconds": 48.572248220443726,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 64,
+        "residualMaxMm": 0.0009752299292357102,
+        "energy": 0.16889811450513761,
+        "cageJQuantiles": [
+          0.7406220969812785,
+          0.8847883345192037,
+          0.9999999999999989,
+          1.1166762304984188,
+          1.3020446480890628
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.993461142708455,
+        "metric": {
+          "negativeEigenvalues": 4658,
+          "minUnprojectedEigenvalue": -24.845149579454556,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.426914518923564,
+        "seconds": 60.376803159713745,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 63,
+        "residualMaxMm": 0.0009785374514222726,
+        "energy": 0.193827753151405,
+        "cageJQuantiles": [
+          0.6721139943629811,
+          0.856045526750722,
+          1.0,
+          1.1446217994514052,
+          1.3930074234735137
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.9934566645236147,
+        "metric": {
+          "negativeEigenvalues": 4769,
+          "minUnprojectedEigenvalue": -34.09813623017851,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.4493837041300674,
+        "seconds": 76.73289322853088,
+        "converged": false,
+        "reason": "iteration-limit",
+        "iterations": 100,
+        "residualMaxMm": 0.25978883871132635,
+        "energy": 0.21400281502319593,
+        "cageJQuantiles": [
+          0.05781177395797018,
+          0.5326527816147324,
+          1.0,
+          1.310997390762017,
+          3.43116727071483
+        ],
+        "cageNonPositive": 0,
+        "quadratureVolumeRatio": 0.9945061027596043,
+        "metric": {
+          "negativeEigenvalues": 5447,
+          "minUnprojectedEigenvalue": -4763.3619471526845,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      }
+    ]
+  }
+}

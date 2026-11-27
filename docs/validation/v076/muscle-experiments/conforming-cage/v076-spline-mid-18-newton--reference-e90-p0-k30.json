@@ -1,0 +1,660 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "evidenceSource": "test-results/v076-spline-mid-18-newton/reference-e90-p0-k30.json",
+  "evidenceSha256": "77e9dd435497d2b26244f4d41e76fb590c16e641da73f96533c6a8db0c3e477f",
+  "data": {
+    "guardMinJ": 1.000060508932435e-09,
+    "guardMaxJ": 2.8452889400570545,
+    "guardNonPositive": 0,
+    "sourceOpposedFaces": 40,
+    "experimental": true,
+    "accepted": false,
+    "target": {
+      "elev": 90,
+      "plane": 0,
+      "a": {
+        "q": [
+          0.17668584234599377,
+          -0.02522034077897274,
+          0.21740098483877934,
+          0.959626416537503
+        ],
+        "p": [
+          0.528571234971673,
+          1.9533105280449323,
+          0.3513477991951215
+        ],
+        "rest": [
+          0.7390595895000001,
+          1.790368874,
+          0.134615219
+        ]
+      },
+      "b": {
+        "q": [
+          0.049203092871623805,
+          -0.013565886043234547,
+          0.6274604891618984,
+          0.776973845717114
+        ],
+        "p": [
+          0.6794158871213062,
+          1.8593953456525114,
+          0.252491377488272
+        ],
+        "rest": [
+          0.824725116,
+          1.61447228,
+          0.07922055800000001
+        ]
+      },
+      "backend": "validated-field"
+    },
+    "progress": 0.8890728299820285,
+    "bulk": 30.0,
+    "codeSha256": {
+      "run-spline-reference.py": "f54beafb34fb0f321021788b8a007c60baf5ea80bd062ba647d2d56110a3d81c",
+      "spline_cage.py": "de6bf54d6fb3e94f717a4fed5a264e720c66e00cd976c7bd060a4b96e9b7c9a2",
+      "spline_regularization.py": "163dcafa6c9fec409dc121a1016bf55058b135d78d9b7c12a915768bbd6d245b",
+      "constitutive_metric.py": "e47e86d3cb1072c0912fa77061e427c8c50af91181f86b8aefa069e1127a5717"
+    },
+    "inputSha256": "d16fb1ec6ea942a960a4de1bd1813726f9bf37f13853a3a62a00b6bb605fb625",
+    "cageNodes": 1260,
+    "sourceVertices": 14841,
+    "surfaceVolumeRatio": 0.9870622891451662,
+    "surfaceEdgeRatio": [
+      0.14586820973099154,
+      2.4965627862559137
+    ],
+    "surfaceAreaRatio": [
+      0.018237098522935785,
+      13.739265689502735
+    ],
+    "attachmentMaxMm": 5.684341886080802e-14,
+    "allStagesConverged": false,
+    "seconds": 199.6305730342865,
+    "boneContactEvaluated": false,
+    "selfCollisionEvaluated": false,
+    "activation": null,
+    "force": null,
+    "stages": [
+      {
+        "progress": 0.05556705187387678,
+        "seconds": 2.411349058151245,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 6,
+        "residualMaxMm": 0.0006074353554100564,
+        "energy": 0.0007231347193716771,
+        "JQuantiles": [
+          0.9818341542979963,
+          0.9889403061244774,
+          0.9999887875500828,
+          1.0112043772100643,
+          1.0179652510586767
+        ],
+        "nonPositiveElements": 0,
+        "quadratureVolumeRatio": 0.9991391647592976,
+        "regularization": {
+          "relativeStiffness": 1e-06,
+          "bendingWeight": 1.9781144737133886e-06,
+          "primaryEigenvalueRange": [
+            -6.076767925983994e-21,
+            0.00010993562010010157
+          ],
+          "regularizedEigenvalueRange": [
+            6.859711270491958e-12,
+            0.00010993564759955804
+          ],
+          "interpretation": "numerical minimum-bending prior, no anatomical mass"
+        },
+        "optimizationMetric": {
+          "negativeEigenvalues": 588,
+          "minUnprojectedEigenvalue": -0.5885179387273737,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.11113410374775357,
+        "seconds": 6.122743129730225,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 8,
+        "residualMaxMm": 0.0003626094536888107,
+        "energy": 0.0029426976779541748,
+        "JQuantiles": [
+          0.9620700145779298,
+          0.9771373704783582,
+          0.9999810883298295,
+          1.0234956381653257,
+          1.0382880559547762
+        ],
+        "nonPositiveElements": 0,
+        "quadratureVolumeRatio": 0.9982759653074151,
+        "regularization": {
+          "relativeStiffness": 1e-06,
+          "bendingWeight": 1.9781144737133886e-06,
+          "primaryEigenvalueRange": [
+            -6.076767925983994e-21,
+            0.00010993562010010157
+          ],
+          "regularizedEigenvalueRange": [
+            6.859711270491958e-12,
+            0.00010993564759955804
+          ],
+          "interpretation": "numerical minimum-bending prior, no anatomical mass"
+        },
+        "optimizationMetric": {
+          "negativeEigenvalues": 583,
+          "minUnprojectedEigenvalue": -1.2869184883692932,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.16670115562163035,
+        "seconds": 10.175355911254883,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 9,
+        "residualMaxMm": 0.0009532581139823982,
+        "energy": 0.006729588005267678,
+        "JQuantiles": [
+          0.9407621274712403,
+          0.9665329703398559,
+          0.9999999999999993,
+          1.0366647942450569,
+          1.0596990004474904
+        ],
+        "nonPositiveElements": 0,
+        "quadratureVolumeRatio": 0.9974150472948446,
+        "regularization": {
+          "relativeStiffness": 1e-06,
+          "bendingWeight": 1.9781144737133886e-06,
+          "primaryEigenvalueRange": [
+            -6.076767925983994e-21,
+            0.00010993562010010157
+          ],
+          "regularizedEigenvalueRange": [
+            6.859711270491958e-12,
+            0.00010993564759955804
+          ],
+          "interpretation": "numerical minimum-bending prior, no anatomical mass"
+        },
+        "optimizationMetric": {
+          "negativeEigenvalues": 521,
+          "minUnprojectedEigenvalue": -2.1141119392085708,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.22226820749550713,
+        "seconds": 15.199306964874268,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 12,
+        "residualMaxMm": 0.0004621821756656936,
+        "energy": 0.012150649842845614,
+        "JQuantiles": [
+          0.9179376463369593,
+          0.9595099986119754,
+          0.9999999999999986,
+          1.049993637459512,
+          1.0809219624298783
+        ],
+        "nonPositiveElements": 0,
+        "quadratureVolumeRatio": 0.9965601105344118,
+        "regularization": {
+          "relativeStiffness": 1e-06,
+          "bendingWeight": 1.9781144737133886e-06,
+          "primaryEigenvalueRange": [
+            -6.076767925983994e-21,
+            0.00010993562010010157
+          ],
+          "regularizedEigenvalueRange": [
+            6.859711270491958e-12,
+            0.00010993564759955804
+          ],
+          "interpretation": "numerical minimum-bending prior, no anatomical mass"
+        },
+        "optimizationMetric": {
+          "negativeEigenvalues": 531,
+          "minUnprojectedEigenvalue": -3.094470497878028,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.2778352593693839,
+        "seconds": 20.94144105911255,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 14,
+        "residualMaxMm": 0.000744701398133099,
+        "energy": 0.019271867900936414,
+        "JQuantiles": [
+          0.8935166836822607,
+          0.9481710124328248,
+          0.9999999999999996,
+          1.0605917389522435,
+          1.1010060065562197
+        ],
+        "nonPositiveElements": 0,
+        "quadratureVolumeRatio": 0.9957137663561473,
+        "regularization": {
+          "relativeStiffness": 1e-06,
+          "bendingWeight": 1.9781144737133886e-06,
+          "primaryEigenvalueRange": [
+            -6.076767925983994e-21,
+            0.00010993562010010157
+          ],
+          "regularizedEigenvalueRange": [
+            6.859711270491958e-12,
+            0.00010993564759955804
+          ],
+          "interpretation": "numerical minimum-bending prior, no anatomical mass"
+        },
+        "optimizationMetric": {
+          "negativeEigenvalues": 548,
+          "minUnprojectedEigenvalue": -4.262781473395119,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.3334023112432607,
+        "seconds": 27.399011850357056,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 16,
+        "residualMaxMm": 0.0009696295112003663,
+        "energy": 0.028161955332770227,
+        "JQuantiles": [
+          0.86720244313693,
+          0.9362623840335266,
+          0.9999999999999996,
+          1.0707060313550252,
+          1.1195384646120743
+        ],
+        "nonPositiveElements": 0,
+        "quadratureVolumeRatio": 0.9948774534633703,
+        "regularization": {
+          "relativeStiffness": 1e-06,
+          "bendingWeight": 1.9781144737133886e-06,
+          "primaryEigenvalueRange": [
+            -6.076767925983994e-21,
+            0.00010993562010010157
+          ],
+          "regularizedEigenvalueRange": [
+            6.859711270491958e-12,
+            0.00010993564759955804
+          ],
+          "interpretation": "numerical minimum-bending prior, no anatomical mass"
+        },
+        "optimizationMetric": {
+          "negativeEigenvalues": 547,
+          "minUnprojectedEigenvalue": -5.673516779328919,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.3889693631171375,
+        "seconds": 34.80739688873291,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 19,
+        "residualMaxMm": 0.0006499862732479251,
+        "energy": 0.03889492259727448,
+        "JQuantiles": [
+          0.8384253064962924,
+          0.9240215265238596,
+          0.9999999999999998,
+          1.0806248133671947,
+          1.1366392540908468
+        ],
+        "nonPositiveElements": 0,
+        "quadratureVolumeRatio": 0.9940516232308995,
+        "regularization": {
+          "relativeStiffness": 1e-06,
+          "bendingWeight": 1.9781144737133886e-06,
+          "primaryEigenvalueRange": [
+            -6.076767925983994e-21,
+            0.00010993562010010157
+          ],
+          "regularizedEigenvalueRange": [
+            6.859711270491958e-12,
+            0.00010993564759955804
+          ],
+          "interpretation": "numerical minimum-bending prior, no anatomical mass"
+        },
+        "optimizationMetric": {
+          "negativeEigenvalues": 518,
+          "minUnprojectedEigenvalue": -7.412946490755073,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.44453641499101426,
+        "seconds": 43.07784605026245,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 21,
+        "residualMaxMm": 0.0007218033859442421,
+        "energy": 0.05155031592980132,
+        "JQuantiles": [
+          0.8064707743600996,
+          0.9116768557196369,
+          0.9999999999999998,
+          1.1033485695333953,
+          1.1527648289148251
+        ],
+        "nonPositiveElements": 0,
+        "quadratureVolumeRatio": 0.9932361984455728,
+        "regularization": {
+          "relativeStiffness": 1e-06,
+          "bendingWeight": 1.9781144737133886e-06,
+          "primaryEigenvalueRange": [
+            -6.076767925983994e-21,
+            0.00010993562010010157
+          ],
+          "regularizedEigenvalueRange": [
+            6.859711270491958e-12,
+            0.00010993564759955804
+          ],
+          "interpretation": "numerical minimum-bending prior, no anatomical mass"
+        },
+        "optimizationMetric": {
+          "negativeEigenvalues": 525,
+          "minUnprojectedEigenvalue": -9.607409132981878,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.500103466864891,
+        "seconds": 51.467265129089355,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 20,
+        "residualMaxMm": 0.0007674926972324265,
+        "energy": 0.06621021729310474,
+        "JQuantiles": [
+          0.7709636887455784,
+          0.8995342825827795,
+          0.9999999999999994,
+          1.1155045409944022,
+          1.1684425227807584
+        ],
+        "nonPositiveElements": 0,
+        "quadratureVolumeRatio": 0.9924311336113214,
+        "regularization": {
+          "relativeStiffness": 1e-06,
+          "bendingWeight": 1.9781144737133886e-06,
+          "primaryEigenvalueRange": [
+            -6.076767925983994e-21,
+            0.00010993562010010157
+          ],
+          "regularizedEigenvalueRange": [
+            6.859711270491958e-12,
+            0.00010993564759955804
+          ],
+          "interpretation": "numerical minimum-bending prior, no anatomical mass"
+        },
+        "optimizationMetric": {
+          "negativeEigenvalues": 610,
+          "minUnprojectedEigenvalue": -12.408399000708311,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.5556705187387678,
+        "seconds": 63.38558292388916,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 31,
+        "residualMaxMm": 0.0006859232767089636,
+        "energy": 0.08295205737539935,
+        "JQuantiles": [
+          0.7330585372007853,
+          0.887087999011261,
+          0.9999999999999998,
+          1.125023186211217,
+          1.2328954474759195
+        ],
+        "nonPositiveElements": 0,
+        "quadratureVolumeRatio": 0.9916369878792215,
+        "regularization": {
+          "relativeStiffness": 1e-06,
+          "bendingWeight": 1.9781144737133886e-06,
+          "primaryEigenvalueRange": [
+            -6.076767925983994e-21,
+            0.00010993562010010157
+          ],
+          "regularizedEigenvalueRange": [
+            6.859711270491958e-12,
+            0.00010993564759955804
+          ],
+          "interpretation": "numerical minimum-bending prior, no anatomical mass"
+        },
+        "optimizationMetric": {
+          "negativeEigenvalues": 555,
+          "minUnprojectedEigenvalue": -15.891386727207266,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.6112375706126446,
+        "seconds": 77.65196704864502,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 39,
+        "residualMaxMm": 0.0007641592940592785,
+        "energy": 0.10183564694967068,
+        "JQuantiles": [
+          0.6980309055834653,
+          0.8729390497130055,
+          0.9999999999999998,
+          1.134624133498966,
+          1.3063778647096171
+        ],
+        "nonPositiveElements": 0,
+        "quadratureVolumeRatio": 0.9908559621341719,
+        "regularization": {
+          "relativeStiffness": 1e-06,
+          "bendingWeight": 1.9781144737133886e-06,
+          "primaryEigenvalueRange": [
+            -6.076767925983994e-21,
+            0.00010993562010010157
+          ],
+          "regularizedEigenvalueRange": [
+            6.859711270491958e-12,
+            0.00010993564759955804
+          ],
+          "interpretation": "numerical minimum-bending prior, no anatomical mass"
+        },
+        "optimizationMetric": {
+          "negativeEigenvalues": 563,
+          "minUnprojectedEigenvalue": -19.691928737664146,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.6668046224865214,
+        "seconds": 93.29165387153625,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 44,
+        "residualMaxMm": 0.0008468449559942753,
+        "energy": 0.12288520304744213,
+        "JQuantiles": [
+          0.6782410478566685,
+          0.8612371542113836,
+          0.9999999999999996,
+          1.1512351931475122,
+          1.3810202561172797
+        ],
+        "nonPositiveElements": 0,
+        "quadratureVolumeRatio": 0.9900944124398057,
+        "regularization": {
+          "relativeStiffness": 1e-06,
+          "bendingWeight": 1.9781144737133886e-06,
+          "primaryEigenvalueRange": [
+            -6.076767925983994e-21,
+            0.00010993562010010157
+          ],
+          "regularizedEigenvalueRange": [
+            6.859711270491958e-12,
+            0.00010993564759955804
+          ],
+          "interpretation": "numerical minimum-bending prior, no anatomical mass"
+        },
+        "optimizationMetric": {
+          "negativeEigenvalues": 603,
+          "minUnprojectedEigenvalue": -22.333925518114103,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.7223716743603982,
+        "seconds": 108.5880880355835,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 42,
+        "residualMaxMm": 0.0007991861474384642,
+        "energy": 0.14608299157959515,
+        "JQuantiles": [
+          0.686099055925509,
+          0.8480512171509003,
+          0.9999999999999999,
+          1.1723913117156868,
+          1.4566789097564985
+        ],
+        "nonPositiveElements": 0,
+        "quadratureVolumeRatio": 0.9893636592294267,
+        "regularization": {
+          "relativeStiffness": 1e-06,
+          "bendingWeight": 1.9781144737133886e-06,
+          "primaryEigenvalueRange": [
+            -6.076767925983994e-21,
+            0.00010993562010010157
+          ],
+          "regularizedEigenvalueRange": [
+            6.859711270491958e-12,
+            0.00010993564759955804
+          ],
+          "interpretation": "numerical minimum-bending prior, no anatomical mass"
+        },
+        "optimizationMetric": {
+          "negativeEigenvalues": 561,
+          "minUnprojectedEigenvalue": -21.960727344970255,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.777938726234275,
+        "seconds": 121.93569684028625,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 37,
+        "residualMaxMm": 0.0009336473309016397,
+        "energy": 0.17139158567808255,
+        "JQuantiles": [
+          0.7173632074178747,
+          0.8353833251202354,
+          0.9999999999999997,
+          1.1944105733190877,
+          1.5337140032584693
+        ],
+        "nonPositiveElements": 0,
+        "quadratureVolumeRatio": 0.988671209859358,
+        "regularization": {
+          "relativeStiffness": 1e-06,
+          "bendingWeight": 1.9781144737133886e-06,
+          "primaryEigenvalueRange": [
+            -6.076767925983994e-21,
+            0.00010993562010010157
+          ],
+          "regularizedEigenvalueRange": [
+            6.859711270491958e-12,
+            0.00010993564759955804
+          ],
+          "interpretation": "numerical minimum-bending prior, no anatomical mass"
+        },
+        "optimizationMetric": {
+          "negativeEigenvalues": 603,
+          "minUnprojectedEigenvalue": -19.100034265428544,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.8335057781081517,
+        "seconds": 135.88573384284973,
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 39,
+        "residualMaxMm": 0.0009866789056802948,
+        "energy": 0.19875735487100804,
+        "JQuantiles": [
+          0.7573645418871939,
+          0.8233249341051351,
+          0.9999999999999998,
+          1.2153853100400285,
+          1.6080934068394375
+        ],
+        "nonPositiveElements": 0,
+        "quadratureVolumeRatio": 0.9880168939617879,
+        "regularization": {
+          "relativeStiffness": 1e-06,
+          "bendingWeight": 1.9781144737133886e-06,
+          "primaryEigenvalueRange": [
+            -6.076767925983994e-21,
+            0.00010993562010010157
+          ],
+          "regularizedEigenvalueRange": [
+            6.859711270491958e-12,
+            0.00010993564759955804
+          ],
+          "interpretation": "numerical minimum-bending prior, no anatomical mass"
+        },
+        "optimizationMetric": {
+          "negativeEigenvalues": 563,
+          "minUnprojectedEigenvalue": -15.68572171979026,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      },
+      {
+        "progress": 0.8890728299820285,
+        "seconds": 199.1213309764862,
+        "converged": false,
+        "reason": "line-search-stalled",
+        "iterations": 21,
+        "residualMaxMm": 2367.420240240521,
+        "energy": 0.2299470564457978,
+        "JQuantiles": [
+          0.7809029319397487,
+          0.8107084233382571,
+          0.9993375445008921,
+          1.2449627016812468,
+          1.7074175125828583
+        ],
+        "nonPositiveElements": 0,
+        "quadratureVolumeRatio": 0.9824577985165948,
+        "regularization": {
+          "relativeStiffness": 1e-06,
+          "bendingWeight": 1.9781144737133886e-06,
+          "primaryEigenvalueRange": [
+            -6.076767925983994e-21,
+            0.00010993562010010157
+          ],
+          "regularizedEigenvalueRange": [
+            6.859711270491958e-12,
+            0.00010993564759955804
+          ],
+          "interpretation": "numerical minimum-bending prior, no anatomical mass"
+        },
+        "optimizationMetric": {
+          "negativeEigenvalues": 663,
+          "minUnprojectedEigenvalue": -13.651591585045246,
+          "projection": "negative local material eigenvalues to zero; exact energy and stress retained"
+        }
+      }
+    ]
+  }
+}

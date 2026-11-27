@@ -13,7 +13,7 @@ from scipy.sparse.linalg import splu
 
 
 class Solid:
-    def __init__(self, nodes, tets, fixed):
+    def __init__(self, nodes, tets, fixed, element_weights=None):
         self.rest = np.array(nodes, float)
         self.tets = np.array(tets, np.int32)
         self.fixed = np.array(fixed, np.int32)
@@ -26,7 +26,13 @@ class Solid:
             raise ValueError('Reference tetrahedra must have positive signed volume')
         self.inverse = np.linalg.inv(self.Dm)
         self.volumes = determinant / 6
-        self.weights = self.volumes / self.volumes.sum()
+        if element_weights is None:
+            self.weights = self.volumes / self.volumes.sum()
+        else:
+            supplied = np.asarray(element_weights, float)
+            if supplied.shape != self.volumes.shape or not np.all(np.isfinite(supplied)) or np.any(supplied <= 0):
+                raise ValueError('Element integration weights must be finite and positive')
+            self.weights = supplied / supplied.sum()
         # Scalar FEM stiffness is a source-derived, fixed SPD preconditioner.
         gradients = np.concatenate([-self.inverse.sum(1)[:, None, :], self.inverse], axis=1)
         local = np.einsum('tij,tkj,t->tik', gradients, gradients, self.weights)

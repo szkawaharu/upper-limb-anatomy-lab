@@ -1,0 +1,87 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "evidenceSource": "test-results/v076-cage-mid-18-projected/reference-e90-p0-k30-bones.json",
+  "evidenceSha256": "6a015477c0715e0f17f54990fb7d9d96b8836d168304517a2000ed9194494e44",
+  "data": {
+    "experimental": true,
+    "accepted": false,
+    "pose": {
+      "elev": 90,
+      "plane": 0,
+      "a": {
+        "q": [
+          0.17668584234599377,
+          -0.02522034077897274,
+          0.21740098483877934,
+          0.959626416537503
+        ],
+        "p": [
+          0.528571234971673,
+          1.9533105280449323,
+          0.3513477991951215
+        ],
+        "rest": [
+          0.7390595895000001,
+          1.790368874,
+          0.134615219
+        ]
+      },
+      "b": {
+        "q": [
+          0.049203092871623805,
+          -0.013565886043234547,
+          0.6274604891618984,
+          0.776973845717114
+        ],
+        "p": [
+          0.6794158871213062,
+          1.8593953456525114,
+          0.252491377488272
+        ],
+        "rest": [
+          0.824725116,
+          1.61447228,
+          0.07922055800000001
+        ]
+      },
+      "backend": "validated-field"
+    },
+    "input": "test-results/v076-cage-mid-18-projected/reference-e90-p0-k30.npz",
+    "inputSha256": "5454e74a80a3f0b098ca278d0ad9a220df2d7f8b3f1aebe0190ed219febd5654",
+    "bones": [
+      {
+        "bone": "FMA13395.stl",
+        "sourceSha256": "c0a3afd469db1fec9527bb81ec1f0956876d3d64d3acbf3a083619d4e7ce297b",
+        "closed": true,
+        "surfacePoints": 29873,
+        "restInsidePoints": 165,
+        "posedInsidePoints": 181,
+        "newInsidePoints": 63,
+        "maxRestDepthMm": 0.14689760520333514,
+        "maxPosedDepthMm": 1.435065422736595,
+        "maxDepthIncreaseMm": 1.3411011159967836,
+        "worstSurfaceVertex": 29534,
+        "increaseOverOneMm": 13,
+        "increaseOverPointOneMm": 110,
+        "classification": "vertex-in-shell and vertex-triangle distance; full surface crossings still separate"
+      },
+      {
+        "bone": "FMA23130.stl",
+        "sourceSha256": "6e26ad2b9794b136000abe2cc0b54cade989b943214e2149732cc2db2e337dce",
+        "closed": true,
+        "surfacePoints": 29873,
+        "restInsidePoints": 443,
+        "posedInsidePoints": 898,
+        "newInsidePoints": 539,
+        "maxRestDepthMm": 4.075316219985193,
+        "maxPosedDepthMm": 4.075316219985195,
+        "maxDepthIncreaseMm": 4.01041693940949,
+        "worstSurfaceVertex": 12473,
+        "increaseOverOneMm": 364,
+        "increaseOverPointOneMm": 528,
+        "classification": "vertex-in-shell and vertex-triangle distance; full surface crossings still separate"
+      }
+    ]
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "model": "v60DeltMid",
+  "method": "Report source bone distances for estimated legacy Dirichlet masks.\nDistance alone does not identify an anatomical enthesis or validate a mask.\n",
+  "inputSha256": "842bb58d07c13f4513d9673f8f4f715a4b17c267a72cfa6424d52eaa0ac6cfea",
+  "calibrationSha256": "128ba4a142da025d3b392923bd18e4c3ab25fff285e1d0c10010afaa7f590c32",
+  "muscleMedianEdgeMm": 1.070928212259705,
+  "rows": [
+    {
+      "end": 0,
+      "bone": "FMA13395.stl",
+      "boneSha256": "c0a3afd469db1fec9527bb81ec1f0956876d3d64d3acbf3a083619d4e7ce297b",
+      "vertices": 392,
+      "gapQuantilesMm": [
+        0.0007720649009416016,
+        0.9163424459816658,
+        6.683450707790971,
+        13.788748266213538,
+        19.72355442634712
+      ],
+      "overTwoMmInvestigationCount": 322,
+      "measuredResolutionBandMm": 1.5510782364266729,
+      "nearBoneScreeningCount": 57,
+      "screeningIsNotAttachmentClassification": true,
+      "worst": [
+        {
+          "sourceVertex": 10896,
+          "gapMm": 19.72355442634712,
+          "nearestBoneFace": 110738
+        },
+        {
+          "sourceVertex": 11232,
+          "gapMm": 19.548978635462625,
+          "nearestBoneFace": 107967
+        },
+        {
+          "sourceVertex": 11229,
+          "gapMm": 18.96841414668082,
+          "nearestBoneFace": 110748
+        },
+        {
+          "sourceVertex": 11237,
+          "gapMm": 18.577389611772347,
+          "nearestBoneFace": 110760
+        },
+        {
+          "sourceVertex": 11236,
+          "gapMm": 18.277588843299736,
+          "nearestBoneFace": 110749
+        },
+        {
+          "sourceVertex": 11231,
+          "gapMm": 17.605377802499458,
+          "nearestBoneFace": 110748
+        },
+        {
+          "sourceVertex": 11543,
+          "gapMm": 17.224867743686573,
+          "nearestBoneFace": 107968
+        },
+        {
+          "sourceVertex": 11238,
+          "gapMm": 16.573672170816945,
+          "nearestBoneFace": 110739
+        },
+        {
+          "sourceVertex": 11240,
+          "gapMm": 16.52562376486866,
+          "nearestBoneFace": 107968
+        },
+        {
+          "sourceVertex": 11545,
+          "gapMm": 16.40903395772377,
+          "nearestBoneFace": 110744
+        }
+      ],
+      "collisionExample": {
+        "sourceVertex": 12473,
+        "gapMm": 10.12260465177056,
+        "restPointAxisMm": [
+          152.92100004247717,
+          313.7662604048445,
+          8.222710441898656
+        ],
+        "nearestBonePointAxisMm": [
+          147.81431903470724,
+          320.4991676622935,
+          13.795581684222473
+        ],
+        "nearestBoneFace": 107953
+      }
+    },
+    {
+      "end": 1,
+      "bone": "FMA23130.stl",
+      "boneSha256": "6e26ad2b9794b136000abe2cc0b54cade989b943214e2149732cc2db2e337dce",
+      "vertices": 496,
+      "gapQuantilesMm": [
+        0.002042229029385912,
+        0.2968366876962072,
+        0.8275024896266501,
+        1.843555825768326,
+        2.3108755472154345
+      ],
+      "overTwoMmInvestigationCount": 35,
+      "measuredResolutionBandMm": 2.3093117328508312,
+      "nearBoneScreeningCount": 496,
+      "screeningIsNotAttachmentClassification": true,
+      "worst": [
+        {
+          "sourceVertex": 5416,
+          "gapMm": 2.3108755472154345,
+          "nearestBoneFace": 6175
+        },
+        {
+          "sourceVertex": 4762,
+          "gapMm": 2.300343408108581,
+          "nearestBoneFace": 6182
+        },
+        {
+          "sourceVertex": 6103,
+          "gapMm": 2.284638882532373,
+          "nearestBoneFace": 6600
+        },
+        {
+          "sourceVertex": 7260,
+          "gapMm": 2.2826486681251597,
+          "nearestBoneFace": 7751
+        },
+        {
+          "sourceVertex": 5423,
+          "gapMm": 2.279265518644567,
+          "nearestBoneFace": 6175
+        },
+        {
+          "sourceVertex": 5424,
+          "gapMm": 2.278830817573983,
+          "nearestBoneFace": 6175
+        },
+        {
+          "sourceVertex": 5440,
+          "gapMm": 2.2538275387859787,
+          "nearestBoneFace": 6174
+        },
+        {
+          "sourceVertex": 4772,
+          "gapMm": 2.253435299602643,
+          "nearestBoneFace": 6182
+        },
+        {
+          "sourceVertex": 4136,
+          "gapMm": 2.250010467990915,
+          "nearestBoneFace": 6145
+        },
+        {
+          "sourceVertex": 6803,
+          "gapMm": 2.2381745284691843,
+          "nearestBoneFace": 7195
+        }
+      ]
+    }
+  ]
+}

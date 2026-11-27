@@ -1,0 +1,1542 @@
+{
+  "adoptedIntoApplication": false,
+  "registeredToBodyParts3D": false,
+  "units": "metres; source body-local frames",
+  "sourceRepository": "https://github.com/ComputationalBiomechanicsLab/rmr-solver",
+  "sourceCommit": "b47b06cd23c872e69f92687270e47d4c560bb14b",
+  "sourceTag": "v1.1",
+  "sourcePath": "OpenSim Models/for RMR solver/TSM_subject_noWeight.osim",
+  "modelSha256": "c357e61eb266558c0bfe9212462fbc1d621e0398c2eafc4e1a4aa92fe5c7a9ff",
+  "license": "CC BY 4.0",
+  "copyright": "2023 Italo Belli, Sagar Joshi, J. Micah Prendergast, Irene Beck, Cosimo dell Santina, Luka Peternel, Ajay Seth",
+  "attribution": "Modified thoracoscapular shoulder model; Belli et al. 2023 DOI10.1371/journal.pone.0295003; based on Seth et al. 2019 DOI10.3389/fnbot.2019.00090",
+  "forceModelAdopted": false,
+  "muscles": [
+    {
+      "name": "TrapeziusScapula_M",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "TrapeziusScapula5-P1",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            -0.08966313440009396,
+            -0.0003781465985832157,
+            -0.0018819157320093954
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "TrapeziusScapula5-P2",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.05077245236958017,
+            -0.0018858586464354705,
+            -0.03469170674054537
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "TrapeziusScapula_S",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "TrapeziusScapula2-P1",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            -0.07943330252706673,
+            0.04596866977956906,
+            -0.003863036642191305
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "TrapeziusScapula2-P2",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.045109353374159535,
+            0.006640839691749241,
+            -0.023345921667295353
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "TrapeziusScapula_I",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "TrapeziusScapula10-P1",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            -0.10784235633722444,
+            -0.13733305685425382,
+            0.0012250396113170235
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "TrapeziusScapula10-P2",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.06600341225376201,
+            -0.009108256233972371,
+            -0.07055328285695303
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "TrapeziusClavicle_S",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "TrapeziusClavicle1-P1",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            -0.06607805129100848,
+            0.12277859411683138,
+            0.0026054115439173697
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "TrapeziusClavicle1-P2",
+          "bodyFrame": "/bodyset/clavicle",
+          "locationMetres": [
+            -0.03901013042615021,
+            0.023281164387930653,
+            0.10305029316616171
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "SerratusAnterior_I",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "SerratusAnterior4-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.09897942230024892,
+            -0.1081453170625503,
+            -0.08168532205128441
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "SerratusAnterior4-P2",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            -0.0005693551261079496,
+            -0.1739954159929535,
+            0.15792222870938433
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "midpoint",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "SerratusAnterior_M",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "SerratusAnterior7-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.09382412080988195,
+            -0.07961342266027373,
+            -0.09203160255746494
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "SerratusAnterior7-P2",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            0.01771419232272765,
+            -0.07784197681150531,
+            0.12222230186374573
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "SerratusAnterior_S",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "SerratusAnterior12-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.04228508269990983,
+            0.008674533418204714,
+            -0.08084645284699168
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "SerratusAnterior12-P2",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            -0.030204091660571617,
+            -0.014826563497078933,
+            0.10583235331754355
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "Rhomboideus_S",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "Rhomboideus1-P1",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            -0.07778823884128257,
+            0.04100488460209191,
+            -0.002173107909666846
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "Rhomboideus1-P2",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.07206157266143917,
+            -0.022081485659783906,
+            -0.09717401761467839
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "Rhomboideus_I",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "Rhomboideus4-P1",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            -0.09621123287610003,
+            -0.009460308927305351,
+            -0.0005432785752666769
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "Rhomboideus4-P2",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.09725576369486326,
+            -0.10231260769945211,
+            -0.08729846423248305
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "LevatorScapulae",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "LevatorScapulae1-P1",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            -0.036941395608085376,
+            0.12354504818848165,
+            0.03310809041886216
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "LevatorScapulae1-P2",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.06799964048427277,
+            -0.0077878024359216294,
+            -0.09827208305888474
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "Coracobrachialis",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "Coracobrachialis2-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            0.007207264344682236,
+            -0.040898532962857816,
+            -0.02683232719462635
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "Coracobrachialis2-P2",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            -0.0028075819610468167,
+            -0.12294192571235656,
+            -0.009612646101892929
+          ]
+        }
+      ],
+      "wraps": []
+    },
+    {
+      "name": "DeltoideusClavicle_A",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "DeltoideusClavicle2-P1",
+          "bodyFrame": "/bodyset/clavicle",
+          "locationMetres": [
+            -0.029494269833720783,
+            0.018223944153305107,
+            0.09525685909049714
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "DeltoideusClavicle2-P2",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            0.017052060493946055,
+            -0.006348619884316785,
+            0.009931667749015582
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "DeltoideusClavicle2-P3",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            0.008074705965578972,
+            -0.09310077164828069,
+            0.0011821853888155985
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "deltsca",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "DeltoideusScapula_P",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "DeltoideusScapulaPost2-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.05032883641040683,
+            -0.006661377963834946,
+            -0.0260090645633266
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "DeltoideusScapulaPost2-P2",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.047944956348407786,
+            -0.03119417530772128,
+            0.007023150193982473
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "DeltoideusScapulaPost2-P3",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            -0.0057924897496261785,
+            -0.07305478096373028,
+            0.006428116309330171
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "deltsca",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "DeltoideusScapula_M",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "DeltoideusScapulaLat10-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.01396453177357658,
+            0.0019603978281862162,
+            0.007448378424350175
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "DeltoideusScapulaLat10-P2",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.00447855982803553,
+            -0.006497177803570212,
+            0.029638218598404417
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "DeltoideusScapulaLat10-P3",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            -0.005241734446361114,
+            -0.08517286375207371,
+            0.003962055045324238
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "deltsca",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "LatissimusDorsi_S",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "LatissimusDorsi1-P1",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            -0.10705702176043563,
+            -0.1190249082639291,
+            0.0018215809173235673
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "LatissimusDorsi1-P2",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            -0.12257268596672222,
+            -0.1187799695459583,
+            0.030679251948432133
+          ]
+        },
+        {
+          "type": "MovingPathPoint",
+          "name": "LatissimusDorsi1-P3",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": null
+        },
+        {
+          "type": "MovingPathPoint",
+          "name": "LatissimusDorsi1-P4",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": null
+        },
+        {
+          "type": "PathPoint",
+          "name": "LatissimusDorsi1-P5",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            0.00714654685172168,
+            -0.016143594609523373,
+            -0.003554520375764696
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "LatissimusDorsi_M",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "LatissimusDorsi3-P1",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            -0.09638103494675708,
+            -0.22191447848153262,
+            -0.0016617959208038951
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "LatissimusDorsi3-P2",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            -0.11427360976335962,
+            -0.2096583573810694,
+            0.027941602341395082
+          ]
+        },
+        {
+          "type": "MovingPathPoint",
+          "name": "LatissimusDorsi3-P3",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": null
+        },
+        {
+          "type": "MovingPathPoint",
+          "name": "LatissimusDorsi3-P4",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": null
+        },
+        {
+          "type": "PathPoint",
+          "name": "LatissimusDorsi3-P5",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            0.007025007559375865,
+            -0.03476298582505046,
+            -0.0010302977171656495
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "LatissimusDorsi_I",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "LatissimusDorsi6-P1",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            -0.06658162055680077,
+            -0.2600514368695841,
+            0.09652260112761056
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "LatissimusDorsi6-P2",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            -0.07497422903631959,
+            -0.21013638763971892,
+            0.135835239056019
+          ]
+        },
+        {
+          "type": "MovingPathPoint",
+          "name": "LatissimusDorsi6-P3",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": null
+        },
+        {
+          "type": "PathPoint",
+          "name": "LatissimusDorsi6-P4",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            0.0051289945987811345,
+            -0.042393872744140734,
+            -0.00018545274424484402
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "PectoralisMajorClavicle_S",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "PectoralisMajorClavicle1-P1",
+          "bodyFrame": "/bodyset/clavicle",
+          "locationMetres": [
+            0.005959316581078439,
+            0.00637525136388926,
+            0.05368033075137201
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "PectoralisMajorClavicle1-P2",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            0.012245326782425646,
+            -0.03573349741628025,
+            -0.002679539164480556
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "PectoralisMajorThorax_I",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "PectoralisMajorThorax2-P1",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            0.05646810310217358,
+            -0.11803494761213049,
+            0.026354404709299672
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "PectoralisMajorThorax2-P2",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            0.012153929234581593,
+            -0.02543628973030093,
+            0.0
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "PectoralisMajorThorax_M",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "PectoralisMajorThorax5-P1",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            0.020736441121225416,
+            -0.03878196367870787,
+            0.013848033031704926
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "PectoralisMajorThorax5-P2",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            0.012379141543298387,
+            -0.02221764391489968,
+            -0.0032461519606486015
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "TeresMajor",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "TeresMajor1-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.09101144471898566,
+            -0.11316481902802325,
+            -0.06886321691239196
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "TeresMajor1-P2",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            0.005250533891126952,
+            -0.03306717664939121,
+            -0.001751507870689475
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        },
+        {
+          "wrap_object": "Tmajscapula",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "Infraspinatus_I",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "Infraspinatus3-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.08635718193804982,
+            -0.07792621364144461,
+            -0.07761909528054173
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "Infraspinatus3-P2",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            -0.02085873338534135,
+            -0.004858302771813058,
+            0.025558794616301322
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Infra",
+          "method": "hybrid",
+          "range": "-1 -1"
+        },
+        {
+          "wrap_object": "hheadInfra",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "Infraspinatus_S",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "Infraspinatus5-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.07272407635366109,
+            -0.031103001185745327,
+            -0.08298538884835396
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "Infraspinatus5-P2",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            -0.017421077546972218,
+            0.002305435616216995,
+            0.022876753388699475
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Infra",
+          "method": "hybrid",
+          "range": "-1 -1"
+        },
+        {
+          "wrap_object": "hheadInfra",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "PectoralisMinor",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "PectoralisMinor3-P1",
+          "bodyFrame": "/bodyset/thorax",
+          "locationMetres": [
+            0.05065216992958181,
+            -0.10614419343264037,
+            0.09712999716104731
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "PectoralisMinor3-P2",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            0.00947920743415731,
+            -0.03377278379975801,
+            -0.02191261206877523
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "TeresMinor",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "TeresMinor2-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.07354340164355501,
+            -0.06366141507334998,
+            -0.04038980704041129
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "TeresMinor2-P2",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            -0.019288407234573337,
+            -0.007936124091663069,
+            0.011178638380113964
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "hheadsupraTminor",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "Subscapularis_S",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "Subscapularis3-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.0686794913126463,
+            -0.030139119162614716,
+            -0.08622229480997096
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "Subscapularis3-P2",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            0.02187731570083156,
+            -0.00019501211986869906,
+            -0.01236348193969802
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Subscapuralis",
+          "method": "hybrid",
+          "range": "-1 -1"
+        },
+        {
+          "wrap_object": "hhead",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "Subscapularis_M",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "Subscapularis4-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.07284611650749145,
+            -0.052924264721496354,
+            -0.07139354163165006
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "Subscapularis4-P2",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            0.019921748486987384,
+            0.0008120967291809926,
+            -0.020023959186845307
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Subscapuralis",
+          "method": "hybrid",
+          "range": "-1 -1"
+        },
+        {
+          "wrap_object": "hhead",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "Subscapularis_I",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "Subscapularis9-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.08287040757157818,
+            -0.09411867987723598,
+            -0.08154348569418352
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "Subscapularis9-P2",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            0.013349754331972073,
+            -0.002888988990698978,
+            -0.020117407283240327
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Subscapuralis",
+          "method": "hybrid",
+          "range": "-1 -1"
+        },
+        {
+          "wrap_object": "hhead",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "Supraspinatus_P",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "Supraspinatus2-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.05276266576393787,
+            -0.0013300916544964022,
+            -0.04723610185911038
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "Supraspinatus2-P2",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            0.012360302952984787,
+            0.008112233874555282,
+            0.02065790200616015
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "hheadsupraTminor",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "Supraspinatus_A",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "Supraspinatus4-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.042706469916778345,
+            0.0013066234740512167,
+            -0.06614364300092368
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "Supraspinatus4-P2",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            0.021609807718378417,
+            0.014956528186561896,
+            0.009942341701081535
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "Thorax",
+          "method": "hybrid",
+          "range": "-1 -1"
+        },
+        {
+          "wrap_object": "hheadsupraTminor",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "TRIlong",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "TRIlong2-P1",
+          "bodyFrame": "/bodyset/ulna",
+          "locationMetres": [
+            -0.019462,
+            -0.0291087,
+            0.00865977
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "TRIlong2-P2",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.03669764859986402,
+            -0.050025583016899224,
+            -0.012341682689169345
+          ]
+        }
+      ],
+      "wraps": []
+    },
+    {
+      "name": "BIC_long",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "BIC_long-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            -0.019688912360527732,
+            -0.01573833044007181,
+            -0.017322984963847696
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "BIC_long-P2",
+          "bodyFrame": "/bodyset/humerus",
+          "locationMetres": [
+            0.014378949059556443,
+            0.023860713425195922,
+            0.020645538421190577
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "BIC_long-P3",
+          "bodyFrame": "/bodyset/radius",
+          "locationMetres": [
+            -0.00088465,
+            -0.0439944,
+            -0.00945516
+          ]
+        }
+      ],
+      "wraps": [
+        {
+          "wrap_object": "hhead",
+          "method": "hybrid",
+          "range": "-1 -1"
+        }
+      ]
+    },
+    {
+      "name": "BIC_brevis",
+      "points": [
+        {
+          "type": "PathPoint",
+          "name": "BIC_brevis2-P1",
+          "bodyFrame": "/bodyset/scapula",
+          "locationMetres": [
+            0.008322319078768636,
+            -0.036839838856460846,
+            -0.023152375697260027
+          ]
+        },
+        {
+          "type": "PathPoint",
+          "name": "BIC_brevis2-P2",
+          "bodyFrame": "/bodyset/radius",
+          "locationMetres": [
+            0.00020307,
+            -0.0442563,
+            -0.00985953
+          ]
+        }
+      ],
+      "wraps": []
+    }
+  ],
+  "markers": [
+    {
+      "name": "ij",
+      "bodyFrame": "/bodyset/thorax",
+      "locationMetres": [
+        0.0047623927228597806,
+        -0.003327747142714419,
+        0.0009181393973029707
+      ]
+    },
+    {
+      "name": "c7",
+      "bodyFrame": "/bodyset/thorax",
+      "locationMetres": [
+        -0.09541164246500101,
+        0.033429188020740075,
+        0.0
+      ]
+    },
+    {
+      "name": "t8",
+      "bodyFrame": "/bodyset/thorax",
+      "locationMetres": [
+        -0.11796184895009534,
+        -0.15760156676770204,
+        0.0
+      ]
+    },
+    {
+      "name": "px",
+      "bodyFrame": "/bodyset/thorax",
+      "locationMetres": [
+        0.07403540853378418,
+        -0.16768378064562414,
+        0.0
+      ]
+    },
+    {
+      "name": "ClavicleMassCenter",
+      "bodyFrame": "/bodyset/clavicle",
+      "locationMetres": [
+        -0.028143519500597722,
+        0.00941526656989112,
+        0.07594026266495586
+      ]
+    },
+    {
+      "name": "acc",
+      "bodyFrame": "/bodyset/clavicle",
+      "locationMetres": [
+        -0.03667091248928058,
+        0.01734584607684851,
+        0.13257066261640588
+      ]
+    },
+    {
+      "name": "sc",
+      "bodyFrame": "/bodyset/clavicle",
+      "locationMetres": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "ScapulaMassCenter",
+      "bodyFrame": "/bodyset/scapula",
+      "locationMetres": [
+        -0.04020198166139555,
+        -0.030745268923782154,
+        -0.04360415416133453
+      ]
+    },
+    {
+      "name": "ScapulaThoracicContactPt",
+      "bodyFrame": "/bodyset/scapula",
+      "locationMetres": [
+        -0.052144109415640925,
+        -0.037626734290721275,
+        -0.05349026628285452
+      ]
+    },
+    {
+      "name": "ac",
+      "bodyFrame": "/bodyset/scapula",
+      "locationMetres": [
+        -0.010394563288234805,
+        -0.0018956773171241981,
+        -0.016849373702764518
+      ]
+    },
+    {
+      "name": "ai",
+      "bodyFrame": "/bodyset/scapula",
+      "locationMetres": [
+        -0.10058599675087102,
+        -0.1122220202533777,
+        -0.08694409227414727
+      ]
+    },
+    {
+      "name": "ts",
+      "bodyFrame": "/bodyset/scapula",
+      "locationMetres": [
+        -0.07204581754273595,
+        -0.002027704925172178,
+        -0.08586184569464171
+      ]
+    },
+    {
+      "name": "aa",
+      "bodyFrame": "/bodyset/scapula",
+      "locationMetres": [
+        -0.022931306390131256,
+        0.006743904666361255,
+        0.022019005620279336
+      ]
+    },
+    {
+      "name": "HumerusMassCenter",
+      "bodyFrame": "/bodyset/humerus",
+      "locationMetres": [
+        0.006526731326556765,
+        -0.0974457298551799,
+        -0.002689072447722961
+      ]
+    },
+    {
+      "name": "gu",
+      "bodyFrame": "/bodyset/humerus",
+      "locationMetres": [
+        0.011410077654881015,
+        0.004713518734825242,
+        0.010759685537117042
+      ]
+    },
+    {
+      "name": "EpL",
+      "bodyFrame": "/bodyset/humerus",
+      "locationMetres": [
+        0.00163709,
+        -0.242174,
+        0.022923
+      ]
+    },
+    {
+      "name": "EpM",
+      "bodyFrame": "/bodyset/humerus",
+      "locationMetres": [
+        0.0018038471974313902,
+        -0.23911282471799122,
+        -0.04600402406542657
+      ]
+    },
+    {
+      "name": "centelbow",
+      "bodyFrame": "/bodyset/humerus",
+      "locationMetres": [
+        0.00109386,
+        -0.240965,
+        -0.00999386
+      ]
+    },
+    {
+      "name": "centijc7",
+      "bodyFrame": "/bodyset/thorax",
+      "locationMetres": [
+        -0.0440412,
+        0.0166346,
+        0.0
+      ]
+    },
+    {
+      "name": "centpxt8",
+      "bodyFrame": "/bodyset/thorax",
+      "locationMetres": [
+        -0.019455966290569816,
+        -0.1617794795831414,
+        0.0010032213578078104
+      ]
+    },
+    {
+      "name": "ijc",
+      "bodyFrame": "/bodyset/clavicle",
+      "locationMetres": [
+        -0.012361124265002847,
+        -0.0017280022051890677,
+        -0.02870323460312501
+      ]
+    },
+    {
+      "name": "Glenoid_Center",
+      "bodyFrame": "/bodyset/scapula",
+      "locationMetres": [
+        -0.02827489079725616,
+        -0.03641871200587247,
+        -0.019079392941182494
+      ]
+    },
+    {
+      "name": "HumHead_Center",
+      "bodyFrame": "/bodyset/humerus",
+      "locationMetres": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Glenoid_Edge",
+      "bodyFrame": "/bodyset/scapula",
+      "locationMetres": [
+        -0.034365386684743454,
+        -0.04111464331649405,
+        -0.010873617727058225
+      ]
+    }
+  ],
+  "wrappingObjects": [
+    {
+      "body": "thorax",
+      "type": "WrapEllipsoid",
+      "name": "Thorax",
+      "parameters": {
+        "active": "true",
+        "xyz_body_rotation": "-0.17000000000000001 -0.038397199999999999 0.212232",
+        "translation": "-0.023347041831283166 -0.14971164731370248 0.074567716512483562",
+        "quadrant": "all",
+        "Appearance": "",
+        "dimensions": "0.076466800000000001 0.173985 0.074995699999999998"
+      }
+    },
+    {
+      "body": "thorax",
+      "type": "WrapEllipsoid",
+      "name": "EllipsoidSurface",
+      "parameters": {
+        "active": "true",
+        "xyz_body_rotation": "0 0 0",
+        "translation": "-0.021224628834241727 -0.017655138246985499 0.084873452325683302",
+        "quadrant": "all",
+        "Appearance": "",
+        "dimensions": "0.10551099999999999 0.20410600000000001 0.10587299999999999"
+      }
+    },
+    {
+      "body": "scapula",
+      "type": "WrapCylinder",
+      "name": "Subscapuralis",
+      "parameters": {
+        "active": "true",
+        "xyz_body_rotation": "1 -1 1",
+        "translation": "-0.021880056151013273 -0.037587640138079727 -0.027117442274313321",
+        "quadrant": "-y",
+        "Appearance": "",
+        "radius": "0.01188946432098297",
+        "length": "0.077002505261417692"
+      }
+    },
+    {
+      "body": "scapula",
+      "type": "WrapCylinder",
+      "name": "Tmajscapula",
+      "parameters": {
+        "active": "true",
+        "xyz_body_rotation": "-1.4854000000000001 -0.33539999999999998 -0.87539999999999996",
+        "translation": "-0.077840871317613997 -0.1023598181667922 -0.047837555270680454",
+        "quadrant": "-y",
+        "Appearance": "",
+        "radius": "0.006980033263921998",
+        "length": "0.047987742655218033"
+      }
+    },
+    {
+      "body": "scapula",
+      "type": "WrapEllipsoid",
+      "name": "deltsca",
+      "parameters": {
+        "active": "true",
+        "xyz_body_rotation": "1.4823 0.16059999999999999 -0.44719999999999999",
+        "translation": "-0.029898530115359704 -0.032192175342669528 -0.042299486073813647",
+        "quadrant": "all",
+        "Appearance": "",
+        "dimensions": "0.035883699999999998 0.085272799999999996 0.0288887"
+      }
+    },
+    {
+      "body": "scapula",
+      "type": "WrapCylinder",
+      "name": "Infra",
+      "parameters": {
+        "active": "true",
+        "xyz_body_rotation": "1.8700000000000001 -0.54300000000000004 -2.355",
+        "translation": "-0.050661918858825247 -0.044240170549697554 -0.0435886149053119",
+        "quadrant": "-y",
+        "Appearance": "",
+        "radius": "0.0182932130222794",
+        "length": "0.095043936898100506"
+      }
+    },
+    {
+      "body": "humerus",
+      "type": "WrapSphere",
+      "name": "hhead",
+      "parameters": {
+        "active": "true",
+        "xyz_body_rotation": "0 0 0",
+        "translation": "-0.0038892816629245782 0.0041545968156311121 -0.0020605871919413201",
+        "quadrant": "all",
+        "Appearance": "",
+        "radius": "0.025305156636554332"
+      }
+    },
+    {
+      "body": "humerus",
+      "type": "WrapSphere",
+      "name": "hheadsupraTminor",
+      "parameters": {
+        "active": "true",
+        "xyz_body_rotation": "0 0 0",
+        "translation": "-0.00097232041573114454 0.0040698063568481496 0.0023696768161806385",
+        "quadrant": "all",
+        "Appearance": "",
+        "radius": "0.024204932434965017"
+      }
+    },
+    {
+      "body": "humerus",
+      "type": "WrapEllipsoid",
+      "name": "hheadInfra",
+      "parameters": {
+        "active": "true",
+        "xyz_body_rotation": "0.1419 0.13474 0.28116999999999998",
+        "translation": "0.00012153929234581592 0.00084787660697822702 -0.0049454133818541569",
+        "quadrant": "all",
+        "Appearance": "",
+        "dimensions": "0.035401200000000001 0.020721300000000002 0.031152699999999998"
+      }
+    },
+    {
+      "body": "ulna",
+      "type": "WrapCylinder",
+      "name": "PQ2",
+      "parameters": {
+        "active": "true",
+        "xyz_body_rotation": "1.3913800000000001 0.068940500000000002 1.5224500000000001",
+        "translation": "-0.0011999999999999999 -0.2092 0.042799999999999998",
+        "quadrant": "all",
+        "radius": "0.0069999999999999923",
+        "length": "0.0099999999999999846"
+      }
+    }
+  ]
+}

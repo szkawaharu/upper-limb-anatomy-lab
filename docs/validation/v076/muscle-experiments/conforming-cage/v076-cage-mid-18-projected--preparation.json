@@ -1,0 +1,30 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "evidenceSource": "test-results/v076-cage-mid-18-projected/preparation.json",
+  "evidenceSha256": "de837ad151d572df3972b82b426935a848caf3e124cda85cb6c126b08a0f4d85",
+  "data": {
+    "experimental": true,
+    "accepted": false,
+    "spacingMm": 18.0,
+    "nodes": 672,
+    "tets": 2772,
+    "sourceVertices": 14841,
+    "sourceTriangles": 29678,
+    "fixedNodes": 31,
+    "sourceAttachmentVertices": 888,
+    "sourceReconstructionMaxMm": 2.864633583298495e-14,
+    "materialQuadrature": {
+      "emptyElementRegularizer": 1.3133294615133346e-08,
+      "occupiedElements": 312,
+      "backgroundElements": 2772,
+      "sourceVolumeMm3": 92349.34400458795,
+      "quadrature": "positive symmetric 4-point source tetrahedra; cell-density approximation"
+    },
+    "sourceDirectory": "test-results/v076-volumetric-quality",
+    "inputs": {
+      "test-results/v076-volumetric-quality/deltoid-mid-source.npz": "842bb58d07c13f4513d9673f8f4f715a4b17c267a72cfa6424d52eaa0ac6cfea",
+      "test-results/v076-volumetric-quality/deltoid-mid-tetrahedra.npz": "42f9052fc6d25e58841b39f607eb40fa0027c0dd92bc665822577058638be7c2"
+    }
+  }
+}

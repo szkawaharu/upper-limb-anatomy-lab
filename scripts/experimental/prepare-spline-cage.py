@@ -1,0 +1,8 @@
+import sys,json,hashlib
+from pathlib import Path
+import numpy as np
+from spline_cage import SplineCage,SplineSolid
+src=Path(sys.argv[1]);spacing=float(sys.argv[2]);out=Path(sys.argv[3]);out.mkdir(parents=True,exist_ok=True);a=np.load(src/'deltoid-mid-source.npz');m=np.load(src/'deltoid-mid-tetrahedra.npz');scale=.00555;center=a['p'].mean(0);points=(a['p']-center)/scale;c=SplineCage(points,spacing);classes=c.fixed_patches(points,a['weights']);q,w,info=c.quadrature((m['nodes']-center)/scale,m['tets']);solid=SplineSolid(c,q,w,classes);ids,basis,g=c.embed(points);unused=np.isin(ids,solid.inactive);influence=np.sum(basis*unused,axis=1)
+np.savez_compressed(out/'cage.npz',nodes=c.nodes,origin=c.origin,shape=c.shape,spacingMm=spacing,quadraturePoints=q,quadratureWeights=w,classes=classes,sourcePoints=points,sourceFaces=a['faces'],sourceWeights=a['weights'],centerWorld=center,worldUnitsPerMm=scale)
+report={'experimental':True,'accepted':False,'spacingMm':spacing,'controlNodes':len(c.nodes),'freeNodes':len(solid.free),'fixedNodes':len(solid.fixed),'inactiveNodes':len(solid.inactive),'sourceInactiveInfluenceMax':float(influence.max()),'sourceVertices':len(points),'sourceTriangles':len(a['faces']),'sourceAttachmentVertices':int(np.isin(a['weights'],[0,1]).sum()),'sourceReconstructionMaxMm':float(np.linalg.norm(c.positions(c.nodes,(ids,basis,g))-points,axis=1).max()),'quadrature':info,'regularization':solid.regularization,'sourceDirectory':str(src),'inputs':{str(f):hashlib.sha256(f.read_bytes()).hexdigest()for f in [src/'deltoid-mid-source.npz',src/'deltoid-mid-tetrahedra.npz']}}
+(out/'preparation.json').write_text(json.dumps(report,indent=2)+'\n');(out/'targets.json').write_bytes((src/'targets.json').read_bytes());print(json.dumps(report))

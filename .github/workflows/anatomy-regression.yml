@@ -45,6 +45,11 @@ jobs:
           python scripts/experimental/test-volumetric-transfer.py
           python scripts/experimental/test-reduced-volume.py
           python scripts/experimental/test-elastic-modes.py
+          python scripts/experimental/test-tetrahedral-cage.py
+          python scripts/experimental/test-constitutive-metric.py
+          python scripts/experimental/test-projected-solid.py
+          python scripts/experimental/test-conforming-surface.py
+          python scripts/experimental/test-spline-cage.py
   prepare-pages:
     name: Prepare GitHub Pages artifact
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'

@@ -102,3 +102,20 @@ GitHubは利用可能。mainへforce reset/pushしない。公開build-info SHA�
 
 - 修正後の新分割比較は完了：6組12画像、最終骨a/b・カメラ一致、例外0／GLエラー0。全筋／診断用の三角筋中部、正面／側面／背面。両パネルを目視確認。輪郭の差は小さく、挙上の改善とは扱わない。曲線方式に比べ体積比と最大辺／面積は下がるが最小辺／面積は悪化する。docs/validation/v076/solid-neutralに入力SHAと原画像を保存。描画runtimeがb08e40fから不変なことも照合した。
 - 状態依存連成行列の追加後、5 Python試験を再実行し全通過。独立の4要素共有節点組立、現在変形の行列不要演算との一致も追加確認。35 Nodeはこの継続で再実行し全通過。以降の変更は研究コード・ブラウザ比較試験・文書だけであり、製品runtimeは変更していない。
+
+## 2026-11-27：今回の続行（fb31d24以降、まだ作業中）
+
+ユーザーは「引き続き作業して、公開できるレベルまで完成」と再依頼。計画・保存だけで止めず継続する。main／公開は最後の照合でc81256f、今回も変更していない。
+
+- 新規 `tetrahedral_cage.py`／`conforming_surface.py`。元三角形を制御セル境界で分割し、元全頂点と表面を保持する正Jのアフィン変形。三角筋中部14,841/29,678→29,873/59,742、閉鎖辺面数すべて2、元面積相対誤差4.24e−13以下。未分割原型の曲がった三角形を頂点だけで近似する破損を解消できる。
+- `constitutive_metric.py`／`projected_solid_metric.py`は厳密応力微分と局所負固有値の0射影。目的関数・固定・J拒否・停止残差は変更しない。独立微分・共有要素・回転の試験を追加。
+- `test-results/v076-cage-mid-18-projected/`：coarse cage672点2772要素、conforming source 29,873点。90°外転は全段階収束43.7秒、体積0.9937777、面方向警告0、付着誤差2.85e−14mm。前方90°も全段階収束69.1秒、体積0.9982203、面方向警告0。180°外転は進捗0.44938で上限、残差0.25979mm（未完成）。12mm cageも以前のspline用準備だけで、tetの解像度収束は未実施。
+- Actual bone audit `audit-cage-bones.py`：90°外転で肩甲骨に新規深さ増加1.3411mm、上腕骨4.0104mm。全体最大上腕骨深さはrestと同じ4.0753mmだが別頂点が新規貫通。最悪点12473は旧originウェイト0の固定点。
+- **新しい重要な発見**：三角筋中部の旧origin固定392点の実肩甲骨面への距離中央値6.683mm、最大19.724mm。最悪貫通点12473のrest gapは10.123mm。322/392点が2mmより遠い。2mmは調査集計のみ、削除基準ではない。旧固定マスクが真の骨付着とは限らず、筋腹／腱膜端と区別が必要。局所固定解除で隠さず、原著モデル・骨面・末端組織から定義データを再設計する。停止側も旧bone-near候補が単なる接触面を含む恐れがある。
+- C1 spline試作も作ったが不採用。`v076-spline-mid-18-newton`は90°負荷進捗0.88907でJガードに当たりline-search-stalled、面警告40。geometryは約0.987体積でも局所破綻。spline exact gradient／C1／最小曲げ補完は代数試験を通るが製品合格ではない。
+- **注意：GH軸回旋の初回診断はY-X-Yを使っているが、Ludewig2009のGH記述は前方軸の挙上・側方軸の挙上面・上方軸の軸回旋。X-Z-Y等との系列照合がまだ必要。初回診断値をそのままFig5Dへ比較し、骨へ自動補正を加えない。** `audit-axial-sensitivity.py`は探索用・未採用。軸回旋だけで固定点の骨内判定が変わる事実は確認したが、臨床的な基準角の採用は未実装。
+- 参考本文再取得：/tmp/v076-ludewig.html と Fig5D /tmp/v076-ludewig-fig5d.jpg、本文Methodsの軸定義と結果・Discussionを確認。現structural scapula frameはTS→AA、論文はTS→AC。図の数値を異なる系列へ直接足さない。
+- Seth2019 PMC6856649の本文・筋束表・Data Availabilityを再確認。SimTK project1708 file5812原zipはlogin要求。ログイン不要の同著者らの2023年研究primary repo `ComputationalBiomechanicsLab/rmr-solver` v1.1を参照可能。モデル `OpenSim Models/for RMR solver/TSM_subject_noWeight.osim` とLICENSE_dataを /tmp/v076-reference-model/ に保存。CC BY4.0。BodyPartsへの登録・付着移植は未実施。原論文力推定を本アプリへコピーしない。
+- XML DeltoideusScapula_M：origin /scapula [-.0139645,.0019604,.00744838]m、via /scapula[-.00447856,-.00649718,.0296382]、insertion /humerus[-.00524173,-.0851729,.00396206]。このsubject modelのframeであり現world座標ではない。GH CustomJointはplane_elv y、shoulder_elv -x、axial軸[-.0846,.9947,-.0584]。Ludewig系列と同一と仮定しない。
+
+現在の次の一手：固定領域の解剖学的再照合と真の末端／接触の区別、GH座標の照合を先行し、共通接触を加える。conforming cageはソース形状・反転防止の有望な基盤だが、まだ一筋の試作でCPU参照のみ、GPU・インタラクティブ・全筋・公開へ未統合。成功した90°だけで完成扱いしない。
