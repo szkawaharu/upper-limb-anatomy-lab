@@ -65,6 +65,7 @@ jobs:
           python scripts/experimental/test-tet-intersection.py
           python scripts/experimental/test-local-volume-constraints.py
           python scripts/experimental/test-interior-face-refinement.py
+          python scripts/experimental/test-mixed-pressure-reference.py
   real-source-reference:
     name: Full source continuity reference (not anatomical acceptance)
     runs-on: ubuntu-latest
