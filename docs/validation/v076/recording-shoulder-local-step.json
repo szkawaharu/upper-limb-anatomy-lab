@@ -1,0 +1,399 @@
+{
+  "runId": 46068698335,
+  "jobId": 140740157234,
+  "headSha": "97c835a8ee304077c9078b9ccc121934d863cc5f",
+  "experiments": [
+    {
+      "elev": 70,
+      "plane": 39,
+      "base": {
+        "elev": 70,
+        "plane": 39,
+        "alpha": 0.25,
+        "parameters": [
+          11.49014962279498,
+          9.197008252706944,
+          8.47220806780513,
+          4.016842091372757,
+          11.432233735357492,
+          12.073947938001288
+        ],
+        "priorDeviationL2Deg": 2.550831226536467,
+        "controlBackend": "validated-field",
+        "sourceScapularVertices": 56630,
+        "insideRibVertices": 0,
+        "insideScapulaRibVertices": 0,
+        "surfaceSegmentCrossings": {
+          "scapularEdgesIntoRibs": 0,
+          "ribEdgesIntoScapula": 0
+        },
+        "coplanarOverlapEvaluated": false,
+        "costalVertexTriangleGapMm": {
+          "min": 1.4914292717903441,
+          "median": 12.77402741578409,
+          "max": 27.09061435848473,
+          "rmsDeltaFromRest": 5.561614878824582
+        },
+        "screenedCollisionFree": true,
+        "productAccepted": false
+      },
+      "search": {
+        "trustDeg": 1,
+        "localSampleCount": 761,
+        "costalSampleCount": 62,
+        "linearizedObjectiveBefore": 30.93156006036311,
+        "linearizedObjectiveAfter": 21.49056067337684,
+        "solverSuccess": true,
+        "solverMessage": "Optimization terminated successfully",
+        "minimumLinearizedGapMm": 5.10702591327572e-15,
+        "priorDeviationAfterDeg": 2.550831226536508,
+        "certificate": false
+      },
+      "trials": [
+        {
+          "elev": 70,
+          "plane": 39,
+          "alpha": 0.25,
+          "parameters": [
+            12.133341363710784,
+            9.286861953616468,
+            7.730931989445421,
+            3.37486673953938,
+            10.669635647584071,
+            12.802216525807024
+          ],
+          "priorDeviationL2Deg": 2.550831226536508,
+          "controlBackend": "validated-field",
+          "sourceScapularVertices": 56630,
+          "insideRibVertices": 0,
+          "insideScapulaRibVertices": 0,
+          "surfaceSegmentCrossings": {
+            "scapularEdgesIntoRibs": 0,
+            "ribEdgesIntoScapula": 0
+          },
+          "coplanarOverlapEvaluated": false,
+          "costalVertexTriangleGapMm": {
+            "min": 1.144287839683531,
+            "median": 12.07850034588956,
+            "max": 26.636870702966107,
+            "rmsDeltaFromRest": 4.604798394201852
+          },
+          "screenedCollisionFree": true,
+          "productAccepted": false,
+          "gain": 1,
+          "deltaDeg": [
+            0.643191740915803,
+            0.08985370090952421,
+            -0.7412760783597099,
+            -0.6419753518333773,
+            -0.7625980877734219,
+            0.7282685878057367
+          ]
+        }
+      ],
+      "selected": {
+        "elev": 70,
+        "plane": 39,
+        "alpha": 0.25,
+        "parameters": [
+          12.133341363710784,
+          9.286861953616468,
+          7.730931989445421,
+          3.37486673953938,
+          10.669635647584071,
+          12.802216525807024
+        ],
+        "priorDeviationL2Deg": 2.550831226536508,
+        "controlBackend": "validated-field",
+        "sourceScapularVertices": 56630,
+        "insideRibVertices": 0,
+        "insideScapulaRibVertices": 0,
+        "surfaceSegmentCrossings": {
+          "scapularEdgesIntoRibs": 0,
+          "ribEdgesIntoScapula": 0
+        },
+        "coplanarOverlapEvaluated": false,
+        "costalVertexTriangleGapMm": {
+          "min": 1.144287839683531,
+          "median": 12.07850034588956,
+          "max": 26.636870702966107,
+          "rmsDeltaFromRest": 4.604798394201852
+        },
+        "screenedCollisionFree": true,
+        "productAccepted": false,
+        "gain": 1,
+        "deltaDeg": [
+          0.643191740915803,
+          0.08985370090952421,
+          -0.7412760783597099,
+          -0.6419753518333773,
+          -0.7625980877734219,
+          0.7282685878057367
+        ]
+      },
+      "productAccepted": false
+    },
+    {
+      "elev": 150,
+      "plane": 90,
+      "base": {
+        "elev": 150,
+        "plane": 90,
+        "alpha": 0.25,
+        "parameters": [
+          14.267656837854108,
+          10.030649270281955,
+          29.69379844982689,
+          13.635265562275011,
+          13.807916568079683,
+          21.140467413543153
+        ],
+        "priorDeviationL2Deg": 6.45305795763638,
+        "controlBackend": "validated-field",
+        "sourceScapularVertices": 56630,
+        "insideRibVertices": 0,
+        "insideScapulaRibVertices": 0,
+        "surfaceSegmentCrossings": {
+          "scapularEdgesIntoRibs": 0,
+          "ribEdgesIntoScapula": 0
+        },
+        "coplanarOverlapEvaluated": false,
+        "costalVertexTriangleGapMm": {
+          "min": 4.456393726410782,
+          "median": 17.014507818634776,
+          "max": 30.75551823734936,
+          "rmsDeltaFromRest": 10.604914925430226
+        },
+        "screenedCollisionFree": true,
+        "productAccepted": false
+      },
+      "search": {
+        "trustDeg": 1,
+        "localSampleCount": 744,
+        "costalSampleCount": 62,
+        "linearizedObjectiveBefore": 112.46422057561327,
+        "linearizedObjectiveAfter": 74.36223012553872,
+        "solverSuccess": true,
+        "solverMessage": "Optimization terminated successfully",
+        "minimumLinearizedGapMm": -9.849898674474389e-13,
+        "priorDeviationAfterDeg": 6.4530579576360125,
+        "certificate": false
+      },
+      "trials": [
+        {
+          "elev": 150,
+          "plane": 90,
+          "alpha": 0.25,
+          "parameters": [
+            15.267656837854078,
+            10.568257053253282,
+            28.69379844982692,
+            14.07120965245187,
+            12.807916568079692,
+            22.14046741354315
+          ],
+          "priorDeviationL2Deg": 6.4530579576360125,
+          "controlBackend": "validated-field",
+          "sourceScapularVertices": 56630,
+          "insideRibVertices": 0,
+          "insideScapulaRibVertices": 0,
+          "surfaceSegmentCrossings": {
+            "scapularEdgesIntoRibs": 0,
+            "ribEdgesIntoScapula": 0
+          },
+          "coplanarOverlapEvaluated": false,
+          "costalVertexTriangleGapMm": {
+            "min": 3.346356852733001,
+            "median": 15.751054149968173,
+            "max": 27.644325415382422,
+            "rmsDeltaFromRest": 8.644120458364279
+          },
+          "screenedCollisionFree": true,
+          "productAccepted": false,
+          "gain": 1,
+          "deltaDeg": [
+            0.9999999999999697,
+            0.5376077829713267,
+            -0.9999999999999684,
+            0.43594409017685876,
+            -0.999999999999991,
+            0.9999999999999973
+          ]
+        }
+      ],
+      "selected": {
+        "elev": 150,
+        "plane": 90,
+        "alpha": 0.25,
+        "parameters": [
+          15.267656837854078,
+          10.568257053253282,
+          28.69379844982692,
+          14.07120965245187,
+          12.807916568079692,
+          22.14046741354315
+        ],
+        "priorDeviationL2Deg": 6.4530579576360125,
+        "controlBackend": "validated-field",
+        "sourceScapularVertices": 56630,
+        "insideRibVertices": 0,
+        "insideScapulaRibVertices": 0,
+        "surfaceSegmentCrossings": {
+          "scapularEdgesIntoRibs": 0,
+          "ribEdgesIntoScapula": 0
+        },
+        "coplanarOverlapEvaluated": false,
+        "costalVertexTriangleGapMm": {
+          "min": 3.346356852733001,
+          "median": 15.751054149968173,
+          "max": 27.644325415382422,
+          "rmsDeltaFromRest": 8.644120458364279
+        },
+        "screenedCollisionFree": true,
+        "productAccepted": false,
+        "gain": 1,
+        "deltaDeg": [
+          0.9999999999999697,
+          0.5376077829713267,
+          -0.9999999999999684,
+          0.43594409017685876,
+          -0.999999999999991,
+          0.9999999999999973
+        ]
+      },
+      "productAccepted": false
+    },
+    {
+      "elev": 180,
+      "plane": 44,
+      "base": {
+        "elev": 180,
+        "plane": 44,
+        "alpha": 0.25,
+        "parameters": [
+          18.032348529332932,
+          12.945890930296933,
+          31.468931252920523,
+          10.619160543973521,
+          13.73527639374406,
+          20.998238032781867
+        ],
+        "priorDeviationL2Deg": 6.696787855942583,
+        "controlBackend": "validated-field",
+        "sourceScapularVertices": 56630,
+        "insideRibVertices": 0,
+        "insideScapulaRibVertices": 0,
+        "surfaceSegmentCrossings": {
+          "scapularEdgesIntoRibs": 0,
+          "ribEdgesIntoScapula": 0
+        },
+        "coplanarOverlapEvaluated": false,
+        "costalVertexTriangleGapMm": {
+          "min": 3.845363311894597,
+          "median": 18.226890644400747,
+          "max": 34.03541354630601,
+          "rmsDeltaFromRest": 12.262632529400157
+        },
+        "screenedCollisionFree": true,
+        "productAccepted": false
+      },
+      "search": {
+        "trustDeg": 1,
+        "localSampleCount": 726,
+        "costalSampleCount": 62,
+        "linearizedObjectiveBefore": 150.37215655110379,
+        "linearizedObjectiveAfter": 119.86881965841805,
+        "solverSuccess": true,
+        "solverMessage": "Optimization terminated successfully",
+        "minimumLinearizedGapMm": 2.919886554764162e-14,
+        "priorDeviationAfterDeg": 6.696787855942573,
+        "certificate": false
+      },
+      "trials": [
+        {
+          "elev": 180,
+          "plane": 44,
+          "alpha": 0.25,
+          "parameters": [
+            18.3009617523759,
+            13.945890930296933,
+            30.468931252920537,
+            10.37052352083405,
+            12.735276393744078,
+            21.99823803278186
+          ],
+          "priorDeviationL2Deg": 6.696787855942573,
+          "controlBackend": "validated-field",
+          "sourceScapularVertices": 56630,
+          "insideRibVertices": 0,
+          "insideScapulaRibVertices": 0,
+          "surfaceSegmentCrossings": {
+            "scapularEdgesIntoRibs": 0,
+            "ribEdgesIntoScapula": 0
+          },
+          "coplanarOverlapEvaluated": false,
+          "costalVertexTriangleGapMm": {
+            "min": 2.513705934650821,
+            "median": 17.750797824539116,
+            "max": 30.817540913271923,
+            "rmsDeltaFromRest": 10.942816848211452
+          },
+          "screenedCollisionFree": true,
+          "productAccepted": false,
+          "gain": 1,
+          "deltaDeg": [
+            0.26861322304296786,
+            1,
+            -0.9999999999999873,
+            -0.24863702313947156,
+            -0.9999999999999827,
+            0.9999999999999928
+          ]
+        }
+      ],
+      "selected": {
+        "elev": 180,
+        "plane": 44,
+        "alpha": 0.25,
+        "parameters": [
+          18.3009617523759,
+          13.945890930296933,
+          30.468931252920537,
+          10.37052352083405,
+          12.735276393744078,
+          21.99823803278186
+        ],
+        "priorDeviationL2Deg": 6.696787855942573,
+        "controlBackend": "validated-field",
+        "sourceScapularVertices": 56630,
+        "insideRibVertices": 0,
+        "insideScapulaRibVertices": 0,
+        "surfaceSegmentCrossings": {
+          "scapularEdgesIntoRibs": 0,
+          "ribEdgesIntoScapula": 0
+        },
+        "coplanarOverlapEvaluated": false,
+        "costalVertexTriangleGapMm": {
+          "min": 2.513705934650821,
+          "median": 17.750797824539116,
+          "max": 30.817540913271923,
+          "rmsDeltaFromRest": 10.942816848211452
+        },
+        "screenedCollisionFree": true,
+        "productAccepted": false,
+        "gain": 1,
+        "deltaDeg": [
+          0.26861322304296786,
+          1,
+          -0.9999999999999873,
+          -0.24863702313947156,
+          -0.9999999999999827,
+          0.9999999999999928
+        ]
+      },
+      "productAccepted": false
+    }
+  ],
+  "productAccepted": false,
+  "anatomicalAcceptance": false
+}
