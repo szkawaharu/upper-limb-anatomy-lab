@@ -2912,7 +2912,7 @@ $('frontView').addEventListener('click',()=>{state.yaw=realReady?Math.PI:0;state
 $('backView').addEventListener('click',()=>{state.yaw=realReady?0:Math.PI;state.pitch=.12;autoFit=true;fitPose();request()});
 // Manual zoom works with or without automatic recentering. Automatic mode does
 // not discard the user's selected magnification during posture changes.
-function disableCameraAuto(){if($('cameraAuto').checked){$('cameraAuto').checked=false;}autoFit=false;v572ManualFraming=true;}
+function disableCameraAuto(){if($('cameraAuto').checked){$('cameraAuto').checked=false;}autoFit=false;v572ManualFraming=true;v572OrbitNeedsFit=false;}
 function setZoomPercent(raw){
  const old=zoomScale;zoomScale=clamp(Number(raw)||100,65,240)/100;
  $('zoomLevel').value=Math.round(zoomScale*100);$('zoomValue').textContent=Math.round(zoomScale*100)+'%';
@@ -3287,7 +3287,7 @@ canvas.addEventListener('pointermove',e=>{
   const dx=e.clientX-old[0],dy=e.clientY-old[1];
   if(cameraGesture==='pan')panCamera(dx,dy);
   else {const swipeSign=$('invertRotationSwipe').checked?-1:1;state.yaw+=dx*.008*swipeSign;state.pitch=clamp(state.pitch+dy*.008*swipeSign,-1.46,1.46);
-   if($('cameraAuto').checked){autoFit=true;fitPose()}else {autoFit=false;if(!v572ManualFraming)v572NeedsFit=true;}}
+   if($('cameraAuto').checked){autoFit=true;fitPose()}else {autoFit=false;if(!v572ManualFraming)v572OrbitNeedsFit=true;}}
  }else if(pointers.size===2){
   const after=touchPair();
   if(before&&after){
@@ -3801,7 +3801,7 @@ window.__labUpperBody=()=>{
 };
 
 // v0.66.0: adaptive framebuffer and coalesced pose updates.
-let v572Moving=false,v572Pending=false,v572NeedsFit=false,v572IdleTimer=null,v572ManualFraming=false;
+let v572Moving=false,v572Pending=false,v572NeedsFit=false,v572IdleTimer=null,v572ManualFraming=false,v572OrbitNeedsFit=false;
 function v572Scale(mode,active,dpr){
  const high=Math.min(Math.max(dpr||1,.5),2);
  return mode==='high'?high:mode==='light'?Math.min(high,1):active?Math.min(high,.85):high;
@@ -3835,7 +3835,8 @@ function v572FitIfNeeded(){
 function v572FinishInteraction(){
  if(v572IdleTimer!==null){clearTimeout(v572IdleTimer);v572IdleTimer=null}
  v572FlushPose();v572Moving=false;
- if(v572NeedsFit){v572NeedsFit=false;v572FitIfNeeded()}
+ if(v572NeedsFit||(v572OrbitNeedsFit&&!v572ManualFraming)){v572FitIfNeeded()}
+ v572NeedsFit=false;v572OrbitNeedsFit=false;
  request();
 }
 for(const f of v56PoseFields)$(f).addEventListener('change',v572FinishInteraction);
