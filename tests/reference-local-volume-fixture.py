@@ -101,3 +101,31 @@ def compare_refinement(solid, initial, surface_faces, budget=128, bulk=30.):
             'unaffectedParentAfterJRange':[float(final_parent[mask].min()),float(final_parent[mask].max())] if mask.any() else None,
             'maxOriginalNodeDisplacementMm':float(np.linalg.norm(trial[:len(initial)]-initial,axis=1).max()),
             'comparisonOnly':True,'noSnapshotPromoted':True}
+
+
+def compare_mixed_pressure(solid, initial):
+    from mixed_pressure_reference import MixedPressure
+    # Same original source mesh, fixed positions and local shear model.
+    # Zero-jump pressure is identical to bulk90; compare the equilibria
+    # with a single declared dimensionless stabilization, not a fitted muscle parameter.
+    control=MixedPressure(solid,bulk_pressure=60.,jump=0.)
+    mixed=MixedPressure(solid,bulk_pressure=60.,jump=1.)
+    x,base=minimize(solid,initial,bulk=90.,iterations=80)
+    assert np.array_equal(x[solid.fixed],initial[solid.fixed])
+    result={'experimental':True,'accepted':False,'boneContactEvaluated':False,
+            'selfCollisionEvaluated':False,'initial':control.audit(initial),
+            'control':{'converged':base['converged'],'residualMm':base['residualMaxMm'],
+                       'audit':control.audit(x)},'comparisonConverged':False}
+    if not base['converged'] or base['residualMaxMm']>=.001:
+        result['reason']='control-not-converged'
+        return result
+    y,report=mixed.minimize(x,bulk=30.,iterations=40)
+    assert np.array_equal(y[solid.fixed],initial[solid.fixed])
+    result['mixed']={**report,'audit':mixed.audit(y),
+                     'attachmentMaxMm':float(np.linalg.norm(y[solid.fixed]-initial[solid.fixed],axis=1).max(initial=0))}
+    result['comparisonConverged']=bool(report['converged'] and report['residualMm']<.001)
+    if result['comparisonConverged']:
+        a=result['control']['audit'];b=result['mixed']['audit']
+        result['mixedMinusControlMaxAbsLogJ']=b['maxAbsLogJ']-a['maxAbsLogJ']
+        result['mixedMinusControlPressureJumpRms']=b['pressureJumpRms']-a['pressureJumpRms']
+    return result
