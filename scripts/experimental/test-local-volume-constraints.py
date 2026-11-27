@@ -48,3 +48,22 @@ failed,report=equilibrate(solid,x,contact,target,np.array([.15]),np.array([.02])
                          max_log_error=1e-14,outer_steps=1)
 assert not report['converged'] and np.array_equal(failed,x)
 print('PASS local volume derivatives, PSD metric, linear feasibility, actual-distance coupled solve and rollback')
+
+# A tiny physical intersection must not disappear into the background, and
+# an all-fixed deformed element cannot be silently freed or satisfied by
+# pressure in a different element.
+from types import SimpleNamespace
+two = np.concatenate([rest, rest+[10.,0,0]], axis=0)
+volumes = np.array([1e-14, 1.])
+background = np.array([.02,.02])
+weights = volumes/volumes.sum()*(1-background.sum())+background
+solid2 = Solid(two, np.array([[0,1,2,3],[4,5,6,7]]), np.arange(7), weights)
+cells2, w2 = physical_cells(solid2, volumes, background)
+assert cells2.tolist() == [0,1] and 0 < w2[0] < 1e-13
+deformed = two.copy(); deformed[3,0]+=.1
+a = audit(solid2,deformed,cells2)
+assert a['immovableCellIds']==[0] and a['constraintRankDeficiencyLowerBound']==1
+assert a['immovableMaxAbsLogJ']>.01
+failed, report = equilibrate(solid2,deformed,SimpleNamespace(initial_penalty=1.),target,volumes,background,max_log_error=.01)
+assert report['reason']=='fixed-local-volume-conflict' and np.array_equal(failed,deformed)
+print('PASS tiny physical cell retained and fully fixed incompatible volume rejected')
