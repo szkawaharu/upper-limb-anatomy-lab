@@ -53,10 +53,19 @@ def audit(solid, x, cells, max_iterations=2000):
     free = (solid.free[:, None]*3+np.arange(3)).ravel()
     B = A[:, free].tocsr()
     B.eliminate_zeros()
-    immovable = np.diff(B.indptr) == 0
+    # A zero differential at one configuration is not a proof that a
+    # nonlinear constraint is immovable. Only cells with every node fixed
+    # are strictly immutable under the stated Dirichlet data.
+    zero_rows = np.diff(B.indptr) == 0
+    immovable = np.all(~np.isin(solid.tets[np.asarray(cells)], solid.free), axis=1)
     if len(free):
-        fit = lsqr(B, -c, atol=1e-11, btol=1e-11, iter_lim=max_iterations)
-        residual = B@fit[0]+c
+        # Column equilibration changes the search coordinates, not the
+        # unweighted residual or the linearized feasible subspace.
+        norms = np.sqrt(np.asarray(B.power(2).sum(axis=0)).ravel())
+        scale = np.ones_like(norms)
+        np.divide(1., norms, out=scale, where=norms>0)
+        fit = lsqr(B@diags(scale), -c, atol=1e-11, btol=1e-11, iter_lim=max_iterations)
+        residual = B@(scale*fit[0])+c
         stop, count = int(fit[1]), int(fit[2])
         stationarity = float(np.linalg.norm(B.T@residual))
     else:
@@ -67,6 +76,10 @@ def audit(solid, x, cells, max_iterations=2000):
             'structuralRankUpperBound':rank_bound,
             'constraintRankDeficiencyLowerBound':len(c)-rank_bound,
             'immovableCellIds':np.asarray(cells)[immovable].tolist(),
+            'zeroLinearizedRowCount':int(zero_rows.sum()),
+            'zeroLinearizedButNotFixedCount':int((zero_rows & ~immovable).sum()),
+            'lsqrColumnEquilibrated':True,
+            'lsqrIterationLimit':max_iterations,
             'immovableMaxAbsLogJ':float(np.max(np.abs(c[immovable]), initial=0)),
             'maxAbsLogJ':float(np.max(np.abs(c), initial=0)),
             'linearizedResidualL2':float(np.linalg.norm(residual)),
