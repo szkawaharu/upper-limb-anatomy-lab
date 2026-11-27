@@ -1,0 +1,56 @@
+name: v0.76 additive shoulder preview field and source screening
+on:
+  push:
+    branches: [redesign/v076-shoulder]
+    paths:
+      - '.github/workflows/v076-shoulder-preview.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/calibration/build-shoulder-blend-preview.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: shoulder-preview-field
+          path: test-results/v076-blend-preview/
+  source:
+    needs: build
+    strategy:
+      fail-fast: false
+      matrix:
+        plane: [0, 20, 40, 65, 90]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      QA_SHOULDER_MODE: preview
+      QA_SHOULDER_PLANE: ${{ matrix.plane }}
+      QA_SHOULDER_STEP: 3
+      QA_SHOULDER_OUT: test-results/v076-preview-${{ matrix.plane }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: shoulder-preview-field
+          path: test-results/v076-blend-preview/
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: node scripts/calibration/recording-shoulder-candidates.mjs
+      - run: python scripts/calibration/verify-recording-shoulder-candidates.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shoulder-preview-source-${{ matrix.plane }}
+          path: test-results/v076-preview-${{ matrix.plane }}/
