@@ -71,3 +71,33 @@ def compare_pressure(solid, initial, *, rho=30., bulk=30.):
     if result['comparisonConverged']:
         result['pressureMinusControlMaxAbsLogJ']=p['maxAbsLogJ']-c['maxAbsLogJ']
     return result
+
+
+def compare_refinement(solid, initial, surface_faces, budget=128, bulk=30.):
+    from interior_face_refinement import refine, select_faces, metrics
+    faces=select_faces(solid,initial,budget)
+    refined,y,parent,info=refine(solid,initial,faces)
+    initial_metrics=metrics(solid,refined,y,parent)
+    initial_parent=initial_metrics.pop('parentJ')
+    original_J=np.linalg.det(solid.edges(initial)@solid.inverse)
+    assert np.allclose(initial_parent,original_J,rtol=1e-8,atol=1e-10)
+    assert np.isclose(refined.evaluate(y,bulk,False)[0],solid.evaluate(initial,bulk,False)[0],rtol=1e-8,atol=1e-12)
+    trial,report=minimize(refined,y,bulk=bulk,iterations=80)
+    assert np.array_equal(trial[solid.fixed],initial[solid.fixed])
+    final_metrics=metrics(solid,refined,trial,parent)
+    final_parent=final_metrics.pop('parentJ')
+    ids=np.asarray(info['affectedParentIds'])
+    mask=np.ones(len(original_J),dtype=bool);mask[ids]=False
+    volume=lambda v:float(np.einsum('ti,ti->t',v[surface_faces[:,0]],np.cross(v[surface_faces[:,1]],v[surface_faces[:,2]])).sum()/6)
+    surface_ratio=volume(trial)/volume(solid.rest)
+    assert abs(surface_ratio-final_metrics['globalVolumeRatio'])<1e-8
+    return {'experimental':True,'accepted':False,'boneContactEvaluated':False,'selfCollisionEvaluated':False,
+            'bulk':bulk,'faceBudget':budget,'refinement':info,'before':initial_metrics,'after':final_metrics,
+            'converged':report['converged'],'residualMm':report['residualMaxMm'],'reason':report['reason'],
+            'initialEnergy':solid.evaluate(initial,bulk,False)[0],'finalEnergy':report['energy'],
+            'attachmentMaxMm':0.,'surfaceVolumeRatio':surface_ratio,
+            'affectedParentBeforeJRange':[float(original_J[ids].min()),float(original_J[ids].max())],
+            'affectedParentAfterJRange':[float(final_parent[ids].min()),float(final_parent[ids].max())],
+            'unaffectedParentAfterJRange':[float(final_parent[mask].min()),float(final_parent[mask].max())] if mask.any() else None,
+            'maxOriginalNodeDisplacementMm':float(np.linalg.norm(trial[:len(initial)]-initial,axis=1).max()),
+            'comparisonOnly':True,'noSnapshotPromoted':True}
