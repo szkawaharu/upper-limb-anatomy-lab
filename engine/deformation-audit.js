@@ -1,15 +1,33 @@
 (function (root) {
   "use strict";
   const { sub, cross, dot, len } = root.AnatomyMath;
+  // Certify non-collinearity against floating-point error, in the units of
+  // the supplied coordinates. An absolute area cutoff misclassifies small
+  // but valid conforming subdivisions and changes under unit conversion.
+  // Keep the former cutoff as a reported diagnostic, never silently drop it.
+  function triangleQuality(a,b,c) {
+    const u=sub(b,a),v=sub(c,a),normal=cross(u,v),epsilon=Number.EPSILON;
+    const du=a.map((x,k)=>epsilon*(Math.abs(x)+Math.abs(b[k]))),
+      dv=a.map((x,k)=>epsilon*(Math.abs(x)+Math.abs(c[k])));
+    const error=normal.map((_,i)=>{const j=(i+1)%3,k=(i+2)%3;
+      return 4*epsilon*(Math.abs(u[j]*v[k])+Math.abs(u[k]*v[j]))+
+        Math.abs(v[k])*du[j]+Math.abs(u[j])*dv[k]+du[j]*dv[k]+
+        Math.abs(v[j])*du[k]+Math.abs(u[k])*dv[j]+du[k]*dv[j]+32*Number.MIN_VALUE;
+    });
+    const area2=len(normal),finite=[...a,...b,...c,...normal,...error,area2].every(Number.isFinite);
+    return {normal,area2,roundoffBound:error,reliablyNoncollinear:finite&&normal.some((x,i)=>Math.abs(x)>error[i]),legacySmallArea:finite&&area2<1e-12};
+  }
   function topology(positions, faces) {
     const edges = new Map();
-    let degenerate = 0;
+    let degenerate = 0, smallAbsoluteAreaFaces = 0;
     for (let i = 0; i < faces.length; i += 3) {
       const ids = [faces[i], faces[i + 1], faces[i + 2]];
       if (ids.some((k) => k < 0 || k * 3 + 2 >= positions.length))
         throw Error("Invalid face");
       const p = ids.map((k) => Array.from(positions.slice(k * 3, k * 3 + 3)));
-      if (len(cross(sub(p[1], p[0]), sub(p[2], p[0]))) < 1e-12) degenerate++;
+      const quality=triangleQuality(...p);
+      if(!quality.reliablyNoncollinear)degenerate++;
+      if(quality.legacySmallArea)smallAbsoluteAreaFaces++;
       for (let j = 0; j < 3; j++) {
         const a = ids[j],
           b = ids[(j + 1) % 3],
@@ -34,6 +52,9 @@
       nonmanifold,
       inconsistent,
       degenerate,
+      smallAbsoluteAreaFaces,
+      precisionPolicy: "cross-product roundoff bound; unresolved triangles conservatively rejected",
+      legacySmallAreaCutoffWorld2: 1e-12,
     };
   }
   function signedVolume(p, f) {
@@ -110,16 +131,16 @@
       const ids = [faces[i], faces[i + 1], faces[i + 2]],
         r = ids.map((k) => rest.slice(3 * k, 3 * k + 3)),
         p = ids.map((k) => now.slice(3 * k, 3 * k + 3)),
-        a0 = len(cross(sub(r[1], r[0]), sub(r[2], r[0]))),
-        a = len(cross(sub(p[1], p[0]), sub(p[2], p[0])));
-      if (a < 1e-12) degenerate++;
-      if (a0 > 1e-12) {
+        referenceQuality=triangleQuality(...r),quality=triangleQuality(...p),
+        a0=referenceQuality.area2,a=quality.area2;
+      if(!quality.reliablyNoncollinear)degenerate++;
+      if(referenceQuality.reliablyNoncollinear) {
         minArea = Math.min(minArea, a / a0);
         if(a/a0>maxArea){maxArea=a/a0;worstArea={triangle:i/3,vertices:ids.slice(),restAreaMm2:a0/(2*scale*scale),ratio:a/a0};}
       }
       for (let j = 0; j < 3; j++) {
         const d0 = len(sub(r[j], r[(j + 1) % 3]));
-        if (d0 > 1e-9) {
+        if (d0 > 0) {
           const q = len(sub(p[j], p[(j + 1) % 3])) / d0;
           minEdge = Math.min(minEdge, q);
           if(q>maxEdge){maxEdge=q;worstEdge={vertices:[ids[j],ids[(j+1)%3]],restLengthMm:d0/scale,ratio:q};}
@@ -154,7 +175,9 @@
       newInversions: null,
       boneDistance: null,
       clinicalValidation: false,
+      selfIntersectionStatus: "not-evaluated",
+      physicalVolumeVerified: false,
     };
   }
-  root.DeformationAudit = Object.freeze({ topology, signedVolume, audit });
+  root.DeformationAudit = Object.freeze({ topology, signedVolume, audit, triangleQuality });
 })(globalThis);
