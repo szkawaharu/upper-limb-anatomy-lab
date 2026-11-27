@@ -9,7 +9,7 @@ import numpy as np
 import trimesh
 from scipy.spatial.transform import Rotation
 
-out=Path('test-results/v076-recording-shoulder')
+out=Path(os.environ.get('QA_SHOULDER_OUT','test-results/v076-recording-shoulder'))
 data=json.loads((out/'candidates.json').read_text())
 cal=data['calibration'];scale=cal['scale']
 archive=json.loads(Path('docs/validation/v076/source-bones/after-surfaces-and-edges.json').read_text())
@@ -101,9 +101,18 @@ for row in data['rows']:
 selected=[]
 for e,p in sorted({(r['elev'],r['plane']) for r in rows}):
     group=[r for r in rows if r['elev']==e and r['plane']==p];control=group[0]
-    feasible=[r for r in group[1:] if r['screenedCollisionFree'] and r['costalVertexTriangleGapMm']['rmsDeltaFromRest']<control['costalVertexTriangleGapMm']['rmsDeltaFromRest'] and r['priorDeviationL2Deg']<=control['priorDeviationL2Deg']]
+    feasible=[r for r in group[1:] if control['screenedCollisionFree'] and r['screenedCollisionFree'] and r['costalVertexTriangleGapMm']['rmsDeltaFromRest']<control['costalVertexTriangleGapMm']['rmsDeltaFromRest'] and r['priorDeviationL2Deg']<=control['priorDeviationL2Deg']]
     selected.append({'elev':e,'plane':p,'control':control,'candidate':min(feasible,key=lambda r:r['costalVertexTriangleGapMm']['rmsDeltaFromRest']) if feasible else None})
 report={'sourceSha256':sources,'rows':rows,'selected':selected,'anatomicalAcceptance':False,'productAccepted':False,
         'limitations':['Limited poses and line segment of six linked parameters only','Vertex-triangle distances, not soft tissue measurements','No coplanar classification, cartilage, muscles or continuous motion acceptance']}
 (out/'report.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps({'selected':selected,'productAccepted':False}),flush=True)
+
+summary={'poses':len(selected),'rows':len(rows),
+         'controlRejected':[{'elev':s['elev'],'plane':s['plane']} for s in selected if not s['control']['screenedCollisionFree']],
+         'fixedQuarterRejected':[{'elev':r['elev'],'plane':r['plane'],'insideRibVertices':r['insideRibVertices'],'insideScapulaRibVertices':r['insideScapulaRibVertices'],'crossings':r['surfaceSegmentCrossings']} for r in rows if r['alpha']==.25 and not r['screenedCollisionFree']],
+         'improved':[{'elev':s['elev'],'plane':s['plane'],'alpha':s['candidate']['alpha'],'controlRms':s['control']['costalVertexTriangleGapMm']['rmsDeltaFromRest'],'candidateRms':s['candidate']['costalVertexTriangleGapMm']['rmsDeltaFromRest']} for s in selected if s['candidate'] is not None],
+         'noImprovement':[{'elev':s['elev'],'plane':s['plane']} for s in selected if s['elev'] and s['candidate'] is None],
+         'productAccepted':False}
+(out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
+print('SWEEP_SUMMARY '+json.dumps(summary),flush=True)
