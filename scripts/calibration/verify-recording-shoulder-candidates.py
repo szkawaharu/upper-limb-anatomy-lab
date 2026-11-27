@@ -123,7 +123,9 @@ summary={'poses':len(selected),'rows':len(rows),
 print('SWEEP_SUMMARY '+json.dumps(summary),flush=True)
 
 if os.environ.get('QA_LOCAL_SHOULDER')=='1':
-    from local_shoulder_step import LinkedShoulder,direction
+    from runpy import run_path
+    local=run_path(str(Path(__file__).with_name('local-shoulder-step.py')))
+    LinkedShoulder,direction=local['LinkedShoulder'],local['direction']
     rig=LinkedShoulder(data)
     for row in data['rows']:rig.verify(row,scale)
     experiments=[]
