@@ -25,10 +25,10 @@ for(const input of inputs){
   const bones={clavicle,scapula,humerus};
   const connections=RigDiagnostics.connections(current,bones);
   if(connections.some(x=>x.sharedPivotErrorMm>1e-7))throw Error('Unlinked candidate');
-  rows.push({...input,alpha,parameters:params,bones,connections,controlBackend:a.diagnostics.backend,
+  rows.push({...input,alpha,parameters:params,prior:a.prior,bones,connections,controlBackend:a.diagnostics.backend,
    priorDeviationL2Deg:Math.hypot(...params.map((x,j)=>x-a.prior[j])),productAccepted:false});
  }
 }
 const out=process.env.QA_SHOULDER_OUT||'test-results/v076-recording-shoulder';mkdirSync(out,{recursive:true});
-writeFileSync(out+'/candidates.json',JSON.stringify({calibration,atlasSC:ShoulderRigData.landmarks.SC,rows,limitations:'One canonical shoulder at each observed UI setting. No individual anatomical measurements; no continuous field or muscle acceptance.'},null,2)+'\n');
+writeFileSync(out+'/candidates.json',JSON.stringify({calibration,atlasSC:ShoulderRigData.landmarks.SC,frames:{thorax:current.thoraxFrame,clavicle:current.clavicleFrame,scapula:current.scapulaFrame,SC0:current.SC0,AC0:current.AC0},rows,limitations:'One canonical shoulder at each observed UI setting. No individual anatomical measurements; no continuous field or muscle acceptance.'},null,2)+'\n');
 console.log(JSON.stringify({candidates:rows.length,inputs,sweep,productAccepted:false}));
