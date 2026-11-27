@@ -1,0 +1,110 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "completed": true,
+  "currentAngle": 90.0,
+  "requestedAngles": [
+    90,
+    90.375,
+    90
+  ],
+  "plane": 0.0,
+  "initialSnapshot": "test-results/v076-mid-intersection-integrated-v3/reference-e90-p0-k3000.npz",
+  "inputsSha256": {
+    "test-results/v076-mid-intersection-integrated-v3/reference-e90-p0-k3000.npz": "ab18ff17e572ff46ac6c04d545c31024422f27c33211e1f4cb0c985fd59b063a",
+    "test-results/v076-mid-intersection-integrated-v3/reference-e90-p0-k3000.json": "f5dee079b0140675b074c55d2ff10bac99c6843771511b1d947269257f4c0381",
+    "test-results/v076-mid-corrected-return/targets.json": "4d896ea5a26c582285619013bf417b21653f69b1d69a0a77107dfa1f97630ad5",
+    "docs/validation/v076/source-bones/browser-numeric/rig-calibration.json": "128ba4a142da025d3b392923bd18e4c3ab25fff285e1d0c10010afaa7f590c32",
+    "test-results/v076-mid-intersection-integrated-v3/cage.npz": "661d58b34f4f3ac9a37d1575ede8de6262327a2d9a4ca735334a0b2989e26101",
+    "test-results/v076-mid-intersection-integrated-v3/conforming.npz": "5fc5ff4d72b7f05b12f72828d2880e269f01f1be1a280d1fb7012299037774d8"
+  },
+  "codeSha256": {
+    "run-joint-contact-path.py": "de642d055f83aff6a08531bf2e269309ab6317524a0c213098df72dcb79754e8",
+    "joint_path.py": "0358c52161a8a3ded393caf6b1c80dd142dea09748fa026adda42fdc03c1a801",
+    "material_pose.py": "b39527dbd79bd4aed4faffb4fec8a1bc32c30cea41f41ed03bb4614f631265f8",
+    "actual_bone_contact.py": "cc5bd4ad0d51bc1937a9b264247471d30c7d4184c7c5fe7a75370e8142af123f",
+    "contact_potential.py": "a340cd857ab5dd37e8128390d4c6fdb4c2e0c33cd05bbe9393261eb0e6ce382d",
+    "bone_sets.py": "473db337dfd6f08090812cd070408d8bd393e06b575354fab47022afa5231e8b",
+    "contact-bone-sets.json": "a310f9d5aa90c858a2f931817a7394f483d40c0b9c572010f3cd7e3cb069a59d",
+    "cage_solver.py": "eb5ffdaaad3b114b8d5ec51fd42db3558d38d62011e8161c103fee0b0fed3572",
+    "projected_solid_metric.py": "020c4326ab48091fb0e4d41b60109aa6a18e215c632e4a6074a27f5dc9e14deb",
+    "constitutive_metric.py": "e47e86d3cb1072c0912fa77061e427c8c50af91181f86b8aefa069e1127a5717",
+    "volumetric_reference.py": "8622dceaa6d08c67032a69361c9690b5906adce519d595c3411daa116dc472ea",
+    "snapshot_names.py": "00da019881878d4a34f62b9798c99b51198dcad21f3a95fd6aa490583a2e44cc"
+  },
+  "boneCoverage": {
+    "bones": [
+      {
+        "key": "a",
+        "boneId": "scapula",
+        "file": "FMA13395.stl"
+      },
+      {
+        "key": "b",
+        "boneId": "humerus",
+        "file": "FMA23130.stl"
+      }
+    ],
+    "limitations": [
+      "Only scapula and humerus; not all neighboring bones or tissues"
+    ]
+  },
+  "actualJointGridStepDegrees": 0.375,
+  "seconds": 67.08145380020142,
+  "rows": [
+    {
+      "elev": 90.375,
+      "plane": 0.0,
+      "sequence": 0,
+      "surfaceVolumeRatio": 0.9999827309010129,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.8958807954362786,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 25.464656829833984,
+      "fromIndex": 240,
+      "index": 241,
+      "requestedIndex": 241,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 5.684934090955742e-08,
+      "cageJQuantiles": [
+        0.21568920892148036,
+        0.8338073084432368,
+        1.0000000000000004,
+        1.20842815789445,
+        2.807218333909903
+      ]
+    },
+    {
+      "elev": 90,
+      "plane": 0.0,
+      "sequence": 1,
+      "surfaceVolumeRatio": 0.9999831494738779,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.8958807954363434,
+      "returnToPreviousSamePoseMaxMm": 2.253361891780865e-12,
+      "seconds": 66.6731448173523,
+      "fromIndex": 241,
+      "index": 240,
+      "requestedIndex": 240,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.0005617079675264879,
+      "cageJQuantiles": [
+        0.2174462307277368,
+        0.8356419472058235,
+        1.0000000000000002,
+        1.2055011252067902,
+        2.782783028148537
+      ]
+    }
+  ],
+  "rejected": [],
+  "scope": "90 -> 90.375 -> 90 degrees only; not neutral or full ROM"
+}

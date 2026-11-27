@@ -1,0 +1,115 @@
+{
+  "positiveSourceIntersectionJRange": [
+    0.420162294472146,
+    2.6038958954743254
+  ],
+  "positiveSourceIntersectionCells": 6985,
+  "mappedPhysicalVolumeRatio": 0.9998559051356704,
+  "surfaceIntegralDifference": 2.886579864025407e-15,
+  "materialCellMask": "strictly positive source/cage intersection volume; no size threshold; floating geometric classification",
+  "experimental": true,
+  "accepted": false,
+  "postAuditWithoutResolving": true,
+  "modelId": "v60DeltMid",
+  "target": {
+    "elev": 90,
+    "plane": 0,
+    "a": {
+      "q": [
+        0.17668584234599377,
+        -0.02522034077897274,
+        0.21740098483877934,
+        0.959626416537503
+      ],
+      "p": [
+        0.528571234971673,
+        1.9533105280449323,
+        0.3513477991951215
+      ],
+      "rest": [
+        0.7390595895000001,
+        1.790368874,
+        0.134615219
+      ]
+    },
+    "b": {
+      "q": [
+        0.049203092871623805,
+        -0.013565886043234547,
+        0.6274604891618984,
+        0.776973845717114
+      ],
+      "p": [
+        0.6794158871213062,
+        1.8593953456525114,
+        0.252491377488272
+      ],
+      "rest": [
+        0.824725116,
+        1.61447228,
+        0.07922055800000001
+      ]
+    },
+    "backend": "validated-field"
+  },
+  "bulk": 300.0,
+  "surfaceSignedVolumeRatio": 0.9998559051356732,
+  "attachmentMaxMm": 1.230696119285481e-13,
+  "worldFrameMaxErrorMm": 0.0,
+  "cageJRange": [
+    0.18793074891909162,
+    2.6038958954743254
+  ],
+  "surfaceAdjacentJRange": [
+    0.420162294472146,
+    1.8377135881412034
+  ],
+  "cageNonPositive": 0,
+  "surfaceEdgeRatio": [
+    0.4072571503528703,
+    2.4753140554936524
+  ],
+  "surfaceAreaRatio": [
+    0.5011544953055381,
+    2.6227053391061643
+  ],
+  "sourceOpposedFaces": 0,
+  "actualDistanceResidualMm": 0.0009773272020489085,
+  "lastSolvedActualBoneDepth": [
+    {
+      "bone": "FMA13395.stl",
+      "maxBaselineDepthMm": 0.10195669388532431,
+      "maxDepthMm": 0.10195669388530947,
+      "maxDepthIncreaseMm": 5.4387917780562844e-14,
+      "worstSurfaceVertex": 13922,
+      "insidePoints": 94,
+      "newInsidePoints": 0
+    },
+    {
+      "bone": "FMA23130.stl",
+      "maxBaselineDepthMm": 4.0753162199852,
+      "maxDepthMm": 4.058848616681447,
+      "maxDepthIncreaseMm": 0.05929548625527619,
+      "worstSurfaceVertex": 33395,
+      "insidePoints": 892,
+      "newInsidePoints": 4
+    }
+  ],
+  "rawSnapshot": "test-results/v076-mid-intersection-integrated-v3/reference-e90-p0-k300.npz",
+  "rawSnapshotSha256": "f0096139c36b063b38063946a55d799a86257e5a0cdd3eb1222ba93c90d2cf8c",
+  "rawReportSha256": "e7dd99ae781fd205daa46e77f42ebccf5b1756ea06a9e23aa5e30e35599d155c",
+  "inputsSha256": {
+    "test-results/v076-mid-intersection-integrated-v3/cage.npz": "661d58b34f4f3ac9a37d1575ede8de6262327a2d9a4ca735334a0b2989e26101",
+    "test-results/v076-mid-intersection-integrated-v3/conforming.npz": "5fc5ff4d72b7f05b12f72828d2880e269f01f1be1a280d1fb7012299037774d8"
+  },
+  "codeSha256": {
+    "audit-reference-snapshot.py": "60c109715ece613f7d531093d700af14e19c90d13ecca446472f3e5935a1e3fb",
+    "material_pose.py": "b39527dbd79bd4aed4faffb4fec8a1bc32c30cea41f41ed03bb4614f631265f8"
+  },
+  "limitations": [
+    "Metrics are recomputed from saved vertices; inherited initial-report geometry metrics are not used",
+    "Signed surface volume is not anatomical/global self-collision certification",
+    "Bone depth is from the nonlinear solve; independent world-space bone audit is separate",
+    "Not a production GPU or mobile test"
+  ]
+}

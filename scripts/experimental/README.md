@@ -102,3 +102,5 @@ previewの生成が完了してからブラウザを起動する。元の全表�
 材料積分の最新版は[JOINT_CONTACT_V076.md](../../docs/JOINT_CONTACT_V076.md)。`integrate-material-cells.py` は元の細かい体積分割と制御セルの凸交差量を使い、元の背景密度を保つ。`audit-material-coverage.py` で各元要素の最大・分位・欠落も照合する。全体積だけで採用しない。`reequilibrate-contact.py` の旧ウェイト対照と比較してから高挙上を再検証する。追加の依存をWebへ導入していない。
 
 `material_pose.boundary_targets` は固定クラス→骨フレームの辞書を任意に指定できる。既存2骨データは互換。合成のC0/C4/C7/体幹/肩甲骨と左右鏡映を試験したが、実頸部メッシュの付着領域を照合・移行した結果ではない。既存CLIは2骨データを使用し、実筋の複数起始アダプターは未実装。
+
+`reequilibrate-contact.py ROOT INITIAL.npz [BULK]` は共通の数値材料比を指定可能。デフォルトは初期解と同じ比。ファイル名で比を区別し、各出力にコードのsnapshotを保存する。元の解の幾何指標を継承せず、`audit-reference-snapshot.py ROOT SNAPSHOT.npz OUTPUT.json` で保存形状から再計算できる。数値の再集計と新しい平衡計算を混同しない。

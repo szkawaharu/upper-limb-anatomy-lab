@@ -1,0 +1,59 @@
+{
+  "experimental": true,
+  "anatomicalAcceptance": false,
+  "productionEngineAcceptance": false,
+  "requestedPathCompleted": true,
+  "currentAngle": 90.0,
+  "rows": [
+    {
+      "file": "001-reference-e90d375-p0-k3000.npz",
+      "snapshotSha256": "a734320022a8c8f493abbc5f9a244c90b6023ed021ef3ac537d31531a8a72270",
+      "elev": 90.375,
+      "sourceVolumeRatio": 0.9999827309010129,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.21568920892148036,
+        2.807218333909903
+      ],
+      "surfaceAdjacentJRange": [
+        0.45001734173434027,
+        1.6646776684981186
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.2156900940517367,
+      "maxDepthIncreaseMm": 0.022748352677856253,
+      "actualDistanceResidualMm": 5.684934090955742e-08
+    },
+    {
+      "file": "002-reference-e90-p0-k3000.npz",
+      "snapshotSha256": "aa02542b0af5fd00932d14a45eb10eead673144dc25ce432dab1b3f4b6eee9a3",
+      "elev": 90,
+      "sourceVolumeRatio": 0.9999831494738779,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.2174462307277368,
+        2.782783028148537
+      ],
+      "surfaceAdjacentJRange": [
+        0.4506713058062834,
+        1.652108940443465
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.21744266954254868,
+      "maxDepthIncreaseMm": 0.022109032065193372,
+      "actualDistanceResidualMm": 0.0005617079675264879
+    }
+  ],
+  "limitations": [
+    "Surface-adjacent local J outliers reported, not hidden in background cell averages",
+    "Bone depth copied from final actual-distance solve; independent world-space bone audit is separate",
+    "Float32 storage is not a new GPU solver consistency test",
+    "No global self-collision or mobile FPS certification"
+  ]
+}
