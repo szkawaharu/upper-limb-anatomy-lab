@@ -73,7 +73,7 @@ def main():
         result['solve'] = solve
         if solve['converged']:
             points=contact.surface(x)
-            result['independentBoneScan']=contact.scan(x,target)[0]
+            result['recomputedBoneScan']=contact.scan(x,target)[0]
             result['attachmentMaxMm']=float(np.linalg.norm(x[fixed]-expected,axis=1).max(initial=0))
             result['finalAudit']=audit(solid,x,cells)
             path=out/'experimental-candidate.npz'
