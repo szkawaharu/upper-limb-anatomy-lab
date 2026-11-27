@@ -2,6 +2,7 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import '../engine/math.js';
+import '../engine/camera-framing.js';
 import '../anatomy/rest-attachments-v076.js';
 import '../anatomy/shoulder-rig-data.js';
 import '../engine/joint-frames.js';
