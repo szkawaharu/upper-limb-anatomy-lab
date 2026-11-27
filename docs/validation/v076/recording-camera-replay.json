@@ -1,0 +1,127 @@
+{
+  "runId": 46062482521,
+  "jobId": 140719811529,
+  "headSha": "d12c27765ce30e01b4a89959040721aeda639fdf",
+  "artifactId": 15229551658,
+  "conclusion": "success",
+  "actualAtlas": true,
+  "physicalDevice": false,
+  "rows": [
+    {
+      "name": "neutral",
+      "bounds": {
+        "minX": 33.075,
+        "maxX": 321.82499999999993,
+        "minY": 134.5329169701603,
+        "maxY": 713.6870830298398,
+        "width": 390,
+        "height": 844
+      },
+      "pads": [
+        27.300000000000004,
+        62.4,
+        67.52,
+        63.3
+      ],
+      "zoom": 8.059458941438448,
+      "backend": "validated-field"
+    },
+    {
+      "name": "right70-plane39",
+      "bounds": {
+        "minX": 33.07499999999985,
+        "maxX": 321.8249999999999,
+        "minY": 165.1722382009314,
+        "maxY": 683.0477617990686,
+        "width": 390,
+        "height": 844
+      },
+      "pads": [
+        27.300000000000004,
+        62.4,
+        67.52,
+        63.3
+      ],
+      "zoom": 8.85269263844321,
+      "backend": "validated-field"
+    },
+    {
+      "name": "right180-plane44",
+      "bounds": {
+        "minX": 55.57869768970802,
+        "maxX": 299.321302310292,
+        "minY": 81.23500000000004,
+        "maxY": 766.9849999999999,
+        "width": 390,
+        "height": 844
+      },
+      "pads": [
+        27.300000000000004,
+        62.4,
+        67.52,
+        63.3
+      ],
+      "zoom": 9.426525781151808,
+      "backend": "validated-field"
+    },
+    {
+      "name": "right180-neck60",
+      "bounds": {
+        "minX": 55.57869768970802,
+        "maxX": 299.321302310292,
+        "minY": 81.23500000000004,
+        "maxY": 766.9849999999999,
+        "width": 390,
+        "height": 844
+      },
+      "pads": [
+        27.300000000000004,
+        62.4,
+        67.52,
+        63.3
+      ],
+      "zoom": 9.426525781151808,
+      "backend": "validated-field"
+    },
+    {
+      "name": "both-right180-left150",
+      "bounds": {
+        "minX": 55.57869768970802,
+        "maxX": 292.34468040820474,
+        "minY": 81.23500000000004,
+        "maxY": 602.7523499895409,
+        "width": 390,
+        "height": 844
+      },
+      "pads": [
+        27.300000000000004,
+        62.4,
+        67.52,
+        63.3
+      ],
+      "zoom": 9.426525781151808,
+      "backend": "validated-field"
+    },
+    {
+      "name": "explicit-refit",
+      "bounds": {
+        "minX": 33.075000000000045,
+        "maxX": 321.82500000000005,
+        "minY": 106.09950482569565,
+        "maxY": 742.1204951743046,
+        "width": 390,
+        "height": 844
+      },
+      "pads": [
+        27.300000000000004,
+        62.4,
+        67.52,
+        63.3
+      ],
+      "zoom": 7.7294567625823465,
+      "backend": "validated-field"
+    }
+  ],
+  "source": "Chromium portrait replay CI stdout. Neck60 is a test input, not a recovered recording measurement.",
+  "anatomicalAcceptance": false
+}
