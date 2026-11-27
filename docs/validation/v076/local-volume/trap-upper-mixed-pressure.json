@@ -1,0 +1,169 @@
+{
+  "runId": 46021590611,
+  "jobId": 140582321728,
+  "headSha": "a4cc529a3c49532d45f5c8991579653151fa7a07",
+  "fixtureSha256": "24cc44d68a844dae771a9916ea5d9ec1cadf6e1628aa999546a205ba83651739",
+  "experimental": true,
+  "accepted": false,
+  "boneContactEvaluated": false,
+  "selfCollisionEvaluated": false,
+  "initial": {
+    "JRange": [
+      0.5751903630574129,
+      1.7310250572660517
+    ],
+    "maxAbsLogJ": 0.5530542267882991,
+    "globalVolumeRatio": 0.9984719971801603,
+    "pressureRange": [
+      -33.18325360729795,
+      32.92282510144308
+    ],
+    "pressureJumpRms": 0.37557536025019683,
+    "unfilteredPressureJumpRms": 0.37557536025019683,
+    "pressureBackwardError": 7.644433236864854e-19,
+    "pressureMeanBalanceError": 0,
+    "pressureDofs": 80265,
+    "interiorFaces": 137329,
+    "infSupCertified": false,
+    "allCellsAudited": true,
+    "localBulk": 30,
+    "pressureBulk": 60,
+    "jump": 0
+  },
+  "control": {
+    "converged": true,
+    "residualMm": 0.0000010673192952040093,
+    "audit": {
+      "JRange": [
+        0.672740837468462,
+        1.4938363046001666
+      ],
+      "maxAbsLogJ": 0.401347512166836,
+      "globalVolumeRatio": 0.9994021731025919,
+      "pressureRange": [
+        -23.783706539223758,
+        24.080850730010162
+      ],
+      "pressureJumpRms": 0.27800296551249726,
+      "unfilteredPressureJumpRms": 0.27800296551249726,
+      "pressureBackwardError": 5.27487963801828e-19,
+      "pressureMeanBalanceError": 1.0842021724855044e-19,
+      "pressureDofs": 80265,
+      "interiorFaces": 137329,
+      "infSupCertified": false,
+      "allCellsAudited": true,
+      "localBulk": 30,
+      "pressureBulk": 60,
+      "jump": 0
+    }
+  },
+  "comparisonConverged": true,
+  "mixed": {
+    "converged": true,
+    "reason": "residual-tolerance",
+    "residualMm": 0.0007602540276942634,
+    "iterations": 8,
+    "trialAudit": {
+      "JRange": [
+        0.5751298216282963,
+        1.6788921554425738
+      ],
+      "maxAbsLogJ": 0.5531594869236571,
+      "globalVolumeRatio": 0.999446238231612,
+      "pressureRange": [
+        -5.067088008129576,
+        6.232224640401987
+      ],
+      "pressureJumpRms": 0.08143047474552252,
+      "unfilteredPressureJumpRms": 0.35477245289718096,
+      "pressureBackwardError": 4.721972972809115e-18,
+      "pressureMeanBalanceError": 1.0842021724855044e-19,
+      "pressureDofs": 80265,
+      "interiorFaces": 137329,
+      "infSupCertified": false,
+      "allCellsAudited": true,
+      "localBulk": 30,
+      "pressureBulk": 60,
+      "jump": 1
+    },
+    "rows": [
+      {
+        "iteration": 1,
+        "energy": 0.0037401888014235896,
+        "gain": 1,
+        "previousResidualMm": 0.6056389790325104
+      },
+      {
+        "iteration": 2,
+        "energy": 0.0037362294799173435,
+        "gain": 1,
+        "previousResidualMm": 0.19508749919333748
+      },
+      {
+        "iteration": 3,
+        "energy": 0.003735573075936524,
+        "gain": 1,
+        "previousResidualMm": 0.07292015976431376
+      },
+      {
+        "iteration": 4,
+        "energy": 0.0037354431055873485,
+        "gain": 1,
+        "previousResidualMm": 0.0296070168486254
+      },
+      {
+        "iteration": 5,
+        "energy": 0.0037354146750234758,
+        "gain": 1,
+        "previousResidualMm": 0.012597720375594671
+      },
+      {
+        "iteration": 6,
+        "energy": 0.003735408043404175,
+        "gain": 1,
+        "previousResidualMm": 0.005663525602192044
+      },
+      {
+        "iteration": 7,
+        "energy": 0.0037354064254461316,
+        "gain": 1,
+        "previousResidualMm": 0.002876147489898717
+      },
+      {
+        "iteration": 8,
+        "energy": 0.0037354060173563205,
+        "gain": 1,
+        "previousResidualMm": 0.001474078194758548
+      }
+    ],
+    "rolledBack": false,
+    "accepted": false,
+    "boneContactEvaluated": false,
+    "audit": {
+      "JRange": [
+        0.5751298216282963,
+        1.6788921554425738
+      ],
+      "maxAbsLogJ": 0.5531594869236571,
+      "globalVolumeRatio": 0.999446238231612,
+      "pressureRange": [
+        -5.067088008129576,
+        6.232224640401987
+      ],
+      "pressureJumpRms": 0.08143047474552252,
+      "unfilteredPressureJumpRms": 0.35477245289718096,
+      "pressureBackwardError": 4.721972972809115e-18,
+      "pressureMeanBalanceError": 1.0842021724855044e-19,
+      "pressureDofs": 80265,
+      "interiorFaces": 137329,
+      "infSupCertified": false,
+      "allCellsAudited": true,
+      "localBulk": 30,
+      "pressureBulk": 60,
+      "jump": 1
+    },
+    "attachmentMaxMm": 0
+  },
+  "mixedMinusControlMaxAbsLogJ": 0.15181197475682112,
+  "mixedMinusControlPressureJumpRms": -0.19657249076697475
+}
