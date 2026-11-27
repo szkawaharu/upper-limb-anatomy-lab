@@ -1,0 +1,193 @@
+{
+  "anatomicalAcceptance": false,
+  "productionEngineAcceptance": false,
+  "fixtureSha256": "24cc44d68a844dae771a9916ea5d9ec1cadf6e1628aa999546a205ba83651739",
+  "referenceSourceVertexMaxStepMm": 5.432706471433917,
+  "prescribedFixedVertexMaxStepMm": 5.432706471433917,
+  "engineeringRegressionBoundMm": 6.401433742895301,
+  "referenceNeutralReturn": {
+    "maxDriftMm": 1.523631186069631e-11,
+    "equilibriumResidualMm": 7.28992038794066e-11,
+    "numericalGuardMm": 0.001,
+    "notAProductionInteractionTest": true
+  },
+  "rows": [
+    {
+      "elev": 3,
+      "volumeRatio": 0.9995579235247692,
+      "attachmentMaxMm": 6.482042828826778e-14,
+      "JRange": [
+        0.8208070133769143,
+        1.208503328660061
+      ],
+      "seconds": 3.540783643722534
+    },
+    {
+      "elev": 6,
+      "volumeRatio": 0.9984719971801611,
+      "attachmentMaxMm": 4.717938318328171e-14,
+      "JRange": [
+        0.5751903630574129,
+        1.7310250572660517
+      ],
+      "seconds": 11.613321781158447
+    }
+  ],
+  "localVolumeAudits": [
+    {
+      "elev": 3,
+      "physicalCells": 80265,
+      "freeDisplacementDofs": 37713,
+      "structuralRankUpperBound": 37151,
+      "constraintRankDeficiencyLowerBound": 43114,
+      "zeroLinearizedRowCount": 33062,
+      "zeroLinearizedButNotFixedCount": 0,
+      "lsqrColumnEquilibrated": true,
+      "lsqrIterationLimit": 128,
+      "immovableMaxAbsLogJ": 1.059596854701688e-12,
+      "maxAbsLogJ": 0.1974672600396191,
+      "linearizedResidualL2": 0.278628393041744,
+      "linearizedResidualMax": 0.03168961066890516,
+      "linearizedNormalResidualL2": 0.5198664933033953,
+      "lsqrStop": 7,
+      "lsqrIterations": 128,
+      "nonlinearFeasibilityEstablished": false,
+      "fullyFixedCells": 33062,
+      "fixedWorstCellId": 68956,
+      "JRange": [
+        0.8208070133769143,
+        1.208503328660061
+      ],
+      "volumeWeightedJ": 0.9995579235247694,
+      "linearizedOnly": true,
+      "contactEvaluated": false
+    },
+    {
+      "elev": 6,
+      "physicalCells": 80265,
+      "freeDisplacementDofs": 37713,
+      "structuralRankUpperBound": 37151,
+      "constraintRankDeficiencyLowerBound": 43114,
+      "zeroLinearizedRowCount": 33062,
+      "zeroLinearizedButNotFixedCount": 0,
+      "lsqrColumnEquilibrated": true,
+      "lsqrIterationLimit": 128,
+      "immovableMaxAbsLogJ": 2.405187160545047e-12,
+      "maxAbsLogJ": 0.5530542267882991,
+      "linearizedResidualL2": 0.9904791045094371,
+      "linearizedResidualMax": 0.11707449445297421,
+      "linearizedNormalResidualL2": 1.8904463204882531,
+      "lsqrStop": 7,
+      "lsqrIterations": 128,
+      "nonlinearFeasibilityEstablished": false,
+      "fullyFixedCells": 33062,
+      "fixedWorstCellId": 75211,
+      "JRange": [
+        0.5751903630574129,
+        1.7310250572660517
+      ],
+      "volumeWeightedJ": 0.9984719971801603,
+      "linearizedOnly": true,
+      "contactEvaluated": false
+    }
+  ],
+  "localPressureExperiment": {
+    "experimental": true,
+    "accepted": false,
+    "boneContactEvaluated": false,
+    "selfCollisionEvaluated": false,
+    "baseBulk": 30,
+    "rho": 30,
+    "initial": {
+      "physicalCells": 80265,
+      "freeDisplacementDofs": 37713,
+      "structuralRankUpperBound": 37151,
+      "constraintRankDeficiencyLowerBound": 43114,
+      "zeroLinearizedRowCount": 33062,
+      "zeroLinearizedButNotFixedCount": 0,
+      "lsqrColumnEquilibrated": true,
+      "lsqrIterationLimit": 128,
+      "immovableMaxAbsLogJ": 2.405187160545047e-12,
+      "maxAbsLogJ": 0.5530542267882991,
+      "linearizedResidualL2": 0.9904791045094371,
+      "linearizedResidualMax": 0.11707449445297421,
+      "linearizedNormalResidualL2": 1.8904463204882531,
+      "lsqrStop": 7,
+      "lsqrIterations": 128,
+      "nonlinearFeasibilityEstablished": false,
+      "fullyFixedCells": 33062,
+      "fixedWorstCellId": 75211,
+      "JRange": [
+        0.5751903630574129,
+        1.7310250572660517
+      ],
+      "volumeWeightedJ": 0.9984719971801603,
+      "linearizedOnly": true,
+      "contactEvaluated": false
+    },
+    "stages": [
+      {
+        "label": "equal-first-bulk",
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 2,
+        "residualMm": 0.00047944415516916266,
+        "JRange": [
+          0.6379725216185167,
+          1.5763277640549245
+        ],
+        "maxAbsLogJ": 0.45509794192855363,
+        "volumeWeightedJ": 0.999156560026592,
+        "maxDisplacementFromInitialMm": 0.2527835832893873,
+        "attachmentMaxMm": 0,
+        "usedAsNextInitial": true
+      },
+      {
+        "label": "local-pressure-update",
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 3,
+        "residualMm": 0.0005407250351900928,
+        "JRange": [
+          0.6802294717575988,
+          1.4699057449778314
+        ],
+        "maxAbsLogJ": 0.38532507927122955,
+        "volumeWeightedJ": 0.9995164837028674,
+        "maxDisplacementFromInitialMm": 0.41003599166412735,
+        "attachmentMaxMm": 0,
+        "usedAsNextInitial": false
+      },
+      {
+        "label": "common-bulk-control",
+        "converged": true,
+        "reason": "residual-tolerance",
+        "iterations": 2,
+        "residualMm": 0.000019416578830134924,
+        "JRange": [
+          0.672731155177906,
+          1.4938362280632986
+        ],
+        "maxAbsLogJ": 0.40134746093172435,
+        "volumeWeightedJ": 0.9994021741989118,
+        "maxDisplacementFromInitialMm": 0.36844052449769304,
+        "attachmentMaxMm": 0,
+        "usedAsNextInitial": false
+      }
+    ],
+    "zeroPressureMatchesBulkEnergyGradient": true,
+    "comparisonConverged": true,
+    "pressureMinusControlMaxAbsLogJ": -0.0160223816604948
+  },
+  "limitations": [
+    "Neck zero and abduction 3/6 degrees only",
+    "Boundary masks differ from the legacy production partial field",
+    "Local J outliers remain; global volume alone does not qualify the material model",
+    "No new production GPU or mobile FPS certification",
+    "Local pressure comparison excludes bone contact and is not anatomical acceptance"
+  ],
+  "runId": 46001672439,
+  "jobId": 140514600262,
+  "headSha": "596a7603ddbdf4211f9024e3e3b34a0f73487188",
+  "source": "GitHub Actions real-source fixture job stdout; material-only comparison"
+}
