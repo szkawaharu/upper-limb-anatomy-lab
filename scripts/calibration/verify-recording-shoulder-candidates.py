@@ -62,7 +62,8 @@ def crossings(mesh,v,edges):
             n+=int(np.unique(ray[(t>epsilon)&(t<l[ray]-epsilon)]).size)
     return n
 rest_gap=None;rows=[]
-for row in data['rows']:
+def evaluate(row):
+    global rest_gap
     a=row['bones']['scapula'];rot=Rotation.from_quat(a['q']).as_matrix()
     rest=np.array(a['rest'])/scale;at=np.array(a['p'])/scale
     v=(np.asarray(scap.vertices)-rest)@rot.T+at
@@ -94,6 +95,9 @@ for row in data['rows']:
           'rmsDeltaFromRest':float(np.sqrt(np.mean((dist-rest_gap)**2)))},
        'screenedCollisionFree':bool(not hits.any() and not rib_in_scap and cross is not None and not any(cross.values())),
        'productAccepted':False}
+    return r
+for row in data['rows']:
+    r=evaluate(row)
     rows.append(r);print(json.dumps(r),flush=True)
     (out/'report.json').write_text(json.dumps({'sourceSha256':sources,'rows':rows,'anatomicalAcceptance':False,'productAccepted':False},indent=2)+'\n')
 # Within each posture, keep only collision-screened candidates with smaller
@@ -116,3 +120,26 @@ summary={'poses':len(selected),'rows':len(rows),
          'productAccepted':False}
 (out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
 print('SWEEP_SUMMARY '+json.dumps(summary),flush=True)
+
+if os.environ.get('QA_LOCAL_SHOULDER')=='1':
+    from local_shoulder_step import LinkedShoulder,direction
+    rig=LinkedShoulder(data)
+    for row in data['rows']:rig.verify(row,scale)
+    experiments=[]
+    for group in selected:
+        if group['candidate'] is None:continue
+        base=group['candidate'];row=next(r for r in data['rows'] if all(r[k]==base[k] for k in ('elev','plane','alpha')))
+        delta,diagnostic=direction(rig,row,scap,thorax,costal,rest_gap)
+        experiment={'elev':row['elev'],'plane':row['plane'],'base':base,'search':diagnostic,'trials':[],'selected':None,'productAccepted':False}
+        if delta is not None:
+            for gain in (1.,.5,.25,.125):
+                candidate=rig.candidate(row,gain*delta,scale)
+                result=evaluate(candidate)
+                result['gain']=gain;result['deltaDeg']=(gain*delta).tolist()
+                experiment['trials'].append(result)
+                if result['screenedCollisionFree'] and result['costalVertexTriangleGapMm']['rmsDeltaFromRest']<base['costalVertexTriangleGapMm']['rmsDeltaFromRest'] and result['priorDeviationL2Deg']<=base['priorDeviationL2Deg']+1e-7:
+                    experiment['selected']=result
+                    break
+        experiments.append(experiment)
+        print('LOCAL_STEP '+json.dumps(experiment),flush=True)
+        (out/'local-report.json').write_text(json.dumps({'experiments':experiments,'productAccepted':False,'anatomicalAcceptance':False,'method':'Exact all-source screening after local nearest-triangle constrained search'},indent=2)+'\n')
