@@ -14,13 +14,13 @@ const blend=readBlend(),base=current.field;
 // and the last worsening at 40 degrees. It preserves the established neutral
 // behavior. It is an experiment, not a physiological transition angle.
 const gate=e=>{const t=Math.max(0,Math.min(1,(e-40)/5));return t*t*(3-2*t)};
-const coefficient=(e,p)=>blend.sample(e,p)*gate(e);
+const coefficient=(e,p)=>blend.sample(e,p);
 const refCache=new Map();
 function reference(e,p){
  const k=e+':'+p;if(refCache.has(k))return refCache.get(k);
  const a=current.pose({elev:e,plane:p}).parameters;
  const t=coefficient(e,p),b=t?local.pose({elev:e,plane:p,backend:'reference'}).parameters:a;
- const v=a.map((x,j)=>x+t*(b[j]-x));refCache.set(k,v);return v;
+ const v=a.map((x,j)=>t*(b[j]-x));refCache.set(k,v);return v;
 }
 let E=[...new Set([...base.elevationKnots,...blend.nodes,40,45])].sort((a,b)=>a-b);
 let P=[...new Set([...base.planeKnots,...blend.planes])].sort((a,b)=>a-b);
@@ -38,7 +38,8 @@ for(let level=0;level<4;level++){
  max=0;worst=null;let samples=0;const badE=new Set(),badP=new Set();
  for(let i=0;i<E.length-1;i++)for(let j=0;j<P.length-1;j++)for(const u of [.25,.5,.75])for(const v of [.25,.5,.75]){
   const e=E[i]+u*(E[i+1]-E[i]),p=P[j]+v*(P[j+1]-P[j]);
-  const err=error(reference(e,p),ShoulderPoseField.sample(f,e,p));
+  const a=current.pose({elev:e,plane:p}).parameters,g=gate(e),d=reference(e,p),z=ShoulderPoseField.sample(f,e,p);
+  const err=error(a.map((x,k)=>x+g*d[k]),a.map((x,k)=>x+g*z[k]));
   if(err>max){max=err;worst={elev:e,plane:p,rigidPointBoundMm:err}}
   if(err>=1){badE.add((E[i]+E[i+1])/2);badP.add((P[j]+P[j+1])/2)}
   samples++;
@@ -51,7 +52,7 @@ for(let level=0;level<4;level++){
 if(!(max<1))throw Error('Candidate interpolation fails unchanged 1mm engineering tolerance');
 const deps=['engine/math.js','anatomy/shoulder-rig-data.js','engine/joint-frames.js','engine/pose-field.js','anatomy/shoulder-pose-field-v076.js','anatomy/thorax-contact-data-v076.js','engine/convex-contact.js','engine/shoulder-kinematics.js','scripts/calibration/continuous-shoulder-blend.mjs','scripts/calibration/build-shoulder-blend-preview.mjs','docs/validation/v076/shoulder-range-screening.json','docs/validation/v076/contact-rms/rig-calibration.json'];
 const out=process.env.QA_PREVIEW_OUT||'test-results/v076-blend-preview';mkdirSync(out,{recursive:true});
-const meta={kind:'offline continuous-blend preview; not production',baseSignature:current.fieldSignature,lowElevationGate:[40,45],sourceRun:blend.sourceRun,sourceHashes:Object.fromEntries(deps.map(p=>[p,createHash('sha256').update(readFileSync(p)).digest('hex')])),levels,maxRigidErrorBoundMm:max,worst,productAccepted:false,anatomicalAcceptance:false};
+const meta={kind:'offline additive six-parameter correction preview; not production',representation:'current conservative parameters + smoothstep(40,45,elev) * interpolated delta',baseSignature:current.fieldSignature,lowElevationGate:[40,45],sourceRun:blend.sourceRun,sourceHashes:Object.fromEntries(deps.map(p=>[p,createHash('sha256').update(readFileSync(p)).digest('hex')])),levels,maxRigidErrorBoundMm:max,worst,productAccepted:false,anatomicalAcceptance:false};
 writeFileSync(out+'/field.json',JSON.stringify({...meta,...f})+'\n');
 writeFileSync(out+'/summary.json',JSON.stringify(meta,null,2)+'\n');
 console.log('PREVIEW_FIELD_SUMMARY '+JSON.stringify(meta));
