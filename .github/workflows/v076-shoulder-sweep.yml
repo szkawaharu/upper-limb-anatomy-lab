@@ -1,0 +1,37 @@
+name: v0.76 source shoulder full-range screening
+on:
+  push:
+    branches: [redesign/v076-shoulder]
+    paths:
+      - '.github/workflows/v076-shoulder-sweep.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-sweep:
+    strategy:
+      fail-fast: false
+      matrix:
+        plane: [0, 40, 90]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      QA_SHOULDER_PLANE: ${{ matrix.plane }}
+      QA_SHOULDER_STEP: 15
+      QA_SHOULDER_OUT: test-results/v076-sweep-${{ matrix.plane }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: node scripts/calibration/recording-shoulder-candidates.mjs
+      - run: python scripts/calibration/verify-recording-shoulder-candidates.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shoulder-sweep-${{ matrix.plane }}
+          path: test-results/v076-sweep-${{ matrix.plane }}/
