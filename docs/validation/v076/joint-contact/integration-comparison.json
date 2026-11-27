@@ -1,0 +1,54 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "pose": {
+    "elev": 90,
+    "plane": 0,
+    "neck": 0
+  },
+  "sameGeometryAttachmentsFinalBonesBulkAndStoppingTolerance": true,
+  "sameActualDistanceContactObjective": true,
+  "sameInitialSnapshot": "test-results/v076-plc-surface-refined-mid-acromial-18/contact/reference-e90-p0-k30.npz",
+  "rows": [
+    {
+      "label": "original-integration",
+      "surfaceVolumeRatio": 0.9991070879954831,
+      "cageJRange": [
+        0.06571075778318786,
+        7.5723267700332055
+      ],
+      "surfaceAdjacentJRange": [
+        0.10747943746089252,
+        7.5723267700332055
+      ],
+      "cell229J": 7.5723267700332055,
+      "attachmentMaxMm": 1.230696119285481e-13,
+      "sourceOpposedFaces": 0,
+      "actualDistanceResidualMm": 2.2239837385538147e-07,
+      "maxDepthIncreaseMm": 0.0429676442895645,
+      "snapshotSha256": "fcd42f16f73f24cfabe7afa6a819df9b6071e51fda7dc225d247150a5afbb0ed"
+    },
+    {
+      "label": "intersection-integration",
+      "surfaceVolumeRatio": 0.9988972500575514,
+      "cageJRange": [
+        0.07892595260903736,
+        4.321119477645864
+      ],
+      "surfaceAdjacentJRange": [
+        0.2520482739663075,
+        3.2731605656381553
+      ],
+      "cell229J": 2.139241756328346,
+      "attachmentMaxMm": 1.230696119285481e-13,
+      "sourceOpposedFaces": 0,
+      "actualDistanceResidualMm": 3.433566541011635e-05,
+      "maxDepthIncreaseMm": 0.04123151775665196,
+      "snapshotSha256": "8bf1c7e4b8118fc0bc6d477267b2be1511110267cf929f0a4a25963775ca642b"
+    }
+  ],
+  "limitations": [
+    "Local J still unacceptable",
+    "One muscle/one pose; no anatomical, production GPU or mobile certification"
+  ]
+}

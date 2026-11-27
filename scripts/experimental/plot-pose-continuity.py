@@ -15,4 +15,4 @@ ax[1,1].plot(angle,[r['JRange'][0]for r in rows],'o-',label='Minimum J');ax[1,1]
 for a in ax.flat:a.set_xlabel('Humerothoracic abduction (degrees)');a.grid(alpha=.25)
 fig.suptitle('Upper trapezius / frozen final bones, neck zero\nDifferent mesh and attachment preparations; reference only, not deployed',fontsize=13)
 fig.text(.5,.015,'Reference uses inferred attachment data and an independently repaired source mesh.\nLocal J outliers remain despite small global volume change. No anatomical, full-ROM, GPU-solver or mobile certification.',ha='center',fontsize=9)
-fig.tight_layout(rect=[0,.07,1,.93]);fig.savefig(out,dpi=150);fig.savefig(out.with_suffix('.svg'));plt.close(fig);print(out)
+fig.tight_layout(rect=[0,.07,1,.93]);fig.savefig(out,dpi=150);fig.savefig(out.with_suffix('.svg'));plt.close(fig);svg=out.with_suffix('.svg');svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n');print(out)

@@ -12,7 +12,8 @@ report=json.loads(report_file.read_text());a=np.load(npz)
 if 'snapshotSha256'in report:assert hashlib.sha256(npz.read_bytes()).hexdigest()==report['snapshotSha256'],'Mixed or incomplete reference snapshot'
 if 'progress'in a:assert float(a['progress'])==report['progress']
 assert report['progress']==1 and report['allStagesConverged']
-assert all(s['converged']for s in report['stages'])
+assert all(s['converged']for s in report.get('stages', []))
+assert all(s['minimization']['converged']for s in report.get('history', []))
 B=next(b for b in json.loads(binding_file.read_text())if b['spec']['id']=='v60DeltMid')
 candidate_file=Path(sys.argv[4])if len(sys.argv)>4 else binding_file
 candidate=next(b for b in json.loads(candidate_file.read_text())if b['spec']['id']=='v60DeltMid')

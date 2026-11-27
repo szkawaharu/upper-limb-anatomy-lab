@@ -1,0 +1,31 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "sourceFineTets": 51352,
+  "relativeErrorQuantiles": [
+    0.0,
+    1.4514382605967937e-15,
+    6.840594100263119e-14,
+    2.0104828606026706e-13,
+    0.00013609670069119804
+  ],
+  "worstRelativeFineTet": {
+    "id": 41706,
+    "relativeError": 0.00013609670069119804,
+    "sourceVolumeMm3": 0.0010979888541387984,
+    "absoluteErrorMm3": 1.4943266044399953e-07
+  },
+  "fineTetsWithZeroReportedIntersection": 0,
+  "maximumZeroCoverageFineTetVolumeMm3": 0.0,
+  "sumAbsoluteCoverageErrorMm3": 1.6477542899213552e-07,
+  "inputSha256": {
+    "test-results/v076-mid-intersection-integrated-v3/cage.npz": "661d58b34f4f3ac9a37d1575ede8de6262327a2d9a4ca735334a0b2989e26101",
+    "test-results/v076-acromial-volume-input/deltoid-mid-tetrahedra.npz": "a171a0110cfe054e362ae998c33546a03d8e4d6c0f6b24e8690f2d60f64c4c99",
+    "test-results/v076-mid-intersection-integrated-v3/integration-progress.npz": "8b51bdc9deb6ce4faff24ac4b74e55bd916d076eb672dc307415fca22271d4f4"
+  },
+  "codeSha256": "b6e6ce3349029f35ee25d6aba9c3b520253807373b0f0b4ca26a29bb259308da",
+  "limitations": [
+    "Floating clipping may be uncertain for near-contact slivers; not exact rational geometry",
+    "Small global error alone is not local or anatomical acceptance"
+  ]
+}

@@ -1,0 +1,2915 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "completed": false,
+  "currentAngle": 147.375,
+  "requestedAngles": [
+    90,
+    93,
+    96,
+    99,
+    102,
+    105,
+    108,
+    111,
+    114,
+    117,
+    120,
+    123,
+    126,
+    129,
+    132,
+    135,
+    138,
+    141,
+    144,
+    147,
+    150,
+    153,
+    156,
+    159,
+    162,
+    165,
+    168,
+    171,
+    174,
+    177,
+    180,
+    177,
+    174,
+    171,
+    168,
+    165,
+    162,
+    159,
+    156,
+    153,
+    150,
+    147,
+    144,
+    141,
+    138,
+    135,
+    132,
+    129,
+    126,
+    123,
+    120,
+    117,
+    114,
+    111,
+    108,
+    105,
+    102,
+    99,
+    96,
+    93,
+    90
+  ],
+  "plane": 0.0,
+  "initialSnapshot": "test-results/v076-plc-surface-refined-mid-acromial-18/contact/reference-e90-p0-k30.npz",
+  "inputsSha256": {
+    "test-results/v076-plc-surface-refined-mid-acromial-18/contact/reference-e90-p0-k30.npz": "df1c8cf43019ab23c98619c305f8319677c8a86096d31e39a970af68e32aeebc",
+    "test-results/v076-plc-surface-refined-mid-acromial-18/contact/reference-e90-p0-k30.json": "9a66872e0b99753f1aa207a50294818fdb3965f0d74729ce2830ee4c79d3bcf8",
+    "test-results/v076-mid-actual-energy-path/targets.json": "4d896ea5a26c582285619013bf417b21653f69b1d69a0a77107dfa1f97630ad5",
+    "docs/validation/v076/source-bones/browser-numeric/rig-calibration.json": "128ba4a142da025d3b392923bd18e4c3ab25fff285e1d0c10010afaa7f590c32",
+    "test-results/v076-plc-surface-refined-mid-acromial-18/cage.npz": "ff39df24b7298c66204c83bb34a2976f71cc6b31b55b52038274187c057879cd",
+    "test-results/v076-plc-surface-refined-mid-acromial-18/conforming.npz": "5fc5ff4d72b7f05b12f72828d2880e269f01f1be1a280d1fb7012299037774d8"
+  },
+  "codeSha256": {
+    "run-joint-contact-path.py": "a09b3c948a3b87a10cb370cf36b6aa8a23847dc87e95cb0d4628e190a4c5adbd",
+    "joint_path.py": "0358c52161a8a3ded393caf6b1c80dd142dea09748fa026adda42fdc03c1a801",
+    "material_pose.py": "cfda773f9fa2ce568139aae507d418f50a6189c29645b915e2a2c4bdfd100d62",
+    "actual_bone_contact.py": "cc5bd4ad0d51bc1937a9b264247471d30c7d4184c7c5fe7a75370e8142af123f",
+    "contact_potential.py": "a340cd857ab5dd37e8128390d4c6fdb4c2e0c33cd05bbe9393261eb0e6ce382d",
+    "bone_sets.py": "473db337dfd6f08090812cd070408d8bd393e06b575354fab47022afa5231e8b",
+    "contact-bone-sets.json": "a310f9d5aa90c858a2f931817a7394f483d40c0b9c572010f3cd7e3cb069a59d",
+    "cage_solver.py": "eb5ffdaaad3b114b8d5ec51fd42db3558d38d62011e8161c103fee0b0fed3572",
+    "projected_solid_metric.py": "020c4326ab48091fb0e4d41b60109aa6a18e215c632e4a6074a27f5dc9e14deb",
+    "constitutive_metric.py": "e47e86d3cb1072c0912fa77061e427c8c50af91181f86b8aefa069e1127a5717",
+    "volumetric_reference.py": "8622dceaa6d08c67032a69361c9690b5906adce519d595c3411daa116dc472ea",
+    "snapshot_names.py": "00da019881878d4a34f62b9798c99b51198dcad21f3a95fd6aa490583a2e44cc"
+  },
+  "boneCoverage": {
+    "bones": [
+      {
+        "key": "a",
+        "boneId": "scapula",
+        "file": "FMA13395.stl"
+      },
+      {
+        "key": "b",
+        "boneId": "humerus",
+        "file": "FMA23130.stl"
+      }
+    ],
+    "limitations": [
+      "Only scapula and humerus; not all neighboring bones or tissues"
+    ]
+  },
+  "actualJointGridStepDegrees": 0.375,
+  "seconds": 772.3323037624359,
+  "stopped": true,
+  "stopReason": "Known local volume outliers and source-integration error. Process termination confirmed; last fully converged actual-angle snapshot retained. No ROM restriction or relaxed stopping threshold.",
+  "stoppedAt": "2026-11-27T10:34:34.097574+00:00",
+  "rows": [
+    {
+      "elev": 91.5,
+      "plane": 0.0,
+      "sequence": 0,
+      "surfaceVolumeRatio": 0.9991059880400306,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.581262160637836,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 19.25166368484497,
+      "fromIndex": 240,
+      "index": 244,
+      "requestedIndex": 248,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 3.7161492100463347e-07,
+      "cageJQuantiles": [
+        0.0643962227353618,
+        0.7017166836762639,
+        1.000000000000017,
+        1.5966804513799415,
+        7.869876005406875
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388533535,
+          "maxDepthIncreaseMm": 3.848310559106949e-14,
+          "worstSurfaceVertex": 14274,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.06829612929088,
+          "maxDepthIncreaseMm": 0.05729048272928272,
+          "worstSurfaceVertex": 35447,
+          "insidePoints": 896,
+          "newInsidePoints": 8
+        }
+      ]
+    },
+    {
+      "elev": 93,
+      "plane": 0.0,
+      "sequence": 1,
+      "surfaceVolumeRatio": 0.9991098161091301,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.5968253727666584,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 32.850521087646484,
+      "fromIndex": 244,
+      "index": 248,
+      "requestedIndex": 248,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 4.607663632385217e-05,
+      "cageJQuantiles": [
+        0.06320226947206384,
+        0.6950486211318402,
+        1.0000000000000164,
+        1.6221025544517227,
+        8.140066870994522
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.1019566938853356,
+          "maxDepthIncreaseMm": 4.5161790973580196e-14,
+          "worstSurfaceVertex": 14274,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.068119030563956,
+          "maxDepthIncreaseMm": 0.05442395981873501,
+          "worstSurfaceVertex": 35550,
+          "insidePoints": 895,
+          "newInsidePoints": 7
+        }
+      ]
+    },
+    {
+      "elev": 94.5,
+      "plane": 0.0,
+      "sequence": 2,
+      "surfaceVolumeRatio": 0.9991029872299976,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.6343943852248644,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 45.70271682739258,
+      "fromIndex": 248,
+      "index": 252,
+      "requestedIndex": 256,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.0005015464823529129,
+      "cageJQuantiles": [
+        0.0622532327507121,
+        0.6912987592910151,
+        1.000000000000013,
+        1.645806439133404,
+        8.395400241759171
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388532438,
+          "maxDepthIncreaseMm": 6.876443858772063e-15,
+          "worstSurfaceVertex": 13850,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.067954229379548,
+          "maxDepthIncreaseMm": 0.041007511802990365,
+          "worstSurfaceVertex": 13771,
+          "insidePoints": 896,
+          "newInsidePoints": 8
+        }
+      ]
+    },
+    {
+      "elev": 96,
+      "plane": 0.0,
+      "sequence": 3,
+      "surfaceVolumeRatio": 0.9991176721195492,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.6554145916931486,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 63.484166860580444,
+      "fromIndex": 252,
+      "index": 256,
+      "requestedIndex": 256,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 5.5089580202300755e-05,
+      "cageJQuantiles": [
+        0.06134326717234182,
+        0.6841933895061568,
+        1.0000000000000133,
+        1.6729085208672358,
+        8.576320985442559
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388534057,
+          "maxDepthIncreaseMm": 5.249967127696209e-14,
+          "worstSurfaceVertex": 14274,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.067711861751309,
+          "maxDepthIncreaseMm": 0.06467559897164994,
+          "worstSurfaceVertex": 13775,
+          "insidePoints": 893,
+          "newInsidePoints": 5
+        }
+      ]
+    },
+    {
+      "elev": 97.5,
+      "plane": 0.0,
+      "sequence": 4,
+      "surfaceVolumeRatio": 0.9991310914593866,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.6684040855305184,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 75.73004579544067,
+      "fromIndex": 256,
+      "index": 260,
+      "requestedIndex": 264,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.00025320587933231746,
+      "cageJQuantiles": [
+        0.060634953829983254,
+        0.6775566002935718,
+        1.0000000000000138,
+        1.6993228123319681,
+        8.764619525334425
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388541612,
+          "maxDepthIncreaseMm": 1.6185143503211208e-13,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.0674976795815185,
+          "maxDepthIncreaseMm": 0.09346163980103775,
+          "worstSurfaceVertex": 13775,
+          "insidePoints": 891,
+          "newInsidePoints": 3
+        }
+      ]
+    },
+    {
+      "elev": 99,
+      "plane": 0.0,
+      "sequence": 5,
+      "surfaceVolumeRatio": 0.9991393302076782,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.6803518718878703,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 88.45194292068481,
+      "fromIndex": 260,
+      "index": 264,
+      "requestedIndex": 264,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 2.5996504106746038e-05,
+      "cageJQuantiles": [
+        0.06008321627998041,
+        0.6738331484906868,
+        1.0000000000000127,
+        1.721028506872397,
+        8.943702877885885
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388539447,
+          "maxDepthIncreaseMm": 9.088910180032883e-14,
+          "worstSurfaceVertex": 13850,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.067285446846448,
+          "maxDepthIncreaseMm": 0.08975475252091894,
+          "worstSurfaceVertex": 13775,
+          "insidePoints": 891,
+          "newInsidePoints": 3
+        }
+      ]
+    },
+    {
+      "elev": 100.5,
+      "plane": 0.0,
+      "sequence": 6,
+      "surfaceVolumeRatio": 0.9991488565143244,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.6890143471127748,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 103.57913088798523,
+      "fromIndex": 264,
+      "index": 268,
+      "requestedIndex": 272,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.0003441850494430343,
+      "cageJQuantiles": [
+        0.059635947080868036,
+        0.6710925490072186,
+        1.0000000000000127,
+        1.7403079951923777,
+        9.138960318609021
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536259,
+          "maxDepthIncreaseMm": 8.188241751305725e-14,
+          "worstSurfaceVertex": 13850,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.067105404480183,
+          "maxDepthIncreaseMm": 0.05773187369301977,
+          "worstSurfaceVertex": 13775,
+          "insidePoints": 895,
+          "newInsidePoints": 7
+        }
+      ]
+    },
+    {
+      "elev": 102,
+      "plane": 0.0,
+      "sequence": 7,
+      "surfaceVolumeRatio": 0.9991497825228031,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.693359856836331,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 120.24896192550659,
+      "fromIndex": 268,
+      "index": 272,
+      "requestedIndex": 272,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 2.942985706078723e-06,
+      "cageJQuantiles": [
+        0.05929740753435219,
+        0.6626764738019919,
+        1.0000000000000127,
+        1.771504231879213,
+        9.32833379786102
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388530348,
+          "maxDepthIncreaseMm": 1.6774776012695725e-15,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.066950234256166,
+          "maxDepthIncreaseMm": 0.05750343829447161,
+          "worstSurfaceVertex": 37086,
+          "insidePoints": 899,
+          "newInsidePoints": 11
+        }
+      ]
+    },
+    {
+      "elev": 103.5,
+      "plane": 0.0,
+      "sequence": 8,
+      "surfaceVolumeRatio": 0.9991523300828907,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.6926595705279097,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 137.27814984321594,
+      "fromIndex": 272,
+      "index": 276,
+      "requestedIndex": 280,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 7.030077263533455e-05,
+      "cageJQuantiles": [
+        0.05832474428619219,
+        0.6583657546368301,
+        1.000000000000012,
+        1.796631829615111,
+        9.507271669010493
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536237,
+          "maxDepthIncreaseMm": 5.809241976351132e-14,
+          "worstSurfaceVertex": 13848,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.066787297568178,
+          "maxDepthIncreaseMm": 0.06870917678870167,
+          "worstSurfaceVertex": 37086,
+          "insidePoints": 901,
+          "newInsidePoints": 13
+        }
+      ]
+    },
+    {
+      "elev": 105,
+      "plane": 0.0,
+      "sequence": 9,
+      "surfaceVolumeRatio": 0.9991615220006609,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.6930236387087194,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 152.5796411037445,
+      "fromIndex": 276,
+      "index": 280,
+      "requestedIndex": 280,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 4.5956105034855323e-05,
+      "cageJQuantiles": [
+        0.05685355357702271,
+        0.6542839484875772,
+        1.0000000000000142,
+        1.8294199980332397,
+        9.669696392162171
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388530286,
+          "maxDepthIncreaseMm": 4.0245584642661925e-15,
+          "worstSurfaceVertex": 14377,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.066635934980887,
+          "maxDepthIncreaseMm": 0.07822932665531478,
+          "worstSurfaceVertex": 37086,
+          "insidePoints": 900,
+          "newInsidePoints": 12
+        }
+      ]
+    },
+    {
+      "elev": 106.5,
+      "plane": 0.0,
+      "sequence": 10,
+      "surfaceVolumeRatio": 0.9991722879648798,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.6912280431294717,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 167.37152981758118,
+      "fromIndex": 280,
+      "index": 284,
+      "requestedIndex": 288,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 3.7725747152603914e-05,
+      "cageJQuantiles": [
+        0.05565915671032755,
+        0.6500132726583423,
+        1.0000000000000129,
+        1.8620314208497857,
+        9.805720634492111
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388542135,
+          "maxDepthIncreaseMm": 1.6743550990128142e-13,
+          "worstSurfaceVertex": 13850,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.066449227687768,
+          "maxDepthIncreaseMm": 0.06415431219529169,
+          "worstSurfaceVertex": 35597,
+          "insidePoints": 902,
+          "newInsidePoints": 14
+        }
+      ]
+    },
+    {
+      "elev": 108,
+      "plane": 0.0,
+      "sequence": 11,
+      "surfaceVolumeRatio": 0.999194982359755,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.6900296885658217,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 182.71041584014893,
+      "fromIndex": 284,
+      "index": 288,
+      "requestedIndex": 288,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.0003530439984659374,
+      "cageJQuantiles": [
+        0.054529044909533246,
+        0.6394224032744785,
+        1.000000000000016,
+        1.879727311036014,
+        9.926215327886904
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388532975,
+          "maxDepthIncreaseMm": 4.8209700120871446e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.066235256365695,
+          "maxDepthIncreaseMm": 0.0655323814491396,
+          "worstSurfaceVertex": 35597,
+          "insidePoints": 900,
+          "newInsidePoints": 12
+        }
+      ]
+    },
+    {
+      "elev": 109.5,
+      "plane": 0.0,
+      "sequence": 12,
+      "surfaceVolumeRatio": 0.9992132311950102,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.7000852133582454,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 197.30573987960815,
+      "fromIndex": 288,
+      "index": 292,
+      "requestedIndex": 296,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 6.346977060032883e-05,
+      "cageJQuantiles": [
+        0.05317956724324582,
+        0.6300544528630949,
+        1.000000000000014,
+        1.9162792821466208,
+        10.024984411545958
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.1019566938852601,
+          "maxDepthIncreaseMm": 1.4195242203918212e-13,
+          "worstSurfaceVertex": 14377,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.066004149732172,
+          "maxDepthIncreaseMm": 0.05648588804144991,
+          "worstSurfaceVertex": 35597,
+          "insidePoints": 901,
+          "newInsidePoints": 13
+        }
+      ]
+    },
+    {
+      "elev": 111,
+      "plane": 0.0,
+      "sequence": 13,
+      "surfaceVolumeRatio": 0.9992346262322033,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.7013694091380325,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 209.51673483848572,
+      "fromIndex": 292,
+      "index": 296,
+      "requestedIndex": 296,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 1.8673486956270628e-05,
+      "cageJQuantiles": [
+        0.051691775320770225,
+        0.6264910142850004,
+        1.0000000000000133,
+        1.94038282174831,
+        10.114977604436497
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388538905,
+          "maxDepthIncreaseMm": 1.500466417780899e-13,
+          "worstSurfaceVertex": 14274,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.065774935284481,
+          "maxDepthIncreaseMm": 0.053241349457733164,
+          "worstSurfaceVertex": 35597,
+          "insidePoints": 901,
+          "newInsidePoints": 13
+        }
+      ]
+    },
+    {
+      "elev": 112.5,
+      "plane": 0.0,
+      "sequence": 14,
+      "surfaceVolumeRatio": 0.9992583325336214,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.690115974422564,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 223.71908283233643,
+      "fromIndex": 296,
+      "index": 300,
+      "requestedIndex": 304,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.00029633304539770965,
+      "cageJQuantiles": [
+        0.05023474479412615,
+        0.621108951466567,
+        1.0000000000000147,
+        1.9687155638058038,
+        10.184868201576844
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388530271,
+          "maxDepthIncreaseMm": 6.668103569307249e-14,
+          "worstSurfaceVertex": 14377,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.06552918943388,
+          "maxDepthIncreaseMm": 0.0545952889477002,
+          "worstSurfaceVertex": 35597,
+          "insidePoints": 902,
+          "newInsidePoints": 14
+        }
+      ]
+    },
+    {
+      "elev": 114,
+      "plane": 0.0,
+      "sequence": 15,
+      "surfaceVolumeRatio": 0.9992741262561963,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.6776922721654293,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 236.4275131225586,
+      "fromIndex": 300,
+      "index": 304,
+      "requestedIndex": 304,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 4.147306406414172e-06,
+      "cageJQuantiles": [
+        0.04901725640053123,
+        0.614401374659904,
+        1.0000000000000127,
+        1.9879330532289803,
+        10.26480138798242
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.1019566938852764,
+          "maxDepthIncreaseMm": 8.157363673433338e-14,
+          "worstSurfaceVertex": 14599,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.065313517998168,
+          "maxDepthIncreaseMm": 0.06232723166978099,
+          "worstSurfaceVertex": 35597,
+          "insidePoints": 897,
+          "newInsidePoints": 9
+        }
+      ]
+    },
+    {
+      "elev": 117,
+      "plane": 0.0,
+      "sequence": 16,
+      "surfaceVolumeRatio": 0.9993202413289682,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 7.307515048460913,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 252.90691709518433,
+      "fromIndex": 304,
+      "index": 312,
+      "requestedIndex": 312,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.0009087994138736183,
+      "cageJQuantiles": [
+        0.04659085279791519,
+        0.6048169469184663,
+        1.000000000000016,
+        2.0222027472966113,
+        10.37800859668865
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388533038,
+          "maxDepthIncreaseMm": 5.831966853886428e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.0646859018131165,
+          "maxDepthIncreaseMm": 0.042522317874444965,
+          "worstSurfaceVertex": 36971,
+          "insidePoints": 892,
+          "newInsidePoints": 4
+        }
+      ]
+    },
+    {
+      "elev": 118.5,
+      "plane": 0.0,
+      "sequence": 17,
+      "surfaceVolumeRatio": 0.9993452958181942,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.6022874612816604,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 264.52505588531494,
+      "fromIndex": 312,
+      "index": 316,
+      "requestedIndex": 320,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 6.5678311783266534e-06,
+      "cageJQuantiles": [
+        0.04554543965889269,
+        0.5984572811387995,
+        1.0000000000000209,
+        2.0478205368537266,
+        10.423814466852338
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388538964,
+          "maxDepthIncreaseMm": 1.2130574322810617e-13,
+          "worstSurfaceVertex": 13850,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.064399424450358,
+          "maxDepthIncreaseMm": 0.0356547892695525,
+          "worstSurfaceVertex": 36971,
+          "insidePoints": 893,
+          "newInsidePoints": 5
+        }
+      ]
+    },
+    {
+      "elev": 120,
+      "plane": 0.0,
+      "sequence": 18,
+      "surfaceVolumeRatio": 0.9993742602975954,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.6088148136019047,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 277.40540385246277,
+      "fromIndex": 316,
+      "index": 320,
+      "requestedIndex": 320,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.0001006806553292509,
+      "cageJQuantiles": [
+        0.04452199294843393,
+        0.5910005151942704,
+        1.000000000000015,
+        2.0893497866057364,
+        10.457504467893855
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388534093,
+          "maxDepthIncreaseMm": 4.1092129698938606e-14,
+          "worstSurfaceVertex": 14750,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.064098730446531,
+          "maxDepthIncreaseMm": 0.03873943309583616,
+          "worstSurfaceVertex": 36971,
+          "insidePoints": 891,
+          "newInsidePoints": 3
+        }
+      ]
+    },
+    {
+      "elev": 121.5,
+      "plane": 0.0,
+      "sequence": 19,
+      "surfaceVolumeRatio": 0.9993992234694808,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.658904821131216,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 294.685751914978,
+      "fromIndex": 320,
+      "index": 324,
+      "requestedIndex": 328,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.0007136799240465082,
+      "cageJQuantiles": [
+        0.04365174915775977,
+        0.5815434856809693,
+        1.000000000000018,
+        2.1251020168602572,
+        10.489310610635567
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388535138,
+          "maxDepthIncreaseMm": 6.760564330576813e-14,
+          "worstSurfaceVertex": 13850,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.063818864043639,
+          "maxDepthIncreaseMm": 0.08775338201691055,
+          "worstSurfaceVertex": 36972,
+          "insidePoints": 907,
+          "newInsidePoints": 19
+        }
+      ]
+    },
+    {
+      "elev": 123,
+      "plane": 0.0,
+      "sequence": 20,
+      "surfaceVolumeRatio": 0.9994269078803566,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.694846521714878,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 305.63380694389343,
+      "fromIndex": 324,
+      "index": 328,
+      "requestedIndex": 328,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 1.3615041807051997e-05,
+      "cageJQuantiles": [
+        0.04261837070738001,
+        0.5803055990900351,
+        1.0000000000000213,
+        2.1750253004476185,
+        10.479482460879984
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.1019566938854006,
+          "maxDepthIncreaseMm": 1.3003834120617341e-13,
+          "worstSurfaceVertex": 13850,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.063486507471414,
+          "maxDepthIncreaseMm": 0.07056545628815512,
+          "worstSurfaceVertex": 36972,
+          "insidePoints": 905,
+          "newInsidePoints": 17
+        }
+      ]
+    },
+    {
+      "elev": 124.5,
+      "plane": 0.0,
+      "sequence": 21,
+      "surfaceVolumeRatio": 0.9994540685318275,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.731847649634997,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 317.14287400245667,
+      "fromIndex": 328,
+      "index": 332,
+      "requestedIndex": 336,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 2.420124877875584e-07,
+      "cageJQuantiles": [
+        0.04160604173834008,
+        0.5741189409066735,
+        1.0000000000000195,
+        2.209458129235646,
+        10.822331590378841
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388530354,
+          "maxDepthIncreaseMm": 1.0567935415650709e-14,
+          "worstSurfaceVertex": 14377,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.063108904631691,
+          "maxDepthIncreaseMm": 0.05119775671070868,
+          "worstSurfaceVertex": 36984,
+          "insidePoints": 901,
+          "newInsidePoints": 13
+        }
+      ]
+    },
+    {
+      "elev": 126,
+      "plane": 0.0,
+      "sequence": 22,
+      "surfaceVolumeRatio": 0.9994786602147661,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.7482350810614213,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 325.48530673980713,
+      "fromIndex": 332,
+      "index": 336,
+      "requestedIndex": 336,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 4.914495567788478e-07,
+      "cageJQuantiles": [
+        0.04067644063834029,
+        0.5639357173920327,
+        1.0000000000000218,
+        2.2512343186623935,
+        11.667862748093707
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388541069,
+          "maxDepthIncreaseMm": 1.5873413694578176e-13,
+          "worstSurfaceVertex": 13850,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.062720735519837,
+          "maxDepthIncreaseMm": 0.04332395096381047,
+          "worstSurfaceVertex": 36984,
+          "insidePoints": 897,
+          "newInsidePoints": 9
+        }
+      ]
+    },
+    {
+      "elev": 127.5,
+      "plane": 0.0,
+      "sequence": 23,
+      "surfaceVolumeRatio": 0.9995009238284902,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.72255902200763,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 332.40706992149353,
+      "fromIndex": 336,
+      "index": 340,
+      "requestedIndex": 344,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.0006710362723242562,
+      "cageJQuantiles": [
+        0.03981102844319935,
+        0.5573271534014594,
+        1.000000000000018,
+        2.272536424511367,
+        12.519893068359554
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388534637,
+          "maxDepthIncreaseMm": 4.085273785925381e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.062309398766783,
+          "maxDepthIncreaseMm": 0.09707736568946146,
+          "worstSurfaceVertex": 36984,
+          "insidePoints": 897,
+          "newInsidePoints": 9
+        }
+      ]
+    },
+    {
+      "elev": 129,
+      "plane": 0.0,
+      "sequence": 24,
+      "surfaceVolumeRatio": 0.999521049366057,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.6843618281175714,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 339.9639821052551,
+      "fromIndex": 340,
+      "index": 344,
+      "requestedIndex": 344,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.00024760367635262445,
+      "cageJQuantiles": [
+        0.038971258694068756,
+        0.5471915154726742,
+        1.00000000000002,
+        2.3069876138596497,
+        13.43176885616574
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388541093,
+          "maxDepthIncreaseMm": 1.837939522797427e-13,
+          "worstSurfaceVertex": 13850,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.061905907056182,
+          "maxDepthIncreaseMm": 0.030879844439550302,
+          "worstSurfaceVertex": 36984,
+          "insidePoints": 895,
+          "newInsidePoints": 7
+        }
+      ]
+    },
+    {
+      "elev": 130.5,
+      "plane": 0.0,
+      "sequence": 25,
+      "surfaceVolumeRatio": 0.9995406469631791,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.613156825260968,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 346.5249300003052,
+      "fromIndex": 344,
+      "index": 348,
+      "requestedIndex": 352,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 1.1799564187656749e-05,
+      "cageJQuantiles": [
+        0.03817327136983837,
+        0.5394817549010533,
+        1.000000000000017,
+        2.3392123589648905,
+        14.41187835324339
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.1019566938854053,
+          "maxDepthIncreaseMm": 1.5341720949191284e-13,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.06150023360269,
+          "maxDepthIncreaseMm": 0.0005272957893582841,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 132,
+      "plane": 0.0,
+      "sequence": 26,
+      "surfaceVolumeRatio": 0.9995596456665328,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.5164486123675682,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 355.43300890922546,
+      "fromIndex": 348,
+      "index": 352,
+      "requestedIndex": 352,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 3.7172248661391224e-07,
+      "cageJQuantiles": [
+        0.03742566277231756,
+        0.5305368331614446,
+        1.0000000000000147,
+        2.376126636318079,
+        15.462741612246722
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388539433,
+          "maxDepthIncreaseMm": 1.1823528267562722e-13,
+          "worstSurfaceVertex": 14274,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.061098706816543,
+          "maxDepthIncreaseMm": 0.0005411442206781913,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 133.5,
+      "plane": 0.0,
+      "sequence": 27,
+      "surfaceVolumeRatio": 0.9995650785247134,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 3.3954724952520863,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 388.88185691833496,
+      "fromIndex": 352,
+      "index": 356,
+      "requestedIndex": 360,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 1.6451504166565425e-05,
+      "cageJQuantiles": [
+        0.03671031151001484,
+        0.5222384917398114,
+        1.0000000000000175,
+        2.4177222097004774,
+        16.67352958047066
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388541052,
+          "maxDepthIncreaseMm": 1.5173279299673936e-13,
+          "worstSurfaceVertex": 13850,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.060665133802696,
+          "maxDepthIncreaseMm": 0.0005559788651146036,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 134.25,
+      "plane": 0.0,
+      "sequence": 28,
+      "surfaceVolumeRatio": 0.9995748786797488,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 1.6537688371608814,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 394.29047298431396,
+      "fromIndex": 356,
+      "index": 358,
+      "requestedIndex": 360,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 4.1765233432201406e-07,
+      "cageJQuantiles": [
+        0.03638305180148224,
+        0.5163578049750592,
+        1.0000000000000173,
+        2.439156277497128,
+        17.278722477969506
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388528794,
+          "maxDepthIncreaseMm": 1.2347588229655315e-13,
+          "worstSurfaceVertex": 14377,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.060475416605146,
+          "maxDepthIncreaseMm": 0.0005622252457881949,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 135,
+      "plane": 0.0,
+      "sequence": 29,
+      "surfaceVolumeRatio": 0.9995850662497936,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 1.6124531188565294,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 399.00731587409973,
+      "fromIndex": 358,
+      "index": 360,
+      "requestedIndex": 360,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 5.068075383894457e-06,
+      "cageJQuantiles": [
+        0.03607055048013946,
+        0.5121569481880606,
+        1.0000000000000173,
+        2.4568001114213964,
+        17.918214656194507
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388531917,
+          "maxDepthIncreaseMm": 1.4594228603392878e-14,
+          "worstSurfaceVertex": 14377,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.06029467054493,
+          "maxDepthIncreaseMm": 0.000568010324297763,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 135.75,
+      "plane": 0.0,
+      "sequence": 30,
+      "surfaceVolumeRatio": 0.9995956591035836,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 1.572774032869678,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 404.5842800140381,
+      "fromIndex": 360,
+      "index": 362,
+      "requestedIndex": 368,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 9.056377833743957e-07,
+      "cageJQuantiles": [
+        0.03577501461510564,
+        0.5074682296571448,
+        1.0000000000000193,
+        2.475645033519096,
+        18.595049407794672
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388532992,
+          "maxDepthIncreaseMm": 6.017408793468348e-14,
+          "worstSurfaceVertex": 14274,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.06012341452759,
+          "maxDepthIncreaseMm": 0.0005732864566052598,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 136.5,
+      "plane": 0.0,
+      "sequence": 31,
+      "surfaceVolumeRatio": 0.9996064411943678,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 1.5575958060424357,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 410.33352279663086,
+      "fromIndex": 362,
+      "index": 364,
+      "requestedIndex": 368,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 3.261917564642448e-05,
+      "cageJQuantiles": [
+        0.032060049279407025,
+        0.5014564533909611,
+        1.0000000000000178,
+        2.4855239329860757,
+        19.29826113557406
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388539466,
+          "maxDepthIncreaseMm": 1.1790568521519162e-13,
+          "worstSurfaceVertex": 14274,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.059952196307704,
+          "maxDepthIncreaseMm": 0.0005784217719164708,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 137.25,
+      "plane": 0.0,
+      "sequence": 32,
+      "surfaceVolumeRatio": 0.9996190181201058,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 1.5502764417213286,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 445.3917360305786,
+      "fromIndex": 364,
+      "index": 366,
+      "requestedIndex": 368,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 1.5398938805887308e-06,
+      "cageJQuantiles": [
+        0.028892073263669254,
+        0.495287177837325,
+        1.0000000000000118,
+        2.4765170153416785,
+        20.011516638275285
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388534112,
+          "maxDepthIncreaseMm": 3.7719827261639693e-14,
+          "worstSurfaceVertex": 14789,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.0597675011711685,
+          "maxDepthIncreaseMm": 0.0005839650239058969,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 138,
+      "plane": 0.0,
+      "sequence": 33,
+      "surfaceVolumeRatio": 0.9996302236046404,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 1.5508282844801347,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 452.2238919734955,
+      "fromIndex": 366,
+      "index": 368,
+      "requestedIndex": 368,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.00011696545196752287,
+      "cageJQuantiles": [
+        0.026314070206980008,
+        0.4898052952856574,
+        1.0000000000000173,
+        2.506884546773966,
+        20.75530516944721
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.059584975599377,
+          "maxDepthIncreaseMm": 0.0005892351092855463,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 138.75,
+      "plane": 0.0,
+      "sequence": 34,
+      "surfaceVolumeRatio": 0.9996417023621642,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 1.551916395809936,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 458.22646284103394,
+      "fromIndex": 368,
+      "index": 370,
+      "requestedIndex": 376,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 8.385690561876497e-05,
+      "cageJQuantiles": [
+        0.02422247553166097,
+        0.48396492021384924,
+        1.0000000000000149,
+        2.5308581361023963,
+        21.517553963940404
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388524492,
+          "maxDepthIncreaseMm": 1.1184803083708061e-13,
+          "worstSurfaceVertex": 14599,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.059394543725481,
+          "maxDepthIncreaseMm": 0.0005946453491492143,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 139.5,
+      "plane": 0.0,
+      "sequence": 35,
+      "surfaceVolumeRatio": 0.9996333841391147,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 1.9229361154953721,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 515.9357969760895,
+      "fromIndex": 370,
+      "index": 372,
+      "requestedIndex": 376,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 9.39552624266678e-07,
+      "cageJQuantiles": [
+        0.026695017344413517,
+        0.47159553329163645,
+        1.0000000000000187,
+        2.5468059701215386,
+        21.89020601263897
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388528789,
+          "maxDepthIncreaseMm": 1.6590895324242183e-14,
+          "worstSurfaceVertex": 14577,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.059119997724059,
+          "maxDepthIncreaseMm": 0.0006033732689707527,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 140.25,
+      "plane": 0.0,
+      "sequence": 36,
+      "surfaceVolumeRatio": 0.9996430248817114,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 1.5482908350520843,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 522.6528389453888,
+      "fromIndex": 372,
+      "index": 374,
+      "requestedIndex": 376,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.0009083849582563436,
+      "cageJQuantiles": [
+        0.024821103880421337,
+        0.46473488517074385,
+        1.0000000000000173,
+        2.5553145677840714,
+        22.693313836570212
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388528193,
+          "maxDepthIncreaseMm": 2.5653090762745023e-14,
+          "worstSurfaceVertex": 14599,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.058924395321692,
+          "maxDepthIncreaseMm": 0.0006086348919480677,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 141,
+      "plane": 0.0,
+      "sequence": 37,
+      "surfaceVolumeRatio": 0.9996527654129617,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 1.5488089671470011,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 530.6533899307251,
+      "fromIndex": 374,
+      "index": 376,
+      "requestedIndex": 376,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.00026106382372795766,
+      "cageJQuantiles": [
+        0.023147220776892456,
+        0.4599712373595153,
+        1.0000000000000195,
+        2.5775298078484687,
+        23.515817498076817
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.058723175155068,
+          "maxDepthIncreaseMm": 0.0006139528223694235,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 141.375,
+      "plane": 0.0,
+      "sequence": 38,
+      "surfaceVolumeRatio": 0.9996576669396993,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.7747966897538416,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 536.0943019390106,
+      "fromIndex": 376,
+      "index": 377,
+      "requestedIndex": 384,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 2.7169484194152047e-06,
+      "cageJQuantiles": [
+        0.022376116978575,
+        0.45785465917280804,
+        1.0000000000000193,
+        2.5897218229610357,
+        23.933634228747405
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.058620503219329,
+          "maxDepthIncreaseMm": 0.0006166316476479139,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 141.75,
+      "plane": 0.0,
+      "sequence": 39,
+      "surfaceVolumeRatio": 0.9996625859307813,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.774796689753844,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 540.9605638980865,
+      "fromIndex": 377,
+      "index": 378,
+      "requestedIndex": 384,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 5.951021871322625e-07,
+      "cageJQuantiles": [
+        0.021644757752591937,
+        0.45699241266255397,
+        1.0000000000000178,
+        2.604156262291536,
+        24.355651115779207
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.058516607396639,
+          "maxDepthIncreaseMm": 0.0006193174765449783,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 142.125,
+      "plane": 0.0,
+      "sequence": 40,
+      "surfaceVolumeRatio": 0.9996675167196327,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.774796689753706,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 546.7360138893127,
+      "fromIndex": 378,
+      "index": 379,
+      "requestedIndex": 384,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 7.528824060085885e-06,
+      "cageJQuantiles": [
+        0.020952418895065356,
+        0.4555872650581266,
+        1.0000000000000162,
+        2.6142089022532926,
+        24.781478539846905
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.058411527016096,
+          "maxDepthIncreaseMm": 0.0006220091221798008,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 142.5,
+      "plane": 0.0,
+      "sequence": 41,
+      "surfaceVolumeRatio": 0.9996724525605611,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.7747966897538698,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 554.2033100128174,
+      "fromIndex": 379,
+      "index": 380,
+      "requestedIndex": 384,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 9.326011189142456e-08,
+      "cageJQuantiles": [
+        0.020297166882984503,
+        0.4506796852578421,
+        1.000000000000018,
+        2.6306701938080974,
+        25.21066929011676
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.058305288541791,
+          "maxDepthIncreaseMm": 0.00062470598275155,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 142.875,
+      "plane": 0.0,
+      "sequence": 42,
+      "surfaceVolumeRatio": 0.9996773860531094,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.7747966897538221,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 560.6323671340942,
+      "fromIndex": 380,
+      "index": 381,
+      "requestedIndex": 384,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 2.6709226252710743e-07,
+      "cageJQuantiles": [
+        0.019677164221716847,
+        0.4472830344870555,
+        1.000000000000017,
+        2.639878452670709,
+        25.642740886297613
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.058197902648966,
+          "maxDepthIncreaseMm": 0.00062740812812212,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 143.25,
+      "plane": 0.0,
+      "sequence": 43,
+      "surfaceVolumeRatio": 0.9996823096053583,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.774796689753676,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 568.0114197731018,
+      "fromIndex": 381,
+      "index": 382,
+      "requestedIndex": 384,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 1.9733433609312755e-07,
+      "cageJQuantiles": [
+        0.019090672019588462,
+        0.4440890808844322,
+        1.0000000000000169,
+        2.647710759254847,
+        26.077145160189755
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.058089360273207,
+          "maxDepthIncreaseMm": 0.0006301163564130796,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 143.625,
+      "plane": 0.0,
+      "sequence": 44,
+      "surfaceVolumeRatio": 0.9996872157735385,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.7747966897537046,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 575.9118759632111,
+      "fromIndex": 382,
+      "index": 383,
+      "requestedIndex": 384,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 1.2917880422954738e-07,
+      "cageJQuantiles": [
+        0.018536050719285317,
+        0.4418250541273268,
+        1.0000000000000164,
+        2.6613766322623573,
+        26.51311860572881
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.057979623509829,
+          "maxDepthIncreaseMm": 0.0006328316513815047,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 144,
+      "plane": 0.0,
+      "sequence": 45,
+      "surfaceVolumeRatio": 0.9996920973882509,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.774796689754136,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 582.8852989673615,
+      "fromIndex": 383,
+      "index": 384,
+      "requestedIndex": 384,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 8.484607093090342e-08,
+      "cageJQuantiles": [
+        0.018011761822180426,
+        0.4372586897353411,
+        1.0000000000000164,
+        2.675524108108939,
+        26.949301223441893
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.057868603122279,
+          "maxDepthIncreaseMm": 0.0006355569218494672,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 144.375,
+      "plane": 0.0,
+      "sequence": 46,
+      "surfaceVolumeRatio": 0.9996969483811964,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.7747966897536162,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 589.915130853653,
+      "fromIndex": 384,
+      "index": 385,
+      "requestedIndex": 392,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.0009300524239233815,
+      "cageJQuantiles": [
+        0.01751633003742371,
+        0.43124191114816957,
+        1.0000000000000138,
+        2.6929079384547876,
+        27.382914337580644
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.057756078363295,
+          "maxDepthIncreaseMm": 0.0006382968025491209,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 144.75,
+      "plane": 0.0,
+      "sequence": 47,
+      "surfaceVolumeRatio": 0.9997017782307068,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.7747966897538006,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 597.5658349990845,
+      "fromIndex": 385,
+      "index": 386,
+      "requestedIndex": 392,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.0007938909719713361,
+      "cageJQuantiles": [
+        0.017048101031659584,
+        0.42745835688130407,
+        1.000000000000017,
+        2.7054193107031215,
+        27.80760736216523
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.057641327351327,
+          "maxDepthIncreaseMm": 0.0006410552410249792,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 145.125,
+      "plane": 0.0,
+      "sequence": 48,
+      "surfaceVolumeRatio": 0.9997065420929228,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.7747966897537403,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 605.4294729232788,
+      "fromIndex": 386,
+      "index": 387,
+      "requestedIndex": 392,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.0007447565161002893,
+      "cageJQuantiles": [
+        0.016607144170383444,
+        0.4213771137302809,
+        1.0000000000000169,
+        2.708844821246481,
+        28.226558703877167
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.057525889580546,
+          "maxDepthIncreaseMm": 0.0006438008974125609,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 145.5,
+      "plane": 0.0,
+      "sequence": 49,
+      "surfaceVolumeRatio": 0.9997111983634799,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.7747966897539018,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 613.1634788513184,
+      "fromIndex": 387,
+      "index": 388,
+      "requestedIndex": 392,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.000678096962632294,
+      "cageJQuantiles": [
+        0.01619297058770631,
+        0.4192714484396424,
+        1.0000000000000124,
+        2.7214120792024366,
+        28.642546683945973
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.057410231505263,
+          "maxDepthIncreaseMm": 0.0006465389558347745,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 145.875,
+      "plane": 0.0,
+      "sequence": 50,
+      "surfaceVolumeRatio": 0.9997157453050657,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.774796689753797,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 622.5839447975159,
+      "fromIndex": 388,
+      "index": 389,
+      "requestedIndex": 392,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 0.0006269158474164738,
+      "cageJQuantiles": [
+        0.015804381620514497,
+        0.4076012933400259,
+        1.000000000000014,
+        2.7311492706540177,
+        29.051966342866567
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.05729455988846,
+          "maxDepthIncreaseMm": 0.0006492496935588399,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 146.25,
+      "plane": 0.0,
+      "sequence": 51,
+      "surfaceVolumeRatio": 0.99972018943416,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.7747966897538439,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 635.6582038402557,
+      "fromIndex": 389,
+      "index": 390,
+      "requestedIndex": 392,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 5.00196336760487e-07,
+      "cageJQuantiles": [
+        0.015440937681435122,
+        0.4020778030186597,
+        1.0000000000000155,
+        2.7474205959517026,
+        29.441041316433157
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.0571941300498855,
+          "maxDepthIncreaseMm": 0.0006512990193154877,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 146.625,
+      "plane": 0.0,
+      "sequence": 52,
+      "surfaceVolumeRatio": 0.9997249752924111,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.7747966897537812,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 757.6912498474121,
+      "fromIndex": 390,
+      "index": 391,
+      "requestedIndex": 392,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 2.6187535198670962e-08,
+      "cageJQuantiles": [
+        0.015100119823608192,
+        0.3989133588033434,
+        1.000000000000015,
+        2.749919410515369,
+        29.53682853404934
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.057063877597009,
+          "maxDepthIncreaseMm": 0.0006541981765946225,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 147,
+      "plane": 0.0,
+      "sequence": 53,
+      "surfaceVolumeRatio": 0.9997293357982546,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.7747966897538184,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 764.8851387500763,
+      "fromIndex": 391,
+      "index": 392,
+      "requestedIndex": 392,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 1.6196038465802826e-07,
+      "cageJQuantiles": [
+        0.01478547695577916,
+        0.39314801665902643,
+        1.000000000000016,
+        2.750502538146807,
+        29.88085347565436
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.056937617580126,
+          "maxDepthIncreaseMm": 0.000657097769195758,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    },
+    {
+      "elev": 147.375,
+      "plane": 0.0,
+      "sequence": 54,
+      "surfaceVolumeRatio": 0.9997335124314156,
+      "sourceOpposedFaces": 0,
+      "attachmentMaxMm": 0.0,
+      "maxStepWorldMm": 0.774796689753679,
+      "returnToPreviousSamePoseMaxMm": null,
+      "seconds": 771.8475067615509,
+      "fromIndex": 392,
+      "index": 393,
+      "requestedIndex": 400,
+      "converged": true,
+      "reason": "actual-distance-equilibrium-and-contact",
+      "contactReached": true,
+      "contactToleranceMm": 0.1,
+      "actualDistanceResidualMm": 4.896812349215078e-07,
+      "cageJQuantiles": [
+        0.014495301654264338,
+        0.3912985305160834,
+        1.0000000000000153,
+        2.7575431226193237,
+        30.203538986604848
+      ],
+      "contact": [
+        {
+          "bone": "FMA13395.stl",
+          "maxBaselineDepthMm": 0.10195669388532431,
+          "maxDepthMm": 0.10195669388536173,
+          "maxDepthIncreaseMm": 8.977887877570367e-14,
+          "worstSurfaceVertex": 14247,
+          "insidePoints": 94,
+          "newInsidePoints": 0
+        },
+        {
+          "bone": "FMA23130.stl",
+          "maxBaselineDepthMm": 4.0753162199852,
+          "maxDepthMm": 4.056812834751961,
+          "maxDepthIncreaseMm": 0.0006599624892094091,
+          "worstSurfaceVertex": 22857,
+          "insidePoints": 888,
+          "newInsidePoints": 0
+        }
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "fromIndex": 240,
+      "attemptedIndex": 248,
+      "requestedIndex": 248,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 248,
+      "attemptedIndex": 256,
+      "requestedIndex": 256,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 256,
+      "attemptedIndex": 264,
+      "requestedIndex": 264,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 264,
+      "attemptedIndex": 272,
+      "requestedIndex": 272,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 272,
+      "attemptedIndex": 280,
+      "requestedIndex": 280,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 280,
+      "attemptedIndex": 288,
+      "requestedIndex": 288,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 288,
+      "attemptedIndex": 296,
+      "requestedIndex": 296,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 296,
+      "attemptedIndex": 304,
+      "requestedIndex": 304,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 312,
+      "attemptedIndex": 320,
+      "requestedIndex": 320,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 320,
+      "attemptedIndex": 328,
+      "requestedIndex": 328,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 328,
+      "attemptedIndex": 336,
+      "requestedIndex": 336,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 336,
+      "attemptedIndex": 344,
+      "requestedIndex": 344,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 344,
+      "attemptedIndex": 352,
+      "requestedIndex": 352,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 352,
+      "attemptedIndex": 360,
+      "requestedIndex": 360,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 356,
+      "attemptedIndex": 360,
+      "requestedIndex": 360,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 360,
+      "attemptedIndex": 368,
+      "requestedIndex": 368,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 360,
+      "attemptedIndex": 364,
+      "requestedIndex": 368,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 364,
+      "attemptedIndex": 368,
+      "requestedIndex": 368,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 368,
+      "attemptedIndex": 376,
+      "requestedIndex": 376,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 368,
+      "attemptedIndex": 372,
+      "requestedIndex": 376,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 372,
+      "attemptedIndex": 376,
+      "requestedIndex": 376,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 376,
+      "attemptedIndex": 384,
+      "requestedIndex": 384,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 376,
+      "attemptedIndex": 380,
+      "requestedIndex": 384,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 376,
+      "attemptedIndex": 378,
+      "requestedIndex": 384,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 378,
+      "attemptedIndex": 380,
+      "requestedIndex": 384,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 380,
+      "attemptedIndex": 384,
+      "requestedIndex": 384,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 380,
+      "attemptedIndex": 382,
+      "requestedIndex": 384,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 382,
+      "attemptedIndex": 384,
+      "requestedIndex": 384,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 384,
+      "attemptedIndex": 392,
+      "requestedIndex": 392,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 384,
+      "attemptedIndex": 388,
+      "requestedIndex": 392,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 384,
+      "attemptedIndex": 386,
+      "requestedIndex": 392,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 386,
+      "attemptedIndex": 388,
+      "requestedIndex": 392,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 388,
+      "attemptedIndex": 392,
+      "requestedIndex": 392,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 388,
+      "attemptedIndex": 390,
+      "requestedIndex": 392,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 390,
+      "attemptedIndex": 392,
+      "requestedIndex": 392,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 392,
+      "attemptedIndex": 400,
+      "requestedIndex": 400,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 392,
+      "attemptedIndex": 396,
+      "requestedIndex": 400,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    },
+    {
+      "fromIndex": 392,
+      "attemptedIndex": 394,
+      "requestedIndex": 400,
+      "converged": false,
+      "reason": "nonpositive-J-boundary-predictor"
+    }
+  ]
+}

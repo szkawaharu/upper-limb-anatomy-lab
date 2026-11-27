@@ -1,0 +1,39 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "method": "convex fine-tet/cage-tet intersections; floating point, not exact rational arithmetic",
+  "sourceVolumeMm3": 92349.34400458794,
+  "intersectionVolumeMm3": 92349.34400442337,
+  "relativeVolumeCoverageError": 1.782011676330099e-12,
+  "maxFineTetCoverageErrorMm3": 1.4943266044291532e-07,
+  "maxFineTetVolumeMm3": 262.01971786605935,
+  "sumAbsoluteFineCoverageErrorMm3": 1.6477782921944383e-07,
+  "physicalCells": 6985,
+  "totalCells": 18124,
+  "pairs": 1227428,
+  "statuses": {
+    "separated-by-tetrahedral-face": 707556,
+    "contained-tetrahedron": 14744,
+    "positive-volume": 193536,
+    "empty-or-lower-dimensional": 60377,
+    "rank-unresolved-or-contact": 251215
+  },
+  "seconds": 340.20933294296265,
+  "codeSha256": {
+    "integrate-material-cells.py": "47ca87fb37b7c0ebd3b2714b622fd219a5ca9d2d3d01ad288b50aeb64c31f9ec",
+    "tet_intersection.py": "0073caff8ad264af37c53c5e2207f21a0570cd1405268fdfd32839a899d127d8"
+  },
+  "sourcePointsChanged": false,
+  "sourceAttachmentMasksChanged": false,
+  "inputsSha256": {
+    "test-results/v076-plc-surface-refined-mid-acromial-18/cage.npz": "ff39df24b7298c66204c83bb34a2976f71cc6b31b55b52038274187c057879cd",
+    "test-results/v076-plc-surface-refined-mid-acromial-18/conforming.npz": "5fc5ff4d72b7f05b12f72828d2880e269f01f1be1a280d1fb7012299037774d8",
+    "test-results/v076-plc-surface-refined-mid-acromial-18/preparation.json": "ee04f0379b3f065844790fb56d0dd4ba20d7aae7978f872b84e0472549325f3e",
+    "test-results/v076-acromial-volume-input/deltoid-mid-tetrahedra.npz": "a171a0110cfe054e362ae998c33546a03d8e4d6c0f6b24e8690f2d60f64c4c99",
+    "test-results/v076-plc-mid-acromial-18/cage.npz": "fdbd8aa2e8e547f9291dddefda399e5015ab4fbc9e3e4448f575cadce2bf5c3c",
+    "test-results/v076-plc-mid-acromial-18/preparation.json": "8d9ca7386978b87895546ac97a6503bd01b334c8563a66d84e6174fbb136c3f6"
+  },
+  "weightsEmitted": true,
+  "backgroundDensityPreserved": true,
+  "newWeightsSha256": "661d58b34f4f3ac9a37d1575ede8de6262327a2d9a4ca735334a0b2989e26101"
+}

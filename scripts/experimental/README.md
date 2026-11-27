@@ -88,3 +88,17 @@ python scripts/experimental/build-solid-panels.py test-results/v076-solid-qualit
 ```
 
 previewの生成が完了してからブラウザを起動する。元の全表面点・面・固定領域と、宣言した中立の骨境界が合わなければexportを停止する。静止snapshotをインタラクティブな変形の実装完了と呼ばない。パネル生成のみ追加でmatplotlibが必要（研究venv）、CIの5代数試験には不要。
+
+
+## 実関節角列と実距離の接触（未統合）
+
+`run-joint-contact-path.py CAGE_DIRECTORY INITIAL_CONTACT_SNAPSHOT OUTPUT_DIRECTORY ANGLES_JSON PLANE` は、出力先の `targets.json` に保存した0.375°刻みの最終骨姿勢を読む。通常3°の要求を失敗時に二分し、SLERPした骨や付着点の直線補間を実際の関節途中姿勢の代用にしない。要求範囲を変更せず、最小刻みでも未収束なら最後の収束姿勢だけを保存して異常終了する。要求途中までの成功を全域完了と呼ばない。
+
+`actual_bone_contact.py` は試行ごとの実閉鎖骨面距離をエネルギーと勾配へ使う。接触接線はGauss–Newton近似であり、実距離の曲率を含む厳密Hessianではない。方向の近似と採否の目的関数を分離し、実距離のArmijo・平衡残差・正J・固定端を維持する。source材料点ごとの元の交差深さを保持し、筋ごとのオフセットを追加しない。`test-joint-path.py` と `test-actual-bone-contact.py` は独立座標式・解析球・実材料の小規模接触を検証する。人体全域やスマートフォン実装の合格とは区別する。
+
+旧 `run-cage-contact.py` の90°接触は逐次接平面方式の履歴。新しい実距離方式の関節列は別ディレクトリに出し、既存の保存解と結果を上書きしない。大きい試作メッシュ・解NPZはtest-results内、採否に必要なcompact監査だけをdocsへ保存する。
+
+
+材料積分の最新版は[JOINT_CONTACT_V076.md](../../docs/JOINT_CONTACT_V076.md)。`integrate-material-cells.py` は元の細かい体積分割と制御セルの凸交差量を使い、元の背景密度を保つ。`audit-material-coverage.py` で各元要素の最大・分位・欠落も照合する。全体積だけで採用しない。`reequilibrate-contact.py` の旧ウェイト対照と比較してから高挙上を再検証する。追加の依存をWebへ導入していない。
+
+`material_pose.boundary_targets` は固定クラス→骨フレームの辞書を任意に指定できる。既存2骨データは互換。合成のC0/C4/C7/体幹/肩甲骨と左右鏡映を試験したが、実頸部メッシュの付着領域を照合・移行した結果ではない。既存CLIは2骨データを使用し、実筋の複数起始アダプターは未実装。

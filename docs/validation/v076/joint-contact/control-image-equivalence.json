@@ -1,0 +1,11 @@
+{
+  "oldImageSnapshot": "test-results/v076-plc-surface-refined-mid-acromial-18/contact/reference-e90-p0-k30.npz",
+  "controlledEquilibriumSnapshot": "test-results/v076-mid-original-integration-control/reference-e90-p0-k30.npz",
+  "maxSourceWorldDifferenceMm": 2.1091320072250855e-09,
+  "identicalFloat32RenderPositions": true,
+  "reason": "The actual-distance control re-equilibrates to the same old mesh, so existing old images can be used without relabeling another algorithm as this control",
+  "sha256": {
+    "test-results/v076-plc-surface-refined-mid-acromial-18/contact/reference-e90-p0-k30.npz": "df1c8cf43019ab23c98619c305f8319677c8a86096d31e39a970af68e32aeebc",
+    "test-results/v076-mid-original-integration-control/reference-e90-p0-k30.npz": "fcd42f16f73f24cfabe7afa6a819df9b6071e51fda7dc225d247150a5afbb0ed"
+  }
+}

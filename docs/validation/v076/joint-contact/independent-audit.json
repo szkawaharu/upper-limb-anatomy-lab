@@ -1,0 +1,1225 @@
+{
+  "experimental": true,
+  "anatomicalAcceptance": false,
+  "productionEngineAcceptance": false,
+  "requestedPathCompleted": false,
+  "currentAngle": 147.375,
+  "rows": [
+    {
+      "file": "001-reference-e91d5-p0-k30.npz",
+      "snapshotSha256": "c4a863cf3e9b4afd2ba82b6c846810db2be33e6628acdad8d8cf6602e505a55a",
+      "elev": 91.5,
+      "sourceVolumeRatio": 0.9991059880400306,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.0643962227353618,
+        7.869876005406875
+      ],
+      "surfaceAdjacentJRange": [
+        0.10011405948102668,
+        7.869876005406875
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.06424076463648994,
+      "maxDepthIncreaseMm": 0.05729048272928272,
+      "actualDistanceResidualMm": 3.7161492100463347e-07
+    },
+    {
+      "file": "002-reference-e93-p0-k30.npz",
+      "snapshotSha256": "e1ec9ca856cca0165fa530a48f8042952f3c2aa9abdb6275c27f791a18496cce",
+      "elev": 93,
+      "sourceVolumeRatio": 0.9991098161091301,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.06320226947206384,
+        8.140066870994522
+      ],
+      "surfaceAdjacentJRange": [
+        0.09258688404726392,
+        8.140066870994522
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.06319672206522163,
+      "maxDepthIncreaseMm": 0.05442395981873501,
+      "actualDistanceResidualMm": 4.607663632385217e-05
+    },
+    {
+      "file": "003-reference-e94d5-p0-k30.npz",
+      "snapshotSha256": "4b20592d7d325fcf09cfbbcd7561469bcb84cd0b204bf4b684e11031bc1e21fb",
+      "elev": 94.5,
+      "sourceVolumeRatio": 0.9991029872299976,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.0622532327507121,
+        8.395400241759171
+      ],
+      "surfaceAdjacentJRange": [
+        0.08717425180396364,
+        8.395400241759171
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.062194612863340784,
+      "maxDepthIncreaseMm": 0.041007511802990365,
+      "actualDistanceResidualMm": 0.0005015464823529129
+    },
+    {
+      "file": "004-reference-e96-p0-k30.npz",
+      "snapshotSha256": "80eecfc1bf53f0712b9fa6f4d4c7c81a53b41f3d065ff9f59f41ddd3eb8584fc",
+      "elev": 96,
+      "sourceVolumeRatio": 0.9991176721195492,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.06134326717234182,
+        8.576320985442559
+      ],
+      "surfaceAdjacentJRange": [
+        0.0813017417337385,
+        8.576320985442559
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.06132262379717471,
+      "maxDepthIncreaseMm": 0.06467559897164994,
+      "actualDistanceResidualMm": 5.5089580202300755e-05
+    },
+    {
+      "file": "005-reference-e97d5-p0-k30.npz",
+      "snapshotSha256": "a4c2cc89ab5a0a1d2258887d9f1a65189c90b5af23b1b6ae4203812b039f40bb",
+      "elev": 97.5,
+      "sourceVolumeRatio": 0.9991310914593866,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.060634953829983254,
+        8.764619525334425
+      ],
+      "surfaceAdjacentJRange": [
+        0.075688108044961,
+        8.764619525334425
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.06062086828829861,
+      "maxDepthIncreaseMm": 0.09346163980103775,
+      "actualDistanceResidualMm": 0.00025320587933231746
+    },
+    {
+      "file": "006-reference-e99-p0-k30.npz",
+      "snapshotSha256": "c40e11141eb52de0751d9c21310a943f11599b85b7245f77fc49511c0cdda411",
+      "elev": 99,
+      "sourceVolumeRatio": 0.9991393302076782,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.06008321627998041,
+        8.943702877885885
+      ],
+      "surfaceAdjacentJRange": [
+        0.07212690273770149,
+        8.943702877885885
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.06004666688106848,
+      "maxDepthIncreaseMm": 0.08975475252091894,
+      "actualDistanceResidualMm": 2.5996504106746038e-05
+    },
+    {
+      "file": "007-reference-e100d5-p0-k30.npz",
+      "snapshotSha256": "d9d1ee0454d902022ef5a40c8648bdba898df96f17c086e237fdfc26a3f19a7e",
+      "elev": 100.5,
+      "sourceVolumeRatio": 0.9991488565143244,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.059635947080868036,
+        9.138960318609021
+      ],
+      "surfaceAdjacentJRange": [
+        0.06873949656798299,
+        9.138960318609021
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.059605894230841464,
+      "maxDepthIncreaseMm": 0.05773187369301977,
+      "actualDistanceResidualMm": 0.0003441850494430343
+    },
+    {
+      "file": "008-reference-e102-p0-k30.npz",
+      "snapshotSha256": "c189132afad0f097bce7f899d80c7c82aa803d1b7e0f0837feb4d7024f3e2c93",
+      "elev": 102,
+      "sourceVolumeRatio": 0.9991497825228031,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.05929740753435219,
+        9.32833379786102
+      ],
+      "surfaceAdjacentJRange": [
+        0.0660093377241689,
+        9.32833379786102
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.059212063114857404,
+      "maxDepthIncreaseMm": 0.05750343829447161,
+      "actualDistanceResidualMm": 2.942985706078723e-06
+    },
+    {
+      "file": "009-reference-e103d5-p0-k30.npz",
+      "snapshotSha256": "5a1b64b65702fd81c17eb1dc21584aee327cd492f8ac1681652c20b36c795ab0",
+      "elev": 103.5,
+      "sourceVolumeRatio": 0.9991523300828907,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.05832474428619219,
+        9.507271669010493
+      ],
+      "surfaceAdjacentJRange": [
+        0.06377983420491748,
+        9.507271669010493
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.058312152663752274,
+      "maxDepthIncreaseMm": 0.06870917678870167,
+      "actualDistanceResidualMm": 7.030077263533455e-05
+    },
+    {
+      "file": "010-reference-e105-p0-k30.npz",
+      "snapshotSha256": "535f5fb6f58e428a78270573eaf3941b645af879da85f5fdebff44c6aa7eff71",
+      "elev": 105,
+      "sourceVolumeRatio": 0.9991615220006609,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.05685355357702271,
+        9.669696392162171
+      ],
+      "surfaceAdjacentJRange": [
+        0.06203699752775209,
+        9.669696392162171
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.05686732673932596,
+      "maxDepthIncreaseMm": 0.07822932665531478,
+      "actualDistanceResidualMm": 4.5956105034855323e-05
+    },
+    {
+      "file": "011-reference-e106d5-p0-k30.npz",
+      "snapshotSha256": "eabeb9d206cb1f35be35d301aa7a7aafb2a305dd88c6b8fe6173d6b3fdd39ba5",
+      "elev": 106.5,
+      "sourceVolumeRatio": 0.9991722879648798,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.05565915671032755,
+        9.805720634492111
+      ],
+      "surfaceAdjacentJRange": [
+        0.060556513666878496,
+        9.805720634492111
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.05566085711381466,
+      "maxDepthIncreaseMm": 0.06415431219529169,
+      "actualDistanceResidualMm": 3.7725747152603914e-05
+    },
+    {
+      "file": "012-reference-e108-p0-k30.npz",
+      "snapshotSha256": "7b925bd406e525934d6a5ea00de5e35522ba6ef80ce50c090a9f100c0fec2d31",
+      "elev": 108,
+      "sourceVolumeRatio": 0.999194982359755,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.054529044909533246,
+        9.926215327886904
+      ],
+      "surfaceAdjacentJRange": [
+        0.05933894666542384,
+        9.926215327886904
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.05455070537827633,
+      "maxDepthIncreaseMm": 0.0655323814491396,
+      "actualDistanceResidualMm": 0.0003530439984659374
+    },
+    {
+      "file": "013-reference-e109d5-p0-k30.npz",
+      "snapshotSha256": "1a4c60f4e7b357afc22c28804fe1098bbfcd6ce5541a6764d089e8c1b3d47d26",
+      "elev": 109.5,
+      "sourceVolumeRatio": 0.9992132311950102,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.05317956724324582,
+        10.024984411545958
+      ],
+      "surfaceAdjacentJRange": [
+        0.05848332816019391,
+        10.024984411545958
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.053162073867504725,
+      "maxDepthIncreaseMm": 0.05648588804144991,
+      "actualDistanceResidualMm": 6.346977060032883e-05
+    },
+    {
+      "file": "014-reference-e111-p0-k30.npz",
+      "snapshotSha256": "9b159ea5d4064c9570a970ae6c1456d893d7dcc5394489e5bf100b5c09dc599e",
+      "elev": 111,
+      "sourceVolumeRatio": 0.9992346262322033,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.051691775320770225,
+        10.114977604436497
+      ],
+      "surfaceAdjacentJRange": [
+        0.05784730952766509,
+        10.114977604436497
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.05170957648216185,
+      "maxDepthIncreaseMm": 0.053241349457733164,
+      "actualDistanceResidualMm": 1.8673486956270628e-05
+    },
+    {
+      "file": "015-reference-e112d5-p0-k30.npz",
+      "snapshotSha256": "1a4a8a68c6c19ba2a8ba4824274764451a554abe82c3fede50264d0ae0ddbf2e",
+      "elev": 112.5,
+      "sourceVolumeRatio": 0.9992583325336214,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.05023474479412615,
+        10.184868201576844
+      ],
+      "surfaceAdjacentJRange": [
+        0.05740866797394228,
+        10.184868201576844
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.05023746581516409,
+      "maxDepthIncreaseMm": 0.0545952889477002,
+      "actualDistanceResidualMm": 0.00029633304539770965
+    },
+    {
+      "file": "016-reference-e114-p0-k30.npz",
+      "snapshotSha256": "9c88405d231ab2d5cbe95b0deb142b30a0f20cbb3dabb03b881ce7c84f7f84a5",
+      "elev": 114,
+      "sourceVolumeRatio": 0.9992741262561963,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.04901725640053123,
+        10.26480138798242
+      ],
+      "surfaceAdjacentJRange": [
+        0.05701965411958683,
+        10.26480138798242
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.049009861623402796,
+      "maxDepthIncreaseMm": 0.06232723166978099,
+      "actualDistanceResidualMm": 4.147306406414172e-06
+    },
+    {
+      "file": "017-reference-e117-p0-k30.npz",
+      "snapshotSha256": "90884f01ba764829111c3fe2330962b79204b1e21b16ea7d17bfc54a54214cb3",
+      "elev": 117,
+      "sourceVolumeRatio": 0.9993202413289682,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.04659085279791519,
+        10.37800859668865
+      ],
+      "surfaceAdjacentJRange": [
+        0.05677303953894849,
+        10.37800859668865
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.0465976966164261,
+      "maxDepthIncreaseMm": 0.042522317874444965,
+      "actualDistanceResidualMm": 0.0009087994138736183
+    },
+    {
+      "file": "018-reference-e118d5-p0-k30.npz",
+      "snapshotSha256": "7d2949b201c09f2b5e98e2312a0842ce956dc84f8dbce207f17abcebc92d8b71",
+      "elev": 118.5,
+      "sourceVolumeRatio": 0.9993452958181942,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.04554543965889269,
+        10.423814466852338
+      ],
+      "surfaceAdjacentJRange": [
+        0.056948998665811164,
+        10.423814466852338
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.0455352573279439,
+      "maxDepthIncreaseMm": 0.0356547892695525,
+      "actualDistanceResidualMm": 6.5678311783266534e-06
+    },
+    {
+      "file": "019-reference-e120-p0-k30.npz",
+      "snapshotSha256": "eced2be22d8d2738517d0c3f1d3ce7a1e4d85fa2c990182bc0d8ebd95cc1b99b",
+      "elev": 120,
+      "sourceVolumeRatio": 0.9993742602975954,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.04452199294843393,
+        10.457504467893855
+      ],
+      "surfaceAdjacentJRange": [
+        0.05721914350401171,
+        10.457504467893855
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.04452280707492479,
+      "maxDepthIncreaseMm": 0.03873943309583616,
+      "actualDistanceResidualMm": 0.0001006806553292509
+    },
+    {
+      "file": "020-reference-e121d5-p0-k30.npz",
+      "snapshotSha256": "4fc68ab1832e5921b5483998404f37f0da65f6cd8172bfd35e90f9fb3cfed133",
+      "elev": 121.5,
+      "sourceVolumeRatio": 0.9993992234694808,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.04365174915775977,
+        10.489310610635567
+      ],
+      "surfaceAdjacentJRange": [
+        0.05758916979787887,
+        10.489310610635567
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.04365143912808136,
+      "maxDepthIncreaseMm": 0.08775338201691055,
+      "actualDistanceResidualMm": 0.0007136799240465082
+    },
+    {
+      "file": "021-reference-e123-p0-k30.npz",
+      "snapshotSha256": "9f36090065c0137cc828b8440d67920c9c0aa0ad7b3905bd11ac689defad755c",
+      "elev": 123,
+      "sourceVolumeRatio": 0.9994269078803566,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.04261837070738001,
+        10.479482460879984
+      ],
+      "surfaceAdjacentJRange": [
+        0.05887778666919726,
+        10.479482460879984
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.04262564756497339,
+      "maxDepthIncreaseMm": 0.07056545628815512,
+      "actualDistanceResidualMm": 1.3615041807051997e-05
+    },
+    {
+      "file": "022-reference-e124d5-p0-k30.npz",
+      "snapshotSha256": "ecfcb6e76d99a44b7c81a9e99e73cf19bc464252b4d4f7b6934c5e9a5d92c680",
+      "elev": 124.5,
+      "sourceVolumeRatio": 0.9994540685318275,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.04160604173834008,
+        10.822331590378841
+      ],
+      "surfaceAdjacentJRange": [
+        0.061201802350321674,
+        10.466160695407027
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.04160584842446466,
+      "maxDepthIncreaseMm": 0.05119775671070868,
+      "actualDistanceResidualMm": 2.420124877875584e-07
+    },
+    {
+      "file": "023-reference-e126-p0-k30.npz",
+      "snapshotSha256": "aef6ab5f93a9f482c6135fa33c5d33fa2988cfb24912c360d068f5b84abdb670",
+      "elev": 126,
+      "sourceVolumeRatio": 0.9994786602147661,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.04067644063834029,
+        11.667862748093707
+      ],
+      "surfaceAdjacentJRange": [
+        0.06423255326019629,
+        10.455698844201292
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.040681239027356486,
+      "maxDepthIncreaseMm": 0.04332395096381047,
+      "actualDistanceResidualMm": 4.914495567788478e-07
+    },
+    {
+      "file": "024-reference-e127d5-p0-k30.npz",
+      "snapshotSha256": "9c51add0513b2d6879a4093fc4858cbabd70074697ac21796bbab765633c32c0",
+      "elev": 127.5,
+      "sourceVolumeRatio": 0.9995009238284902,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.03981102844319935,
+        12.519893068359554
+      ],
+      "surfaceAdjacentJRange": [
+        0.06743220771624098,
+        10.44574190091027
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.03980634422157032,
+      "maxDepthIncreaseMm": 0.09707736568946146,
+      "actualDistanceResidualMm": 0.0006710362723242562
+    },
+    {
+      "file": "025-reference-e129-p0-k30.npz",
+      "snapshotSha256": "28a44df231bc043f5456685da6a1eae6fde4a9a1d53980a2797306093aa9559f",
+      "elev": 129,
+      "sourceVolumeRatio": 0.999521049366057,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.038971258694068756,
+        13.43176885616574
+      ],
+      "surfaceAdjacentJRange": [
+        0.061920813731541416,
+        10.42864376967955
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.03895612566247719,
+      "maxDepthIncreaseMm": 0.030879844439550302,
+      "actualDistanceResidualMm": 0.00024760367635262445
+    },
+    {
+      "file": "026-reference-e130d5-p0-k30.npz",
+      "snapshotSha256": "b32b9b6c5fda38699fd04aeecf1210b65ef4b4539af44ab0db5c336a5f2a607e",
+      "elev": 130.5,
+      "sourceVolumeRatio": 0.9995406469631791,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.03817327136983837,
+        14.41187835324339
+      ],
+      "surfaceAdjacentJRange": [
+        0.052300062269794265,
+        10.403216743199506
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.03817887340322357,
+      "maxDepthIncreaseMm": 0.0005272957893582841,
+      "actualDistanceResidualMm": 1.1799564187656749e-05
+    },
+    {
+      "file": "027-reference-e132-p0-k30.npz",
+      "snapshotSha256": "fcf327662eaf31c896068079bbae32f0add8bde95d085b0efde496663aa11979",
+      "elev": 132,
+      "sourceVolumeRatio": 0.9995596456665328,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.03742566277231756,
+        15.462741612246722
+      ],
+      "surfaceAdjacentJRange": [
+        0.04468143787373415,
+        10.364045827527208
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.03741851135626261,
+      "maxDepthIncreaseMm": 0.0005411442206781913,
+      "actualDistanceResidualMm": 3.7172248661391224e-07
+    },
+    {
+      "file": "028-reference-e133d5-p0-k30.npz",
+      "snapshotSha256": "20ede44a2e06f856d2aa342466e5ce98a0862e44680289124f52b60befd7d887",
+      "elev": 133.5,
+      "sourceVolumeRatio": 0.9995650785247134,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.03671031151001484,
+        16.67352958047066
+      ],
+      "surfaceAdjacentJRange": [
+        0.05354597943058679,
+        10.201506016980913
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.036708990305085655,
+      "maxDepthIncreaseMm": 0.0005559788651146036,
+      "actualDistanceResidualMm": 1.6451504166565425e-05
+    },
+    {
+      "file": "029-reference-e134d25-p0-k30.npz",
+      "snapshotSha256": "c19eb5403167dad3df6c11cb5d3a824e3092ea61aea539bb9a80fb9d78f83759",
+      "elev": 134.25,
+      "sourceVolumeRatio": 0.9995748786797488,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.03638305180148224,
+        17.278722477969506
+      ],
+      "surfaceAdjacentJRange": [
+        0.04979123975748655,
+        10.17185391820641
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.03638260025107029,
+      "maxDepthIncreaseMm": 0.0005622252457881949,
+      "actualDistanceResidualMm": 4.1765233432201406e-07
+    },
+    {
+      "file": "030-reference-e135-p0-k30.npz",
+      "snapshotSha256": "9a8c1d4a379f8ede073464daa5b90b76612be8d2b1ee404dbda15e082cf6004a",
+      "elev": 135,
+      "sourceVolumeRatio": 0.9995850662497936,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.03607055048013946,
+        17.918214656194507
+      ],
+      "surfaceAdjacentJRange": [
+        0.04615155853723967,
+        10.137545188666321
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.03608272877063642,
+      "maxDepthIncreaseMm": 0.000568010324297763,
+      "actualDistanceResidualMm": 5.068075383894457e-06
+    },
+    {
+      "file": "031-reference-e135d75-p0-k30.npz",
+      "snapshotSha256": "c384e32907018e74937f6d12eb73762bfcf483f2654ae6be874ebfe3450c376d",
+      "elev": 135.75,
+      "sourceVolumeRatio": 0.9995956591035836,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.03577501461510564,
+        18.595049407794672
+      ],
+      "surfaceAdjacentJRange": [
+        0.04264910786972434,
+        10.09867458026719
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.03576451244287765,
+      "maxDepthIncreaseMm": 0.0005732864566052598,
+      "actualDistanceResidualMm": 9.056377833743957e-07
+    },
+    {
+      "file": "032-reference-e136d5-p0-k30.npz",
+      "snapshotSha256": "df60b431118224a1be855ffdfa735f46a7a66637c5b38e730129eb524f76e0d4",
+      "elev": 136.5,
+      "sourceVolumeRatio": 0.9996064411943678,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.032060049279407025,
+        19.29826113557406
+      ],
+      "surfaceAdjacentJRange": [
+        0.03938491328288207,
+        10.059508524263455
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.032048535749787554,
+      "maxDepthIncreaseMm": 0.0005784217719164708,
+      "actualDistanceResidualMm": 3.261917564642448e-05
+    },
+    {
+      "file": "033-reference-e137d25-p0-k30.npz",
+      "snapshotSha256": "18412b3cfa480854ec230b71f6d668d42ab42c16cf5b4fb417f55c4bcf1ba0c5",
+      "elev": 137.25,
+      "sourceVolumeRatio": 0.9996190181201058,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.028892073263669254,
+        20.011516638275285
+      ],
+      "surfaceAdjacentJRange": [
+        0.036426346770856384,
+        10.012658261836343
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.02886968100165236,
+      "maxDepthIncreaseMm": 0.0005839650239058969,
+      "actualDistanceResidualMm": 1.5398938805887308e-06
+    },
+    {
+      "file": "034-reference-e138-p0-k30.npz",
+      "snapshotSha256": "9779ef96b388f1eb9cc9b0a9ae7bf4493bdb9df182dafbc3b3cb61d9470f2066",
+      "elev": 138,
+      "sourceVolumeRatio": 0.9996302236046404,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.026314070206980008,
+        20.75530516944721
+      ],
+      "surfaceAdjacentJRange": [
+        0.03367095516284011,
+        9.975353236945818
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.02634602510621682,
+      "maxDepthIncreaseMm": 0.0005892351092855463,
+      "actualDistanceResidualMm": 0.00011696545196752287
+    },
+    {
+      "file": "035-reference-e138d75-p0-k30.npz",
+      "snapshotSha256": "25f64d106d85d66e8e7504e5bcc8f55521ed301a075ca8058f728ac623f47932",
+      "elev": 138.75,
+      "sourceVolumeRatio": 0.9996417023621642,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.02422247553166097,
+        21.517553963940404
+      ],
+      "surfaceAdjacentJRange": [
+        0.03114568056848883,
+        9.940186812714384
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.024265081002355405,
+      "maxDepthIncreaseMm": 0.0005946453491492143,
+      "actualDistanceResidualMm": 8.385690561876497e-05
+    },
+    {
+      "file": "036-reference-e139d5-p0-k30.npz",
+      "snapshotSha256": "e47c3c50aef3ac60d886e11546eee84cd7881dfabf73c62f50a5b3bc68edfdc0",
+      "elev": 139.5,
+      "sourceVolumeRatio": 0.9996333841391147,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.026695017344413517,
+        21.89020601263897
+      ],
+      "surfaceAdjacentJRange": [
+        0.026695017344413517,
+        9.881181654238466
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.026711759302268944,
+      "maxDepthIncreaseMm": 0.0006033732689707527,
+      "actualDistanceResidualMm": 9.39552624266678e-07
+    },
+    {
+      "file": "037-reference-e140d25-p0-k30.npz",
+      "snapshotSha256": "5059a9a887df6c3dd5dcba412545f4982b42679466a4c976a4b2ce1c6e0e5484",
+      "elev": 140.25,
+      "sourceVolumeRatio": 0.9996430248817114,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.024821103880421337,
+        22.693313836570212
+      ],
+      "surfaceAdjacentJRange": [
+        0.024821103880421337,
+        9.858400024508155
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.02479755775703497,
+      "maxDepthIncreaseMm": 0.0006086348919480677,
+      "actualDistanceResidualMm": 0.0009083849582563436
+    },
+    {
+      "file": "038-reference-e141-p0-k30.npz",
+      "snapshotSha256": "c88cf8b44121d81b2eec7dc7dbe5c5e82c43b80039920b7cc38533688bf9f6a4",
+      "elev": 141,
+      "sourceVolumeRatio": 0.9996527654129617,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.023147220776892456,
+        23.515817498076817
+      ],
+      "surfaceAdjacentJRange": [
+        0.023147220776892456,
+        9.838161555216239
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.023143027569651253,
+      "maxDepthIncreaseMm": 0.0006139528223694235,
+      "actualDistanceResidualMm": 0.00026106382372795766
+    },
+    {
+      "file": "039-reference-e141d375-p0-k30.npz",
+      "snapshotSha256": "3d85623b299a8c653f90c541970f4db1259b7ecbf2726ee0558a4cccdf857fd2",
+      "elev": 141.375,
+      "sourceVolumeRatio": 0.9996576669396993,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.022376116978575,
+        23.933634228747405
+      ],
+      "surfaceAdjacentJRange": [
+        0.022376116978575,
+        9.828997038497995
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.022381366663717223,
+      "maxDepthIncreaseMm": 0.0006166316476479139,
+      "actualDistanceResidualMm": 2.7169484194152047e-06
+    },
+    {
+      "file": "040-reference-e141d75-p0-k30.npz",
+      "snapshotSha256": "6e1ffb1d06ade33a15e978c9af73eb850b0ddc34f3f032050592fad7b644d9fd",
+      "elev": 141.75,
+      "sourceVolumeRatio": 0.9996625859307813,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.021644757752591937,
+        24.355651115779207
+      ],
+      "surfaceAdjacentJRange": [
+        0.021644757752591937,
+        9.820415891092216
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.021620009442658274,
+      "maxDepthIncreaseMm": 0.0006193174765449783,
+      "actualDistanceResidualMm": 5.951021871322625e-07
+    },
+    {
+      "file": "041-reference-e142d125-p0-k30.npz",
+      "snapshotSha256": "6edb40ca3b353a5b8e101121d35accd7f8c7b7162c6efabb5b29e80d6eb493f1",
+      "elev": 142.125,
+      "sourceVolumeRatio": 0.9996675167196327,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.020952418895065356,
+        24.781478539846905
+      ],
+      "surfaceAdjacentJRange": [
+        0.020952418895065356,
+        9.812411345190213
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.020925325421049443,
+      "maxDepthIncreaseMm": 0.0006220091221798008,
+      "actualDistanceResidualMm": 7.528824060085885e-06
+    },
+    {
+      "file": "042-reference-e142d5-p0-k30.npz",
+      "snapshotSha256": "55fa53bfa764745bb10a320d9438c04fdbd6b0e9091868958a3ce83f5a89ec31",
+      "elev": 142.5,
+      "sourceVolumeRatio": 0.9996724525605611,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.020297166882984503,
+        25.21066929011676
+      ],
+      "surfaceAdjacentJRange": [
+        0.020297166882984503,
+        9.80498061733556
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.020295559238924756,
+      "maxDepthIncreaseMm": 0.00062470598275155,
+      "actualDistanceResidualMm": 9.326011189142456e-08
+    },
+    {
+      "file": "043-reference-e142d875-p0-k30.npz",
+      "snapshotSha256": "e8023770ff8b155d5b6eca3b3694ab040406f4c3de282acd1b4270291a81a3cc",
+      "elev": 142.875,
+      "sourceVolumeRatio": 0.9996773860531094,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.019677164221716847,
+        25.642740886297613
+      ],
+      "surfaceAdjacentJRange": [
+        0.019677164221716847,
+        9.79812695175032
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.019667852101662508,
+      "maxDepthIncreaseMm": 0.00062740812812212,
+      "actualDistanceResidualMm": 2.6709226252710743e-07
+    },
+    {
+      "file": "044-reference-e143d25-p0-k30.npz",
+      "snapshotSha256": "afb11de4d735ffcb91f4f14ff5b8c98774d7aa6c28084271e6e58cf591186952",
+      "elev": 143.25,
+      "sourceVolumeRatio": 0.9996823096053583,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.019090672019588462,
+        26.077145160189755
+      ],
+      "surfaceAdjacentJRange": [
+        0.019090672019588462,
+        9.79186176353879
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.019103307443854918,
+      "maxDepthIncreaseMm": 0.0006301163564130796,
+      "actualDistanceResidualMm": 1.9733433609312755e-07
+    },
+    {
+      "file": "045-reference-e143d625-p0-k30.npz",
+      "snapshotSha256": "883904977bf69f037936d430ddf72740af148211aacf34bb700541e191dd5e16",
+      "elev": 143.625,
+      "sourceVolumeRatio": 0.9996872157735385,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.018536050719285317,
+        26.51311860572881
+      ],
+      "surfaceAdjacentJRange": [
+        0.018536050719285317,
+        9.786206718437123
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.018541890842666275,
+      "maxDepthIncreaseMm": 0.0006328316513815047,
+      "actualDistanceResidualMm": 1.2917880422954738e-07
+    },
+    {
+      "file": "046-reference-e144-p0-k30.npz",
+      "snapshotSha256": "770149ce271067428cf18644186907844e728b2f710d910ccd450bdad7ae2776",
+      "elev": 144,
+      "sourceVolumeRatio": 0.9996920973882509,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.018011761822180426,
+        26.949301223441893
+      ],
+      "surfaceAdjacentJRange": [
+        0.018011761822180426,
+        9.781195460495166
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.018042950372616173,
+      "maxDepthIncreaseMm": 0.0006355569218494672,
+      "actualDistanceResidualMm": 8.484607093090342e-08
+    },
+    {
+      "file": "047-reference-e144d375-p0-k30.npz",
+      "snapshotSha256": "6883518659151a24af5c77a0276cf3f7269b7b50af16a100151b081088e0e273",
+      "elev": 144.375,
+      "sourceVolumeRatio": 0.9996969483811964,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.01751633003742371,
+        27.382914337580644
+      ],
+      "surfaceAdjacentJRange": [
+        0.01751633003742371,
+        9.776874570780972
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.01754645161086884,
+      "maxDepthIncreaseMm": 0.0006382968025491209,
+      "actualDistanceResidualMm": 0.0009300524239233815
+    },
+    {
+      "file": "048-reference-e144d75-p0-k30.npz",
+      "snapshotSha256": "93f8779eb2d5b9d724dce317c6202c5fc11ec9934edf07b3760fcc7bd8a529aa",
+      "elev": 144.75,
+      "sourceVolumeRatio": 0.9997017782307068,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.017048101031659584,
+        27.80760736216523
+      ],
+      "surfaceAdjacentJRange": [
+        0.017048101031659584,
+        9.773291730312168
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.01704751114081827,
+      "maxDepthIncreaseMm": 0.0006410552410249792,
+      "actualDistanceResidualMm": 0.0007938909719713361
+    },
+    {
+      "file": "049-reference-e145d125-p0-k30.npz",
+      "snapshotSha256": "15c35113993cf3a410eac836eb773b93dd86bb5a44730ad346c7d2464316566a",
+      "elev": 145.125,
+      "sourceVolumeRatio": 0.9997065420929228,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.016607144170383444,
+        28.226558703877167
+      ],
+      "surfaceAdjacentJRange": [
+        0.016607144170383444,
+        9.770487719473827
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.0166128021619154,
+      "maxDepthIncreaseMm": 0.0006438008974125609,
+      "actualDistanceResidualMm": 0.0007447565161002893
+    },
+    {
+      "file": "050-reference-e145d5-p0-k30.npz",
+      "snapshotSha256": "cf4567d8f56458928f29d867ba285b25ab97bf874d4f98e1c4d4f209c4b99dcc",
+      "elev": 145.5,
+      "sourceVolumeRatio": 0.9997111983634799,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.01619297058770631,
+        28.642546683945973
+      ],
+      "surfaceAdjacentJRange": [
+        0.01619297058770631,
+        9.768615284917109
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.01617877953132751,
+      "maxDepthIncreaseMm": 0.0006465389558347745,
+      "actualDistanceResidualMm": 0.000678096962632294
+    },
+    {
+      "file": "051-reference-e145d875-p0-k30.npz",
+      "snapshotSha256": "5bade10ad50d1591f814de20941951107b43252a68e506aca37eb1876edd00bd",
+      "elev": 145.875,
+      "sourceVolumeRatio": 0.9997157453050657,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.015804381620514497,
+        29.051966342866567
+      ],
+      "surfaceAdjacentJRange": [
+        0.015804381620514497,
+        9.767868829943197
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.01580937105532639,
+      "maxDepthIncreaseMm": 0.0006492496935588399,
+      "actualDistanceResidualMm": 0.0006269158474164738
+    },
+    {
+      "file": "052-reference-e146d25-p0-k30.npz",
+      "snapshotSha256": "81d68034a6adc6e9ce4bfa75d868c89d4b230187850c4d2b7cc3902e8040f49c",
+      "elev": 146.25,
+      "sourceVolumeRatio": 0.99972018943416,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.015440937681435122,
+        29.441041316433157
+      ],
+      "surfaceAdjacentJRange": [
+        0.015440937681435122,
+        9.768587323429129
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.015436148174411931,
+      "maxDepthIncreaseMm": 0.0006512990193154877,
+      "actualDistanceResidualMm": 5.00196336760487e-07
+    },
+    {
+      "file": "053-reference-e146d625-p0-k30.npz",
+      "snapshotSha256": "36f255e98a0decc03d2e620acb0b0f56550b40fdb8b34dfebdc84fce3444171d",
+      "elev": 146.625,
+      "sourceVolumeRatio": 0.9997249752924111,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.015100119823608192,
+        29.53682853404934
+      ],
+      "surfaceAdjacentJRange": [
+        0.015100119823608192,
+        9.771110610970915
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.015114116167086286,
+      "maxDepthIncreaseMm": 0.0006541981765946225,
+      "actualDistanceResidualMm": 2.6187535198670962e-08
+    },
+    {
+      "file": "054-reference-e147-p0-k30.npz",
+      "snapshotSha256": "cc17a6ada9acf64c7702ef7db39acec674a77eedfbde34337829fb8c8fbad407",
+      "elev": 147,
+      "sourceVolumeRatio": 0.9997293357982546,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.01478547695577916,
+        29.88085347565436
+      ],
+      "surfaceAdjacentJRange": [
+        0.01478547695577916,
+        9.775687249209502
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.01479757494609754,
+      "maxDepthIncreaseMm": 0.000657097769195758,
+      "actualDistanceResidualMm": 1.6196038465802826e-07
+    },
+    {
+      "file": "055-reference-e147d375-p0-k30.npz",
+      "snapshotSha256": "ec263da54e46f0a0b9ea7bc121a29380eff06f5cde99ef4d49c991411b76c5b1",
+      "elev": 147.375,
+      "sourceVolumeRatio": 0.9997335124314156,
+      "attachmentMaxMm": 0.0,
+      "cageJRange": [
+        0.014495301654264338,
+        30.203538986604848
+      ],
+      "surfaceAdjacentJRange": [
+        0.014495301654264338,
+        9.783542445081377
+      ],
+      "surfaceAdjacentCellCount": 3743,
+      "sourceOpposedFaces": 0,
+      "cageNonPositive": 0,
+      "float32StorageCageNonPositive": 0,
+      "float32StorageJMin": 0.014475925602169397,
+      "maxDepthIncreaseMm": 0.0006599624892094091,
+      "actualDistanceResidualMm": 4.896812349215078e-07
+    }
+  ],
+  "limitations": [
+    "Surface-adjacent local J outliers reported, not hidden in background cell averages",
+    "Bone depth copied from final actual-distance solve; independent world-space bone audit is separate",
+    "Float32 storage is not a new GPU solver consistency test",
+    "No global self-collision or mobile FPS certification"
+  ]
+}

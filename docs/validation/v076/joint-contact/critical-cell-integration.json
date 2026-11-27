@@ -1,0 +1,106 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "weightsChanged": false,
+  "codeSha256": {
+    "audit-cell-integration.py": "c050f429382a60a2b0049313a5cfbd70098d20a2a45fc2d08bafe6464dc3edde",
+    "tet_intersection.py": "0073caff8ad264af37c53c5e2207f21a0570cd1405268fdfd32839a899d127d8"
+  },
+  "method": "convex fine-tet/cage-tet intersection; not exact rational arithmetic",
+  "sourceVolumeMm3": 92349.34400458795,
+  "rows": [
+    {
+      "cell": 229,
+      "cageVolumeMm3": 0.001024253168048099,
+      "fineTetrahedraCandidates": 27,
+      "intersectionVolumeMm3": 0.0007277125601768211,
+      "existingWeightEquivalentVolumeMm3": 4.810255157568787e-05,
+      "existingOverIntersectionRatio": 0.06610103247908736,
+      "statuses": {
+        "rank-unresolved-or-contact": 24,
+        "separated-by-tetrahedral-face": 2,
+        "positive-volume": 1
+      },
+      "rankUnresolvedOrContactFineTets": [
+        15665,
+        15451,
+        37922,
+        15172,
+        15683,
+        15682,
+        15517,
+        15580,
+        15674,
+        15689,
+        15590,
+        15531,
+        15681,
+        15595,
+        15596,
+        15518,
+        15581,
+        15537,
+        15657,
+        15557,
+        15605,
+        15488,
+        15190,
+        15512
+      ],
+      "seconds": 0.025755882263183594
+    },
+    {
+      "cell": 15247,
+      "cageVolumeMm3": 0.006120057525002356,
+      "fineTetrahedraCandidates": 53,
+      "intersectionVolumeMm3": 0.0,
+      "existingWeightEquivalentVolumeMm3": 0.0011544612378165669,
+      "existingOverIntersectionRatio": null,
+      "statuses": {
+        "rank-unresolved-or-contact": 33,
+        "separated-by-tetrahedral-face": 15,
+        "empty-or-lower-dimensional": 5
+      },
+      "rankUnresolvedOrContactFineTets": [
+        40106,
+        40580,
+        40663,
+        40715,
+        23887,
+        32270,
+        40690,
+        39891,
+        40427,
+        40430,
+        202,
+        40102,
+        49432,
+        49739,
+        40453,
+        41599,
+        19983,
+        34576,
+        41248,
+        15154,
+        40704,
+        35627,
+        35679,
+        45831,
+        4906,
+        23681,
+        48649,
+        4831,
+        12943,
+        45741,
+        24564,
+        620,
+        557
+      ],
+      "seconds": 0.06315374374389648
+    }
+  ],
+  "inputSha256": {
+    "test-results/v076-plc-surface-refined-mid-acromial-18/cage.npz": "ff39df24b7298c66204c83bb34a2976f71cc6b31b55b52038274187c057879cd",
+    "test-results/v076-acromial-volume-input/deltoid-mid-tetrahedra.npz": "a171a0110cfe054e362ae998c33546a03d8e4d6c0f6b24e8690f2d60f64c4c99"
+  }
+}

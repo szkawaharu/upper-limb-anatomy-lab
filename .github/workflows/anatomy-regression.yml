@@ -60,6 +60,9 @@ jobs:
           python scripts/experimental/test-source-cage.py
           python scripts/experimental/test-snapshot-names.py
           python scripts/experimental/test-bone-sets.py
+          python scripts/experimental/test-joint-path.py
+          python scripts/experimental/test-actual-bone-contact.py
+          python scripts/experimental/test-tet-intersection.py
   real-source-reference:
     name: Full source continuity reference (not anatomical acceptance)
     runs-on: ubuntu-latest

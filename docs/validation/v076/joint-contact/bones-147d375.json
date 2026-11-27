@@ -1,0 +1,99 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "modelId": "v60DeltMid",
+  "boneCoverage": {
+    "bones": [
+      {
+        "key": "a",
+        "boneId": "scapula",
+        "file": "FMA13395.stl"
+      },
+      {
+        "key": "b",
+        "boneId": "humerus",
+        "file": "FMA23130.stl"
+      }
+    ],
+    "limitations": [
+      "Only scapula and humerus; not all neighboring bones or tissues"
+    ]
+  },
+  "pose": {
+    "elev": 147.375,
+    "plane": 0,
+    "a": {
+      "q": [
+        0.25686459921283333,
+        0.05383132253054945,
+        0.29762144339961893,
+        0.917902087814692
+      ],
+      "p": [
+        0.47898980763922766,
+        1.9801097291588654,
+        0.3804526491406659
+      ],
+      "rest": [
+        0.7390595895000001,
+        1.790368874,
+        0.134615219
+      ]
+    },
+    "b": {
+      "q": [
+        0.02703008378007738,
+        -0.024985557022062663,
+        0.923937011802985,
+        0.3807696084664725
+      ],
+      "p": [
+        0.6262796958155196,
+        1.9321066285437756,
+        0.24874025848974418
+      ],
+      "rest": [
+        0.824725116,
+        1.61447228,
+        0.07922055800000001
+      ]
+    },
+    "backend": "validated-field"
+  },
+  "input": "test-results/v076-mid-actual-energy-path/055-reference-e147d375-p0-k30.npz",
+  "inputSha256": "ec263da54e46f0a0b9ea7bc121a29380eff06f5cde99ef4d49c991411b76c5b1",
+  "bones": [
+    {
+      "bone": "FMA13395.stl",
+      "sourceSha256": "c0a3afd469db1fec9527bb81ec1f0956876d3d64d3acbf3a083619d4e7ce297b",
+      "closed": true,
+      "surfacePoints": 38712,
+      "restInsidePoints": 94,
+      "posedInsidePoints": 94,
+      "newInsidePoints": 0,
+      "maxRestDepthMm": 0.10195669388528884,
+      "maxPosedDepthMm": 0.10195669388528758,
+      "maxDepthIncreaseMm": 7.426177728309113e-14,
+      "worstSurfaceVertex": 14737,
+      "increaseOverOneMm": 0,
+      "increaseOverPointOneMm": 0,
+      "classification": "vertex-in-shell and vertex-triangle distance; full surface crossings still separate"
+    },
+    {
+      "bone": "FMA23130.stl",
+      "sourceSha256": "6e26ad2b9794b136000abe2cc0b54cade989b943214e2149732cc2db2e337dce",
+      "closed": true,
+      "surfacePoints": 38712,
+      "restInsidePoints": 978,
+      "posedInsidePoints": 888,
+      "newInsidePoints": 0,
+      "maxRestDepthMm": 4.075316219985193,
+      "maxPosedDepthMm": 4.056812834751915,
+      "maxDepthIncreaseMm": 0.0006599624891188149,
+      "worstSurfaceVertex": 22857,
+      "increaseOverOneMm": 0,
+      "increaseOverPointOneMm": 0,
+      "classification": "vertex-in-shell and vertex-triangle distance; full surface crossings still separate"
+    }
+  ]
+}

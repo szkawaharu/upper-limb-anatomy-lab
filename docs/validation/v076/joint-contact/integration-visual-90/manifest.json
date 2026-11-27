@@ -1,0 +1,14 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "sameFinalBonesAndCameras": true,
+  "inputsSha256": {
+    "docs/validation/v076/contact-reference/deltoid-90/comparison.json": "35b789c8d1b8b35ef0545feacc8ee3e646d5d7c48ef9972a98b2c261d0302816",
+    "test-results/v076-mid-intersection-visual-90/comparison.json": "4ba8f5121d0ab99e4979bf9f6a139daa757ca2a3b0e3564aba28eb30d30bbc9b"
+  },
+  "limitations": [
+    "One reference muscle/pose",
+    "Other muscles remain production curve engine",
+    "No medical, whole-ROM or mobile/GPU solver acceptance"
+  ]
+}
