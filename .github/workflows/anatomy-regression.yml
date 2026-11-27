@@ -63,6 +63,7 @@ jobs:
           python scripts/experimental/test-joint-path.py
           python scripts/experimental/test-actual-bone-contact.py
           python scripts/experimental/test-tet-intersection.py
+          python scripts/experimental/test-local-volume-constraints.py
   real-source-reference:
     name: Full source continuity reference (not anatomical acceptance)
     runs-on: ubuntu-latest
