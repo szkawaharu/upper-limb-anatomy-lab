@@ -1,0 +1,39 @@
+name: v0.76 continuous shoulder candidate source screening
+on:
+  push:
+    branches: [redesign/v076-shoulder]
+    paths:
+      - '.github/workflows/v076-shoulder-continuous.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  continuous-sweep:
+    strategy:
+      fail-fast: false
+      matrix:
+        plane: [0, 20, 40, 65, 90]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      QA_SHOULDER_MODE: continuous
+      QA_SHOULDER_PLANE: ${{ matrix.plane }}
+      QA_SHOULDER_STEP: 5
+      QA_SHOULDER_OUT: test-results/v076-continuous-${{ matrix.plane }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: node tests/v076-continuous-shoulder-blend.mjs
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: node scripts/calibration/recording-shoulder-candidates.mjs
+      - run: python scripts/calibration/verify-recording-shoulder-candidates.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shoulder-continuous-${{ matrix.plane }}
+          path: test-results/v076-continuous-${{ matrix.plane }}/
