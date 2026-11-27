@@ -1,0 +1,2458 @@
+{
+  "runId": 46068672647,
+  "headSha": "90169e869ebc605f9c48b13d320f016704a1d7ed",
+  "results": [
+    {
+      "jobId": 140740069934,
+      "name": "continuous-sweep (65)",
+      "summary": {
+        "poses": 37,
+        "rows": 73,
+        "controlRejected": [],
+        "candidateRejected": [],
+        "fixedQuarterRejected": [],
+        "improved": [
+          {
+            "elev": 20,
+            "plane": 65,
+            "alpha": 0.125,
+            "controlRms": 2.609635865208135,
+            "candidateRms": 2.6089001484999668
+          },
+          {
+            "elev": 45,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 4.025452585405895,
+            "candidateRms": 3.9882662011646897
+          },
+          {
+            "elev": 50,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 4.673294507274895,
+            "candidateRms": 4.574142403757791
+          },
+          {
+            "elev": 55,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 5.335238915264187,
+            "candidateRms": 5.163032322630197
+          },
+          {
+            "elev": 60,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 5.8778302157624704,
+            "candidateRms": 5.652448081806363
+          },
+          {
+            "elev": 65,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 6.326427004358183,
+            "candidateRms": 6.071308540445079
+          },
+          {
+            "elev": 70,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 7.057527041034417,
+            "candidateRms": 6.704020323495241
+          },
+          {
+            "elev": 75,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 7.857867921192236,
+            "candidateRms": 7.399176051487035
+          },
+          {
+            "elev": 80,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 8.33978812652825,
+            "candidateRms": 7.836498556027135
+          },
+          {
+            "elev": 85,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 8.619394495215499,
+            "candidateRms": 8.126636752684922
+          },
+          {
+            "elev": 90,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 8.796635330370322,
+            "candidateRms": 8.320112219603017
+          },
+          {
+            "elev": 95,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 8.967745319919215,
+            "candidateRms": 8.4876529789046
+          },
+          {
+            "elev": 100,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 9.23055272297325,
+            "candidateRms": 8.702395094905858
+          },
+          {
+            "elev": 105,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 9.700696761599275,
+            "candidateRms": 9.052787623162327
+          },
+          {
+            "elev": 110,
+            "plane": 65,
+            "alpha": 0.23379629629629628,
+            "controlRms": 10.143165059369554,
+            "candidateRms": 9.432848621593513
+          },
+          {
+            "elev": 115,
+            "plane": 65,
+            "alpha": 0.20370370370370372,
+            "controlRms": 10.569862132488295,
+            "candidateRms": 9.869924252282441
+          },
+          {
+            "elev": 120,
+            "plane": 65,
+            "alpha": 0.1875,
+            "controlRms": 10.973274692871133,
+            "candidateRms": 10.282242603496138
+          },
+          {
+            "elev": 125,
+            "plane": 65,
+            "alpha": 0.2037037037037037,
+            "controlRms": 11.433631643320988,
+            "candidateRms": 10.681488415557341
+          },
+          {
+            "elev": 130,
+            "plane": 65,
+            "alpha": 0.23379629629629628,
+            "controlRms": 11.858404850564453,
+            "candidateRms": 11.011864270501757
+          },
+          {
+            "elev": 135,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 12.211347648379586,
+            "candidateRms": 11.314054699431832
+          },
+          {
+            "elev": 140,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 12.3189819446549,
+            "candidateRms": 11.425039108784732
+          },
+          {
+            "elev": 145,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 12.317369326029192,
+            "candidateRms": 11.423796169843817
+          },
+          {
+            "elev": 150,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 12.317369326029192,
+            "candidateRms": 11.423796169843817
+          },
+          {
+            "elev": 155,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 12.317369326029192,
+            "candidateRms": 11.423796169843817
+          },
+          {
+            "elev": 160,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 12.317369326029192,
+            "candidateRms": 11.423796169843817
+          },
+          {
+            "elev": 165,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 12.317369326029192,
+            "candidateRms": 11.423796169843817
+          },
+          {
+            "elev": 170,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 12.317369326029192,
+            "candidateRms": 11.423796169843817
+          },
+          {
+            "elev": 175,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 12.317369326029192,
+            "candidateRms": 11.423796169843817
+          },
+          {
+            "elev": 180,
+            "plane": 65,
+            "alpha": 0.25,
+            "controlRms": 12.317369326029192,
+            "candidateRms": 11.423796169843817
+          }
+        ],
+        "noImprovement": [
+          {
+            "elev": 5,
+            "plane": 65
+          },
+          {
+            "elev": 10,
+            "plane": 65
+          },
+          {
+            "elev": 15,
+            "plane": 65
+          },
+          {
+            "elev": 25,
+            "plane": 65
+          },
+          {
+            "elev": 30,
+            "plane": 65
+          },
+          {
+            "elev": 35,
+            "plane": 65
+          },
+          {
+            "elev": 40,
+            "plane": 65
+          }
+        ],
+        "productAccepted": false
+      },
+      "pairs": [
+        {
+          "elev": 5,
+          "plane": 65,
+          "alpha": 0.032407407407407406,
+          "rmsDelta": -0.00010892548648522293,
+          "priorDelta": 0.00004310648869387812
+        },
+        {
+          "elev": 10,
+          "plane": 65,
+          "alpha": 0.09259259259259259,
+          "rmsDelta": 0.0002858903755611486,
+          "priorDelta": -0.00017295303857156608
+        },
+        {
+          "elev": 15,
+          "plane": 65,
+          "alpha": 0.125,
+          "rmsDelta": 2.1210249556702365e-8,
+          "priorDelta": -2.728706927079827e-9
+        },
+        {
+          "elev": 20,
+          "plane": 65,
+          "alpha": 0.125,
+          "rmsDelta": -0.0007357167081680771,
+          "priorDelta": -0.011348705158609751
+        },
+        {
+          "elev": 25,
+          "plane": 65,
+          "alpha": 0.125,
+          "rmsDelta": 0.0014619546955820795,
+          "priorDelta": -0.024877338448109576
+        },
+        {
+          "elev": 30,
+          "plane": 65,
+          "alpha": 0.125,
+          "rmsDelta": 0.00645317064612394,
+          "priorDelta": -0.04425090063163528
+        },
+        {
+          "elev": 35,
+          "plane": 65,
+          "alpha": 0.1574074074074074,
+          "rmsDelta": 0.01189381965600278,
+          "priorDelta": -0.09268827585176553
+        },
+        {
+          "elev": 40,
+          "plane": 65,
+          "alpha": 0.2175925925925926,
+          "rmsDelta": 0.007979284322633617,
+          "priorDelta": -0.18701964113094505
+        },
+        {
+          "elev": 45,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.03718638424120524,
+          "priorDelta": -0.29051982873383975
+        },
+        {
+          "elev": 50,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.09915210351710435,
+          "priorDelta": -0.3663263394091032
+        },
+        {
+          "elev": 55,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.17220659263398996,
+          "priorDelta": -0.43976183250547507
+        },
+        {
+          "elev": 60,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.2253821339561073,
+          "priorDelta": -0.5071203590683302
+        },
+        {
+          "elev": 65,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.2551184639131039,
+          "priorDelta": -0.5763511625098592
+        },
+        {
+          "elev": 70,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.35350671753917595,
+          "priorDelta": -0.6548315191915632
+        },
+        {
+          "elev": 75,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.45869186970520115,
+          "priorDelta": -0.7182463396119236
+        },
+        {
+          "elev": 80,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.5032895705011144,
+          "priorDelta": -0.7739133571627805
+        },
+        {
+          "elev": 85,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.4927577425305767,
+          "priorDelta": -0.8289497212589905
+        },
+        {
+          "elev": 90,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.4765231107673049,
+          "priorDelta": -0.8935564772406712
+        },
+        {
+          "elev": 95,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.48009234101461473,
+          "priorDelta": -0.9707142007644838
+        },
+        {
+          "elev": 100,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.5281576280673921,
+          "priorDelta": -1.0523338799576667
+        },
+        {
+          "elev": 105,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.6479091384369475,
+          "priorDelta": -1.1321029654135453
+        },
+        {
+          "elev": 110,
+          "plane": 65,
+          "alpha": 0.23379629629629628,
+          "rmsDelta": -0.7103164377760418,
+          "priorDelta": -1.124517710039652
+        },
+        {
+          "elev": 115,
+          "plane": 65,
+          "alpha": 0.20370370370370372,
+          "rmsDelta": -0.6999378802058533,
+          "priorDelta": -1.0278019417082511
+        },
+        {
+          "elev": 120,
+          "plane": 65,
+          "alpha": 0.1875,
+          "rmsDelta": -0.6910320893749944,
+          "priorDelta": -0.9802325460102148
+        },
+        {
+          "elev": 125,
+          "plane": 65,
+          "alpha": 0.2037037037037037,
+          "rmsDelta": -0.7521432277636464,
+          "priorDelta": -1.065466828213328
+        },
+        {
+          "elev": 130,
+          "plane": 65,
+          "alpha": 0.23379629629629628,
+          "rmsDelta": -0.8465405800626957,
+          "priorDelta": -1.2005084522507543
+        },
+        {
+          "elev": 135,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.8972929489477544,
+          "priorDelta": -1.2909602478130502
+        },
+        {
+          "elev": 140,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.8939428358701669,
+          "priorDelta": -1.2938752323210334
+        },
+        {
+          "elev": 145,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.8935731561853757,
+          "priorDelta": -1.2939612428680185
+        },
+        {
+          "elev": 150,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.8935731561853757,
+          "priorDelta": -1.2939612428680185
+        },
+        {
+          "elev": 155,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.8935731561853757,
+          "priorDelta": -1.2939612428680185
+        },
+        {
+          "elev": 160,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.8935731561853757,
+          "priorDelta": -1.2939612428680185
+        },
+        {
+          "elev": 165,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.8935731561853757,
+          "priorDelta": -1.2939612428680185
+        },
+        {
+          "elev": 170,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.8935731561853757,
+          "priorDelta": -1.2939612428680185
+        },
+        {
+          "elev": 175,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.8935731561853757,
+          "priorDelta": -1.2939612428680185
+        },
+        {
+          "elev": 180,
+          "plane": 65,
+          "alpha": 0.25,
+          "rmsDelta": -0.8935731561853757,
+          "priorDelta": -1.2939612428680185
+        }
+      ]
+    },
+    {
+      "jobId": 140740070141,
+      "name": "continuous-sweep (20)",
+      "summary": {
+        "poses": 37,
+        "rows": 70,
+        "controlRejected": [],
+        "candidateRejected": [],
+        "fixedQuarterRejected": [],
+        "improved": [
+          {
+            "elev": 25,
+            "plane": 20,
+            "alpha": 0.09259259259259259,
+            "controlRms": 2.5126094820894367,
+            "candidateRms": 2.510645868469446
+          },
+          {
+            "elev": 30,
+            "plane": 20,
+            "alpha": 0.125,
+            "controlRms": 2.501400302846072,
+            "candidateRms": 2.494507920595702
+          },
+          {
+            "elev": 35,
+            "plane": 20,
+            "alpha": 0.1574074074074074,
+            "controlRms": 2.6543903807498443,
+            "candidateRms": 2.636852066985899
+          },
+          {
+            "elev": 40,
+            "plane": 20,
+            "alpha": 0.2175925925925926,
+            "controlRms": 2.902183376068652,
+            "candidateRms": 2.871769136123819
+          },
+          {
+            "elev": 45,
+            "plane": 20,
+            "alpha": 0.25,
+            "controlRms": 3.249274249627616,
+            "candidateRms": 3.2038003667099524
+          },
+          {
+            "elev": 50,
+            "plane": 20,
+            "alpha": 0.25,
+            "controlRms": 3.616876018183087,
+            "candidateRms": 3.5572815164687492
+          },
+          {
+            "elev": 55,
+            "plane": 20,
+            "alpha": 0.25,
+            "controlRms": 3.9948664253905553,
+            "candidateRms": 3.911527027922795
+          },
+          {
+            "elev": 60,
+            "plane": 20,
+            "alpha": 0.25,
+            "controlRms": 4.3915873392112275,
+            "candidateRms": 4.270429096829793
+          },
+          {
+            "elev": 65,
+            "plane": 20,
+            "alpha": 0.25,
+            "controlRms": 4.788096940950122,
+            "candidateRms": 4.633936633458428
+          },
+          {
+            "elev": 70,
+            "plane": 20,
+            "alpha": 0.25,
+            "controlRms": 5.30887516944591,
+            "candidateRms": 5.089181726670762
+          },
+          {
+            "elev": 75,
+            "plane": 20,
+            "alpha": 0.25,
+            "controlRms": 5.8234315264309275,
+            "candidateRms": 5.5572302780893965
+          },
+          {
+            "elev": 80,
+            "plane": 20,
+            "alpha": 0.23379629629629628,
+            "controlRms": 6.449679072808891,
+            "candidateRms": 6.112934713827413
+          },
+          {
+            "elev": 85,
+            "plane": 20,
+            "alpha": 0.20370370370370372,
+            "controlRms": 7.043904504585662,
+            "candidateRms": 6.652016684407838
+          },
+          {
+            "elev": 90,
+            "plane": 20,
+            "alpha": 0.1875,
+            "controlRms": 7.474135739405561,
+            "candidateRms": 7.052166298177536
+          },
+          {
+            "elev": 95,
+            "plane": 20,
+            "alpha": 0.1875,
+            "controlRms": 7.833930239952551,
+            "candidateRms": 7.365330283465386
+          },
+          {
+            "elev": 100,
+            "plane": 20,
+            "alpha": 0.1875,
+            "controlRms": 8.246697650942055,
+            "candidateRms": 7.713895900471634
+          },
+          {
+            "elev": 105,
+            "plane": 20,
+            "alpha": 0.1875,
+            "controlRms": 8.757249834602321,
+            "candidateRms": 8.143251655381018
+          },
+          {
+            "elev": 110,
+            "plane": 20,
+            "alpha": 0.17129629629629628,
+            "controlRms": 9.377084692056469,
+            "candidateRms": 8.734080181782762
+          },
+          {
+            "elev": 115,
+            "plane": 20,
+            "alpha": 0.14120370370370372,
+            "controlRms": 9.757090206639253,
+            "candidateRms": 9.192370932393267
+          },
+          {
+            "elev": 120,
+            "plane": 20,
+            "alpha": 0.125,
+            "controlRms": 10.02123884024799,
+            "candidateRms": 9.517696759385963
+          },
+          {
+            "elev": 125,
+            "plane": 20,
+            "alpha": 0.1412037037037037,
+            "controlRms": 10.290782446963668,
+            "candidateRms": 9.76454280677869
+          },
+          {
+            "elev": 130,
+            "plane": 20,
+            "alpha": 0.17129629629629628,
+            "controlRms": 11.179249758629336,
+            "candidateRms": 10.517506236340862
+          },
+          {
+            "elev": 135,
+            "plane": 20,
+            "alpha": 0.1875,
+            "controlRms": 12.492636868471902,
+            "candidateRms": 11.665140302031572
+          },
+          {
+            "elev": 140,
+            "plane": 20,
+            "alpha": 0.1875,
+            "controlRms": 12.644275703443178,
+            "candidateRms": 11.819609287294746
+          },
+          {
+            "elev": 145,
+            "plane": 20,
+            "alpha": 0.1875,
+            "controlRms": 12.641912415260768,
+            "candidateRms": 11.817644621949993
+          },
+          {
+            "elev": 150,
+            "plane": 20,
+            "alpha": 0.1875,
+            "controlRms": 12.641912415260768,
+            "candidateRms": 11.817644621949993
+          },
+          {
+            "elev": 155,
+            "plane": 20,
+            "alpha": 0.1875,
+            "controlRms": 12.641912415260768,
+            "candidateRms": 11.817644621949993
+          },
+          {
+            "elev": 160,
+            "plane": 20,
+            "alpha": 0.1875,
+            "controlRms": 12.641912415260768,
+            "candidateRms": 11.817644621949993
+          },
+          {
+            "elev": 165,
+            "plane": 20,
+            "alpha": 0.1875,
+            "controlRms": 12.641912415260768,
+            "candidateRms": 11.817644621949993
+          },
+          {
+            "elev": 170,
+            "plane": 20,
+            "alpha": 0.1875,
+            "controlRms": 12.641912415260768,
+            "candidateRms": 11.817644621949993
+          },
+          {
+            "elev": 175,
+            "plane": 20,
+            "alpha": 0.1875,
+            "controlRms": 12.641912415260768,
+            "candidateRms": 11.817644621949993
+          },
+          {
+            "elev": 180,
+            "plane": 20,
+            "alpha": 0.1875,
+            "controlRms": 12.641912415260768,
+            "candidateRms": 11.817644621949993
+          }
+        ],
+        "noImprovement": [
+          {
+            "elev": 5,
+            "plane": 20
+          },
+          {
+            "elev": 10,
+            "plane": 20
+          },
+          {
+            "elev": 15,
+            "plane": 20
+          },
+          {
+            "elev": 20,
+            "plane": 20
+          }
+        ],
+        "productAccepted": false
+      },
+      "pairs": [
+        {
+          "elev": 20,
+          "plane": 20,
+          "alpha": 0.032407407407407406,
+          "rmsDelta": 0.00006754883108373022,
+          "priorDelta": 0.000029955163862949163
+        },
+        {
+          "elev": 25,
+          "plane": 20,
+          "alpha": 0.09259259259259259,
+          "rmsDelta": -0.001963613619990756,
+          "priorDelta": -0.00256638472725379
+        },
+        {
+          "elev": 30,
+          "plane": 20,
+          "alpha": 0.125,
+          "rmsDelta": -0.006892382250370144,
+          "priorDelta": -0.01123526544903497
+        },
+        {
+          "elev": 35,
+          "plane": 20,
+          "alpha": 0.1574074074074074,
+          "rmsDelta": -0.017538313763945546,
+          "priorDelta": -0.0344091253339337
+        },
+        {
+          "elev": 40,
+          "plane": 20,
+          "alpha": 0.2175925925925926,
+          "rmsDelta": -0.030414239944833277,
+          "priorDelta": -0.07786280133258572
+        },
+        {
+          "elev": 45,
+          "plane": 20,
+          "alpha": 0.25,
+          "rmsDelta": -0.045473882917663744,
+          "priorDelta": -0.13337413453147295
+        },
+        {
+          "elev": 50,
+          "plane": 20,
+          "alpha": 0.25,
+          "rmsDelta": -0.05959450171433778,
+          "priorDelta": -0.19611421172912968
+        },
+        {
+          "elev": 55,
+          "plane": 20,
+          "alpha": 0.25,
+          "rmsDelta": -0.08333939746776009,
+          "priorDelta": -0.27020913404945146
+        },
+        {
+          "elev": 60,
+          "plane": 20,
+          "alpha": 0.25,
+          "rmsDelta": -0.12115824238143436,
+          "priorDelta": -0.3360865654424563
+        },
+        {
+          "elev": 65,
+          "plane": 20,
+          "alpha": 0.25,
+          "rmsDelta": -0.15416030749169352,
+          "priorDelta": -0.40830835512385466
+        },
+        {
+          "elev": 70,
+          "plane": 20,
+          "alpha": 0.25,
+          "rmsDelta": -0.21969344277514846,
+          "priorDelta": -0.5021636906564568
+        },
+        {
+          "elev": 75,
+          "plane": 20,
+          "alpha": 0.25,
+          "rmsDelta": -0.266201248341531,
+          "priorDelta": -0.6026789282007896
+        },
+        {
+          "elev": 80,
+          "plane": 20,
+          "alpha": 0.23379629629629628,
+          "rmsDelta": -0.3367443589814778,
+          "priorDelta": -0.6628821749212741
+        },
+        {
+          "elev": 85,
+          "plane": 20,
+          "alpha": 0.20370370370370372,
+          "rmsDelta": -0.391887820177824,
+          "priorDelta": -0.6647922334242873
+        },
+        {
+          "elev": 90,
+          "plane": 20,
+          "alpha": 0.1875,
+          "rmsDelta": -0.4219694412280255,
+          "priorDelta": -0.6843332141116178
+        },
+        {
+          "elev": 95,
+          "plane": 20,
+          "alpha": 0.1875,
+          "rmsDelta": -0.46859995648716435,
+          "priorDelta": -0.7516665594125085
+        },
+        {
+          "elev": 100,
+          "plane": 20,
+          "alpha": 0.1875,
+          "rmsDelta": -0.532801750470421,
+          "priorDelta": -0.8187070374438905
+        },
+        {
+          "elev": 105,
+          "plane": 20,
+          "alpha": 0.1875,
+          "rmsDelta": -0.6139981792213032,
+          "priorDelta": -0.8748563816843671
+        },
+        {
+          "elev": 110,
+          "plane": 20,
+          "alpha": 0.17129629629629628,
+          "rmsDelta": -0.6430045102737072,
+          "priorDelta": -0.8429876246284227
+        },
+        {
+          "elev": 115,
+          "plane": 20,
+          "alpha": 0.14120370370370372,
+          "rmsDelta": -0.5647192742459861,
+          "priorDelta": -0.729066755473256
+        },
+        {
+          "elev": 120,
+          "plane": 20,
+          "alpha": 0.125,
+          "rmsDelta": -0.5035420808620277,
+          "priorDelta": -0.6768325424724697
+        },
+        {
+          "elev": 125,
+          "plane": 20,
+          "alpha": 0.1412037037037037,
+          "rmsDelta": -0.5262396401849774,
+          "priorDelta": -0.8171731782208607
+        },
+        {
+          "elev": 130,
+          "plane": 20,
+          "alpha": 0.17129629629629628,
+          "rmsDelta": -0.6617435222884733,
+          "priorDelta": -1.087315949582944
+        },
+        {
+          "elev": 135,
+          "plane": 20,
+          "alpha": 0.1875,
+          "rmsDelta": -0.8274965664403293,
+          "priorDelta": -1.218806529212121
+        },
+        {
+          "elev": 140,
+          "plane": 20,
+          "alpha": 0.1875,
+          "rmsDelta": -0.8246664161484318,
+          "priorDelta": -1.2201795277040999
+        },
+        {
+          "elev": 145,
+          "plane": 20,
+          "alpha": 0.1875,
+          "rmsDelta": -0.8242677933107743,
+          "priorDelta": -1.220165822270955
+        },
+        {
+          "elev": 150,
+          "plane": 20,
+          "alpha": 0.1875,
+          "rmsDelta": -0.8242677933107743,
+          "priorDelta": -1.220165822270955
+        },
+        {
+          "elev": 155,
+          "plane": 20,
+          "alpha": 0.1875,
+          "rmsDelta": -0.8242677933107743,
+          "priorDelta": -1.220165822270955
+        },
+        {
+          "elev": 160,
+          "plane": 20,
+          "alpha": 0.1875,
+          "rmsDelta": -0.8242677933107743,
+          "priorDelta": -1.220165822270955
+        },
+        {
+          "elev": 165,
+          "plane": 20,
+          "alpha": 0.1875,
+          "rmsDelta": -0.8242677933107743,
+          "priorDelta": -1.220165822270955
+        },
+        {
+          "elev": 170,
+          "plane": 20,
+          "alpha": 0.1875,
+          "rmsDelta": -0.8242677933107743,
+          "priorDelta": -1.220165822270955
+        },
+        {
+          "elev": 175,
+          "plane": 20,
+          "alpha": 0.1875,
+          "rmsDelta": -0.8242677933107743,
+          "priorDelta": -1.220165822270955
+        },
+        {
+          "elev": 180,
+          "plane": 20,
+          "alpha": 0.1875,
+          "rmsDelta": -0.8242677933107743,
+          "priorDelta": -1.220165822270955
+        }
+      ]
+    },
+    {
+      "jobId": 140740070151,
+      "name": "continuous-sweep (40)",
+      "summary": {
+        "poses": 37,
+        "rows": 70,
+        "controlRejected": [],
+        "candidateRejected": [],
+        "fixedQuarterRejected": [],
+        "improved": [
+          {
+            "elev": 20,
+            "plane": 40,
+            "alpha": 0.06481481481481481,
+            "controlRms": 1.7674153548292466,
+            "candidateRms": 1.7665820907983665
+          },
+          {
+            "elev": 25,
+            "plane": 40,
+            "alpha": 0.18518518518518517,
+            "controlRms": 1.7550520335848299,
+            "candidateRms": 1.7477546791311476
+          },
+          {
+            "elev": 30,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 2.048729748561606,
+            "candidateRms": 2.0458186485393033
+          },
+          {
+            "elev": 40,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 2.8795104438919177,
+            "candidateRms": 2.872189601003836
+          },
+          {
+            "elev": 45,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 3.338738712420641,
+            "candidateRms": 3.3230371808665757
+          },
+          {
+            "elev": 50,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 3.8144599205942296,
+            "candidateRms": 3.7757602268935373
+          },
+          {
+            "elev": 55,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 4.28269775327175,
+            "candidateRms": 4.2022551374375166
+          },
+          {
+            "elev": 60,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 4.749003612009468,
+            "candidateRms": 4.6154417289717315
+          },
+          {
+            "elev": 65,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 5.183393774598924,
+            "candidateRms": 5.016247464109508
+          },
+          {
+            "elev": 70,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 5.818161096423141,
+            "candidateRms": 5.574504028391396
+          },
+          {
+            "elev": 75,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 6.466419249264099,
+            "candidateRms": 6.1554300561621185
+          },
+          {
+            "elev": 80,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 7.044981854446872,
+            "candidateRms": 6.665680430082783
+          },
+          {
+            "elev": 85,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 7.642410734520824,
+            "candidateRms": 7.172168401490269
+          },
+          {
+            "elev": 90,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 8.243811291764123,
+            "candidateRms": 7.670571040826127
+          },
+          {
+            "elev": 95,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 8.743344874738069,
+            "candidateRms": 8.083231146631904
+          },
+          {
+            "elev": 100,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 8.987451405321385,
+            "candidateRms": 8.298247550561749
+          },
+          {
+            "elev": 105,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 9.173794621042289,
+            "candidateRms": 8.453995000612174
+          },
+          {
+            "elev": 110,
+            "plane": 40,
+            "alpha": 0.2175925925925926,
+            "controlRms": 9.32327668045646,
+            "candidateRms": 8.655983722485553
+          },
+          {
+            "elev": 115,
+            "plane": 40,
+            "alpha": 0.1574074074074074,
+            "controlRms": 9.490623891382228,
+            "candidateRms": 8.98010192389892
+          },
+          {
+            "elev": 120,
+            "plane": 40,
+            "alpha": 0.125,
+            "controlRms": 9.681953327069374,
+            "candidateRms": 9.271122645841618
+          },
+          {
+            "elev": 125,
+            "plane": 40,
+            "alpha": 0.15740740740740738,
+            "controlRms": 10.867193487289818,
+            "candidateRms": 10.274345376076043
+          },
+          {
+            "elev": 130,
+            "plane": 40,
+            "alpha": 0.2175925925925926,
+            "controlRms": 12.262323197900672,
+            "candidateRms": 11.365415944492746
+          },
+          {
+            "elev": 135,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 13.098041889150515,
+            "candidateRms": 12.085385565846009
+          },
+          {
+            "elev": 140,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 13.299146664908672,
+            "candidateRms": 12.301204379167178
+          },
+          {
+            "elev": 145,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 13.29605213184477,
+            "candidateRms": 12.298847852389441
+          },
+          {
+            "elev": 150,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 13.29605213184477,
+            "candidateRms": 12.298847852389441
+          },
+          {
+            "elev": 155,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 13.29605213184477,
+            "candidateRms": 12.298847852389441
+          },
+          {
+            "elev": 160,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 13.29605213184477,
+            "candidateRms": 12.298847852389441
+          },
+          {
+            "elev": 165,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 13.29605213184477,
+            "candidateRms": 12.298847852389441
+          },
+          {
+            "elev": 170,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 13.29605213184477,
+            "candidateRms": 12.298847852389441
+          },
+          {
+            "elev": 175,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 13.29605213184477,
+            "candidateRms": 12.298847852389441
+          },
+          {
+            "elev": 180,
+            "plane": 40,
+            "alpha": 0.25,
+            "controlRms": 13.29605213184477,
+            "candidateRms": 12.298847852389441
+          }
+        ],
+        "noImprovement": [
+          {
+            "elev": 5,
+            "plane": 40
+          },
+          {
+            "elev": 10,
+            "plane": 40
+          },
+          {
+            "elev": 15,
+            "plane": 40
+          },
+          {
+            "elev": 35,
+            "plane": 40
+          }
+        ],
+        "productAccepted": false
+      },
+      "pairs": [
+        {
+          "elev": 20,
+          "plane": 40,
+          "alpha": 0.06481481481481481,
+          "rmsDelta": -0.000833264030880132,
+          "priorDelta": -0.001272524092247873
+        },
+        {
+          "elev": 25,
+          "plane": 40,
+          "alpha": 0.18518518518518517,
+          "rmsDelta": -0.007297354453682292,
+          "priorDelta": -0.014825990638557052
+        },
+        {
+          "elev": 30,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.0029111000223025485,
+          "priorDelta": -0.044748272623179486
+        },
+        {
+          "elev": 35,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": 0.0008255392561626884,
+          "priorDelta": -0.0954154724523848
+        },
+        {
+          "elev": 40,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.007320842888081547,
+          "priorDelta": -0.16023158272532334
+        },
+        {
+          "elev": 45,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.015701531554065173,
+          "priorDelta": -0.22938420791394276
+        },
+        {
+          "elev": 50,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.03869969370069226,
+          "priorDelta": -0.2996252141887241
+        },
+        {
+          "elev": 55,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.08044261583423307,
+          "priorDelta": -0.37212586634313327
+        },
+        {
+          "elev": 60,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.13356188303773653,
+          "priorDelta": -0.43126893838018443
+        },
+        {
+          "elev": 65,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.1671463104894162,
+          "priorDelta": -0.49319046549873713
+        },
+        {
+          "elev": 70,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.24365706803174536,
+          "priorDelta": -0.5719814446815361
+        },
+        {
+          "elev": 75,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.3109891931019808,
+          "priorDelta": -0.6589670461423922
+        },
+        {
+          "elev": 80,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.37930142436408953,
+          "priorDelta": -0.7465847434726385
+        },
+        {
+          "elev": 85,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.47024233303055496,
+          "priorDelta": -0.8404192497908811
+        },
+        {
+          "elev": 90,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.5732402509379959,
+          "priorDelta": -0.915380751147655
+        },
+        {
+          "elev": 95,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.6601137281061646,
+          "priorDelta": -0.9804231810520267
+        },
+        {
+          "elev": 100,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.6892038547596364,
+          "priorDelta": -1.04570896879045
+        },
+        {
+          "elev": 105,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.7197996204301145,
+          "priorDelta": -1.1116977143178834
+        },
+        {
+          "elev": 110,
+          "plane": 40,
+          "alpha": 0.2175925925925926,
+          "rmsDelta": -0.6672929579709077,
+          "priorDelta": -1.0252757051177577
+        },
+        {
+          "elev": 115,
+          "plane": 40,
+          "alpha": 0.1574074074074074,
+          "rmsDelta": -0.5105219674833084,
+          "priorDelta": -0.7859565041862746
+        },
+        {
+          "elev": 120,
+          "plane": 40,
+          "alpha": 0.125,
+          "rmsDelta": -0.4108306812277558,
+          "priorDelta": -0.667035914762784
+        },
+        {
+          "elev": 125,
+          "plane": 40,
+          "alpha": 0.15740740740740738,
+          "rmsDelta": -0.5928481112137742,
+          "priorDelta": -0.9211301617263414
+        },
+        {
+          "elev": 130,
+          "plane": 40,
+          "alpha": 0.2175925925925926,
+          "rmsDelta": -0.8969072534079263,
+          "priorDelta": -1.321845295242654
+        },
+        {
+          "elev": 135,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -1.0126563233045065,
+          "priorDelta": -1.508301173317645
+        },
+        {
+          "elev": 140,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.9979422857414946,
+          "priorDelta": -1.5032023172250133
+        },
+        {
+          "elev": 145,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.9972042794553282,
+          "priorDelta": -1.503365639423854
+        },
+        {
+          "elev": 150,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.9972042794553282,
+          "priorDelta": -1.503365639423854
+        },
+        {
+          "elev": 155,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.9972042794553282,
+          "priorDelta": -1.503365639423854
+        },
+        {
+          "elev": 160,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.9972042794553282,
+          "priorDelta": -1.503365639423854
+        },
+        {
+          "elev": 165,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.9972042794553282,
+          "priorDelta": -1.503365639423854
+        },
+        {
+          "elev": 170,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.9972042794553282,
+          "priorDelta": -1.503365639423854
+        },
+        {
+          "elev": 175,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.9972042794553282,
+          "priorDelta": -1.503365639423854
+        },
+        {
+          "elev": 180,
+          "plane": 40,
+          "alpha": 0.25,
+          "rmsDelta": -0.9972042794553282,
+          "priorDelta": -1.503365639423854
+        }
+      ]
+    },
+    {
+      "jobId": 140740070205,
+      "name": "continuous-sweep (0)",
+      "summary": {
+        "poses": 37,
+        "rows": 67,
+        "controlRejected": [],
+        "candidateRejected": [],
+        "fixedQuarterRejected": [],
+        "improved": [
+          {
+            "elev": 35,
+            "plane": 0,
+            "alpha": 0.06481481481481481,
+            "controlRms": 3.9598121423637003,
+            "candidateRms": 3.956787209553929
+          },
+          {
+            "elev": 40,
+            "plane": 0,
+            "alpha": 0.18518518518518517,
+            "controlRms": 4.088779908048516,
+            "candidateRms": 4.065885372762548
+          },
+          {
+            "elev": 45,
+            "plane": 0,
+            "alpha": 0.25,
+            "controlRms": 4.209869474142482,
+            "candidateRms": 4.16488391999971
+          },
+          {
+            "elev": 50,
+            "plane": 0,
+            "alpha": 0.25,
+            "controlRms": 4.349574594010968,
+            "candidateRms": 4.283458401953761
+          },
+          {
+            "elev": 55,
+            "plane": 0,
+            "alpha": 0.25,
+            "controlRms": 4.508244230856807,
+            "candidateRms": 4.430026091387946
+          },
+          {
+            "elev": 60,
+            "plane": 0,
+            "alpha": 0.25,
+            "controlRms": 4.733075676523968,
+            "candidateRms": 4.633923919412838
+          },
+          {
+            "elev": 65,
+            "plane": 0,
+            "alpha": 0.25,
+            "controlRms": 5.040863981670138,
+            "candidateRms": 4.897574078625766
+          },
+          {
+            "elev": 70,
+            "plane": 0,
+            "alpha": 0.25,
+            "controlRms": 5.4588404432772295,
+            "candidateRms": 5.247722914468679
+          },
+          {
+            "elev": 75,
+            "plane": 0,
+            "alpha": 0.25,
+            "controlRms": 5.984577552806871,
+            "candidateRms": 5.676934999318184
+          },
+          {
+            "elev": 80,
+            "plane": 0,
+            "alpha": 0.2175925925925926,
+            "controlRms": 6.469396781784472,
+            "candidateRms": 6.116576385582508
+          },
+          {
+            "elev": 85,
+            "plane": 0,
+            "alpha": 0.1574074074074074,
+            "controlRms": 6.917197201655374,
+            "candidateRms": 6.589274961655411
+          },
+          {
+            "elev": 90,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 7.241986052466225,
+            "candidateRms": 6.935577016902232
+          },
+          {
+            "elev": 95,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 7.585916031472101,
+            "candidateRms": 7.238895084143702
+          },
+          {
+            "elev": 100,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 7.999385237240208,
+            "candidateRms": 7.602733075873635
+          },
+          {
+            "elev": 105,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 8.419739252202596,
+            "candidateRms": 7.988260610421162
+          },
+          {
+            "elev": 110,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 8.974403654002067,
+            "candidateRms": 8.49891806837561
+          },
+          {
+            "elev": 115,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 9.717086928929314,
+            "candidateRms": 9.182178778886291
+          },
+          {
+            "elev": 120,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 10.366859507452773,
+            "candidateRms": 9.798684337174711
+          },
+          {
+            "elev": 125,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 10.652614365090415,
+            "candidateRms": 10.10053305352303
+          },
+          {
+            "elev": 130,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 10.796087834786414,
+            "candidateRms": 10.285304617654798
+          },
+          {
+            "elev": 135,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 10.877720752698394,
+            "candidateRms": 10.394553059201138
+          },
+          {
+            "elev": 140,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 10.88142537704332,
+            "candidateRms": 10.39929941234943
+          },
+          {
+            "elev": 145,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 10.8812922291706,
+            "candidateRms": 10.399171770025431
+          },
+          {
+            "elev": 150,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 10.8812922291706,
+            "candidateRms": 10.399171770025431
+          },
+          {
+            "elev": 155,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 10.8812922291706,
+            "candidateRms": 10.399171770025431
+          },
+          {
+            "elev": 160,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 10.8812922291706,
+            "candidateRms": 10.399171770025431
+          },
+          {
+            "elev": 165,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 10.8812922291706,
+            "candidateRms": 10.399171770025431
+          },
+          {
+            "elev": 170,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 10.8812922291706,
+            "candidateRms": 10.399171770025431
+          },
+          {
+            "elev": 175,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 10.8812922291706,
+            "candidateRms": 10.399171770025431
+          },
+          {
+            "elev": 180,
+            "plane": 0,
+            "alpha": 0.125,
+            "controlRms": 10.8812922291706,
+            "candidateRms": 10.399171770025431
+          }
+        ],
+        "noImprovement": [
+          {
+            "elev": 5,
+            "plane": 0
+          },
+          {
+            "elev": 10,
+            "plane": 0
+          },
+          {
+            "elev": 15,
+            "plane": 0
+          },
+          {
+            "elev": 20,
+            "plane": 0
+          },
+          {
+            "elev": 25,
+            "plane": 0
+          },
+          {
+            "elev": 30,
+            "plane": 0
+          }
+        ],
+        "productAccepted": false
+      },
+      "pairs": [
+        {
+          "elev": 35,
+          "plane": 0,
+          "alpha": 0.06481481481481481,
+          "rmsDelta": -0.0030249328097711192,
+          "priorDelta": -0.004483448578662563
+        },
+        {
+          "elev": 40,
+          "plane": 0,
+          "alpha": 0.18518518518518517,
+          "rmsDelta": -0.02289453528596841,
+          "priorDelta": -0.04027303066517063
+        },
+        {
+          "elev": 45,
+          "plane": 0,
+          "alpha": 0.25,
+          "rmsDelta": -0.044985554142772166,
+          "priorDelta": -0.10930126601898227
+        },
+        {
+          "elev": 50,
+          "plane": 0,
+          "alpha": 0.25,
+          "rmsDelta": -0.06611619205720665,
+          "priorDelta": -0.17184814408330928
+        },
+        {
+          "elev": 55,
+          "plane": 0,
+          "alpha": 0.25,
+          "rmsDelta": -0.07821813946886103,
+          "priorDelta": -0.2218504360879967
+        },
+        {
+          "elev": 60,
+          "plane": 0,
+          "alpha": 0.25,
+          "rmsDelta": -0.09915175711113022,
+          "priorDelta": -0.2714962160279808
+        },
+        {
+          "elev": 65,
+          "plane": 0,
+          "alpha": 0.25,
+          "rmsDelta": -0.14328990304437195,
+          "priorDelta": -0.36059036830108004
+        },
+        {
+          "elev": 70,
+          "plane": 0,
+          "alpha": 0.25,
+          "rmsDelta": -0.2111175288085505,
+          "priorDelta": -0.4618877569169384
+        },
+        {
+          "elev": 75,
+          "plane": 0,
+          "alpha": 0.25,
+          "rmsDelta": -0.3076425534886873,
+          "priorDelta": -0.5713191370042949
+        },
+        {
+          "elev": 80,
+          "plane": 0,
+          "alpha": 0.2175925925925926,
+          "rmsDelta": -0.35282039620196404,
+          "priorDelta": -0.5957042989854076
+        },
+        {
+          "elev": 85,
+          "plane": 0,
+          "alpha": 0.1574074074074074,
+          "rmsDelta": -0.32792223999996306,
+          "priorDelta": -0.4965758781233811
+        },
+        {
+          "elev": 90,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.306409035563993,
+          "priorDelta": -0.4437153129029001
+        },
+        {
+          "elev": 95,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.3470209473283985,
+          "priorDelta": -0.49235248654680586
+        },
+        {
+          "elev": 100,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.396652161366573,
+          "priorDelta": -0.5410266744237422
+        },
+        {
+          "elev": 105,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.43147864178143447,
+          "priorDelta": -0.5888612402348388
+        },
+        {
+          "elev": 110,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.4754855856264566,
+          "priorDelta": -0.6320502614441077
+        },
+        {
+          "elev": 115,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.5349081500430231,
+          "priorDelta": -0.6655741862133082
+        },
+        {
+          "elev": 120,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.568175170278062,
+          "priorDelta": -0.6890482200952714
+        },
+        {
+          "elev": 125,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.5520813115673846,
+          "priorDelta": -0.7208364229089996
+        },
+        {
+          "elev": 130,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.5107832171316158,
+          "priorDelta": -0.753564254814564
+        },
+        {
+          "elev": 135,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.48316769349725597,
+          "priorDelta": -0.7793025832055243
+        },
+        {
+          "elev": 140,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.48212596469388913,
+          "priorDelta": -0.7803991111393334
+        },
+        {
+          "elev": 145,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.4821204591451682,
+          "priorDelta": -0.7803567217457701
+        },
+        {
+          "elev": 150,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.4821204591451682,
+          "priorDelta": -0.7803567217457701
+        },
+        {
+          "elev": 155,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.4821204591451682,
+          "priorDelta": -0.7803567217457701
+        },
+        {
+          "elev": 160,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.4821204591451682,
+          "priorDelta": -0.7803567217457701
+        },
+        {
+          "elev": 165,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.4821204591451682,
+          "priorDelta": -0.7803567217457701
+        },
+        {
+          "elev": 170,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.4821204591451682,
+          "priorDelta": -0.7803567217457701
+        },
+        {
+          "elev": 175,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.4821204591451682,
+          "priorDelta": -0.7803567217457701
+        },
+        {
+          "elev": 180,
+          "plane": 0,
+          "alpha": 0.125,
+          "rmsDelta": -0.4821204591451682,
+          "priorDelta": -0.7803567217457701
+        }
+      ]
+    },
+    {
+      "jobId": 140740070246,
+      "name": "continuous-sweep (90)",
+      "summary": {
+        "poses": 37,
+        "rows": 72,
+        "controlRejected": [],
+        "candidateRejected": [],
+        "fixedQuarterRejected": [],
+        "improved": [
+          {
+            "elev": 5,
+            "plane": 90,
+            "alpha": 0.06481481481481481,
+            "controlRms": 1.0563678574948723,
+            "candidateRms": 1.0560626454424284
+          },
+          {
+            "elev": 15,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 3.9952405354197977,
+            "candidateRms": 3.989713416476832
+          },
+          {
+            "elev": 20,
+            "plane": 90,
+            "alpha": 0.18518518518518517,
+            "controlRms": 3.919499040004492,
+            "candidateRms": 3.915619310991019
+          },
+          {
+            "elev": 25,
+            "plane": 90,
+            "alpha": 0.06481481481481483,
+            "controlRms": 3.5116025642223825,
+            "candidateRms": 3.5112772779823866
+          },
+          {
+            "elev": 35,
+            "plane": 90,
+            "alpha": 0.06481481481481481,
+            "controlRms": 3.611964639783123,
+            "candidateRms": 3.611838192786684
+          },
+          {
+            "elev": 40,
+            "plane": 90,
+            "alpha": 0.18518518518518517,
+            "controlRms": 4.2026176550041185,
+            "candidateRms": 4.170671464229041
+          },
+          {
+            "elev": 45,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 4.94278903955342,
+            "candidateRms": 4.831946349638887
+          },
+          {
+            "elev": 50,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 5.58694727728104,
+            "candidateRms": 5.437077289019361
+          },
+          {
+            "elev": 55,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 6.445724899149396,
+            "candidateRms": 6.199883052499366
+          },
+          {
+            "elev": 60,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 7.320449051214738,
+            "candidateRms": 6.968714708027771
+          },
+          {
+            "elev": 65,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 7.801865094933109,
+            "candidateRms": 7.428311930945691
+          },
+          {
+            "elev": 70,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 8.053983862338928,
+            "candidateRms": 7.71310257377211
+          },
+          {
+            "elev": 75,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 8.271267822615014,
+            "candidateRms": 7.9638092931543225
+          },
+          {
+            "elev": 80,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 9.004380833247117,
+            "candidateRms": 8.5942644194273
+          },
+          {
+            "elev": 85,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 9.634532129875037,
+            "candidateRms": 9.143419350423978
+          },
+          {
+            "elev": 90,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 10.01349271830331,
+            "candidateRms": 9.499835409608567
+          },
+          {
+            "elev": 95,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 10.304359801712193,
+            "candidateRms": 9.763512865581133
+          },
+          {
+            "elev": 100,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 10.539253987145905,
+            "candidateRms": 9.945682655281225
+          },
+          {
+            "elev": 105,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 10.744632816564053,
+            "candidateRms": 10.09709800501853
+          },
+          {
+            "elev": 110,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 10.943761659838705,
+            "candidateRms": 10.227120904874951
+          },
+          {
+            "elev": 115,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 11.168523771187136,
+            "candidateRms": 10.380375142506464
+          },
+          {
+            "elev": 120,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 11.407521626965243,
+            "candidateRms": 10.578756872121563
+          },
+          {
+            "elev": 125,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 11.493001087228155,
+            "candidateRms": 10.6671715999749
+          },
+          {
+            "elev": 130,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 11.388490799847988,
+            "candidateRms": 10.60994745100895
+          },
+          {
+            "elev": 135,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 11.381747910803371,
+            "candidateRms": 10.604914925430226
+          },
+          {
+            "elev": 140,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 11.381747910803371,
+            "candidateRms": 10.604914925430226
+          },
+          {
+            "elev": 145,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 11.381747910803371,
+            "candidateRms": 10.604914925430226
+          },
+          {
+            "elev": 150,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 11.381747910803371,
+            "candidateRms": 10.604914925430226
+          },
+          {
+            "elev": 155,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 11.381747910803371,
+            "candidateRms": 10.604914925430226
+          },
+          {
+            "elev": 160,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 11.381747910803371,
+            "candidateRms": 10.604914925430226
+          },
+          {
+            "elev": 165,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 11.381747910803371,
+            "candidateRms": 10.604914925430226
+          },
+          {
+            "elev": 170,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 11.381747910803371,
+            "candidateRms": 10.604914925430226
+          },
+          {
+            "elev": 175,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 11.381747910803371,
+            "candidateRms": 10.604914925430226
+          },
+          {
+            "elev": 180,
+            "plane": 90,
+            "alpha": 0.25,
+            "controlRms": 11.381747910803371,
+            "candidateRms": 10.604914925430226
+          }
+        ],
+        "noImprovement": [
+          {
+            "elev": 10,
+            "plane": 90
+          },
+          {
+            "elev": 30,
+            "plane": 90
+          }
+        ],
+        "productAccepted": false
+      },
+      "pairs": [
+        {
+          "elev": 5,
+          "plane": 90,
+          "alpha": 0.06481481481481481,
+          "rmsDelta": -0.0003052120524438262,
+          "priorDelta": -0.00006205105105602793
+        },
+        {
+          "elev": 10,
+          "plane": 90,
+          "alpha": 0.18518518518518517,
+          "rmsDelta": 0.0010295736958858548,
+          "priorDelta": -0.00014094113556939458
+        },
+        {
+          "elev": 15,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.0055271189429655365,
+          "priorDelta": -0.0015470509256689802
+        },
+        {
+          "elev": 20,
+          "plane": 90,
+          "alpha": 0.18518518518518517,
+          "rmsDelta": -0.003879729013472666,
+          "priorDelta": -0.033673120835603254
+        },
+        {
+          "elev": 25,
+          "plane": 90,
+          "alpha": 0.06481481481481483,
+          "rmsDelta": -0.0003252862399958367,
+          "priorDelta": -0.02004087844734803
+        },
+        {
+          "elev": 35,
+          "plane": 90,
+          "alpha": 0.06481481481481481,
+          "rmsDelta": -0.00012644699643882262,
+          "priorDelta": -0.0448681613993378
+        },
+        {
+          "elev": 40,
+          "plane": 90,
+          "alpha": 0.18518518518518517,
+          "rmsDelta": -0.03194619077507799,
+          "priorDelta": -0.17572398591482075
+        },
+        {
+          "elev": 45,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.11084268991453339,
+          "priorDelta": -0.3066394976072577
+        },
+        {
+          "elev": 50,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.1498699882616794,
+          "priorDelta": -0.38120801850172037
+        },
+        {
+          "elev": 55,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.24584184665002962,
+          "priorDelta": -0.4572411797219873
+        },
+        {
+          "elev": 60,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.3517343431869673,
+          "priorDelta": -0.5078967544518975
+        },
+        {
+          "elev": 65,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.37355316398741767,
+          "priorDelta": -0.5382877985684242
+        },
+        {
+          "elev": 70,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.340881288566818,
+          "priorDelta": -0.5715108601836665
+        },
+        {
+          "elev": 75,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.30745852946069174,
+          "priorDelta": -0.6349097728658348
+        },
+        {
+          "elev": 80,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.4101164138198161,
+          "priorDelta": -0.7197446833142029
+        },
+        {
+          "elev": 85,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.49111277945105947,
+          "priorDelta": -0.7581335900408712
+        },
+        {
+          "elev": 90,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.5136573086947429,
+          "priorDelta": -0.7771803845293657
+        },
+        {
+          "elev": 95,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.5408469361310608,
+          "priorDelta": -0.805068257668546
+        },
+        {
+          "elev": 100,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.5935713318646805,
+          "priorDelta": -0.8532141801542714
+        },
+        {
+          "elev": 105,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.6475348115455226,
+          "priorDelta": -0.9139719347208892
+        },
+        {
+          "elev": 110,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.7166407549637537,
+          "priorDelta": -0.9811793464280658
+        },
+        {
+          "elev": 115,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.7881486286806716,
+          "priorDelta": -1.0484643756595498
+        },
+        {
+          "elev": 120,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.8287647548436805,
+          "priorDelta": -1.1107568579753613
+        },
+        {
+          "elev": 125,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.8258294872532552,
+          "priorDelta": -1.1218368738011444
+        },
+        {
+          "elev": 130,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.7785433488390385,
+          "priorDelta": -1.094853973899009
+        },
+        {
+          "elev": 135,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.7768329853731455,
+          "priorDelta": -1.093448066054207
+        },
+        {
+          "elev": 140,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.7768329853731455,
+          "priorDelta": -1.093448066054207
+        },
+        {
+          "elev": 145,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.7768329853731455,
+          "priorDelta": -1.093448066054207
+        },
+        {
+          "elev": 150,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.7768329853731455,
+          "priorDelta": -1.093448066054207
+        },
+        {
+          "elev": 155,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.7768329853731455,
+          "priorDelta": -1.093448066054207
+        },
+        {
+          "elev": 160,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.7768329853731455,
+          "priorDelta": -1.093448066054207
+        },
+        {
+          "elev": 165,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.7768329853731455,
+          "priorDelta": -1.093448066054207
+        },
+        {
+          "elev": 170,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.7768329853731455,
+          "priorDelta": -1.093448066054207
+        },
+        {
+          "elev": 175,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.7768329853731455,
+          "priorDelta": -1.093448066054207
+        },
+        {
+          "elev": 180,
+          "plane": 90,
+          "alpha": 0.25,
+          "rmsDelta": -0.7768329853731455,
+          "priorDelta": -1.093448066054207
+        }
+      ]
+    }
+  ],
+  "anatomicalAcceptance": false,
+  "productAccepted": false
+}
