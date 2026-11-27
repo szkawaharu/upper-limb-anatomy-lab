@@ -7,9 +7,14 @@ const calibration=JSON.parse(readFileSync('docs/validation/v076/contact-rms/rig-
 const current=new ShoulderKinematics.ShoulderModel(calibration),local=new ShoulderKinematics.ShoulderModel(calibration);
 local.body=null;local.field=null; // comparison endpoint ONLY
 const rows=[];
-for(const input of [{elev:0,plane:0},{elev:70,plane:39},{elev:180,plane:44},{elev:150,plane:90}]){
+const sweep=process.env.QA_SHOULDER_PLANE!==undefined;
+const plane=Number(process.env.QA_SHOULDER_PLANE),step=Number(process.env.QA_SHOULDER_STEP||15);
+if(sweep&&(!Number.isFinite(plane)||plane<0||plane>90||!Number.isInteger(step)||step<1||180%step))throw Error('Invalid sweep');
+const inputs=sweep?Array.from({length:180/step+1},(_,i)=>({elev:i*step,plane})):
+ [{elev:0,plane:0},{elev:70,plane:39},{elev:180,plane:44},{elev:150,plane:90}];
+for(const input of inputs){
  const a=current.pose(input),b=local.pose({...input,backend:'reference'});
- for(const alpha of input.elev===0?[0]:[0,.25,.5,.75,1]){
+ for(const alpha of input.elev===0?[0]:sweep?[0,.125,.25]:[0,.25,.5,.75,1]){
   const params=a.parameters.map((x,j)=>x+alpha*(b.parameters[j]-x));
   const p=current.forward(params),L=current.landmarks;
   // Keep the linked pivots and absolute humeral orientation; no independent
@@ -24,6 +29,6 @@ for(const input of [{elev:0,plane:0},{elev:70,plane:39},{elev:180,plane:44},{ele
    priorDeviationL2Deg:Math.hypot(...params.map((x,j)=>x-a.prior[j])),productAccepted:false});
  }
 }
-const out='test-results/v076-recording-shoulder';mkdirSync(out,{recursive:true});
+const out=process.env.QA_SHOULDER_OUT||'test-results/v076-recording-shoulder';mkdirSync(out,{recursive:true});
 writeFileSync(out+'/candidates.json',JSON.stringify({calibration,atlasSC:ShoulderRigData.landmarks.SC,rows,limitations:'One canonical shoulder at each observed UI setting. No individual anatomical measurements; no continuous field or muscle acceptance.'},null,2)+'\n');
-console.log(JSON.stringify({candidates:rows.length,recordingInputs:[{elev:70,plane:39},{elev:180,plane:44},{elev:150,plane:90}]}));
+console.log(JSON.stringify({candidates:rows.length,inputs,sweep,productAccepted:false}));
