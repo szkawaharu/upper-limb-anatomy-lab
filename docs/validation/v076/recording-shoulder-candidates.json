@@ -1,0 +1,769 @@
+{
+  "runId": 46062680843,
+  "jobId": 140720465956,
+  "headSha": "37678684c0af3c190a8cedaf0fcf897ec0db17ca",
+  "sourceSha256": [
+    {
+      "file": "FMA13395.stl",
+      "sha256": "c0a3afd469db1fec9527bb81ec1f0956876d3d64d3acbf3a083619d4e7ce297b"
+    },
+    {
+      "file": "FMA7857.stl",
+      "sha256": "60aaf884bbba890b825cc96036ab3af04ab8ba9a8d283752ba5c86105927b265"
+    },
+    {
+      "file": "FMA7882.stl",
+      "sha256": "be841be06ebe7f2554655e222a5c5237a40103335816eb6c2d51dae28bb9a7b0"
+    },
+    {
+      "file": "FMA7909.stl",
+      "sha256": "942b53665d37f1541b49772e092d557ffee0407fa917205eb204c612c707710a"
+    },
+    {
+      "file": "FMA7957.stl",
+      "sha256": "f09aed293efeaca491348e4b0d68aba243ad69b12da16c99ca0af8dfdbbe1537"
+    },
+    {
+      "file": "FMA8066.stl",
+      "sha256": "692ce079c288c646d05f30bd656554c2ea5efb382390a2cfa5f1f3215a57fb4c"
+    },
+    {
+      "file": "FMA8175.stl",
+      "sha256": "c7ceddf05e6f5b31a51f5cd5017659f10496fc004007052c45c0fddce2cbcf90"
+    },
+    {
+      "file": "FMA8229.stl",
+      "sha256": "035891a2b0a602bc07206e6a560c43ace3270f9111fda00d3407a95991a69e3f"
+    },
+    {
+      "file": "FMA8283.stl",
+      "sha256": "bb77ea1b25858457b67e2be43a09077a2de0e2a3c662c3bc2b1528f28b458b84"
+    },
+    {
+      "file": "FMA8364.stl",
+      "sha256": "22f08d07eb9edcd51a3de7d3bb59df3cf848cc091808ec9e7080a937620a06fe"
+    },
+    {
+      "file": "FMA8445.stl",
+      "sha256": "74b03c2cd1d227d262d848aa0564b2022f1944bcaf6d3b469cceb5310da07c70"
+    },
+    {
+      "file": "FMA8531.stl",
+      "sha256": "e2bc61ccb59923b00048f093cb5d105c5a4a03f5d4cabce2be147df0192af269"
+    },
+    {
+      "file": "FMA8533.stl",
+      "sha256": "eb47b3d7b6b8440a90fe27f333c8f30f72c6ae82694f4d0737ca6279b04e0b74"
+    }
+  ],
+  "rows": [
+    {
+      "elev": 0,
+      "plane": 0,
+      "alpha": 0,
+      "parameters": [
+        1.2848260288585237e-16,
+        -5.088253439703078e-16,
+        6.729044667598528e-16,
+        -3.1806940555093336e-15,
+        2.122840854551424e-16,
+        1.5240749582032535e-15
+      ],
+      "priorDeviationL2Deg": 3.634954623816971e-15,
+      "controlBackend": "validated-field",
+      "sourceScapularVertices": 56630,
+      "insideRibVertices": 0,
+      "insideScapulaRibVertices": 0,
+      "surfaceSegmentCrossings": {
+        "scapularEdgesIntoRibs": 0,
+        "ribEdgesIntoScapula": 0
+      },
+      "coplanarOverlapEvaluated": false,
+      "costalVertexTriangleGapMm": {
+        "min": 4.313537216835592,
+        "median": 9.798400800770779,
+        "max": 23.880207878101128,
+        "rmsDeltaFromRest": 0
+      },
+      "screenedCollisionFree": true,
+      "productAccepted": false
+    },
+    {
+      "elev": 70,
+      "plane": 39,
+      "alpha": 0,
+      "parameters": [
+        11.47375707160102,
+        9.293438017385977,
+        8.302600796452275,
+        4.479815966617914,
+        11.344984295126833,
+        11.817214766325774
+      ],
+      "priorDeviationL2Deg": 3.1191770011016593,
+      "controlBackend": "validated-field",
+      "sourceScapularVertices": 56630,
+      "insideRibVertices": 0,
+      "insideScapulaRibVertices": 0,
+      "surfaceSegmentCrossings": {
+        "scapularEdgesIntoRibs": 0,
+        "ribEdgesIntoScapula": 0
+      },
+      "coplanarOverlapEvaluated": false,
+      "costalVertexTriangleGapMm": {
+        "min": 2.8246248144372017,
+        "median": 13.54725114125352,
+        "max": 26.911287858727544,
+        "rmsDeltaFromRest": 5.801001874342235
+      },
+      "screenedCollisionFree": true,
+      "productAccepted": false
+    },
+    {
+      "elev": 70,
+      "plane": 39,
+      "alpha": 0.25,
+      "parameters": [
+        11.49014962279498,
+        9.197008252706944,
+        8.47220806780513,
+        4.016842091372757,
+        11.432233735357492,
+        12.073947938001288
+      ],
+      "priorDeviationL2Deg": 2.550831226536467,
+      "controlBackend": "validated-field",
+      "sourceScapularVertices": 56630,
+      "insideRibVertices": 0,
+      "insideScapulaRibVertices": 0,
+      "surfaceSegmentCrossings": {
+        "scapularEdgesIntoRibs": 0,
+        "ribEdgesIntoScapula": 0
+      },
+      "coplanarOverlapEvaluated": false,
+      "costalVertexTriangleGapMm": {
+        "min": 1.4914292717903441,
+        "median": 12.77402741578409,
+        "max": 27.09061435848473,
+        "rmsDeltaFromRest": 5.561614878824582
+      },
+      "screenedCollisionFree": true,
+      "productAccepted": false
+    },
+    {
+      "elev": 70,
+      "plane": 39,
+      "alpha": 0.5,
+      "parameters": [
+        11.50654217398894,
+        9.10057848802791,
+        8.641815339157985,
+        3.5538682161276,
+        11.519483175588151,
+        12.330681109676801
+      ],
+      "priorDeviationL2Deg": 1.9840920348299758,
+      "controlBackend": "validated-field",
+      "sourceScapularVertices": 56630,
+      "insideRibVertices": 21,
+      "insideScapulaRibVertices": 157,
+      "surfaceSegmentCrossings": null,
+      "coplanarOverlapEvaluated": false,
+      "costalVertexTriangleGapMm": {
+        "min": 0.1791893059467058,
+        "median": 12.25799340808042,
+        "max": 27.27085594752534,
+        "rmsDeltaFromRest": 5.421308183520779
+      },
+      "screenedCollisionFree": false,
+      "productAccepted": false
+    },
+    {
+      "elev": 70,
+      "plane": 39,
+      "alpha": 0.75,
+      "parameters": [
+        11.522934725182902,
+        9.004148723348878,
+        8.811422610510839,
+        3.0908943408824423,
+        11.60673261581881,
+        12.587414281352315
+      ],
+      "priorDeviationL2Deg": 1.4208831526231125,
+      "controlBackend": "validated-field",
+      "sourceScapularVertices": 56630,
+      "insideRibVertices": 92,
+      "insideScapulaRibVertices": 533,
+      "surfaceSegmentCrossings": null,
+      "coplanarOverlapEvaluated": false,
+      "costalVertexTriangleGapMm": {
+        "min": 1.1034753125705534,
+        "median": 11.8978917542555,
+        "max": 27.45216260768247,
+        "rmsDeltaFromRest": 5.322594117073687
+      },
+      "screenedCollisionFree": false,
+      "productAccepted": false
+    },
+    {
+      "elev": 70,
+      "plane": 39,
+      "alpha": 1,
+      "parameters": [
+        11.539327276376863,
+        8.907718958669845,
+        8.981029881863694,
+        2.627920465637285,
+        11.69398205604947,
+        12.844147453027828
+      ],
+      "priorDeviationL2Deg": 0.8681031842303419,
+      "controlBackend": "validated-field",
+      "sourceScapularVertices": 56630,
+      "insideRibVertices": 291,
+      "insideScapulaRibVertices": 731,
+      "surfaceSegmentCrossings": null,
+      "coplanarOverlapEvaluated": false,
+      "costalVertexTriangleGapMm": {
+        "min": 0.9810149686442159,
+        "median": 11.234671291906805,
+        "max": 27.636777618207844,
+        "rmsDeltaFromRest": 5.307881039616008
+      },
+      "screenedCollisionFree": false,
+      "productAccepted": false
+    },
+    {
+      "elev": 180,
+      "plane": 44,
+      "alpha": 0,
+      "parameters": [
+        17.409211349487304,
+        13.232810958862304,
+        31.430774291992186,
+        11.983852508544922,
+        13.818609802246094,
+        20.945945465087892
+      ],
+      "priorDeviationL2Deg": 8.19371131047482,
+      "controlBackend": "validated-field",
+      "sourceScapularVertices": 56630,
+      "insideRibVertices": 0,
+      "insideScapulaRibVertices": 0,
+      "surfaceSegmentCrossings": {
+        "scapularEdgesIntoRibs": 0,
+        "ribEdgesIntoScapula": 0
+      },
+      "coplanarOverlapEvaluated": false,
+      "costalVertexTriangleGapMm": {
+        "min": 6.374646246294195,
+        "median": 19.916554317277438,
+        "max": 35.49605687294013,
+        "rmsDeltaFromRest": 13.253207287888928
+      },
+      "screenedCollisionFree": true,
+      "productAccepted": false
+    },
+    {
+      "elev": 180,
+      "plane": 44,
+      "alpha": 0.25,
+      "parameters": [
+        18.032348529332932,
+        12.945890930296933,
+        31.468931252920523,
+        10.619160543973521,
+        13.73527639374406,
+        20.998238032781867
+      ],
+      "priorDeviationL2Deg": 6.696787855942583,
+      "controlBackend": "validated-field",
+      "sourceScapularVertices": 56630,
+      "insideRibVertices": 0,
+      "insideScapulaRibVertices": 0,
+      "surfaceSegmentCrossings": {
+        "scapularEdgesIntoRibs": 0,
+        "ribEdgesIntoScapula": 0
+      },
+      "coplanarOverlapEvaluated": false,
+      "costalVertexTriangleGapMm": {
+        "min": 3.845363311894597,
+        "median": 18.226890644400747,
+        "max": 34.03541354630601,
+        "rmsDeltaFromRest": 12.262632529400157
+      },
+      "screenedCollisionFree": true,
+      "productAccepted": false
+    },
+    {
+      "elev": 180,
+      "plane": 44,
+      "alpha": 0.5,
+      "parameters": [
+        18.65548570917856,
+        12.658970901731564,
+        31.50708821384886,
+        9.25446857940212,
+        13.651942985242027,
+        21.050530600475845
+      ],
+      "priorDeviationL2Deg": 5.219704435490211,
+      "controlBackend": "validated-field",
+      "sourceScapularVertices": 56630,
+      "insideRibVertices": 719,
+      "insideScapulaRibVertices": 78,
+      "surfaceSegmentCrossings": null,
+      "coplanarOverlapEvaluated": false,
+      "costalVertexTriangleGapMm": {
+        "min": 1.052608076283603,
+        "median": 16.55893779376519,
+        "max": 32.62207980648668,
+        "rmsDeltaFromRest": 11.441032825828517
+      },
+      "screenedCollisionFree": false,
+      "productAccepted": false
+    },
+    {
+      "elev": 180,
+      "plane": 44,
+      "alpha": 0.75,
+      "parameters": [
+        19.278622889024188,
+        12.372050873166195,
+        31.545245174777197,
+        7.889776614830719,
+        13.568609576739991,
+        21.10282316816982
+      ],
+      "priorDeviationL2Deg": 3.785755599418884,
+      "controlBackend": "validated-field",
+      "sourceScapularVertices": 56630,
+      "insideRibVertices": 1255,
+      "insideScapulaRibVertices": 745,
+      "surfaceSegmentCrossings": null,
+      "coplanarOverlapEvaluated": false,
+      "costalVertexTriangleGapMm": {
+        "min": 0.35542790208749536,
+        "median": 15.369726152911074,
+        "max": 31.257126144730158,
+        "rmsDeltaFromRest": 10.712256996909922
+      },
+      "screenedCollisionFree": false,
+      "productAccepted": false
+    },
+    {
+      "elev": 180,
+      "plane": 44,
+      "alpha": 1,
+      "parameters": [
+        19.901760068869816,
+        12.085130844600824,
+        31.583402135705533,
+        6.525084650259318,
+        13.485276168237958,
+        21.155115735863795
+      ],
+      "priorDeviationL2Deg": 2.471206341337318,
+      "controlBackend": "validated-field",
+      "sourceScapularVertices": 56630,
+      "insideRibVertices": 1302,
+      "insideScapulaRibVertices": 780,
+      "surfaceSegmentCrossings": null,
+      "coplanarOverlapEvaluated": false,
+      "costalVertexTriangleGapMm": {
+        "min": 0.4557976315271952,
+        "median": 14.121683844943906,
+        "max": 29.94162616223146,
+        "rmsDeltaFromRest": 10.042491684654827
+      },
+      "screenedCollisionFree": false,
+      "productAccepted": false
+    },
+    {
+      "elev": 150,
+      "plane": 90,
+      "alpha": 0,
+      "parameters": [
+        13.841537475585938,
+        10.2597074508667,
+        29.602872848510742,
+        14.7242431640625,
+        13.793761253356934,
+        20.991863250732422
+      ],
+      "priorDeviationL2Deg": 7.546506023690587,
+      "controlBackend": "validated-field",
+      "sourceScapularVertices": 56630,
+      "insideRibVertices": 0,
+      "insideScapulaRibVertices": 0,
+      "surfaceSegmentCrossings": {
+        "scapularEdgesIntoRibs": 0,
+        "ribEdgesIntoScapula": 0
+      },
+      "coplanarOverlapEvaluated": false,
+      "costalVertexTriangleGapMm": {
+        "min": 6.400855187901657,
+        "median": 18.45934126192553,
+        "max": 31.71676060654544,
+        "rmsDeltaFromRest": 11.381747910803371
+      },
+      "screenedCollisionFree": true,
+      "productAccepted": false
+    },
+    {
+      "elev": 150,
+      "plane": 90,
+      "alpha": 0.25,
+      "parameters": [
+        14.267656837854108,
+        10.030649270281955,
+        29.69379844982689,
+        13.635265562275011,
+        13.807916568079683,
+        21.140467413543153
+      ],
+      "priorDeviationL2Deg": 6.45305795763638,
+      "controlBackend": "validated-field",
+      "sourceScapularVertices": 56630,
+      "insideRibVertices": 0,
+      "insideScapulaRibVertices": 0,
+      "surfaceSegmentCrossings": {
+        "scapularEdgesIntoRibs": 0,
+        "ribEdgesIntoScapula": 0
+      },
+      "coplanarOverlapEvaluated": false,
+      "costalVertexTriangleGapMm": {
+        "min": 4.456393726410782,
+        "median": 17.014507818634776,
+        "max": 30.75551823734936,
+        "rmsDeltaFromRest": 10.604914925430226
+      },
+      "screenedCollisionFree": true,
+      "productAccepted": false
+    },
+    {
+      "elev": 150,
+      "plane": 90,
+      "alpha": 0.5,
+      "parameters": [
+        14.69377620012228,
+        9.801591089697212,
+        29.784724051143037,
+        12.546287960487522,
+        13.822071882802433,
+        21.289071576353884
+      ],
+      "priorDeviationL2Deg": 5.406949053785654,
+      "controlBackend": "validated-field",
+      "sourceScapularVertices": 56630,
+      "insideRibVertices": 471,
+      "insideScapulaRibVertices": 77,
+      "surfaceSegmentCrossings": null,
+      "coplanarOverlapEvaluated": false,
+      "costalVertexTriangleGapMm": {
+        "min": 2.3952446739200197,
+        "median": 15.67469133941967,
+        "max": 29.8721051384842,
+        "rmsDeltaFromRest": 9.969866913874501
+      },
+      "screenedCollisionFree": false,
+      "productAccepted": false
+    },
+    {
+      "elev": 150,
+      "plane": 90,
+      "alpha": 0.75,
+      "parameters": [
+        15.119895562390452,
+        9.572532909112468,
+        29.875649652459185,
+        11.457310358700033,
+        13.836227197525183,
+        21.437675739164614
+      ],
+      "priorDeviationL2Deg": 4.441753748516056,
+      "controlBackend": "validated-field",
+      "sourceScapularVertices": 56630,
+      "insideRibVertices": 888,
+      "insideScapulaRibVertices": 208,
+      "surfaceSegmentCrossings": null,
+      "coplanarOverlapEvaluated": false,
+      "costalVertexTriangleGapMm": {
+        "min": 0.22847069613812973,
+        "median": 14.485650434781881,
+        "max": 29.205174021721973,
+        "rmsDeltaFromRest": 9.467833166490497
+      },
+      "screenedCollisionFree": false,
+      "productAccepted": false
+    },
+    {
+      "elev": 150,
+      "plane": 90,
+      "alpha": 1,
+      "parameters": [
+        15.546014924658623,
+        9.343474728527724,
+        29.966575253775332,
+        10.368332756912544,
+        13.850382512247933,
+        21.586279901975345
+      ],
+      "priorDeviationL2Deg": 3.6227326538516134,
+      "controlBackend": "validated-field",
+      "sourceScapularVertices": 56630,
+      "insideRibVertices": 928,
+      "insideScapulaRibVertices": 532,
+      "surfaceSegmentCrossings": null,
+      "coplanarOverlapEvaluated": false,
+      "costalVertexTriangleGapMm": {
+        "min": 1.195463101602494,
+        "median": 13.309079540904012,
+        "max": 28.560150990370403,
+        "rmsDeltaFromRest": 9.017628823804785
+      },
+      "screenedCollisionFree": false,
+      "productAccepted": false
+    }
+  ],
+  "selected": [
+    {
+      "elev": 0,
+      "plane": 0,
+      "control": {
+        "elev": 0,
+        "plane": 0,
+        "alpha": 0,
+        "parameters": [
+          1.2848260288585237e-16,
+          -5.088253439703078e-16,
+          6.729044667598528e-16,
+          -3.1806940555093336e-15,
+          2.122840854551424e-16,
+          1.5240749582032535e-15
+        ],
+        "priorDeviationL2Deg": 3.634954623816971e-15,
+        "controlBackend": "validated-field",
+        "sourceScapularVertices": 56630,
+        "insideRibVertices": 0,
+        "insideScapulaRibVertices": 0,
+        "surfaceSegmentCrossings": {
+          "scapularEdgesIntoRibs": 0,
+          "ribEdgesIntoScapula": 0
+        },
+        "coplanarOverlapEvaluated": false,
+        "costalVertexTriangleGapMm": {
+          "min": 4.313537216835592,
+          "median": 9.798400800770779,
+          "max": 23.880207878101128,
+          "rmsDeltaFromRest": 0
+        },
+        "screenedCollisionFree": true,
+        "productAccepted": false
+      },
+      "candidate": null
+    },
+    {
+      "elev": 70,
+      "plane": 39,
+      "control": {
+        "elev": 70,
+        "plane": 39,
+        "alpha": 0,
+        "parameters": [
+          11.47375707160102,
+          9.293438017385977,
+          8.302600796452275,
+          4.479815966617914,
+          11.344984295126833,
+          11.817214766325774
+        ],
+        "priorDeviationL2Deg": 3.1191770011016593,
+        "controlBackend": "validated-field",
+        "sourceScapularVertices": 56630,
+        "insideRibVertices": 0,
+        "insideScapulaRibVertices": 0,
+        "surfaceSegmentCrossings": {
+          "scapularEdgesIntoRibs": 0,
+          "ribEdgesIntoScapula": 0
+        },
+        "coplanarOverlapEvaluated": false,
+        "costalVertexTriangleGapMm": {
+          "min": 2.8246248144372017,
+          "median": 13.54725114125352,
+          "max": 26.911287858727544,
+          "rmsDeltaFromRest": 5.801001874342235
+        },
+        "screenedCollisionFree": true,
+        "productAccepted": false
+      },
+      "candidate": {
+        "elev": 70,
+        "plane": 39,
+        "alpha": 0.25,
+        "parameters": [
+          11.49014962279498,
+          9.197008252706944,
+          8.47220806780513,
+          4.016842091372757,
+          11.432233735357492,
+          12.073947938001288
+        ],
+        "priorDeviationL2Deg": 2.550831226536467,
+        "controlBackend": "validated-field",
+        "sourceScapularVertices": 56630,
+        "insideRibVertices": 0,
+        "insideScapulaRibVertices": 0,
+        "surfaceSegmentCrossings": {
+          "scapularEdgesIntoRibs": 0,
+          "ribEdgesIntoScapula": 0
+        },
+        "coplanarOverlapEvaluated": false,
+        "costalVertexTriangleGapMm": {
+          "min": 1.4914292717903441,
+          "median": 12.77402741578409,
+          "max": 27.09061435848473,
+          "rmsDeltaFromRest": 5.561614878824582
+        },
+        "screenedCollisionFree": true,
+        "productAccepted": false
+      }
+    },
+    {
+      "elev": 150,
+      "plane": 90,
+      "control": {
+        "elev": 150,
+        "plane": 90,
+        "alpha": 0,
+        "parameters": [
+          13.841537475585938,
+          10.2597074508667,
+          29.602872848510742,
+          14.7242431640625,
+          13.793761253356934,
+          20.991863250732422
+        ],
+        "priorDeviationL2Deg": 7.546506023690587,
+        "controlBackend": "validated-field",
+        "sourceScapularVertices": 56630,
+        "insideRibVertices": 0,
+        "insideScapulaRibVertices": 0,
+        "surfaceSegmentCrossings": {
+          "scapularEdgesIntoRibs": 0,
+          "ribEdgesIntoScapula": 0
+        },
+        "coplanarOverlapEvaluated": false,
+        "costalVertexTriangleGapMm": {
+          "min": 6.400855187901657,
+          "median": 18.45934126192553,
+          "max": 31.71676060654544,
+          "rmsDeltaFromRest": 11.381747910803371
+        },
+        "screenedCollisionFree": true,
+        "productAccepted": false
+      },
+      "candidate": {
+        "elev": 150,
+        "plane": 90,
+        "alpha": 0.25,
+        "parameters": [
+          14.267656837854108,
+          10.030649270281955,
+          29.69379844982689,
+          13.635265562275011,
+          13.807916568079683,
+          21.140467413543153
+        ],
+        "priorDeviationL2Deg": 6.45305795763638,
+        "controlBackend": "validated-field",
+        "sourceScapularVertices": 56630,
+        "insideRibVertices": 0,
+        "insideScapulaRibVertices": 0,
+        "surfaceSegmentCrossings": {
+          "scapularEdgesIntoRibs": 0,
+          "ribEdgesIntoScapula": 0
+        },
+        "coplanarOverlapEvaluated": false,
+        "costalVertexTriangleGapMm": {
+          "min": 4.456393726410782,
+          "median": 17.014507818634776,
+          "max": 30.75551823734936,
+          "rmsDeltaFromRest": 10.604914925430226
+        },
+        "screenedCollisionFree": true,
+        "productAccepted": false
+      }
+    },
+    {
+      "elev": 180,
+      "plane": 44,
+      "control": {
+        "elev": 180,
+        "plane": 44,
+        "alpha": 0,
+        "parameters": [
+          17.409211349487304,
+          13.232810958862304,
+          31.430774291992186,
+          11.983852508544922,
+          13.818609802246094,
+          20.945945465087892
+        ],
+        "priorDeviationL2Deg": 8.19371131047482,
+        "controlBackend": "validated-field",
+        "sourceScapularVertices": 56630,
+        "insideRibVertices": 0,
+        "insideScapulaRibVertices": 0,
+        "surfaceSegmentCrossings": {
+          "scapularEdgesIntoRibs": 0,
+          "ribEdgesIntoScapula": 0
+        },
+        "coplanarOverlapEvaluated": false,
+        "costalVertexTriangleGapMm": {
+          "min": 6.374646246294195,
+          "median": 19.916554317277438,
+          "max": 35.49605687294013,
+          "rmsDeltaFromRest": 13.253207287888928
+        },
+        "screenedCollisionFree": true,
+        "productAccepted": false
+      },
+      "candidate": {
+        "elev": 180,
+        "plane": 44,
+        "alpha": 0.25,
+        "parameters": [
+          18.032348529332932,
+          12.945890930296933,
+          31.468931252920523,
+          10.619160543973521,
+          13.73527639374406,
+          20.998238032781867
+        ],
+        "priorDeviationL2Deg": 6.696787855942583,
+        "controlBackend": "validated-field",
+        "sourceScapularVertices": 56630,
+        "insideRibVertices": 0,
+        "insideScapulaRibVertices": 0,
+        "surfaceSegmentCrossings": {
+          "scapularEdgesIntoRibs": 0,
+          "ribEdgesIntoScapula": 0
+        },
+        "coplanarOverlapEvaluated": false,
+        "costalVertexTriangleGapMm": {
+          "min": 3.845363311894597,
+          "median": 18.226890644400747,
+          "max": 34.03541354630601,
+          "rmsDeltaFromRest": 12.262632529400157
+        },
+        "screenedCollisionFree": true,
+        "productAccepted": false
+      }
+    }
+  ],
+  "productAccepted": false,
+  "anatomicalAcceptance": false,
+  "coplanarOverlapEvaluated": false
+}
