@@ -7,7 +7,10 @@ const calibration=JSON.parse(readFileSync('docs/validation/v076/contact-rms/rig-
 const current=new ShoulderKinematics.ShoulderModel(calibration),local=new ShoulderKinematics.ShoulderModel(calibration);
 local.body=null;local.field=null; // comparison endpoint ONLY
 const rows=[];
-const continuous=process.env.QA_SHOULDER_MODE==='continuous';
+const preview=process.env.QA_SHOULDER_MODE==='preview';
+const continuous=process.env.QA_SHOULDER_MODE==='continuous'||preview;
+const previewField=preview?JSON.parse(readFileSync((process.env.QA_PREVIEW_OUT||'test-results/v076-blend-preview')+'/field.json')):null;
+if(previewField&&previewField.baseSignature!==current.fieldSignature)throw Error('Preview signature mismatch');
 const blend=continuous?(await import('./continuous-shoulder-blend.mjs')).readBlend():null;
 const sweep=process.env.QA_SHOULDER_PLANE!==undefined;
 const plane=Number(process.env.QA_SHOULDER_PLANE),step=Number(process.env.QA_SHOULDER_STEP||15);
@@ -16,9 +19,11 @@ const inputs=sweep?Array.from({length:180/step+1},(_,i)=>({elev:i*step,plane})):
  [{elev:0,plane:0},{elev:70,plane:39},{elev:180,plane:44},{elev:150,plane:90}];
 for(const input of inputs){
  const a=current.pose(input),b=local.pose({...input,backend:'reference'});
- const alphas=continuous?[...new Set([0,blend.sample(input.elev,input.plane)])]:input.elev===0?[0]:sweep?[0,.125,.25]:[0,.25,.5,.75,1];
+ const t=Math.max(0,Math.min(1,(input.elev-40)/5)),gate=t*t*(3-2*t);
+ const alphas=preview?(gate?[0,1]:[0]):continuous?[...new Set([0,blend.sample(input.elev,input.plane)])]:input.elev===0?[0]:sweep?[0,.125,.25]:[0,.25,.5,.75,1];
  for(const alpha of alphas){
-  const params=a.parameters.map((x,j)=>x+alpha*(b.parameters[j]-x));
+  const correction=preview&&alpha?ShoulderPoseField.sample(previewField,input.elev,input.plane):null;
+  const params=correction?a.parameters.map((x,j)=>x+gate*correction[j]):a.parameters.map((x,j)=>x+alpha*(b.parameters[j]-x));
   const p=current.forward(params),L=current.landmarks;
   // Keep the linked pivots and absolute humeral orientation; no independent
   // translation or angle clipping of the scapula.
@@ -33,5 +38,5 @@ for(const input of inputs){
  }
 }
 const out=process.env.QA_SHOULDER_OUT||'test-results/v076-recording-shoulder';mkdirSync(out,{recursive:true});
-writeFileSync(out+'/candidates.json',JSON.stringify({calibration,atlasSC:ShoulderRigData.landmarks.SC,frames:{thorax:current.thoraxFrame,clavicle:current.clavicleFrame,scapula:current.scapulaFrame,SC0:current.SC0,AC0:current.AC0},rows,continuous:blend?{table:blend.table,nodes:blend.nodes,planes:blend.planes,sourceRun:blend.sourceRun}:null,limitations:'One canonical shoulder at each observed UI setting. No individual anatomical measurements; no continuous field or muscle acceptance.'},null,2)+'\n');
+writeFileSync(out+'/candidates.json',JSON.stringify({calibration,atlasSC:ShoulderRigData.landmarks.SC,frames:{thorax:current.thoraxFrame,clavicle:current.clavicleFrame,scapula:current.scapulaFrame,SC0:current.SC0,AC0:current.AC0},rows,preview:previewField?{sourceRun:previewField.sourceRun,maxRigidErrorBoundMm:previewField.maxRigidErrorBoundMm,representation:previewField.representation}:null,continuous:blend?{table:blend.table,nodes:blend.nodes,planes:blend.planes,sourceRun:blend.sourceRun}:null,limitations:'One canonical shoulder at each observed UI setting. No individual anatomical measurements; no continuous field or muscle acceptance.'},null,2)+'\n');
 console.log(JSON.stringify({candidates:rows.length,inputs,sweep,productAccepted:false}));
