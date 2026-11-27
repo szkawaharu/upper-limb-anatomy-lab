@@ -1,0 +1,44 @@
+{
+  "experimental": true,
+  "adoptedIntoApplication": false,
+  "id": "v59TrapUpper",
+  "sourceInput": "test-results/v076-source-refit/bindings.json",
+  "inputSha256": "cf5272632ca6d48b53f6d23998c4cf57376c3090dc26d5cc3919eeb2f0edb504",
+  "repairLibrary": "pymeshfix",
+  "version": "0.17.2",
+  "license": "GPL-3.0-or-later; offline only",
+  "joinComponents": false,
+  "removeSmallestComponents": false,
+  "sourceVertices": 23209,
+  "sourceTriangles": 46450,
+  "repairedVertices": 23187,
+  "repairedTriangles": 46402,
+  "componentsBefore": 1,
+  "componentsAfter": 1,
+  "closedBefore": true,
+  "closedAfter": true,
+  "orientedAfter": true,
+  "eulerBefore": -16,
+  "eulerAfter": -14,
+  "originalExactVerticesRetained": 18921,
+  "sourceMedianEdgeMm": 0.9687272714613835,
+  "directedVertexSurfaceDistanceQuantilesMm": [
+    [
+      0.0,
+      0.0,
+      8.240519444559107e-06,
+      0.10909215297233567
+    ],
+    [
+      0.0,
+      0.0,
+      8.131488487047874e-06,
+      1.553803042796047e-05
+    ]
+  ],
+  "directedVertexSurfaceDistanceMaxMm": 0.10909215297233567,
+  "distanceIsNotContinuousHausdorffCertification": true,
+  "weightTransfer": "exact original vertex where unchanged, otherwise original nearest-triangle barycentric field; original footprint remains an estimate",
+  "seconds": 10.1648850440979,
+  "geometricScreeningPassed": true
+}

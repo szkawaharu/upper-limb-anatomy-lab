@@ -1,0 +1,14 @@
+// Ablation: current curve implementation rebound to the same repaired source
+// geometry and footprints as the solid reference. Not the production parser.
+import{readFileSync,writeFileSync,mkdirSync}from'node:fs';import{createHash}from'node:crypto';
+import{dirname}from'node:path';
+for(const file of ['muscle-fiber-v064','pectoral-fan-v070','engine/math','engine/fiber-path','engine/volume-constraint','engine/contact-constraint','engine/tendon-deformation','engine/material-coordinates','engine/muscle-deformation','engine/deformation-audit','anatomy/muscle-definitions','anatomy/shoulder-rig-data','engine/joint-frames','engine/pose-field','anatomy/shoulder-pose-field-v076','anatomy/thorax-contact-data-v076','engine/convex-contact','engine/shoulder-kinematics'])await import('../../'+file+'.js');
+const input=process.argv[2],output=process.argv[3],raw=JSON.parse(readFileSync(input))[0],fixture=JSON.parse(readFileSync('docs/validation/v076/source-bones/browser-numeric/rig-calibration.json')),rig=new ShoulderKinematics.ShoulderModel(fixture),M=AnatomyMath,vertices=Array.from({length:raw.rest.length/3},(_,i)=>raw.rest.slice(i*3,i*3+3)),pose=rig.pose({elev:0,plane:0}),anchor=(name,p)=>name==='trunk'?M.identity():p.bones[name],neutral=[anchor(raw.spec.a,pose),anchor(raw.spec.b,pose)].map(b=>({q:[0,0,0,1],p:b.rest,rest:b.rest})),definition=MuscleDefinitions.create(raw.spec,vertices,raw.faces,raw.weights,neutral),binding=MuscleDeformation.bind(definition,Float32Array.from(raw.weights)),rows=[];
+if(MuscleDefinitions.configs[raw.spec.id]?.[1])throw Error('This ablation requires an explicitly null-contact muscle, not omission of required wrapping');
+let previous=null,step=null;
+for(const elev of[0,3,6,30,60,90,120,150,180]){
+ const skeleton=rig.pose({elev,plane:0}),state=MuscleDeformation.pose(binding,anchor(raw.spec.a,skeleton),anchor(raw.spec.b,skeleton),null),now=MuscleDeformation.deform(state),audit=DeformationAudit.audit(state,now);
+ if(elev===3)previous=now;if(elev===6)step=DeformationAudit.audit(state,now,previous).maxStepMm;
+ rows.push({elev,plane:0,...audit});
+}
+const result={experimental:true,adopted:false,id:raw.spec.id,method:'current curve algorithm freshly bound to repaired source and revised footprints; same geometry and masks as solid reference, neck zero, no contact for this null-contact muscle',inputSha256:createHash('sha256').update(readFileSync(input)).digest('hex'),fieldMethod:binding.fieldMethod,sourceVertices:vertices.length,sourceTriangles:raw.faces.length/3,step3to6MaxMm:step,rows};mkdirSync(dirname(output),{recursive:true});writeFileSync(output,JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({id:result.id,step3to6MaxMm:step,rows:rows.map(r=>({elev:r.elev,volume:r.volumeRatio,edge:r.edgeRatio,area:r.areaRatio,nonfinite:r.nonfinite}))}));

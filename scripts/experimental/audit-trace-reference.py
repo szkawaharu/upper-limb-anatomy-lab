@@ -1,0 +1,21 @@
+"""Compare the fixed production trace location with the repaired source solid.
+Rest location/cell choice is frozen. If outside the repaired surface, the same
+boundary element is explicitly extended affinely; this is reported, not hidden.
+This is NOT the production engine or an identical-boundary A/B experiment.
+"""
+import sys,json,hashlib
+from pathlib import Path
+import numpy as np,trimesh
+from scipy.spatial.transform import Rotation
+from snapshot_names import snapshot_name
+p,tracefile,out=map(Path,sys.argv[1:4]);trace=json.loads(tracefile.read_text());c=np.load(p/'cage.npz');s=np.load(p/'conforming.npz');scale=float(c['worldUnitsPerMm']);center=c['centerWorld'];point=np.array(trace['material']['point']);rest_point=(point-center)/scale;mesh=trimesh.Trimesh(s['points'],s['faces'],process=False);near,distance,face=trimesh.proximity.closest_point(mesh,rest_point[None]);element=int(s['elements'][face[0]]);ids=c['tets'][element];reference=c['nodes'][ids];tail=np.linalg.solve(np.stack([reference[k]-reference[0]for k in [1,2,3]],axis=1),rest_point-reference[0]);bary=np.r_[1-tail.sum(),tail];assert np.linalg.norm(bary@reference-rest_point)<1e-9
+rows=[];all_positions=[];files=[]
+elevations=sorted({pose['elev']for pose in json.loads((p/'targets.json').read_text())['poses']if pose['plane']==trace['plane']and trace['from']<=pose['elev']<=trace['to']})if len(sys.argv)>4 and sys.argv[4]=='sweep'else[trace['from'],trace['to']]
+for elev in elevations:
+ name=snapshot_name(elev,trace['plane'],30);npz=p/(name+'.npz');reportfile=p/(name+'.json');r=json.loads(reportfile.read_text());a=np.load(npz);assert r['progress']==1 and r['allStagesConverged'];assert hashlib.sha256(npz.read_bytes()).hexdigest()==r['snapshotSha256'];old=next(row for row in trace['rows']if row['elev']==elev)
+ for key in ['a','b']:
+  for value in ['q','p','rest']:assert np.max(np.abs(np.array(old['bone'+key.upper()][value])-r['target'][key][value]))<1e-9,'Final bone mismatch'
+ R=Rotation.from_quat(r['target']['a']['q']).as_matrix();t=np.array(r['target']['a']['p'])-R@np.array(r['target']['a']['rest']);now=(bary@a['nodes'][ids]*scale+center)@R.T+t;rows.append({'elev':elev,'point':now.tolist(),'volumeRatio':r['surfaceVolumeRatio'],'attachmentMaxMm':r['attachmentMaxMm'],'nonPositiveElements':r['stages'][-1]['cageNonPositive'],'JRange':r['stages'][-1]['cageJQuantiles'][::4]});all_positions.append(a['sourceWorld']);files.extend([npz,reportfile])
+step=np.linalg.norm(all_positions[-1]-all_positions[0],axis=1)/scale;old_from=next(x['point']for x in trace['rows']if x['elev']==trace['from']);old_to=next(x['point']for x in trace['rows']if x['elev']==trace['to']);reference_step=float(np.linalg.norm(np.array(rows[-1]['point'])-rows[0]['point'])/scale);report={'experimental':True,'adoptedIntoApplication':False,'productionTraceMuscle':trace['id'],'productionTraceVertex':trace['vertex'],'productionRestPointWorld':point.tolist(),'plane':trace['plane'],'from':trace['from'],'to':trace['to'],'productionTraceStepMm':float(np.linalg.norm(np.array(old_to)-old_from)/scale),'referenceSameSpatialLocationStepMm':reference_step,'referenceVertexStepMaxMm':float(step.max()),'referenceVertexStepRmsMm':float(np.sqrt(np.mean(step**2))),'referenceWorstVertex':int(step.argmax()),'restSurfaceGapMm':float(distance[0]),'restBoundaryTriangle':int(face[0]),'frozenReferenceElement':element,'barycentric':bary.tolist(),'affineExtensionOutsideElement':bool(bary.min()<0),'rows':rows,'limitations':['Repaired source geometry: atlas deviation is audited separately','Inferred insertion and surface-derived fixed regions differ from the original production partial field','This compares complete pipelines, not the deformation algorithm alone','Neck angle zero only; full ROM, real-time performance and new production shape are not certified'],'inputs':{str(f):hashlib.sha256(f.read_bytes()).hexdigest()for f in [tracefile,p/'cage.npz',p/'conforming.npz',*files]}}
+report['steps']=[{'from':rows[k-1]['elev'],'to':rows[k]['elev'],'sameSpatialLocationMm':float(np.linalg.norm(np.array(rows[k]['point'])-rows[k-1]['point'])/scale),'sourceVertexMaxMm':float(np.linalg.norm(all_positions[k]-all_positions[k-1],axis=1).max()/scale)}for k in range(1,len(rows))]
+out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report))

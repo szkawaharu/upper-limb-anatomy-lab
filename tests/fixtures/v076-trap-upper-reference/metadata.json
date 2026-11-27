@@ -1,0 +1,169 @@
+{
+  "id": "v59TrapUpper",
+  "name": "upper trapezius numerical reference, not production/anatomical acceptance",
+  "worldUnitsPerMm": 0.00555,
+  "poses": [
+    {
+      "elev": 3,
+      "plane": 0,
+      "a": {
+        "q": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "p": [
+          0,
+          0,
+          0
+        ],
+        "rest": [
+          0,
+          0,
+          0
+        ]
+      },
+      "b": {
+        "q": [
+          -0.0023626869122610125,
+          -0.006080480530324264,
+          0.004742444195897692,
+          0.9999674768161833
+        ],
+        "p": [
+          0.005051832,
+          1.7020786415000002,
+          -0.24003891850000003
+        ],
+        "rest": [
+          0.005051832,
+          1.7020786415000002,
+          -0.24003891850000003
+        ]
+      },
+      "backend": "validated-field"
+    },
+    {
+      "elev": 6,
+      "plane": 0,
+      "a": {
+        "q": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "p": [
+          0,
+          0,
+          0
+        ],
+        "rest": [
+          0,
+          0,
+          0
+        ]
+      },
+      "b": {
+        "q": [
+          -0.008255805367790282,
+          -0.02107903848698088,
+          0.01618978228328192,
+          0.9996126283535105
+        ],
+        "p": [
+          0.005051832,
+          1.7020786415000002,
+          -0.24003891850000003
+        ],
+        "rest": [
+          0.005051832,
+          1.7020786415000002,
+          -0.24003891850000003
+        ]
+      },
+      "backend": "validated-field"
+    }
+  ],
+  "sha256": "24cc44d68a844dae771a9916ea5d9ec1cadf6e1628aa999546a205ba83651739",
+  "source": {
+    "atlas": "BodyParts3D / Anatomography",
+    "copyright": "The Database Center for Life Science",
+    "commit": "2c83c698788cff57f6317bddcf712e7acfbea7d8",
+    "file": "FMA33586.stl",
+    "sourceUrl": "https://github.com/Kevin-Mattheus-Moerman/BodyParts3D/blob/2c83c698788cff57f6317bddcf712e7acfbea7d8/assets/BodyParts3D_data/stl/FMA33586.stl",
+    "license": "CC BY-SA 2.1 Japan",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/",
+    "publication": "https://doi.org/10.1093/nar/gkn613",
+    "modifications": [
+      "Exact weld and duplicate-opposite-face cancellation",
+      "MeshFix 0.17.2 candidate repair without component removal or joining",
+      "Offline TetGen 0.8.4 tetrahedralization; full repaired boundary retained",
+      "Derived, still unverified attachment masks; not measured entheses"
+    ]
+  },
+  "repair": {
+    "experimental": true,
+    "adoptedIntoApplication": false,
+    "id": "v59TrapUpper",
+    "sourceInput": "test-results/v076-source-refit/bindings.json",
+    "inputSha256": "cf5272632ca6d48b53f6d23998c4cf57376c3090dc26d5cc3919eeb2f0edb504",
+    "repairLibrary": "pymeshfix",
+    "version": "0.17.2",
+    "license": "GPL-3.0-or-later; offline only",
+    "joinComponents": false,
+    "removeSmallestComponents": false,
+    "sourceVertices": 23209,
+    "sourceTriangles": 46450,
+    "repairedVertices": 23187,
+    "repairedTriangles": 46402,
+    "componentsBefore": 1,
+    "componentsAfter": 1,
+    "closedBefore": true,
+    "closedAfter": true,
+    "orientedAfter": true,
+    "eulerBefore": -16,
+    "eulerAfter": -14,
+    "originalExactVerticesRetained": 18921,
+    "sourceMedianEdgeMm": 0.9687272714613835,
+    "directedVertexSurfaceDistanceQuantilesMm": [
+      [
+        0.0,
+        0.0,
+        8.240519444559107e-06,
+        0.10909215297233567
+      ],
+      [
+        0.0,
+        0.0,
+        8.131488487047874e-06,
+        1.553803042796047e-05
+      ]
+    ],
+    "directedVertexSurfaceDistanceMaxMm": 0.10909215297233567,
+    "distanceIsNotContinuousHausdorffCertification": true,
+    "weightTransfer": "exact original vertex where unchanged, otherwise original nearest-triangle barycentric field; original footprint remains an estimate",
+    "seconds": 10.1648850440979,
+    "geometricScreeningPassed": true
+  },
+  "legacyTraceRestPointWorld": [
+    0.5490410923957825,
+    1.841846227645874,
+    0.17814737558364868
+  ],
+  "legacyProductionStepMm": 19.116553303188255,
+  "acceptance": {
+    "meaning": "numerical regression guard, not normal human motion or anatomical acceptance",
+    "maxAttachmentErrorMm": 1e-06,
+    "maxGlobalVolumeChange": 0.05,
+    "maxStepBound": "largest prescribed fixed-attachment displacement plus measured source median edge length",
+    "sourceMedianEdgeMm": 0.9687272714613835
+  },
+  "limitations": [
+    "Neck zero and abduction 3/6 degrees only",
+    "Boundary masks differ from the legacy production partial field",
+    "Local J outliers remain; global volume alone does not qualify the material model",
+    "No new production GPU or mobile FPS certification"
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "experimental": true,
+  "adoptedIntoApplication": false,
+  "productionTraceMuscle": "v59TrapUpper",
+  "productionTraceVertex": 168,
+  "productionRestPointWorld": [
+    0.5490410923957825,
+    1.841846227645874,
+    0.17814737558364868
+  ],
+  "plane": 0,
+  "from": 3,
+  "to": 6,
+  "productionTraceStepMm": 19.116553303188255,
+  "referenceSameSpatialLocationStepMm": 4.977146626449537,
+  "referenceVertexStepMaxMm": 5.432706471433917,
+  "referenceVertexStepRmsMm": 1.647407964986056,
+  "referenceWorstVertex": 13,
+  "restSurfaceGapMm": 0.0051502234691963526,
+  "restBoundaryTriangle": 45838,
+  "frozenReferenceElement": 76042,
+  "barycentric": [
+    0.3681164375265855,
+    -0.00032578693752214775,
+    0.2110206486170649,
+    0.42118870079387166
+  ],
+  "affineExtensionOutsideElement": true,
+  "rows": [
+    {
+      "elev": 3,
+      "point": [
+        0.5426637732463828,
+        1.849055589714351,
+        0.18399950752206562
+      ],
+      "volumeRatio": 0.99955792352477,
+      "attachmentMaxMm": 0.0,
+      "nonPositiveElements": 0,
+      "JRange": [
+        0.8208070133769135,
+        1.2085033286600952
+      ]
+    },
+    {
+      "elev": 3.375,
+      "point": [
+        0.5411558391847956,
+        1.850720047774761,
+        0.185351735817132
+      ],
+      "volumeRatio": 0.9994549010752141,
+      "attachmentMaxMm": 0.0,
+      "nonPositiveElements": 0,
+      "JRange": [
+        0.7876083979395261,
+        1.2579817311533545
+      ]
+    },
+    {
+      "elev": 3.75,
+      "point": [
+        0.5394408106823463,
+        1.8526049888346632,
+        0.18687206958488203
+      ],
+      "volumeRatio": 0.9993382982557956,
+      "attachmentMaxMm": 0.0,
+      "nonPositiveElements": 0,
+      "JRange": [
+        0.7532445916802825,
+        1.314191301612347
+      ]
+    },
+    {
+      "elev": 4.125,
+      "point": [
+        0.5375463167488502,
+        1.8546738219100012,
+        0.18853127324203237
+      ],
+      "volumeRatio": 0.9992102309948575,
+      "attachmentMaxMm": 0.0,
+      "nonPositiveElements": 0,
+      "JRange": [
+        0.7190350535946239,
+        1.3760734396439682
+      ]
+    },
+    {
+      "elev": 4.5,
+      "point": [
+        0.5355004487242878,
+        1.856889980908047,
+        0.19030053010813058
+      ],
+      "volumeRatio": 0.9990728077845883,
+      "attachmentMaxMm": 0.0,
+      "nonPositiveElements": 0,
+      "JRange": [
+        0.685969586192994,
+        1.4425209955688854
+      ]
+    },
+    {
+      "elev": 4.875,
+      "point": [
+        0.5333319075362907,
+        1.859216936191507,
+        0.19215160774427392
+      ],
+      "volumeRatio": 0.9989281485410889,
+      "attachmentMaxMm": 0.0,
+      "nonPositiveElements": 0,
+      "JRange": [
+        0.6547302290520733,
+        1.5123930578589713
+      ]
+    },
+    {
+      "elev": 5.25,
+      "point": [
+        0.5310701148744273,
+        1.8616182043498428,
+        0.19405699514007105
+      ],
+      "volumeRatio": 0.9987783750622822,
+      "attachmentMaxMm": 0.0,
+      "nonPositiveElements": 0,
+      "JRange": [
+        0.6257360999634222,
+        1.5845328732845159
+      ]
+    },
+    {
+      "elev": 5.625,
+      "point": [
+        0.5287452912478652,
+        1.864057357764076,
+        0.19599000972366507
+      ],
+      "volumeRatio": 0.9986256053126757,
+      "attachmentMaxMm": 0.0,
+      "nonPositiveElements": 0,
+      "JRange": [
+        0.599201460299495,
+        1.6577875239938227
+      ]
+    },
+    {
+      "elev": 6,
+      "point": [
+        0.5263885007386996,
+        1.8664980321364733,
+        0.1979248758903077
+      ],
+      "volumeRatio": 0.9984719971801611,
+      "attachmentMaxMm": 0.0,
+      "nonPositiveElements": 0,
+      "JRange": [
+        0.5751903630574124,
+        1.7310250572660868
+      ]
+    }
+  ],
+  "limitations": [
+    "Repaired source geometry: atlas deviation is audited separately",
+    "Inferred insertion and surface-derived fixed regions differ from the original production partial field",
+    "This compares complete pipelines, not the deformation algorithm alone",
+    "Neck angle zero only; full ROM, real-time performance and new production shape are not certified"
+  ],
+  "inputs": {
+    "docs/validation/v076/source-bones/frame-traces/v076-current-trap-upper-trace.json": "4c304328830018e04cfda279068180782271444ba1f9ed7808a574ee4b57b60b",
+    "test-results/v076-trap-upper-continuity/cage.npz": "2542474b9196cf02b91e1e7e05752a082149785b71e88071134e50700d1b5923",
+    "test-results/v076-trap-upper-continuity/conforming.npz": "8b33ee0f6a21a0a3032274f6e28586b78ca1cfa888d1a642a9313d4ccfaae633",
+    "test-results/v076-trap-upper-continuity/reference-e3-p0-k30.npz": "b0d391f5c63b433171adc419be878c510e881f51fb3d4a98d914d127fd268887",
+    "test-results/v076-trap-upper-continuity/reference-e3-p0-k30.json": "2242bdf6dd525e03d066027b7909f3071b82f8d561a59c89b26b0ad319b1f460",
+    "test-results/v076-trap-upper-continuity/reference-e3d375-p0-k30.npz": "ada13d8fc084203b055ab29e156efeca1d7a09b1e577a25f31b92b468e50a31f",
+    "test-results/v076-trap-upper-continuity/reference-e3d375-p0-k30.json": "70d0d59e16021a4e28469dd80a9f1cf2c2f901d8933b546be313f90a93e418a8",
+    "test-results/v076-trap-upper-continuity/reference-e3d75-p0-k30.npz": "97d13e7f28fa44cb367a2f6c4697999cf906bc14a8c9765388da7f15122cc843",
+    "test-results/v076-trap-upper-continuity/reference-e3d75-p0-k30.json": "f0fa9ad3486c3d362f5495e6f26ddb3146efa7bd1b26983667a6417523c3e14d",
+    "test-results/v076-trap-upper-continuity/reference-e4d125-p0-k30.npz": "783bc0fef2bc61468cde0317a3f401b0232ed2b4398166310eff7464e503ff5e",
+    "test-results/v076-trap-upper-continuity/reference-e4d125-p0-k30.json": "1c2b71865b232111e28b63135d95b5253bd7fff3e353e37fb804e4597eddf6ad",
+    "test-results/v076-trap-upper-continuity/reference-e4d5-p0-k30.npz": "9cdaadcaa10798c3ea471119706eb6f3d3b687d682c129a98fcd7d6e191b8cfc",
+    "test-results/v076-trap-upper-continuity/reference-e4d5-p0-k30.json": "efb080ba030bee9f18f7c18d942e44317611a9df7908d9338ef96bd6f028ecf7",
+    "test-results/v076-trap-upper-continuity/reference-e4d875-p0-k30.npz": "b209fc2bf3defdf972413ce6cf9bb5b7a2054f2254ea4c9c1ca4f900db9bd3be",
+    "test-results/v076-trap-upper-continuity/reference-e4d875-p0-k30.json": "84ee46591c7216ad1b9516527791b6b50fd631bc17738424667882b069f4b4f2",
+    "test-results/v076-trap-upper-continuity/reference-e5d25-p0-k30.npz": "9585c74f9592cb480a790901de45e5081b571ca8d8211552a639cafc19f9d9c5",
+    "test-results/v076-trap-upper-continuity/reference-e5d25-p0-k30.json": "9b77eb877f99ae25edf631294905082e9f2a259be25c8b708f43d72fa4acbcce",
+    "test-results/v076-trap-upper-continuity/reference-e5d625-p0-k30.npz": "c78bf6635624878e510ed7701b4d0e5cf9e47ac69892efd65d7b8492c3b355b4",
+    "test-results/v076-trap-upper-continuity/reference-e5d625-p0-k30.json": "14867a6835c067a4a3db23005ea961588b7495d0b7060fb2cbc3f07e22ee427d",
+    "test-results/v076-trap-upper-continuity/reference-e6-p0-k30.npz": "1e939e6991eda71ecd7452f7a80dc490abb9f45d981202bbca5aa4ba6f286ce9",
+    "test-results/v076-trap-upper-continuity/reference-e6-p0-k30.json": "d73540eb33f813d3bc419677508a57b043f8d87ee39a29f19836f17fc724a947"
+  },
+  "steps": [
+    {
+      "from": 3,
+      "to": 3.375,
+      "sameSpatialLocationMm": 0.47236106727070104,
+      "sourceVertexMaxMm": 0.5159579878131175
+    },
+    {
+      "from": 3.375,
+      "to": 3.75,
+      "sameSpatialLocationMm": 0.5346750935751842,
+      "sourceVertexMaxMm": 0.5839134817143581
+    },
+    {
+      "from": 3.75,
+      "to": 4.125,
+      "sameSpatialLocationMm": 0.5872363242870723,
+      "sourceVertexMaxMm": 0.6411954265287397
+    },
+    {
+      "from": 4.125,
+      "to": 4.5,
+      "sameSpatialLocationMm": 0.6300436531276455,
+      "sourceVertexMaxMm": 0.6878067765115075
+    },
+    {
+      "from": 4.5,
+      "to": 4.875,
+      "sameSpatialLocationMm": 0.663096850644537,
+      "sourceVertexMaxMm": 0.7237533813254612
+    },
+    {
+      "from": 4.875,
+      "to": 5.25,
+      "sameSpatialLocationMm": 0.686396530994904,
+      "sourceVertexMaxMm": 0.7490437521091198
+    },
+    {
+      "from": 5.25,
+      "to": 5.625,
+      "sameSpatialLocationMm": 0.699944219679152,
+      "sourceVertexMaxMm": 0.7636890214490091
+    },
+    {
+      "from": 5.625,
+      "to": 6,
+      "sameSpatialLocationMm": 0.7037428194853661,
+      "sourceVertexMaxMm": 0.767703038948416
+    }
+  ]
+}

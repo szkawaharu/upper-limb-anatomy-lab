@@ -8,10 +8,11 @@ from scipy.spatial.transform import Rotation
 from volumetric_reference import Solid
 from cage_solver import minimize
 from continuation import advance
+from snapshot_names import snapshot_name
 
 p=Path(sys.argv[1]);elev=float(sys.argv[2]);plane=float(sys.argv[3]);bulk=float(sys.argv[4]if len(sys.argv)>4 else 30)
 a=np.load(p/'cage.npz');refined=np.load(p/'conforming.npz');rest=a['nodes'];source=refined['points'];faces=refined['faces'];classes=refined['classes'];fixed=np.flatnonzero(classes>=0);solid=Solid(rest,a['tets'],fixed,element_weights=a['weights']);target=next(x for x in json.loads((p/'targets.json').read_text())['poses']if x['elev']==elev and x['plane']==plane);scale=float(a['worldUnitsPerMm']);center=a['centerWorld'];clock=time.time()
-code_files=['run-conforming-reference.py','continuation.py','tetrahedral_cage.py','conforming_surface.py','cage_solver.py','projected_solid_metric.py','constitutive_metric.py','volumetric_reference.py'];code_hashes={name:hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest()for name in code_files};snapshot=p/'code-snapshot';snapshot.mkdir(exist_ok=True)
+code_files=['run-conforming-reference.py','snapshot_names.py','continuation.py','tetrahedral_cage.py','conforming_surface.py','cage_solver.py','projected_solid_metric.py','constitutive_metric.py','volumetric_reference.py'];code_hashes={name:hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest()for name in code_files};snapshot=p/'code-snapshot';snapshot.mkdir(exist_ok=True)
 input_hashes={name:hashlib.sha256((p/name).read_bytes()).hexdigest()for name in ['cage.npz','conforming.npz','targets.json','preparation.json']}
 for name in code_files:shutil.copy2(Path(__file__).with_name(name),snapshot/name)
 RA=Rotation.from_quat(target['a']['q']).as_matrix();ta=np.array(target['a']['p'])-RA@np.array(target['a']['rest']);qa=np.array(target['a']['q']);qa[:3]*=-1;qb=np.array(target['b']['q']);q=np.r_[qa[3]*qb[:3]+qb[3]*qa[:3]+np.cross(qa[:3],qb[:3]),qa[3]*qb[3]-np.dot(qa[:3],qb[:3])];s=np.linalg.norm(q[:3]);angle=2*np.arctan2(s,q[3]);axis=q[:3]/s if s>1e-12 else np.zeros(3);anchor=(np.array(target['b']['rest'])-center)/scale;delta=(RA.T@(np.array(target['b']['p'])-ta)-np.array(target['b']['rest']))/scale
@@ -24,7 +25,7 @@ def pins(progress):
 def surface(nodes):return np.einsum('ni,nij->nj',refined['embeddingBarycentric'],nodes[refined['embeddingVertices']])
 
 step=min(1.,np.deg2rad(3)/max(angle,1e-12));base_step=step;progress=0.;x=rest.copy();stages=[]
-name='reference-e'+str(int(elev))+'-p'+str(int(plane))+'-k'+str(int(bulk));out=p/name
+name=snapshot_name(elev,plane,bulk);out=p/name
 def solve(x,previous,next_progress):
  start=solid.predict_boundary(x,pins(next_progress))
  if not np.isfinite(solid.evaluate(start,bulk,gradient=False)[0]):

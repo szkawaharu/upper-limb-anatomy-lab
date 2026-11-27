@@ -1,0 +1,42 @@
+{
+  "anatomicalAcceptance": false,
+  "productionEngineAcceptance": false,
+  "fixtureSha256": "24cc44d68a844dae771a9916ea5d9ec1cadf6e1628aa999546a205ba83651739",
+  "referenceSourceVertexMaxStepMm": 5.432706471433917,
+  "prescribedFixedVertexMaxStepMm": 5.432706471433917,
+  "engineeringRegressionBoundMm": 6.401433742895301,
+  "referenceNeutralReturn": {
+    "maxDriftMm": 1.523631186069631e-11,
+    "equilibriumResidualMm": 7.290572159559724e-11,
+    "numericalGuardMm": 0.001,
+    "notAProductionInteractionTest": true
+  },
+  "rows": [
+    {
+      "elev": 3,
+      "volumeRatio": 0.99955792352477,
+      "attachmentMaxMm": 6.482042828826778e-14,
+      "JRange": [
+        0.8208070133769135,
+        1.2085033286600952
+      ],
+      "seconds": 10.574365854263306
+    },
+    {
+      "elev": 6,
+      "volumeRatio": 0.9984719971801611,
+      "attachmentMaxMm": 4.717938318328171e-14,
+      "JRange": [
+        0.5751903630574124,
+        1.7310250572660868
+      ],
+      "seconds": 30.83820915222168
+    }
+  ],
+  "limitations": [
+    "Neck zero and abduction 3/6 degrees only",
+    "Boundary masks differ from the legacy production partial field",
+    "Local J outliers remain; global volume alone does not qualify the material model",
+    "No new production GPU or mobile FPS certification"
+  ]
+}

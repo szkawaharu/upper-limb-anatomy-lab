@@ -1,0 +1,79 @@
+{
+  "experimental": true,
+  "accepted": false,
+  "modelId": "v59TrapUpper",
+  "boneCoverage": {
+    "bones": [
+      {
+        "key": "b",
+        "boneId": "clavicle",
+        "file": "FMA13322.stl"
+      }
+    ],
+    "limitations": [
+      "Only clavicle; skull, cervical vertebrae, thorax and other muscles remain unaudited",
+      "Current reference poses have neck angle zero"
+    ]
+  },
+  "pose": {
+    "elev": 6,
+    "plane": 0,
+    "a": {
+      "q": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "p": [
+        0,
+        0,
+        0
+      ],
+      "rest": [
+        0,
+        0,
+        0
+      ]
+    },
+    "b": {
+      "q": [
+        -0.008255805367790282,
+        -0.02107903848698088,
+        0.01618978228328192,
+        0.9996126283535105
+      ],
+      "p": [
+        0.005051832,
+        1.7020786415000002,
+        -0.24003891850000003
+      ],
+      "rest": [
+        0.005051832,
+        1.7020786415000002,
+        -0.24003891850000003
+      ]
+    },
+    "backend": "validated-field"
+  },
+  "input": "test-results/v076-source-solid-trap-upper/reference-e6-p0-k30.npz",
+  "inputSha256": "1e939e6991eda71ecd7452f7a80dc490abb9f45d981202bbca5aa4ba6f286ce9",
+  "bones": [
+    {
+      "bone": "FMA13322.stl",
+      "sourceSha256": "f340050375ea4397a85082fb7bd68ea553d52f4718656599804ecf8f4c7768be",
+      "closed": true,
+      "surfacePoints": 23187,
+      "restInsidePoints": 40,
+      "posedInsidePoints": 40,
+      "newInsidePoints": 0,
+      "maxRestDepthMm": 0.03426285816243062,
+      "maxPosedDepthMm": 0.03426285816243587,
+      "maxDepthIncreaseMm": 7.209727606594107e-14,
+      "worstSurfaceVertex": 1191,
+      "increaseOverOneMm": 0,
+      "increaseOverPointOneMm": 0,
+      "classification": "vertex-in-shell and vertex-triangle distance; full surface crossings still separate"
+    }
+  ]
+}

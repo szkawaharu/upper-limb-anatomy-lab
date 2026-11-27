@@ -1,0 +1,14 @@
+{
+  "atlasCommit": "2c83c698788cff57f6317bddcf712e7acfbea7d8",
+  "license": "CC BY-SA 2.1 Japan",
+  "models": {
+    "v60DeltMid": {
+      "bones": [{"key": "a", "boneId": "scapula", "file": "FMA13395.stl"}, {"key": "b", "boneId": "humerus", "file": "FMA23130.stl"}],
+      "limitations": ["Only scapula and humerus; not all neighboring bones or tissues"]
+    },
+    "v59TrapUpper": {
+      "bones": [{"key": "b", "boneId": "clavicle", "file": "FMA13322.stl"}],
+      "limitations": ["Only clavicle; skull, cervical vertebrae, thorax and other muscles remain unaudited", "Current reference poses have neck angle zero"]
+    }
+  }
+}

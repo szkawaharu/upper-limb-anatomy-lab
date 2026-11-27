@@ -1,0 +1,709 @@
+{
+  "sourceOpposedFaces": 0,
+  "experimental": true,
+  "accepted": false,
+  "target": {
+    "elev": 6,
+    "plane": 0,
+    "a": {
+      "q": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "p": [
+        0,
+        0,
+        0
+      ],
+      "rest": [
+        0,
+        0,
+        0
+      ]
+    },
+    "b": {
+      "q": [
+        -0.008255805367790282,
+        -0.02107903848698088,
+        0.01618978228328192,
+        0.9996126283535105
+      ],
+      "p": [
+        0.005051832,
+        1.7020786415000002,
+        -0.24003891850000003
+      ],
+      "rest": [
+        0.005051832,
+        1.7020786415000002,
+        -0.24003891850000003
+      ]
+    },
+    "backend": "validated-field"
+  },
+  "progress": 1.0,
+  "bulk": 3000.0,
+  "codeSha256": {
+    "run-conforming-reference.py": "1efd14d10fbc8ae631d383b3ef99ef02d47df384579022c8c353fb70854a0fe7",
+    "continuation.py": "c743a404065214f25fc8778af711ba16107f21e22347a2757cc262019afe87a7",
+    "tetrahedral_cage.py": "1989b3b1f08ec0dc963cae001ebaa8ffb1394c1e9c26852387ad0374c2222c16",
+    "conforming_surface.py": "db993fab6f496ba2c8011905e0dc97b95daaa5f949e348f17bb10b83c054967e",
+    "cage_solver.py": "1b418dd2d536149e74bb2a398cb8e9b3a9e77bbc11cd0a4773fe031b6c8e0e7c",
+    "projected_solid_metric.py": "d376a6022b30d255bc08d60c938e087d9ff6d2cad218b9d1ff5ce2d7d67cf779",
+    "constitutive_metric.py": "e47e86d3cb1072c0912fa77061e427c8c50af91181f86b8aefa069e1127a5717",
+    "volumetric_reference.py": "8622dceaa6d08c67032a69361c9690b5906adce519d595c3411daa116dc472ea"
+  },
+  "cageNodes": 23190,
+  "sourceVertices": 23187,
+  "originalSourceVertices": 23187,
+  "surfaceVolumeRatio": 0.9999529396199722,
+  "surfaceEdgeRatio": [
+    0.7374084716730366,
+    1.5440065351440775
+  ],
+  "surfaceAreaRatio": [
+    0.518602337979134,
+    1.4940053645092226
+  ],
+  "attachmentMaxMm": 0.0,
+  "allStagesConverged": true,
+  "seconds": 38.15692710876465,
+  "stages": [
+    {
+      "progress": 0.9405365854266862,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 9,
+      "residualMaxMm": 1.0050424580202231e-05,
+      "energy": 0.003117678291783152,
+      "cageJQuantiles": [
+        0.589113489831499,
+        0.9802164291245672,
+        0.9999999999999998,
+        1.01468904132694,
+        1.6877253022262002
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9985629231280607,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.01077751948367152,
+          "gain": 0.5,
+          "minJ": 0.484917829472691,
+          "maxJ": 1.5588129411680387,
+          "previousResidualMm": 48.88511039939253,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 2,
+          "energy": 0.007412657755702155,
+          "gain": 0.25,
+          "minJ": 0.22216309468105155,
+          "maxJ": 1.679889920669622,
+          "previousResidualMm": 23.75840644049571,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 3,
+          "energy": 0.006217385296471545,
+          "gain": 1.0,
+          "minJ": 0.3147852904121908,
+          "maxJ": 2.112396275036986,
+          "previousResidualMm": 22.05321332776872,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 4,
+          "energy": 0.005066118020103894,
+          "gain": 0.25,
+          "minJ": 0.3558696200613408,
+          "maxJ": 1.6530210419974096,
+          "previousResidualMm": 12.486915069781752,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 5,
+          "energy": 0.0032477526623740515,
+          "gain": 1.0,
+          "minJ": 0.5252099283472182,
+          "maxJ": 1.6826957038880643,
+          "previousResidualMm": 9.398873431239641,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 6,
+          "energy": 0.0031202915683489845,
+          "gain": 1.0,
+          "minJ": 0.586971304219537,
+          "maxJ": 1.684461052806641,
+          "previousResidualMm": 1.2573010806512934,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 7,
+          "energy": 0.0031176925436470692,
+          "gain": 1.0,
+          "minJ": 0.5891148739844654,
+          "maxJ": 1.6876059318405374,
+          "previousResidualMm": 0.45519291775431464,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 8,
+          "energy": 0.0031176783275827877,
+          "gain": 1.0,
+          "minJ": 0.5891136011637762,
+          "maxJ": 1.6877255444830508,
+          "previousResidualMm": 0.05142573880311724,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 9,
+          "energy": 0.003117678291783152,
+          "gain": 1.0,
+          "minJ": 0.589113489831499,
+          "maxJ": 1.6877253022262002,
+          "previousResidualMm": 0.0029829174197209176,
+          "projectedMetric": false
+        }
+      ],
+      "metric": {
+        "projection": "none; exact assembled global tangent, direction must be descent",
+        "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+        "linearBackwardError": 1.0854388156405847e-18
+      }
+    },
+    {
+      "progress": 1.0,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 2,
+      "residualMaxMm": 0.00015786376042441617,
+      "energy": 0.0035349085857140066,
+      "cageJQuantiles": [
+        0.5751903630574124,
+        0.9789433080492045,
+        0.9999999999999998,
+        1.0157153056668164,
+        1.7310250572660868
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9984719971801603,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.0035349252809739216,
+          "gain": 1.0,
+          "minJ": 0.5744160886916806,
+          "maxJ": 1.731615573008511,
+          "previousResidualMm": 3.1186328372991032,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 2,
+          "energy": 0.0035349085857140066,
+          "gain": 1.0,
+          "minJ": 0.5751903630574124,
+          "maxJ": 1.7310250572660868,
+          "previousResidualMm": 0.00991681516055703,
+          "projectedMetric": false
+        }
+      ],
+      "metric": {
+        "projection": "none; exact assembled global tangent, direction must be descent",
+        "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+        "linearBackwardError": 3.074333906053239e-17
+      }
+    },
+    {
+      "progress": 1.0,
+      "phase": "material-continuation",
+      "bulk": 100.0,
+      "seconds": 7.835012912750244,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 3,
+      "residualMaxMm": 2.612146287786323e-06,
+      "energy": 0.004013253947503589,
+      "cageJQuantiles": [
+        0.6814074162810115,
+        0.9850930550533299,
+        0.9999999999999999,
+        1.0133290718618815,
+        1.4736373504974603
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9994529913134502,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.0040140986997917365,
+          "gain": 1.0,
+          "minJ": 0.659386228352381,
+          "maxJ": 1.4777814141005916,
+          "previousResidualMm": 3.7375823693023102,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 2,
+          "energy": 0.004013254090243374,
+          "gain": 1.0,
+          "minJ": 0.6806193473902954,
+          "maxJ": 1.4736186716745436,
+          "previousResidualMm": 0.34126881048697655,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 3,
+          "energy": 0.004013253947503589,
+          "gain": 1.0,
+          "minJ": 0.6814074162810115,
+          "maxJ": 1.4736373504974603,
+          "previousResidualMm": 0.006479732610808688,
+          "projectedMetric": false
+        }
+      ],
+      "metric": {
+        "projection": "none; exact assembled global tangent, direction must be descent",
+        "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+        "linearBackwardError": 2.0818087973738002e-17
+      }
+    },
+    {
+      "progress": 1.0,
+      "phase": "material-continuation",
+      "bulk": 300.0,
+      "seconds": 16.15034818649292,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 3,
+      "residualMaxMm": 8.974657731816175e-07,
+      "energy": 0.00466775741766271,
+      "cageJQuantiles": [
+        0.7622500822476239,
+        0.9884928391275338,
+        0.9999999999999999,
+        1.0114043192075324,
+        1.297714677250974
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.99977815337729,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.004668282671911639,
+          "gain": 1.0,
+          "minJ": 0.7495738299467636,
+          "maxJ": 1.2997708819845193,
+          "previousResidualMm": 3.551947573765479,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 2,
+          "energy": 0.004667757450969028,
+          "gain": 1.0,
+          "minJ": 0.7620115659721487,
+          "maxJ": 1.2977101503065172,
+          "previousResidualMm": 0.6028702485611115,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 3,
+          "energy": 0.00466775741766271,
+          "gain": 1.0,
+          "minJ": 0.7622500822476239,
+          "maxJ": 1.297714677250974,
+          "previousResidualMm": 0.003373256541512806,
+          "projectedMetric": false
+        }
+      ],
+      "metric": {
+        "projection": "none; exact assembled global tangent, direction must be descent",
+        "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+        "linearBackwardError": 3.705747756926609e-17
+      }
+    },
+    {
+      "progress": 1.0,
+      "phase": "material-continuation",
+      "bulk": 1000.0,
+      "seconds": 24.590071201324463,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 3,
+      "residualMaxMm": 0.0009710930667599365,
+      "energy": 0.005960448123049611,
+      "cageJQuantiles": [
+        0.8293132892229971,
+        0.9903103921714909,
+        1.0,
+        1.0098088460312105,
+        1.181593504578805
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9999095586367919,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.0059626888232409934,
+          "gain": 1.0,
+          "minJ": 0.8207440708233876,
+          "maxJ": 1.1825508486966514,
+          "previousResidualMm": 4.439263707138426,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 2,
+          "energy": 0.005960453757579705,
+          "gain": 1.0,
+          "minJ": 0.8292039850886991,
+          "maxJ": 1.1815816662322343,
+          "previousResidualMm": 1.460389513833898,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 3,
+          "energy": 0.005960448123049611,
+          "gain": 1.0,
+          "minJ": 0.8293132892229971,
+          "maxJ": 1.181593504578805,
+          "previousResidualMm": 0.1330343856469224,
+          "projectedMetric": false
+        }
+      ],
+      "metric": {
+        "projection": "none; exact assembled global tangent, direction must be descent",
+        "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+        "linearBackwardError": 5.421302491909491e-18
+      }
+    },
+    {
+      "progress": 1.0,
+      "phase": "material-continuation",
+      "bulk": 3000.0,
+      "seconds": 37.837292194366455,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 5,
+      "residualMaxMm": 1.1724417559984045e-07,
+      "energy": 0.008603561347588332,
+      "cageJQuantiles": [
+        0.8698018259208007,
+        0.990921035117597,
+        1.0,
+        1.0091833432927784,
+        1.1621271727704607
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9999529396199709,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.008608426276351399,
+          "gain": 1.0,
+          "minJ": 0.8666313185024067,
+          "maxJ": 1.1627308374471736,
+          "previousResidualMm": 4.153878720571929,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 2,
+          "energy": 0.008603610542480534,
+          "gain": 1.0,
+          "minJ": 0.8697515658931481,
+          "maxJ": 1.1622894322679036,
+          "previousResidualMm": 4.554863361757912,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 3,
+          "energy": 0.008603562151162113,
+          "gain": 1.0,
+          "minJ": 0.8698014726503907,
+          "maxJ": 1.1621287267723885,
+          "previousResidualMm": 0.5090583489948507,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 4,
+          "energy": 0.00860356134793023,
+          "gain": 1.0,
+          "minJ": 0.8698018259100377,
+          "maxJ": 1.162127314815684,
+          "previousResidualMm": 0.022654150932688286,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 5,
+          "energy": 0.008603561347588332,
+          "gain": 1.0,
+          "minJ": 0.8698018259208007,
+          "maxJ": 1.1621271727704607,
+          "previousResidualMm": 0.0022361954143259436,
+          "projectedMetric": false
+        }
+      ],
+      "metric": {
+        "projection": "none; exact assembled global tangent, direction must be descent",
+        "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+        "linearBackwardError": 8.946993148314322e-19
+      }
+    }
+  ],
+  "rejectedTrials": [],
+  "boneContactEvaluated": false,
+  "selfCollisionEvaluated": false,
+  "activation": null,
+  "force": null,
+  "inputSha256": {
+    "cage.npz": "2542474b9196cf02b91e1e7e05752a082149785b71e88071134e50700d1b5923",
+    "conforming.npz": "8b33ee0f6a21a0a3032274f6e28586b78ca1cfa888d1a642a9313d4ccfaae633",
+    "targets.json": "aa40e35d2f514815ba546aa51cd0e21424de97f926c13910d98c2544583ae704",
+    "preparation.json": "9ed594467321850d17e585afaf519ea35664b2afb07ef55a1a5936a6d6adc310"
+  },
+  "snapshotSha256": "a762918a245d7bb7cd0989844cbdfad086df9f9ab6d69556b0d9b912d5527dd7",
+  "materialContinuation": [
+    {
+      "bulk": 100.0,
+      "seconds": 7.835012912750244,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 3,
+      "residualMaxMm": 2.612146287786323e-06,
+      "energy": 0.004013253947503589,
+      "cageJQuantiles": [
+        0.6814074162810115,
+        0.9850930550533299,
+        0.9999999999999999,
+        1.0133290718618815,
+        1.4736373504974603
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9994529913134502,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.0040140986997917365,
+          "gain": 1.0,
+          "minJ": 0.659386228352381,
+          "maxJ": 1.4777814141005916,
+          "previousResidualMm": 3.7375823693023102,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 2,
+          "energy": 0.004013254090243374,
+          "gain": 1.0,
+          "minJ": 0.6806193473902954,
+          "maxJ": 1.4736186716745436,
+          "previousResidualMm": 0.34126881048697655,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 3,
+          "energy": 0.004013253947503589,
+          "gain": 1.0,
+          "minJ": 0.6814074162810115,
+          "maxJ": 1.4736373504974603,
+          "previousResidualMm": 0.006479732610808688,
+          "projectedMetric": false
+        }
+      ],
+      "metric": {
+        "projection": "none; exact assembled global tangent, direction must be descent",
+        "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+        "linearBackwardError": 2.0818087973738002e-17
+      }
+    },
+    {
+      "bulk": 300.0,
+      "seconds": 16.15034818649292,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 3,
+      "residualMaxMm": 8.974657731816175e-07,
+      "energy": 0.00466775741766271,
+      "cageJQuantiles": [
+        0.7622500822476239,
+        0.9884928391275338,
+        0.9999999999999999,
+        1.0114043192075324,
+        1.297714677250974
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.99977815337729,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.004668282671911639,
+          "gain": 1.0,
+          "minJ": 0.7495738299467636,
+          "maxJ": 1.2997708819845193,
+          "previousResidualMm": 3.551947573765479,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 2,
+          "energy": 0.004667757450969028,
+          "gain": 1.0,
+          "minJ": 0.7620115659721487,
+          "maxJ": 1.2977101503065172,
+          "previousResidualMm": 0.6028702485611115,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 3,
+          "energy": 0.00466775741766271,
+          "gain": 1.0,
+          "minJ": 0.7622500822476239,
+          "maxJ": 1.297714677250974,
+          "previousResidualMm": 0.003373256541512806,
+          "projectedMetric": false
+        }
+      ],
+      "metric": {
+        "projection": "none; exact assembled global tangent, direction must be descent",
+        "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+        "linearBackwardError": 3.705747756926609e-17
+      }
+    },
+    {
+      "bulk": 1000.0,
+      "seconds": 24.590071201324463,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 3,
+      "residualMaxMm": 0.0009710930667599365,
+      "energy": 0.005960448123049611,
+      "cageJQuantiles": [
+        0.8293132892229971,
+        0.9903103921714909,
+        1.0,
+        1.0098088460312105,
+        1.181593504578805
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9999095586367919,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.0059626888232409934,
+          "gain": 1.0,
+          "minJ": 0.8207440708233876,
+          "maxJ": 1.1825508486966514,
+          "previousResidualMm": 4.439263707138426,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 2,
+          "energy": 0.005960453757579705,
+          "gain": 1.0,
+          "minJ": 0.8292039850886991,
+          "maxJ": 1.1815816662322343,
+          "previousResidualMm": 1.460389513833898,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 3,
+          "energy": 0.005960448123049611,
+          "gain": 1.0,
+          "minJ": 0.8293132892229971,
+          "maxJ": 1.181593504578805,
+          "previousResidualMm": 0.1330343856469224,
+          "projectedMetric": false
+        }
+      ],
+      "metric": {
+        "projection": "none; exact assembled global tangent, direction must be descent",
+        "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+        "linearBackwardError": 5.421302491909491e-18
+      }
+    },
+    {
+      "bulk": 3000.0,
+      "seconds": 37.837292194366455,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 5,
+      "residualMaxMm": 1.1724417559984045e-07,
+      "energy": 0.008603561347588332,
+      "cageJQuantiles": [
+        0.8698018259208007,
+        0.990921035117597,
+        1.0,
+        1.0091833432927784,
+        1.1621271727704607
+      ],
+      "cageNonPositive": 0,
+      "quadratureVolumeRatio": 0.9999529396199709,
+      "rows": [
+        {
+          "iteration": 1,
+          "energy": 0.008608426276351399,
+          "gain": 1.0,
+          "minJ": 0.8666313185024067,
+          "maxJ": 1.1627308374471736,
+          "previousResidualMm": 4.153878720571929,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 2,
+          "energy": 0.008603610542480534,
+          "gain": 1.0,
+          "minJ": 0.8697515658931481,
+          "maxJ": 1.1622894322679036,
+          "previousResidualMm": 4.554863361757912,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 3,
+          "energy": 0.008603562151162113,
+          "gain": 1.0,
+          "minJ": 0.8698014726503907,
+          "maxJ": 1.1621287267723885,
+          "previousResidualMm": 0.5090583489948507,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 4,
+          "energy": 0.00860356134793023,
+          "gain": 1.0,
+          "minJ": 0.8698018259100377,
+          "maxJ": 1.162127314815684,
+          "previousResidualMm": 0.022654150932688286,
+          "projectedMetric": false
+        },
+        {
+          "iteration": 5,
+          "energy": 0.008603561347588332,
+          "gain": 1.0,
+          "minJ": 0.8698018259208007,
+          "maxJ": 1.1621271727704607,
+          "previousResidualMm": 0.0022361954143259436,
+          "projectedMetric": false
+        }
+      ],
+      "metric": {
+        "projection": "none; exact assembled global tangent, direction must be descent",
+        "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+        "linearBackwardError": 8.946993148314322e-19
+      }
+    }
+  ],
+  "materialTargetReached": true,
+  "materialInitialization": {
+    "input": "test-results/v076-source-solid-trap-upper/reference-e6-p0-k30.npz",
+    "inputSha256": "1e939e6991eda71ecd7452f7a80dc490abb9f45d981202bbca5aa4ba6f286ce9",
+    "bulk": 30.0
+  },
+  "materialCodeSha256": {
+    "refine-material-state.py": "b5b17ac869b007efdb32115a9b6ef03b8ff5c222fae87e0e29800ccc1c4b9a8e",
+    "cage_solver.py": "eb5ffdaaad3b114b8d5ec51fd42db3558d38d62011e8161c103fee0b0fed3572",
+    "volumetric_reference.py": "8622dceaa6d08c67032a69361c9690b5906adce519d595c3411daa116dc472ea",
+    "projected_solid_metric.py": "d376a6022b30d255bc08d60c938e087d9ff6d2cad218b9d1ff5ce2d7d67cf779",
+    "constitutive_metric.py": "e47e86d3cb1072c0912fa77061e427c8c50af91181f86b8aefa069e1127a5717"
+  }
+}

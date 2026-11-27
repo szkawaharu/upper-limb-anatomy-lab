@@ -1,0 +1,51 @@
+{
+  "id": "v59TrapUpper",
+  "inputSha256": "6e2f4c80c6ff8e6bb152fb11c67c198d8f1af6299ce0816bb02fef852207ea65",
+  "source": {
+    "atlas": "BodyParts3D",
+    "commit": "2c83c698788cff57f6317bddcf712e7acfbea7d8",
+    "license": "CC BY-SA 2.1 Japan",
+    "sourceUnits": "mm",
+    "worldUnitsPerMm": 0.00555,
+    "file": "FMA33586.stl",
+    "geometry": "atlas-surface",
+    "repairCandidate": {
+      "method": "MeshFix without component removal or joining",
+      "audit": "repair-audit.json",
+      "medicalAccuracyVerified": false
+    }
+  },
+  "sourceSha256": "aac65139b02cb45c0f3c2083f8b446939190c57bf37152c960f2d0477f766049",
+  "tetgenWrapperVersion": "0.8.4",
+  "runtimeDependencyAdded": false,
+  "qualityRequested": false,
+  "minRadiusEdgeRatio": 2.0,
+  "steinerLimit": 20000,
+  "sourceVertices": 23187,
+  "nodes": 23190,
+  "tets": 80265,
+  "boundaryFaces": 46402,
+  "sourceBoundaryExact": true,
+  "sourcePrefixMaxError": 0,
+  "referenceTetSignCounts": {
+    "positive": 80265,
+    "negative": 0,
+    "zero": 0
+  },
+  "tetVolumeSum": 0.013395754574000178,
+  "sourceSurfaceVolume": 0.01339575457400017,
+  "relativeVolumeDifference": 6.474900187197119e-16,
+  "conditionNumberQuantiles": [
+    1.247729948608167,
+    16.054986225357048,
+    92.37214455972467,
+    213.494034237959,
+    2115.4271976495916
+  ],
+  "unreferencedGeneratedNodes": [
+    23187,
+    23188,
+    23189
+  ],
+  "seconds": 3.2758331298828125
+}

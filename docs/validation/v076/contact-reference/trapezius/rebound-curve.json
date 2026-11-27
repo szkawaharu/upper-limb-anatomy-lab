@@ -1,0 +1,616 @@
+{
+  "experimental": true,
+  "adopted": false,
+  "id": "v59TrapUpper",
+  "method": "current curve algorithm freshly bound to repaired source and revised footprints; same geometry and masks as solid reference, neck zero, no contact for this null-contact muscle",
+  "inputSha256": "6e2f4c80c6ff8e6bb152fb11c67c198d8f1af6299ce0816bb02fef852207ea65",
+  "fieldMethod": "fan",
+  "sourceVertices": 23187,
+  "sourceTriangles": 46402,
+  "step3to6MaxMm": 6.177608469819985,
+  "rows": [
+    {
+      "elev": 0,
+      "plane": 0,
+      "id": "v59TrapUpper",
+      "topology": {
+        "closed": true,
+        "boundary": 0,
+        "nonmanifold": 0,
+        "inconsistent": 0,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "nonfinite": 0,
+      "attachmentMaxMm": 1.0002009230857266e-14,
+      "attachmentSamples": 10629,
+      "maxStepMm": null,
+      "restVolume": 0.013395754586306895,
+      "volume": 0.013395754586306895,
+      "volumeRatio": 1,
+      "volumeStatus": "closed-oriented-proxy",
+      "areaRatio": [
+        1,
+        1
+      ],
+      "edgeRatio": [
+        1,
+        1
+      ],
+      "worstEdge": {
+        "vertices": [
+          10455,
+          9861
+        ],
+        "restLengthMm": 1.5086970648828186,
+        "ratio": 1
+      },
+      "worstArea": {
+        "triangle": 0,
+        "vertices": [
+          10455,
+          9861,
+          10451
+        ],
+        "restAreaMm2": 0.18989443374185797,
+        "ratio": 1
+      },
+      "newDegenerateFaces": 0,
+      "stretch": [
+        0.9999999999999791,
+        1.000000000000032
+      ],
+      "localDeterminantApprox": [
+        0.9999999999999997,
+        1.0000000000000004
+      ],
+      "boundedVertices": 0,
+      "invalidFrames": 0,
+      "volumetricJacobian": null,
+      "newIntersections": null,
+      "newInversions": null,
+      "boneDistance": null,
+      "clinicalValidation": false,
+      "selfIntersectionStatus": "not-evaluated",
+      "physicalVolumeVerified": false
+    },
+    {
+      "elev": 3,
+      "plane": 0,
+      "id": "v59TrapUpper",
+      "topology": {
+        "closed": true,
+        "boundary": 0,
+        "nonmanifold": 0,
+        "inconsistent": 0,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "nonfinite": 0,
+      "attachmentMaxMm": 0.000011617727966216242,
+      "attachmentSamples": 10629,
+      "maxStepMm": null,
+      "restVolume": 0.013395754586306895,
+      "volume": 0.013369766799126328,
+      "volumeRatio": 0.9980599982619022,
+      "volumeStatus": "closed-oriented-proxy",
+      "areaRatio": [
+        0.3729635692668027,
+        1.5189093707920882
+      ],
+      "edgeRatio": [
+        0.852205825408884,
+        1.1949437079993885
+      ],
+      "worstEdge": {
+        "vertices": [
+          669,
+          799
+        ],
+        "restLengthMm": 0.3104687594950309,
+        "ratio": 1.1949437079993885
+      },
+      "worstArea": {
+        "triangle": 43887,
+        "vertices": [
+          1337,
+          1334,
+          1339
+        ],
+        "restAreaMm2": 0.23071884576287108,
+        "ratio": 1.5189093707920882
+      },
+      "newDegenerateFaces": 0,
+      "stretch": [
+        0.7272544780400285,
+        1.232530033822364
+      ],
+      "localDeterminantApprox": [
+        0.9471178014776438,
+        1
+      ],
+      "boundedVertices": 1,
+      "invalidFrames": 0,
+      "volumetricJacobian": null,
+      "newIntersections": null,
+      "newInversions": null,
+      "boneDistance": null,
+      "clinicalValidation": false,
+      "selfIntersectionStatus": "not-evaluated",
+      "physicalVolumeVerified": false
+    },
+    {
+      "elev": 6,
+      "plane": 0,
+      "id": "v59TrapUpper",
+      "topology": {
+        "closed": true,
+        "boundary": 0,
+        "nonmanifold": 0,
+        "inconsistent": 0,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "nonfinite": 0,
+      "attachmentMaxMm": 0.000011899394608110444,
+      "attachmentSamples": 10629,
+      "maxStepMm": null,
+      "restVolume": 0.013395754586306895,
+      "volume": 0.01330479875422886,
+      "volumeRatio": 0.9932101001483702,
+      "volumeStatus": "closed-oriented-proxy",
+      "areaRatio": [
+        0.21208398395392652,
+        2.732795277089724
+      ],
+      "edgeRatio": [
+        0.4902441454647583,
+        1.7217158193931905
+      ],
+      "worstEdge": {
+        "vertices": [
+          669,
+          799
+        ],
+        "restLengthMm": 0.3104687594950309,
+        "ratio": 1.7217158193931905
+      },
+      "worstArea": {
+        "triangle": 43887,
+        "vertices": [
+          1337,
+          1334,
+          1339
+        ],
+        "restAreaMm2": 0.23071884576287108,
+        "ratio": 2.732795277089724
+      },
+      "newDegenerateFaces": 0,
+      "stretch": [
+        0.3562287318265072,
+        2.4377454173271813
+      ],
+      "localDeterminantApprox": [
+        0.22798638836896462,
+        1.1904217105431014
+      ],
+      "boundedVertices": 9,
+      "invalidFrames": 0,
+      "volumetricJacobian": null,
+      "newIntersections": null,
+      "newInversions": null,
+      "boneDistance": null,
+      "clinicalValidation": false,
+      "selfIntersectionStatus": "not-evaluated",
+      "physicalVolumeVerified": false
+    },
+    {
+      "elev": 30,
+      "plane": 0,
+      "id": "v59TrapUpper",
+      "topology": {
+        "closed": true,
+        "boundary": 0,
+        "nonmanifold": 0,
+        "inconsistent": 0,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "nonfinite": 0,
+      "attachmentMaxMm": 0.000010978711794151888,
+      "attachmentSamples": 10629,
+      "maxStepMm": null,
+      "restVolume": 0.013395754586306895,
+      "volume": 0.012885343981420211,
+      "volumeRatio": 0.9618975846714583,
+      "volumeStatus": "closed-oriented-proxy",
+      "areaRatio": [
+        0.00835606224363935,
+        9.647792670176935
+      ],
+      "edgeRatio": [
+        0.08776725517191183,
+        4.1679700043192796
+      ],
+      "worstEdge": {
+        "vertices": [
+          669,
+          799
+        ],
+        "restLengthMm": 0.3104687594950309,
+        "ratio": 4.1679700043192796
+      },
+      "worstArea": {
+        "triangle": 24287,
+        "vertices": [
+          10670,
+          11233,
+          10664
+        ],
+        "restAreaMm2": 0.18913750925993272,
+        "ratio": 9.647792670176935
+      },
+      "newDegenerateFaces": 0,
+      "stretch": [
+        0.35,
+        2.8
+      ],
+      "localDeterminantApprox": [
+        0.37673421788265127,
+        2.8000000000000003
+      ],
+      "boundedVertices": 1533,
+      "invalidFrames": 0,
+      "volumetricJacobian": null,
+      "newIntersections": null,
+      "newInversions": null,
+      "boneDistance": null,
+      "clinicalValidation": false,
+      "selfIntersectionStatus": "not-evaluated",
+      "physicalVolumeVerified": false
+    },
+    {
+      "elev": 60,
+      "plane": 0,
+      "id": "v59TrapUpper",
+      "topology": {
+        "closed": true,
+        "boundary": 0,
+        "nonmanifold": 0,
+        "inconsistent": 0,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "nonfinite": 0,
+      "attachmentMaxMm": 0.000011098155366275061,
+      "attachmentSamples": 10629,
+      "maxStepMm": null,
+      "restVolume": 0.013395754586306895,
+      "volume": 0.01215255702415208,
+      "volumeRatio": 0.9071946597599206,
+      "volumeStatus": "closed-oriented-proxy",
+      "areaRatio": [
+        0.003271046333170501,
+        16.930530187119274
+      ],
+      "edgeRatio": [
+        0.02449671745116809,
+        4.842994023397009
+      ],
+      "worstEdge": {
+        "vertices": [
+          669,
+          799
+        ],
+        "restLengthMm": 0.3104687594950309,
+        "ratio": 4.842994023397009
+      },
+      "worstArea": {
+        "triangle": 24287,
+        "vertices": [
+          10670,
+          11233,
+          10664
+        ],
+        "restAreaMm2": 0.18913750925993272,
+        "ratio": 16.930530187119274
+      },
+      "newDegenerateFaces": 0,
+      "stretch": [
+        0.38167973015224693,
+        2.8
+      ],
+      "localDeterminantApprox": [
+        0.4499688013560419,
+        2.8000000000000003
+      ],
+      "boundedVertices": 4684,
+      "invalidFrames": 0,
+      "volumetricJacobian": null,
+      "newIntersections": null,
+      "newInversions": null,
+      "boneDistance": null,
+      "clinicalValidation": false,
+      "selfIntersectionStatus": "not-evaluated",
+      "physicalVolumeVerified": false
+    },
+    {
+      "elev": 90,
+      "plane": 0,
+      "id": "v59TrapUpper",
+      "topology": {
+        "closed": true,
+        "boundary": 0,
+        "nonmanifold": 0,
+        "inconsistent": 0,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "nonfinite": 0,
+      "attachmentMaxMm": 0.000011198629476305282,
+      "attachmentSamples": 10629,
+      "maxStepMm": null,
+      "restVolume": 0.013395754586306895,
+      "volume": 0.011506773372813564,
+      "volumeRatio": 0.8589865765811923,
+      "volumeStatus": "closed-oriented-proxy",
+      "areaRatio": [
+        0.008401689903730874,
+        22.564927241637676
+      ],
+      "edgeRatio": [
+        0.05626260238109619,
+        5.51037399807075
+      ],
+      "worstEdge": {
+        "vertices": [
+          669,
+          799
+        ],
+        "restLengthMm": 0.3104687594950309,
+        "ratio": 5.51037399807075
+      },
+      "worstArea": {
+        "triangle": 24287,
+        "vertices": [
+          10670,
+          11233,
+          10664
+        ],
+        "restAreaMm2": 0.18913750925993272,
+        "ratio": 22.564927241637676
+      },
+      "newDegenerateFaces": 0,
+      "stretch": [
+        0.35,
+        2.8
+      ],
+      "localDeterminantApprox": [
+        0.5291518263352074,
+        2.8000000000000003
+      ],
+      "boundedVertices": 5729,
+      "invalidFrames": 0,
+      "volumetricJacobian": null,
+      "newIntersections": null,
+      "newInversions": null,
+      "boneDistance": null,
+      "clinicalValidation": false,
+      "selfIntersectionStatus": "not-evaluated",
+      "physicalVolumeVerified": false
+    },
+    {
+      "elev": 120,
+      "plane": 0,
+      "id": "v59TrapUpper",
+      "topology": {
+        "closed": true,
+        "boundary": 0,
+        "nonmanifold": 0,
+        "inconsistent": 0,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "nonfinite": 0,
+      "attachmentMaxMm": 0.000011009404001424541,
+      "attachmentSamples": 10629,
+      "maxStepMm": null,
+      "restVolume": 0.013395754586306895,
+      "volume": 0.010828108668622324,
+      "volumeRatio": 0.8083239058209374,
+      "volumeStatus": "closed-oriented-proxy",
+      "areaRatio": [
+        0.007252680302643867,
+        29.707998813599172
+      ],
+      "edgeRatio": [
+        0.03666613692660739,
+        6.249209335864384
+      ],
+      "worstEdge": {
+        "vertices": [
+          669,
+          799
+        ],
+        "restLengthMm": 0.3104687594950309,
+        "ratio": 6.249209335864384
+      },
+      "worstArea": {
+        "triangle": 24287,
+        "vertices": [
+          10670,
+          11233,
+          10664
+        ],
+        "restAreaMm2": 0.18913750925993272,
+        "ratio": 29.707998813599172
+      },
+      "newDegenerateFaces": 0,
+      "stretch": [
+        0.35,
+        2.8
+      ],
+      "localDeterminantApprox": [
+        0.5389414748443268,
+        2.8000000000000003
+      ],
+      "boundedVertices": 6434,
+      "invalidFrames": 0,
+      "volumetricJacobian": null,
+      "newIntersections": null,
+      "newInversions": null,
+      "boneDistance": null,
+      "clinicalValidation": false,
+      "selfIntersectionStatus": "not-evaluated",
+      "physicalVolumeVerified": false
+    },
+    {
+      "elev": 150,
+      "plane": 0,
+      "id": "v59TrapUpper",
+      "topology": {
+        "closed": true,
+        "boundary": 0,
+        "nonmanifold": 0,
+        "inconsistent": 0,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "nonfinite": 0,
+      "attachmentMaxMm": 0.000011162270463427795,
+      "attachmentSamples": 10629,
+      "maxStepMm": null,
+      "restVolume": 0.013395754586306895,
+      "volume": 0.01032051755532906,
+      "volumeRatio": 0.7704319669963696,
+      "volumeStatus": "closed-oriented-proxy",
+      "areaRatio": [
+        0.007957171265865894,
+        33.739095284796704
+      ],
+      "edgeRatio": [
+        0.032557220112696766,
+        6.30191798543105
+      ],
+      "worstEdge": {
+        "vertices": [
+          669,
+          799
+        ],
+        "restLengthMm": 0.3104687594950309,
+        "ratio": 6.30191798543105
+      },
+      "worstArea": {
+        "triangle": 24287,
+        "vertices": [
+          10670,
+          11233,
+          10664
+        ],
+        "restAreaMm2": 0.18913750925993272,
+        "ratio": 33.739095284796704
+      },
+      "newDegenerateFaces": 0,
+      "stretch": [
+        0.35,
+        2.8
+      ],
+      "localDeterminantApprox": [
+        0.5473760534745956,
+        2.8000000000000003
+      ],
+      "boundedVertices": 6865,
+      "invalidFrames": 0,
+      "volumetricJacobian": null,
+      "newIntersections": null,
+      "newInversions": null,
+      "boneDistance": null,
+      "clinicalValidation": false,
+      "selfIntersectionStatus": "not-evaluated",
+      "physicalVolumeVerified": false
+    },
+    {
+      "elev": 180,
+      "plane": 0,
+      "id": "v59TrapUpper",
+      "topology": {
+        "closed": true,
+        "boundary": 0,
+        "nonmanifold": 0,
+        "inconsistent": 0,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "nonfinite": 0,
+      "attachmentMaxMm": 0.000011162270463427795,
+      "attachmentSamples": 10629,
+      "maxStepMm": null,
+      "restVolume": 0.013395754586306895,
+      "volume": 0.01032051755532906,
+      "volumeRatio": 0.7704319669963696,
+      "volumeStatus": "closed-oriented-proxy",
+      "areaRatio": [
+        0.007957171265865894,
+        33.739095284796704
+      ],
+      "edgeRatio": [
+        0.032557220112696766,
+        6.30191798543105
+      ],
+      "worstEdge": {
+        "vertices": [
+          669,
+          799
+        ],
+        "restLengthMm": 0.3104687594950309,
+        "ratio": 6.30191798543105
+      },
+      "worstArea": {
+        "triangle": 24287,
+        "vertices": [
+          10670,
+          11233,
+          10664
+        ],
+        "restAreaMm2": 0.18913750925993272,
+        "ratio": 33.739095284796704
+      },
+      "newDegenerateFaces": 0,
+      "stretch": [
+        0.35,
+        2.8
+      ],
+      "localDeterminantApprox": [
+        0.5473760534745956,
+        2.8000000000000003
+      ],
+      "boundedVertices": 6865,
+      "invalidFrames": 0,
+      "volumetricJacobian": null,
+      "newIntersections": null,
+      "newInversions": null,
+      "boneDistance": null,
+      "clinicalValidation": false,
+      "selfIntersectionStatus": "not-evaluated",
+      "physicalVolumeVerified": false
+    }
+  ]
+}

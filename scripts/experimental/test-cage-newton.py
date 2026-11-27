@@ -10,5 +10,6 @@ for k in range(3):
 assert np.max(np.abs(H.toarray()-np.array(fd).T))<1e-5
 now,r=minimize(s,x,tolerance_mm=1e-9);assert r['converged']and np.max(np.abs(now-p@F.T))<1e-8
 assert np.array_equal(now[s.fixed],x[s.fixed]);assert all(a['minJ']>0 for a in r['rows'])
+assert r['metric']['linearBackwardError']<1e-10
 assert all(a['energy']>=b['energy']for a,b in zip(r['rows'],r['rows'][1:]))
 print('PASS safeguarded global Newton: independent non-rest stress derivative, analytic homogeneous-deformation equilibrium, fixed boundary, monotone energy, positive J')

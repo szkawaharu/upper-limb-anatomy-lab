@@ -1,0 +1,8 @@
+{
+  "completed": false,
+  "stoppedByDeveloper": true,
+  "cold3Executed": true,
+  "cold6Executed": false,
+  "reason": "Cold bulk3000 calculation stopped without a completed stage; replaced by converged penalty continuation without changing final bulk, pins or equilibrium tolerance",
+  "sourceGeometryOrThresholdRelaxed": false
+}

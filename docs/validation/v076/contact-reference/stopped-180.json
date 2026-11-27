@@ -1,0 +1,8 @@
+{
+  "stoppedByDeveloper": true,
+  "completed": false,
+  "progress": 0.7037325649784466,
+  "reason": "Unconstrained numerical homotopy is not a validated bone-contact motion path. Prioritize coupled contact during actual joint-angle continuation; do not call this full 180-degree validation.",
+  "positiveReferenceStateSaved": true,
+  "lastResidualMaxMm": 0.00025489907103723697
+}
