@@ -5,6 +5,7 @@ on:
     paths:
       - 'scripts/calibration/recording-shoulder-candidates.mjs'
       - 'scripts/calibration/verify-recording-shoulder-candidates.py'
+      - 'scripts/calibration/local-shoulder-step.py'
       - '.github/workflows/v076-recording-shoulder.yml'
   workflow_dispatch:
 permissions:
@@ -12,7 +13,9 @@ permissions:
 jobs:
   source-shoulder:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
+    env:
+      QA_LOCAL_SHOULDER: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
