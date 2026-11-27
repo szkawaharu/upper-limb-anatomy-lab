@@ -3815,7 +3815,7 @@ function v572RenderScale(){
 function v572Activity(){
  v572Moving=true;request();
  if(v572IdleTimer!==null)clearTimeout(v572IdleTimer);
- v572IdleTimer=setTimeout(()=>{v572IdleTimer=null;v572FinishInteraction()},180);
+ v572IdleTimer=setTimeout(()=>{v572IdleTimer=null;if(pointers.size||v73NeckDrag)return;v572FinishInteraction()},180);
 }
 function v572QueuePose(){
  v572Activity();v572NeedsFit=true;
