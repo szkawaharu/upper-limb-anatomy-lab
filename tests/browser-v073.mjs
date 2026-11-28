@@ -92,7 +92,7 @@ window.__qa={
   // Active-side rig diagnostic flushes the pose; do not invoke it within
   // v56WithOther, whose snapshot is deliberately temporary.
   const active=side();
-  const other=v56WithOther(()=>({side:v56Inactive(),muscles:V60_ALL.map(spec=>{const m=v58Meshes.get(spec.id),f=v73MuscleState(spec,m),B=f.binding;return {...DeformationAudit.audit(f,MuscleDeformation.deform(f)),vertices:B.weights.length,triangles:B.faces.length/3}})}));
+  const other=v56WithOther(()=>({side:v56Inactive(),muscles:V60_ALL.map(spec=>{const m=v58Meshes.get(spec.id),f=v73MuscleState(spec,m,v56Inactive()),B=f.binding;return {...DeformationAudit.audit(f,MuscleDeformation.deform(f)),vertices:B.weights.length,triangles:B.faces.length/3}})}));
   const neck=[...v73NeckMuscles.values()].map(m=>{const f=v73NeckMuscleState(m),B=f.binding;return {...DeformationAudit.audit(f,MuscleDeformation.deform(f)),vertices:B.weights.length,triangles:B.faces.length/3}});
   return {active,other,neck,glError:gl.getError(),arms:window.__labUpperBody().poses};
  },
