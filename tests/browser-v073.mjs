@@ -7,7 +7,8 @@ import { join } from "node:path";
 import assert from "node:assert/strict";
 import { staticServer } from "./helpers/static-server.mjs";
 const numericOnly = process.env.QA_NUMERIC_ONLY === "1";
-const shoulderCompare=process.env.QA_SHOULDER_MUSCLE_COMPARE==="1";
+const levatorExperiment=process.env.QA_LEVATOR_EXPERIMENT==="1";
+const shoulderCompare=process.env.QA_SHOULDER_MUSCLE_COMPARE==="1"||levatorExperiment;
 const shoulderPreview=process.env.QA_SHOULDER_PREVIEW==="1";
 const previewFile=process.env.QA_PREVIEW_FILE||"test-results/v076-blend-preview/field.json";
 const preview=shoulderPreview?JSON.parse(readFileSync(previewFile,"utf8")):null;
@@ -86,6 +87,20 @@ const qaContactCurrent=v73Contact;let qaLegacyHead=false;
 v73Contact=(spec,b)=>{const c=qaContactCurrent(spec,b);return qaLegacyHead&&c?.unilateral?{...c,unilateral:false}:c};
 const qaExport=(f,id)=>{const B=f.binding,samples=[];for(let i=0;i<B.weights.length;i+=Math.max(1,Math.floor(B.weights.length/80))){const p=Array.from(B.rest.slice(i*3,i*3+3)),t=B.weights[i],l=B.lane[i],materialT=B.material[i],q=MuscleDeformation.point(f,p,t,l,materialT);samples.push({vertexId:i,p,t,l,materialT,q,originBlend:B.originBlend?.[i]||0})}return {id,name:B.definition.name,input:{side:v56Side,elev:settings.elev,plane:settings.plane,axial:settings.axial,elbow:settings.elbow,pronation:settings.pronation,sync:settings.sync},samples,state:{a:f.a,b:f.b,rest:Array.from(f.restFlat),now:Array.from(f.nowFlat),sheet:B.sheet,blendRange:B.blendRange,lanes:B.field.controls.length,tendonStart:B.definition.tissues.tendonStart,reference:B.reference,contact:f.contact,multiBone:!!f.originAt,originMix:f.originMix}}};
 window.__qa={
+ levatorExperiment(){
+  const spec=V60_ALL.find(s=>s.id==='v58Levator'),m=v58Meshes.get(spec.id),B=m.common;
+  const attempt=()=>{try{return {candidate:GeodesicAttachmentField.rebuild(B)}}catch(e){return {rejected:String(e)}}};
+  if(!window.__qaLevatorCandidate)window.__qaLevatorCandidate=attempt();
+  const {candidate,rejected}=window.__qaLevatorCandidate;
+  function audit(side){
+   const run=()=>{const f=v73MuscleState(spec,m,side),report=DeformationAudit.audit(f,MuscleDeformation.deform(f));return {report,trace:MuscleOutlierTrace.trace(f,report)}};
+   const baseline=run();
+   if(!candidate)return {side,baseline,rejected};
+   try{m.common=candidate.binding;return {side,baseline,candidate:run(),bindingDiagnostics:candidate.diagnostics}}finally{m.common=B}
+  }
+  v56RefreshOther();
+  return [audit(v56Side),v56WithOther(()=>audit(v56Inactive()))];
+ },
  fullShoulderAudit(){
   v56RefreshOther();
   const side=()=>({side:v56Side,rig:window.__labShoulderV076(),muscles:V60_ALL.map(spec=>{const m=v58Meshes.get(spec.id),f=v73MuscleState(spec,m),B=f.binding;return {...DeformationAudit.audit(f,MuscleDeformation.deform(f)),vertices:B.weights.length,triangles:B.faces.length/3}})});
@@ -157,7 +172,27 @@ try {
     [],
     "missing common binding",
   );
-  if(shoulderCompare){
+  if(levatorExperiment){
+    await page.addScriptTag({content:readFileSync('scripts/experimental/geodesic-attachment-field.js','utf8')});
+    await page.addScriptTag({content:readFileSync('scripts/experimental/trace-muscle-outliers.js','utf8')});
+    await page.evaluate(()=>window.__qa.skipRender(true));
+    const results=[];
+    for(const [name,r,l,n] of [
+      ['neutral',[0,0],[0,0],0],['low40',[40,40],[30,90],0],['recording70',[70,39],[0,0],0],
+      ['side90',[90,0],[90,0],0],['high120',[120,40],[120,90],0],
+      ['recording180',[180,44],[150,90],60],['asymmetric',[120,40,30,90,45],[75,90,-30,30,-45],-60],['return-neutral',[0,0],[0,0],0]
+    ]){
+      const pose=([elev,plane,axial=0,elbow=0,pronation=0])=>({elev,plane,axial,elbow,pronation});
+      const sides=await page.evaluate(([r,l,n])=>{window.__qa.both(r,l);window.__qa.neck(n);return window.__qa.levatorExperiment()},[pose(r),pose(l),n]);
+      results.push({name,right:pose(r),left:pose(l),neck:n,sides});
+      writeFileSync(join(out,'levator-experiment.json'),JSON.stringify({results,preview:shoulderPreview,errors,productAccepted:false,anatomicalAcceptance:false},null,2));
+      for(const s of sides){
+       const compact=x=>x?{edge:x.report.edgeRatio,area:x.report.areaRatio,attachmentMm:x.report.attachmentMaxMm,degenerate:x.report.newDegenerateFaces,invalidFrames:x.report.invalidFrames,worstEdge:x.trace.worstEdge,worstArea:x.trace.worstArea,vertices:x.trace.vertices.map(v=>({i:v.i,weight:v.weight,lane:v.lane,materialT:v.materialT,restWidthMm:v.restWidthMm,restOffsetMm:v.restOffsetMm}))}:null;
+       console.log('LEVATOR_TRACE '+JSON.stringify({name,side:s.side,baseline:compact(s.baseline),candidate:compact(s.candidate),binding:s.bindingDiagnostics,rejected:s.rejected,productAccepted:false}));
+      }
+    }
+    assert.deepEqual(errors,[]);
+  }else if(shoulderCompare){
     await page.evaluate(()=>window.__qa.skipRender(true));
     const cases=[
       {name:"neutral",right:{elev:0,plane:0},left:{elev:0,plane:0},neck:0},
