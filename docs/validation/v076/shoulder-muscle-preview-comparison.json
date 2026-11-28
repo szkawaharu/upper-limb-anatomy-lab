@@ -1,0 +1,120 @@
+{
+  "runId": 46087155705,
+  "jobId": 140799984639,
+  "headSha": "6fdb9cf2be038f958a70cd8632c7e6ccadf96b30",
+  "cases": 8,
+  "comparisons": 320,
+  "regressionCount": 352,
+  "worst": [
+    {
+      "pose": "asymmetric",
+      "group": "active",
+      "id": "v58Levator",
+      "metric": "areaMax",
+      "before": 2723.978909798648,
+      "after": 3417.618442905533,
+      "delta": 693.6395331068848
+    },
+    {
+      "pose": "recording180",
+      "group": "other",
+      "id": "v58Levator",
+      "metric": "areaMax",
+      "before": 489.6364322673174,
+      "after": 918.6571497882799,
+      "delta": 429.0207175209625
+    },
+    {
+      "pose": "high120",
+      "group": "other",
+      "id": "v58Levator",
+      "metric": "areaMax",
+      "before": 476.436539393905,
+      "after": 849.700111681863,
+      "delta": 373.26357228795797
+    },
+    {
+      "pose": "high120",
+      "group": "active",
+      "id": "v58Levator",
+      "metric": "areaMax",
+      "before": 567.9403490491094,
+      "after": 640.243022620112,
+      "delta": 72.30267357100263
+    },
+    {
+      "pose": "asymmetric",
+      "group": "other",
+      "id": "v58Levator",
+      "metric": "areaMax",
+      "before": 316.7381414007845,
+      "after": 381.2725733424152,
+      "delta": 64.53443194163071
+    },
+    {
+      "pose": "asymmetric",
+      "group": "active",
+      "id": "v58Levator",
+      "metric": "edgeMax",
+      "before": 51.08488462366729,
+      "after": 80.96876951568393,
+      "delta": 29.88388489201664
+    },
+    {
+      "pose": "recording180",
+      "group": "other",
+      "id": "v58Levator",
+      "metric": "edgeMax",
+      "before": 29.1837378021243,
+      "after": 54.33737247380217,
+      "delta": 25.15363467167787
+    },
+    {
+      "pose": "recording180",
+      "group": "active",
+      "id": "v59TrapUpper",
+      "metric": "areaMax",
+      "before": 1653.238666998065,
+      "after": 1676.3543895630382,
+      "delta": 23.11572256497334
+    },
+    {
+      "pose": "recording180",
+      "group": "other",
+      "id": "v59TrapUpper",
+      "metric": "areaMax",
+      "before": 1260.1225321055524,
+      "after": 1280.4026157252472,
+      "delta": 20.28008361969478
+    },
+    {
+      "pose": "recording180",
+      "group": "other",
+      "id": "v60DeltPost",
+      "metric": "areaMax",
+      "before": 1198.4054926662277,
+      "after": 1216.9592727694228,
+      "delta": 18.553780103195095
+    },
+    {
+      "pose": "high120",
+      "group": "other",
+      "id": "v60DeltPost",
+      "metric": "areaMax",
+      "before": 1330.0926888735291,
+      "after": 1346.6240030961937,
+      "delta": 16.531314222664605
+    },
+    {
+      "pose": "high120",
+      "group": "other",
+      "id": "v60PecStern",
+      "metric": "areaMax",
+      "before": 134.57072462615636,
+      "after": 148.62417929200524,
+      "delta": 14.053454665848875
+    }
+  ],
+  "productAccepted": false,
+  "anatomicalAcceptance": false
+}
