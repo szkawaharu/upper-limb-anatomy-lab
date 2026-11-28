@@ -1,0 +1,6009 @@
+{
+  "runId": 46147865629,
+  "results": [
+    {
+      "jobId": 140987757690,
+      "job": "collect-forward",
+      "conclusion": "success",
+      "reports": []
+    },
+    {
+      "jobId": 140987758044,
+      "job": "return1",
+      "conclusion": "success",
+      "reports": [
+        {
+          "requestedElevationsDeg": [
+            60,
+            57,
+            54
+          ],
+          "seedFile": "test-results/v076-levator-prior/segment-end.npz",
+          "warmMultipliers": true,
+          "frameSHA256": "464e566ec7b8a77175b33635f4687f59c74ebd2a848f2de3b1723e3745fc5981",
+          "bulk": 1000,
+          "path": {
+            "completed": true,
+            "index": 144,
+            "accepted": [
+              {
+                "fromIndex": 160,
+                "index": 152,
+                "requestedIndex": 152,
+                "elev": 57,
+                "neck": 57,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 1.9433608921987926e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9521202805856941,
+                  1.0579807343636147
+                ],
+                "rho": 300,
+                "iterations": 17,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0009766415153784568,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9537843921877047,
+                  1.0457005926477532
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0001568444400923,
+                "surfaceAreaRatioRange": [
+                  0.25617652276735225,
+                  2.812835043064236
+                ],
+                "edgeRatioRange": [
+                  0.3009123542941881,
+                  2.8546630286890706
+                ],
+                "baseResidualMm": 9.069736308486075,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 17,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0009766415153784568,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9537843921877047,
+                      1.0457005926477532
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001568444400923,
+                    "surfaceAreaRatioRange": [
+                      0.25617652276735225,
+                      2.812835043064236
+                    ],
+                    "edgeRatioRange": [
+                      0.3009123542941881,
+                      2.8546630286890706
+                    ],
+                    "baseResidualMm": 9.069736308486075,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.085413572632062,
+                "seconds": 24.837681962999994
+              },
+              {
+                "fromIndex": 152,
+                "index": 150,
+                "requestedIndex": 144,
+                "elev": 56.25,
+                "neck": 56.25,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 2.4169497615840342e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9533992259923549,
+                  1.0457402591972957
+                ],
+                "rho": 300,
+                "iterations": 34,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0009676409046006932,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9544518591944968,
+                  1.0455992008349921
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0001542760702755,
+                "surfaceAreaRatioRange": [
+                  0.26317310993908666,
+                  2.753660065349616
+                ],
+                "edgeRatioRange": [
+                  0.3025749938456203,
+                  2.8550620175403156
+                ],
+                "baseResidualMm": 8.826699466005083,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 34,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0009676409046006932,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9544518591944968,
+                      1.0455992008349921
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001542760702755,
+                    "surfaceAreaRatioRange": [
+                      0.26317310993908666,
+                      2.753660065349616
+                    ],
+                    "edgeRatioRange": [
+                      0.3025749938456203,
+                      2.8550620175403156
+                    ],
+                    "baseResidualMm": 8.826699466005083,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 0.5213371827126069,
+                "seconds": 45.58081651699996
+              },
+              {
+                "fromIndex": 150,
+                "index": 149,
+                "requestedIndex": 144,
+                "elev": 55.875,
+                "neck": 55.875,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 3.490606106880658e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9541535131594102,
+                  1.045285460506591
+                ],
+                "rho": 300,
+                "iterations": 8,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0008775022935852567,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9546929938070633,
+                  1.0452629098414183
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0001529722995761,
+                "surfaceAreaRatioRange": [
+                  0.2658252658359419,
+                  2.7228379380089303
+                ],
+                "edgeRatioRange": [
+                  0.3031414628412003,
+                  2.8545542587377244
+                ],
+                "baseResidualMm": 8.672293656133938,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 8,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0008775022935852567,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9546929938070633,
+                      1.0452629098414183
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001529722995761,
+                    "surfaceAreaRatioRange": [
+                      0.2658252658359419,
+                      2.7228379380089303
+                    ],
+                    "edgeRatioRange": [
+                      0.3031414628412003,
+                      2.8545542587377244
+                    ],
+                    "baseResidualMm": 8.672293656133938,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 0.2606592947071422,
+                "seconds": 13.900540139000043
+              },
+              {
+                "fromIndex": 149,
+                "index": 148,
+                "requestedIndex": 144,
+                "elev": 55.5,
+                "neck": 55.5,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 3.3577533258663004e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9543941398638639,
+                  1.0452870493526594
+                ],
+                "rho": 300,
+                "iterations": 7,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0007234722445942382,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9547421900424053,
+                  1.0451495487065074
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.000151676806227,
+                "surfaceAreaRatioRange": [
+                  0.2689735261445112,
+                  2.683973314792357
+                ],
+                "edgeRatioRange": [
+                  0.30365442338715104,
+                  2.853291367474787
+                ],
+                "baseResidualMm": 8.543158608354256,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 7,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0007234722445942382,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9547421900424053,
+                      1.0451495487065074
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.000151676806227,
+                    "surfaceAreaRatioRange": [
+                      0.2689735261445112,
+                      2.683973314792357
+                    ],
+                    "edgeRatioRange": [
+                      0.30365442338715104,
+                      2.853291367474787
+                    ],
+                    "baseResidualMm": 8.543158608354256,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 0.2606521227742373,
+                "seconds": 12.43201872100002
+              },
+              {
+                "fromIndex": 148,
+                "index": 144,
+                "requestedIndex": 144,
+                "elev": 54,
+                "neck": 54,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 4.283243963445659e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9535848578512325,
+                  1.0465251489358796
+                ],
+                "rho": 300,
+                "iterations": 34,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.00092676621635479,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9542878364606685,
+                  1.0454723675813322
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0001464324358005,
+                "surfaceAreaRatioRange": [
+                  0.2881857419728877,
+                  2.58539790983858
+                ],
+                "edgeRatioRange": [
+                  0.3078710290260505,
+                  2.8456224703788533
+                ],
+                "baseResidualMm": 8.271901408627993,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 34,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.00092676621635479,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9542878364606685,
+                      1.0454723675813322
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001464324358005,
+                    "surfaceAreaRatioRange": [
+                      0.2881857419728877,
+                      2.58539790983858
+                    ],
+                    "edgeRatioRange": [
+                      0.3078710290260505,
+                      2.8456224703788533
+                    ],
+                    "baseResidualMm": 8.271901408627993,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 1.0425095406895661,
+                "seconds": 46.08268434799999
+              }
+            ],
+            "rejected": [
+              {
+                "fromIndex": 152,
+                "attemptedIndex": 144,
+                "requestedIndex": 144,
+                "elev": 54,
+                "neck": 54,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 2.408274300645771e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9517048909356779,
+                  1.0572961208133262
+                ],
+                "converged": false,
+                "reason": "local-band-or-equilibrium-failed",
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 40,
+                    "innerConverged": false,
+                    "augmentedResidualMm": 0.0019527105118312608,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9535391538994719,
+                      1.0459281853513342
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001463963594694,
+                    "surfaceAreaRatioRange": [
+                      0.29424064556499824,
+                      2.5751227423283254
+                    ],
+                    "edgeRatioRange": [
+                      0.3088117018215091,
+                      2.842281863417458
+                    ],
+                    "baseResidualMm": 8.536564327941418,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "seconds": 51.397575171
+              },
+              {
+                "fromIndex": 152,
+                "attemptedIndex": 148,
+                "requestedIndex": 144,
+                "elev": 55.5,
+                "neck": 55.5,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 2.93585242610458e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9528170198852295,
+                  1.046705567469955
+                ],
+                "converged": false,
+                "reason": "local-band-or-equilibrium-failed",
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 40,
+                    "innerConverged": false,
+                    "augmentedResidualMm": 0.004967208645989606,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9541555861525225,
+                      1.0456404129102561
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001516588798574,
+                    "surfaceAreaRatioRange": [
+                      0.27319712560409004,
+                      2.687413096647968
+                    ],
+                    "edgeRatioRange": [
+                      0.3045534474041247,
+                      2.8510803972901893
+                    ],
+                    "baseResidualMm": 8.731261801253051,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "seconds": 52.56422826899998
+              },
+              {
+                "fromIndex": 150,
+                "attemptedIndex": 148,
+                "requestedIndex": 144,
+                "elev": 55.5,
+                "neck": 55.5,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 3.588029794613985e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9538572868299668,
+                  1.0455703050536442
+                ],
+                "converged": false,
+                "reason": "local-band-or-equilibrium-failed",
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 40,
+                    "innerConverged": false,
+                    "augmentedResidualMm": 0.0023154184106015966,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9545423248537084,
+                      1.0452539319920053
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001516630860496,
+                    "surfaceAreaRatioRange": [
+                      0.27085496239863793,
+                      2.6851593033997423
+                    ],
+                    "edgeRatioRange": [
+                      0.3041342303999905,
+                      2.8525522215949954
+                    ],
+                    "baseResidualMm": 8.623502192273495,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "seconds": 50.09466594600002
+              }
+            ]
+          },
+          "allAcceptedLocalGuardPassed": true,
+          "neutralReturnMaxMm": null,
+          "productAccepted": false,
+          "contactEvaluated": false,
+          "continuousCollisionCertified": false,
+          "physicalMaterialCalibrated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140987821773,
+      "job": "crossing",
+      "conclusion": "success",
+      "reports": [
+        {
+          "index": 80,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 0,
+          "newCrossingPairs": 0,
+          "newPairs": [],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 110900,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.5298725392800989,
+            1.6657625946329218
+          ],
+          "edgeRatioRange": [
+            0.5405305791131781,
+            1.4580573865498963
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        },
+        {
+          "index": 88,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 1,
+          "newCrossingPairs": 1,
+          "newPairs": [
+            [
+              26628,
+              26629
+            ]
+          ],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 112744,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.5319099774630818,
+            1.7697641302244609
+          ],
+          "edgeRatioRange": [
+            0.48657621776020704,
+            1.5155741770333375
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        },
+        {
+          "index": 96,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 3,
+          "newCrossingPairs": 3,
+          "newPairs": [
+            [
+              26628,
+              26629
+            ],
+            [
+              26629,
+              28744
+            ],
+            [
+              26630,
+              28744
+            ]
+          ],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 114814,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.5183925818721379,
+            1.8748377284803368
+          ],
+          "edgeRatioRange": [
+            0.4351454445085471,
+            1.5752776237772619
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        },
+        {
+          "index": 104,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 3,
+          "newCrossingPairs": 3,
+          "newPairs": [
+            [
+              26628,
+              26629
+            ],
+            [
+              26629,
+              28744
+            ],
+            [
+              26630,
+              28744
+            ]
+          ],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 117088,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.4771359933631112,
+            1.9743202343154416
+          ],
+          "edgeRatioRange": [
+            0.38897035592885404,
+            1.6490277372494644
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        },
+        {
+          "index": 112,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 3,
+          "newCrossingPairs": 3,
+          "newPairs": [
+            [
+              26628,
+              26629
+            ],
+            [
+              26629,
+              28744
+            ],
+            [
+              26630,
+              28744
+            ]
+          ],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 119058,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.44643063875794,
+            2.047797875708432
+          ],
+          "edgeRatioRange": [
+            0.3586423993990727,
+            1.7261687622587558
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        },
+        {
+          "index": 120,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 3,
+          "newCrossingPairs": 3,
+          "newPairs": [
+            [
+              26628,
+              26629
+            ],
+            [
+              26629,
+              28744
+            ],
+            [
+              26630,
+              28744
+            ]
+          ],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 121223,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.3972753515707558,
+            2.100340223942556
+          ],
+          "edgeRatioRange": [
+            0.3407157149354424,
+            1.7989712449317314
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        },
+        {
+          "index": 128,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 6,
+          "newCrossingPairs": 6,
+          "newPairs": [
+            [
+              26628,
+              26629
+            ],
+            [
+              26628,
+              26665
+            ],
+            [
+              26628,
+              26679
+            ],
+            [
+              26628,
+              26680
+            ],
+            [
+              26629,
+              28744
+            ],
+            [
+              26630,
+              28744
+            ]
+          ],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 123990,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.35426790154862947,
+            2.1416960894979664
+          ],
+          "edgeRatioRange": [
+            0.32532197781598726,
+            1.8763603442426855
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        },
+        {
+          "index": 136,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 8,
+          "newCrossingPairs": 8,
+          "newPairs": [
+            [
+              26628,
+              26629
+            ],
+            [
+              26628,
+              26665
+            ],
+            [
+              26629,
+              28744
+            ],
+            [
+              26630,
+              28744
+            ],
+            [
+              26632,
+              28744
+            ],
+            [
+              26665,
+              28744
+            ],
+            [
+              26679,
+              28744
+            ],
+            [
+              26680,
+              28744
+            ]
+          ],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 126964,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.31138113149498703,
+            2.2481921804286897
+          ],
+          "edgeRatioRange": [
+            0.30997577981477537,
+            1.9482513834036046
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        },
+        {
+          "index": 144,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 45,
+          "newCrossingPairs": 45,
+          "newPairs": [
+            [
+              26352,
+              29981
+            ],
+            [
+              26354,
+              29979
+            ],
+            [
+              26354,
+              29980
+            ],
+            [
+              26354,
+              29981
+            ],
+            [
+              26356,
+              29894
+            ],
+            [
+              26356,
+              29897
+            ],
+            [
+              26356,
+              29898
+            ],
+            [
+              26356,
+              29899
+            ],
+            [
+              26356,
+              29908
+            ],
+            [
+              26356,
+              29979
+            ],
+            [
+              26358,
+              29908
+            ],
+            [
+              26358,
+              29919
+            ],
+            [
+              26358,
+              29927
+            ],
+            [
+              26379,
+              29927
+            ],
+            [
+              26380,
+              29927
+            ],
+            [
+              26381,
+              29927
+            ],
+            [
+              26386,
+              29927
+            ],
+            [
+              26387,
+              29927
+            ],
+            [
+              26387,
+              29928
+            ],
+            [
+              26628,
+              26629
+            ],
+            [
+              26628,
+              26665
+            ],
+            [
+              26629,
+              28744
+            ],
+            [
+              26630,
+              28744
+            ],
+            [
+              26632,
+              28744
+            ],
+            [
+              26665,
+              28744
+            ],
+            [
+              26679,
+              28744
+            ],
+            [
+              26680,
+              28744
+            ],
+            [
+              26736,
+              29981
+            ],
+            [
+              26736,
+              29982
+            ],
+            [
+              26743,
+              29982
+            ],
+            [
+              26743,
+              29983
+            ],
+            [
+              26743,
+              29984
+            ],
+            [
+              26743,
+              29987
+            ],
+            [
+              26745,
+              29982
+            ],
+            [
+              26746,
+              29982
+            ],
+            [
+              26747,
+              29983
+            ],
+            [
+              26747,
+              29985
+            ],
+            [
+              26747,
+              29986
+            ],
+            [
+              26747,
+              29988
+            ],
+            [
+              26757,
+              29921
+            ],
+            [
+              26757,
+              29928
+            ],
+            [
+              26757,
+              29929
+            ],
+            [
+              26757,
+              29930
+            ],
+            [
+              26757,
+              29931
+            ],
+            [
+              26757,
+              29988
+            ]
+          ],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 129978,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.27757424564678795,
+            2.528143653183414
+          ],
+          "edgeRatioRange": [
+            0.2996005909110838,
+            2.023799557725754
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        },
+        {
+          "index": 152,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 99,
+          "newCrossingPairs": 99,
+          "newPairs": [
+            [
+              24205,
+              29296
+            ],
+            [
+              24205,
+              29297
+            ],
+            [
+              24205,
+              29894
+            ],
+            [
+              24205,
+              29897
+            ],
+            [
+              24205,
+              29898
+            ],
+            [
+              24205,
+              29899
+            ],
+            [
+              24205,
+              29978
+            ],
+            [
+              24205,
+              29979
+            ],
+            [
+              24206,
+              29285
+            ],
+            [
+              24206,
+              29291
+            ],
+            [
+              24206,
+              29297
+            ],
+            [
+              26349,
+              29982
+            ],
+            [
+              26350,
+              29974
+            ],
+            [
+              26350,
+              29982
+            ],
+            [
+              26351,
+              29972
+            ],
+            [
+              26351,
+              29974
+            ],
+            [
+              26353,
+              29895
+            ],
+            [
+              26353,
+              29896
+            ],
+            [
+              26353,
+              29897
+            ],
+            [
+              26356,
+              29907
+            ],
+            [
+              26356,
+              29914
+            ],
+            [
+              26356,
+              29915
+            ],
+            [
+              26356,
+              29918
+            ],
+            [
+              26356,
+              29925
+            ],
+            [
+              26358,
+              29925
+            ],
+            [
+              26363,
+              29895
+            ],
+            [
+              26364,
+              29900
+            ],
+            [
+              26364,
+              29907
+            ],
+            [
+              26365,
+              29895
+            ],
+            [
+              26365,
+              29900
+            ],
+            [
+              26379,
+              29925
+            ],
+            [
+              26380,
+              29925
+            ],
+            [
+              26381,
+              29925
+            ],
+            [
+              26382,
+              29925
+            ],
+            [
+              26382,
+              30338
+            ],
+            [
+              26383,
+              30338
+            ],
+            [
+              26384,
+              30338
+            ],
+            [
+              26388,
+              30338
+            ],
+            [
+              26388,
+              30339
+            ],
+            [
+              26389,
+              30339
+            ],
+            [
+              26389,
+              30340
+            ],
+            [
+              26628,
+              26665
+            ],
+            [
+              26629,
+              28748
+            ],
+            [
+              26629,
+              28749
+            ],
+            [
+              26630,
+              28744
+            ],
+            [
+              26630,
+              28749
+            ],
+            [
+              26632,
+              28744
+            ],
+            [
+              26639,
+              29291
+            ],
+            [
+              26639,
+              29298
+            ],
+            [
+              26665,
+              28744
+            ],
+            [
+              26666,
+              28744
+            ],
+            [
+              26679,
+              28744
+            ],
+            [
+              26679,
+              28749
+            ],
+            [
+              26681,
+              28749
+            ],
+            [
+              26682,
+              28744
+            ],
+            [
+              26682,
+              28749
+            ],
+            [
+              26683,
+              29298
+            ],
+            [
+              26684,
+              29298
+            ],
+            [
+              26721,
+              29981
+            ],
+            [
+              26722,
+              29981
+            ],
+            [
+              26722,
+              29982
+            ],
+            [
+              26723,
+              29298
+            ],
+            [
+              26723,
+              29981
+            ],
+            [
+              26731,
+              29972
+            ],
+            [
+              26731,
+              29974
+            ],
+            [
+              26735,
+              29974
+            ],
+            [
+              26736,
+              29974
+            ],
+            [
+              26743,
+              29974
+            ],
+            [
+              26743,
+              29982
+            ],
+            [
+              26743,
+              29984
+            ],
+            [
+              26743,
+              29992
+            ],
+            [
+              26745,
+              29974
+            ],
+            [
+              26746,
+              29974
+            ],
+            [
+              26747,
+              29989
+            ],
+            [
+              26747,
+              29990
+            ],
+            [
+              26747,
+              29992
+            ],
+            [
+              26747,
+              30414
+            ],
+            [
+              26747,
+              30415
+            ],
+            [
+              26747,
+              30416
+            ],
+            [
+              26747,
+              30420
+            ],
+            [
+              26750,
+              29929
+            ],
+            [
+              26750,
+              29931
+            ],
+            [
+              26750,
+              30344
+            ],
+            [
+              26750,
+              30346
+            ],
+            [
+              26750,
+              30350
+            ],
+            [
+              26750,
+              30351
+            ],
+            [
+              26750,
+              30352
+            ],
+            [
+              26750,
+              30357
+            ],
+            [
+              26757,
+              30417
+            ],
+            [
+              26757,
+              30418
+            ],
+            [
+              26757,
+              30420
+            ],
+            [
+              26758,
+              30418
+            ],
+            [
+              26758,
+              30419
+            ],
+            [
+              26759,
+              30340
+            ],
+            [
+              26759,
+              30350
+            ],
+            [
+              26760,
+              30350
+            ],
+            [
+              26761,
+              30357
+            ],
+            [
+              26761,
+              30419
+            ],
+            [
+              26761,
+              30427
+            ]
+          ],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 133150,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.24368070633598177,
+            2.8199495168686
+          ],
+          "edgeRatioRange": [
+            0.29292741451056026,
+            2.0952124605699693
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        },
+        {
+          "index": 160,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 116,
+          "newCrossingPairs": 116,
+          "newPairs": [
+            [
+              23945,
+              29895
+            ],
+            [
+              23945,
+              29896
+            ],
+            [
+              23945,
+              29897
+            ],
+            [
+              23945,
+              29898
+            ],
+            [
+              23945,
+              29899
+            ],
+            [
+              23945,
+              29900
+            ],
+            [
+              23949,
+              29285
+            ],
+            [
+              23949,
+              29291
+            ],
+            [
+              23949,
+              29296
+            ],
+            [
+              23949,
+              29297
+            ],
+            [
+              23949,
+              29894
+            ],
+            [
+              23949,
+              29899
+            ],
+            [
+              23949,
+              29900
+            ],
+            [
+              23949,
+              29978
+            ],
+            [
+              23949,
+              29979
+            ],
+            [
+              24199,
+              29291
+            ],
+            [
+              24199,
+              29900
+            ],
+            [
+              24200,
+              29291
+            ],
+            [
+              24200,
+              29900
+            ],
+            [
+              24205,
+              29291
+            ],
+            [
+              24205,
+              29298
+            ],
+            [
+              24205,
+              29900
+            ],
+            [
+              24205,
+              29902
+            ],
+            [
+              24205,
+              29972
+            ],
+            [
+              24206,
+              29972
+            ],
+            [
+              26353,
+              29902
+            ],
+            [
+              26353,
+              29903
+            ],
+            [
+              26353,
+              29905
+            ],
+            [
+              26353,
+              29906
+            ],
+            [
+              26353,
+              29924
+            ],
+            [
+              26355,
+              30353
+            ],
+            [
+              26356,
+              30347
+            ],
+            [
+              26356,
+              30348
+            ],
+            [
+              26356,
+              30353
+            ],
+            [
+              26357,
+              30353
+            ],
+            [
+              26358,
+              30353
+            ],
+            [
+              26359,
+              30353
+            ],
+            [
+              26360,
+              30353
+            ],
+            [
+              26363,
+              29924
+            ],
+            [
+              26364,
+              29924
+            ],
+            [
+              26364,
+              30348
+            ],
+            [
+              26365,
+              29924
+            ],
+            [
+              26379,
+              30353
+            ],
+            [
+              26380,
+              30353
+            ],
+            [
+              26381,
+              30353
+            ],
+            [
+              26381,
+              30354
+            ],
+            [
+              26382,
+              30354
+            ],
+            [
+              26383,
+              30355
+            ],
+            [
+              26384,
+              30354
+            ],
+            [
+              26384,
+              30355
+            ],
+            [
+              26388,
+              30355
+            ],
+            [
+              26388,
+              30361
+            ],
+            [
+              26389,
+              30361
+            ],
+            [
+              26616,
+              28744
+            ],
+            [
+              26629,
+              28748
+            ],
+            [
+              26629,
+              28749
+            ],
+            [
+              26630,
+              28749
+            ],
+            [
+              26632,
+              28749
+            ],
+            [
+              26639,
+              29972
+            ],
+            [
+              26665,
+              28744
+            ],
+            [
+              26666,
+              28744
+            ],
+            [
+              26679,
+              28749
+            ],
+            [
+              26681,
+              28749
+            ],
+            [
+              26682,
+              28744
+            ],
+            [
+              26682,
+              28749
+            ],
+            [
+              26683,
+              29972
+            ],
+            [
+              26684,
+              29972
+            ],
+            [
+              26721,
+              29972
+            ],
+            [
+              26722,
+              29972
+            ],
+            [
+              26723,
+              29972
+            ],
+            [
+              26724,
+              29412
+            ],
+            [
+              26724,
+              29972
+            ],
+            [
+              26724,
+              29973
+            ],
+            [
+              26725,
+              29972
+            ],
+            [
+              26728,
+              29412
+            ],
+            [
+              26729,
+              29412
+            ],
+            [
+              26730,
+              29412
+            ],
+            [
+              26733,
+              29412
+            ],
+            [
+              26734,
+              29412
+            ],
+            [
+              26734,
+              29975
+            ],
+            [
+              26741,
+              29975
+            ],
+            [
+              26743,
+              29975
+            ],
+            [
+              26747,
+              29975
+            ],
+            [
+              26747,
+              29976
+            ],
+            [
+              26747,
+              29991
+            ],
+            [
+              26747,
+              30431
+            ],
+            [
+              26747,
+              30436
+            ],
+            [
+              26747,
+              30438
+            ],
+            [
+              26750,
+              30363
+            ],
+            [
+              26751,
+              30356
+            ],
+            [
+              26751,
+              30360
+            ],
+            [
+              26751,
+              30363
+            ],
+            [
+              26751,
+              30369
+            ],
+            [
+              26751,
+              30370
+            ],
+            [
+              26751,
+              30371
+            ],
+            [
+              26751,
+              30372
+            ],
+            [
+              26751,
+              30373
+            ],
+            [
+              26752,
+              30429
+            ],
+            [
+              26753,
+              30373
+            ],
+            [
+              26753,
+              30374
+            ],
+            [
+              26754,
+              30359
+            ],
+            [
+              26754,
+              30374
+            ],
+            [
+              26754,
+              30429
+            ],
+            [
+              26754,
+              30430
+            ],
+            [
+              26755,
+              30374
+            ],
+            [
+              26757,
+              30436
+            ],
+            [
+              26757,
+              30444
+            ],
+            [
+              26757,
+              30445
+            ],
+            [
+              26758,
+              30424
+            ],
+            [
+              26758,
+              30444
+            ],
+            [
+              26759,
+              30361
+            ],
+            [
+              26760,
+              30361
+            ],
+            [
+              26760,
+              30363
+            ],
+            [
+              26761,
+              30424
+            ],
+            [
+              26761,
+              30425
+            ],
+            [
+              26761,
+              30429
+            ]
+          ],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 136317,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.22151911145975786,
+            3.093219676705638
+          ],
+          "edgeRatioRange": [
+            0.29289486844938506,
+            2.8660509672477144
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        }
+      ]
+    },
+    {
+      "jobId": 140987821842,
+      "job": "contact (C2)",
+      "conclusion": "success",
+      "reports": [
+        {
+          "bone": "C2",
+          "boneSHA256": "9e2a940db7b4bf921f97b63ed5aa549f675effe55af2cc81ad8589331309f896",
+          "rows": [
+            {
+              "checkpoint": "accepted-000-index-080.npz",
+              "elev": 30,
+              "neck": 30,
+              "bone": "C2",
+              "samples": 93688,
+              "baselineInside": 333,
+              "inside": 333,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8358064405573113,
+              "maxDepthMm": 0.8358064405573113,
+              "maxIncreaseMm": 1.3906389061124624e-13,
+              "worstSample": 15571,
+              "worstKind": "vertex",
+              "fixedSampleMaxIncreaseMm": 1.3906389061124624e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-001-index-088.npz",
+              "elev": 33,
+              "neck": 33,
+              "bone": "C2",
+              "samples": 93688,
+              "baselineInside": 333,
+              "inside": 333,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8358064405573113,
+              "maxDepthMm": 0.8358064405573113,
+              "maxIncreaseMm": 1.3167245072054357e-13,
+              "worstSample": 62334,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 1.3167245072054357e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-002-index-096.npz",
+              "elev": 36,
+              "neck": 36,
+              "bone": "C2",
+              "samples": 93688,
+              "baselineInside": 333,
+              "inside": 333,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8358064405573113,
+              "maxDepthMm": 0.8358064405573057,
+              "maxIncreaseMm": 8.870681966755001e-14,
+              "worstSample": 62254,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 8.870681966755001e-14,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-003-index-104.npz",
+              "elev": 39,
+              "neck": 39,
+              "bone": "C2",
+              "samples": 93688,
+              "baselineInside": 333,
+              "inside": 333,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8358064405573113,
+              "maxDepthMm": 0.8358064405573232,
+              "maxIncreaseMm": 8.605616219625745e-14,
+              "worstSample": 93502,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 8.605616219625745e-14,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-004-index-112.npz",
+              "elev": 42,
+              "neck": 42,
+              "bone": "C2",
+              "samples": 93688,
+              "baselineInside": 333,
+              "inside": 333,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8358064405573113,
+              "maxDepthMm": 0.8358064405573113,
+              "maxIncreaseMm": 9.431344594190705e-14,
+              "worstSample": 93502,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 9.431344594190705e-14,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-005-index-120.npz",
+              "elev": 45,
+              "neck": 45,
+              "bone": "C2",
+              "samples": 93688,
+              "baselineInside": 333,
+              "inside": 333,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8358064405573113,
+              "maxDepthMm": 0.8358064405573205,
+              "maxIncreaseMm": 9.43689570931383e-14,
+              "worstSample": 93617,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 9.43689570931383e-14,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-006-index-128.npz",
+              "elev": 48,
+              "neck": 48,
+              "bone": "C2",
+              "samples": 93688,
+              "baselineInside": 333,
+              "inside": 333,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8358064405573113,
+              "maxDepthMm": 0.8358064405573085,
+              "maxIncreaseMm": 9.71445146547012e-14,
+              "worstSample": 62225,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 9.71445146547012e-14,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-007-index-136.npz",
+              "elev": 51,
+              "neck": 51,
+              "bone": "C2",
+              "samples": 93688,
+              "baselineInside": 333,
+              "inside": 333,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8358064405573113,
+              "maxDepthMm": 0.8358064405573057,
+              "maxIncreaseMm": 8.22675261247241e-14,
+              "worstSample": 93612,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 8.22675261247241e-14,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-008-index-144.npz",
+              "elev": 54,
+              "neck": 54,
+              "bone": "C2",
+              "samples": 93688,
+              "baselineInside": 333,
+              "inside": 333,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8358064405573113,
+              "maxDepthMm": 0.8358064405573972,
+              "maxIncreaseMm": 1.3433698597964394e-13,
+              "worstSample": 62334,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 1.3433698597964394e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-009-index-152.npz",
+              "elev": 57,
+              "neck": 57,
+              "bone": "C2",
+              "samples": 93688,
+              "baselineInside": 333,
+              "inside": 333,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8358064405573113,
+              "maxDepthMm": 0.8358064405573113,
+              "maxIncreaseMm": 9.14823772291129e-14,
+              "worstSample": 93496,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 9.14823772291129e-14,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-010-index-160.npz",
+              "elev": 60,
+              "neck": 60,
+              "bone": "C2",
+              "samples": 93688,
+              "baselineInside": 333,
+              "inside": 333,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8358064405573113,
+              "maxDepthMm": 0.8358064405573085,
+              "maxIncreaseMm": 9.431344594190705e-14,
+              "worstSample": 93496,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 9.431344594190705e-14,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            }
+          ],
+          "sampleCounts": {
+            "vertices": 15613,
+            "edgeMidpoints": 46845,
+            "centroids": 31230
+          },
+          "engineeringDepthIncreaseGuardMm": 0.1,
+          "allSamplesWithinGuard": true,
+          "productAccepted": false,
+          "continuousContactCertified": false,
+          "selfIntersectionEvaluated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140987821846,
+      "job": "shape",
+      "conclusion": "success",
+      "reports": [
+        {
+          "checkpoint": "accepted-000-index-080.npz",
+          "index": 80,
+          "area": {
+            "quantiles": [
+              0.5298725392800989,
+              0.8082448010504517,
+              0.9369316489629393,
+              1.0229863946215136,
+              1.199522121487124,
+              1.347079867237778,
+              1.6657625946329218
+            ],
+            "weightFractionOutsideHalfToDouble": 0
+          },
+          "edge": {
+            "quantiles": [
+              0.5405305791131781,
+              0.8540540820654947,
+              0.9357067175336977,
+              1.0224950516528646,
+              1.2635057390177877,
+              1.3590197194505411,
+              1.4580573865498963
+            ],
+            "weightFractionOutsideHalfToDouble": 0
+          },
+          "maxConditionF": 41.670778925832735,
+          "extrema": [
+            {
+              "kind": "face",
+              "extreme": "min",
+              "id": 21646,
+              "ratio": 0.5298725392800989,
+              "vertexIds": [
+                8705,
+                8977,
+                8806
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -39.62986755371094,
+                -80.99706522623698,
+                1470.2533365885417
+              ],
+              "referenceMeasure": 0.09870561040265433,
+              "posedMeasure": 0.0523013924252466,
+              "tetId": 4871,
+              "tetJ": 0.9905738422317105,
+              "tetPrincipalStretches": [
+                4.134505567737273,
+                1.0155190984228128,
+                0.23592566019084002
+              ],
+              "tetReferenceVolumeMm3": 0.006071926238352776,
+              "tetReferenceCondition": 228.14390132916867
+            },
+            {
+              "kind": "face",
+              "extreme": "max",
+              "id": 27726,
+              "ratio": 1.6657625946329218,
+              "vertexIds": [
+                14592,
+                14594,
+                14638
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.240266799926758,
+                -87.8431650797526,
+                1428.4999593098958
+              ],
+              "referenceMeasure": 0.028255453370726557,
+              "posedMeasure": 0.047066877319351004,
+              "tetId": 53319,
+              "tetJ": 1.0450001075512778,
+              "tetPrincipalStretches": [
+                2.3054495661277623,
+                1.2146626810655436,
+                0.3731685375381548
+              ],
+              "tetReferenceVolumeMm3": 0.0012035511815427682,
+              "tetReferenceCondition": 4.423346787573252
+            },
+            {
+              "kind": "edge",
+              "extreme": "min",
+              "id": 43905,
+              "ratio": 0.5405305791131781,
+              "vertexIds": [
+                14592,
+                14613
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.265950202941895,
+                -87.66889953613281,
+                1428.6749877929688
+              ],
+              "referenceMeasure": 0.2818155564482603,
+              "posedMeasure": 0.15232992593008068
+            },
+            {
+              "kind": "edge",
+              "extreme": "max",
+              "id": 43904,
+              "ratio": 1.4580573865498963,
+              "vertexIds": [
+                14592,
+                14594
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.302650451660156,
+                -87.8182487487793,
+                1428.4649658203125
+              ],
+              "referenceMeasure": 0.25538837204484716,
+              "posedMeasure": 0.37237090229894243
+            }
+          ]
+        },
+        {
+          "checkpoint": "accepted-001-index-088.npz",
+          "index": 88,
+          "area": {
+            "quantiles": [
+              0.5319099774630818,
+              0.7946451256950363,
+              0.9331654049105915,
+              1.0287309728871539,
+              1.223239468945419,
+              1.388378767560414,
+              1.7697641302244609
+            ],
+            "weightFractionOutsideHalfToDouble": 0
+          },
+          "edge": {
+            "quantiles": [
+              0.48657621776020704,
+              0.8401409640654749,
+              0.9292085966225802,
+              1.028240895225431,
+              1.299574461551175,
+              1.4079110551538394,
+              1.5155741770333375
+            ],
+            "weightFractionOutsideHalfToDouble": 0.00000567119485367575
+          },
+          "maxConditionF": 47.40929370235907,
+          "extrema": [
+            {
+              "kind": "face",
+              "extreme": "min",
+              "id": 23516,
+              "ratio": 0.5319099774630818,
+              "vertexIds": [
+                9169,
+                9190,
+                9160
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -39.016900380452476,
+                -82.76846567789714,
+                1470.2566324869792
+              ],
+              "referenceMeasure": 0.02039453606563409,
+              "posedMeasure": 0.010848057219041437,
+              "tetId": 39250,
+              "tetJ": 1.0170769268967472,
+              "tetPrincipalStretches": [
+                2.1261472919908595,
+                1.1722701813006717,
+                0.4080681850598234
+              ],
+              "tetReferenceVolumeMm3": 0.0004978090593450446,
+              "tetReferenceCondition": 13.139234240560482
+            },
+            {
+              "kind": "face",
+              "extreme": "max",
+              "id": 27726,
+              "ratio": 1.7697641302244609,
+              "vertexIds": [
+                14592,
+                14594,
+                14638
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.240266799926758,
+                -87.8431650797526,
+                1428.4999593098958
+              ],
+              "referenceMeasure": 0.028255453370726557,
+              "posedMeasure": 0.0500054878587417,
+              "tetId": 53319,
+              "tetJ": 1.0449989566497833,
+              "tetPrincipalStretches": [
+                2.5059473484310946,
+                1.2424941399796072,
+                0.335621339022673
+              ],
+              "tetReferenceVolumeMm3": 0.0012035511815427682,
+              "tetReferenceCondition": 4.423346787573252
+            },
+            {
+              "kind": "edge",
+              "extreme": "min",
+              "id": 43905,
+              "ratio": 0.48657621776020704,
+              "vertexIds": [
+                14592,
+                14613
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.265950202941895,
+                -87.66889953613281,
+                1428.6749877929688
+              ],
+              "referenceMeasure": 0.2818155564482603,
+              "posedMeasure": 0.1371247475625826
+            },
+            {
+              "kind": "edge",
+              "extreme": "max",
+              "id": 43904,
+              "ratio": 1.5155741770333375,
+              "vertexIds": [
+                14592,
+                14594
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.302650451660156,
+                -87.8182487487793,
+                1428.4649658203125
+              ],
+              "referenceMeasure": 0.25538837204484716,
+              "posedMeasure": 0.38706002178575305
+            }
+          ]
+        },
+        {
+          "checkpoint": "accepted-002-index-096.npz",
+          "index": 96,
+          "area": {
+            "quantiles": [
+              0.5183925818721379,
+              0.7802081436633038,
+              0.9273887130877054,
+              1.0343767365488157,
+              1.24820151751105,
+              1.4318660104836538,
+              1.8748377284803368
+            ],
+            "weightFractionOutsideHalfToDouble": 0
+          },
+          "edge": {
+            "quantiles": [
+              0.4351454445085471,
+              0.8261095813278716,
+              0.9230674905691233,
+              1.0340929679308466,
+              1.3368344030218977,
+              1.4611110656304576,
+              1.5752776237772619
+            ],
+            "weightFractionOutsideHalfToDouble": 0.00000567119485367575
+          },
+          "maxConditionF": 52.52140859747288,
+          "extrema": [
+            {
+              "kind": "face",
+              "extreme": "min",
+              "id": 23516,
+              "ratio": 0.5183925818721379,
+              "vertexIds": [
+                9169,
+                9190,
+                9160
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -39.016900380452476,
+                -82.76846567789714,
+                1470.2566324869792
+              ],
+              "referenceMeasure": 0.02039453606563409,
+              "posedMeasure": 0.010572376207148489,
+              "tetId": 39250,
+              "tetJ": 1.0155744064059462,
+              "tetPrincipalStretches": [
+                2.249307518212267,
+                1.1852536430786906,
+                0.38093564626116133
+              ],
+              "tetReferenceVolumeMm3": 0.0004978090593450446,
+              "tetReferenceCondition": 13.139234240560482
+            },
+            {
+              "kind": "face",
+              "extreme": "max",
+              "id": 27726,
+              "ratio": 1.8748377284803368,
+              "vertexIds": [
+                14592,
+                14594,
+                14638
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.240266799926758,
+                -87.8431650797526,
+                1428.4999593098958
+              ],
+              "referenceMeasure": 0.028255453370726557,
+              "posedMeasure": 0.052974390014755054,
+              "tetId": 53319,
+              "tetJ": 1.04498967930204,
+              "tetPrincipalStretches": [
+                2.709868740760311,
+                1.268229326652996,
+                0.3040646650801156
+              ],
+              "tetReferenceVolumeMm3": 0.0012035511815427682,
+              "tetReferenceCondition": 4.423346787573252
+            },
+            {
+              "kind": "edge",
+              "extreme": "min",
+              "id": 43905,
+              "ratio": 0.4351454445085471,
+              "vertexIds": [
+                14592,
+                14613
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.265950202941895,
+                -87.66889953613281,
+                1428.6749877929688
+              ],
+              "referenceMeasure": 0.2818155564482603,
+              "posedMeasure": 0.12263075558010177
+            },
+            {
+              "kind": "edge",
+              "extreme": "max",
+              "id": 30404,
+              "ratio": 1.5752776237772619,
+              "vertexIds": [
+                10042,
+                10132
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -37.67839813232422,
+                -80.5254020690918,
+                1468.0750122070312
+              ],
+              "referenceMeasure": 0.29898900809699747,
+              "posedMeasure": 0.47099069421055867
+            }
+          ]
+        },
+        {
+          "checkpoint": "accepted-003-index-104.npz",
+          "index": 104,
+          "area": {
+            "quantiles": [
+              0.4771359933631112,
+              0.7594125411628104,
+              0.9217199942490569,
+              1.039844991530268,
+              1.2737273918076222,
+              1.4819197851579458,
+              1.9743202343154416
+            ],
+            "weightFractionOutsideHalfToDouble": 0.00006507736824891044
+          },
+          "edge": {
+            "quantiles": [
+              0.38897035592885404,
+              0.8147068812174568,
+              0.9163894715336378,
+              1.0398820824990296,
+              1.3757925512548639,
+              1.5125105127380318,
+              1.6490277372494644
+            ],
+            "weightFractionOutsideHalfToDouble": 0.00000567119485367575
+          },
+          "maxConditionF": 57.06916231960736,
+          "extrema": [
+            {
+              "kind": "face",
+              "extreme": "min",
+              "id": 27728,
+              "ratio": 0.4771359933631112,
+              "vertexIds": [
+                14592,
+                14613,
+                14557
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.340433756510418,
+                -87.62900034586588,
+                1428.6099853515625
+              ],
+              "referenceMeasure": 0.04170923573656609,
+              "posedMeasure": 0.019900977625582638,
+              "tetId": 56409,
+              "tetJ": 0.9594837584919561,
+              "tetPrincipalStretches": [
+                2.9359646943854725,
+                1.1602781810108318,
+                0.281659674764449
+              ],
+              "tetReferenceVolumeMm3": 0.001697689408046265,
+              "tetReferenceCondition": 10.979293665233547
+            },
+            {
+              "kind": "face",
+              "extreme": "max",
+              "id": 27726,
+              "ratio": 1.9743202343154416,
+              "vertexIds": [
+                14592,
+                14594,
+                14638
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.240266799926758,
+                -87.8431650797526,
+                1428.4999593098958
+              ],
+              "referenceMeasure": 0.028255453370726557,
+              "posedMeasure": 0.05578531331958189,
+              "tetId": 53319,
+              "tetJ": 1.0449892485520795,
+              "tetPrincipalStretches": [
+                2.8972254822158576,
+                1.2906811066313812,
+                0.27945415621447595
+              ],
+              "tetReferenceVolumeMm3": 0.0012035511815427682,
+              "tetReferenceCondition": 4.423346787573252
+            },
+            {
+              "kind": "edge",
+              "extreme": "min",
+              "id": 43905,
+              "ratio": 0.38897035592885404,
+              "vertexIds": [
+                14592,
+                14613
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.265950202941895,
+                -87.66889953613281,
+                1428.6749877929688
+              ],
+              "referenceMeasure": 0.2818155564482603,
+              "posedMeasure": 0.10961789729796786
+            },
+            {
+              "kind": "edge",
+              "extreme": "max",
+              "id": 30404,
+              "ratio": 1.6490277372494644,
+              "vertexIds": [
+                10042,
+                10132
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -37.67839813232422,
+                -80.5254020690918,
+                1468.0750122070312
+              ],
+              "referenceMeasure": 0.29898900809699747,
+              "posedMeasure": 0.49304116748465354
+            }
+          ]
+        },
+        {
+          "checkpoint": "accepted-004-index-112.npz",
+          "index": 112,
+          "area": {
+            "quantiles": [
+              0.44643063875794,
+              0.7461963206998666,
+              0.9149756106237542,
+              1.045315913367176,
+              1.2986067273309712,
+              1.522989058851962,
+              2.047797875708432
+            ],
+            "weightFractionOutsideHalfToDouble": 0.00007991603346859673
+          },
+          "edge": {
+            "quantiles": [
+              0.3586423993990727,
+              0.8048777761211258,
+              0.9096329062387729,
+              1.0456208670646745,
+              1.415345294620124,
+              1.5637403889635113,
+              1.7261687622587558
+            ],
+            "weightFractionOutsideHalfToDouble": 0.00000567119485367575
+          },
+          "maxConditionF": 61.06077871576876,
+          "extrema": [
+            {
+              "kind": "face",
+              "extreme": "min",
+              "id": 30212,
+              "ratio": 0.44643063875794,
+              "vertexIds": [
+                15001,
+                15144,
+                15236
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                2
+              ],
+              "sourceCentroidAtlasMm": [
+                -28.159700393676758,
+                -86.59203338623047,
+                1441.6199951171875
+              ],
+              "referenceMeasure": 0.4812337777804598,
+              "posedMeasure": 0.21483750280642722,
+              "tetId": 19885,
+              "tetJ": 0.9711525753399122,
+              "tetPrincipalStretches": [
+                4.231084084587788,
+                0.9963883267060021,
+                0.23036005796292763
+              ],
+              "tetReferenceVolumeMm3": 0.01525235560466951,
+              "tetReferenceCondition": 95.2299800242538
+            },
+            {
+              "kind": "face",
+              "extreme": "max",
+              "id": 27726,
+              "ratio": 2.047797875708432,
+              "vertexIds": [
+                14592,
+                14594,
+                14638
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.240266799926758,
+                -87.8431650797526,
+                1428.4999593098958
+              ],
+              "referenceMeasure": 0.028255453370726557,
+              "posedMeasure": 0.0578614573897525,
+              "tetId": 53319,
+              "tetJ": 1.0449976501858669,
+              "tetPrincipalStretches": [
+                3.0282397597687685,
+                1.3076615250695658,
+                0.26389411832949944
+              ],
+              "tetReferenceVolumeMm3": 0.0012035511815427682,
+              "tetReferenceCondition": 4.423346787573252
+            },
+            {
+              "kind": "edge",
+              "extreme": "min",
+              "id": 43905,
+              "ratio": 0.3586423993990727,
+              "vertexIds": [
+                14592,
+                14613
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.265950202941895,
+                -87.66889953613281,
+                1428.6749877929688
+              ],
+              "referenceMeasure": 0.2818155564482603,
+              "posedMeasure": 0.10107100735258889
+            },
+            {
+              "kind": "edge",
+              "extreme": "max",
+              "id": 30404,
+              "ratio": 1.7261687622587558,
+              "vertexIds": [
+                10042,
+                10132
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -37.67839813232422,
+                -80.5254020690918,
+                1468.0750122070312
+              ],
+              "referenceMeasure": 0.29898900809699747,
+              "posedMeasure": 0.5161054860357672
+            }
+          ]
+        },
+        {
+          "checkpoint": "accepted-005-index-120.npz",
+          "index": 120,
+          "area": {
+            "quantiles": [
+              0.3972753515707558,
+              0.7139805052352134,
+              0.9086244620569356,
+              1.0504950759287568,
+              1.3246083499589532,
+              1.5747585563607396,
+              2.100340223942556
+            ],
+            "weightFractionOutsideHalfToDouble": 0.00010094541907213766
+          },
+          "edge": {
+            "quantiles": [
+              0.3407157149354424,
+              0.7916211808085636,
+              0.9024241881864399,
+              1.0511315108512433,
+              1.4524478501331732,
+              1.6109844526231865,
+              1.7989712449317314
+            ],
+            "weightFractionOutsideHalfToDouble": 0.00000567119485367575
+          },
+          "maxConditionF": 65.82485979173087,
+          "extrema": [
+            {
+              "kind": "face",
+              "extreme": "min",
+              "id": 30212,
+              "ratio": 0.3972753515707558,
+              "vertexIds": [
+                15001,
+                15144,
+                15236
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                2
+              ],
+              "sourceCentroidAtlasMm": [
+                -28.159700393676758,
+                -86.59203338623047,
+                1441.6199951171875
+              ],
+              "referenceMeasure": 0.4812337777804598,
+              "posedMeasure": 0.19118231825545512,
+              "tetId": 19885,
+              "tetJ": 0.9755215533284362,
+              "tetPrincipalStretches": [
+                4.59768378185155,
+                0.9962436651642248,
+                0.2129767513255981
+              ],
+              "tetReferenceVolumeMm3": 0.01525235560466951,
+              "tetReferenceCondition": 95.2299800242538
+            },
+            {
+              "kind": "face",
+              "extreme": "max",
+              "id": 27726,
+              "ratio": 2.100340223942556,
+              "vertexIds": [
+                14592,
+                14594,
+                14638
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.240266799926758,
+                -87.8431650797526,
+                1428.4999593098958
+              ],
+              "referenceMeasure": 0.028255453370726557,
+              "posedMeasure": 0.05934606526027027,
+              "tetId": 53319,
+              "tetJ": 1.0449935163296054,
+              "tetPrincipalStretches": [
+                3.105969739530067,
+                1.3257493043945527,
+                0.2537785827698424
+              ],
+              "tetReferenceVolumeMm3": 0.0012035511815427682,
+              "tetReferenceCondition": 4.423346787573252
+            },
+            {
+              "kind": "edge",
+              "extreme": "min",
+              "id": 43905,
+              "ratio": 0.3407157149354424,
+              "vertexIds": [
+                14592,
+                14613
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.265950202941895,
+                -87.66889953613281,
+                1428.6749877929688
+              ],
+              "referenceMeasure": 0.2818155564482603,
+              "posedMeasure": 0.09601898879519853
+            },
+            {
+              "kind": "edge",
+              "extreme": "max",
+              "id": 30404,
+              "ratio": 1.7989712449317314,
+              "vertexIds": [
+                10042,
+                10132
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -37.67839813232422,
+                -80.5254020690918,
+                1468.0750122070312
+              ],
+              "referenceMeasure": 0.29898900809699747,
+              "posedMeasure": 0.5378726281171591
+            }
+          ]
+        },
+        {
+          "checkpoint": "accepted-006-index-128.npz",
+          "index": 128,
+          "area": {
+            "quantiles": [
+              0.35426790154862947,
+              0.6985111432487293,
+              0.9017224108878265,
+              1.0555276195400047,
+              1.3513313678477266,
+              1.6204343237277135,
+              2.1416960894979664
+            ],
+            "weightFractionOutsideHalfToDouble": 0.00015095740132823116
+          },
+          "edge": {
+            "quantiles": [
+              0.32532197781598726,
+              0.7799355635799051,
+              0.8966579364059734,
+              1.056460031549553,
+              1.4911193078590135,
+              1.6603047872627037,
+              1.8763603442426855
+            ],
+            "weightFractionOutsideHalfToDouble": 0.00000567119485367575
+          },
+          "maxConditionF": 69.62593321287675,
+          "extrema": [
+            {
+              "kind": "face",
+              "extreme": "min",
+              "id": 30212,
+              "ratio": 0.35426790154862947,
+              "vertexIds": [
+                15001,
+                15144,
+                15236
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                2
+              ],
+              "sourceCentroidAtlasMm": [
+                -28.159700393676758,
+                -86.59203338623047,
+                1441.6199951171875
+              ],
+              "referenceMeasure": 0.4812337777804598,
+              "posedMeasure": 0.17048568060860295,
+              "tetId": 19885,
+              "tetJ": 0.979750349019201,
+              "tetPrincipalStretches": [
+                4.927944141256258,
+                0.9961419237434678,
+                0.1995852453291531
+              ],
+              "tetReferenceVolumeMm3": 0.01525235560466951,
+              "tetReferenceCondition": 95.2299800242538
+            },
+            {
+              "kind": "face",
+              "extreme": "max",
+              "id": 27726,
+              "ratio": 2.1416960894979664,
+              "vertexIds": [
+                14592,
+                14594,
+                14638
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.240266799926758,
+                -87.8431650797526,
+                1428.4999593098958
+              ],
+              "referenceMeasure": 0.028255453370726557,
+              "posedMeasure": 0.0605145939910772,
+              "tetId": 53319,
+              "tetJ": 1.0449990044836213,
+              "tetPrincipalStretches": [
+                3.175611159102692,
+                1.3359707158370016,
+                0.24631543023192842
+              ],
+              "tetReferenceVolumeMm3": 0.0012035511815427682,
+              "tetReferenceCondition": 4.423346787573252
+            },
+            {
+              "kind": "edge",
+              "extreme": "min",
+              "id": 43905,
+              "ratio": 0.32532197781598726,
+              "vertexIds": [
+                14592,
+                14613
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.265950202941895,
+                -87.66889953613281,
+                1428.6749877929688
+              ],
+              "referenceMeasure": 0.2818155564482603,
+              "posedMeasure": 0.09168079420306104
+            },
+            {
+              "kind": "edge",
+              "extreme": "max",
+              "id": 30404,
+              "ratio": 1.8763603442426855,
+              "vertexIds": [
+                10042,
+                10132
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -37.67839813232422,
+                -80.5254020690918,
+                1468.0750122070312
+              ],
+              "referenceMeasure": 0.29898900809699747,
+              "posedMeasure": 0.5610111181576612
+            }
+          ]
+        },
+        {
+          "checkpoint": "accepted-007-index-136.npz",
+          "index": 136,
+          "area": {
+            "quantiles": [
+              0.31138113149498703,
+              0.6898445364578341,
+              0.8955532825700461,
+              1.060319519785304,
+              1.3772642693855746,
+              1.6710307081649618,
+              2.2481921804286897
+            ],
+            "weightFractionOutsideHalfToDouble": 0.00018637157678350286
+          },
+          "edge": {
+            "quantiles": [
+              0.30997577981477537,
+              0.767139850543891,
+              0.8913610784686399,
+              1.0615407289976406,
+              1.5302482676869877,
+              1.711969084171769,
+              1.9482513834036046
+            ],
+            "weightFractionOutsideHalfToDouble": 0.00000567119485367575
+          },
+          "maxConditionF": 74.06523946973087,
+          "extrema": [
+            {
+              "kind": "face",
+              "extreme": "min",
+              "id": 30212,
+              "ratio": 0.31138113149498703,
+              "vertexIds": [
+                15001,
+                15144,
+                15236
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                2
+              ],
+              "sourceCentroidAtlasMm": [
+                -28.159700393676758,
+                -86.59203338623047,
+                1441.6199951171875
+              ],
+              "referenceMeasure": 0.4812337777804598,
+              "posedMeasure": 0.14984711823888672,
+              "tetId": 19885,
+              "tetJ": 0.9850724456275829,
+              "tetPrincipalStretches": [
+                5.274228389835443,
+                0.9958638576540289,
+                0.1875466314050612
+              ],
+              "tetReferenceVolumeMm3": 0.01525235560466951,
+              "tetReferenceCondition": 95.2299800242538
+            },
+            {
+              "kind": "face",
+              "extreme": "max",
+              "id": 26628,
+              "ratio": 2.2481921804286897,
+              "vertexIds": [
+                12869,
+                12674,
+                12782
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -34.378466288248696,
+                -77.69776662190755,
+                1451.86669921875
+              ],
+              "referenceMeasure": 0.01805462144367766,
+              "posedMeasure": 0.040590258750276255,
+              "tetId": 34630,
+              "tetJ": 1.0204091827081032,
+              "tetPrincipalStretches": [
+                1.7454088761220226,
+                1.3223333240113122,
+                0.4421160032199437
+              ],
+              "tetReferenceVolumeMm3": 0.0011096578225622265,
+              "tetReferenceCondition": 3.5312433036547866
+            },
+            {
+              "kind": "edge",
+              "extreme": "min",
+              "id": 43905,
+              "ratio": 0.30997577981477537,
+              "vertexIds": [
+                14592,
+                14613
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.265950202941895,
+                -87.66889953613281,
+                1428.6749877929688
+              ],
+              "referenceMeasure": 0.2818155564482603,
+              "posedMeasure": 0.08735599687398433
+            },
+            {
+              "kind": "edge",
+              "extreme": "max",
+              "id": 30404,
+              "ratio": 1.9482513834036046,
+              "vertexIds": [
+                10042,
+                10132
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -37.67839813232422,
+                -80.5254020690918,
+                1468.0750122070312
+              ],
+              "referenceMeasure": 0.29898900809699747,
+              "posedMeasure": 0.5825057486474469
+            }
+          ]
+        },
+        {
+          "checkpoint": "accepted-008-index-144.npz",
+          "index": 144,
+          "area": {
+            "quantiles": [
+              0.27757424564678795,
+              0.6812245305890375,
+              0.8911936411317023,
+              1.0651092505088215,
+              1.4019104279437322,
+              1.71138201212505,
+              2.528143653183414
+            ],
+            "weightFractionOutsideHalfToDouble": 0.00021961404340649734
+          },
+          "edge": {
+            "quantiles": [
+              0.2996005909110838,
+              0.7568771147560661,
+              0.8861038728911862,
+              1.0668192014360736,
+              1.5709752879346779,
+              1.760589131034692,
+              2.023799557725754
+            ],
+            "weightFractionOutsideHalfToDouble": 0.000015852967720928642
+          },
+          "maxConditionF": 77.39096441264309,
+          "extrema": [
+            {
+              "kind": "face",
+              "extreme": "min",
+              "id": 30212,
+              "ratio": 0.27757424564678795,
+              "vertexIds": [
+                15001,
+                15144,
+                15236
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                2
+              ],
+              "sourceCentroidAtlasMm": [
+                -28.159700393676758,
+                -86.59203338623047,
+                1441.6199951171875
+              ],
+              "referenceMeasure": 0.4812337777804598,
+              "posedMeasure": 0.13357810284716512,
+              "tetId": 19885,
+              "tetJ": 0.990317355011272,
+              "tetPrincipalStretches": [
+                5.565730045240609,
+                0.9956987743556436,
+                0.17869988768463402
+              ],
+              "tetReferenceVolumeMm3": 0.01525235560466951,
+              "tetReferenceCondition": 95.2299800242538
+            },
+            {
+              "kind": "face",
+              "extreme": "max",
+              "id": 26628,
+              "ratio": 2.528143653183414,
+              "vertexIds": [
+                12869,
+                12674,
+                12782
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -34.378466288248696,
+                -77.69776662190755,
+                1451.86669921875
+              ],
+              "referenceMeasure": 0.01805462144367766,
+              "posedMeasure": 0.045644676613462845,
+              "tetId": 34630,
+              "tetJ": 1.0188550479193381,
+              "tetPrincipalStretches": [
+                1.827165909750067,
+                1.4075806505589536,
+                0.3961513402481702
+              ],
+              "tetReferenceVolumeMm3": 0.0011096578225622265,
+              "tetReferenceCondition": 3.5312433036547866
+            },
+            {
+              "kind": "edge",
+              "extreme": "min",
+              "id": 43905,
+              "ratio": 0.2996005909110838,
+              "vertexIds": [
+                14592,
+                14613
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.265950202941895,
+                -87.66889953613281,
+                1428.6749877929688
+              ],
+              "referenceMeasure": 0.2818155564482603,
+              "posedMeasure": 0.08443210723983469
+            },
+            {
+              "kind": "edge",
+              "extreme": "max",
+              "id": 30404,
+              "ratio": 2.023799557725754,
+              "vertexIds": [
+                10042,
+                10132
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -37.67839813232422,
+                -80.5254020690918,
+                1468.0750122070312
+              ],
+              "referenceMeasure": 0.29898900809699747,
+              "posedMeasure": 0.6050938223515653
+            }
+          ]
+        },
+        {
+          "checkpoint": "accepted-009-index-152.npz",
+          "index": 152,
+          "area": {
+            "quantiles": [
+              0.24368070633598177,
+              0.6679288206787314,
+              0.8846334453235586,
+              1.0698072237431555,
+              1.424937586548806,
+              1.7530038929508356,
+              2.8199495168686
+            ],
+            "weightFractionOutsideHalfToDouble": 0.00021961404340649734
+          },
+          "edge": {
+            "quantiles": [
+              0.29292741451056026,
+              0.7474884195023509,
+              0.880407756116868,
+              1.0719651657275746,
+              1.611509148345027,
+              1.8099797332786438,
+              2.0952124605699693
+            ],
+            "weightFractionOutsideHalfToDouble": 0.000015852967720928642
+          },
+          "maxConditionF": 81.56844701248343,
+          "extrema": [
+            {
+              "kind": "face",
+              "extreme": "min",
+              "id": 30212,
+              "ratio": 0.24368070633598177,
+              "vertexIds": [
+                15001,
+                15144,
+                15236
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                2
+              ],
+              "sourceCentroidAtlasMm": [
+                -28.159700393676758,
+                -86.59203338623047,
+                1441.6199951171875
+              ],
+              "referenceMeasure": 0.4812337777804598,
+              "posedMeasure": 0.11726738688227532,
+              "tetId": 19885,
+              "tetJ": 0.9963525440720616,
+              "tetPrincipalStretches": [
+                5.894066729665989,
+                0.9954239565860177,
+                0.16982041469584538
+              ],
+              "tetReferenceVolumeMm3": 0.01525235560466951,
+              "tetReferenceCondition": 95.2299800242538
+            },
+            {
+              "kind": "face",
+              "extreme": "max",
+              "id": 26628,
+              "ratio": 2.8199495168686,
+              "vertexIds": [
+                12869,
+                12674,
+                12782
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -34.378466288248696,
+                -77.69776662190755,
+                1451.86669921875
+              ],
+              "referenceMeasure": 0.01805462144367766,
+              "posedMeasure": 0.050913121017344284,
+              "tetId": 34630,
+              "tetJ": 1.017601694187466,
+              "tetPrincipalStretches": [
+                1.9117697962076654,
+                1.4909559459208082,
+                0.357007561019737
+              ],
+              "tetReferenceVolumeMm3": 0.0011096578225622265,
+              "tetReferenceCondition": 3.5312433036547866
+            },
+            {
+              "kind": "edge",
+              "extreme": "min",
+              "id": 43905,
+              "ratio": 0.29292741451056026,
+              "vertexIds": [
+                14592,
+                14613
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.265950202941895,
+                -87.66889953613281,
+                1428.6749877929688
+              ],
+              "referenceMeasure": 0.2818155564482603,
+              "posedMeasure": 0.08255150231924373
+            },
+            {
+              "kind": "edge",
+              "extreme": "max",
+              "id": 30404,
+              "ratio": 2.0952124605699693,
+              "vertexIds": [
+                10042,
+                10132
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -37.67839813232422,
+                -80.5254020690918,
+                1468.0750122070312
+              ],
+              "referenceMeasure": 0.29898900809699747,
+              "posedMeasure": 0.6264454953382845
+            }
+          ]
+        },
+        {
+          "checkpoint": "accepted-010-index-160.npz",
+          "index": 160,
+          "area": {
+            "quantiles": [
+              0.22151911145975786,
+              0.6443308608580567,
+              0.8787438546334283,
+              1.0743638733006315,
+              1.451327305880302,
+              1.8219498094009385,
+              3.093219676705638
+            ],
+            "weightFractionOutsideHalfToDouble": 0.000259365129100799
+          },
+          "edge": {
+            "quantiles": [
+              0.29289486844938506,
+              0.7310315657017351,
+              0.8754665579469908,
+              1.0768776119790366,
+              1.65201664468543,
+              1.855663763384774,
+              2.8660509672477144
+            ],
+            "weightFractionOutsideHalfToDouble": 0.000027674764869595726
+          },
+          "maxConditionF": 89.68481637445092,
+          "extrema": [
+            {
+              "kind": "face",
+              "extreme": "min",
+              "id": 30212,
+              "ratio": 0.22151911145975786,
+              "vertexIds": [
+                15001,
+                15144,
+                15236
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                2
+              ],
+              "sourceCentroidAtlasMm": [
+                -28.159700393676758,
+                -86.59203338623047,
+                1441.6199951171875
+              ],
+              "referenceMeasure": 0.4812337777804598,
+              "posedMeasure": 0.10660247885835002,
+              "tetId": 19885,
+              "tetJ": 1.0008385341333483,
+              "tetPrincipalStretches": [
+                6.14940637327785,
+                0.9954233886463717,
+                0.1635019677372641
+              ],
+              "tetReferenceVolumeMm3": 0.01525235560466951,
+              "tetReferenceCondition": 95.2299800242538
+            },
+            {
+              "kind": "face",
+              "extreme": "max",
+              "id": 26628,
+              "ratio": 3.093219676705638,
+              "vertexIds": [
+                12869,
+                12674,
+                12782
+              ],
+              "fixedLabels": [
+                -1,
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -34.378466288248696,
+                -77.69776662190755,
+                1451.86669921875
+              ],
+              "referenceMeasure": 0.01805462144367766,
+              "posedMeasure": 0.05584691030505529,
+              "tetId": 34630,
+              "tetJ": 1.0169934172478072,
+              "tetPrincipalStretches": [
+                1.995368248638257,
+                1.5605868568883032,
+                0.32659320118991814
+              ],
+              "tetReferenceVolumeMm3": 0.0011096578225622265,
+              "tetReferenceCondition": 3.5312433036547866
+            },
+            {
+              "kind": "edge",
+              "extreme": "min",
+              "id": 43905,
+              "ratio": 0.29289486844938506,
+              "vertexIds": [
+                14592,
+                14613
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -31.265950202941895,
+                -87.66889953613281,
+                1428.6749877929688
+              ],
+              "referenceMeasure": 0.2818155564482603,
+              "posedMeasure": 0.08254233033290345
+            },
+            {
+              "kind": "edge",
+              "extreme": "max",
+              "id": 25818,
+              "ratio": 2.8660509672477144,
+              "vertexIds": [
+                8528,
+                8603
+              ],
+              "fixedLabels": [
+                -1,
+                -1
+              ],
+              "sourceCentroidAtlasMm": [
+                -40.071699142456055,
+                -82.33055114746094,
+                1475.9299926757812
+              ],
+              "referenceMeasure": 0.15337576862644622,
+              "posedMeasure": 0.43958277002418783
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "jobId": 140987821854,
+      "job": "contact (C3)",
+      "conclusion": "success",
+      "reports": [
+        {
+          "bone": "C3",
+          "boneSHA256": "1147f621766b9dce37b21a827f552c5669afaaf49531aab8d7b0df6f374233d1",
+          "rows": [
+            {
+              "checkpoint": "accepted-000-index-080.npz",
+              "elev": 30,
+              "neck": 30,
+              "bone": "C3",
+              "samples": 93688,
+              "baselineInside": 432,
+              "inside": 432,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8002792975799221,
+              "maxDepthMm": 0.8002792975799284,
+              "maxIncreaseMm": 6.791789353144395e-14,
+              "worstSample": 61652,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 6.791789353144395e-14,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-001-index-088.npz",
+              "elev": 33,
+              "neck": 33,
+              "bone": "C3",
+              "samples": 93688,
+              "baselineInside": 432,
+              "inside": 432,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8002792975799221,
+              "maxDepthMm": 0.8002792975799284,
+              "maxIncreaseMm": 9.900760766790029e-14,
+              "worstSample": 15266,
+              "worstKind": "vertex",
+              "fixedSampleMaxIncreaseMm": 9.900760766790029e-14,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-002-index-096.npz",
+              "elev": 36,
+              "neck": 36,
+              "bone": "C3",
+              "samples": 93688,
+              "baselineInside": 432,
+              "inside": 432,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8002792975799221,
+              "maxDepthMm": 0.8002792975799123,
+              "maxIncreaseMm": 1.4355183708403274e-13,
+              "worstSample": 93157,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 1.4355183708403274e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-003-index-104.npz",
+              "elev": 39,
+              "neck": 39,
+              "bone": "C3",
+              "samples": 93688,
+              "baselineInside": 432,
+              "inside": 432,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8002792975799221,
+              "maxDepthMm": 0.8002792975799221,
+              "maxIncreaseMm": 1.4727108421652702e-13,
+              "worstSample": 61955,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 1.4727108421652702e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-004-index-112.npz",
+              "elev": 42,
+              "neck": 42,
+              "bone": "C3",
+              "samples": 93688,
+              "baselineInside": 432,
+              "inside": 432,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8002792975799221,
+              "maxDepthMm": 0.8002792975799156,
+              "maxIncreaseMm": 9.900760766790029e-14,
+              "worstSample": 15266,
+              "worstKind": "vertex",
+              "fixedSampleMaxIncreaseMm": 9.900760766790029e-14,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-005-index-120.npz",
+              "elev": 45,
+              "neck": 45,
+              "bone": "C3",
+              "samples": 93688,
+              "baselineInside": 432,
+              "inside": 432,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8002792975799221,
+              "maxDepthMm": 0.8002792975799253,
+              "maxIncreaseMm": 9.797718192317006e-14,
+              "worstSample": 61956,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 9.797718192317006e-14,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-006-index-128.npz",
+              "elev": 48,
+              "neck": 48,
+              "bone": "C3",
+              "samples": 93688,
+              "baselineInside": 432,
+              "inside": 432,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8002792975799221,
+              "maxDepthMm": 0.8002792975799221,
+              "maxIncreaseMm": 9.900760766790029e-14,
+              "worstSample": 15266,
+              "worstKind": "vertex",
+              "fixedSampleMaxIncreaseMm": 9.900760766790029e-14,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-007-index-136.npz",
+              "elev": 51,
+              "neck": 51,
+              "bone": "C3",
+              "samples": 93688,
+              "baselineInside": 432,
+              "inside": 432,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8002792975799221,
+              "maxDepthMm": 0.8002792975799221,
+              "maxIncreaseMm": 6.52811138479592e-14,
+              "worstSample": 61794,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 6.52811138479592e-14,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-008-index-144.npz",
+              "elev": 54,
+              "neck": 54,
+              "bone": "C3",
+              "samples": 93688,
+              "baselineInside": 432,
+              "inside": 432,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8002792975799221,
+              "maxDepthMm": 0.8002792975799221,
+              "maxIncreaseMm": 1.5920598173124745e-13,
+              "worstSample": 61886,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 1.5920598173124745e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-009-index-152.npz",
+              "elev": 57,
+              "neck": 57,
+              "bone": "C3",
+              "samples": 93688,
+              "baselineInside": 432,
+              "inside": 432,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8002792975799221,
+              "maxDepthMm": 0.8002792975799221,
+              "maxIncreaseMm": 6.566969190657801e-14,
+              "worstSample": 93149,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 6.566969190657801e-14,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-010-index-160.npz",
+              "elev": 60,
+              "neck": 60,
+              "bone": "C3",
+              "samples": 93688,
+              "baselineInside": 432,
+              "inside": 432,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.8002792975799221,
+              "maxDepthMm": 0.8002792975799189,
+              "maxIncreaseMm": 1.4732659536775827e-13,
+              "worstSample": 93154,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 1.4732659536775827e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            }
+          ],
+          "sampleCounts": {
+            "vertices": 15613,
+            "edgeMidpoints": 46845,
+            "centroids": 31230
+          },
+          "engineeringDepthIncreaseGuardMm": 0.1,
+          "allSamplesWithinGuard": true,
+          "productAccepted": false,
+          "continuousContactCertified": false,
+          "selfIntersectionEvaluated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140987821859,
+      "job": "contact (C1)",
+      "conclusion": "success",
+      "reports": [
+        {
+          "bone": "C1",
+          "boneSHA256": "cc959122b7875a65d78597d89134fdb2f59a7c0f60d2e781c399db4010208f81",
+          "rows": [
+            {
+              "checkpoint": "accepted-000-index-080.npz",
+              "elev": 30,
+              "neck": 30,
+              "bone": "C1",
+              "samples": 93688,
+              "baselineInside": 117,
+              "inside": 117,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.21429015987988256,
+              "maxDepthMm": 0.21429015987988256,
+              "maxIncreaseMm": 1.9866270087320892e-13,
+              "worstSample": 40143,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 1.9866270087320892e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-001-index-088.npz",
+              "elev": 33,
+              "neck": 33,
+              "bone": "C1",
+              "samples": 93688,
+              "baselineInside": 117,
+              "inside": 117,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.21429015987988256,
+              "maxDepthMm": 0.21429015987989417,
+              "maxIncreaseMm": 1.3053447212030278e-13,
+              "worstSample": 85502,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 1.3053447212030278e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-002-index-096.npz",
+              "elev": 36,
+              "neck": 36,
+              "bone": "C1",
+              "samples": 93688,
+              "baselineInside": 117,
+              "inside": 117,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.21429015987988256,
+              "maxDepthMm": 0.21429015987989417,
+              "maxIncreaseMm": 1.2721768083423513e-13,
+              "worstSample": 85486,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 1.2721768083423513e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-003-index-104.npz",
+              "elev": 39,
+              "neck": 39,
+              "bone": "C1",
+              "samples": 93688,
+              "baselineInside": 117,
+              "inside": 117,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.21429015987988256,
+              "maxDepthMm": 0.21429015987989417,
+              "maxIncreaseMm": 1.3053447212030278e-13,
+              "worstSample": 85502,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 1.3053447212030278e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-004-index-112.npz",
+              "elev": 42,
+              "neck": 42,
+              "bone": "C1",
+              "samples": 93688,
+              "baselineInside": 117,
+              "inside": 117,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.21429015987988256,
+              "maxDepthMm": 0.21429015987989417,
+              "maxIncreaseMm": 1.3076345561913172e-13,
+              "worstSample": 42448,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 1.3076345561913172e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-005-index-120.npz",
+              "elev": 45,
+              "neck": 45,
+              "bone": "C1",
+              "samples": 93688,
+              "baselineInside": 117,
+              "inside": 117,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.21429015987988256,
+              "maxDepthMm": 0.21429015987989417,
+              "maxIncreaseMm": 1.421640583032513e-13,
+              "worstSample": 85502,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 1.421640583032513e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-006-index-128.npz",
+              "elev": 48,
+              "neck": 48,
+              "bone": "C1",
+              "samples": 93688,
+              "baselineInside": 117,
+              "inside": 117,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.21429015987988256,
+              "maxDepthMm": 0.21429015987989417,
+              "maxIncreaseMm": 1.421640583032513e-13,
+              "worstSample": 85502,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 1.421640583032513e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-007-index-136.npz",
+              "elev": 51,
+              "neck": 51,
+              "bone": "C1",
+              "samples": 93688,
+              "baselineInside": 117,
+              "inside": 117,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.21429015987988256,
+              "maxDepthMm": 0.21429015987988256,
+              "maxIncreaseMm": 1.3076345561913172e-13,
+              "worstSample": 42448,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 1.3076345561913172e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-008-index-144.npz",
+              "elev": 54,
+              "neck": 54,
+              "bone": "C1",
+              "samples": 93688,
+              "baselineInside": 117,
+              "inside": 117,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.21429015987988256,
+              "maxDepthMm": 0.21429015987989417,
+              "maxIncreaseMm": 1.1872447469585268e-14,
+              "worstSample": 42745,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 1.1872447469585268e-14,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-009-index-152.npz",
+              "elev": 57,
+              "neck": 57,
+              "bone": "C1",
+              "samples": 93688,
+              "baselineInside": 117,
+              "inside": 117,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.21429015987988256,
+              "maxDepthMm": 0.21429015987988256,
+              "maxIncreaseMm": 1.3076345561913172e-13,
+              "worstSample": 42448,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 1.3076345561913172e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-010-index-160.npz",
+              "elev": 60,
+              "neck": 60,
+              "bone": "C1",
+              "samples": 93688,
+              "baselineInside": 117,
+              "inside": 117,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.21429015987988256,
+              "maxDepthMm": 0.21429015987989417,
+              "maxIncreaseMm": 1.3076345561913172e-13,
+              "worstSample": 42448,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 1.3076345561913172e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            }
+          ],
+          "sampleCounts": {
+            "vertices": 15613,
+            "edgeMidpoints": 46845,
+            "centroids": 31230
+          },
+          "engineeringDepthIncreaseGuardMm": 0.1,
+          "allSamplesWithinGuard": true,
+          "productAccepted": false,
+          "continuousContactCertified": false,
+          "selfIntersectionEvaluated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140987821880,
+      "job": "contact (C4)",
+      "conclusion": "success",
+      "reports": [
+        {
+          "bone": "C4",
+          "boneSHA256": "34ea19b8f1c42e91c96f1ce19c520c2f72cda372c5373b15f85dc102e8da8208",
+          "rows": [
+            {
+              "checkpoint": "accepted-000-index-080.npz",
+              "elev": 30,
+              "neck": 30,
+              "bone": "C4",
+              "samples": 93688,
+              "baselineInside": 510,
+              "inside": 510,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.9277384244612601,
+              "maxDepthMm": 0.9277384244612601,
+              "maxIncreaseMm": 1.7091276310887693e-13,
+              "worstSample": 92659,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 1.7091276310887693e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-001-index-088.npz",
+              "elev": 33,
+              "neck": 33,
+              "bone": "C4",
+              "samples": 93688,
+              "baselineInside": 510,
+              "inside": 510,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.9277384244612601,
+              "maxDepthMm": 0.9277384244612742,
+              "maxIncreaseMm": 1.0880185641326534e-13,
+              "worstSample": 62095,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 1.0880185641326534e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-002-index-096.npz",
+              "elev": 36,
+              "neck": 36,
+              "bone": "C4",
+              "samples": 93688,
+              "baselineInside": 510,
+              "inside": 510,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.9277384244612601,
+              "maxDepthMm": 0.9277384244612601,
+              "maxIncreaseMm": 1.79134485023269e-13,
+              "worstSample": 92659,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 1.79134485023269e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-003-index-104.npz",
+              "elev": 39,
+              "neck": 39,
+              "bone": "C4",
+              "samples": 93688,
+              "baselineInside": 510,
+              "inside": 510,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.9277384244612601,
+              "maxDepthMm": 0.9277384244612601,
+              "maxIncreaseMm": 1.4849232954361469e-13,
+              "worstSample": 61993,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 1.4849232954361469e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-004-index-112.npz",
+              "elev": 42,
+              "neck": 42,
+              "bone": "C4",
+              "samples": 93688,
+              "baselineInside": 510,
+              "inside": 510,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.9277384244612601,
+              "maxDepthMm": 0.9277384244612601,
+              "maxIncreaseMm": 1.1530706944817837e-13,
+              "worstSample": 92038,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 1.1530706944817837e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-005-index-120.npz",
+              "elev": 45,
+              "neck": 45,
+              "bone": "C4",
+              "samples": 93688,
+              "baselineInside": 510,
+              "inside": 510,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.9277384244612601,
+              "maxDepthMm": 0.9277384244612601,
+              "maxIncreaseMm": 1.3558685424408523e-13,
+              "worstSample": 61849,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 1.3558685424408523e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-006-index-128.npz",
+              "elev": 48,
+              "neck": 48,
+              "bone": "C4",
+              "samples": 93688,
+              "baselineInside": 510,
+              "inside": 510,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.9277384244612601,
+              "maxDepthMm": 0.9277384244612601,
+              "maxIncreaseMm": 1.1530706944817837e-13,
+              "worstSample": 92038,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 1.1530706944817837e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-007-index-136.npz",
+              "elev": 51,
+              "neck": 51,
+              "bone": "C4",
+              "samples": 93688,
+              "baselineInside": 510,
+              "inside": 510,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.9277384244612601,
+              "maxDepthMm": 0.9277384244612601,
+              "maxIncreaseMm": 1.0821898932533713e-13,
+              "worstSample": 62095,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 1.0821898932533713e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-008-index-144.npz",
+              "elev": 54,
+              "neck": 54,
+              "bone": "C4",
+              "samples": 93688,
+              "baselineInside": 510,
+              "inside": 510,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.9277384244612601,
+              "maxDepthMm": 0.9277384244612601,
+              "maxIncreaseMm": 1.368904989362818e-13,
+              "worstSample": 61993,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 1.368904989362818e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-009-index-152.npz",
+              "elev": 57,
+              "neck": 57,
+              "bone": "C4",
+              "samples": 93688,
+              "baselineInside": 510,
+              "inside": 510,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.9277384244612601,
+              "maxDepthMm": 0.9277384244612472,
+              "maxIncreaseMm": 1.79134485023269e-13,
+              "worstSample": 92659,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 1.79134485023269e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-010-index-160.npz",
+              "elev": 60,
+              "neck": 60,
+              "bone": "C4",
+              "samples": 93688,
+              "baselineInside": 510,
+              "inside": 510,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.9277384244612601,
+              "maxDepthMm": 0.9277384244612601,
+              "maxIncreaseMm": 1.3558685424408523e-13,
+              "worstSample": 61849,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 1.3558685424408523e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            }
+          ],
+          "sampleCounts": {
+            "vertices": 15613,
+            "edgeMidpoints": 46845,
+            "centroids": 31230
+          },
+          "engineeringDepthIncreaseGuardMm": 0.1,
+          "allSamplesWithinGuard": true,
+          "productAccepted": false,
+          "continuousContactCertified": false,
+          "selfIntersectionEvaluated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140987821900,
+      "job": "contact (scapula)",
+      "conclusion": "success",
+      "reports": [
+        {
+          "bone": "scapula",
+          "boneSHA256": "c0a3afd469db1fec9527bb81ec1f0956876d3d64d3acbf3a083619d4e7ce297b",
+          "rows": [
+            {
+              "checkpoint": "accepted-000-index-080.npz",
+              "elev": 30,
+              "neck": 30,
+              "bone": "scapula",
+              "samples": 93688,
+              "baselineInside": 1087,
+              "inside": 1087,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.06568651654668127,
+              "maxDepthMm": 0.06568651654665902,
+              "maxIncreaseMm": 2.5419423510530947e-13,
+              "worstSample": 15879,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 2.5419423510530947e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-001-index-088.npz",
+              "elev": 33,
+              "neck": 33,
+              "bone": "scapula",
+              "samples": 93688,
+              "baselineInside": 1087,
+              "inside": 1087,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.06568651654668127,
+              "maxDepthMm": 0.06568651654664737,
+              "maxIncreaseMm": 2.6677618447656926e-13,
+              "worstSample": 15924,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 2.6677618447656926e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-002-index-096.npz",
+              "elev": 36,
+              "neck": 36,
+              "bone": "scapula",
+              "samples": 93688,
+              "baselineInside": 1087,
+              "inside": 1087,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.06568651654668127,
+              "maxDepthMm": 0.06568651654657992,
+              "maxIncreaseMm": 4.022580879503579e-13,
+              "worstSample": 63681,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 4.022580879503579e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-003-index-104.npz",
+              "elev": 39,
+              "neck": 39,
+              "bone": "scapula",
+              "samples": 93688,
+              "baselineInside": 1087,
+              "inside": 1087,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.06568651654668127,
+              "maxDepthMm": 0.06568651654665902,
+              "maxIncreaseMm": 3.4396725918928173e-13,
+              "worstSample": 23173,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 3.4396725918928173e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-004-index-112.npz",
+              "elev": 42,
+              "neck": 42,
+              "bone": "scapula",
+              "samples": 93688,
+              "baselineInside": 1087,
+              "inside": 1087,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.06568651654668127,
+              "maxDepthMm": 0.06568651654668127,
+              "maxIncreaseMm": 3.3961418746675243e-13,
+              "worstSample": 15833,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 3.3961418746675243e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-005-index-120.npz",
+              "elev": 45,
+              "neck": 45,
+              "bone": "scapula",
+              "samples": 93688,
+              "baselineInside": 1087,
+              "inside": 1087,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.06568651654668127,
+              "maxDepthMm": 0.06568651654659088,
+              "maxIncreaseMm": 2.53855964027494e-13,
+              "worstSample": 15914,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 2.53855964027494e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-006-index-128.npz",
+              "elev": 48,
+              "neck": 48,
+              "bone": "scapula",
+              "samples": 93688,
+              "baselineInside": 1087,
+              "inside": 1087,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.06568651654668127,
+              "maxDepthMm": 0.06568651654665866,
+              "maxIncreaseMm": 2.6996460622541463e-13,
+              "worstSample": 15823,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 2.6996460622541463e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-007-index-136.npz",
+              "elev": 51,
+              "neck": 51,
+              "bone": "scapula",
+              "samples": 93688,
+              "baselineInside": 1087,
+              "inside": 1087,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.06568651654668127,
+              "maxDepthMm": 0.06568651654668092,
+              "maxIncreaseMm": 3.463533713304878e-13,
+              "worstSample": 23173,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 3.463533713304878e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-008-index-144.npz",
+              "elev": 54,
+              "neck": 54,
+              "bone": "scapula",
+              "samples": 93688,
+              "baselineInside": 1087,
+              "inside": 1087,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.06568651654668127,
+              "maxDepthMm": 0.06568651654668162,
+              "maxIncreaseMm": 2.6996417254454563e-13,
+              "worstSample": 62559,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 2.6996417254454563e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-009-index-152.npz",
+              "elev": 57,
+              "neck": 57,
+              "bone": "scapula",
+              "samples": 93688,
+              "baselineInside": 1087,
+              "inside": 1087,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.06568651654668127,
+              "maxDepthMm": 0.06568651654664771,
+              "maxIncreaseMm": 2.7739009006433335e-13,
+              "worstSample": 67003,
+              "worstKind": "triangle-centroid",
+              "fixedSampleMaxIncreaseMm": 2.7739009006433335e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            },
+            {
+              "checkpoint": "accepted-010-index-160.npz",
+              "elev": 60,
+              "neck": 60,
+              "bone": "scapula",
+              "samples": 93688,
+              "baselineInside": 1087,
+              "inside": 1087,
+              "newInside": 0,
+              "baselineMaxDepthMm": 0.06568651654668127,
+              "maxDepthMm": 0.06568651654668196,
+              "maxIncreaseMm": 2.535124887792506e-13,
+              "worstSample": 15807,
+              "worstKind": "edge-midpoint",
+              "fixedSampleMaxIncreaseMm": 2.535124887792506e-13,
+              "samplesIncreaseOverPointOneMm": 0,
+              "fixedSamplesIncreaseOverPointOneMm": 0
+            }
+          ],
+          "sampleCounts": {
+            "vertices": 15613,
+            "edgeMidpoints": 46845,
+            "centroids": 31230
+          },
+          "engineeringDepthIncreaseGuardMm": 0.1,
+          "allSamplesWithinGuard": true,
+          "productAccepted": false,
+          "continuousContactCertified": false,
+          "selfIntersectionEvaluated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140989136787,
+      "job": "return2",
+      "conclusion": "success",
+      "reports": [
+        {
+          "requestedElevationsDeg": [
+            54,
+            51,
+            48
+          ],
+          "seedFile": "test-results/v076-levator-prior/segment-end.npz",
+          "warmMultipliers": true,
+          "frameSHA256": "464e566ec7b8a77175b33635f4687f59c74ebd2a848f2de3b1723e3745fc5981",
+          "bulk": 1000,
+          "path": {
+            "completed": true,
+            "index": 128,
+            "accepted": [
+              {
+                "fromIndex": 144,
+                "index": 136,
+                "requestedIndex": 136,
+                "elev": 51,
+                "neck": 51,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 3.462089019747431e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9521151657293537,
+                  1.0586114198938499
+                ],
+                "rho": 300,
+                "iterations": 24,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.000979843554435625,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9534386194756892,
+                  1.0461853349487116
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0001358962321008,
+                "surfaceAreaRatioRange": [
+                  0.3305772239200251,
+                  2.5601952497615708
+                ],
+                "edgeRatioRange": [
+                  0.3189748225505662,
+                  2.8278681697174632
+                ],
+                "baseResidualMm": 7.734838998802636,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 24,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.000979843554435625,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9534386194756892,
+                      1.0461853349487116
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001358962321008,
+                    "surfaceAreaRatioRange": [
+                      0.3305772239200251,
+                      2.5601952497615708
+                    ],
+                    "edgeRatioRange": [
+                      0.3189748225505662,
+                      2.8278681697174632
+                    ],
+                    "baseResidualMm": 7.734838998802636,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.084483525061189,
+                "seconds": 28.68610877200001
+              },
+              {
+                "fromIndex": 136,
+                "index": 128,
+                "requestedIndex": 128,
+                "elev": 48,
+                "neck": 48,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 4.377402778899746e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9517785850894503,
+                  1.0588186417393235
+                ],
+                "rho": 300,
+                "iterations": 11,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0006021985740881853,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9531369259219313,
+                  1.0467236582090362
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0001250067021323,
+                "surfaceAreaRatioRange": [
+                  0.3735910514643089,
+                  2.557389914966631
+                ],
+                "edgeRatioRange": [
+                  0.33278544059741944,
+                  2.8073895986273407
+                ],
+                "baseResidualMm": 7.084433886644089,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 11,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0006021985740881853,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9531369259219313,
+                      1.0467236582090362
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001250067021323,
+                    "surfaceAreaRatioRange": [
+                      0.3735910514643089,
+                      2.557389914966631
+                    ],
+                    "edgeRatioRange": [
+                      0.33278544059741944,
+                      2.8073895986273407
+                    ],
+                    "baseResidualMm": 7.084433886644089,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.083944842794493,
+                "seconds": 15.207716523000016
+              }
+            ],
+            "rejected": []
+          },
+          "allAcceptedLocalGuardPassed": true,
+          "neutralReturnMaxMm": null,
+          "productAccepted": false,
+          "contactEvaluated": false,
+          "continuousCollisionCertified": false,
+          "physicalMaterialCalibrated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140989430015,
+      "job": "return3",
+      "conclusion": "success",
+      "reports": [
+        {
+          "requestedElevationsDeg": [
+            48,
+            45,
+            42,
+            39
+          ],
+          "seedFile": "test-results/v076-levator-prior/segment-end.npz",
+          "warmMultipliers": true,
+          "frameSHA256": "464e566ec7b8a77175b33635f4687f59c74ebd2a848f2de3b1723e3745fc5981",
+          "bulk": 1000,
+          "path": {
+            "completed": true,
+            "index": 104,
+            "accepted": [
+              {
+                "fromIndex": 128,
+                "index": 120,
+                "requestedIndex": 120,
+                "elev": 45,
+                "neck": 45,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 7.941096884871677e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9521029350098204,
+                  1.0596319874474645
+                ],
+                "rho": 300,
+                "iterations": 10,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0006627959109790142,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9532121679319173,
+                  1.0467587506611862
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0001136014817769,
+                "surfaceAreaRatioRange": [
+                  0.4192892412892361,
+                  2.5537608190241343
+                ],
+                "edgeRatioRange": [
+                  0.36004680035189174,
+                  2.7989735266272144
+                ],
+                "baseResidualMm": 6.417827026594322,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 10,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0006627959109790142,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9532121679319173,
+                      1.0467587506611862
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001136014817769,
+                    "surfaceAreaRatioRange": [
+                      0.4192892412892361,
+                      2.5537608190241343
+                    ],
+                    "edgeRatioRange": [
+                      0.36004680035189174,
+                      2.7989735266272144
+                    ],
+                    "baseResidualMm": 6.417827026594322,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.0833596609492138,
+                "seconds": 18.461695467
+              },
+              {
+                "fromIndex": 120,
+                "index": 112,
+                "requestedIndex": 112,
+                "elev": 42,
+                "neck": 42,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 3.321297336716276e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9523016130391196,
+                  1.0604840870099934
+                ],
+                "rho": 300,
+                "iterations": 8,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.000784962953747314,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9541180989471696,
+                  1.0458163419144186
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0001018057859976,
+                "surfaceAreaRatioRange": [
+                  0.4668465094466979,
+                  2.548040980248542
+                ],
+                "edgeRatioRange": [
+                  0.4003329152067298,
+                  2.7886149496788444
+                ],
+                "baseResidualMm": 5.717163397125898,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 8,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.000784962953747314,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9541180989471696,
+                      1.0458163419144186
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001018057859976,
+                    "surfaceAreaRatioRange": [
+                      0.4668465094466979,
+                      2.548040980248542
+                    ],
+                    "edgeRatioRange": [
+                      0.4003329152067298,
+                      2.7886149496788444
+                    ],
+                    "baseResidualMm": 5.717163397125898,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.08273007514156,
+                "seconds": 15.553149051999995
+              },
+              {
+                "fromIndex": 112,
+                "index": 104,
+                "requestedIndex": 104,
+                "elev": 39,
+                "neck": 39,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 5.3704650011703396e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9531665801934829,
+                  1.061345151113992
+                ],
+                "rho": 300,
+                "iterations": 14,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0003212668063945697,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9547905781067378,
+                  1.0455361535497014
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.000089644944251,
+                "surfaceAreaRatioRange": [
+                  0.47520338252650984,
+                  2.53910145054701
+                ],
+                "edgeRatioRange": [
+                  0.44396580702546073,
+                  2.775707810069213
+                ],
+                "baseResidualMm": 5.103286695711794,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 14,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0003212668063945697,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9547905781067378,
+                      1.0455361535497014
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.000089644944251,
+                    "surfaceAreaRatioRange": [
+                      0.47520338252650984,
+                      2.53910145054701
+                    ],
+                    "edgeRatioRange": [
+                      0.44396580702546073,
+                      2.775707810069213
+                    ],
+                    "baseResidualMm": 5.103286695711794,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.0820582882689886,
+                "seconds": 24.008524831000003
+              }
+            ],
+            "rejected": []
+          },
+          "allAcceptedLocalGuardPassed": true,
+          "neutralReturnMaxMm": null,
+          "productAccepted": false,
+          "contactEvaluated": false,
+          "continuousCollisionCertified": false,
+          "physicalMaterialCalibrated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140989823207,
+      "job": "return4",
+      "conclusion": "success",
+      "reports": [
+        {
+          "requestedElevationsDeg": [
+            39,
+            36,
+            33,
+            30
+          ],
+          "seedFile": "test-results/v076-levator-prior/segment-end.npz",
+          "warmMultipliers": true,
+          "frameSHA256": "464e566ec7b8a77175b33635f4687f59c74ebd2a848f2de3b1723e3745fc5981",
+          "bulk": 1000,
+          "path": {
+            "completed": true,
+            "index": 80,
+            "accepted": [
+              {
+                "fromIndex": 104,
+                "index": 96,
+                "requestedIndex": 96,
+                "elev": 36,
+                "neck": 36,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 4.6082669948203363e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9530730259609941,
+                  1.0622862886064603
+                ],
+                "rho": 300,
+                "iterations": 8,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0007099232487846186,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9547527417202298,
+                  1.045325528381463
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.000077022554499,
+                "surfaceAreaRatioRange": [
+                  0.4780355947087173,
+                  2.5284063137858706
+                ],
+                "edgeRatioRange": [
+                  0.4874998281176165,
+                  2.7621558064272014
+                ],
+                "baseResidualMm": 4.769667361785283,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 8,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0007099232487846186,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9547527417202298,
+                      1.045325528381463
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.000077022554499,
+                    "surfaceAreaRatioRange": [
+                      0.4780355947087173,
+                      2.5284063137858706
+                    ],
+                    "edgeRatioRange": [
+                      0.4874998281176165,
+                      2.7621558064272014
+                    ],
+                    "baseResidualMm": 4.769667361785283,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.081346605596054,
+                "seconds": 8.125398797000003
+              },
+              {
+                "fromIndex": 96,
+                "index": 88,
+                "requestedIndex": 88,
+                "elev": 33,
+                "neck": 33,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 6.985278018115447e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9529708896535178,
+                  1.0632245191747682
+                ],
+                "rho": 300,
+                "iterations": 9,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0004519899018560392,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9546282770250232,
+                  1.0453896871934854
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.00006417783596,
+                "surfaceAreaRatioRange": [
+                  0.47905673506565954,
+                  2.5102958914324334
+                ],
+                "edgeRatioRange": [
+                  0.5015945052886255,
+                  2.7344367410636137
+                ],
+                "baseResidualMm": 4.70202821372659,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 9,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0004519899018560392,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9546282770250232,
+                      1.0453896871934854
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.00006417783596,
+                    "surfaceAreaRatioRange": [
+                      0.47905673506565954,
+                      2.5102958914324334
+                    ],
+                    "edgeRatioRange": [
+                      0.5015945052886255,
+                      2.7344367410636137
+                    ],
+                    "baseResidualMm": 4.70202821372659,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.0805974296098064,
+                "seconds": 9.179905356999996
+              },
+              {
+                "fromIndex": 88,
+                "index": 80,
+                "requestedIndex": 80,
+                "elev": 30,
+                "neck": 30,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 6.215093190286559e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9528440867928739,
+                  1.0641117026456532
+                ],
+                "rho": 300,
+                "iterations": 9,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.00007468494580037925,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.954452735453978,
+                  1.0453742273935553
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0000514283892978,
+                "surfaceAreaRatioRange": [
+                  0.5056292456499242,
+                  1.6502281421387084
+                ],
+                "edgeRatioRange": [
+                  0.5687648426259737,
+                  1.4568205789433257
+                ],
+                "baseResidualMm": 4.499004005775316,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 9,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.00007468494580037925,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.954452735453978,
+                      1.0453742273935553
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0000514283892978,
+                    "surfaceAreaRatioRange": [
+                      0.5056292456499242,
+                      1.6502281421387084
+                    ],
+                    "edgeRatioRange": [
+                      0.5687648426259737,
+                      1.4568205789433257
+                    ],
+                    "baseResidualMm": 4.499004005775316,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.2611271889431723,
+                "seconds": 9.487320374999996
+              }
+            ],
+            "rejected": []
+          },
+          "allAcceptedLocalGuardPassed": true,
+          "neutralReturnMaxMm": null,
+          "productAccepted": false,
+          "contactEvaluated": false,
+          "continuousCollisionCertified": false,
+          "physicalMaterialCalibrated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140990038016,
+      "job": "return5",
+      "conclusion": "success",
+      "reports": [
+        {
+          "requestedElevationsDeg": [
+            30,
+            27,
+            24,
+            21,
+            18,
+            15
+          ],
+          "seedFile": "test-results/v076-levator-prior/segment-end.npz",
+          "warmMultipliers": true,
+          "frameSHA256": "464e566ec7b8a77175b33635f4687f59c74ebd2a848f2de3b1723e3745fc5981",
+          "bulk": 1000,
+          "path": {
+            "completed": true,
+            "index": 40,
+            "accepted": [
+              {
+                "fromIndex": 80,
+                "index": 72,
+                "requestedIndex": 72,
+                "elev": 27,
+                "neck": 27,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 4.681526568052373e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9545498374151082,
+                  1.0648855598506675
+                ],
+                "rho": 300,
+                "iterations": 19,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0004941042815331657,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9549030485333166,
+                  1.0453997030452455
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.000037188623433,
+                "surfaceAreaRatioRange": [
+                  0.5210950205363575,
+                  1.5900272897026446
+                ],
+                "edgeRatioRange": [
+                  0.6171319678177107,
+                  1.3884515397708717
+                ],
+                "baseResidualMm": 4.400408555357381,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 19,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0004941042815331657,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9549030485333166,
+                      1.0453997030452455
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.000037188623433,
+                    "surfaceAreaRatioRange": [
+                      0.5210950205363575,
+                      1.5900272897026446
+                    ],
+                    "edgeRatioRange": [
+                      0.6171319678177107,
+                      1.3884515397708717
+                    ],
+                    "baseResidualMm": 4.400408555357381,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.0789966613351756,
+                "seconds": 21.668893615
+              },
+              {
+                "fromIndex": 72,
+                "index": 64,
+                "requestedIndex": 64,
+                "elev": 24,
+                "neck": 24,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 4.9780642764476736e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9520649531338747,
+                  1.0655592761510622
+                ],
+                "rho": 300,
+                "iterations": 13,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.000766368127001442,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9549790070456451,
+                  1.0451328419760042
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0000199895568305,
+                "surfaceAreaRatioRange": [
+                  0.5253725030816593,
+                  1.532991552643473
+                ],
+                "edgeRatioRange": [
+                  0.6581041046646893,
+                  1.3435251214303154
+                ],
+                "baseResidualMm": 3.859677940147352,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 13,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.000766368127001442,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9549790070456451,
+                      1.0451328419760042
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0000199895568305,
+                    "surfaceAreaRatioRange": [
+                      0.5253725030816593,
+                      1.532991552643473
+                    ],
+                    "edgeRatioRange": [
+                      0.6581041046646893,
+                      1.3435251214303154
+                    ],
+                    "baseResidualMm": 3.859677940147352,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.0882153965022194,
+                "seconds": 16.521744397000006
+              },
+              {
+                "fromIndex": 64,
+                "index": 56,
+                "requestedIndex": 56,
+                "elev": 21,
+                "neck": 21,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 5.960125995694584e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9524618958534097,
+                  1.0662833974483032
+                ],
+                "rho": 300,
+                "iterations": 14,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0000029614222187008194,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9540644688332546,
+                  1.045424265021636
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0000029265659274,
+                "surfaceAreaRatioRange": [
+                  0.5585862873269174,
+                  1.4764501393508325
+                ],
+                "edgeRatioRange": [
+                  0.6985831035143298,
+                  1.309451640303862
+                ],
+                "baseResidualMm": 3.109161629603772,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 14,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0000029614222187008194,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9540644688332546,
+                      1.045424265021636
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0000029265659274,
+                    "surfaceAreaRatioRange": [
+                      0.5585862873269174,
+                      1.4764501393508325
+                    ],
+                    "edgeRatioRange": [
+                      0.6985831035143298,
+                      1.309451640303862
+                    ],
+                    "baseResidualMm": 3.109161629603772,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.084621906714098,
+                "seconds": 16.78464143299999
+              },
+              {
+                "fromIndex": 56,
+                "index": 48,
+                "requestedIndex": 48,
+                "elev": 18,
+                "neck": 18,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 5.373796482423683e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9497746629767335,
+                  1.067326875602466
+                ],
+                "rho": 300,
+                "iterations": 6,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.00007500143037297084,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9536485512592683,
+                  1.045601640589131
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 0.9999883222604137,
+                "surfaceAreaRatioRange": [
+                  0.6089611750758965,
+                  1.4193129622661211
+                ],
+                "edgeRatioRange": [
+                  0.7564921761642166,
+                  1.2580604229822279
+                ],
+                "baseResidualMm": 2.4010777228617313,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 6,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.00007500143037297084,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9536485512592683,
+                      1.045601640589131
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 0.9999883222604137,
+                    "surfaceAreaRatioRange": [
+                      0.6089611750758965,
+                      1.4193129622661211
+                    ],
+                    "edgeRatioRange": [
+                      0.7564921761642166,
+                      1.2580604229822279
+                    ],
+                    "baseResidualMm": 2.4010777228617313,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.076379348331444,
+                "seconds": 8.531762794000002
+              },
+              {
+                "fromIndex": 48,
+                "index": 40,
+                "requestedIndex": 40,
+                "elev": 15,
+                "neck": 15,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 5.333896485594909e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.951005302150077,
+                  1.068827600615807
+                ],
+                "rho": 300,
+                "iterations": 5,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.00008435633963901791,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.954529647935946,
+                  1.0463867087795193
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 0.9999779874336955,
+                "surfaceAreaRatioRange": [
+                  0.6586680169880821,
+                  1.3616712734686631
+                ],
+                "edgeRatioRange": [
+                  0.8008019940222094,
+                  1.2014057790193515
+                ],
+                "baseResidualMm": 1.532716125008592,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 5,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.00008435633963901791,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.954529647935946,
+                      1.0463867087795193
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 0.9999779874336955,
+                    "surfaceAreaRatioRange": [
+                      0.6586680169880821,
+                      1.3616712734686631
+                    ],
+                    "edgeRatioRange": [
+                      0.8008019940222094,
+                      1.2014057790193515
+                    ],
+                    "baseResidualMm": 1.532716125008592,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.075460406154704,
+                "seconds": 7.663824860000005
+              }
+            ],
+            "rejected": []
+          },
+          "allAcceptedLocalGuardPassed": true,
+          "neutralReturnMaxMm": null,
+          "productAccepted": false,
+          "contactEvaluated": false,
+          "continuousCollisionCertified": false,
+          "physicalMaterialCalibrated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140990485060,
+      "job": "return6",
+      "conclusion": "success",
+      "reports": [
+        {
+          "requestedElevationsDeg": [
+            15,
+            12,
+            9,
+            6,
+            3,
+            0
+          ],
+          "seedFile": "test-results/v076-levator-prior/segment-end.npz",
+          "warmMultipliers": true,
+          "frameSHA256": "464e566ec7b8a77175b33635f4687f59c74ebd2a848f2de3b1723e3745fc5981",
+          "bulk": 1000,
+          "path": {
+            "completed": true,
+            "index": 0,
+            "accepted": [
+              {
+                "fromIndex": 40,
+                "index": 32,
+                "requestedIndex": 32,
+                "elev": 12,
+                "neck": 12,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 7.293232969386143e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9483417508650231,
+                  1.0651318736669046
+                ],
+                "rho": 300,
+                "iterations": 6,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0000010322993152532823,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9550725356995059,
+                  1.0449156629525718
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 0.9999756569946938,
+                "surfaceAreaRatioRange": [
+                  0.7176135045929911,
+                  1.292723432510701
+                ],
+                "edgeRatioRange": [
+                  0.8326164721331287,
+                  1.1670657134134272
+                ],
+                "baseResidualMm": 0.6448733422393377,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 6,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0000010322993152532823,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9550725356995059,
+                      1.0449156629525718
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 0.9999756569946938,
+                    "surfaceAreaRatioRange": [
+                      0.7176135045929911,
+                      1.292723432510701
+                    ],
+                    "edgeRatioRange": [
+                      0.8326164721331287,
+                      1.1670657134134272
+                    ],
+                    "baseResidualMm": 0.6448733422393377,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.0745230330946427,
+                "seconds": 9.183450820000076
+              },
+              {
+                "fromIndex": 32,
+                "index": 24,
+                "requestedIndex": 24,
+                "elev": 9,
+                "neck": 9,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 1.5156016008743339e-16,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9396550248751756,
+                  1.0510284552815221
+                ],
+                "rho": 300,
+                "iterations": 30,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.000570799175967811,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9553483848966016,
+                  1.0447062918745433
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 0.9999808158633574,
+                "surfaceAreaRatioRange": [
+                  0.7892374099406209,
+                  1.2115018150342258
+                ],
+                "edgeRatioRange": [
+                  0.8745877669940649,
+                  1.1278173410463754
+                ],
+                "baseResidualMm": 0.2842689866735971,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 30,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.000570799175967811,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9553483848966016,
+                      1.0447062918745433
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 0.9999808158633574,
+                    "surfaceAreaRatioRange": [
+                      0.7892374099406209,
+                      1.2115018150342258
+                    ],
+                    "edgeRatioRange": [
+                      0.8745877669940649,
+                      1.1278173410463754
+                    ],
+                    "baseResidualMm": 0.2842689866735971,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.960511909599509,
+                "seconds": 37.56558387899997
+              },
+              {
+                "fromIndex": 24,
+                "index": 16,
+                "requestedIndex": 16,
+                "elev": 6,
+                "neck": 6,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 8.875433543974109e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9487161296768744,
+                  1.0472276340717332
+                ],
+                "rho": 300,
+                "iterations": 5,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0008049738372921689,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.955758877599096,
+                  1.03397185970502
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 0.9999896787016345,
+                "surfaceAreaRatioRange": [
+                  0.8634455165655609,
+                  1.1296048117718247
+                ],
+                "edgeRatioRange": [
+                  0.9209759082519747,
+                  1.084476951784581
+                ],
+                "baseResidualMm": 0.03708565569675677,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 5,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0008049738372921689,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.955758877599096,
+                      1.03397185970502
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 0.9999896787016345,
+                    "surfaceAreaRatioRange": [
+                      0.8634455165655609,
+                      1.1296048117718247
+                    ],
+                    "edgeRatioRange": [
+                      0.9209759082519747,
+                      1.084476951784581
+                    ],
+                    "baseResidualMm": 0.03708565569675677,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 3.280945713575949,
+                "seconds": 8.287736848999998
+              },
+              {
+                "fromIndex": 16,
+                "index": 8,
+                "requestedIndex": 8,
+                "elev": 3,
+                "neck": 3,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 1.6592605968902034e-16,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9675432203179084,
+                  1.0394489964308595
+                ],
+                "rho": 300,
+                "iterations": 5,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.00012316387869500342,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9768244895161452,
+                  1.016184966947261
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 0.9999977529484211,
+                "surfaceAreaRatioRange": [
+                  0.9382295707033088,
+                  1.060410880378721
+                ],
+                "edgeRatioRange": [
+                  0.96656461859453,
+                  1.0412640020807027
+                ],
+                "baseResidualMm": 0.00012316387869500342,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 5,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.00012316387869500342,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9768244895161452,
+                      1.016184966947261
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 0.9999977529484211,
+                    "surfaceAreaRatioRange": [
+                      0.9382295707033088,
+                      1.060410880378721
+                    ],
+                    "edgeRatioRange": [
+                      0.96656461859453,
+                      1.0412640020807027
+                    ],
+                    "baseResidualMm": 0.00012316387869500342,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.680219277788085,
+                "seconds": 7.809642590000067
+              },
+              {
+                "fromIndex": 8,
+                "index": 0,
+                "requestedIndex": 0,
+                "elev": 0,
+                "neck": 0,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 5.392688911895552e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9770295887876583,
+                  1.0360149674338908
+                ],
+                "rho": 300,
+                "iterations": 4,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.00046333398957180874,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9999910863989027,
+                  1.0000164881901161
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0000000000052205,
+                "surfaceAreaRatioRange": [
+                  0.9999313006289221,
+                  1.0002286320539262
+                ],
+                "edgeRatioRange": [
+                  0.9999093698785811,
+                  1.000237994726662
+                ],
+                "baseResidualMm": 0.00046333398957180874,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 4,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.00046333398957180874,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9999910863989027,
+                      1.0000164881901161
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0000000000052205,
+                    "surfaceAreaRatioRange": [
+                      0.9999313006289221,
+                      1.0002286320539262
+                    ],
+                    "edgeRatioRange": [
+                      0.9999093698785811,
+                      1.000237994726662
+                    ],
+                    "baseResidualMm": 0.00046333398957180874,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.0706492139597428,
+                "seconds": 6.759934354000052
+              }
+            ],
+            "rejected": []
+          },
+          "allAcceptedLocalGuardPassed": true,
+          "neutralReturnMaxMm": 0.00004077557667282714,
+          "productAccepted": false,
+          "contactEvaluated": false,
+          "continuousCollisionCertified": false,
+          "physicalMaterialCalibrated": false
+        }
+      ]
+    }
+  ],
+  "productAccepted": false
+}
