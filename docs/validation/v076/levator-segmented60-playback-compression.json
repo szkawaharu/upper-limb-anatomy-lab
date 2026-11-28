@@ -1,0 +1,1767 @@
+{
+  "runs": [
+    46145537791,
+    46145594317
+  ],
+  "results": [
+    {
+      "jobId": 140980659110,
+      "reports": [
+        {
+          "requestedElevationsDeg": [
+            30,
+            33,
+            36,
+            39
+          ],
+          "seedFile": "test-results/v076-levator-constrained30/accepted-010-index-80.npz",
+          "warmMultipliers": true,
+          "frameSHA256": "464e566ec7b8a77175b33635f4687f59c74ebd2a848f2de3b1723e3745fc5981",
+          "bulk": 1000,
+          "path": {
+            "completed": true,
+            "index": 104,
+            "accepted": [
+              {
+                "fromIndex": 80,
+                "index": 88,
+                "requestedIndex": 88,
+                "elev": 33,
+                "neck": 33,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 4.5495218458348143e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9254282935702832,
+                  1.0869377209770195
+                ],
+                "rho": 1000,
+                "iterations": 7,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0007699017073878421,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9531143433873456,
+                  1.048579697236979
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.000063305668674,
+                "surfaceAreaRatioRange": [
+                  0.5319099774630818,
+                  1.7697641302244609
+                ],
+                "edgeRatioRange": [
+                  0.48657621776020704,
+                  1.5155741770333375
+                ],
+                "baseResidualMm": 4.6786787149992985,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 9,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0002263632189220969,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9488784290874572,
+                      1.0593061858624382
+                    ],
+                    "outsideCount": 7,
+                    "volumeRatio": 1.0000633578012226,
+                    "surfaceAreaRatioRange": [
+                      0.5416001879644529,
+                      1.774225263792829
+                    ],
+                    "edgeRatioRange": [
+                      0.48404257451358795,
+                      1.5174182276174595
+                    ],
+                    "baseResidualMm": 4.719380792375027,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 1000,
+                    "iterations": 7,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0007699017073878421,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9531143433873456,
+                      1.048579697236979
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.000063305668674,
+                    "surfaceAreaRatioRange": [
+                      0.5319099774630818,
+                      1.7697641302244609
+                    ],
+                    "edgeRatioRange": [
+                      0.48657621776020704,
+                      1.5155741770333375
+                    ],
+                    "baseResidualMm": 4.6786787149992985,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.079813254652175,
+                "seconds": 20.920822994000005
+              },
+              {
+                "fromIndex": 88,
+                "index": 96,
+                "requestedIndex": 96,
+                "elev": 36,
+                "neck": 36,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 6.411898006118366e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9251820075529023,
+                  1.086755294181212
+                ],
+                "rho": 1000,
+                "iterations": 8,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.00027163330847966333,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9518541824404883,
+                  1.049475473484922
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0000756568320863,
+                "surfaceAreaRatioRange": [
+                  0.5183925818721379,
+                  1.8748377284803368
+                ],
+                "edgeRatioRange": [
+                  0.4351454445085471,
+                  1.5752776237772619
+                ],
+                "baseResidualMm": 4.919757974703827,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 9,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0004934575139987728,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9478323298672159,
+                      1.0606589460614795
+                    ],
+                    "outsideCount": 16,
+                    "volumeRatio": 1.0000755817297677,
+                    "surfaceAreaRatioRange": [
+                      0.5231930511531505,
+                      1.8776734942825455
+                    ],
+                    "edgeRatioRange": [
+                      0.43509562884783787,
+                      1.5717108694205357
+                    ],
+                    "baseResidualMm": 4.951941712568595,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 1000,
+                    "iterations": 8,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.00027163330847966333,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9518541824404883,
+                      1.049475473484922
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0000756568320863,
+                    "surfaceAreaRatioRange": [
+                      0.5183925818721379,
+                      1.8748377284803368
+                    ],
+                    "edgeRatioRange": [
+                      0.4351454445085471,
+                      1.5752776237772619
+                    ],
+                    "baseResidualMm": 4.919757974703827,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.0805974296098064,
+                "seconds": 22.260267174999996
+              },
+              {
+                "fromIndex": 96,
+                "index": 104,
+                "requestedIndex": 104,
+                "elev": 39,
+                "neck": 39,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 4.386513670541637e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9251406830761912,
+                  1.0865453383757413
+                ],
+                "rho": 1000,
+                "iterations": 11,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0006459009232635682,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9508976658965542,
+                  1.0499509997545586
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0000878885561255,
+                "surfaceAreaRatioRange": [
+                  0.4771359933631112,
+                  1.9743202343154416
+                ],
+                "edgeRatioRange": [
+                  0.38897035592885404,
+                  1.6490277372494644
+                ],
+                "baseResidualMm": 5.133748872606476,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 10,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0007875442534980997,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9476654252912826,
+                      1.0615890593012434
+                    ],
+                    "outsideCount": 18,
+                    "volumeRatio": 1.000087772644315,
+                    "surfaceAreaRatioRange": [
+                      0.47723799701104075,
+                      1.979198615613352
+                    ],
+                    "edgeRatioRange": [
+                      0.38901139635915283,
+                      1.6415570995238988
+                    ],
+                    "baseResidualMm": 5.176132744520339,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 1000,
+                    "iterations": 11,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0006459009232635682,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9508976658965542,
+                      1.0499509997545586
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0000878885561255,
+                    "surfaceAreaRatioRange": [
+                      0.4771359933631112,
+                      1.9743202343154416
+                    ],
+                    "edgeRatioRange": [
+                      0.38897035592885404,
+                      1.6490277372494644
+                    ],
+                    "baseResidualMm": 5.133748872606476,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.081346605596054,
+                "seconds": 24.77881988
+              }
+            ],
+            "rejected": []
+          },
+          "allAcceptedLocalGuardPassed": true,
+          "neutralReturnMaxMm": null,
+          "productAccepted": false,
+          "contactEvaluated": false,
+          "continuousCollisionCertified": false,
+          "physicalMaterialCalibrated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140981111023,
+      "reports": [
+        {
+          "requestedElevationsDeg": [
+            39,
+            42,
+            45,
+            48
+          ],
+          "seedFile": "test-results/v076-levator-prior/segment-end.npz",
+          "warmMultipliers": true,
+          "frameSHA256": "464e566ec7b8a77175b33635f4687f59c74ebd2a848f2de3b1723e3745fc5981",
+          "bulk": 1000,
+          "path": {
+            "completed": true,
+            "index": 128,
+            "accepted": [
+              {
+                "fromIndex": 104,
+                "index": 112,
+                "requestedIndex": 112,
+                "elev": 42,
+                "neck": 42,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 5.115515217216164e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9253101193726382,
+                  1.086159991455887
+                ],
+                "rho": 3000,
+                "iterations": 9,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0008229560568393193,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9535086657765807,
+                  1.0462884178142104
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0001000999067196,
+                "surfaceAreaRatioRange": [
+                  0.44643063875794,
+                  2.047797875708432
+                ],
+                "edgeRatioRange": [
+                  0.3586423993990727,
+                  1.7261687622587558
+                ],
+                "baseResidualMm": 5.287505518743616,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 9,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0009344801806818807,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9469614866605292,
+                      1.0624390632830951
+                    ],
+                    "outsideCount": 20,
+                    "volumeRatio": 1.0000997442025612,
+                    "surfaceAreaRatioRange": [
+                      0.4411143139778892,
+                      2.049386774747053
+                    ],
+                    "edgeRatioRange": [
+                      0.3613238463506126,
+                      1.7162985730791012
+                    ],
+                    "baseResidualMm": 5.363355171000559,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 1000,
+                    "iterations": 10,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0008924355841917605,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9504575539695344,
+                      1.0503573709323515
+                    ],
+                    "outsideCount": 1,
+                    "volumeRatio": 1.0000999364429175,
+                    "surfaceAreaRatioRange": [
+                      0.44481265462091507,
+                      2.0480831927382805
+                    ],
+                    "edgeRatioRange": [
+                      0.35954296804930297,
+                      1.7235865982874194
+                    ],
+                    "baseResidualMm": 5.284895716171785,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 3000,
+                    "iterations": 9,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0008229560568393193,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9535086657765807,
+                      1.0462884178142104
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001000999067196,
+                    "surfaceAreaRatioRange": [
+                      0.44643063875794,
+                      2.047797875708432
+                    ],
+                    "edgeRatioRange": [
+                      0.3586423993990727,
+                      1.7261687622587558
+                    ],
+                    "baseResidualMm": 5.287505518743616,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.0820582882689886,
+                "seconds": 25.530715981999997
+              },
+              {
+                "fromIndex": 112,
+                "index": 120,
+                "requestedIndex": 120,
+                "elev": 45,
+                "neck": 45,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 4.7064412398335546e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9256538599663465,
+                  1.0856902186253503
+                ],
+                "rho": 1000,
+                "iterations": 10,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0009479224176648206,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9518014736263676,
+                  1.0495501854506417
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0001118081888132,
+                "surfaceAreaRatioRange": [
+                  0.3972753515707558,
+                  2.100340223942556
+                ],
+                "edgeRatioRange": [
+                  0.3407157149354424,
+                  1.7989712449317314
+                ],
+                "baseResidualMm": 5.6163962651423205,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 14,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0004772044030752643,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9492117523151302,
+                      1.0607451721819086
+                    ],
+                    "outsideCount": 12,
+                    "volumeRatio": 1.0001116054229777,
+                    "surfaceAreaRatioRange": [
+                      0.39387095419454804,
+                      2.106127963097946
+                    ],
+                    "edgeRatioRange": [
+                      0.3404613195583452,
+                      1.7926691941618762
+                    ],
+                    "baseResidualMm": 5.5182263486879854,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 1000,
+                    "iterations": 10,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0009479224176648206,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9518014736263676,
+                      1.0495501854506417
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001118081888132,
+                    "surfaceAreaRatioRange": [
+                      0.3972753515707558,
+                      2.100340223942556
+                    ],
+                    "edgeRatioRange": [
+                      0.3407157149354424,
+                      1.7989712449317314
+                    ],
+                    "baseResidualMm": 5.6163962651423205,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.08273007514156,
+                "seconds": 21.049784681
+              },
+              {
+                "fromIndex": 120,
+                "index": 128,
+                "requestedIndex": 128,
+                "elev": 48,
+                "neck": 48,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 4.189310599632458e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9258129031975785,
+                  1.0854067736775346
+                ],
+                "rho": 3000,
+                "iterations": 9,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0008070519222020525,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.95372570617445,
+                  1.0461740612166983
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0001236635955877,
+                "surfaceAreaRatioRange": [
+                  0.35426790154862947,
+                  2.1416960894979664
+                ],
+                "edgeRatioRange": [
+                  0.32532197781598726,
+                  1.8763603442426855
+                ],
+                "baseResidualMm": 6.473993296171986,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 13,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0006715855034545381,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9482363137913005,
+                      1.0628966888947755
+                    ],
+                    "outsideCount": 20,
+                    "volumeRatio": 1.0001230489317814,
+                    "surfaceAreaRatioRange": [
+                      0.34774724131635315,
+                      2.1567746500070144
+                    ],
+                    "edgeRatioRange": [
+                      0.3235189933262655,
+                      1.8660834470814425
+                    ],
+                    "baseResidualMm": 6.102668099816244,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 1000,
+                    "iterations": 11,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0006564451650386367,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9510425421873923,
+                      1.0505915819229266
+                    ],
+                    "outsideCount": 1,
+                    "volumeRatio": 1.0001233922565662,
+                    "surfaceAreaRatioRange": [
+                      0.3519635007835298,
+                      2.1491018590414592
+                    ],
+                    "edgeRatioRange": [
+                      0.3233522342807338,
+                      1.8735503386236743
+                    ],
+                    "baseResidualMm": 6.376901646842451,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 3000,
+                    "iterations": 9,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0008070519222020525,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.95372570617445,
+                      1.0461740612166983
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001236635955877,
+                    "surfaceAreaRatioRange": [
+                      0.35426790154862947,
+                      2.1416960894979664
+                    ],
+                    "edgeRatioRange": [
+                      0.32532197781598726,
+                      1.8763603442426855
+                    ],
+                    "baseResidualMm": 6.473993296171986,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.0833596609492138,
+                "seconds": 28.859623188
+              }
+            ],
+            "rejected": []
+          },
+          "allAcceptedLocalGuardPassed": true,
+          "neutralReturnMaxMm": null,
+          "productAccepted": false,
+          "contactEvaluated": false,
+          "continuousCollisionCertified": false,
+          "physicalMaterialCalibrated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140981548763,
+      "reports": [
+        {
+          "requestedElevationsDeg": [
+            48,
+            51,
+            54
+          ],
+          "seedFile": "test-results/v076-levator-prior/segment-end.npz",
+          "warmMultipliers": true,
+          "frameSHA256": "464e566ec7b8a77175b33635f4687f59c74ebd2a848f2de3b1723e3745fc5981",
+          "bulk": 1000,
+          "path": {
+            "completed": true,
+            "index": 144,
+            "accepted": [
+              {
+                "fromIndex": 128,
+                "index": 136,
+                "requestedIndex": 136,
+                "elev": 51,
+                "neck": 51,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 4.0576085006174655e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9251987514012993,
+                  1.0847217861734952
+                ],
+                "rho": 1000,
+                "iterations": 10,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0009298051895351439,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9521961568891013,
+                  1.0497612678781434
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0001348463165867,
+                "surfaceAreaRatioRange": [
+                  0.31138113149498703,
+                  2.2481921804286897
+                ],
+                "edgeRatioRange": [
+                  0.30997577981477537,
+                  1.9482513834036046
+                ],
+                "baseResidualMm": 7.138161866015513,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 23,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.00007955231858914579,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9495783609974948,
+                      1.061245194027623
+                    ],
+                    "outsideCount": 10,
+                    "volumeRatio": 1.000134565889747,
+                    "surfaceAreaRatioRange": [
+                      0.3074974487213114,
+                      2.2464608411849913
+                    ],
+                    "edgeRatioRange": [
+                      0.31097732578983345,
+                      1.942012577404959
+                    ],
+                    "baseResidualMm": 6.9124465643523605,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 1000,
+                    "iterations": 10,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0009298051895351439,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9521961568891013,
+                      1.0497612678781434
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001348463165867,
+                    "surfaceAreaRatioRange": [
+                      0.31138113149498703,
+                      2.2481921804286897
+                    ],
+                    "edgeRatioRange": [
+                      0.30997577981477537,
+                      1.9482513834036046
+                    ],
+                    "baseResidualMm": 7.138161866015513,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.083944842794493,
+                "seconds": 31.102481348000012
+              },
+              {
+                "fromIndex": 136,
+                "index": 144,
+                "requestedIndex": 144,
+                "elev": 54,
+                "neck": 54,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 3.788735196530672e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9261269682663442,
+                  1.0842329578492245
+                ],
+                "rho": 3000,
+                "iterations": 12,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0006481672403787147,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9531830154871935,
+                  1.046397582628026
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0001460416806738,
+                "surfaceAreaRatioRange": [
+                  0.27757424564678795,
+                  2.528143653183414
+                ],
+                "edgeRatioRange": [
+                  0.2996005909110838,
+                  2.023799557725754
+                ],
+                "baseResidualMm": 7.987669930727263,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 16,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0009669916821959325,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9483500733276848,
+                      1.0631692178217353
+                    ],
+                    "outsideCount": 18,
+                    "volumeRatio": 1.000145531733184,
+                    "surfaceAreaRatioRange": [
+                      0.2690878894231258,
+                      2.52822639276378
+                    ],
+                    "edgeRatioRange": [
+                      0.2980091435154647,
+                      2.0144883893874144
+                    ],
+                    "baseResidualMm": 7.611880002006883,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 1000,
+                    "iterations": 14,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0007084612824938892,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9508573346091799,
+                      1.0509308781403968
+                    ],
+                    "outsideCount": 2,
+                    "volumeRatio": 1.000145793523004,
+                    "surfaceAreaRatioRange": [
+                      0.27434772844071686,
+                      2.530143070079648
+                    ],
+                    "edgeRatioRange": [
+                      0.29777233677854964,
+                      2.021501983074378
+                    ],
+                    "baseResidualMm": 7.886953170385416,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 3000,
+                    "iterations": 12,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0006481672403787147,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9531830154871935,
+                      1.046397582628026
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001460416806738,
+                    "surfaceAreaRatioRange": [
+                      0.27757424564678795,
+                      2.528143653183414
+                    ],
+                    "edgeRatioRange": [
+                      0.2996005909110838,
+                      2.023799557725754
+                    ],
+                    "baseResidualMm": 7.987669930727263,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.084483525061189,
+                "seconds": 36.112907229000015
+              }
+            ],
+            "rejected": []
+          },
+          "allAcceptedLocalGuardPassed": true,
+          "neutralReturnMaxMm": null,
+          "productAccepted": false,
+          "contactEvaluated": false,
+          "continuousCollisionCertified": false,
+          "physicalMaterialCalibrated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140981944074,
+      "reports": [
+        {
+          "requestedElevationsDeg": [
+            54,
+            57,
+            60
+          ],
+          "seedFile": "test-results/v076-levator-prior/segment-end.npz",
+          "warmMultipliers": true,
+          "frameSHA256": "464e566ec7b8a77175b33635f4687f59c74ebd2a848f2de3b1723e3745fc5981",
+          "bulk": 1000,
+          "path": {
+            "completed": true,
+            "index": 160,
+            "accepted": [
+              {
+                "fromIndex": 144,
+                "index": 152,
+                "requestedIndex": 152,
+                "elev": 57,
+                "neck": 57,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 3.440787736496169e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9272895536754799,
+                  1.0833467356904805
+                ],
+                "rho": 1000,
+                "iterations": 15,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0008814813274413173,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9516833484035873,
+                  1.0498817311149078
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0001566551618668,
+                "surfaceAreaRatioRange": [
+                  0.24368070633598177,
+                  2.8199495168686
+                ],
+                "edgeRatioRange": [
+                  0.29292741451056026,
+                  2.0952124605699693
+                ],
+                "baseResidualMm": 8.664034665989803,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 15,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0008729709031094474,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9493077503231677,
+                      1.0604348711416782
+                    ],
+                    "outsideCount": 10,
+                    "volumeRatio": 1.0001565448033884,
+                    "surfaceAreaRatioRange": [
+                      0.23894547104107194,
+                      2.8199978451850614
+                    ],
+                    "edgeRatioRange": [
+                      0.2916684859255146,
+                      2.0886002655216016
+                    ],
+                    "baseResidualMm": 8.421000248259563,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 1000,
+                    "iterations": 15,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0008814813274413173,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9516833484035873,
+                      1.0498817311149078
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001566551618668,
+                    "surfaceAreaRatioRange": [
+                      0.24368070633598177,
+                      2.8199495168686
+                    ],
+                    "edgeRatioRange": [
+                      0.29292741451056026,
+                      2.0952124605699693
+                    ],
+                    "baseResidualMm": 8.664034665989803,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.084973724093264,
+                "seconds": 35.224907228000006
+              },
+              {
+                "fromIndex": 152,
+                "index": 160,
+                "requestedIndex": 160,
+                "elev": 60,
+                "neck": 60,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 5.3004506761808414e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9276974627207795,
+                  1.082702852823972
+                ],
+                "rho": 3000,
+                "iterations": 15,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0006094792108460305,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9530439699622713,
+                  1.0471850775389002
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0001667709332984,
+                "surfaceAreaRatioRange": [
+                  0.22151911145975786,
+                  3.093219676705638
+                ],
+                "edgeRatioRange": [
+                  0.29289486844938506,
+                  2.8660509672477144
+                ],
+                "baseResidualMm": 9.439215385756107,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 24,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0007119294942502857,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9476497254395998,
+                      1.061321729424091
+                    ],
+                    "outsideCount": 19,
+                    "volumeRatio": 1.0001666892746366,
+                    "surfaceAreaRatioRange": [
+                      0.2124715959165646,
+                      3.09277201948141
+                    ],
+                    "edgeRatioRange": [
+                      0.2864288968720517,
+                      2.906951054131298
+                    ],
+                    "baseResidualMm": 9.041897023058493,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 1000,
+                    "iterations": 20,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0008831759617205668,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9507053396997457,
+                      1.0517408359135374
+                    ],
+                    "outsideCount": 3,
+                    "volumeRatio": 1.0001667128512166,
+                    "surfaceAreaRatioRange": [
+                      0.2178160499773066,
+                      3.0911026308455405
+                    ],
+                    "edgeRatioRange": [
+                      0.28848725706443323,
+                      2.8658392718796155
+                    ],
+                    "baseResidualMm": 9.317933429911378,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 3000,
+                    "iterations": 15,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0006094792108460305,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9530439699622713,
+                      1.0471850775389002
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0001667709332984,
+                    "surfaceAreaRatioRange": [
+                      0.22151911145975786,
+                      3.093219676705638
+                    ],
+                    "edgeRatioRange": [
+                      0.29289486844938506,
+                      2.8660509672477144
+                    ],
+                    "baseResidualMm": 9.439215385756107,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 2.2497712566310493,
+                "seconds": 67.173002461
+              }
+            ],
+            "rejected": []
+          },
+          "allAcceptedLocalGuardPassed": true,
+          "neutralReturnMaxMm": null,
+          "productAccepted": false,
+          "contactEvaluated": false,
+          "continuousCollisionCertified": false,
+          "physicalMaterialCalibrated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140980829594,
+      "reports": [
+        {
+          "requestedElevationsDeg": [
+            21,
+            22.5
+          ],
+          "seedFile": "test-results/v076-levator-constrained30/accepted-007-index-56.npz",
+          "warmMultipliers": true,
+          "frameSHA256": "021908ae6c0d7d712ec9ec7faaf86891453425e0b923843fa872efbd46b85fc7",
+          "bulk": 1000,
+          "path": {
+            "completed": true,
+            "index": 60,
+            "accepted": [
+              {
+                "fromIndex": 56,
+                "index": 60,
+                "requestedIndex": 60,
+                "elev": 22.5,
+                "neck": 22.5,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 4.9184788309383756e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9410461275396259,
+                  1.0584066565812795
+                ],
+                "rho": 1000,
+                "iterations": 6,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.00007855308714037074,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9540100372526897,
+                  1.046674165428746
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.000011653284365,
+                "surfaceAreaRatioRange": [
+                  0.5643524444972607,
+                  1.5098436560700224
+                ],
+                "edgeRatioRange": [
+                  0.6598752412739977,
+                  1.3447340658660318
+                ],
+                "baseResidualMm": 2.643479907890963,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 4,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0003081840028629436,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9511913884220712,
+                      1.0508845245678657
+                    ],
+                    "outsideCount": 2,
+                    "volumeRatio": 1.000011680482359,
+                    "surfaceAreaRatioRange": [
+                      0.5674064124391524,
+                      1.5090321732661773
+                    ],
+                    "edgeRatioRange": [
+                      0.6596664569137809,
+                      1.3446514522102446
+                    ],
+                    "baseResidualMm": 2.5295592404269036,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 1000,
+                    "iterations": 6,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.00007855308714037074,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9540100372526897,
+                      1.046674165428746
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.000011653284365,
+                    "surfaceAreaRatioRange": [
+                      0.5643524444972607,
+                      1.5098436560700224
+                    ],
+                    "edgeRatioRange": [
+                      0.6598752412739977,
+                      1.3447340658660318
+                    ],
+                    "baseResidualMm": 2.643479907890963,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 1.0386090286705767,
+                "seconds": 18.013492682999996
+              }
+            ],
+            "rejected": []
+          },
+          "allAcceptedLocalGuardPassed": true,
+          "neutralReturnMaxMm": null,
+          "productAccepted": false,
+          "contactEvaluated": false,
+          "continuousCollisionCertified": false,
+          "physicalMaterialCalibrated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140980829794,
+      "reports": [
+        {
+          "requestedElevationsDeg": [
+            27,
+            28.5
+          ],
+          "seedFile": "test-results/v076-levator-constrained30/accepted-009-index-72.npz",
+          "warmMultipliers": true,
+          "frameSHA256": "021908ae6c0d7d712ec9ec7faaf86891453425e0b923843fa872efbd46b85fc7",
+          "bulk": 1000,
+          "path": {
+            "completed": true,
+            "index": 76,
+            "accepted": [
+              {
+                "fromIndex": 72,
+                "index": 76,
+                "requestedIndex": 76,
+                "elev": 28.5,
+                "neck": 28.5,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 7.355058137214994e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9402119930999693,
+                  1.0591575212034887
+                ],
+                "rho": 1000,
+                "iterations": 5,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0006304959621308801,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9539622993235541,
+                  1.0469591979998278
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.000044541434902,
+                "surfaceAreaRatioRange": [
+                  0.5259618228124682,
+                  1.6183973662565065
+                ],
+                "edgeRatioRange": [
+                  0.5652055656726929,
+                  1.43301830903415
+                ],
+                "baseResidualMm": 4.134508058460756,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 5,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0002474865239709483,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9515749161298548,
+                      1.0529253387470223
+                    ],
+                    "outsideCount": 2,
+                    "volumeRatio": 1.0000446026180003,
+                    "surfaceAreaRatioRange": [
+                      0.5265003325812933,
+                      1.6207663908073386
+                    ],
+                    "edgeRatioRange": [
+                      0.5634096687100472,
+                      1.4345813685685398
+                    ],
+                    "baseResidualMm": 4.0532024015657235,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 1000,
+                    "iterations": 5,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0006304959621308801,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9539622993235541,
+                      1.0469591979998278
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.000044541434902,
+                    "surfaceAreaRatioRange": [
+                      0.5259618228124682,
+                      1.6183973662565065
+                    ],
+                    "edgeRatioRange": [
+                      0.5652055656726929,
+                      1.43301830903415
+                    ],
+                    "baseResidualMm": 4.134508058460756,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 1.0394755479033297,
+                "seconds": 13.786693851999999
+              }
+            ],
+            "rejected": []
+          },
+          "allAcceptedLocalGuardPassed": true,
+          "neutralReturnMaxMm": null,
+          "productAccepted": false,
+          "contactEvaluated": false,
+          "continuousCollisionCertified": false,
+          "physicalMaterialCalibrated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140980829860,
+      "reports": [
+        {
+          "requestedElevationsDeg": [
+            24,
+            25.5
+          ],
+          "seedFile": "test-results/v076-levator-constrained30/accepted-008-index-64.npz",
+          "warmMultipliers": true,
+          "frameSHA256": "021908ae6c0d7d712ec9ec7faaf86891453425e0b923843fa872efbd46b85fc7",
+          "bulk": 1000,
+          "path": {
+            "completed": true,
+            "index": 68,
+            "accepted": [
+              {
+                "fromIndex": 64,
+                "index": 68,
+                "requestedIndex": 68,
+                "elev": 25.5,
+                "neck": 25.5,
+                "predictor": {
+                  "method": "current coupled SPD strain/volume Dirichlet predictor",
+                  "bulk": 1000,
+                  "linearBackwardError": 6.500044879071533e-17,
+                  "matrixNonzeros": 1640916
+                },
+                "predictorJRange": [
+                  0.9406615560154077,
+                  1.0593905422466685
+                ],
+                "rho": 1000,
+                "iterations": 4,
+                "innerConverged": true,
+                "augmentedResidualMm": 0.0003101317732129651,
+                "attachmentErrorMm": 0,
+                "JRange": [
+                  0.9543164528149384,
+                  1.04640296417488
+                ],
+                "outsideCount": 0,
+                "volumeRatio": 1.0000290194812491,
+                "surfaceAreaRatioRange": [
+                  0.5363101994337875,
+                  1.5663418351689982
+                ],
+                "edgeRatioRange": [
+                  0.6141831289652202,
+                  1.3853501753841884
+                ],
+                "baseResidualMm": 3.3684329411875185,
+                "nonPositiveElements": 0,
+                "converged": true,
+                "reason": "equilibrium-and-local-volume-guard",
+                "warmMultipliers": true,
+                "stages": [
+                  {
+                    "rho": 300,
+                    "iterations": 5,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.00006133566704975932,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9522652721713164,
+                      1.0534264114216867
+                    ],
+                    "outsideCount": 1,
+                    "volumeRatio": 1.0000290453311156,
+                    "surfaceAreaRatioRange": [
+                      0.5379397630379666,
+                      1.570148168315405
+                    ],
+                    "edgeRatioRange": [
+                      0.6121106650479887,
+                      1.3872156489571728
+                    ],
+                    "baseResidualMm": 3.2889141827501462,
+                    "nonPositiveElements": 0
+                  },
+                  {
+                    "rho": 1000,
+                    "iterations": 4,
+                    "innerConverged": true,
+                    "augmentedResidualMm": 0.0003101317732129651,
+                    "attachmentErrorMm": 0,
+                    "JRange": [
+                      0.9543164528149384,
+                      1.04640296417488
+                    ],
+                    "outsideCount": 0,
+                    "volumeRatio": 1.0000290194812491,
+                    "surfaceAreaRatioRange": [
+                      0.5363101994337875,
+                      1.5663418351689982
+                    ],
+                    "edgeRatioRange": [
+                      0.6141831289652202,
+                      1.3853501753841884
+                    ],
+                    "baseResidualMm": 3.3684329411875185,
+                    "nonPositiveElements": 0
+                  }
+                ],
+                "maxVertexStepMm": 1.070680189297504,
+                "seconds": 13.68215705900002
+              }
+            ],
+            "rejected": []
+          },
+          "allAcceptedLocalGuardPassed": true,
+          "neutralReturnMaxMm": null,
+          "productAccepted": false,
+          "contactEvaluated": false,
+          "continuousCollisionCertified": false,
+          "physicalMaterialCalibrated": false
+        }
+      ]
+    },
+    {
+      "jobId": 140981005832,
+      "reports": [
+        {
+          "sampleCount": 180,
+          "modes": 60,
+          "basisFloat32Bytes": 11990160,
+          "linearBackwardError": 1.0623657813956013e-16,
+          "linear": {
+            "minJ": 0.9463414852192343,
+            "maxJ": 1.0503449604861121,
+            "samplePosesOutsideBand": 26,
+            "maxOutsideElements": 2,
+            "maxNonPositiveElements": 0,
+            "maxPinErrorMm": 0.23730399194810597
+          },
+          "corrected": {
+            "minJ": 0.9476540430075718,
+            "maxJ": 1.0487859171452947,
+            "samplePosesOutsideBand": 22,
+            "maxOutsideElements": 1,
+            "maxNonPositiveElements": 0,
+            "maxPinErrorMm": 5.900286296485071e-13
+          },
+          "float32BasisExactPins": {
+            "minJ": 0.9476541892499754,
+            "maxJ": 1.0487858380736974,
+            "samplePosesOutsideBand": 22,
+            "maxOutsideElements": 1,
+            "maxNonPositiveElements": 0,
+            "maxPinErrorMm": 0
+          },
+          "compression": {
+            "4": {
+              "minJ": 0.5268538349124159,
+              "maxJ": 1.425299628361018,
+              "samplePosesOutsideBand": 140,
+              "maxOutsideElements": 96,
+              "maxNonPositiveElements": 0,
+              "maxPinErrorMm": 0,
+              "basisAndProjectorFloat32Bytes": 800304,
+              "maxDisplacementDifferenceMm": 0.011914329286666268
+            },
+            "8": {
+              "minJ": 0.938092945440811,
+              "maxJ": 1.0521852209672855,
+              "samplePosesOutsideBand": 48,
+              "maxOutsideElements": 2,
+              "maxNonPositiveElements": 0,
+              "maxPinErrorMm": 0,
+              "basisAndProjectorFloat32Bytes": 1600608,
+              "maxDisplacementDifferenceMm": 0.0005658916641641216
+            },
+            "12": {
+              "minJ": 0.9476540483387057,
+              "maxJ": 1.0487859605902778,
+              "samplePosesOutsideBand": 22,
+              "maxOutsideElements": 1,
+              "maxNonPositiveElements": 0,
+              "maxPinErrorMm": 0,
+              "basisAndProjectorFloat32Bytes": 2400912,
+              "maxDisplacementDifferenceMm": 0.0000253322146496665
+            },
+            "24": {
+              "minJ": 0.9476540925964594,
+              "maxJ": 1.0487859616634307,
+              "samplePosesOutsideBand": 22,
+              "maxOutsideElements": 1,
+              "maxNonPositiveElements": 0,
+              "maxPinErrorMm": 0,
+              "basisAndProjectorFloat32Bytes": 4801824,
+              "maxDisplacementDifferenceMm": 6.207284173113864e-8
+            }
+          },
+          "coefficientSingularValues": [
+            1.1981845597767684,
+            0.5031396983972852,
+            0.22099297582513622,
+            0.06777839577038568,
+            0.061429694524909165,
+            0.024137295367617086,
+            0.007076682668444217,
+            0.0037882695828927873,
+            0.0024922613492380486,
+            0.0016079979670466096,
+            0.0003660973866402531,
+            0.0002905036130498948,
+            0.00010264955872813797,
+            0.000024634623677304908,
+            0.00001312228561009432,
+            2.522308618927103e-7,
+            9.9760166151367e-10,
+            1.0336623896152196e-11,
+            1.3036815317210714e-13,
+            8.722529348696377e-14,
+            7.718435065093946e-14,
+            6.160606989688958e-14,
+            5.7116187549813e-14,
+            5.367486486322118e-14,
+            5.204112356462688e-14,
+            4.2060307872872094e-14,
+            3.957154081395708e-14,
+            3.430654355433922e-14,
+            3.4296448765966425e-14,
+            2.869249895470216e-14,
+            2.5891901709780107e-14,
+            2.183754111924525e-14,
+            2.0945078190880665e-14,
+            1.6616373461925782e-14,
+            1.553388101796399e-14,
+            1.2769799963479139e-14,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            8.57392934837816e-17
+          ],
+          "continuousJCertified": false,
+          "contactEvaluated": false,
+          "equilibriumEvaluated": false,
+          "productAccepted": false
+        },
+        {
+          "sampleCount": 93,
+          "modes": 60,
+          "basisFloat32Bytes": 11990160,
+          "linearBackwardError": 1.0623657813956013e-16,
+          "linear": {
+            "minJ": 0.950653879429631,
+            "maxJ": 1.0483901737199435,
+            "samplePosesOutsideBand": 0,
+            "maxOutsideElements": 0,
+            "maxNonPositiveElements": 0,
+            "maxPinErrorMm": 0.23730399194810073
+          },
+          "corrected": {
+            "minJ": 0.9512238324620345,
+            "maxJ": 1.0483901737199435,
+            "samplePosesOutsideBand": 0,
+            "maxOutsideElements": 0,
+            "maxNonPositiveElements": 0,
+            "maxPinErrorMm": 5.900286296485071e-13
+          },
+          "float32BasisExactPins": {
+            "minJ": 0.9512234985558615,
+            "maxJ": 1.0483901737199435,
+            "samplePosesOutsideBand": 0,
+            "maxOutsideElements": 0,
+            "maxNonPositiveElements": 0,
+            "maxPinErrorMm": 0
+          },
+          "compression": {
+            "4": {
+              "minJ": 0.5268538658820635,
+              "maxJ": 1.2478150550295324,
+              "samplePosesOutsideBand": 67,
+              "maxOutsideElements": 96,
+              "maxNonPositiveElements": 0,
+              "maxPinErrorMm": 0,
+              "basisAndProjectorFloat32Bytes": 800304,
+              "maxDisplacementDifferenceMm": 0.011914329286666268
+            },
+            "8": {
+              "minJ": 0.9407897732461679,
+              "maxJ": 1.0515540485246084,
+              "samplePosesOutsideBand": 15,
+              "maxOutsideElements": 1,
+              "maxNonPositiveElements": 0,
+              "maxPinErrorMm": 0,
+              "basisAndProjectorFloat32Bytes": 1600608,
+              "maxDisplacementDifferenceMm": 0.0004823091526210764
+            },
+            "12": {
+              "minJ": 0.9512238382091608,
+              "maxJ": 1.0483901737199435,
+              "samplePosesOutsideBand": 0,
+              "maxOutsideElements": 0,
+              "maxNonPositiveElements": 0,
+              "maxPinErrorMm": 0,
+              "basisAndProjectorFloat32Bytes": 2400912,
+              "maxDisplacementDifferenceMm": 0.00002464762540927405
+            },
+            "24": {
+              "minJ": 0.951223970145889,
+              "maxJ": 1.0483901737199435,
+              "samplePosesOutsideBand": 0,
+              "maxOutsideElements": 0,
+              "maxNonPositiveElements": 0,
+              "maxPinErrorMm": 0,
+              "basisAndProjectorFloat32Bytes": 4801824,
+              "maxDisplacementDifferenceMm": 6.207284173113864e-8
+            }
+          },
+          "coefficientSingularValues": [
+            1.1981845597767684,
+            0.5031396983972852,
+            0.22099297582513622,
+            0.06777839577038568,
+            0.061429694524909165,
+            0.024137295367617086,
+            0.007076682668444217,
+            0.0037882695828927873,
+            0.0024922613492380486,
+            0.0016079979670466096,
+            0.0003660973866402531,
+            0.0002905036130498948,
+            0.00010264955872813797,
+            0.000024634623677304908,
+            0.00001312228561009432,
+            2.522308618927103e-7,
+            9.9760166151367e-10,
+            1.0336623896152196e-11,
+            1.3036815317210714e-13,
+            8.722529348696377e-14,
+            7.718435065093946e-14,
+            6.160606989688958e-14,
+            5.7116187549813e-14,
+            5.367486486322118e-14,
+            5.204112356462688e-14,
+            4.2060307872872094e-14,
+            3.957154081395708e-14,
+            3.430654355433922e-14,
+            3.4296448765966425e-14,
+            2.869249895470216e-14,
+            2.5891901709780107e-14,
+            2.183754111924525e-14,
+            2.0945078190880665e-14,
+            1.6616373461925782e-14,
+            1.553388101796399e-14,
+            1.2769799963479139e-14,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            1.0182455741878071e-16,
+            8.57392934837816e-17
+          ],
+          "continuousJCertified": false,
+          "contactEvaluated": false,
+          "equilibriumEvaluated": false,
+          "productAccepted": false
+        }
+      ]
+    }
+  ],
+  "productAccepted": false
+}
