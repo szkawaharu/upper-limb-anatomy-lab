@@ -1,0 +1,36 @@
+{
+  "runId": 46137728614,
+  "jobId": 140956708983,
+  "sampleCount": 180,
+  "modes": 60,
+  "basisFloat32Bytes": 11990160,
+  "linearBackwardError": 1.0623657813956013e-16,
+  "linear": {
+    "minJ": 0.9463414852192343,
+    "maxJ": 1.0503449604861121,
+    "samplePosesOutsideBand": 26,
+    "maxOutsideElements": 2,
+    "maxNonPositiveElements": 0,
+    "maxPinErrorMm": 0.23730399194810597
+  },
+  "corrected": {
+    "minJ": 0.9476540430075718,
+    "maxJ": 1.0487859171452947,
+    "samplePosesOutsideBand": 22,
+    "maxOutsideElements": 1,
+    "maxNonPositiveElements": 0,
+    "maxPinErrorMm": 5.900286296485071e-13
+  },
+  "float32BasisExactPins": {
+    "minJ": 0.9476541892499754,
+    "maxJ": 1.0487858380736974,
+    "samplePosesOutsideBand": 22,
+    "maxOutsideElements": 1,
+    "maxNonPositiveElements": 0,
+    "maxPinErrorMm": 0
+  },
+  "continuousJCertified": false,
+  "contactEvaluated": false,
+  "equilibriumEvaluated": false,
+  "productAccepted": false
+}
