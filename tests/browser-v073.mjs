@@ -198,7 +198,7 @@ try {
     await page.evaluate(()=>window.__qa.skipRender(true));
     const frames=[];
     const maxIndex=Number(process.env.QA_LEVATOR_SOLID_MAX_INDEX||16);
-    assert(Number.isInteger(maxIndex)&&maxIndex>=16&&maxIndex<=106,'Frame grid outside low-elevation validated region');
+    assert(Number.isInteger(maxIndex)&&maxIndex>=16&&maxIndex<=160,'Frame grid outside tested 0–60 degree coupled region');
     for(let i=0;i<=maxIndex;i++){
       const elev=i*.375,plane=40,neck=elev;
       const frame=await page.evaluate(({elev,plane,neck})=>{
