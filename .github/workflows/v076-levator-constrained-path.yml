@@ -1,0 +1,100 @@
+name: v0.76 levator constrained actual-frame paths
+on:
+  push:
+    branches: [redesign/v076-shoulder]
+    paths:
+      - '.github/workflows/v076-levator-constrained-path.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  frames:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      QA_OUTPUT: test-results/v076-levator-30-frames
+      QA_LEVATOR_SOLID_FRAMES: '1'
+      QA_LEVATOR_SOLID_MAX_INDEX: '80'
+      QA_SHOULDER_PREVIEW: '1'
+      QA_NUMERIC_ONLY: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/download-artifact@v4
+        with:
+          name: shoulder-preview-field
+          path: test-results/v076-blend-preview/
+          run-id: 46082847918
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: |
+          export CHROME_PATH="$(node -e 'console.log(require("playwright").chromium.executablePath())')"
+          node tests/browser-v073.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: levator-30-frames
+          path: test-results/v076-levator-30-frames/levator-solid-frames.json
+  path15:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      QA_INPUT: test-results/v076-levator-predictor-coupled
+      QA_OUTPUT: test-results/v076-levator-constrained15
+      QA_MAX_INDEX: '40'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-predictor-coupled
+          path: test-results/v076-levator-predictor-coupled/
+          run-id: 46134663885
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/run-levator-constrained-path.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-constrained15
+          path: test-results/v076-levator-constrained15/
+  path30:
+    needs: frames
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      QA_INPUT: test-results/v076-levator-predictor-coupled
+      QA_OUTPUT: test-results/v076-levator-constrained30
+      QA_FRAME_FILE: test-results/v076-levator-30-frames/levator-solid-frames.json
+      QA_MAX_INDEX: '80'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-predictor-coupled
+          path: test-results/v076-levator-predictor-coupled/
+          run-id: 46134663885
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-30-frames
+          path: test-results/v076-levator-30-frames/
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/run-levator-constrained-path.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-constrained30
+          path: test-results/v076-levator-constrained30/
