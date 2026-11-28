@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+for(const f of ['engine/math','engine/fiber-path','engine/volume-constraint','engine/contact-constraint','engine/tendon-deformation','engine/muscle-deformation','engine/deformation-audit','scripts/experimental/trace-muscle-outliers'])await import('../'+f+'.js');
+const M=AnatomyMath,rest=Float32Array.of(0,0,0,1,0,0,0,1,0,0,0,1),faces=Uint32Array.of(0,2,1,0,1,3,0,3,2,1,2,3),line=Array.from({length:4},(_,i)=>[i/3,0,0]);
+const B={rest,faces,weights:Float32Array.of(0,1,.5,.5),lane:Float32Array.of(0,0,.5,.5),material:Float32Array.of(0,1,.5,.5),field:{controls:[line,line.map(p=>M.add(p,[0,1,0]))]},reference:[0,1,0],sheet:false,blendRange:[0,1],definition:{id:'synthetic',source:{worldUnitsPerMm:1},tissues:{tendonStart:.86}}};
+const a=M.identity(),b={q:M.qaxis([0,0,1],.6),p:[1,.2,0],rest:[1,0,0]},s=MuscleDeformation.pose(B,a,b);
+const report=DeformationAudit.audit(s,MuscleDeformation.deform(s)),trace=MuscleOutlierTrace.trace(s,report);
+assert.equal(trace.id,'synthetic');assert(trace.vertices.every(v=>Number.isFinite(v.restWidthMm)));
+assert(Math.abs(trace.worstEdge.stageLengthsMm.rest-report.worstEdge.restLengthMm)<1e-12);
+assert(Math.abs(trace.worstArea.stageAreasMm2.rest-report.worstArea.restAreaMm2)<1e-12);
+assert(Math.abs(trace.worstEdge.stageLengthsMm.final/trace.worstEdge.stageLengthsMm.rest-report.worstEdge.ratio)<1e-6);
+assert(Math.abs(trace.worstArea.stageAreasMm2.final/trace.worstArea.stageAreasMm2.rest-report.worstArea.ratio)<1e-6);
+assert.equal(trace.worstEdge.stageLengthsMm.noContact,trace.worstEdge.stageLengthsMm.final);
+console.log('PASS physical outlier provenance: source sizes, stage geometry, float output comparison');
