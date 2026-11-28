@@ -7,6 +7,16 @@ import { join } from "node:path";
 import assert from "node:assert/strict";
 import { staticServer } from "./helpers/static-server.mjs";
 const numericOnly = process.env.QA_NUMERIC_ONLY === "1";
+const shoulderCompare=process.env.QA_SHOULDER_MUSCLE_COMPARE==="1";
+const shoulderPreview=process.env.QA_SHOULDER_PREVIEW==="1";
+const previewFile=process.env.QA_PREVIEW_FILE||"test-results/v076-blend-preview/field.json";
+const preview=shoulderPreview?JSON.parse(readFileSync(previewFile,"utf8")):null;
+if(shoulderPreview){
+ assert(shoulderCompare,"Preview is confined to the explicit comparison harness");
+ assert(!process.env.QA_URL,"Preview must run against the local checkout");
+ assert(preview.maxRigidErrorBoundMm<1&&preview.productAccepted===false);
+ for(const [file,hash] of Object.entries(preview.sourceHashes))assert.equal(createHash('sha256').update(readFileSync(file)).digest('hex'),hash,'Preview input mismatch: '+file);
+}
 const out = process.env.QA_OUTPUT || "test-results/browser-v073",
   cache = process.env.ATLAS_CACHE || "/tmp/upper-limb-atlas";
 mkdirSync(out, { recursive: true });
@@ -54,12 +64,38 @@ await page.route("**/*.stl", async (route) => {
     await route.abort();
   }
 });
+if(shoulderPreview){
+ await page.addInitScript(data=>{globalThis.__qaShoulderPreviewField=data},preview);
+ await page.route("**/engine/shoulder-kinematics.js*",async route=>{
+  const source=readFileSync("engine/shoulder-kinematics.js","utf8");
+  const needle="if(!cached&&useField)a=root.ShoulderPoseField.sample(this.field,elev,plane);";
+  assert(source.includes(needle));
+  const patched=source.replace(needle,needle+`
+  if(!cached&&useField&&elev>40&&elev<=180&&plane>=0&&plane<=90){
+   const f=root.__qaShoulderPreviewField;
+   if(!f||f.baseSignature!==this.fieldSignature)throw Error('Browser preview signature mismatch');
+   const t=clamp((elev-40)/5,0,1),g=t*t*(3-2*t),d=root.ShoulderPoseField.sample(f,elev,plane);
+   a=a.map((x,j)=>x+g*d[j]);
+  }`).replace("backend:useField?'validated-field':'reference'","backend:useField?(elev>40&&elev<=180&&plane>=0&&plane<=90?'qa-additive-preview':'validated-field'):'reference'");
+  await route.fulfill({body:patched,contentType:"text/javascript"});
+ });
+}
 const instrument = String.raw`
 let qaSkipDraw=false;const qaOriginalRender=render;render=()=>{if(!qaSkipDraw)qaOriginalRender();else{lastW=canvas.clientWidth;lastH=canvas.clientHeight;proj=ortho(state.zoom,lastW/lastH,.01,100);const eye=add(state.target,[18*Math.sin(state.yaw)*Math.cos(state.pitch),18*Math.sin(state.pitch),18*Math.cos(state.yaw)*Math.cos(state.pitch)]);view=lookAt(eye,state.target);pv=mm(proj,view)}};
 const qaContactCurrent=v73Contact;let qaLegacyHead=false;
 v73Contact=(spec,b)=>{const c=qaContactCurrent(spec,b);return qaLegacyHead&&c?.unilateral?{...c,unilateral:false}:c};
 const qaExport=(f,id)=>{const B=f.binding,samples=[];for(let i=0;i<B.weights.length;i+=Math.max(1,Math.floor(B.weights.length/80))){const p=Array.from(B.rest.slice(i*3,i*3+3)),t=B.weights[i],l=B.lane[i],materialT=B.material[i],q=MuscleDeformation.point(f,p,t,l,materialT);samples.push({vertexId:i,p,t,l,materialT,q,originBlend:B.originBlend?.[i]||0})}return {id,name:B.definition.name,input:{side:v56Side,elev:settings.elev,plane:settings.plane,axial:settings.axial,elbow:settings.elbow,pronation:settings.pronation,sync:settings.sync},samples,state:{a:f.a,b:f.b,rest:Array.from(f.restFlat),now:Array.from(f.nowFlat),sheet:B.sheet,blendRange:B.blendRange,lanes:B.field.controls.length,tendonStart:B.definition.tissues.tendonStart,reference:B.reference,contact:f.contact,multiBone:!!f.originAt,originMix:f.originMix}}};
 window.__qa={
+ fullShoulderAudit(){
+  v56RefreshOther();
+  const side=()=>({side:v56Side,rig:window.__labShoulderV076(),muscles:V60_ALL.map(spec=>{const m=v58Meshes.get(spec.id),f=v73MuscleState(spec,m),B=f.binding;return {...DeformationAudit.audit(f,MuscleDeformation.deform(f)),vertices:B.weights.length,triangles:B.faces.length/3}})});
+  // Active-side rig diagnostic flushes the pose; do not invoke it within
+  // v56WithOther, whose snapshot is deliberately temporary.
+  const active=side();
+  const other=v56WithOther(()=>({side:v56Inactive(),muscles:V60_ALL.map(spec=>{const m=v58Meshes.get(spec.id),f=v73MuscleState(spec,m),B=f.binding;return {...DeformationAudit.audit(f,MuscleDeformation.deform(f)),vertices:B.weights.length,triangles:B.faces.length/3}})}));
+  const neck=[...v73NeckMuscles.values()].map(m=>{const f=v73NeckMuscleState(m),B=f.binding;return {...DeformationAudit.audit(f,MuscleDeformation.deform(f)),vertices:B.weights.length,triangles:B.faces.length/3}});
+  return {active,other,neck,glError:gl.getError(),arms:window.__labUpperBody().poses};
+ },
  exportBindings(){return V60_ALL.map(spec=>{const m=v58Meshes.get(spec.id),B=m.common;return {spec,selection:m.selection,rest:Array.from(B.rest),faces:Array.from(B.faces),weights:Array.from(B.weights),field:{controls:B.field.controls},lane:Array.from(B.lane),material:Array.from(B.material),sheet:B.sheet,reference:B.reference,blendRange:B.blendRange,definition:{id:B.definition.id,name:B.definition.name,source:B.definition.source,tissues:B.definition.tissues,morphology:B.definition.morphology,attachmentFieldSource:B.definition.attachmentFieldSource}}})},
  rigFixture(){const model=v76ShoulderModel();return {landmarks:model.landmarks,contact:model.contact,scale:model.scale}},
  vertex(id,i){const spec=V60_ALL.find(s=>s.id===id),f=v73MuscleState(spec,v58Meshes.get(id)),B=f.binding;return {id,vertexId:i,point:MuscleDeformation.point(f,Array.from(B.rest.slice(i*3,i*3+3)),B.weights[i],B.lane[i],B.material[i]),a:f.a,b:f.b,weight:B.weights[i],lane:B.lane[i],materialT:B.material[i]}},
@@ -121,6 +157,35 @@ try {
     [],
     "missing common binding",
   );
+  if(shoulderCompare){
+    await page.evaluate(()=>window.__qa.skipRender(true));
+    const cases=[
+      {name:"neutral",right:{elev:0,plane:0},left:{elev:0,plane:0},neck:0},
+      {name:"low40",right:{elev:40,plane:40},left:{elev:30,plane:90},neck:0},
+      {name:"recording70",right:{elev:70,plane:39},left:{elev:0,plane:0},neck:0},
+      {name:"side90",right:{elev:90,plane:0},left:{elev:90,plane:0},neck:0},
+      {name:"high120",right:{elev:120,plane:40},left:{elev:120,plane:90},neck:0},
+      {name:"recording180",right:{elev:180,plane:44},left:{elev:150,plane:90},neck:60},
+      {name:"asymmetric",right:{elev:120,plane:40,axial:30,elbow:90,pronation:45},left:{elev:75,plane:90,axial:-30,elbow:30,pronation:-45},neck:-60},
+      {name:"return-neutral",right:{elev:0,plane:0,axial:0,elbow:0,pronation:0},left:{elev:0,plane:0,axial:0,elbow:0,pronation:0},neck:0}
+    ];
+    const results=[];
+    for(const input of cases){
+      const audit=await page.evaluate(p=>{window.__qa.both(p.right,p.left);window.__qa.neck(p.neck);return window.__qa.fullShoulderAudit()},input);
+      assert.equal(audit.active.muscles.length,17);assert.equal(audit.other.muscles.length,17);assert.equal(audit.neck.length,6);
+      const expected=shoulderPreview&&input.right.elev>40?"qa-additive-preview":"validated-field";
+      assert.equal(audit.active.rig.poseCanonicalRight.diagnostics.backend,expected);
+      assert(audit.active.rig.connections.every(x=>x.sharedPivotErrorMm<1e-7));
+      assert.equal(audit.glError,0);
+      const all=[...audit.active.muscles,...audit.other.muscles,...audit.neck];
+      assert(all.every(x=>x.nonfinite===0));
+      results.push({input,...audit});
+      writeFileSync(join(out,"shoulder-muscle-report.json"),JSON.stringify({preview:shoulderPreview,previewHash:shoulderPreview?createHash('sha256').update(readFileSync(previewFile)).digest('hex'):null,results,errors,anatomicalAcceptance:false,physicalDevice:false},null,2));
+      console.log("SHOULDER_MUSCLE_CASE "+JSON.stringify({name:input.name,preview:shoulderPreview,backend:expected,maxEdge:Math.max(...all.map(x=>x.edgeRatio[1])),maxArea:Math.max(...all.map(x=>x.areaRatio[1])),maxAttachmentMm:Math.max(...all.map(x=>x.attachmentMaxMm??0)),degenerate:all.reduce((s,x)=>s+x.newDegenerateFaces,0),invalidFrames:all.reduce((s,x)=>s+x.invalidFrames,0)}));
+    }
+    assert.deepEqual(errors,[]);
+    for(const [file,hash]of Object.entries(sourceHashes))assert.equal(createHash('sha256').update(readFileSync(file)).digest('hex'),hash,'Source changed during audit: '+file);
+  }else{
   if(process.env.QA_HEAD_COMPARE==="1"){
     const result=[];
     await page.evaluate(()=>window.__qa.skipRender(false));
@@ -488,6 +553,7 @@ try {
     ),
   );
   console.log(JSON.stringify({ gpu, maxStepMm, maxReturnMm, errors }));
+  }
 } catch (error) {
   writeFileSync(
     join(out, "failure.json"),
