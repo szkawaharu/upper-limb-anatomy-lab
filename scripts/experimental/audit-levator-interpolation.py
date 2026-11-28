@@ -34,7 +34,7 @@ def determinant_bounds(F,G):
     return low,high
 
 def synthetic():
-    # Endpoint J=1; halfway collapse to J=.25. A check of endpoints alone misses it.
+    # Endpoint J=1; halfway collapse to J=0. A check of endpoints alone misses it.
     f=np.eye(3)[None,:,:];g=np.diag([-1.,-1.,1.])[None,:,:]
     l,h=determinant_bounds(f,g);assert abs(l[0])<1e-12 and abs(h[0]-1)<1e-12
     rng=np.random.default_rng(76)
