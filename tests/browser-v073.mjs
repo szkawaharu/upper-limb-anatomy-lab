@@ -8,6 +8,8 @@ import assert from "node:assert/strict";
 import { staticServer } from "./helpers/static-server.mjs";
 const numericOnly = process.env.QA_NUMERIC_ONLY === "1";
 const levatorExperiment=process.env.QA_LEVATOR_EXPERIMENT==="1";
+const levatorMaskFile=process.env.QA_LEVATOR_MASK_FILE;
+const levatorMasks=levatorMaskFile?JSON.parse(readFileSync(levatorMaskFile,"utf8")):null;
 const shoulderCompare=process.env.QA_SHOULDER_MUSCLE_COMPARE==="1"||levatorExperiment;
 const shoulderPreview=process.env.QA_SHOULDER_PREVIEW==="1";
 const previewFile=process.env.QA_PREVIEW_FILE||"test-results/v076-blend-preview/field.json";
@@ -87,9 +89,13 @@ const qaContactCurrent=v73Contact;let qaLegacyHead=false;
 v73Contact=(spec,b)=>{const c=qaContactCurrent(spec,b);return qaLegacyHead&&c?.unilateral?{...c,unilateral:false}:c};
 const qaExport=(f,id)=>{const B=f.binding,samples=[];for(let i=0;i<B.weights.length;i+=Math.max(1,Math.floor(B.weights.length/80))){const p=Array.from(B.rest.slice(i*3,i*3+3)),t=B.weights[i],l=B.lane[i],materialT=B.material[i],q=MuscleDeformation.point(f,p,t,l,materialT);samples.push({vertexId:i,p,t,l,materialT,q,originBlend:B.originBlend?.[i]||0})}return {id,name:B.definition.name,input:{side:v56Side,elev:settings.elev,plane:settings.plane,axial:settings.axial,elbow:settings.elbow,pronation:settings.pronation,sync:settings.sync},samples,state:{a:f.a,b:f.b,rest:Array.from(f.restFlat),now:Array.from(f.nowFlat),sheet:B.sheet,blendRange:B.blendRange,lanes:B.field.controls.length,tendonStart:B.definition.tissues.tendonStart,reference:B.reference,contact:f.contact,multiBone:!!f.originAt,originMix:f.originMix}}};
 window.__qa={
+ exportLevator(){
+  const B=v58Meshes.get('v58Levator').common;
+  return {rest:Array.from(B.rest),faces:Array.from(B.faces),weights:Array.from(B.weights),sourceOrigin:SOURCE_ORIGIN,scale:atlasScale,pins:B.definition.attachments.map(a=>Array.from(a.indices))};
+ },
  levatorExperiment(){
   const spec=V60_ALL.find(s=>s.id==='v58Levator'),m=v58Meshes.get(spec.id),B=m.common;
-  const attempt=()=>{try{return {candidate:GeodesicAttachmentField.rebuild(B)}}catch(e){return {rejected:String(e)}}};
+  const attempt=()=>{try{return {candidate:window.__qaLevatorMasks?GeodesicAttachmentField.rebindSurface(B,window.__qaLevatorMasks):GeodesicAttachmentField.rebuild(B)}}catch(e){return {rejected:String(e)}}};
   if(!window.__qaLevatorCandidate)window.__qaLevatorCandidate=attempt();
   const {candidate,rejected}=window.__qaLevatorCandidate;
   function audit(side){
@@ -161,6 +167,7 @@ try {
     .click({ timeout: 1000 })
     .catch(() => {});
   console.log("Actual atlas loaded");
+  if(process.env.QA_EXPORT_LEVATOR==="1"){writeFileSync(join(out,"levator-binding.json"),JSON.stringify(await page.evaluate(()=>window.__qa.exportLevator())));await browser.close();if(server)await server.close();process.exit(0)}
   if(process.env.QA_EXPORT_BINDINGS==="1"){writeFileSync(join(out,"bindings.json"),JSON.stringify(await page.evaluate(()=>window.__qa.exportBindings()))); await browser.close(); if(server)await server.close(); process.exit(0)}
   await page.evaluate(() => window.__qa.ensureGPU());
   const initial = await page.evaluate(() => window.__qa.status());
@@ -173,6 +180,7 @@ try {
     "missing common binding",
   );
   if(levatorExperiment){
+    if(levatorMasks)await page.evaluate(m=>{window.__qaLevatorMasks=m},levatorMasks);
     await page.addScriptTag({content:readFileSync('scripts/experimental/geodesic-attachment-field.js','utf8')});
     await page.addScriptTag({content:readFileSync('scripts/experimental/trace-muscle-outliers.js','utf8')});
     await page.evaluate(()=>window.__qa.skipRender(true));
