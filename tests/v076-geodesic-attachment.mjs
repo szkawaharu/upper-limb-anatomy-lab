@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+await import('../scripts/experimental/geodesic-attachment-field.js');
+const G=GeodesicAttachmentField;
+const v=[[0,0,0],[1,0,0],[2,0,0],[0,1,0],[1,1,0],[2,1,0]],f=[0,1,3,1,4,3,1,2,4,2,5,4];
+const q=G.field(v,f,[0,3],[2,5]);
+assert.deepEqual(Array.from(q.weights),[0,.5,1,0,.5,1]);
+assert.equal(q.minSpan,2);assert.equal(q.fixedOppositeEdges,0);
+const s=G.field(v.map(p=>p.map(x=>x*100)),f,[0,3],[2,5]);
+assert.deepEqual(s.weights,q.weights);assert.equal(s.minSpan,200);
+assert.throws(()=>G.field(v,f,[0],[0]),/Overlapping/);
+assert.throws(()=>G.field([...v,[4,4,4]],f,[0],[2]),/Disconnected/);
+assert(G.field(v,f,[0],[1]).fixedOppositeEdges>0);
+console.log('PASS geodesic coordinate candidate: exact pins, intrinsic distances, scaling, disconnected/conflict rejection');
