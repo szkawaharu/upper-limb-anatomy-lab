@@ -13,7 +13,7 @@ from volumetric_reference import Solid
 from volumetric_preconditioner import strain_metric_matrix
 
 src=Path(os.environ['QA_INPUT']);out=Path(os.environ['QA_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
-files=sorted(src.glob('accepted-*-index-*.npz'));assert len(files)==20
+files=sorted(src.glob('accepted-*-index-*.npz'));assert len(files) in (13,20)
 a=np.load(files[0]);rest=a['rest'];fixed=a['fixed'];classes=a['classes'];center=a['center'];tets=a['tets'];faces=a['faces']
 solid=Solid(rest,tets,fixed);assert len(solid.inactive)==0
 frames=json.loads((src/'levator-solid-frames.json').read_text())['frames']
@@ -70,6 +70,22 @@ print('LEVATOR_AFFINE_SETUP '+json.dumps({'modes':60,'bytesFloat32':basis32.nbyt
 def evaluate(z,i):
     J=np.linalg.det(solid.edges(z)@solid.inverse)
     return {'minJ':float(J.min()),'maxJ':float(J.max()),'outside':int(((J<.95)|(J>1.05)).sum()),'nonPositive':int((J<=1e-9).sum()),'pinErrorMm':float(np.linalg.norm(z[fixed]-targets[i],axis=1).max())}
+# Fit a trajectory-specific coefficient subspace only to the original 3-degree
+# interpolation residuals. Evaluate on the finer actual frame samples below.
+# This is not a general multi-axis compression basis.
+training=[]
+for lo in range(0,80,8):
+    for i in range(lo+1,lo+8):
+        t=(i-lo)/8
+        training.append(coeff[i]-(1-t)*coeff[lo]-t*coeff[lo+8])
+_,singular,Vt=np.linalg.svd(np.asarray(training),full_matrices=False)
+ranks=[4,8,12,24]
+compressed={}
+for rank in ranks:
+    projector=Vt[:rank].astype(np.float32)
+    reduced=(basis@Vt[:rank].T).astype(np.float32)
+    compressed[rank]=(reduced,projector)
+    np.savez_compressed(out/f'affine-trajectory-rank-{rank}.npz',basis=reduced.reshape(len(rest),3,rank),projector=projector,featuresScaleMm=scale,keys=keys,fixed=fixed,classes=classes,center=center)
 old=rest;previous=0;rows=[]
 for file in files:
     d=np.load(file)
@@ -83,11 +99,15 @@ for file in files:
         z32=linear+(basis32@delta.astype(np.float32)).reshape(-1,3)
         z32[fixed]=targets[i]
         row={'fromIndex':previous,'toIndex':index,'index':i,'linear':evaluate(linear,i),'corrected':evaluate(corrected,i),'float32BasisExactPins':evaluate(z32,i),'maxBasisQuantizationErrorMm':float(np.linalg.norm(z32-corrected,axis=1).max())}
+        for rank,(reduced,projector) in compressed.items():
+            candidate=linear+(reduced@(projector@delta.astype(np.float32))).reshape(-1,3)
+            candidate[fixed]=targets[i]
+            row[f'rank{rank}']={**evaluate(candidate,i),'maxDisplacementDifferenceMm':float(np.linalg.norm(candidate-z32,axis=1).max())}
         rows.append(row)
     old=new;previous=index
 def summarize(key):
     r=[v[key] for v in rows]
     return {'minJ':min(v['minJ'] for v in r),'maxJ':max(v['maxJ'] for v in r),'samplePosesOutsideBand':sum(v['outside']>0 for v in r),'maxOutsideElements':max(v['outside'] for v in r),'maxNonPositiveElements':max(v['nonPositive'] for v in r),'maxPinErrorMm':max(v['pinErrorMm'] for v in r)}
-report={'sampleCount':len(rows),'modes':60,'basisFloat32Bytes':basis32.nbytes,'linearBackwardError':error,'linear':summarize('linear'),'corrected':summarize('corrected'),'float32BasisExactPins':summarize('float32BasisExactPins'),'rows':rows,'continuousJCertified':False,'contactEvaluated':False,'equilibriumEvaluated':False,'productAccepted':False}
+report={'sampleCount':len(rows),'modes':60,'basisFloat32Bytes':basis32.nbytes,'linearBackwardError':error,'linear':summarize('linear'),'corrected':summarize('corrected'),'float32BasisExactPins':summarize('float32BasisExactPins'),'compression':{str(rank):{**summarize(f'rank{rank}'),'basisAndProjectorFloat32Bytes':int(compressed[rank][0].nbytes+compressed[rank][1].nbytes),'maxDisplacementDifferenceMm':max(v[f'rank{rank}']['maxDisplacementDifferenceMm'] for v in rows)} for rank in ranks},'coefficientSingularValues':singular.tolist(),'rows':rows,'continuousJCertified':False,'contactEvaluated':False,'equilibriumEvaluated':False,'productAccepted':False}
 (out/'report.json').write_text(json.dumps(report,indent=2)+'\n')
 print('LEVATOR_AFFINE_REPORT '+json.dumps({k:v for k,v in report.items() if k!='rows'}),flush=True)
