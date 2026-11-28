@@ -1,6 +1,7 @@
 """Actual-frame continuation with local inequality constraints at each pose.
 The last accepted constrained shape seeds the next predictor. Multipliers are
-local to each trial; no rejected state or multiplier leaks into the path.
+initialized from zero or the last accepted effective multipliers; no rejected
+state or multiplier leaks into the path.
 Offline numerical candidate only, not a calibrated material or release gate.
 """
 import os,json,time,hashlib
@@ -58,6 +59,7 @@ def metrics(z):
     er=np.linalg.norm(z[edges[:,1]]-z[edges[:,0]],axis=1)/edge0
     return {'JRange':[float(J.min()),float(J.max())],'outsideCount':int(((J<.95)|(J>1.05)).sum()),'volumeRatio':float(solid.weights@J),'surfaceAreaRatioRange':[float(ar.min()),float(ar.max())],'edgeRatioRange':[float(er.min()),float(er.max())],'baseResidualMm':float(np.linalg.norm(solid.factor.solve(g[solid.free]),axis=1).max()),'nonPositiveElements':int((J<=0).sum())}
 destinations=list(range(8,maximum+1,8))+list(range(maximum-8,-1,-8))
+warm=os.environ.get('QA_WARM_MULTIPLIERS','0')=='1'
 start_index=0;start_nodes=rest.copy()
 effective=None
 seed_file=os.environ.get('QA_CONSTRAINED_SEED')
@@ -65,7 +67,7 @@ if seed_file:
     seed=np.load(seed_file)
     for k,v in [('rest',rest),('tets',tets),('fixed',fixed),('classes',classes),('faces',faces),('center',center)]:
         assert np.array_equal(seed[k],v),k
-    start_index=int(seed['index']);assert start_index==80 and maximum==160
+    start_index=int(seed['index']);assert 0<=start_index<=maximum
     start_nodes=seed['nodes'].copy();effective=seed['multipliers'].copy()
     assert effective.shape==(2,len(tets)) and np.isfinite(effective).all() and np.all(effective>=0)
     assert np.max(np.linalg.norm(start_nodes[fixed]-targets[start_index],axis=1))<1e-9
@@ -77,8 +79,14 @@ if seed_file:
     residual=float(np.linalg.norm(solid.factor.solve(g[solid.free]),axis=1).max())
     assert residual<.001
     destinations=list(range(start_index+8,maximum+1,8))+list(range(maximum-8,-1,-8))
-    np.savez_compressed(out/'accepted-000-index-80.npz',nodes=start_nodes,rest=rest,tets=tets,faces=faces,fixed=fixed,classes=classes,index=start_index,center=center,multipliers=effective)
+    np.savez_compressed(out/f'accepted-000-index-{start_index:02d}.npz',nodes=start_nodes,rest=rest,tets=tets,faces=faces,fixed=fixed,classes=classes,index=start_index,center=center,multipliers=effective)
     print('LEVATOR_CONSTRAINED_SEED '+json.dumps({'index':start_index,'residualMm':residual,'JRange':[float(J.min()),float(J.max())]}),flush=True)
+explicit=os.environ.get('QA_DESTINATIONS')
+if explicit:
+    destinations=[int(i) for i in explicit.split(',')]
+    assert destinations and all(0<=i<=maximum for i in destinations)
+    assert destinations[0]!=start_index
+    assert all(a!=b for a,b in zip(destinations,destinations[1:]))
 def solve_at(x,previous,index):
     global effective
     start=time.monotonic();target=targets[index]
@@ -87,8 +95,11 @@ def solve_at(x,previous,index):
     base={'elev':frames[index]['elev'],'neck':frames[index]['neck'],'predictor':predictor,'predictorJRange':[float(J.min()),float(J.max())]}
     if not np.isfinite(J).all() or J.min()<=1e-9:
         return x,{**base,'converged':False,'reason':'nonpositive-predictor'}
-    rows=[];multipliers=None
-    for rho in [30,100,300,1000,3000,10000]:
+    rows=[];multipliers=effective.copy() if warm and effective is not None else None
+    # A warm trial reuses only the last accepted forces, never a rejected trial.
+    # Re-equilibrate using the identical inequalities and residual gate.
+    schedule=[300,1000,3000,10000,10000,10000] if multipliers is not None else [30,100,300,1000,3000,10000]
+    for rho in schedule:
         band=VolumeBand(solid,rho,multipliers=multipliers)
         augmented=AugmentedSolid(solid,[band])
         trial,info=minimize(augmented,z,bulk=bulk,iterations=40,tolerance_mm=.001)
@@ -105,7 +116,7 @@ def solve_at(x,previous,index):
         z=trial;multipliers=p
         if m['outsideCount']==0:
             effective=p.copy()
-            result={**base,**row,'converged':True,'reason':'equilibrium-and-local-volume-guard','stages':rows,'maxVertexStepMm':float(np.linalg.norm(z-x,axis=1).max()),'seconds':time.monotonic()-start}
+            result={**base,**row,'converged':True,'reason':'equilibrium-and-local-volume-guard','warmMultipliers':warm,'stages':rows,'maxVertexStepMm':float(np.linalg.norm(z-x,axis=1).max()),'seconds':time.monotonic()-start}
             print('LEVATOR_CONSTRAINED_TRIAL '+json.dumps(result),flush=True)
             return z,result
     result={**base,'converged':False,'reason':'local-band-or-equilibrium-failed','stages':rows,'seconds':time.monotonic()-start}
@@ -117,7 +128,10 @@ def accepted(x,index,records,rejected):
     (out/'path-progress.json').write_text(json.dumps({'index':index,'accepted':records,'rejected':rejected},indent=2)+'\n')
 (out/'levator-solid-frames.json').write_bytes(framefile.read_bytes())
 x,path=follow(start_nodes,start_index,destinations,solve_at,accepted)
-report={'requestedElevationsDeg':[start_index*.375,*[i*.375 for i in destinations]],'seedFile':seed_file,'frameSHA256':hashlib.sha256(framefile.read_bytes()).hexdigest(),'bulk':bulk,'path':path,'allAcceptedLocalGuardPassed':bool(path['accepted']) and all(v['outsideCount']==0 for v in path['accepted']),'neutralReturnMaxMm':float(np.linalg.norm(x-rest,axis=1).max()) if path['completed'] else None,'productAccepted':False,'contactEvaluated':False,'continuousCollisionCertified':False,'physicalMaterialCalibrated':False}
+report={'requestedElevationsDeg':[start_index*.375,*[i*.375 for i in destinations]],'seedFile':seed_file,'warmMultipliers':warm,'frameSHA256':hashlib.sha256(framefile.read_bytes()).hexdigest(),'bulk':bulk,'path':path,'allAcceptedLocalGuardPassed':bool(path['accepted']) and all(v['outsideCount']==0 for v in path['accepted']),'neutralReturnMaxMm':float(np.linalg.norm(x-rest,axis=1).max()) if path['completed'] and path['index']==0 else None,'productAccepted':False,'contactEvaluated':False,'continuousCollisionCertified':False,'physicalMaterialCalibrated':False}
 (out/'report.json').write_text(json.dumps(report,indent=2)+'\n')
 print('LEVATOR_CONSTRAINED_PATH '+json.dumps(report),flush=True)
 if not path['completed']:raise SystemExit(2)
+# Save a uniquely named verified handoff after the requested segment finishes.
+assert effective is not None
+np.savez_compressed(out/'segment-end.npz',nodes=x,rest=rest,tets=tets,faces=faces,fixed=fixed,classes=classes,index=path['index'],center=center,multipliers=effective)
