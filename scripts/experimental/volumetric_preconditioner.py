@@ -10,7 +10,7 @@ def rest_metric_matrix(solid,bulk):
     return strain_metric_matrix(solid,solid.rest,bulk)
 
 
-def strain_metric_matrix(solid,x,bulk):
+def strain_metric_matrix(solid,x,bulk,full=False):
     """Assemble the same current SPD metric as the independent matrix-free
     operator. It is an approximate material Hessian, not an energy change.
     """
@@ -29,7 +29,7 @@ def strain_metric_matrix(solid,x,bulk):
     rows=np.broadcast_to(ids[:,:,:,None,None],shape).ravel();cols=np.broadcast_to(ids[:,None,None,:,:],shape).ravel()
     H=coo_matrix((local.ravel(),(rows,cols)),shape=(len(solid.rest)*3,)*2).tocsr()
     free=(solid.free[:,None]*3+np.arange(3)[None,:]).ravel()
-    return H[free][:,free].tocsc()
+    return H if full else H[free][:,free].tocsc()
 
 
 def factor_rest_metric(solid,bulk):
@@ -64,3 +64,24 @@ def warped_rest_preconditioner(solid,x,factor):
         return np.einsum('nij,nj->ni',R,solved).ravel()
     n=len(solid.free)*3
     return LinearOperator((n,n),matvec=inverse,dtype=float)
+
+def coupled_boundary_predictor(solid,x,target,bulk):
+    """Solve the linearized coupled strain/volume Dirichlet problem
+    at the last accepted pose. This is only a predictor, not equilibrium.
+    No interpolation of bone frames or change to prescribed displacement."""
+    H=strain_metric_matrix(solid,x,bulk,full=True)
+    free=(solid.free[:,None]*3+np.arange(3)).ravel()
+    fixed=(solid.fixed[:,None]*3+np.arange(3)).ravel()
+    A=H[free][:,free].tocsc()
+    delta=(target-x[solid.fixed]).ravel()
+    rhs=-(H[free][:,fixed]@delta)
+    factor=splu(A,permc_spec='MMD_AT_PLUS_A',diag_pivot_thresh=0)
+    step=factor.solve(rhs)
+    norm=float(np.asarray(abs(A).sum(axis=1)).max())
+    error=float(np.max(np.abs(A@step-rhs))/max(norm*np.max(np.abs(step))+np.max(np.abs(rhs)),1e-300))
+    if not np.isfinite(step).all() or error>1e-10:
+        raise RuntimeError('Coupled boundary predictor failed backward-error check')
+    trial=x.copy()
+    trial[solid.free]+=step.reshape(-1,3)
+    trial[solid.fixed]=target
+    return trial,{'method':'current coupled SPD strain/volume Dirichlet predictor','bulk':bulk,'linearBackwardError':error,'matrixNonzeros':int(A.nnz)}
