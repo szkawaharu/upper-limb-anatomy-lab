@@ -1,0 +1,51 @@
+name: v0.76 levator principal stretch and surface crossing comparison
+on:
+  push:
+    branches: [redesign/v076-shoulder]
+    paths:
+      - '.github/workflows/v076-levator-stretch-comparison.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  stretch:
+    strategy:
+      fail-fast: false
+      matrix:
+        index: [88, 160]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      QA_INPUT: test-results/v076-levator-forward60
+      QA_OUTPUT: test-results/v076-levator-stretch-${{ matrix.index }}
+      QA_INDEX: '${{ matrix.index }}'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-forward60
+          path: test-results/v076-levator-forward60/
+          run-id: 46147865629
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python tests/reference-levator-stretch-band.py
+      - run: python scripts/experimental/run-levator-stretch-comparison.py
+      - name: Independent surface crossing screen for each saved candidate
+        if: always()
+        run: |
+          root="$QA_OUTPUT"
+          for folder in "$root"/strength-*; do
+            test -f "$folder/volume-band-candidate.npz" || continue
+            QA_INPUT="$folder" QA_OUTPUT="$folder/crossings" python scripts/experimental/audit-levator-surface-crossings.py
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-stretch-${{ matrix.index }}
+          path: test-results/v076-levator-stretch-${{ matrix.index }}/
