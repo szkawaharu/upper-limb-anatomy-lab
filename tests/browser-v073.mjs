@@ -197,7 +197,9 @@ try {
   if(levatorSolidFrames){
     await page.evaluate(()=>window.__qa.skipRender(true));
     const frames=[];
-    for(let i=0;i<=16;i++){
+    const maxIndex=Number(process.env.QA_LEVATOR_SOLID_MAX_INDEX||16);
+    assert(Number.isInteger(maxIndex)&&maxIndex>=16&&maxIndex<=106,'Frame grid outside low-elevation validated region');
+    for(let i=0;i<=maxIndex;i++){
       const elev=i*.375,plane=40,neck=elev;
       const frame=await page.evaluate(({elev,plane,neck})=>{
         window.__qa.both({elev,plane,axial:0,elbow:0,pronation:0},{elev:0,plane:0,axial:0,elbow:0,pronation:0});
