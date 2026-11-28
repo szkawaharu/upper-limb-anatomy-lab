@@ -1,0 +1,28 @@
+name: v0.76 levator exact-source solid geometry
+on:
+  push:
+    branches: [redesign/v076-shoulder]
+    paths:
+      - '.github/workflows/v076-levator-source-solid.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-solid:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install -r scripts/calibration/requirements.txt tetgen==0.8.4
+      - run: python scripts/experimental/prepare-levator-source-solid.py
+      - name: Attempt exact boundary tetrahedralization
+        run: |
+          python scripts/experimental/build-volumetric-reference.py test-results/v076-levator-solid/bindings.json v58Levator test-results/v076-levator-solid/tetra
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-exact-source-solid
+          path: test-results/v076-levator-solid/
