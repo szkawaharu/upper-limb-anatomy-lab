@@ -12,7 +12,7 @@ from volumetric_reference import Solid
 from joint_path import follow
 from volumetric_gauss_newton import minimize as minimize_gn
 from cage_solver import minimize as minimize_tangent
-from volumetric_preconditioner import factor_rest_metric
+from volumetric_preconditioner import factor_rest_metric,coupled_boundary_predictor
 from scipy.sparse.linalg import LinearOperator
 
 root=Path('test-results/v076-levator-solid')
@@ -93,12 +93,19 @@ if seed_file:
     assert len(frames)>max(destinations)
     np.savez_compressed(out/'accepted-000-index-16.npz',nodes=start_nodes,rest=rest,tets=tets,faces=faces,fixed=fixed,classes=classes,index=start_index,center=center)
     print('LEVATOR_EXTENDED_SEED '+json.dumps({'index':start_index,'residualMm':residual,'JRange':[float(J.min()),float(J.max())],'bulk':bulk}),flush=True)
+predictor=os.environ.get('QA_LEVATOR_PREDICTOR','scalar')
+assert predictor in ('scalar','coupled','bulk-homotopy')
+if predictor=='bulk-homotopy':assert solver=='exact-tangent' and bulk==1000
 rows=[]
 def solve_at(x,previous,index):
     t=time.monotonic();target=targets[index]
-    initial=solid.predict_boundary(x,target)
+    scalar=solid.predict_boundary(x,target)
+    _,_,scalarJ=solid.evaluate(scalar,bulk,False)
+    initial=scalar;prediction={'method':'scalar FEM Dirichlet predictor'}
+    if predictor!='scalar':
+        initial,prediction=coupled_boundary_predictor(solid,x,target,30 if predictor=='bulk-homotopy' else bulk)
     _,_,predJ=solid.evaluate(initial,bulk,False)
-    base={'elev':frames[index]['elev'],'neck':frames[index]['neck'],'predictorMinJ':float(predJ.min()),'predictorMaxJ':float(predJ.max()),'fixedStepMm':float(np.linalg.norm(target-targets[previous],axis=1).max())}
+    base={'predictor':prediction,'scalarPredictorJRange':[float(scalarJ.min()),float(scalarJ.max())],'elev':frames[index]['elev'],'neck':frames[index]['neck'],'predictorMinJ':float(predJ.min()),'predictorMaxJ':float(predJ.max()),'fixedStepMm':float(np.linalg.norm(target-targets[previous],axis=1).max())}
     if not np.isfinite(predJ).all() or predJ.min()<=1e-9:
         result={**base,'converged':False,'reason':'nonpositive-predictor','seconds':time.monotonic()-t}
         print('LEVATOR_SOLID_TRIAL '+json.dumps(result),flush=True);return x,result
@@ -106,14 +113,24 @@ def solve_at(x,previous,index):
         z,info=minimize_gn(solid,initial,bulk=bulk,iterations=iterations,residual_tolerance_mm=.001,preconditioner=preconditioner,preconditioner_info=preconditioner_info,cg_iterations=150,cg_rtol=1e-3)
         info['linearIterationsTotal']=sum(row['cgIterations'] for row in info.pop('rows'))
     elif solver=='exact-tangent':
-        z,info=minimize_tangent(solid,initial,bulk=bulk,iterations=iterations,tolerance_mm=.001)
+        stages=[];z=initial
+        for stage_bulk in ([30,100,300,1000] if predictor=='bulk-homotopy' else [bulk]):
+            z,info=minimize_tangent(solid,z,bulk=stage_bulk,iterations=iterations,tolerance_mm=.001)
+            stages.append({'bulk':stage_bulk,'converged':info['converged'],'reason':info['reason'],'iterations':info['iterations'],'residualMm':info['residualMaxMm'],'JRange':[info['cageJQuantiles'][0],info['cageJQuantiles'][-1]]})
+            if not info['converged']:break
+        info['bulkStages']=stages
+        info['converged']=bool(info['converged'] and stages[-1]['bulk']==bulk)
+        if not info['converged'] and stages[-1]['bulk']!=bulk:info['reason']='intermediate-bulk-stage-failed'
         info['tangentSteps']=info.pop('rows')
         info['preconditionedGradientMaxMm']=info['residualMaxMm']
         info['residualToleranceMm']=.001
     else:
         z,info=solid.minimize(initial,bulk=bulk,iterations=iterations,residual_tolerance_mm=.001)
-    _,_,J=solid.evaluate(z,bulk,False)
+    _,gradient,J=solid.evaluate(z,bulk)
     if not np.isfinite(J).all() or np.min(J)<=1e-9:raise RuntimeError('Solver returned invalid material state')
+    final_residual=float(np.linalg.norm(solid.factor.solve(gradient[solid.free]),axis=1).max())
+    info['preconditionedGradientMaxMm']=final_residual
+    info['converged']=bool(info['converged'] and final_residual<.001)
     extrema=[]
     for label,k in [('minJ',int(J.argmin())),('maxJ',int(J.argmax()))]:
         ids=tets[k];extrema.append({'kind':label,'tetId':k,'J':float(J[k]),'sourceCentroidAtlasMm':nodes[ids].mean(axis=0).tolist(),'referenceVolumeMm3':float(solid.volumes[k]),'referenceCondition':float(np.linalg.cond(solid.Dm[k])),'fixedLabels':classes[ids].tolist(),'vertexIds':ids.tolist()})
@@ -127,7 +144,7 @@ def accepted(x,index,records,rejected):
         np.savez_compressed(out/f'accepted-{len(records):03d}-index-{index:02d}.npz',nodes=x,rest=rest,tets=tets,faces=faces,fixed=fixed,classes=classes,index=index,center=center)
     (out/'path-progress.json').write_text(json.dumps({'index':index,'accepted':records,'rejected':rejected},indent=2)+'\n')
 x,path=follow(start_nodes,start_index,destinations,solve_at,accepted)
-summary={**report,'solver':solver,'tetraInputSha256':meta['inputSha256'],'bulkPenalty':bulk,'requestedElevationsDeg':[i*.375 for i in [start_index,*destinations]],'requestedNeckDeg':[i*.375 for i in [start_index,*destinations]],'seedFile':seed_file,'experimentalLocalVolumeGuard':[.95,1.05],'allAcceptedWithinLocalVolumeGuard':bool(path['accepted']) and all(v['minJ']>=.95 and v['maxJ']<=1.05 for v in path['accepted']),'path':path,'neutralReturnMaxMm':float(np.linalg.norm(x-rest,axis=1).max()) if path['completed'] else None,'anatomicalAcceptance':False,'physicalVolumeVerified':False,'contactEvaluated':False,'limitations':['principal source shell only','unrefined tetrahedra; all source nodes on boundary' if report['interiorNodes']==0 else 'interior-refined tetrahedra; source boundary unchanged','near-surface masks not measured anatomical footprints','normalized passive energy; no active force or bone contact']}
+summary={**report,'solver':solver,'predictor':predictor,'tetraInputSha256':meta['inputSha256'],'bulkPenalty':bulk,'requestedElevationsDeg':[i*.375 for i in [start_index,*destinations]],'requestedNeckDeg':[i*.375 for i in [start_index,*destinations]],'seedFile':seed_file,'experimentalLocalVolumeGuard':[.95,1.05],'allAcceptedWithinLocalVolumeGuard':bool(path['accepted']) and all(v['minJ']>=.95 and v['maxJ']<=1.05 for v in path['accepted']),'path':path,'neutralReturnMaxMm':float(np.linalg.norm(x-rest,axis=1).max()) if path['completed'] else None,'anatomicalAcceptance':False,'physicalVolumeVerified':False,'contactEvaluated':False,'limitations':['principal source shell only','unrefined tetrahedra; all source nodes on boundary' if report['interiorNodes']==0 else 'interior-refined tetrahedra; source boundary unchanged','near-surface masks not measured anatomical footprints','normalized passive energy; no active force or bone contact']}
 (out/'report.json').write_text(json.dumps(summary,indent=2)+'\n')
 print('LEVATOR_SOLID_PATH '+json.dumps(summary),flush=True)
 # A nonconverged attempt remains a measured failure, never a completed path.
