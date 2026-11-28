@@ -1,0 +1,68 @@
+name: v0.76 levator coupled predictor and bulk continuation
+on:
+  push:
+    branches: [redesign/v076-shoulder]
+    paths:
+      - '.github/workflows/v076-levator-predictor-comparison.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  continuation:
+    strategy:
+      fail-fast: false
+      matrix:
+        predictor: [coupled, bulk-homotopy]
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      QA_OUTPUT: test-results/v076-levator-predictor-${{ matrix.predictor }}
+      QA_LEVATOR_TETRA_DIR: test-results/v076-levator-refined-solid
+      QA_LEVATOR_SOLVER: exact-tangent
+      QA_LEVATOR_PREDICTOR: ${{ matrix.predictor }}
+      QA_LEVATOR_ITERATIONS: '30'
+      QA_LEVATOR_BULK: '1000'
+      QA_LEVATOR_SEED: test-results/v076-levator-bulk-refined/bulk-1000.npz
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-exact-source-solid
+          path: test-results/v076-levator-solid/
+          run-id: 46113787286
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-refined-solid
+          path: test-results/v076-levator-refined-solid/
+          run-id: 46113984173
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-bulk-refined
+          path: test-results/v076-levator-bulk-refined/
+          run-id: 46131050332
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-extended-path
+          path: test-results/v076-levator-frozen-frames/
+          run-id: 46131959969
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          mkdir -p "$QA_OUTPUT"
+          cp test-results/v076-levator-frozen-frames/levator-solid-frames.json "$QA_OUTPUT/"
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python tests/reference-levator-coupled-predictor.py
+      - run: python scripts/experimental/run-levator-solid-path.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-predictor-${{ matrix.predictor }}
+          path: test-results/v076-levator-predictor-${{ matrix.predictor }}/
