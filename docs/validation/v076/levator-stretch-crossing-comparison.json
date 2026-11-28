@@ -1,0 +1,1650 @@
+{
+  "runId": 46152948133,
+  "results": [
+    {
+      "jobId": 141003322064,
+      "reports": [
+        {
+          "index": 160,
+          "initial": {
+            "JRange": [
+              0.9530439699622713,
+              1.0471850775389002
+            ],
+            "outsideVolumeCount": 0,
+            "principalStretchRange": [
+              0.10478961277649379,
+              9.398037179809661
+            ],
+            "maxConditionF": 89.68481637445092,
+            "stretchOutsideCount": 302,
+            "areaRatioRange": [
+              0.22151911145975786,
+              3.093219676705638
+            ],
+            "edgeRatioRange": [
+              0.29289486844938506,
+              2.8660509672477144
+            ],
+            "attachmentErrorMm": 0,
+            "baseEnergy": 0.05247152062536167
+          },
+          "rows": [
+            {
+              "strength": 0.1,
+              "candidateSaved": true,
+              "stages": [
+                {
+                  "strength": 0.1,
+                  "rho": 300,
+                  "converged": true,
+                  "residualMm": 0.0009449198314130076,
+                  "iterations": 17,
+                  "seconds": 24.922166229000027,
+                  "JRange": [
+                    0.9521804361884857,
+                    1.0482506959790077
+                  ],
+                  "outsideVolumeCount": 0,
+                  "principalStretchRange": [
+                    0.1065995751532432,
+                    9.280695141413732
+                  ],
+                  "maxConditionF": 87.06127700858266,
+                  "stretchOutsideCount": 290,
+                  "areaRatioRange": [
+                    0.22387999655742144,
+                    2.9121109338450197
+                  ],
+                  "edgeRatioRange": [
+                    0.39752067443861294,
+                    2.7728993838368954
+                  ],
+                  "attachmentErrorMm": 0,
+                  "baseEnergy": 0.05248211791366614
+                }
+              ]
+            },
+            {
+              "strength": 1,
+              "candidateSaved": true,
+              "stages": [
+                {
+                  "strength": 1,
+                  "rho": 300,
+                  "converged": true,
+                  "residualMm": 0.0008374753439262855,
+                  "iterations": 48,
+                  "seconds": 77.97428956700003,
+                  "JRange": [
+                    0.9460635409332667,
+                    1.061570738354892
+                  ],
+                  "outsideVolumeCount": 6,
+                  "principalStretchRange": [
+                    0.11652182807794653,
+                    8.722465664675374
+                  ],
+                  "maxConditionF": 74.85692430812651,
+                  "stretchOutsideCount": 254,
+                  "areaRatioRange": [
+                    0.23863155678113157,
+                    2.5195087520877526
+                  ],
+                  "edgeRatioRange": [
+                    0.5200297042194979,
+                    2.0651055936892355
+                  ],
+                  "attachmentErrorMm": 0,
+                  "baseEnergy": 0.05257990550753137
+                },
+                {
+                  "strength": 1,
+                  "rho": 1000,
+                  "converged": true,
+                  "residualMm": 0.00087423419720561,
+                  "iterations": 22,
+                  "seconds": 41.99556055300002,
+                  "JRange": [
+                    0.9499811982145225,
+                    1.0480794558554274
+                  ],
+                  "outsideVolumeCount": 1,
+                  "principalStretchRange": [
+                    0.11142570241122826,
+                    9.031820490988322
+                  ],
+                  "maxConditionF": 81.05688629770032,
+                  "stretchOutsideCount": 255,
+                  "areaRatioRange": [
+                    0.2379420044240555,
+                    2.5327690604771993
+                  ],
+                  "edgeRatioRange": [
+                    0.5192627251499629,
+                    2.0656683774269986
+                  ],
+                  "attachmentErrorMm": 0,
+                  "baseEnergy": 0.052594707352231186
+                },
+                {
+                  "strength": 1,
+                  "rho": 3000,
+                  "converged": true,
+                  "residualMm": 0.000464051963549833,
+                  "iterations": 16,
+                  "seconds": 33.30366525900001,
+                  "JRange": [
+                    0.9532341277881713,
+                    1.0463152075383566
+                  ],
+                  "outsideVolumeCount": 0,
+                  "principalStretchRange": [
+                    0.11093727529736312,
+                    9.07250818735013
+                  ],
+                  "maxConditionF": 81.78052113711661,
+                  "stretchOutsideCount": 255,
+                  "areaRatioRange": [
+                    0.2377413207901082,
+                    2.5338344930561814
+                  ],
+                  "edgeRatioRange": [
+                    0.5191477293417504,
+                    2.0651742401962827
+                  ],
+                  "attachmentErrorMm": 0,
+                  "baseEnergy": 0.05260028660991219
+                }
+              ]
+            },
+            {
+              "strength": 10,
+              "candidateSaved": false,
+              "stages": [
+                {
+                  "strength": 10,
+                  "rho": 300,
+                  "converged": false,
+                  "residualMm": 20.426275016225166,
+                  "iterations": 60,
+                  "seconds": 182.66245271100001,
+                  "JRange": [
+                    0.9301732323397909,
+                    1.1303230146038585
+                  ],
+                  "outsideVolumeCount": 42,
+                  "principalStretchRange": [
+                    0.19631459261801382,
+                    5.3975569869282305
+                  ],
+                  "maxConditionF": 27.494425732429995,
+                  "stretchOutsideCount": 226,
+                  "areaRatioRange": [
+                    0.3621831085773602,
+                    2.084686695849528
+                  ],
+                  "edgeRatioRange": [
+                    0.5333980068285442,
+                    2.0099540094311883
+                  ],
+                  "attachmentErrorMm": 0,
+                  "baseEnergy": 0.05310473671813453
+                }
+              ]
+            }
+          ],
+          "stretchBandDiagnostic": [
+            0.5,
+            2
+          ],
+          "productAccepted": false,
+          "crossingsEvaluated": false,
+          "contactEvaluated": false
+        },
+        {
+          "index": 160,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 114,
+          "newCrossingPairs": 114,
+          "newPairs": [
+            [
+              23945,
+              29895
+            ],
+            [
+              23945,
+              29896
+            ],
+            [
+              23945,
+              29897
+            ],
+            [
+              23945,
+              29898
+            ],
+            [
+              23945,
+              29899
+            ],
+            [
+              23945,
+              29900
+            ],
+            [
+              23949,
+              29285
+            ],
+            [
+              23949,
+              29291
+            ],
+            [
+              23949,
+              29296
+            ],
+            [
+              23949,
+              29297
+            ],
+            [
+              23949,
+              29894
+            ],
+            [
+              23949,
+              29899
+            ],
+            [
+              23949,
+              29900
+            ],
+            [
+              23949,
+              29978
+            ],
+            [
+              23949,
+              29979
+            ],
+            [
+              24199,
+              29291
+            ],
+            [
+              24199,
+              29900
+            ],
+            [
+              24200,
+              29291
+            ],
+            [
+              24200,
+              29900
+            ],
+            [
+              24205,
+              29291
+            ],
+            [
+              24205,
+              29298
+            ],
+            [
+              24205,
+              29900
+            ],
+            [
+              24205,
+              29902
+            ],
+            [
+              24205,
+              29972
+            ],
+            [
+              24206,
+              29972
+            ],
+            [
+              26353,
+              29902
+            ],
+            [
+              26353,
+              29903
+            ],
+            [
+              26353,
+              29905
+            ],
+            [
+              26353,
+              29906
+            ],
+            [
+              26353,
+              29924
+            ],
+            [
+              26355,
+              30353
+            ],
+            [
+              26356,
+              30347
+            ],
+            [
+              26356,
+              30348
+            ],
+            [
+              26356,
+              30353
+            ],
+            [
+              26357,
+              30353
+            ],
+            [
+              26358,
+              30353
+            ],
+            [
+              26359,
+              30353
+            ],
+            [
+              26360,
+              30353
+            ],
+            [
+              26363,
+              29924
+            ],
+            [
+              26364,
+              29924
+            ],
+            [
+              26364,
+              30348
+            ],
+            [
+              26365,
+              29924
+            ],
+            [
+              26379,
+              30353
+            ],
+            [
+              26380,
+              30353
+            ],
+            [
+              26381,
+              30353
+            ],
+            [
+              26381,
+              30354
+            ],
+            [
+              26382,
+              30354
+            ],
+            [
+              26383,
+              30354
+            ],
+            [
+              26383,
+              30355
+            ],
+            [
+              26384,
+              30354
+            ],
+            [
+              26388,
+              30355
+            ],
+            [
+              26388,
+              30361
+            ],
+            [
+              26389,
+              30361
+            ],
+            [
+              26616,
+              28744
+            ],
+            [
+              26629,
+              28748
+            ],
+            [
+              26629,
+              28749
+            ],
+            [
+              26630,
+              28749
+            ],
+            [
+              26632,
+              28749
+            ],
+            [
+              26639,
+              29972
+            ],
+            [
+              26665,
+              28744
+            ],
+            [
+              26666,
+              28744
+            ],
+            [
+              26679,
+              28749
+            ],
+            [
+              26681,
+              28749
+            ],
+            [
+              26682,
+              28744
+            ],
+            [
+              26682,
+              28749
+            ],
+            [
+              26683,
+              29972
+            ],
+            [
+              26684,
+              29972
+            ],
+            [
+              26721,
+              29972
+            ],
+            [
+              26723,
+              29972
+            ],
+            [
+              26724,
+              29412
+            ],
+            [
+              26724,
+              29972
+            ],
+            [
+              26724,
+              29973
+            ],
+            [
+              26728,
+              29412
+            ],
+            [
+              26729,
+              29412
+            ],
+            [
+              26730,
+              29412
+            ],
+            [
+              26733,
+              29412
+            ],
+            [
+              26734,
+              29412
+            ],
+            [
+              26734,
+              29975
+            ],
+            [
+              26741,
+              29975
+            ],
+            [
+              26743,
+              29975
+            ],
+            [
+              26747,
+              29975
+            ],
+            [
+              26747,
+              29976
+            ],
+            [
+              26747,
+              29991
+            ],
+            [
+              26747,
+              30431
+            ],
+            [
+              26747,
+              30436
+            ],
+            [
+              26747,
+              30438
+            ],
+            [
+              26750,
+              30361
+            ],
+            [
+              26750,
+              30363
+            ],
+            [
+              26751,
+              30356
+            ],
+            [
+              26751,
+              30360
+            ],
+            [
+              26751,
+              30363
+            ],
+            [
+              26751,
+              30369
+            ],
+            [
+              26751,
+              30370
+            ],
+            [
+              26751,
+              30371
+            ],
+            [
+              26751,
+              30372
+            ],
+            [
+              26751,
+              30373
+            ],
+            [
+              26752,
+              30429
+            ],
+            [
+              26753,
+              30373
+            ],
+            [
+              26753,
+              30374
+            ],
+            [
+              26754,
+              30359
+            ],
+            [
+              26754,
+              30374
+            ],
+            [
+              26754,
+              30429
+            ],
+            [
+              26754,
+              30430
+            ],
+            [
+              26755,
+              30374
+            ],
+            [
+              26757,
+              30436
+            ],
+            [
+              26757,
+              30444
+            ],
+            [
+              26757,
+              30445
+            ],
+            [
+              26758,
+              30424
+            ],
+            [
+              26758,
+              30444
+            ],
+            [
+              26759,
+              30361
+            ],
+            [
+              26760,
+              30361
+            ],
+            [
+              26761,
+              30424
+            ],
+            [
+              26761,
+              30425
+            ],
+            [
+              26761,
+              30429
+            ]
+          ],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 136356,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.22387999655742144,
+            2.9121109338450197
+          ],
+          "edgeRatioRange": [
+            0.39752067443861294,
+            2.7728993838368954
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        },
+        {
+          "index": 160,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 112,
+          "newCrossingPairs": 112,
+          "newPairs": [
+            [
+              23945,
+              29895
+            ],
+            [
+              23945,
+              29896
+            ],
+            [
+              23945,
+              29897
+            ],
+            [
+              23945,
+              29898
+            ],
+            [
+              23945,
+              29899
+            ],
+            [
+              23945,
+              29900
+            ],
+            [
+              23949,
+              29285
+            ],
+            [
+              23949,
+              29291
+            ],
+            [
+              23949,
+              29296
+            ],
+            [
+              23949,
+              29297
+            ],
+            [
+              23949,
+              29894
+            ],
+            [
+              23949,
+              29899
+            ],
+            [
+              23949,
+              29900
+            ],
+            [
+              23949,
+              29902
+            ],
+            [
+              23949,
+              29978
+            ],
+            [
+              23949,
+              29979
+            ],
+            [
+              24199,
+              29291
+            ],
+            [
+              24199,
+              29902
+            ],
+            [
+              24200,
+              29291
+            ],
+            [
+              24200,
+              29902
+            ],
+            [
+              24205,
+              29291
+            ],
+            [
+              24205,
+              29298
+            ],
+            [
+              24205,
+              29902
+            ],
+            [
+              24205,
+              29905
+            ],
+            [
+              24205,
+              29972
+            ],
+            [
+              24206,
+              29972
+            ],
+            [
+              26353,
+              29903
+            ],
+            [
+              26353,
+              29905
+            ],
+            [
+              26353,
+              29906
+            ],
+            [
+              26353,
+              29924
+            ],
+            [
+              26355,
+              30353
+            ],
+            [
+              26356,
+              29924
+            ],
+            [
+              26356,
+              30347
+            ],
+            [
+              26356,
+              30348
+            ],
+            [
+              26356,
+              30353
+            ],
+            [
+              26357,
+              30353
+            ],
+            [
+              26358,
+              30353
+            ],
+            [
+              26359,
+              30353
+            ],
+            [
+              26360,
+              30353
+            ],
+            [
+              26363,
+              29924
+            ],
+            [
+              26364,
+              29924
+            ],
+            [
+              26365,
+              29924
+            ],
+            [
+              26379,
+              30353
+            ],
+            [
+              26380,
+              30353
+            ],
+            [
+              26381,
+              30353
+            ],
+            [
+              26381,
+              30354
+            ],
+            [
+              26386,
+              30354
+            ],
+            [
+              26387,
+              30354
+            ],
+            [
+              26388,
+              30354
+            ],
+            [
+              26388,
+              30355
+            ],
+            [
+              26388,
+              30361
+            ],
+            [
+              26389,
+              30361
+            ],
+            [
+              26616,
+              28744
+            ],
+            [
+              26629,
+              28748
+            ],
+            [
+              26629,
+              28749
+            ],
+            [
+              26630,
+              28749
+            ],
+            [
+              26632,
+              28749
+            ],
+            [
+              26639,
+              29972
+            ],
+            [
+              26665,
+              28744
+            ],
+            [
+              26666,
+              28744
+            ],
+            [
+              26666,
+              28749
+            ],
+            [
+              26679,
+              28749
+            ],
+            [
+              26680,
+              28749
+            ],
+            [
+              26682,
+              28749
+            ],
+            [
+              26683,
+              29972
+            ],
+            [
+              26684,
+              29972
+            ],
+            [
+              26721,
+              29972
+            ],
+            [
+              26723,
+              29972
+            ],
+            [
+              26724,
+              29412
+            ],
+            [
+              26724,
+              29972
+            ],
+            [
+              26724,
+              29973
+            ],
+            [
+              26728,
+              29412
+            ],
+            [
+              26729,
+              29412
+            ],
+            [
+              26730,
+              29412
+            ],
+            [
+              26733,
+              29412
+            ],
+            [
+              26734,
+              29412
+            ],
+            [
+              26734,
+              29975
+            ],
+            [
+              26741,
+              29975
+            ],
+            [
+              26743,
+              29975
+            ],
+            [
+              26743,
+              29976
+            ],
+            [
+              26747,
+              29976
+            ],
+            [
+              26747,
+              29991
+            ],
+            [
+              26747,
+              30431
+            ],
+            [
+              26747,
+              30436
+            ],
+            [
+              26747,
+              30438
+            ],
+            [
+              26747,
+              30444
+            ],
+            [
+              26747,
+              30445
+            ],
+            [
+              26750,
+              30360
+            ],
+            [
+              26750,
+              30361
+            ],
+            [
+              26750,
+              30363
+            ],
+            [
+              26751,
+              30350
+            ],
+            [
+              26751,
+              30351
+            ],
+            [
+              26751,
+              30356
+            ],
+            [
+              26751,
+              30360
+            ],
+            [
+              26751,
+              30369
+            ],
+            [
+              26752,
+              30429
+            ],
+            [
+              26753,
+              30356
+            ],
+            [
+              26753,
+              30373
+            ],
+            [
+              26753,
+              30374
+            ],
+            [
+              26754,
+              30359
+            ],
+            [
+              26754,
+              30374
+            ],
+            [
+              26754,
+              30429
+            ],
+            [
+              26754,
+              30430
+            ],
+            [
+              26755,
+              30374
+            ],
+            [
+              26757,
+              30424
+            ],
+            [
+              26757,
+              30444
+            ],
+            [
+              26758,
+              30424
+            ],
+            [
+              26759,
+              30361
+            ],
+            [
+              26760,
+              30361
+            ],
+            [
+              26761,
+              30424
+            ],
+            [
+              26761,
+              30425
+            ],
+            [
+              26761,
+              30429
+            ]
+          ],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 136378,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.2377413207901082,
+            2.5338344930561814
+          ],
+          "edgeRatioRange": [
+            0.5191477293417504,
+            2.0651742401962827
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        }
+      ]
+    },
+    {
+      "jobId": 141003322255,
+      "reports": [
+        {
+          "index": 88,
+          "initial": {
+            "JRange": [
+              0.9531143433873456,
+              1.048579697236979
+            ],
+            "outsideVolumeCount": 0,
+            "principalStretchRange": [
+              0.14682499745664113,
+              6.960869427270023
+            ],
+            "maxConditionF": 47.40929370235907,
+            "stretchOutsideCount": 41,
+            "areaRatioRange": [
+              0.5319099774630818,
+              1.7697641302244609
+            ],
+            "edgeRatioRange": [
+              0.48657621776020704,
+              1.5155741770333375
+            ],
+            "attachmentErrorMm": 0,
+            "baseEnergy": 0.011175151588723689
+          },
+          "rows": [
+            {
+              "strength": 0.1,
+              "candidateSaved": true,
+              "stages": [
+                {
+                  "strength": 0.1,
+                  "rho": 300,
+                  "converged": true,
+                  "residualMm": 0.0007014569376970098,
+                  "iterations": 11,
+                  "seconds": 13.76020592599997,
+                  "JRange": [
+                    0.9536671328305243,
+                    1.0486238682459497
+                  ],
+                  "outsideVolumeCount": 0,
+                  "principalStretchRange": [
+                    0.14885492981585946,
+                    6.870879072571138
+                  ],
+                  "maxConditionF": 46.15822318461833,
+                  "stretchOutsideCount": 41,
+                  "areaRatioRange": [
+                    0.545911123162516,
+                    1.7375641025400208
+                  ],
+                  "edgeRatioRange": [
+                    0.6442193426386523,
+                    1.4997290583892384
+                  ],
+                  "attachmentErrorMm": 0,
+                  "baseEnergy": 0.011179796390231575
+                }
+              ]
+            },
+            {
+              "strength": 1,
+              "candidateSaved": true,
+              "stages": [
+                {
+                  "strength": 1,
+                  "rho": 300,
+                  "converged": true,
+                  "residualMm": 0.0006454926044391581,
+                  "iterations": 12,
+                  "seconds": 15.381992309999987,
+                  "JRange": [
+                    0.95141300230021,
+                    1.0538871570371768
+                  ],
+                  "outsideVolumeCount": 2,
+                  "principalStretchRange": [
+                    0.16141539708464084,
+                    6.377090967405483
+                  ],
+                  "maxConditionF": 39.5073275696342,
+                  "stretchOutsideCount": 37,
+                  "areaRatioRange": [
+                    0.5774519787425502,
+                    1.7342928245219233
+                  ],
+                  "edgeRatioRange": [
+                    0.703885268724109,
+                    1.4668529728408335
+                  ],
+                  "attachmentErrorMm": 0,
+                  "baseEnergy": 0.0112071576601924
+                },
+                {
+                  "strength": 1,
+                  "rho": 1000,
+                  "converged": true,
+                  "residualMm": 0.0005253052950078388,
+                  "iterations": 13,
+                  "seconds": 16.452000761000022,
+                  "JRange": [
+                    0.954563345947835,
+                    1.0477858385185481
+                  ],
+                  "outsideVolumeCount": 0,
+                  "principalStretchRange": [
+                    0.15761446123326683,
+                    6.497165541952567
+                  ],
+                  "maxConditionF": 41.221887199404044,
+                  "stretchOutsideCount": 37,
+                  "areaRatioRange": [
+                    0.5774400138530279,
+                    1.7340449121644999
+                  ],
+                  "edgeRatioRange": [
+                    0.7038346013020826,
+                    1.467882944857999
+                  ],
+                  "attachmentErrorMm": 0,
+                  "baseEnergy": 0.011209305237657716
+                }
+              ]
+            },
+            {
+              "strength": 10,
+              "candidateSaved": true,
+              "stages": [
+                {
+                  "strength": 10,
+                  "rho": 300,
+                  "converged": true,
+                  "residualMm": 0.0008966089389069041,
+                  "iterations": 27,
+                  "seconds": 35.172955136999974,
+                  "JRange": [
+                    0.9453981040978185,
+                    1.0886724293011802
+                  ],
+                  "outsideVolumeCount": 7,
+                  "principalStretchRange": [
+                    0.31772260193633606,
+                    3.2852567170351867
+                  ],
+                  "maxConditionF": 10.34001577795675,
+                  "stretchOutsideCount": 41,
+                  "areaRatioRange": [
+                    0.5913813145612256,
+                    1.718178338612923
+                  ],
+                  "edgeRatioRange": [
+                    0.7209382357319286,
+                    1.4552822166449941
+                  ],
+                  "attachmentErrorMm": 0,
+                  "baseEnergy": 0.011348229211290958
+                },
+                {
+                  "strength": 10,
+                  "rho": 1000,
+                  "converged": true,
+                  "residualMm": 0.0005719254240160342,
+                  "iterations": 18,
+                  "seconds": 23.431822163999982,
+                  "JRange": [
+                    0.9498446415310109,
+                    1.0581785587995103
+                  ],
+                  "outsideVolumeCount": 2,
+                  "principalStretchRange": [
+                    0.29690829672393193,
+                    3.4877304139532597
+                  ],
+                  "maxConditionF": 11.746827058848353,
+                  "stretchOutsideCount": 42,
+                  "areaRatioRange": [
+                    0.5915129136691623,
+                    1.717949182735405
+                  ],
+                  "edgeRatioRange": [
+                    0.7208830690485029,
+                    1.457263968556994
+                  ],
+                  "attachmentErrorMm": 0,
+                  "baseEnergy": 0.011367122436352916
+                },
+                {
+                  "strength": 10,
+                  "rho": 3000,
+                  "converged": true,
+                  "residualMm": 0.0009225421306290181,
+                  "iterations": 18,
+                  "seconds": 23.20075992699998,
+                  "JRange": [
+                    0.9538621553194273,
+                    1.046694764454257
+                  ],
+                  "outsideVolumeCount": 0,
+                  "principalStretchRange": [
+                    0.28825248236078804,
+                    3.587927979228756
+                  ],
+                  "maxConditionF": 12.447171139147262,
+                  "stretchOutsideCount": 41,
+                  "areaRatioRange": [
+                    0.5915842927405515,
+                    1.7178387139885847
+                  ],
+                  "edgeRatioRange": [
+                    0.7208700995349614,
+                    1.4582315922423799
+                  ],
+                  "attachmentErrorMm": 0,
+                  "baseEnergy": 0.011376718356274877
+                }
+              ]
+            },
+            {
+              "strength": 100,
+              "candidateSaved": true,
+              "stages": [
+                {
+                  "strength": 100,
+                  "rho": 300,
+                  "converged": true,
+                  "residualMm": 0.0005217865147980464,
+                  "iterations": 29,
+                  "seconds": 38.95646646399996,
+                  "JRange": [
+                    0.9484583927427542,
+                    1.0699159925131676
+                  ],
+                  "outsideVolumeCount": 8,
+                  "principalStretchRange": [
+                    0.4788350189792259,
+                    2.124238997292304
+                  ],
+                  "maxConditionF": 4.436264920265707,
+                  "stretchOutsideCount": 42,
+                  "areaRatioRange": [
+                    0.6108809339696557,
+                    1.717160080801788
+                  ],
+                  "edgeRatioRange": [
+                    0.7224688651471427,
+                    1.463316270080183
+                  ],
+                  "attachmentErrorMm": 0,
+                  "baseEnergy": 0.011500132202204201
+                },
+                {
+                  "strength": 100,
+                  "rho": 1000,
+                  "converged": true,
+                  "residualMm": 0.0008156470535466541,
+                  "iterations": 29,
+                  "seconds": 40.61141626500006,
+                  "JRange": [
+                    0.951069976837713,
+                    1.053468445716719
+                  ],
+                  "outsideVolumeCount": 2,
+                  "principalStretchRange": [
+                    0.47923026388026996,
+                    2.1402801137666376
+                  ],
+                  "maxConditionF": 4.466078783165834,
+                  "stretchOutsideCount": 42,
+                  "areaRatioRange": [
+                    0.611062533001314,
+                    1.7492055475157315
+                  ],
+                  "edgeRatioRange": [
+                    0.7222965027165742,
+                    1.4647182504103942
+                  ],
+                  "attachmentErrorMm": 0,
+                  "baseEnergy": 0.011522611342690312
+                },
+                {
+                  "strength": 100,
+                  "rho": 3000,
+                  "converged": true,
+                  "residualMm": 0.0008264929509735703,
+                  "iterations": 39,
+                  "seconds": 56.099598437000054,
+                  "JRange": [
+                    0.9535297850317782,
+                    1.0471255037157146
+                  ],
+                  "outsideVolumeCount": 0,
+                  "principalStretchRange": [
+                    0.47857404039274554,
+                    2.145284110127207
+                  ],
+                  "maxConditionF": 4.482658750914828,
+                  "stretchOutsideCount": 43,
+                  "areaRatioRange": [
+                    0.6111731665681571,
+                    1.766078718945134
+                  ],
+                  "edgeRatioRange": [
+                    0.7222868446171669,
+                    1.4656761528324858
+                  ],
+                  "attachmentErrorMm": 0,
+                  "baseEnergy": 0.011535705013354
+                }
+              ]
+            }
+          ],
+          "stretchBandDiagnostic": [
+            0.5,
+            2
+          ],
+          "productAccepted": false,
+          "crossingsEvaluated": false,
+          "contactEvaluated": false
+        },
+        {
+          "index": 88,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 1,
+          "newCrossingPairs": 1,
+          "newPairs": [
+            [
+              26628,
+              26629
+            ]
+          ],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 112755,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.545911123162516,
+            1.7375641025400208
+          ],
+          "edgeRatioRange": [
+            0.6442193426386523,
+            1.4997290583892384
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        },
+        {
+          "index": 88,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 1,
+          "newCrossingPairs": 1,
+          "newPairs": [
+            [
+              26628,
+              26629
+            ]
+          ],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 112842,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.5774400138530279,
+            1.7340449121644999
+          ],
+          "edgeRatioRange": [
+            0.7038346013020826,
+            1.467882944857999
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        },
+        {
+          "index": 88,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 3,
+          "newCrossingPairs": 3,
+          "newPairs": [
+            [
+              26628,
+              26629
+            ],
+            [
+              26629,
+              28744
+            ],
+            [
+              26630,
+              28744
+            ]
+          ],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 113178,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.5915842927405515,
+            1.7178387139885847
+          ],
+          "edgeRatioRange": [
+            0.7208700995349614,
+            1.4582315922423799
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        },
+        {
+          "index": 88,
+          "baselineCrossingPairs": 0,
+          "posedCrossingPairs": 3,
+          "newCrossingPairs": 3,
+          "newPairs": [
+            [
+              26628,
+              26629
+            ],
+            [
+              26629,
+              28744
+            ],
+            [
+              26630,
+              28744
+            ]
+          ],
+          "baselinePairs": [],
+          "baselineScreen": {
+            "nonadjacentAabbPairs": 116514,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "posedScreen": {
+            "nonadjacentAabbPairs": 113356,
+            "parallelNormalPairsNotFullyScreened": 0
+          },
+          "areaRatioRange": [
+            0.6111731665681571,
+            1.766078718945134
+          ],
+          "edgeRatioRange": [
+            0.7222868446171669,
+            1.4656761528324858
+          ],
+          "degenerateFaces": 0,
+          "sharedVertexPairsExcluded": true,
+          "coplanarOverlapCertified": false,
+          "continuousSelfContactCertified": false,
+          "productAccepted": false
+        }
+      ]
+    }
+  ],
+  "productAccepted": false
+}
