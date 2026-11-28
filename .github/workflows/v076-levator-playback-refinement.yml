@@ -1,0 +1,104 @@
+name: v0.76 levator playback midpoint refinement and compression
+on:
+  push:
+    branches: [redesign/v076-shoulder]
+    paths:
+      - '.github/workflows/v076-levator-playback-refinement.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  midpoint:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - seed: 'accepted-007-index-56.npz'
+            index: '60'
+          - seed: 'accepted-008-index-64.npz'
+            index: '68'
+          - seed: 'accepted-009-index-72.npz'
+            index: '76'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      QA_INPUT: test-results/v076-levator-constrained30
+      QA_OUTPUT: test-results/v076-levator-midpoint-${{ matrix.index }}
+      QA_MAX_INDEX: '80'
+      QA_DESTINATIONS: '${{ matrix.index }}'
+      QA_CONSTRAINED_SEED: test-results/v076-levator-constrained30/${{ matrix.seed }}
+      QA_WARM_MULTIPLIERS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-constrained30
+          path: test-results/v076-levator-constrained30/
+          run-id: 46135851243
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/run-levator-constrained-path.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-midpoint-${{ matrix.index }}
+          path: test-results/v076-levator-midpoint-${{ matrix.index }}/
+  compare:
+    needs: midpoint
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-constrained30
+          path: test-results/v076-levator-constrained30/
+          run-id: 46135851243
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: levator-midpoint-*
+          path: test-results/v076-levator-midpoints/
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - name: Assemble forward path from accepted checkpoints only
+        run: |
+          python - <<'PY'
+          import shutil
+          from pathlib import Path
+          import numpy as np
+          src=Path('test-results/v076-levator-constrained30')
+          out=Path('test-results/v076-levator-refined-playback');out.mkdir(parents=True,exist_ok=True)
+          poses={}
+          for f in sorted(src.glob('accepted-*-index-*.npz'))[:10]:
+              i=int(np.load(f)['index']);poses[i]=f
+          assert sorted(poses)==list(range(8,81,8))
+          for i in (60,68,76):
+              f=Path(f'test-results/v076-levator-midpoints/levator-midpoint-{i}/segment-end.npz')
+              assert int(np.load(f)['index'])==i
+              poses[i]=f
+          for k,i in enumerate(sorted(poses),1):
+              shutil.copyfile(poses[i],out/f'accepted-{k:03d}-index-{i:02d}.npz')
+          shutil.copyfile(src/'levator-solid-frames.json',out/'levator-solid-frames.json')
+          PY
+      - run: |
+          QA_INPUT=test-results/v076-levator-constrained30 QA_OUTPUT=test-results/v076-playback-baseline python scripts/experimental/audit-levator-affine-playback.py
+          QA_INPUT=test-results/v076-levator-refined-playback QA_OUTPUT=test-results/v076-playback-refined python scripts/experimental/audit-levator-affine-playback.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-playback-refinement
+          path: |
+            test-results/v076-playback-baseline/
+            test-results/v076-playback-refined/
