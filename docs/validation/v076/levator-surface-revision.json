@@ -1,0 +1,3053 @@
+{
+  "runId": 46110560300,
+  "jobId": 140872913883,
+  "headSha": "7811b090bbdfd687059fe7964f25f88df44f4b21",
+  "coverage": {
+    "runtimeVertices": 6250,
+    "runtimeTriangles": 13005,
+    "oldPinCounts": [
+      1436,
+      0
+    ],
+    "sensitivity": [
+      {
+        "radiusMm": 0.5,
+        "originCount": 75,
+        "insertionCount": 194,
+        "originPerNearestC": [
+          12,
+          9,
+          17,
+          37
+        ],
+        "components": 8,
+        "componentsWithBoth": 1,
+        "componentsWithNeither": 2
+      },
+      {
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "components": 8,
+        "componentsWithBoth": 1,
+        "componentsWithNeither": 2
+      },
+      {
+        "radiusMm": 2,
+        "originCount": 152,
+        "insertionCount": 328,
+        "originPerNearestC": [
+          34,
+          25,
+          28,
+          65
+        ],
+        "components": 8,
+        "componentsWithBoth": 1,
+        "componentsWithNeither": 1
+      },
+      {
+        "radiusMm": 4,
+        "originCount": 255,
+        "insertionCount": 507,
+        "originPerNearestC": [
+          57,
+          51,
+          55,
+          92
+        ],
+        "components": 8,
+        "componentsWithBoth": 1,
+        "componentsWithNeither": 1
+      }
+    ],
+    "productAccepted": false,
+    "anatomicalAcceptance": false
+  },
+  "rows": [
+    {
+      "name": "neutral",
+      "side": "right",
+      "baseline": {
+        "edge": [
+          1,
+          1
+        ],
+        "area": [
+          1,
+          1
+        ],
+        "attachmentMm": 0,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            1,
+            4
+          ],
+          "restLengthMm": 1.0616328810867601,
+          "ratio": 1,
+          "stageLengthsMm": {
+            "rest": 1.0616328810867601,
+            "base": 1.0616328810867601,
+            "noContact": 1.0616328810867601,
+            "final": 1.0616328810867601
+          }
+        },
+        "worstArea": {
+          "triangle": 0,
+          "vertices": [
+            1,
+            4,
+            2
+          ],
+          "restAreaMm2": 0.4699072342091876,
+          "ratio": 1,
+          "stageAreasMm2": {
+            "rest": 0.4699072342091876,
+            "base": 0.4699072342091876,
+            "noContact": 0.4699072342091893,
+            "final": 0.4699072342091893
+          }
+        },
+        "vertices": [
+          {
+            "i": 1,
+            "weight": 0.9083544015884399,
+            "lane": 0.7146492600440979,
+            "materialT": 0.9888162016868591,
+            "restWidthMm": 2.738295387168528,
+            "restOffsetMm": 18.231058140652785
+          },
+          {
+            "i": 4,
+            "weight": 0.9089632630348206,
+            "lane": 0.6934817433357239,
+            "materialT": 0.9880645871162415,
+            "restWidthMm": 2.4530717717286574,
+            "restOffsetMm": 17.55749210389504
+          },
+          {
+            "i": 2,
+            "weight": 0.9092063307762146,
+            "lane": 0.7148449420928955,
+            "materialT": 0.9877952337265015,
+            "restWidthMm": 2.8476432032612338,
+            "restOffsetMm": 17.424970954875427
+          }
+        ]
+      },
+      "candidate": {
+        "edge": [
+          1,
+          1
+        ],
+        "area": [
+          1,
+          1
+        ],
+        "attachmentMm": 1.0002009230857266e-14,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            1,
+            4
+          ],
+          "restLengthMm": 1.0616328810867601,
+          "ratio": 1,
+          "stageLengthsMm": {
+            "rest": 1.0616328810867601,
+            "base": 1.0616328810867601,
+            "noContact": 1.0616328810867601,
+            "final": 1.0616328810867601
+          }
+        },
+        "worstArea": {
+          "triangle": 0,
+          "vertices": [
+            1,
+            4,
+            2
+          ],
+          "restAreaMm2": 0.4699072342091876,
+          "ratio": 1,
+          "stageAreasMm2": {
+            "rest": 0.4699072342091876,
+            "base": 0.4699072342091876,
+            "noContact": 0.4699072342091876,
+            "final": 0.4699072342091876
+          }
+        },
+        "vertices": [
+          {
+            "i": 1,
+            "weight": 1,
+            "lane": 0.7146491408348083,
+            "materialT": 1,
+            "restWidthMm": 8.15039730488061,
+            "restOffsetMm": 17.40062751676368
+          },
+          {
+            "i": 4,
+            "weight": 1,
+            "lane": 0.6934815645217896,
+            "materialT": 1,
+            "restWidthMm": 8.027868138151215,
+            "restOffsetMm": 16.795216091511904
+          },
+          {
+            "i": 2,
+            "weight": 1,
+            "lane": 0.7148447632789612,
+            "materialT": 1,
+            "restWidthMm": 8.151506167758063,
+            "restOffsetMm": 16.736945019936766
+          }
+        ]
+      },
+      "binding": {
+        "method": "source-triangle-distance-ratio",
+        "geodesicRejected": "Error: Disconnected or conflicting attachment domain at 13",
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "oldPinCounts": [
+          1436,
+          0
+        ],
+        "minSpanMm": null,
+        "maxGradientPerMm": null,
+        "fixedOppositeEdges": null,
+        "fieldMethod": "regional-axis-1",
+        "productAccepted": false,
+        "neckMapping": "unchanged legacy mapping, not per-vertebra validated"
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "neutral",
+      "side": "left",
+      "baseline": {
+        "edge": [
+          1,
+          1
+        ],
+        "area": [
+          1,
+          1
+        ],
+        "attachmentMm": 0,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            1,
+            4
+          ],
+          "restLengthMm": 1.0616328810867601,
+          "ratio": 1,
+          "stageLengthsMm": {
+            "rest": 1.0616328810867601,
+            "base": 1.0616328810867601,
+            "noContact": 1.0616328810867601,
+            "final": 1.0616328810867601
+          }
+        },
+        "worstArea": {
+          "triangle": 0,
+          "vertices": [
+            1,
+            4,
+            2
+          ],
+          "restAreaMm2": 0.4699072342091876,
+          "ratio": 1,
+          "stageAreasMm2": {
+            "rest": 0.4699072342091876,
+            "base": 0.4699072342091876,
+            "noContact": 0.4699072342091893,
+            "final": 0.4699072342091893
+          }
+        },
+        "vertices": [
+          {
+            "i": 1,
+            "weight": 0.9083544015884399,
+            "lane": 0.7146492600440979,
+            "materialT": 0.9888162016868591,
+            "restWidthMm": 2.738295387168528,
+            "restOffsetMm": 18.231058140652785
+          },
+          {
+            "i": 4,
+            "weight": 0.9089632630348206,
+            "lane": 0.6934817433357239,
+            "materialT": 0.9880645871162415,
+            "restWidthMm": 2.4530717717286574,
+            "restOffsetMm": 17.55749210389504
+          },
+          {
+            "i": 2,
+            "weight": 0.9092063307762146,
+            "lane": 0.7148449420928955,
+            "materialT": 0.9877952337265015,
+            "restWidthMm": 2.8476432032612338,
+            "restOffsetMm": 17.424970954875427
+          }
+        ]
+      },
+      "candidate": {
+        "edge": [
+          1,
+          1
+        ],
+        "area": [
+          1,
+          1
+        ],
+        "attachmentMm": 1.0002009230857266e-14,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            1,
+            4
+          ],
+          "restLengthMm": 1.0616328810867601,
+          "ratio": 1,
+          "stageLengthsMm": {
+            "rest": 1.0616328810867601,
+            "base": 1.0616328810867601,
+            "noContact": 1.0616328810867601,
+            "final": 1.0616328810867601
+          }
+        },
+        "worstArea": {
+          "triangle": 0,
+          "vertices": [
+            1,
+            4,
+            2
+          ],
+          "restAreaMm2": 0.4699072342091876,
+          "ratio": 1,
+          "stageAreasMm2": {
+            "rest": 0.4699072342091876,
+            "base": 0.4699072342091876,
+            "noContact": 0.4699072342091876,
+            "final": 0.4699072342091876
+          }
+        },
+        "vertices": [
+          {
+            "i": 1,
+            "weight": 1,
+            "lane": 0.7146491408348083,
+            "materialT": 1,
+            "restWidthMm": 8.15039730488061,
+            "restOffsetMm": 17.40062751676368
+          },
+          {
+            "i": 4,
+            "weight": 1,
+            "lane": 0.6934815645217896,
+            "materialT": 1,
+            "restWidthMm": 8.027868138151215,
+            "restOffsetMm": 16.795216091511904
+          },
+          {
+            "i": 2,
+            "weight": 1,
+            "lane": 0.7148447632789612,
+            "materialT": 1,
+            "restWidthMm": 8.151506167758063,
+            "restOffsetMm": 16.736945019936766
+          }
+        ]
+      },
+      "binding": {
+        "method": "source-triangle-distance-ratio",
+        "geodesicRejected": "Error: Disconnected or conflicting attachment domain at 13",
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "oldPinCounts": [
+          1436,
+          0
+        ],
+        "minSpanMm": null,
+        "maxGradientPerMm": null,
+        "fixedOppositeEdges": null,
+        "fieldMethod": "regional-axis-1",
+        "productAccepted": false,
+        "neckMapping": "unchanged legacy mapping, not per-vertebra validated"
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "low40",
+      "side": "right",
+      "baseline": {
+        "edge": [
+          0.12203590824228006,
+          12.319655981645946
+        ],
+        "area": [
+          0.009036123360408736,
+          64.88985793722146
+        ],
+        "attachmentMm": 0,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            201,
+            264
+          ],
+          "restLengthMm": 1.1371757988595053,
+          "ratio": 12.319655981645946,
+          "stageLengthsMm": {
+            "rest": 1.1371757988595053,
+            "base": 1.1054593508911912,
+            "noContact": 14.009620372338762,
+            "final": 14.009620372338762
+          }
+        },
+        "worstArea": {
+          "triangle": 473,
+          "vertices": [
+            203,
+            264,
+            266
+          ],
+          "restAreaMm2": 0.5491209191806721,
+          "ratio": 64.88985793722146,
+          "stageAreasMm2": {
+            "rest": 0.5491209191806721,
+            "base": 0.5254129201062685,
+            "noContact": 35.6323883726813,
+            "final": 35.6323883726813
+          }
+        },
+        "vertices": [
+          {
+            "i": 201,
+            "weight": 0.8897970914840698,
+            "lane": 0.7598869204521179,
+            "materialT": 0.9420291185379028,
+            "restWidthMm": 12.45699777478492,
+            "restOffsetMm": 10.487582623383114
+          },
+          {
+            "i": 264,
+            "weight": 0.887897789478302,
+            "lane": 0.7573726773262024,
+            "materialT": 0.9346837997436523,
+            "restWidthMm": 13.448926741451242,
+            "restOffsetMm": 9.529828413283917
+          },
+          {
+            "i": 203,
+            "weight": 0.8894224762916565,
+            "lane": 0.7058244347572327,
+            "materialT": 0.9345356822013855,
+            "restWidthMm": 12.798193355727745,
+            "restOffsetMm": 10.33448196021321
+          },
+          {
+            "i": 266,
+            "weight": 0.8841568827629089,
+            "lane": 0.8246873617172241,
+            "materialT": 0.9265555739402771,
+            "restWidthMm": 13.843324968048215,
+            "restOffsetMm": 8.101852606977785
+          }
+        ]
+      },
+      "candidate": {
+        "edge": [
+          0.10973490071373898,
+          8.97858232735451
+        ],
+        "area": [
+          0.03732216501094263,
+          148.0297174778745
+        ],
+        "attachmentMm": 0.000011021211335962681,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            5232,
+            5234
+          ],
+          "restLengthMm": 0.41669383001218907,
+          "ratio": 8.97858232735451,
+          "stageLengthsMm": {
+            "rest": 0.41669383001218907,
+            "base": 0.4112740127846882,
+            "noContact": 3.741320117300811,
+            "final": 3.741320117300811
+          }
+        },
+        "worstArea": {
+          "triangle": 11569,
+          "vertices": [
+            5659,
+            5666,
+            5667
+          ],
+          "restAreaMm2": 0.005839445164801577,
+          "ratio": 148.0297174778745,
+          "stageAreasMm2": {
+            "rest": 0.005839445164801577,
+            "base": 0.01064531289075136,
+            "noContact": 0.8644307623545355,
+            "final": 0.8644307623545355
+          }
+        },
+        "vertices": [
+          {
+            "i": 5232,
+            "weight": 0.06723831593990326,
+            "lane": 4.510152339935303,
+            "materialT": 0.1031375601887703,
+            "restWidthMm": 21.472257696773188,
+            "restOffsetMm": 7.922407295004548
+          },
+          {
+            "i": 5234,
+            "weight": 0.06711412966251373,
+            "lane": 4.512418270111084,
+            "materialT": 0.10251560807228088,
+            "restWidthMm": 20.570844479484798,
+            "restOffsetMm": 8.006665162630327
+          },
+          {
+            "i": 5659,
+            "weight": 0.06629423797130585,
+            "lane": 4.1286187171936035,
+            "materialT": 0.1116776168346405,
+            "restWidthMm": 21.247101763479982,
+            "restOffsetMm": 4.56194845633182
+          },
+          {
+            "i": 5666,
+            "weight": 0.06402677297592163,
+            "lane": 4.134268283843994,
+            "materialT": 0.10475096851587296,
+            "restWidthMm": 23.235197992984773,
+            "restOffsetMm": 4.221033948273601
+          },
+          {
+            "i": 5667,
+            "weight": 0.06200253963470459,
+            "lane": 4.1383442878723145,
+            "materialT": 0.09925933182239532,
+            "restWidthMm": 21.71155030325517,
+            "restOffsetMm": 4.009275017705207
+          }
+        ]
+      },
+      "binding": {
+        "method": "source-triangle-distance-ratio",
+        "geodesicRejected": "Error: Disconnected or conflicting attachment domain at 13",
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "oldPinCounts": [
+          1436,
+          0
+        ],
+        "minSpanMm": null,
+        "maxGradientPerMm": null,
+        "fixedOppositeEdges": null,
+        "fieldMethod": "regional-axis-1",
+        "productAccepted": false,
+        "neckMapping": "unchanged legacy mapping, not per-vertebra validated"
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "low40",
+      "side": "left",
+      "baseline": {
+        "edge": [
+          0.20077405763249517,
+          5.433167662493435
+        ],
+        "area": [
+          0.048821903759122084,
+          14.552960286936514
+        ],
+        "attachmentMm": 0,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            259,
+            258
+          ],
+          "restLengthMm": 0.8747760935361611,
+          "ratio": 5.433167662493435,
+          "stageLengthsMm": {
+            "rest": 0.8747760935361611,
+            "base": 0.8592430934206723,
+            "noContact": 4.752807413070041,
+            "final": 4.752807413070041
+          }
+        },
+        "worstArea": {
+          "triangle": 590,
+          "vertices": [
+            259,
+            325,
+            324
+          ],
+          "restAreaMm2": 0.103574895009799,
+          "ratio": 14.552960286936514,
+          "stageAreasMm2": {
+            "rest": 0.103574895009799,
+            "base": 0.10219425277722827,
+            "noContact": 1.507322485496486,
+            "final": 1.507322485496486
+          }
+        },
+        "vertices": [
+          {
+            "i": 259,
+            "weight": 0.9061700105667114,
+            "lane": 0.5628664493560791,
+            "materialT": 0.9261499643325806,
+            "restWidthMm": 10.773066798165743,
+            "restOffsetMm": 8.019769352164662
+          },
+          {
+            "i": 258,
+            "weight": 0.9088738560676575,
+            "lane": 0.5767161250114441,
+            "materialT": 0.9368081092834473,
+            "restWidthMm": 8.158619017079499,
+            "restOffsetMm": 7.936365013348227
+          },
+          {
+            "i": 325,
+            "weight": 0.9081286787986755,
+            "lane": 0.5708795785903931,
+            "materialT": 0.9255053997039795,
+            "restWidthMm": 11.273146348887314,
+            "restOffsetMm": 7.372449857807893
+          },
+          {
+            "i": 324,
+            "weight": 0.9100597500801086,
+            "lane": 0.5831551551818848,
+            "materialT": 0.9288834929466248,
+            "restWidthMm": 10.737451141171032,
+            "restOffsetMm": 6.949253869720911
+          }
+        ]
+      },
+      "candidate": {
+        "edge": [
+          0.19232873466488642,
+          8.869618036358954
+        ],
+        "area": [
+          0.12472192122037058,
+          93.0226034310336
+        ],
+        "attachmentMm": 0.000011078493406906449,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            5128,
+            5177
+          ],
+          "restLengthMm": 0.4974462380681609,
+          "ratio": 8.869618036358954,
+          "stageLengthsMm": {
+            "rest": 0.4974462380681609,
+            "base": 0.5245444743550745,
+            "noContact": 4.412143848769965,
+            "final": 4.412143848769965
+          }
+        },
+        "worstArea": {
+          "triangle": 11569,
+          "vertices": [
+            5659,
+            5666,
+            5667
+          ],
+          "restAreaMm2": 0.005839445164801577,
+          "ratio": 93.0226034310336,
+          "stageAreasMm2": {
+            "rest": 0.005839445164801577,
+            "base": 0.009089345605751215,
+            "noContact": 0.5431886176207746,
+            "final": 0.5431886176207746
+          }
+        },
+        "vertices": [
+          {
+            "i": 5128,
+            "weight": 0.06403566151857376,
+            "lane": 4.503001689910889,
+            "materialT": 0.10154805332422256,
+            "restWidthMm": 19.286180841876924,
+            "restOffsetMm": 6.775665891914494
+          },
+          {
+            "i": 5177,
+            "weight": 0.06649075448513031,
+            "lane": 4.487129211425781,
+            "materialT": 0.10708855092525482,
+            "restWidthMm": 20.865902109115893,
+            "restOffsetMm": 6.695437245589398
+          },
+          {
+            "i": 5659,
+            "weight": 0.06629423797130585,
+            "lane": 4.1286187171936035,
+            "materialT": 0.1116776168346405,
+            "restWidthMm": 21.247101763479982,
+            "restOffsetMm": 4.56194845633182
+          },
+          {
+            "i": 5666,
+            "weight": 0.06402677297592163,
+            "lane": 4.134268283843994,
+            "materialT": 0.10475096851587296,
+            "restWidthMm": 23.235197992984773,
+            "restOffsetMm": 4.221033948273601
+          },
+          {
+            "i": 5667,
+            "weight": 0.06200253963470459,
+            "lane": 4.1383442878723145,
+            "materialT": 0.09925933182239532,
+            "restWidthMm": 21.71155030325517,
+            "restOffsetMm": 4.009275017705207
+          }
+        ]
+      },
+      "binding": {
+        "method": "source-triangle-distance-ratio",
+        "geodesicRejected": "Error: Disconnected or conflicting attachment domain at 13",
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "oldPinCounts": [
+          1436,
+          0
+        ],
+        "minSpanMm": null,
+        "maxGradientPerMm": null,
+        "fixedOppositeEdges": null,
+        "fieldMethod": "regional-axis-1",
+        "productAccepted": false,
+        "neckMapping": "unchanged legacy mapping, not per-vertebra validated"
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "recording70",
+      "side": "right",
+      "baseline": {
+        "edge": [
+          0.10152783893756034,
+          44.260906239893785
+        ],
+        "area": [
+          0.039894010877088916,
+          1260.4573420609759
+        ],
+        "attachmentMm": 0,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            195,
+            196
+          ],
+          "restLengthMm": 0.29226568430830985,
+          "ratio": 44.260906239893785,
+          "stageLengthsMm": {
+            "rest": 0.29226568430830985,
+            "base": 0.27850854609702935,
+            "noContact": 12.93594343572732,
+            "final": 12.93594343572732
+          }
+        },
+        "worstArea": {
+          "triangle": 322,
+          "vertices": [
+            135,
+            137,
+            172
+          ],
+          "restAreaMm2": 0.060996439193037245,
+          "ratio": 1260.4573420609759,
+          "stageAreasMm2": {
+            "rest": 0.060996439193037245,
+            "base": 0.056288039774751324,
+            "noContact": 76.8834438627764,
+            "final": 76.8834438627764
+          }
+        },
+        "vertices": [
+          {
+            "i": 195,
+            "weight": 0.8927678465843201,
+            "lane": 0.811418890953064,
+            "materialT": 0.9530589580535889,
+            "restWidthMm": 11.623346028529532,
+            "restOffsetMm": 10.859972152690037
+          },
+          {
+            "i": 196,
+            "weight": 0.8920475840568542,
+            "lane": 0.8121702671051025,
+            "materialT": 0.950753927230835,
+            "restWidthMm": 12.019638965430216,
+            "restOffsetMm": 10.606231238130476
+          },
+          {
+            "i": 135,
+            "weight": 0.8978531956672668,
+            "lane": 0.8206609487533569,
+            "materialT": 0.964314877986908,
+            "restWidthMm": 9.808709180270903,
+            "restOffsetMm": 12.17664838383188
+          },
+          {
+            "i": 137,
+            "weight": 0.8969532251358032,
+            "lane": 0.8353388905525208,
+            "materialT": 0.9616366624832153,
+            "restWidthMm": 10.671968962458042,
+            "restOffsetMm": 11.9002047174373
+          },
+          {
+            "i": 172,
+            "weight": 0.8946862816810608,
+            "lane": 0.8494417667388916,
+            "materialT": 0.9537171721458435,
+            "restWidthMm": 12.223322900387162,
+            "restOffsetMm": 11.448471684959225
+          }
+        ]
+      },
+      "candidate": {
+        "edge": [
+          0.11027752193126422,
+          9.469026636334691
+        ],
+        "area": [
+          0.021678115128732862,
+          75.91326668941763
+        ],
+        "attachmentMm": 0.000011040067032761075,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            5240,
+            5234
+          ],
+          "restLengthMm": 0.5820040521498526,
+          "ratio": 9.469026636334691,
+          "stageLengthsMm": {
+            "rest": 0.5820040521498526,
+            "base": 0.5992550146521817,
+            "noContact": 5.5110091782897825,
+            "final": 5.5110091782897825
+          }
+        },
+        "worstArea": {
+          "triangle": 11569,
+          "vertices": [
+            5659,
+            5666,
+            5667
+          ],
+          "restAreaMm2": 0.005839445164801577,
+          "ratio": 75.91326668941763,
+          "stageAreasMm2": {
+            "rest": 0.005839445164801577,
+            "base": 0.014521982688561726,
+            "noContact": 0.4433189193314583,
+            "final": 0.4433189193314583
+          }
+        },
+        "vertices": [
+          {
+            "i": 5240,
+            "weight": 0.06614300608634949,
+            "lane": 4.531822204589844,
+            "materialT": 0.10035309940576553,
+            "restWidthMm": 17.092346607632415,
+            "restOffsetMm": 8.072996098974714
+          },
+          {
+            "i": 5234,
+            "weight": 0.06711412966251373,
+            "lane": 4.512418270111084,
+            "materialT": 0.10251560807228088,
+            "restWidthMm": 20.570844479484798,
+            "restOffsetMm": 8.006665162630327
+          },
+          {
+            "i": 5659,
+            "weight": 0.06629423797130585,
+            "lane": 4.1286187171936035,
+            "materialT": 0.1116776168346405,
+            "restWidthMm": 21.247101763479982,
+            "restOffsetMm": 4.56194845633182
+          },
+          {
+            "i": 5666,
+            "weight": 0.06402677297592163,
+            "lane": 4.134268283843994,
+            "materialT": 0.10475096851587296,
+            "restWidthMm": 23.235197992984773,
+            "restOffsetMm": 4.221033948273601
+          },
+          {
+            "i": 5667,
+            "weight": 0.06200253963470459,
+            "lane": 4.1383442878723145,
+            "materialT": 0.09925933182239532,
+            "restWidthMm": 21.71155030325517,
+            "restOffsetMm": 4.009275017705207
+          }
+        ]
+      },
+      "binding": {
+        "method": "source-triangle-distance-ratio",
+        "geodesicRejected": "Error: Disconnected or conflicting attachment domain at 13",
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "oldPinCounts": [
+          1436,
+          0
+        ],
+        "minSpanMm": null,
+        "maxGradientPerMm": null,
+        "fixedOppositeEdges": null,
+        "fieldMethod": "regional-axis-1",
+        "productAccepted": false,
+        "neckMapping": "unchanged legacy mapping, not per-vertebra validated"
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "recording70",
+      "side": "left",
+      "baseline": {
+        "edge": [
+          1,
+          1
+        ],
+        "area": [
+          1,
+          1
+        ],
+        "attachmentMm": 0,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            1,
+            4
+          ],
+          "restLengthMm": 1.0616328810867601,
+          "ratio": 1,
+          "stageLengthsMm": {
+            "rest": 1.0616328810867601,
+            "base": 1.0616328810867601,
+            "noContact": 1.0616328810867601,
+            "final": 1.0616328810867601
+          }
+        },
+        "worstArea": {
+          "triangle": 0,
+          "vertices": [
+            1,
+            4,
+            2
+          ],
+          "restAreaMm2": 0.4699072342091876,
+          "ratio": 1,
+          "stageAreasMm2": {
+            "rest": 0.4699072342091876,
+            "base": 0.4699072342091876,
+            "noContact": 0.4699072342091893,
+            "final": 0.4699072342091893
+          }
+        },
+        "vertices": [
+          {
+            "i": 1,
+            "weight": 0.9083544015884399,
+            "lane": 0.7146492600440979,
+            "materialT": 0.9888162016868591,
+            "restWidthMm": 2.738295387168528,
+            "restOffsetMm": 18.231058140652785
+          },
+          {
+            "i": 4,
+            "weight": 0.9089632630348206,
+            "lane": 0.6934817433357239,
+            "materialT": 0.9880645871162415,
+            "restWidthMm": 2.4530717717286574,
+            "restOffsetMm": 17.55749210389504
+          },
+          {
+            "i": 2,
+            "weight": 0.9092063307762146,
+            "lane": 0.7148449420928955,
+            "materialT": 0.9877952337265015,
+            "restWidthMm": 2.8476432032612338,
+            "restOffsetMm": 17.424970954875427
+          }
+        ]
+      },
+      "candidate": {
+        "edge": [
+          1,
+          1
+        ],
+        "area": [
+          1,
+          1
+        ],
+        "attachmentMm": 1.0002009230857266e-14,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            1,
+            4
+          ],
+          "restLengthMm": 1.0616328810867601,
+          "ratio": 1,
+          "stageLengthsMm": {
+            "rest": 1.0616328810867601,
+            "base": 1.0616328810867601,
+            "noContact": 1.0616328810867601,
+            "final": 1.0616328810867601
+          }
+        },
+        "worstArea": {
+          "triangle": 0,
+          "vertices": [
+            1,
+            4,
+            2
+          ],
+          "restAreaMm2": 0.4699072342091876,
+          "ratio": 1,
+          "stageAreasMm2": {
+            "rest": 0.4699072342091876,
+            "base": 0.4699072342091876,
+            "noContact": 0.4699072342091876,
+            "final": 0.4699072342091876
+          }
+        },
+        "vertices": [
+          {
+            "i": 1,
+            "weight": 1,
+            "lane": 0.7146491408348083,
+            "materialT": 1,
+            "restWidthMm": 8.15039730488061,
+            "restOffsetMm": 17.40062751676368
+          },
+          {
+            "i": 4,
+            "weight": 1,
+            "lane": 0.6934815645217896,
+            "materialT": 1,
+            "restWidthMm": 8.027868138151215,
+            "restOffsetMm": 16.795216091511904
+          },
+          {
+            "i": 2,
+            "weight": 1,
+            "lane": 0.7148447632789612,
+            "materialT": 1,
+            "restWidthMm": 8.151506167758063,
+            "restOffsetMm": 16.736945019936766
+          }
+        ]
+      },
+      "binding": {
+        "method": "source-triangle-distance-ratio",
+        "geodesicRejected": "Error: Disconnected or conflicting attachment domain at 13",
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "oldPinCounts": [
+          1436,
+          0
+        ],
+        "minSpanMm": null,
+        "maxGradientPerMm": null,
+        "fixedOppositeEdges": null,
+        "fieldMethod": "regional-axis-1",
+        "productAccepted": false,
+        "neckMapping": "unchanged legacy mapping, not per-vertebra validated"
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "side90",
+      "side": "right",
+      "baseline": {
+        "edge": [
+          0.1708848645896376,
+          12.592315075763489
+        ],
+        "area": [
+          0.06650542661998467,
+          112.04429970517631
+        ],
+        "attachmentMm": 0,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            260,
+            261
+          ],
+          "restLengthMm": 0.46554734406140996,
+          "ratio": 12.592315075763489,
+          "stageLengthsMm": {
+            "rest": 0.46554734406140996,
+            "base": 0.4538418341959204,
+            "noContact": 5.862317846093595,
+            "final": 5.862317846093595
+          }
+        },
+        "worstArea": {
+          "triangle": 503,
+          "vertices": [
+            285,
+            220,
+            286
+          ],
+          "restAreaMm2": 0.07264799227305675,
+          "ratio": 112.04429970517631,
+          "stageAreasMm2": {
+            "rest": 0.07264799227305675,
+            "base": 0.050954265571780885,
+            "noContact": 8.139796870839803,
+            "final": 8.139796870839803
+          }
+        },
+        "vertices": [
+          {
+            "i": 260,
+            "weight": 0.8928127884864807,
+            "lane": 0.6071121096611023,
+            "materialT": 0.9172171950340271,
+            "restWidthMm": 14.082264473964095,
+            "restOffsetMm": 7.8804713460419515
+          },
+          {
+            "i": 261,
+            "weight": 0.8956930637359619,
+            "lane": 0.5935672521591187,
+            "materialT": 0.9204171299934387,
+            "restWidthMm": 13.284300031717784,
+            "restOffsetMm": 7.669670216584713
+          },
+          {
+            "i": 285,
+            "weight": 0.9218144416809082,
+            "lane": 0.8600453734397888,
+            "materialT": 0.9398927092552185,
+            "restWidthMm": 13.636133591506054,
+            "restOffsetMm": 12.511408633134847
+          },
+          {
+            "i": 220,
+            "weight": 0.9216960668563843,
+            "lane": 0.8431374430656433,
+            "materialT": 0.9463250637054443,
+            "restWidthMm": 13.053941608831302,
+            "restOffsetMm": 12.482969184372699
+          },
+          {
+            "i": 286,
+            "weight": 0.920853316783905,
+            "lane": 0.8783071041107178,
+            "materialT": 0.9292641878128052,
+            "restWidthMm": 13.642034853437101,
+            "restOffsetMm": 12.496033793059915
+          }
+        ]
+      },
+      "candidate": {
+        "edge": [
+          0.05130431358039193,
+          11.240641808113951
+        ],
+        "area": [
+          0.0444772791763774,
+          88.66293235045583
+        ],
+        "attachmentMm": 0.000011389705604418853,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            5232,
+            5234
+          ],
+          "restLengthMm": 0.41669383001218907,
+          "ratio": 11.240641808113951,
+          "stageLengthsMm": {
+            "rest": 0.41669383001218907,
+            "base": 0.4012090788879553,
+            "noContact": 4.683915463917058,
+            "final": 4.683915463917058
+          }
+        },
+        "worstArea": {
+          "triangle": 11569,
+          "vertices": [
+            5659,
+            5666,
+            5667
+          ],
+          "restAreaMm2": 0.005839445164801577,
+          "ratio": 88.66293235045583,
+          "stageAreasMm2": {
+            "rest": 0.005839445164801577,
+            "base": 0.018348332526542086,
+            "noContact": 0.5177432076248155,
+            "final": 0.5177432076248155
+          }
+        },
+        "vertices": [
+          {
+            "i": 5232,
+            "weight": 0.06723831593990326,
+            "lane": 4.510152339935303,
+            "materialT": 0.1031375601887703,
+            "restWidthMm": 21.472257696773188,
+            "restOffsetMm": 7.922407295004548
+          },
+          {
+            "i": 5234,
+            "weight": 0.06711412966251373,
+            "lane": 4.512418270111084,
+            "materialT": 0.10251560807228088,
+            "restWidthMm": 20.570844479484798,
+            "restOffsetMm": 8.006665162630327
+          },
+          {
+            "i": 5659,
+            "weight": 0.06629423797130585,
+            "lane": 4.1286187171936035,
+            "materialT": 0.1116776168346405,
+            "restWidthMm": 21.247101763479982,
+            "restOffsetMm": 4.56194845633182
+          },
+          {
+            "i": 5666,
+            "weight": 0.06402677297592163,
+            "lane": 4.134268283843994,
+            "materialT": 0.10475096851587296,
+            "restWidthMm": 23.235197992984773,
+            "restOffsetMm": 4.221033948273601
+          },
+          {
+            "i": 5667,
+            "weight": 0.06200253963470459,
+            "lane": 4.1383442878723145,
+            "materialT": 0.09925933182239532,
+            "restWidthMm": 21.71155030325517,
+            "restOffsetMm": 4.009275017705207
+          }
+        ]
+      },
+      "binding": {
+        "method": "source-triangle-distance-ratio",
+        "geodesicRejected": "Error: Disconnected or conflicting attachment domain at 13",
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "oldPinCounts": [
+          1436,
+          0
+        ],
+        "minSpanMm": null,
+        "maxGradientPerMm": null,
+        "fixedOppositeEdges": null,
+        "fieldMethod": "regional-axis-1",
+        "productAccepted": false,
+        "neckMapping": "unchanged legacy mapping, not per-vertebra validated"
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "side90",
+      "side": "left",
+      "baseline": {
+        "edge": [
+          0.1708848645896376,
+          12.592315075763489
+        ],
+        "area": [
+          0.06650542661998467,
+          112.04429970517631
+        ],
+        "attachmentMm": 0,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            260,
+            261
+          ],
+          "restLengthMm": 0.46554734406140996,
+          "ratio": 12.592315075763489,
+          "stageLengthsMm": {
+            "rest": 0.46554734406140996,
+            "base": 0.4538418341959204,
+            "noContact": 5.862317846093595,
+            "final": 5.862317846093595
+          }
+        },
+        "worstArea": {
+          "triangle": 503,
+          "vertices": [
+            285,
+            220,
+            286
+          ],
+          "restAreaMm2": 0.07264799227305675,
+          "ratio": 112.04429970517631,
+          "stageAreasMm2": {
+            "rest": 0.07264799227305675,
+            "base": 0.050954265571780885,
+            "noContact": 8.139796870839803,
+            "final": 8.139796870839803
+          }
+        },
+        "vertices": [
+          {
+            "i": 260,
+            "weight": 0.8928127884864807,
+            "lane": 0.6071121096611023,
+            "materialT": 0.9172171950340271,
+            "restWidthMm": 14.082264473964095,
+            "restOffsetMm": 7.8804713460419515
+          },
+          {
+            "i": 261,
+            "weight": 0.8956930637359619,
+            "lane": 0.5935672521591187,
+            "materialT": 0.9204171299934387,
+            "restWidthMm": 13.284300031717784,
+            "restOffsetMm": 7.669670216584713
+          },
+          {
+            "i": 285,
+            "weight": 0.9218144416809082,
+            "lane": 0.8600453734397888,
+            "materialT": 0.9398927092552185,
+            "restWidthMm": 13.636133591506054,
+            "restOffsetMm": 12.511408633134847
+          },
+          {
+            "i": 220,
+            "weight": 0.9216960668563843,
+            "lane": 0.8431374430656433,
+            "materialT": 0.9463250637054443,
+            "restWidthMm": 13.053941608831302,
+            "restOffsetMm": 12.482969184372699
+          },
+          {
+            "i": 286,
+            "weight": 0.920853316783905,
+            "lane": 0.8783071041107178,
+            "materialT": 0.9292641878128052,
+            "restWidthMm": 13.642034853437101,
+            "restOffsetMm": 12.496033793059915
+          }
+        ]
+      },
+      "candidate": {
+        "edge": [
+          0.05130431358039193,
+          11.240641808113951
+        ],
+        "area": [
+          0.0444772791763774,
+          88.66293235045583
+        ],
+        "attachmentMm": 0.000011389705604418853,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            5232,
+            5234
+          ],
+          "restLengthMm": 0.41669383001218907,
+          "ratio": 11.240641808113951,
+          "stageLengthsMm": {
+            "rest": 0.41669383001218907,
+            "base": 0.4012090788879553,
+            "noContact": 4.683915463917058,
+            "final": 4.683915463917058
+          }
+        },
+        "worstArea": {
+          "triangle": 11569,
+          "vertices": [
+            5659,
+            5666,
+            5667
+          ],
+          "restAreaMm2": 0.005839445164801577,
+          "ratio": 88.66293235045583,
+          "stageAreasMm2": {
+            "rest": 0.005839445164801577,
+            "base": 0.018348332526542086,
+            "noContact": 0.5177432076248155,
+            "final": 0.5177432076248155
+          }
+        },
+        "vertices": [
+          {
+            "i": 5232,
+            "weight": 0.06723831593990326,
+            "lane": 4.510152339935303,
+            "materialT": 0.1031375601887703,
+            "restWidthMm": 21.472257696773188,
+            "restOffsetMm": 7.922407295004548
+          },
+          {
+            "i": 5234,
+            "weight": 0.06711412966251373,
+            "lane": 4.512418270111084,
+            "materialT": 0.10251560807228088,
+            "restWidthMm": 20.570844479484798,
+            "restOffsetMm": 8.006665162630327
+          },
+          {
+            "i": 5659,
+            "weight": 0.06629423797130585,
+            "lane": 4.1286187171936035,
+            "materialT": 0.1116776168346405,
+            "restWidthMm": 21.247101763479982,
+            "restOffsetMm": 4.56194845633182
+          },
+          {
+            "i": 5666,
+            "weight": 0.06402677297592163,
+            "lane": 4.134268283843994,
+            "materialT": 0.10475096851587296,
+            "restWidthMm": 23.235197992984773,
+            "restOffsetMm": 4.221033948273601
+          },
+          {
+            "i": 5667,
+            "weight": 0.06200253963470459,
+            "lane": 4.1383442878723145,
+            "materialT": 0.09925933182239532,
+            "restWidthMm": 21.71155030325517,
+            "restOffsetMm": 4.009275017705207
+          }
+        ]
+      },
+      "binding": {
+        "method": "source-triangle-distance-ratio",
+        "geodesicRejected": "Error: Disconnected or conflicting attachment domain at 13",
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "oldPinCounts": [
+          1436,
+          0
+        ],
+        "minSpanMm": null,
+        "maxGradientPerMm": null,
+        "fixedOppositeEdges": null,
+        "fieldMethod": "regional-axis-1",
+        "productAccepted": false,
+        "neckMapping": "unchanged legacy mapping, not per-vertebra validated"
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "high120",
+      "side": "right",
+      "baseline": {
+        "edge": [
+          0.1822626555056274,
+          15.668973992587766
+        ],
+        "area": [
+          0.05929014450096868,
+          640.243022620112
+        ],
+        "attachmentMm": 0,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            137,
+            172
+          ],
+          "restLengthMm": 0.7659065909093248,
+          "ratio": 15.668973992587766,
+          "stageLengthsMm": {
+            "rest": 0.7659065909093248,
+            "base": 0.722638886447817,
+            "noContact": 12.000972572859895,
+            "final": 12.000972572859895
+          }
+        },
+        "worstArea": {
+          "triangle": 322,
+          "vertices": [
+            135,
+            137,
+            172
+          ],
+          "restAreaMm2": 0.060996439193037245,
+          "ratio": 640.243022620112,
+          "stageAreasMm2": {
+            "rest": 0.060996439193037245,
+            "base": 0.0550763226076407,
+            "noContact": 39.05257145919098,
+            "final": 39.05257145919098
+          }
+        },
+        "vertices": [
+          {
+            "i": 137,
+            "weight": 0.8969532251358032,
+            "lane": 0.8353388905525208,
+            "materialT": 0.9616366624832153,
+            "restWidthMm": 10.671968962458042,
+            "restOffsetMm": 11.9002047174373
+          },
+          {
+            "i": 172,
+            "weight": 0.8946862816810608,
+            "lane": 0.8494417667388916,
+            "materialT": 0.9537171721458435,
+            "restWidthMm": 12.223322900387162,
+            "restOffsetMm": 11.448471684959225
+          },
+          {
+            "i": 135,
+            "weight": 0.8978531956672668,
+            "lane": 0.8206609487533569,
+            "materialT": 0.964314877986908,
+            "restWidthMm": 9.808709180270903,
+            "restOffsetMm": 12.17664838383188
+          }
+        ]
+      },
+      "candidate": {
+        "edge": [
+          0.053450784913294816,
+          8.791940433088357
+        ],
+        "area": [
+          0.03395197522017879,
+          44.32684539317225
+        ],
+        "attachmentMm": 0.000011574797553549633,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            5240,
+            5234
+          ],
+          "restLengthMm": 0.5820040521498526,
+          "ratio": 8.791940433088357,
+          "stageLengthsMm": {
+            "rest": 0.5820040521498526,
+            "base": 0.6226612319318893,
+            "noContact": 5.116931897221755,
+            "final": 5.116931897221755
+          }
+        },
+        "worstArea": {
+          "triangle": 11569,
+          "vertices": [
+            5659,
+            5666,
+            5667
+          ],
+          "restAreaMm2": 0.005839445164801577,
+          "ratio": 44.32684539317225,
+          "stageAreasMm2": {
+            "rest": 0.005839445164801577,
+            "base": 0.02015564658589678,
+            "noContact": 0.2588421830830297,
+            "final": 0.2588421830830297
+          }
+        },
+        "vertices": [
+          {
+            "i": 5240,
+            "weight": 0.06614300608634949,
+            "lane": 4.531822204589844,
+            "materialT": 0.10035309940576553,
+            "restWidthMm": 17.092346607632415,
+            "restOffsetMm": 8.072996098974714
+          },
+          {
+            "i": 5234,
+            "weight": 0.06711412966251373,
+            "lane": 4.512418270111084,
+            "materialT": 0.10251560807228088,
+            "restWidthMm": 20.570844479484798,
+            "restOffsetMm": 8.006665162630327
+          },
+          {
+            "i": 5659,
+            "weight": 0.06629423797130585,
+            "lane": 4.1286187171936035,
+            "materialT": 0.1116776168346405,
+            "restWidthMm": 21.247101763479982,
+            "restOffsetMm": 4.56194845633182
+          },
+          {
+            "i": 5666,
+            "weight": 0.06402677297592163,
+            "lane": 4.134268283843994,
+            "materialT": 0.10475096851587296,
+            "restWidthMm": 23.235197992984773,
+            "restOffsetMm": 4.221033948273601
+          },
+          {
+            "i": 5667,
+            "weight": 0.06200253963470459,
+            "lane": 4.1383442878723145,
+            "materialT": 0.09925933182239532,
+            "restWidthMm": 21.71155030325517,
+            "restOffsetMm": 4.009275017705207
+          }
+        ]
+      },
+      "binding": {
+        "method": "source-triangle-distance-ratio",
+        "geodesicRejected": "Error: Disconnected or conflicting attachment domain at 13",
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "oldPinCounts": [
+          1436,
+          0
+        ],
+        "minSpanMm": null,
+        "maxGradientPerMm": null,
+        "fixedOppositeEdges": null,
+        "fieldMethod": "regional-axis-1",
+        "productAccepted": false,
+        "neckMapping": "unchanged legacy mapping, not per-vertebra validated"
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "high120",
+      "side": "left",
+      "baseline": {
+        "edge": [
+          0.055172868876181655,
+          21.580453247385595
+        ],
+        "area": [
+          0.01350889216644547,
+          849.700111681863
+        ],
+        "attachmentMm": 0,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            35,
+            33
+          ],
+          "restLengthMm": 0.5829262547652424,
+          "ratio": 21.580453247385595,
+          "stageLengthsMm": {
+            "rest": 0.5829262547652424,
+            "base": 0.5706852987102459,
+            "noContact": 12.5797978134802,
+            "final": 12.5797978134802
+          }
+        },
+        "worstArea": {
+          "triangle": 138,
+          "vertices": [
+            77,
+            46,
+            76
+          ],
+          "restAreaMm2": 0.07047597254011635,
+          "ratio": 849.700111681863,
+          "stageAreasMm2": {
+            "rest": 0.07047597254011635,
+            "base": 0.06323964103412828,
+            "noContact": 59.88340863876935,
+            "final": 59.88340863876935
+          }
+        },
+        "vertices": [
+          {
+            "i": 35,
+            "weight": 0.907712996006012,
+            "lane": 0.8142349720001221,
+            "materialT": 0.9813232421875,
+            "restWidthMm": 6.522736101446605,
+            "restOffsetMm": 16.68813738799808
+          },
+          {
+            "i": 33,
+            "weight": 0.9080771803855896,
+            "lane": 0.8016701340675354,
+            "materialT": 0.9837048649787903,
+            "restWidthMm": 5.735500438567284,
+            "restOffsetMm": 17.082528857191196
+          },
+          {
+            "i": 77,
+            "weight": 0.9038875699043274,
+            "lane": 0.8268632292747498,
+            "materialT": 0.9740605354309082,
+            "restWidthMm": 8.18589012514865,
+            "restOffsetMm": 14.63530048023179
+          },
+          {
+            "i": 46,
+            "weight": 0.9053471088409424,
+            "lane": 0.7943824529647827,
+            "materialT": 0.9796329140663147,
+            "restWidthMm": 6.189246223139615,
+            "restOffsetMm": 15.815246511105524
+          },
+          {
+            "i": 76,
+            "weight": 0.9046177268028259,
+            "lane": 0.8170425295829773,
+            "materialT": 0.9754499793052673,
+            "restWidthMm": 7.638211349749445,
+            "restOffsetMm": 15.096773576544313
+          }
+        ]
+      },
+      "candidate": {
+        "edge": [
+          0.04489456498598909,
+          8.218447317341134
+        ],
+        "area": [
+          0.0065550062437021205,
+          36.24780605884168
+        ],
+        "attachmentMm": 0.000010987333483003163,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            5690,
+            5691
+          ],
+          "restLengthMm": 0.1465378397130395,
+          "ratio": 8.218447317341134,
+          "stageLengthsMm": {
+            "rest": 0.1465378397130395,
+            "base": 0.1575250061506259,
+            "noContact": 1.204287698787205,
+            "final": 1.204287698787205
+          }
+        },
+        "worstArea": {
+          "triangle": 9787,
+          "vertices": [
+            4804,
+            4802,
+            4762
+          ],
+          "restAreaMm2": 0.13330185136231182,
+          "ratio": 36.24780605884168,
+          "stageAreasMm2": {
+            "rest": 0.13330185136231182,
+            "base": 0.14459010274583903,
+            "noContact": 4.831877442733769,
+            "final": 4.831877442733769
+          }
+        },
+        "vertices": [
+          {
+            "i": 5690,
+            "weight": 0.06659766286611557,
+            "lane": 4.5086989402771,
+            "materialT": 0.10014694929122925,
+            "restWidthMm": 17.305969524540007,
+            "restOffsetMm": 7.0921252084689534
+          },
+          {
+            "i": 5691,
+            "weight": 0.06627572327852249,
+            "lane": 4.509881496429443,
+            "materialT": 0.09941383451223373,
+            "restWidthMm": 16.44759992625521,
+            "restOffsetMm": 7.022370664739397
+          },
+          {
+            "i": 4804,
+            "weight": 0.06312499940395355,
+            "lane": 4.53385591506958,
+            "materialT": 0.09567787498235703,
+            "restWidthMm": 13.295531752454641,
+            "restOffsetMm": 7.7873700103060814
+          },
+          {
+            "i": 4802,
+            "weight": 0.06733810156583786,
+            "lane": 4.476724624633789,
+            "materialT": 0.10564599931240082,
+            "restWidthMm": 22.551105229940195,
+            "restOffsetMm": 7.7266893221294755
+          },
+          {
+            "i": 4762,
+            "weight": 0.05861290171742439,
+            "lane": 4.600220680236816,
+            "materialT": 0.08900004625320435,
+            "restWidthMm": 11.30040054664633,
+            "restOffsetMm": 7.858996235644944
+          }
+        ]
+      },
+      "binding": {
+        "method": "source-triangle-distance-ratio",
+        "geodesicRejected": "Error: Disconnected or conflicting attachment domain at 13",
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "oldPinCounts": [
+          1436,
+          0
+        ],
+        "minSpanMm": null,
+        "maxGradientPerMm": null,
+        "fixedOppositeEdges": null,
+        "fieldMethod": "regional-axis-1",
+        "productAccepted": false,
+        "neckMapping": "unchanged legacy mapping, not per-vertebra validated"
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "recording180",
+      "side": "right",
+      "baseline": {
+        "edge": [
+          0.10068306761888879,
+          10.800648701426143
+        ],
+        "area": [
+          0.06714979092158822,
+          86.57267521607388
+        ],
+        "attachmentMm": 0.0000014867356781501153,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            260,
+            261
+          ],
+          "restLengthMm": 0.46554734406140996,
+          "ratio": 10.800648701426143,
+          "stageLengthsMm": {
+            "rest": 0.46554734406140996,
+            "base": 0.44092209263183646,
+            "noContact": 5.028210953517455,
+            "final": 5.028210953517455
+          }
+        },
+        "worstArea": {
+          "triangle": 322,
+          "vertices": [
+            135,
+            137,
+            172
+          ],
+          "restAreaMm2": 0.060996439193037245,
+          "ratio": 86.57267521607388,
+          "stageAreasMm2": {
+            "rest": 0.060996439193037245,
+            "base": 0.053994004168967734,
+            "noContact": 5.280630151290839,
+            "final": 5.280630151290839
+          }
+        },
+        "vertices": [
+          {
+            "i": 260,
+            "weight": 0.8928127884864807,
+            "lane": 0.6071121096611023,
+            "materialT": 0.9172171950340271,
+            "restWidthMm": 14.082264473964095,
+            "restOffsetMm": 7.8804713460419515
+          },
+          {
+            "i": 261,
+            "weight": 0.8956930637359619,
+            "lane": 0.5935672521591187,
+            "materialT": 0.9204171299934387,
+            "restWidthMm": 13.284300031717784,
+            "restOffsetMm": 7.669670216584713
+          },
+          {
+            "i": 135,
+            "weight": 0.8978531956672668,
+            "lane": 0.8206609487533569,
+            "materialT": 0.964314877986908,
+            "restWidthMm": 9.808709180270903,
+            "restOffsetMm": 12.17664838383188
+          },
+          {
+            "i": 137,
+            "weight": 0.8969532251358032,
+            "lane": 0.8353388905525208,
+            "materialT": 0.9616366624832153,
+            "restWidthMm": 10.671968962458042,
+            "restOffsetMm": 11.9002047174373
+          },
+          {
+            "i": 172,
+            "weight": 0.8946862816810608,
+            "lane": 0.8494417667388916,
+            "materialT": 0.9537171721458435,
+            "restWidthMm": 12.223322900387162,
+            "restOffsetMm": 11.448471684959225
+          }
+        ]
+      },
+      "candidate": {
+        "edge": [
+          0.06801682117168659,
+          9.647256905281994
+        ],
+        "area": [
+          0.025294913449062765,
+          60.62664092289025
+        ],
+        "attachmentMm": 0.000011752829471005531,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            5128,
+            5177
+          ],
+          "restLengthMm": 0.4974462380681609,
+          "ratio": 9.647256905281994,
+          "stageLengthsMm": {
+            "rest": 0.4974462380681609,
+            "base": 0.9976704462757335,
+            "noContact": 4.798999946552101,
+            "final": 4.798999946552101
+          }
+        },
+        "worstArea": {
+          "triangle": 10654,
+          "vertices": [
+            5240,
+            5235,
+            5234
+          ],
+          "restAreaMm2": 0.17015099439378212,
+          "ratio": 60.62664092289025,
+          "stageAreasMm2": {
+            "rest": 0.17015099439378212,
+            "base": 0.24338780470903118,
+            "noContact": 10.315650689173587,
+            "final": 10.315650689173587
+          }
+        },
+        "vertices": [
+          {
+            "i": 5128,
+            "weight": 0.06403566151857376,
+            "lane": 4.503001689910889,
+            "materialT": 0.10154805332422256,
+            "restWidthMm": 19.286180841876924,
+            "restOffsetMm": 6.775665891914494
+          },
+          {
+            "i": 5177,
+            "weight": 0.06649075448513031,
+            "lane": 4.487129211425781,
+            "materialT": 0.10708855092525482,
+            "restWidthMm": 20.865902109115893,
+            "restOffsetMm": 6.695437245589398
+          },
+          {
+            "i": 5240,
+            "weight": 0.06614300608634949,
+            "lane": 4.531822204589844,
+            "materialT": 0.10035309940576553,
+            "restWidthMm": 17.092346607632415,
+            "restOffsetMm": 8.072996098974714
+          },
+          {
+            "i": 5235,
+            "weight": 0.06765572726726532,
+            "lane": 4.4994611740112305,
+            "materialT": 0.1037897914648056,
+            "restWidthMm": 22.26106139449324,
+            "restOffsetMm": 7.64949641344788
+          },
+          {
+            "i": 5234,
+            "weight": 0.06711412966251373,
+            "lane": 4.512418270111084,
+            "materialT": 0.10251560807228088,
+            "restWidthMm": 20.570844479484798,
+            "restOffsetMm": 8.006665162630327
+          }
+        ]
+      },
+      "binding": {
+        "method": "source-triangle-distance-ratio",
+        "geodesicRejected": "Error: Disconnected or conflicting attachment domain at 13",
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "oldPinCounts": [
+          1436,
+          0
+        ],
+        "minSpanMm": null,
+        "maxGradientPerMm": null,
+        "fixedOppositeEdges": null,
+        "fieldMethod": "regional-axis-1",
+        "productAccepted": false,
+        "neckMapping": "unchanged legacy mapping, not per-vertebra validated"
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "recording180",
+      "side": "left",
+      "baseline": {
+        "edge": [
+          0.09542016944628536,
+          54.33737247380217
+        ],
+        "area": [
+          0.061097037392788246,
+          918.6571497882799
+        ],
+        "attachmentMm": 0.0000018612659796515615,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            1,
+            3
+          ],
+          "restLengthMm": 0.7334775480895427,
+          "ratio": 54.33737247380217,
+          "stageLengthsMm": {
+            "rest": 0.7334775480895427,
+            "base": 0.7329325199036831,
+            "noContact": 39.85524895389228,
+            "final": 39.85524895389228
+          }
+        },
+        "worstArea": {
+          "triangle": 333,
+          "vertices": [
+            176,
+            178,
+            177
+          ],
+          "restAreaMm2": 0.059451386930555426,
+          "ratio": 918.6571497882799,
+          "stageAreasMm2": {
+            "rest": 0.059451386930555426,
+            "base": 0.0612962301656491,
+            "noContact": 54.61542090207768,
+            "final": 54.61542090207768
+          }
+        },
+        "vertices": [
+          {
+            "i": 1,
+            "weight": 0.9083544015884399,
+            "lane": 0.7146492600440979,
+            "materialT": 0.9888162016868591,
+            "restWidthMm": 2.738295387168528,
+            "restOffsetMm": 18.231058140652785
+          },
+          {
+            "i": 3,
+            "weight": 0.9086281061172485,
+            "lane": 0.6951472759246826,
+            "materialT": 0.9884654879570007,
+            "restWidthMm": 2.4453121591797946,
+            "restOffsetMm": 17.905910265577663
+          },
+          {
+            "i": 176,
+            "weight": 0.9110670685768127,
+            "lane": 0.6502780914306641,
+            "materialT": 0.9656072854995728,
+            "restWidthMm": 4.333458126467482,
+            "restOffsetMm": 10.82513308295967
+          },
+          {
+            "i": 178,
+            "weight": 0.9096485376358032,
+            "lane": 0.6650114059448242,
+            "materialT": 0.9655138850212097,
+            "restWidthMm": 4.783783135198695,
+            "restOffsetMm": 11.017829374685624
+          },
+          {
+            "i": 177,
+            "weight": 0.9060088992118835,
+            "lane": 0.6985324621200562,
+            "materialT": 0.9606145024299622,
+            "restWidthMm": 6.794171941536404,
+            "restOffsetMm": 11.255225705155981
+          }
+        ]
+      },
+      "candidate": {
+        "edge": [
+          0.14719117064554832,
+          5.964638976491234
+        ],
+        "area": [
+          0.04653745992006307,
+          36.808612226376695
+        ],
+        "attachmentMm": 0.000011124344297786847,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            5128,
+            5177
+          ],
+          "restLengthMm": 0.4974462380681609,
+          "ratio": 5.964638976491234,
+          "stageLengthsMm": {
+            "rest": 0.4974462380681609,
+            "base": 0.6172577711542637,
+            "noContact": 2.967091315095264,
+            "final": 2.967091315095264
+          }
+        },
+        "worstArea": {
+          "triangle": 12953,
+          "vertices": [
+            6232,
+            6235,
+            6230
+          ],
+          "restAreaMm2": 0.035383144706025826,
+          "ratio": 36.808612226376695,
+          "stageAreasMm2": {
+            "rest": 0.035383144706025826,
+            "base": 1.0611000259107093,
+            "noContact": 1.302399709871001,
+            "final": 1.302399709871001
+          }
+        },
+        "vertices": [
+          {
+            "i": 5128,
+            "weight": 0.06403566151857376,
+            "lane": 4.503001689910889,
+            "materialT": 0.10154805332422256,
+            "restWidthMm": 19.286180841876924,
+            "restOffsetMm": 6.775665891914494
+          },
+          {
+            "i": 5177,
+            "weight": 0.06649075448513031,
+            "lane": 4.487129211425781,
+            "materialT": 0.10708855092525482,
+            "restWidthMm": 20.865902109115893,
+            "restOffsetMm": 6.695437245589398
+          },
+          {
+            "i": 6232,
+            "weight": 0,
+            "lane": 4.3137664794921875,
+            "materialT": 0,
+            "restWidthMm": 9.952845699826517,
+            "restOffsetMm": 10.912574418926525
+          },
+          {
+            "i": 6235,
+            "weight": 0,
+            "lane": 4.338868141174316,
+            "materialT": 0,
+            "restWidthMm": 9.988701816550483,
+            "restOffsetMm": 11.827499486843761
+          },
+          {
+            "i": 6230,
+            "weight": 0.011272299103438854,
+            "lane": 4.293148040771484,
+            "materialT": 0.013727478682994843,
+            "restWidthMm": 9.950416963330921,
+            "restOffsetMm": 9.59485391736262
+          }
+        ]
+      },
+      "binding": {
+        "method": "source-triangle-distance-ratio",
+        "geodesicRejected": "Error: Disconnected or conflicting attachment domain at 13",
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "oldPinCounts": [
+          1436,
+          0
+        ],
+        "minSpanMm": null,
+        "maxGradientPerMm": null,
+        "fixedOppositeEdges": null,
+        "fieldMethod": "regional-axis-1",
+        "productAccepted": false,
+        "neckMapping": "unchanged legacy mapping, not per-vertebra validated"
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "asymmetric",
+      "side": "right",
+      "baseline": {
+        "edge": [
+          0.060049543603422975,
+          80.96876951568393
+        ],
+        "area": [
+          0.04354673296200156,
+          3417.618442905533
+        ],
+        "attachmentMm": 0.0000018612659796515615,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            47,
+            48
+          ],
+          "restLengthMm": 0.35872205607985275,
+          "ratio": 80.96876951568393,
+          "stageLengthsMm": {
+            "rest": 0.35872205607985275,
+            "base": 0.35642472772661704,
+            "noContact": 29.045286640098414,
+            "final": 29.045286640098414
+          }
+        },
+        "worstArea": {
+          "triangle": 170,
+          "vertices": [
+            66,
+            56,
+            63
+          ],
+          "restAreaMm2": 0.07499696584332452,
+          "ratio": 3417.618442905533,
+          "stageAreasMm2": {
+            "rest": 0.07499696584332452,
+            "base": 0.07340869943287258,
+            "noContact": 256.31099545034465,
+            "final": 256.31099545034465
+          }
+        },
+        "vertices": [
+          {
+            "i": 47,
+            "weight": 0.9051885604858398,
+            "lane": 0.7565977573394775,
+            "materialT": 0.9820575714111328,
+            "restWidthMm": 4.602954643740799,
+            "restOffsetMm": 15.787215615605438
+          },
+          {
+            "i": 48,
+            "weight": 0.90449059009552,
+            "lane": 0.7682631015777588,
+            "materialT": 0.9802698493003845,
+            "restWidthMm": 5.253116182731984,
+            "restOffsetMm": 15.733043019132914
+          },
+          {
+            "i": 66,
+            "weight": 0.9139889478683472,
+            "lane": 0.7554788589477539,
+            "materialT": 0.9804948568344116,
+            "restWidthMm": 4.815724220690576,
+            "restOffsetMm": 14.784450247410936
+          },
+          {
+            "i": 56,
+            "weight": 0.9139252305030823,
+            "lane": 0.774027943611145,
+            "materialT": 0.9788351058959961,
+            "restWidthMm": 5.6775965761010365,
+            "restOffsetMm": 14.962478515320532
+          },
+          {
+            "i": 63,
+            "weight": 0.9137979745864868,
+            "lane": 0.7388678193092346,
+            "materialT": 0.9813779592514038,
+            "restWidthMm": 4.224396234813022,
+            "restOffsetMm": 14.732807469227016
+          }
+        ]
+      },
+      "candidate": {
+        "edge": [
+          0.05400063639689242,
+          6.756039777778846
+        ],
+        "area": [
+          0.03365253514876638,
+          27.81020103530679
+        ],
+        "attachmentMm": 0.000011574797553549633,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            5128,
+            5177
+          ],
+          "restLengthMm": 0.4974462380681609,
+          "ratio": 6.756039777778846,
+          "stageLengthsMm": {
+            "rest": 0.4974462380681609,
+            "base": 0.5659857052893579,
+            "noContact": 3.360773386978326,
+            "final": 3.360773386978326
+          }
+        },
+        "worstArea": {
+          "triangle": 12953,
+          "vertices": [
+            6232,
+            6235,
+            6230
+          ],
+          "restAreaMm2": 0.035383144706025826,
+          "ratio": 27.81020103530679,
+          "stageAreasMm2": {
+            "rest": 0.035383144706025826,
+            "base": 0.7879145943854847,
+            "noContact": 0.9840174157816535,
+            "final": 0.9840174157816535
+          }
+        },
+        "vertices": [
+          {
+            "i": 5128,
+            "weight": 0.06403566151857376,
+            "lane": 4.503001689910889,
+            "materialT": 0.10154805332422256,
+            "restWidthMm": 19.286180841876924,
+            "restOffsetMm": 6.775665891914494
+          },
+          {
+            "i": 5177,
+            "weight": 0.06649075448513031,
+            "lane": 4.487129211425781,
+            "materialT": 0.10708855092525482,
+            "restWidthMm": 20.865902109115893,
+            "restOffsetMm": 6.695437245589398
+          },
+          {
+            "i": 6232,
+            "weight": 0,
+            "lane": 4.3137664794921875,
+            "materialT": 0,
+            "restWidthMm": 9.952845699826517,
+            "restOffsetMm": 10.912574418926525
+          },
+          {
+            "i": 6235,
+            "weight": 0,
+            "lane": 4.338868141174316,
+            "materialT": 0,
+            "restWidthMm": 9.988701816550483,
+            "restOffsetMm": 11.827499486843761
+          },
+          {
+            "i": 6230,
+            "weight": 0.011272299103438854,
+            "lane": 4.293148040771484,
+            "materialT": 0.013727478682994843,
+            "restWidthMm": 9.950416963330921,
+            "restOffsetMm": 9.59485391736262
+          }
+        ]
+      },
+      "binding": {
+        "method": "source-triangle-distance-ratio",
+        "geodesicRejected": "Error: Disconnected or conflicting attachment domain at 13",
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "oldPinCounts": [
+          1436,
+          0
+        ],
+        "minSpanMm": null,
+        "maxGradientPerMm": null,
+        "fixedOppositeEdges": null,
+        "fieldMethod": "regional-axis-1",
+        "productAccepted": false,
+        "neckMapping": "unchanged legacy mapping, not per-vertebra validated"
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "asymmetric",
+      "side": "left",
+      "baseline": {
+        "edge": [
+          0.10694443687002093,
+          12.717682037411045
+        ],
+        "area": [
+          0.03762019264135564,
+          381.2725733424152
+        ],
+        "attachmentMm": 0.0000014867356781501153,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            58,
+            57
+          ],
+          "restLengthMm": 0.6154891128373534,
+          "ratio": 12.717682037411045,
+          "stageLengthsMm": {
+            "rest": 0.6154891128373534,
+            "base": 0.6239860788290771,
+            "noContact": 7.827585972684239,
+            "final": 7.827585972684239
+          }
+        },
+        "worstArea": {
+          "triangle": 86,
+          "vertices": [
+            60,
+            59,
+            61
+          ],
+          "restAreaMm2": 0.03834650424533193,
+          "ratio": 381.2725733424152,
+          "stageAreasMm2": {
+            "rest": 0.03834650424533193,
+            "base": 0.037668985187294356,
+            "noContact": 14.620441464204706,
+            "final": 14.620441464204706
+          }
+        },
+        "vertices": [
+          {
+            "i": 58,
+            "weight": 0.9126099348068237,
+            "lane": 0.8250135779380798,
+            "materialT": 0.9723942279815674,
+            "restWidthMm": 8.433701289779947,
+            "restOffsetMm": 15.497757457734222
+          },
+          {
+            "i": 57,
+            "weight": 0.9105022549629211,
+            "lane": 0.8455034494400024,
+            "materialT": 0.967382550239563,
+            "restWidthMm": 9.909513400636403,
+            "restOffsetMm": 15.646440644294145
+          },
+          {
+            "i": 60,
+            "weight": 0.9076901078224182,
+            "lane": 0.870067834854126,
+            "materialT": 0.9695178270339966,
+            "restWidthMm": 10.15133414823875,
+            "restOffsetMm": 15.848275004756132
+          },
+          {
+            "i": 59,
+            "weight": 0.9081023335456848,
+            "lane": 0.8519294261932373,
+            "materialT": 0.9745844006538391,
+            "restWidthMm": 8.81332650524926,
+            "restOffsetMm": 16.07770282909124
+          },
+          {
+            "i": 61,
+            "weight": 0.9073030948638916,
+            "lane": 0.8785319924354553,
+            "materialT": 0.9656705260276794,
+            "restWidthMm": 10.964638477019703,
+            "restOffsetMm": 15.66348411830062
+          }
+        ]
+      },
+      "candidate": {
+        "edge": [
+          0.12696957797907296,
+          7.386068188359132
+        ],
+        "area": [
+          0.030221221492256933,
+          90.56081144834296
+        ],
+        "attachmentMm": 0.000010927555369485928,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            5232,
+            5234
+          ],
+          "restLengthMm": 0.41669383001218907,
+          "ratio": 7.386068188359132,
+          "stageLengthsMm": {
+            "rest": 0.41669383001218907,
+            "base": 0.34903619402261177,
+            "noContact": 3.077732191691676,
+            "final": 3.077732191691676
+          }
+        },
+        "worstArea": {
+          "triangle": 11569,
+          "vertices": [
+            5659,
+            5666,
+            5667
+          ],
+          "restAreaMm2": 0.005839445164801577,
+          "ratio": 90.56081144834296,
+          "stageAreasMm2": {
+            "rest": 0.005839445164801577,
+            "base": 0.0165875951802173,
+            "noContact": 0.5288200069509796,
+            "final": 0.5288200069509796
+          }
+        },
+        "vertices": [
+          {
+            "i": 5232,
+            "weight": 0.06723831593990326,
+            "lane": 4.510152339935303,
+            "materialT": 0.1031375601887703,
+            "restWidthMm": 21.472257696773188,
+            "restOffsetMm": 7.922407295004548
+          },
+          {
+            "i": 5234,
+            "weight": 0.06711412966251373,
+            "lane": 4.512418270111084,
+            "materialT": 0.10251560807228088,
+            "restWidthMm": 20.570844479484798,
+            "restOffsetMm": 8.006665162630327
+          },
+          {
+            "i": 5659,
+            "weight": 0.06629423797130585,
+            "lane": 4.1286187171936035,
+            "materialT": 0.1116776168346405,
+            "restWidthMm": 21.247101763479982,
+            "restOffsetMm": 4.56194845633182
+          },
+          {
+            "i": 5666,
+            "weight": 0.06402677297592163,
+            "lane": 4.134268283843994,
+            "materialT": 0.10475096851587296,
+            "restWidthMm": 23.235197992984773,
+            "restOffsetMm": 4.221033948273601
+          },
+          {
+            "i": 5667,
+            "weight": 0.06200253963470459,
+            "lane": 4.1383442878723145,
+            "materialT": 0.09925933182239532,
+            "restWidthMm": 21.71155030325517,
+            "restOffsetMm": 4.009275017705207
+          }
+        ]
+      },
+      "binding": {
+        "method": "source-triangle-distance-ratio",
+        "geodesicRejected": "Error: Disconnected or conflicting attachment domain at 13",
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "oldPinCounts": [
+          1436,
+          0
+        ],
+        "minSpanMm": null,
+        "maxGradientPerMm": null,
+        "fixedOppositeEdges": null,
+        "fieldMethod": "regional-axis-1",
+        "productAccepted": false,
+        "neckMapping": "unchanged legacy mapping, not per-vertebra validated"
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "return-neutral",
+      "side": "right",
+      "baseline": {
+        "edge": [
+          1,
+          1
+        ],
+        "area": [
+          1,
+          1
+        ],
+        "attachmentMm": 0,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            1,
+            4
+          ],
+          "restLengthMm": 1.0616328810867601,
+          "ratio": 1,
+          "stageLengthsMm": {
+            "rest": 1.0616328810867601,
+            "base": 1.0616328810867601,
+            "noContact": 1.0616328810867601,
+            "final": 1.0616328810867601
+          }
+        },
+        "worstArea": {
+          "triangle": 0,
+          "vertices": [
+            1,
+            4,
+            2
+          ],
+          "restAreaMm2": 0.4699072342091876,
+          "ratio": 1,
+          "stageAreasMm2": {
+            "rest": 0.4699072342091876,
+            "base": 0.4699072342091876,
+            "noContact": 0.4699072342091893,
+            "final": 0.4699072342091893
+          }
+        },
+        "vertices": [
+          {
+            "i": 1,
+            "weight": 0.9083544015884399,
+            "lane": 0.7146492600440979,
+            "materialT": 0.9888162016868591,
+            "restWidthMm": 2.738295387168528,
+            "restOffsetMm": 18.231058140652785
+          },
+          {
+            "i": 4,
+            "weight": 0.9089632630348206,
+            "lane": 0.6934817433357239,
+            "materialT": 0.9880645871162415,
+            "restWidthMm": 2.4530717717286574,
+            "restOffsetMm": 17.55749210389504
+          },
+          {
+            "i": 2,
+            "weight": 0.9092063307762146,
+            "lane": 0.7148449420928955,
+            "materialT": 0.9877952337265015,
+            "restWidthMm": 2.8476432032612338,
+            "restOffsetMm": 17.424970954875427
+          }
+        ]
+      },
+      "candidate": {
+        "edge": [
+          1,
+          1
+        ],
+        "area": [
+          1,
+          1
+        ],
+        "attachmentMm": 1.0002009230857266e-14,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            1,
+            4
+          ],
+          "restLengthMm": 1.0616328810867601,
+          "ratio": 1,
+          "stageLengthsMm": {
+            "rest": 1.0616328810867601,
+            "base": 1.0616328810867601,
+            "noContact": 1.0616328810867601,
+            "final": 1.0616328810867601
+          }
+        },
+        "worstArea": {
+          "triangle": 0,
+          "vertices": [
+            1,
+            4,
+            2
+          ],
+          "restAreaMm2": 0.4699072342091876,
+          "ratio": 1,
+          "stageAreasMm2": {
+            "rest": 0.4699072342091876,
+            "base": 0.4699072342091876,
+            "noContact": 0.4699072342091876,
+            "final": 0.4699072342091876
+          }
+        },
+        "vertices": [
+          {
+            "i": 1,
+            "weight": 1,
+            "lane": 0.7146491408348083,
+            "materialT": 1,
+            "restWidthMm": 8.15039730488061,
+            "restOffsetMm": 17.40062751676368
+          },
+          {
+            "i": 4,
+            "weight": 1,
+            "lane": 0.6934815645217896,
+            "materialT": 1,
+            "restWidthMm": 8.027868138151215,
+            "restOffsetMm": 16.795216091511904
+          },
+          {
+            "i": 2,
+            "weight": 1,
+            "lane": 0.7148447632789612,
+            "materialT": 1,
+            "restWidthMm": 8.151506167758063,
+            "restOffsetMm": 16.736945019936766
+          }
+        ]
+      },
+      "binding": {
+        "method": "source-triangle-distance-ratio",
+        "geodesicRejected": "Error: Disconnected or conflicting attachment domain at 13",
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "oldPinCounts": [
+          1436,
+          0
+        ],
+        "minSpanMm": null,
+        "maxGradientPerMm": null,
+        "fixedOppositeEdges": null,
+        "fieldMethod": "regional-axis-1",
+        "productAccepted": false,
+        "neckMapping": "unchanged legacy mapping, not per-vertebra validated"
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "return-neutral",
+      "side": "left",
+      "baseline": {
+        "edge": [
+          1,
+          1
+        ],
+        "area": [
+          1,
+          1
+        ],
+        "attachmentMm": 0,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            1,
+            4
+          ],
+          "restLengthMm": 1.0616328810867601,
+          "ratio": 1,
+          "stageLengthsMm": {
+            "rest": 1.0616328810867601,
+            "base": 1.0616328810867601,
+            "noContact": 1.0616328810867601,
+            "final": 1.0616328810867601
+          }
+        },
+        "worstArea": {
+          "triangle": 0,
+          "vertices": [
+            1,
+            4,
+            2
+          ],
+          "restAreaMm2": 0.4699072342091876,
+          "ratio": 1,
+          "stageAreasMm2": {
+            "rest": 0.4699072342091876,
+            "base": 0.4699072342091876,
+            "noContact": 0.4699072342091893,
+            "final": 0.4699072342091893
+          }
+        },
+        "vertices": [
+          {
+            "i": 1,
+            "weight": 0.9083544015884399,
+            "lane": 0.7146492600440979,
+            "materialT": 0.9888162016868591,
+            "restWidthMm": 2.738295387168528,
+            "restOffsetMm": 18.231058140652785
+          },
+          {
+            "i": 4,
+            "weight": 0.9089632630348206,
+            "lane": 0.6934817433357239,
+            "materialT": 0.9880645871162415,
+            "restWidthMm": 2.4530717717286574,
+            "restOffsetMm": 17.55749210389504
+          },
+          {
+            "i": 2,
+            "weight": 0.9092063307762146,
+            "lane": 0.7148449420928955,
+            "materialT": 0.9877952337265015,
+            "restWidthMm": 2.8476432032612338,
+            "restOffsetMm": 17.424970954875427
+          }
+        ]
+      },
+      "candidate": {
+        "edge": [
+          1,
+          1
+        ],
+        "area": [
+          1,
+          1
+        ],
+        "attachmentMm": 1.0002009230857266e-14,
+        "degenerate": 0,
+        "invalidFrames": 0,
+        "worstEdge": {
+          "vertices": [
+            1,
+            4
+          ],
+          "restLengthMm": 1.0616328810867601,
+          "ratio": 1,
+          "stageLengthsMm": {
+            "rest": 1.0616328810867601,
+            "base": 1.0616328810867601,
+            "noContact": 1.0616328810867601,
+            "final": 1.0616328810867601
+          }
+        },
+        "worstArea": {
+          "triangle": 0,
+          "vertices": [
+            1,
+            4,
+            2
+          ],
+          "restAreaMm2": 0.4699072342091876,
+          "ratio": 1,
+          "stageAreasMm2": {
+            "rest": 0.4699072342091876,
+            "base": 0.4699072342091876,
+            "noContact": 0.4699072342091876,
+            "final": 0.4699072342091876
+          }
+        },
+        "vertices": [
+          {
+            "i": 1,
+            "weight": 1,
+            "lane": 0.7146491408348083,
+            "materialT": 1,
+            "restWidthMm": 8.15039730488061,
+            "restOffsetMm": 17.40062751676368
+          },
+          {
+            "i": 4,
+            "weight": 1,
+            "lane": 0.6934815645217896,
+            "materialT": 1,
+            "restWidthMm": 8.027868138151215,
+            "restOffsetMm": 16.795216091511904
+          },
+          {
+            "i": 2,
+            "weight": 1,
+            "lane": 0.7148447632789612,
+            "materialT": 1,
+            "restWidthMm": 8.151506167758063,
+            "restOffsetMm": 16.736945019936766
+          }
+        ]
+      },
+      "binding": {
+        "method": "source-triangle-distance-ratio",
+        "geodesicRejected": "Error: Disconnected or conflicting attachment domain at 13",
+        "radiusMm": 1,
+        "originCount": 101,
+        "insertionCount": 235,
+        "originPerNearestC": [
+          18,
+          16,
+          19,
+          48
+        ],
+        "oldPinCounts": [
+          1436,
+          0
+        ],
+        "minSpanMm": null,
+        "maxGradientPerMm": null,
+        "fixedOppositeEdges": null,
+        "fieldMethod": "regional-axis-1",
+        "productAccepted": false,
+        "neckMapping": "unchanged legacy mapping, not per-vertebra validated"
+      },
+      "productAccepted": false
+    }
+  ],
+  "productAccepted": false,
+  "anatomicalAcceptance": false
+}
