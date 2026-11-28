@@ -102,14 +102,20 @@ window.__qa={
    const run=()=>{
     const f=v73MuscleState(spec,m,side),now=MuscleDeformation.deform(f),report=DeformationAudit.audit(f,now);
     const data=window.__qaLevatorMasks;
-    let registryAudit=null;
+    let registryAudit=null,harmonic=null;
     if(data){
      const reg=LevatorBoundaryRegistry.registry(data);
      const bones=Object.fromEntries(['C1','C2','C3','C4'].map(id=>{const a=v73NeckPose.transforms[id];return [id,side==='left'?{q:[a.q[0],-a.q[1],-a.q[2],a.q[3]],p:v56Reflect(a.p),rest:v56Reflect(a.rest)}:a]}));
      bones.scapula=f.b;
      registryAudit=LevatorBoundaryRegistry.audit(f,data,reg,bones,now);
+     if(window.__qaLevatorHarmonic&&m.common!==B){
+      const prep=window.__qaLevatorHarmonic,h=LevatorHarmonicBoundary.deform(f,prep,bones);
+      const report=DeformationAudit.audit({...f,vertexDiagnostics:()=>({stretch:null})},h);
+      // The old two-bone attachment metric is not authoritative for five bones.
+      harmonic={report:{...report,legacyTwoBoneAttachmentMm:report.attachmentMaxMm,attachmentMaxMm:null},registryAudit:LevatorBoundaryRegistry.audit(f,data,reg,bones,h),diagnostics:prep.diagnostics,productAccepted:false};
+     }
     }
-    return {report,trace:MuscleOutlierTrace.trace(f,report),registryAudit}
+    return {report,trace:MuscleOutlierTrace.trace(f,report),registryAudit,harmonic}
    };
    const baseline=run();
    if(!candidate)return {side,baseline,rejected};
@@ -195,6 +201,12 @@ try {
     await page.addScriptTag({content:readFileSync('scripts/experimental/geodesic-attachment-field.js','utf8')});
     await page.addScriptTag({content:readFileSync('scripts/experimental/trace-muscle-outliers.js','utf8')});
     await page.addScriptTag({content:readFileSync('scripts/experimental/levator-boundary-registry.js','utf8')});
+    if(process.env.QA_LEVATOR_HARMONIC==='1'){
+      assert(levatorMasks,'Harmonic candidate requires audited masks');
+      await page.addScriptTag({content:readFileSync('scripts/experimental/levator-harmonic-boundary.js','utf8')});
+      const diagnostics=await page.evaluate(()=>{window.__qaLevatorHarmonic=LevatorHarmonicBoundary.prepare(window.__qaLevatorMasks);return window.__qaLevatorHarmonic.diagnostics});
+      console.log('LEVATOR_HARMONIC_PREP '+JSON.stringify(diagnostics));
+    }
     await page.evaluate(()=>window.__qa.skipRender(true));
     const results=[];
     for(const [name,r,l,n] of [
@@ -209,6 +221,13 @@ try {
       for(const s of sides){
        const compact=x=>x?{edge:x.report.edgeRatio,area:x.report.areaRatio,attachmentMm:x.report.attachmentMaxMm,registryAudit:x.registryAudit,degenerate:x.report.newDegenerateFaces,invalidFrames:x.report.invalidFrames,worstEdge:x.trace.worstEdge,worstArea:x.trace.worstArea,vertices:x.trace.vertices.map(v=>({i:v.i,weight:v.weight,lane:v.lane,materialT:v.materialT,restWidthMm:v.restWidthMm,restOffsetMm:v.restOffsetMm}))}:null;
        console.log('LEVATOR_TRACE '+JSON.stringify({name,side:s.side,baseline:compact(s.baseline),candidate:compact(s.candidate),binding:s.bindingDiagnostics,rejected:s.rejected,productAccepted:false}));
+       if(process.env.QA_LEVATOR_HARMONIC==='1'){
+        assert(s.candidate?.harmonic,'Missing harmonic comparison');
+        const h=s.candidate.harmonic;
+        assert.equal(h.report.nonfinite,0);
+        assert(Object.values(h.registryAudit.byBone).every(v=>v.maxDeformedErrorMm<.0001),'Exact five-bone boundary failed');
+        console.log('LEVATOR_HARMONIC_CASE '+JSON.stringify({name,side:s.side,edge:h.report.edgeRatio,area:h.report.areaRatio,topology:h.report.topology,degenerate:h.report.newDegenerateFaces,volumeStatus:h.report.volumeStatus,registry:h.registryAudit,productAccepted:false}));
+       }
       }
     }
     assert.deepEqual(errors,[]);
