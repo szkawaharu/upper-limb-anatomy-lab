@@ -10,14 +10,19 @@ import trimesh
 from scipy.spatial.transform import Rotation
 from volumetric_reference import Solid
 from joint_path import follow
+from volumetric_gauss_newton import minimize as minimize_gn
+from volumetric_preconditioner import factor_rest_metric
+from scipy.sparse.linalg import LinearOperator
 
 root=Path('test-results/v076-levator-solid')
-out=Path('test-results/v076-levator-solid-path');out.mkdir(parents=True,exist_ok=True)
-meta=json.loads((root/'tetra/reference-mesh-audit.json').read_text())
+out=Path(os.environ.get('QA_OUTPUT','test-results/v076-levator-solid-path'));out.mkdir(parents=True,exist_ok=True)
+tetra=Path(os.environ.get('QA_LEVATOR_TETRA_DIR',str(root/'tetra')))
+meta=json.loads((tetra/'reference-mesh-audit.json').read_text())
 assert meta['sourceBoundaryExact'] and meta['sourcePrefixMaxError']==0
-shell=np.load(root/'main-shell.npz');mesh=np.load(root/'tetra/v58Levator-tetrahedra.npz')
+shell=np.load(root/'main-shell.npz');mesh=np.load(tetra/'v58Levator-tetrahedra.npz')
 nodes=np.asarray(mesh['nodes']);tets=mesh['tets'];faces=shell['faces']
 assert np.array_equal(nodes[:len(shell['points'])],shell['points'])
+assert meta['sourceSha256']==json.loads(Path('docs/validation/v076/levator-exact-source-solid.json').read_text())['tetrahedralization']['sourceSha256']
 evidence=json.loads(Path('docs/validation/v076/levator-attachment-surfaces.json').read_text())
 cache=Path(os.environ.get('ATLAS_CACHE','/tmp/upper-limb-atlas'));cache.mkdir(parents=True,exist_ok=True)
 url='https://raw.githubusercontent.com/Kevin-Mattheus-Moerman/BodyParts3D/2c83c698788cff57f6317bddcf712e7acfbea7d8/assets/BodyParts3D_data/stl/'
@@ -59,6 +64,15 @@ assert np.max(np.linalg.norm(targets[0]-rest[fixed],axis=1))<1e-7,'Nonidentity n
 solid=Solid(rest,tets,fixed)
 bulk=float(os.environ.get('QA_LEVATOR_BULK','30'))
 iterations=int(os.environ.get('QA_LEVATOR_ITERATIONS','150'))
+solver=os.environ.get('QA_LEVATOR_SOLVER','lbfgs')
+assert solver in ('lbfgs','coupled-gn')
+preconditioner=None;preconditioner_info=None
+if solver=='coupled-gn':
+    start=time.monotonic();factor,preconditioner_info=factor_rest_metric(solid,bulk)
+    n=len(solid.free)*3
+    preconditioner=LinearOperator((n,n),matvec=factor.solve,dtype=float)
+    preconditioner_info['setupSeconds']=time.monotonic()-start
+    print('LEVATOR_SOLID_PRECONDITIONER '+json.dumps(preconditioner_info),flush=True)
 _,_,J=solid.evaluate(rest,bulk);assert np.max(abs(J-1))<1e-9
 rows=[]
 def solve_at(x,previous,index):
@@ -69,7 +83,11 @@ def solve_at(x,previous,index):
     if not np.isfinite(predJ).all() or predJ.min()<=1e-9:
         result={**base,'converged':False,'reason':'nonpositive-predictor','seconds':time.monotonic()-t}
         print('LEVATOR_SOLID_TRIAL '+json.dumps(result),flush=True);return x,result
-    z,info=solid.minimize(initial,bulk=bulk,iterations=iterations,residual_tolerance_mm=.001)
+    if solver=='coupled-gn':
+        z,info=minimize_gn(solid,initial,bulk=bulk,iterations=iterations,residual_tolerance_mm=.001,preconditioner=preconditioner,preconditioner_info=preconditioner_info,cg_iterations=150,cg_rtol=1e-3)
+        info['linearIterationsTotal']=sum(row['cgIterations'] for row in info.pop('rows'))
+    else:
+        z,info=solid.minimize(initial,bulk=bulk,iterations=iterations,residual_tolerance_mm=.001)
     _,_,J=solid.evaluate(z,bulk,False)
     info={**base,**info,'attachmentMaxMm':float(np.linalg.norm(z[fixed]-target,axis=1).max()),'maxAbsLogJ':float(np.max(np.abs(np.log(J)))),'maxVertexStepMm':float(np.linalg.norm(z-x,axis=1).max()),'seconds':time.monotonic()-t}
     assert info['attachmentMaxMm']<1e-9
@@ -79,7 +97,7 @@ def accepted(x,index,records,rejected):
     np.savez_compressed(out/'last-accepted.npz',nodes=x,rest=rest,tets=tets,faces=faces,fixed=fixed,classes=classes,index=index,center=center)
     (out/'path-progress.json').write_text(json.dumps({'index':index,'accepted':records,'rejected':rejected},indent=2)+'\n')
 x,path=follow(rest,0,[8,16,8,0],solve_at,accepted)
-summary={**report,'bulkPenalty':bulk,'requestedElevationsDeg':[0,3,6,3,0],'requestedNeckDeg':[0,3,6,3,0],'path':path,'neutralReturnMaxMm':float(np.linalg.norm(x-rest,axis=1).max()) if path['completed'] else None,'anatomicalAcceptance':False,'physicalVolumeVerified':False,'contactEvaluated':False,'limitations':['principal source shell only','unrefined tetrahedra; all source nodes on boundary','near-surface masks not measured anatomical footprints','normalized passive energy; no active force or bone contact']}
+summary={**report,'solver':solver,'tetraInputSha256':meta['inputSha256'],'bulkPenalty':bulk,'requestedElevationsDeg':[0,3,6,3,0],'requestedNeckDeg':[0,3,6,3,0],'path':path,'neutralReturnMaxMm':float(np.linalg.norm(x-rest,axis=1).max()) if path['completed'] else None,'anatomicalAcceptance':False,'physicalVolumeVerified':False,'contactEvaluated':False,'limitations':['principal source shell only','unrefined tetrahedra; all source nodes on boundary' if report['interiorNodes']==0 else 'interior-refined tetrahedra; source boundary unchanged','near-surface masks not measured anatomical footprints','normalized passive energy; no active force or bone contact']}
 (out/'report.json').write_text(json.dumps(summary,indent=2)+'\n')
 print('LEVATOR_SOLID_PATH '+json.dumps(summary),flush=True)
 # A nonconverged attempt remains a measured failure, never a completed path.
