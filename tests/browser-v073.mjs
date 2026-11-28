@@ -206,7 +206,7 @@ try {
         window.__qa.neck(neck);
         return window.__qa.levatorSolidFrames();
       },{elev,plane,neck});
-      assert.equal(frame.backend,'validated-field');
+      assert.equal(frame.backend,shoulderPreview&&elev>40?'qa-additive-preview':'validated-field');
       frames.push({index:i,elev,plane,neck,...frame});
     }
     assert.deepEqual(errors,[]);
