@@ -1,0 +1,86 @@
+{
+  "runId": 46113984173,
+  "jobId": 140883538875,
+  "headSha": "4341bd3bd87c6bf006408c3506a0bf320f03861c",
+  "control": {
+    "id": "v58Levator",
+    "inputSha256": "102cf693cb6c9db8311c03b8c447cf89ac09c73e4cf4d833061092b5da8968c5",
+    "source": {
+      "atlas": "BodyParts3D",
+      "worldUnitsPerMm": 1,
+      "coordinateSystem": "original atlas mm",
+      "file": "FMA32540.stl"
+    },
+    "sourceSha256": "4f3d8f0d4637815afcb228b1f3b1a8d74a606f5684a6a4ce59a967412d4d2a1c",
+    "tetgenWrapperVersion": "0.8.4",
+    "runtimeDependencyAdded": false,
+    "qualityRequested": false,
+    "minRadiusEdgeRatio": 2,
+    "steinerLimit": 20000,
+    "sourceVertices": 15613,
+    "nodes": 15613,
+    "tets": 55317,
+    "boundaryFaces": 31230,
+    "sourceBoundaryExact": true,
+    "sourcePrefixMaxError": 0,
+    "referenceTetSignCounts": {
+      "positive": 55317,
+      "negative": 0,
+      "zero": 0
+    },
+    "tetVolumeSum": 12319.95098587992,
+    "sourceSurfaceVolume": 12319.950985879832,
+    "relativeVolumeDifference": 7.086999897180658e-15,
+    "conditionNumberQuantiles": [
+      1.3299678235351773,
+      14.589365271482876,
+      90.5585391619454,
+      216.32009028544977,
+      1906.6469426748145
+    ],
+    "unreferencedGeneratedNodes": [],
+    "seconds": 0.8456511497497559
+  },
+  "refined": {
+    "id": "v58Levator",
+    "inputSha256": "102cf693cb6c9db8311c03b8c447cf89ac09c73e4cf4d833061092b5da8968c5",
+    "source": {
+      "atlas": "BodyParts3D",
+      "worldUnitsPerMm": 1,
+      "coordinateSystem": "original atlas mm",
+      "file": "FMA32540.stl"
+    },
+    "sourceSha256": "4f3d8f0d4637815afcb228b1f3b1a8d74a606f5684a6a4ce59a967412d4d2a1c",
+    "tetgenWrapperVersion": "0.8.4",
+    "runtimeDependencyAdded": false,
+    "qualityRequested": true,
+    "minRadiusEdgeRatio": 2,
+    "steinerLimit": 20000,
+    "sourceVertices": 15613,
+    "nodes": 16653,
+    "tets": 59721,
+    "boundaryFaces": 31230,
+    "sourceBoundaryExact": true,
+    "sourcePrefixMaxError": 0,
+    "referenceTetSignCounts": {
+      "positive": 59721,
+      "negative": 0,
+      "zero": 0
+    },
+    "tetVolumeSum": 12319.950985879916,
+    "sourceSurfaceVolume": 12319.950985879832,
+    "relativeVolumeDifference": 6.79170823479813e-15,
+    "conditionNumberQuantiles": [
+      1.202222373925928,
+      9.79219348133889,
+      78.06433383556714,
+      194.73143433988875,
+      1818.2243500053403
+    ],
+    "unreferencedGeneratedNodes": [],
+    "seconds": 2.154843807220459
+  },
+  "interiorNodesAdded": 1040,
+  "conditionImproved": true,
+  "productAccepted": false
+}
