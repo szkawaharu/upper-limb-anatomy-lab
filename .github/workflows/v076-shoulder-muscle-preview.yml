@@ -1,0 +1,68 @@
+name: v0.76 shoulder preview paired muscle regression
+on:
+  push:
+    branches: [redesign/v076-shoulder]
+    paths:
+      - '.github/workflows/v076-shoulder-muscle-preview.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  browser:
+    strategy:
+      fail-fast: false
+      matrix:
+        mode: [control, preview]
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      QA_SHOULDER_MUSCLE_COMPARE: '1'
+      QA_SHOULDER_PREVIEW: ${{ matrix.mode == 'preview' && '1' || '0' }}
+      QA_NUMERIC_ONLY: '1'
+      QA_OUTPUT: test-results/shoulder-muscle-${{ matrix.mode }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/download-artifact@v4
+        if: matrix.mode == 'preview'
+        with:
+          name: shoulder-preview-field
+          path: test-results/v076-blend-preview/
+          run-id: 46082847918
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: |
+          export CHROME_PATH="$(node -e 'console.log(require("playwright").chromium.executablePath())')"
+          node tests/browser-v073.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shoulder-muscle-${{ matrix.mode }}
+          path: test-results/shoulder-muscle-${{ matrix.mode }}/
+  compare:
+    needs: browser
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/download-artifact@v4
+        with:
+          name: shoulder-muscle-control
+          path: test-results/shoulder-muscle-control/
+      - uses: actions/download-artifact@v4
+        with:
+          name: shoulder-muscle-preview
+          path: test-results/shoulder-muscle-preview/
+      - run: node scripts/calibration/compare-shoulder-muscle-preview.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shoulder-muscle-comparison
+          path: test-results/shoulder-muscle-comparison/
