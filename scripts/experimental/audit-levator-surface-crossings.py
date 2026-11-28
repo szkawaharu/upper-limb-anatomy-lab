@@ -7,7 +7,7 @@ import numpy as np
 import trimesh
 from rtree.index import Index
 src=Path(os.environ['QA_INPUT']);out=Path(os.environ['QA_OUTPUT']);out.mkdir(parents=True,exist_ok=True)
-a=np.load(src/'volume-band-candidate.npz');rest=a['rest'];now=a['nodes'];faces=a['faces']
+a=np.load(src/os.environ.get('QA_CROSSING_CHECKPOINT','volume-band-candidate.npz'));rest=a['rest'];now=a['nodes'];faces=a['faces']
 def screen(points):
     tri=points[faces];lo=tri.min(1);hi=tri.max(1)
     from rtree.index import Property
