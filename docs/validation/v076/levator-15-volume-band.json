@@ -1,0 +1,122 @@
+{
+  "runId": 46135493467,
+  "jobId": 140949761589,
+  "initial": {
+    "JRange": [
+      0.8893165953750103,
+      1.089630604040031
+    ],
+    "outsideCount": 19,
+    "outsideVolumeFraction": 0.000002438082687531726,
+    "volumeRatio": 0.9999908341931752,
+    "surfaceAreaRatioRange": [
+      0.6149450237629395,
+      1.4765773281183696
+    ],
+    "baseEnergy": 0.003998444583781168,
+    "baseResidualMm": 0.00016624942290744546,
+    "attachmentErrorMm": 0
+  },
+  "linearizedFeasibility": {
+    "physicalCells": 59721,
+    "freeDisplacementDofs": 45420,
+    "structuralRankUpperBound": 45066,
+    "constraintRankDeficiencyLowerBound": 14655,
+    "zeroLinearizedRowCount": 2434,
+    "zeroLinearizedButNotFixedCount": 0,
+    "lsqrColumnEquilibrated": true,
+    "lsqrIterationLimit": 512,
+    "immovableMaxAbsLogJ": 2.6028956767393117e-11,
+    "maxAbsLogJ": 0.11730198158456281,
+    "linearizedResidualL2": 0.4608846610616017,
+    "linearizedResidualMax": 0.045576219771957645,
+    "linearizedNormalResidualL2": 0.3317954584870885,
+    "lsqrStop": 7,
+    "lsqrIterations": 512,
+    "nonlinearFeasibilityEstablished": false,
+    "immovableCellCount": 2434
+  },
+  "rows": [
+    {
+      "rho": 30,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 2,
+      "augmentedResidualMm": 0.0003737978665591645,
+      "JRange": [
+        0.9248925802722288,
+        1.0609127516968744
+      ],
+      "outsideCount": 17,
+      "outsideVolumeFraction": 0.0000022693246496725534,
+      "volumeRatio": 0.9999908486163711,
+      "surfaceAreaRatioRange": [
+        0.6144641595464796,
+        1.4769330092429607
+      ],
+      "baseEnergy": 0.003999312733538362,
+      "baseResidualMm": 1.0418485946696148,
+      "attachmentErrorMm": 0,
+      "seconds": 3.2803624729999967
+    },
+    {
+      "rho": 100,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 3,
+      "augmentedResidualMm": 0.00025006895894919397,
+      "JRange": [
+        0.940015141064516,
+        1.0507294508923188
+      ],
+      "outsideCount": 4,
+      "outsideVolumeFraction": 9.307444329865775e-7,
+      "volumeRatio": 0.9999908638510707,
+      "surfaceAreaRatioRange": [
+        0.6140258797309698,
+        1.4773620844829864
+      ],
+      "baseEnergy": 0.004001074453753345,
+      "baseResidualMm": 1.6783392587861645,
+      "attachmentErrorMm": 0,
+      "seconds": 4.752997938000007
+    },
+    {
+      "rho": 300,
+      "converged": true,
+      "reason": "residual-tolerance",
+      "iterations": 3,
+      "augmentedResidualMm": 0.0002896149116496246,
+      "JRange": [
+        0.9513861006541802,
+        1.0463006051607529
+      ],
+      "outsideCount": 0,
+      "outsideVolumeFraction": 0,
+      "volumeRatio": 0.9999908720233603,
+      "surfaceAreaRatioRange": [
+        0.6136667690113751,
+        1.4776130906451341
+      ],
+      "baseEnergy": 0.004002193860145752,
+      "baseResidualMm": 1.8540160901006904,
+      "attachmentErrorMm": 0,
+      "seconds": 4.8173112509999925
+    }
+  ],
+  "localVolumeGuardPassed": true,
+  "bulk": 3000,
+  "targetBand": [
+    0.955,
+    1.045
+  ],
+  "engineeringGuard": [
+    0.95,
+    1.05
+  ],
+  "weightFloor": "1 / element count, only inequality term",
+  "productAccepted": false,
+  "contactEvaluated": false,
+  "selfIntersectionEvaluated": false,
+  "physicalMaterialCalibrated": false
+}
