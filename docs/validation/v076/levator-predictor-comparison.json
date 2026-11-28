@@ -1,0 +1,3150 @@
+{
+  "runId": 46134663885,
+  "results": [
+    {
+      "jobId": 140947177112,
+      "radiusMm": 1,
+      "counts": {
+        "C1": 171,
+        "C2": 114,
+        "C3": 132,
+        "C4": 252,
+        "scapula": 844
+      },
+      "fixed": 1513,
+      "nodes": 16653,
+      "tets": 59721,
+      "interiorNodes": 1040,
+      "sourceSha256": "4f3d8f0d4637815afcb228b1f3b1a8d74a606f5684a6a4ce59a967412d4d2a1c",
+      "productAccepted": false,
+      "solver": "exact-tangent",
+      "predictor": "coupled",
+      "tetraInputSha256": "102cf693cb6c9db8311c03b8c447cf89ac09c73e4cf4d833061092b5da8968c5",
+      "bulkPenalty": 1000,
+      "requestedElevationsDeg": [
+        6,
+        9,
+        12,
+        15,
+        12,
+        9,
+        6,
+        3,
+        0
+      ],
+      "requestedNeckDeg": [
+        6,
+        9,
+        12,
+        15,
+        12,
+        9,
+        6,
+        3,
+        0
+      ],
+      "seedFile": "test-results/v076-levator-bulk-refined/bulk-1000.npz",
+      "experimentalLocalVolumeGuard": [
+        0.95,
+        1.05
+      ],
+      "allAcceptedWithinLocalVolumeGuard": false,
+      "path": {
+        "completed": true,
+        "index": 0,
+        "accepted": [
+          {
+            "fromIndex": 16,
+            "index": 24,
+            "requestedIndex": 24,
+            "predictor": {
+              "method": "current coupled SPD strain/volume Dirichlet predictor",
+              "bulk": 1000,
+              "linearBackwardError": 1.1234677646456768e-16,
+              "matrixNonzeros": 1640916
+            },
+            "scalarPredictorJRange": [
+              0.5538253678240634,
+              1.6285057768552251
+            ],
+            "elev": 9,
+            "neck": 9,
+            "predictorMinJ": 0.9250661216125511,
+            "predictorMaxJ": 1.0566385473443292,
+            "fixedStepMm": 3.280945713575949,
+            "converged": true,
+            "reason": "residual-tolerance",
+            "iterations": 11,
+            "residualMaxMm": 0.000007256628659643398,
+            "energy": 0.0010839711231315134,
+            "cageJQuantiles": [
+              0.9252773893081793,
+              0.9933274320789438,
+              0.9999999999997435,
+              1.0067511611493902,
+              1.0523924257631367
+            ],
+            "cageNonPositive": 0,
+            "quadratureVolumeRatio": 0.9999807976319871,
+            "metric": {
+              "projection": "none; exact assembled global tangent, direction must be descent",
+              "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+              "linearBackwardError": 6.773269743412408e-20
+            },
+            "bulkStages": [
+              {
+                "bulk": 1000,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 11,
+                "residualMm": 0.000007256628659643398,
+                "JRange": [
+                  0.9252773893081793,
+                  1.0523924257631367
+                ]
+              }
+            ],
+            "tangentSteps": [
+              {
+                "iteration": 1,
+                "energy": 0.0014178663070999803,
+                "gain": 0.125,
+                "minJ": 0.9232242884740807,
+                "maxJ": 1.0535653082982157,
+                "previousResidualMm": 11.208624723401082,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 2,
+                "energy": 0.001095211573144903,
+                "gain": 1,
+                "minJ": 0.9221587849095764,
+                "maxJ": 1.0531113764638058,
+                "previousResidualMm": 7.964124977177157,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 3,
+                "energy": 0.0010844902317987777,
+                "gain": 1,
+                "minJ": 0.9255026014958736,
+                "maxJ": 1.0521548991718195,
+                "previousResidualMm": 3.1770884503753956,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 4,
+                "energy": 0.0010840119769064908,
+                "gain": 1,
+                "minJ": 0.9253614018968558,
+                "maxJ": 1.0523599797634409,
+                "previousResidualMm": 5.0190456377785315,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 5,
+                "energy": 0.0010839876230725356,
+                "gain": 0.5,
+                "minJ": 0.9253148870999262,
+                "maxJ": 1.0523732964519257,
+                "previousResidualMm": 0.3127874328573818,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 6,
+                "energy": 0.0010839832975304954,
+                "gain": 1,
+                "minJ": 0.9252525479140812,
+                "maxJ": 1.0523763005249025,
+                "previousResidualMm": 0.5391912645431032,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 7,
+                "energy": 0.0010839744703920887,
+                "gain": 1,
+                "minJ": 0.9252579093432058,
+                "maxJ": 1.0523793215539436,
+                "previousResidualMm": 0.5993731296526686,
+                "projectedMetric": true
+              },
+              {
+                "iteration": 8,
+                "energy": 0.0010839720999126366,
+                "gain": 0.25,
+                "minJ": 0.925264723103198,
+                "maxJ": 1.0523846357865099,
+                "previousResidualMm": 0.15318845523566355,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 9,
+                "energy": 0.0010839711564536174,
+                "gain": 1,
+                "minJ": 0.9252765409793403,
+                "maxJ": 1.0523919975528992,
+                "previousResidualMm": 0.10549196371081801,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 10,
+                "energy": 0.0010839711232135739,
+                "gain": 1,
+                "minJ": 0.9252773185407644,
+                "maxJ": 1.052392384993765,
+                "previousResidualMm": 0.035608951625800286,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 11,
+                "energy": 0.0010839711231315134,
+                "gain": 1,
+                "minJ": 0.9252773893081793,
+                "maxJ": 1.0523924257631367,
+                "previousResidualMm": 0.0011721092097193339,
+                "projectedMetric": false
+              }
+            ],
+            "preconditionedGradientMaxMm": 0.000007256628659643398,
+            "residualToleranceMm": 0.001,
+            "minJ": 0.9252773893081793,
+            "maxJ": 1.0523924257631367,
+            "JQuantiles": [
+              0.9252773893081793,
+              0.9933274320789438,
+              0.9999999999997435,
+              1.0067511611493902,
+              1.0523924257631367
+            ],
+            "volumeRatio": 0.9999807976319871,
+            "nonPositiveElements": 0,
+            "extrema": [
+              {
+                "kind": "minJ",
+                "tetId": 546,
+                "J": 0.9252773893081793,
+                "sourceCentroidAtlasMm": [
+                  -39.939574241638184,
+                  -84.39830017089844,
+                  1474.97998046875
+                ],
+                "referenceVolumeMm3": 0.0009751211246070329,
+                "referenceCondition": 34.842869074967666,
+                "fixedLabels": [
+                  0,
+                  -1,
+                  -1,
+                  0
+                ],
+                "vertexIds": [
+                  8599,
+                  8729,
+                  8578,
+                  8697
+                ]
+              },
+              {
+                "kind": "maxJ",
+                "tetId": 10766,
+                "J": 1.0523924257631367,
+                "sourceCentroidAtlasMm": [
+                  -40.16300878751648,
+                  -82.72297574592014,
+                  1473.5080675460233
+                ],
+                "referenceVolumeMm3": 0.0009385641273448364,
+                "referenceCondition": 33.503699871746875,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  8457,
+                  8521,
+                  8424,
+                  15658
+                ]
+              }
+            ],
+            "fullyFixedElements": 2434,
+            "attachmentMaxMm": 0,
+            "maxAbsLogJ": 0.07766170609166498,
+            "maxVertexStepMm": 3.280945713575949,
+            "seconds": 17.004288300999974
+          },
+          {
+            "fromIndex": 24,
+            "index": 32,
+            "requestedIndex": 32,
+            "predictor": {
+              "method": "current coupled SPD strain/volume Dirichlet predictor",
+              "bulk": 1000,
+              "linearBackwardError": 9.165314397487947e-17,
+              "matrixNonzeros": 1640916
+            },
+            "scalarPredictorJRange": [
+              0.5311573352230368,
+              1.5727441468613401
+            ],
+            "elev": 12,
+            "neck": 12,
+            "predictorMinJ": 0.8987615827919844,
+            "predictorMaxJ": 1.0657815817093064,
+            "fixedStepMm": 2.960511909599509,
+            "converged": true,
+            "reason": "residual-tolerance",
+            "iterations": 5,
+            "residualMaxMm": 0.00004060558506565857,
+            "energy": 0.001971711786333595,
+            "cageJQuantiles": [
+              0.89862252933885,
+              0.9907676550551631,
+              0.999999999999785,
+              1.0093317020341015,
+              1.072785027693431
+            ],
+            "cageNonPositive": 0,
+            "quadratureVolumeRatio": 0.9999756342032461,
+            "metric": {
+              "projection": "none; exact assembled global tangent, direction must be descent",
+              "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+              "linearBackwardError": 4.7490257059762927e-17
+            },
+            "bulkStages": [
+              {
+                "bulk": 1000,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 5,
+                "residualMm": 0.00004060558506565857,
+                "JRange": [
+                  0.89862252933885,
+                  1.072785027693431
+                ]
+              }
+            ],
+            "tangentSteps": [
+              {
+                "iteration": 1,
+                "energy": 0.0021055420846746607,
+                "gain": 0.5,
+                "minJ": 0.9006293117693549,
+                "maxJ": 1.0699089912481607,
+                "previousResidualMm": 9.27105514373171,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 2,
+                "energy": 0.001976334769887036,
+                "gain": 1,
+                "minJ": 0.8967213831531233,
+                "maxJ": 1.0726470737541358,
+                "previousResidualMm": 7.807106708578418,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 3,
+                "energy": 0.001971839768255791,
+                "gain": 1,
+                "minJ": 0.8988063510182372,
+                "maxJ": 1.0728266228144538,
+                "previousResidualMm": 0.8201765254883249,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 4,
+                "energy": 0.0019717119376877383,
+                "gain": 1,
+                "minJ": 0.8986344014422747,
+                "maxJ": 1.072794134675249,
+                "previousResidualMm": 0.4460400442763425,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 5,
+                "energy": 0.001971711786333595,
+                "gain": 1,
+                "minJ": 0.89862252933885,
+                "maxJ": 1.072785027693431,
+                "previousResidualMm": 0.004042112745472758,
+                "projectedMetric": false
+              }
+            ],
+            "preconditionedGradientMaxMm": 0.00004060558506565857,
+            "residualToleranceMm": 0.001,
+            "minJ": 0.89862252933885,
+            "maxJ": 1.072785027693431,
+            "JQuantiles": [
+              0.89862252933885,
+              0.9907676550551631,
+              0.999999999999785,
+              1.0093317020341015,
+              1.072785027693431
+            ],
+            "volumeRatio": 0.9999756342032461,
+            "nonPositiveElements": 0,
+            "extrema": [
+              {
+                "kind": "minJ",
+                "tetId": 546,
+                "J": 0.89862252933885,
+                "sourceCentroidAtlasMm": [
+                  -39.939574241638184,
+                  -84.39830017089844,
+                  1474.97998046875
+                ],
+                "referenceVolumeMm3": 0.0009751211246070329,
+                "referenceCondition": 34.842869074967666,
+                "fixedLabels": [
+                  0,
+                  -1,
+                  -1,
+                  0
+                ],
+                "vertexIds": [
+                  8599,
+                  8729,
+                  8578,
+                  8697
+                ]
+              },
+              {
+                "kind": "maxJ",
+                "tetId": 53462,
+                "J": 1.072785027693431,
+                "sourceCentroidAtlasMm": [
+                  -43.38457489013672,
+                  -31.889099597930908,
+                  1379.4525146484375
+                ],
+                "referenceVolumeMm3": 0.0022985194253178545,
+                "referenceCondition": 19.178938720922382,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  7341,
+                  7467,
+                  7414,
+                  7398
+                ]
+              }
+            ],
+            "fullyFixedElements": 2434,
+            "attachmentMaxMm": 0,
+            "maxAbsLogJ": 0.10689221106137745,
+            "maxVertexStepMm": 2.960511909599509,
+            "seconds": 9.13957558800007
+          },
+          {
+            "fromIndex": 32,
+            "index": 40,
+            "requestedIndex": 40,
+            "predictor": {
+              "method": "current coupled SPD strain/volume Dirichlet predictor",
+              "bulk": 1000,
+              "linearBackwardError": 1.1621518367048233e-16,
+              "matrixNonzeros": 1640916
+            },
+            "scalarPredictorJRange": [
+              0.5910016733365041,
+              1.512629079607622
+            ],
+            "elev": 15,
+            "neck": 15,
+            "predictorMinJ": 0.8732112835390878,
+            "predictorMaxJ": 1.0827379873900733,
+            "fixedStepMm": 2.0745230330946427,
+            "converged": true,
+            "reason": "residual-tolerance",
+            "iterations": 7,
+            "residualMaxMm": 0.00006051143873169935,
+            "energy": 0.0023758360148192492,
+            "cageJQuantiles": [
+              0.8722499147801605,
+              0.9889543460223896,
+              0.9999999999998754,
+              1.0111498088350699,
+              1.0931676276390612
+            ],
+            "cageNonPositive": 0,
+            "quadratureVolumeRatio": 0.9999779195064913,
+            "metric": {
+              "projection": "none; exact assembled global tangent, direction must be descent",
+              "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+              "linearBackwardError": 5.2737060543407237e-20
+            },
+            "bulkStages": [
+              {
+                "bulk": 1000,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 7,
+                "residualMm": 0.00006051143873169935,
+                "JRange": [
+                  0.8722499147801605,
+                  1.0931676276390612
+                ]
+              }
+            ],
+            "tangentSteps": [
+              {
+                "iteration": 1,
+                "energy": 0.0023996154463441295,
+                "gain": 1,
+                "minJ": 0.8684961308416745,
+                "maxJ": 1.0932206347922846,
+                "previousResidualMm": 4.428988591573698,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 2,
+                "energy": 0.00237739848661092,
+                "gain": 1,
+                "minJ": 0.8699808914408661,
+                "maxJ": 1.0933035954723127,
+                "previousResidualMm": 5.5278216288387805,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 3,
+                "energy": 0.002376166917356776,
+                "gain": 1,
+                "minJ": 0.871878386065197,
+                "maxJ": 1.0931787835350608,
+                "previousResidualMm": 0.36611178878619705,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 4,
+                "energy": 0.0023758425325606284,
+                "gain": 1,
+                "minJ": 0.8721155582084977,
+                "maxJ": 1.0931720656656108,
+                "previousResidualMm": 0.9584916888041259,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 5,
+                "energy": 0.00237583610189354,
+                "gain": 1,
+                "minJ": 0.8722489210575287,
+                "maxJ": 1.0931676760150357,
+                "previousResidualMm": 0.03315252211077898,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 6,
+                "energy": 0.002375836015432009,
+                "gain": 1,
+                "minJ": 0.8722499499473837,
+                "maxJ": 1.0931676280517029,
+                "previousResidualMm": 0.04920201087655503,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 7,
+                "energy": 0.0023758360148192492,
+                "gain": 1,
+                "minJ": 0.8722499147801605,
+                "maxJ": 1.0931676276390612,
+                "previousResidualMm": 0.0014051990567885949,
+                "projectedMetric": false
+              }
+            ],
+            "preconditionedGradientMaxMm": 0.00006051143873169935,
+            "residualToleranceMm": 0.001,
+            "minJ": 0.8722499147801605,
+            "maxJ": 1.0931676276390612,
+            "JQuantiles": [
+              0.8722499147801605,
+              0.9889543460223896,
+              0.9999999999998754,
+              1.0111498088350699,
+              1.0931676276390612
+            ],
+            "volumeRatio": 0.9999779195064913,
+            "nonPositiveElements": 0,
+            "extrema": [
+              {
+                "kind": "minJ",
+                "tetId": 546,
+                "J": 0.8722499147801605,
+                "sourceCentroidAtlasMm": [
+                  -39.939574241638184,
+                  -84.39830017089844,
+                  1474.97998046875
+                ],
+                "referenceVolumeMm3": 0.0009751211246070329,
+                "referenceCondition": 34.842869074967666,
+                "fixedLabels": [
+                  0,
+                  -1,
+                  -1,
+                  0
+                ],
+                "vertexIds": [
+                  8599,
+                  8729,
+                  8578,
+                  8697
+                ]
+              },
+              {
+                "kind": "maxJ",
+                "tetId": 53462,
+                "J": 1.0931676276390612,
+                "sourceCentroidAtlasMm": [
+                  -43.38457489013672,
+                  -31.889099597930908,
+                  1379.4525146484375
+                ],
+                "referenceVolumeMm3": 0.0022985194253178545,
+                "referenceCondition": 19.178938720922382,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  7341,
+                  7467,
+                  7414,
+                  7398
+                ]
+              }
+            ],
+            "fullyFixedElements": 2434,
+            "attachmentMaxMm": 0,
+            "maxAbsLogJ": 0.13667929661642148,
+            "maxVertexStepMm": 2.0745230330946427,
+            "seconds": 11.425578422000058
+          },
+          {
+            "fromIndex": 40,
+            "index": 32,
+            "requestedIndex": 32,
+            "predictor": {
+              "method": "current coupled SPD strain/volume Dirichlet predictor",
+              "bulk": 1000,
+              "linearBackwardError": 1.1294298333152686e-16,
+              "matrixNonzeros": 1640916
+            },
+            "scalarPredictorJRange": [
+              0.4102272131197785,
+              1.379838250473992
+            ],
+            "elev": 12,
+            "neck": 12,
+            "predictorMinJ": 0.9008873420690792,
+            "predictorMaxJ": 1.0829669239145956,
+            "fixedStepMm": 2.0745230330946427,
+            "converged": true,
+            "reason": "residual-tolerance",
+            "iterations": 5,
+            "residualMaxMm": 0.00015343522504121437,
+            "energy": 0.001971711786342319,
+            "cageJQuantiles": [
+              0.8986226064145185,
+              0.9907676517893987,
+              0.999999999999785,
+              1.0093317246266438,
+              1.0727850124378353
+            ],
+            "cageNonPositive": 0,
+            "quadratureVolumeRatio": 0.9999756336464504,
+            "metric": {
+              "projection": "none; exact assembled global tangent, direction must be descent",
+              "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+              "linearBackwardError": 1.087158698882311e-17
+            },
+            "bulkStages": [
+              {
+                "bulk": 1000,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 5,
+                "residualMm": 0.00015343522504121437,
+                "JRange": [
+                  0.8986226064145185,
+                  1.0727850124378353
+                ]
+              }
+            ],
+            "tangentSteps": [
+              {
+                "iteration": 1,
+                "energy": 0.0019928876263213286,
+                "gain": 1,
+                "minJ": 0.9011709418956241,
+                "maxJ": 1.0728538253293778,
+                "previousResidualMm": 4.859753753633486,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 2,
+                "energy": 0.00197215169922681,
+                "gain": 1,
+                "minJ": 0.8998758566526252,
+                "maxJ": 1.0727193515093385,
+                "previousResidualMm": 5.993301367310034,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 3,
+                "energy": 0.0019717417555874155,
+                "gain": 1,
+                "minJ": 0.8988036632841572,
+                "maxJ": 1.0727799933571156,
+                "previousResidualMm": 0.3287509468190297,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 4,
+                "energy": 0.0019717119634941084,
+                "gain": 1,
+                "minJ": 0.8986466231017575,
+                "maxJ": 1.0727842670620127,
+                "previousResidualMm": 0.28230215531732056,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 5,
+                "energy": 0.001971711786342319,
+                "gain": 1,
+                "minJ": 0.8986226064145185,
+                "maxJ": 1.0727850124378353,
+                "previousResidualMm": 0.006963362434721816,
+                "projectedMetric": false
+              }
+            ],
+            "preconditionedGradientMaxMm": 0.00015343522504121437,
+            "residualToleranceMm": 0.001,
+            "minJ": 0.8986226064145185,
+            "maxJ": 1.0727850124378353,
+            "JQuantiles": [
+              0.8986226064145185,
+              0.9907676517893987,
+              0.999999999999785,
+              1.0093317246266438,
+              1.0727850124378353
+            ],
+            "volumeRatio": 0.9999756336464504,
+            "nonPositiveElements": 0,
+            "extrema": [
+              {
+                "kind": "minJ",
+                "tetId": 546,
+                "J": 0.8986226064145185,
+                "sourceCentroidAtlasMm": [
+                  -39.939574241638184,
+                  -84.39830017089844,
+                  1474.97998046875
+                ],
+                "referenceVolumeMm3": 0.0009751211246070329,
+                "referenceCondition": 34.842869074967666,
+                "fixedLabels": [
+                  0,
+                  -1,
+                  -1,
+                  0
+                ],
+                "vertexIds": [
+                  8599,
+                  8729,
+                  8578,
+                  8697
+                ]
+              },
+              {
+                "kind": "maxJ",
+                "tetId": 53462,
+                "J": 1.0727850124378353,
+                "sourceCentroidAtlasMm": [
+                  -43.38457489013672,
+                  -31.889099597930908,
+                  1379.4525146484375
+                ],
+                "referenceVolumeMm3": 0.0022985194253178545,
+                "referenceCondition": 19.178938720922382,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  7341,
+                  7467,
+                  7414,
+                  7398
+                ]
+              }
+            ],
+            "fullyFixedElements": 2434,
+            "attachmentMaxMm": 0,
+            "maxAbsLogJ": 0.10689212529047509,
+            "maxVertexStepMm": 2.0745230330946427,
+            "seconds": 9.188365505999968
+          },
+          {
+            "fromIndex": 32,
+            "index": 24,
+            "requestedIndex": 24,
+            "predictor": {
+              "method": "current coupled SPD strain/volume Dirichlet predictor",
+              "bulk": 1000,
+              "linearBackwardError": 9.079094689531425e-17,
+              "matrixNonzeros": 1640916
+            },
+            "scalarPredictorJRange": [
+              0.40239042452528295,
+              1.4404453855018322
+            ],
+            "elev": 9,
+            "neck": 9,
+            "predictorMinJ": 0.9286704304236687,
+            "predictorMaxJ": 1.0628848666836037,
+            "fixedStepMm": 2.960511909599509,
+            "converged": true,
+            "reason": "residual-tolerance",
+            "iterations": 20,
+            "residualMaxMm": 0.00015452781826676287,
+            "energy": 0.001083971123132161,
+            "cageJQuantiles": [
+              0.9252773893347941,
+              0.9933274320808744,
+              0.9999999999997435,
+              1.006751161104346,
+              1.0523924256325272
+            ],
+            "cageNonPositive": 0,
+            "quadratureVolumeRatio": 0.9999807976320375,
+            "metric": {
+              "projection": "none; exact assembled global tangent, direction must be descent",
+              "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+              "linearBackwardError": 7.749459562162061e-20
+            },
+            "bulkStages": [
+              {
+                "bulk": 1000,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 20,
+                "residualMm": 0.00015452781826676287,
+                "JRange": [
+                  0.9252773893347941,
+                  1.0523924256325272
+                ]
+              }
+            ],
+            "tangentSteps": [
+              {
+                "iteration": 1,
+                "energy": 0.001318782742318701,
+                "gain": 0.25,
+                "minJ": 0.9221525255250448,
+                "maxJ": 1.0567158898620723,
+                "previousResidualMm": 9.13139294689088,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 2,
+                "energy": 0.001099866124716267,
+                "gain": 1,
+                "minJ": 0.9258873056790006,
+                "maxJ": 1.0479647871544526,
+                "previousResidualMm": 6.927910789066501,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 3,
+                "energy": 0.0010907865729500189,
+                "gain": 0.5,
+                "minJ": 0.9270942994127598,
+                "maxJ": 1.0521459892192058,
+                "previousResidualMm": 10.027299983441491,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 4,
+                "energy": 0.001084493319467121,
+                "gain": 1,
+                "minJ": 0.9249044412701234,
+                "maxJ": 1.0943356206713872,
+                "previousResidualMm": 3.190763807385305,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 5,
+                "energy": 0.0010840257739780494,
+                "gain": 1,
+                "minJ": 0.9252346396652077,
+                "maxJ": 1.0523872416669775,
+                "previousResidualMm": 11.252185018667143,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 6,
+                "energy": 0.0010840016070495868,
+                "gain": 1,
+                "minJ": 0.925252943083196,
+                "maxJ": 1.052390619564324,
+                "previousResidualMm": 0.5978547214036511,
+                "projectedMetric": true
+              },
+              {
+                "iteration": 7,
+                "energy": 0.0010840009770412189,
+                "gain": 0.125,
+                "minJ": 0.9252558975089976,
+                "maxJ": 1.0523908299737061,
+                "previousResidualMm": 1.943073736880019,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 8,
+                "energy": 0.0010839946199161605,
+                "gain": 0.125,
+                "minJ": 0.9252581973905921,
+                "maxJ": 1.0523906137762737,
+                "previousResidualMm": 1.4090277522293109,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 9,
+                "energy": 0.0010839919659506954,
+                "gain": 0.25,
+                "minJ": 0.9252624041542458,
+                "maxJ": 1.0523903989428312,
+                "previousResidualMm": 0.5915626921907888,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 10,
+                "energy": 0.0010839890002897997,
+                "gain": 0.0625,
+                "minJ": 0.9252639057689743,
+                "maxJ": 1.0523911929718,
+                "previousResidualMm": 0.771221973792434,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 11,
+                "energy": 0.0010839841997326062,
+                "gain": 0.03125,
+                "minJ": 0.9252646131625681,
+                "maxJ": 1.05239151914936,
+                "previousResidualMm": 0.3441634498209379,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 12,
+                "energy": 0.0010839814856397382,
+                "gain": 0.25,
+                "minJ": 0.9252674220689557,
+                "maxJ": 1.0523915329730238,
+                "previousResidualMm": 0.34179362458847695,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 13,
+                "energy": 0.0010839781542795926,
+                "gain": 0.5,
+                "minJ": 0.9252724929049986,
+                "maxJ": 1.0523922060652713,
+                "previousResidualMm": 1.0691225609775288,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 14,
+                "energy": 0.0010839764012449441,
+                "gain": 0.25,
+                "minJ": 0.9252739033618248,
+                "maxJ": 1.0523924359828487,
+                "previousResidualMm": 0.13333966827880886,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 15,
+                "energy": 0.0010839760587698334,
+                "gain": 0.03125,
+                "minJ": 0.9252744024094851,
+                "maxJ": 1.0523929124191025,
+                "previousResidualMm": 0.7441851680731856,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 16,
+                "energy": 0.0010839740428567818,
+                "gain": 0.03125,
+                "minJ": 0.925274458787879,
+                "maxJ": 1.0523929731540285,
+                "previousResidualMm": 0.3863319005179302,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 17,
+                "energy": 0.0010839722090396427,
+                "gain": 0.5,
+                "minJ": 0.9252758127563607,
+                "maxJ": 1.0523926237204801,
+                "previousResidualMm": 0.06870048978769329,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 18,
+                "energy": 0.0010839712239247654,
+                "gain": 1,
+                "minJ": 0.9252762386545582,
+                "maxJ": 1.052392682926148,
+                "previousResidualMm": 0.29597759230061765,
+                "projectedMetric": true
+              },
+              {
+                "iteration": 19,
+                "energy": 0.001083971125888112,
+                "gain": 1,
+                "minJ": 0.9252773835807313,
+                "maxJ": 1.052392408086519,
+                "previousResidualMm": 0.04232900538365179,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 20,
+                "energy": 0.001083971123132161,
+                "gain": 1,
+                "minJ": 0.9252773893347941,
+                "maxJ": 1.0523924256325272,
+                "previousResidualMm": 0.015376755434441357,
+                "projectedMetric": false
+              }
+            ],
+            "preconditionedGradientMaxMm": 0.00015452781826676287,
+            "residualToleranceMm": 0.001,
+            "minJ": 0.9252773893347941,
+            "maxJ": 1.0523924256325272,
+            "JQuantiles": [
+              0.9252773893347941,
+              0.9933274320808744,
+              0.9999999999997435,
+              1.006751161104346,
+              1.0523924256325272
+            ],
+            "volumeRatio": 0.9999807976320375,
+            "nonPositiveElements": 0,
+            "extrema": [
+              {
+                "kind": "minJ",
+                "tetId": 546,
+                "J": 0.9252773893347941,
+                "sourceCentroidAtlasMm": [
+                  -39.939574241638184,
+                  -84.39830017089844,
+                  1474.97998046875
+                ],
+                "referenceVolumeMm3": 0.0009751211246070329,
+                "referenceCondition": 34.842869074967666,
+                "fixedLabels": [
+                  0,
+                  -1,
+                  -1,
+                  0
+                ],
+                "vertexIds": [
+                  8599,
+                  8729,
+                  8578,
+                  8697
+                ]
+              },
+              {
+                "kind": "maxJ",
+                "tetId": 10766,
+                "J": 1.0523924256325272,
+                "sourceCentroidAtlasMm": [
+                  -40.16300878751648,
+                  -82.72297574592014,
+                  1473.5080675460233
+                ],
+                "referenceVolumeMm3": 0.0009385641273448364,
+                "referenceCondition": 33.503699871746875,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  8457,
+                  8521,
+                  8424,
+                  15658
+                ]
+              }
+            ],
+            "fullyFixedElements": 2434,
+            "attachmentMaxMm": 0,
+            "maxAbsLogJ": 0.07766170606290083,
+            "maxVertexStepMm": 2.960511909599509,
+            "seconds": 29.757153037999956
+          },
+          {
+            "fromIndex": 24,
+            "index": 16,
+            "requestedIndex": 16,
+            "predictor": {
+              "method": "current coupled SPD strain/volume Dirichlet predictor",
+              "bulk": 1000,
+              "linearBackwardError": 1.0516711978340509e-16,
+              "matrixNonzeros": 1640916
+            },
+            "scalarPredictorJRange": [
+              0.3685128513715912,
+              1.4241233415160068
+            ],
+            "elev": 6,
+            "neck": 6,
+            "predictorMinJ": 0.949015858140918,
+            "predictorMaxJ": 1.0472425720858785,
+            "fixedStepMm": 3.280945713575949,
+            "converged": true,
+            "reason": "residual-tolerance",
+            "iterations": 6,
+            "residualMaxMm": 0.0000016436029256361623,
+            "energy": 0.0003383205177497468,
+            "cageJQuantiles": [
+              0.9516136046096595,
+              0.9961060469708439,
+              0.9999999999997664,
+              1.0039744121583123,
+              1.0339395607971817
+            ],
+            "cageNonPositive": 0,
+            "quadratureVolumeRatio": 0.9999896604173484,
+            "metric": {
+              "projection": "none; exact assembled global tangent, direction must be descent",
+              "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+              "linearBackwardError": 5.697036103028112e-17
+            },
+            "bulkStages": [
+              {
+                "bulk": 1000,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 6,
+                "residualMm": 0.0000016436029256361623,
+                "JRange": [
+                  0.9516136046096595,
+                  1.0339395607971817
+                ]
+              }
+            ],
+            "tangentSteps": [
+              {
+                "iteration": 1,
+                "energy": 0.0006657716006890983,
+                "gain": 0.125,
+                "minJ": 0.955039260732543,
+                "maxJ": 1.037822709918162,
+                "previousResidualMm": 10.693341796355094,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 2,
+                "energy": 0.0003500657552810121,
+                "gain": 1,
+                "minJ": 0.9544718128589027,
+                "maxJ": 1.0324403058750564,
+                "previousResidualMm": 8.177791129542813,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 3,
+                "energy": 0.00033881907963794047,
+                "gain": 1,
+                "minJ": 0.9514636352130308,
+                "maxJ": 1.0343844081135922,
+                "previousResidualMm": 3.5566605974546297,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 4,
+                "energy": 0.00033832850419196817,
+                "gain": 1,
+                "minJ": 0.9516235096326064,
+                "maxJ": 1.0340361179793551,
+                "previousResidualMm": 0.34774713859136513,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 5,
+                "energy": 0.0003383205217580113,
+                "gain": 1,
+                "minJ": 0.9516131510915189,
+                "maxJ": 1.0339418695208533,
+                "previousResidualMm": 0.09394597479567335,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 6,
+                "energy": 0.0003383205177497468,
+                "gain": 1,
+                "minJ": 0.9516136046096595,
+                "maxJ": 1.0339395607971817,
+                "previousResidualMm": 0.0017761772949476944,
+                "projectedMetric": false
+              }
+            ],
+            "preconditionedGradientMaxMm": 0.0000016436029256361623,
+            "residualToleranceMm": 0.001,
+            "minJ": 0.9516136046096595,
+            "maxJ": 1.0339395607971817,
+            "JQuantiles": [
+              0.9516136046096595,
+              0.9961060469708439,
+              0.9999999999997664,
+              1.0039744121583123,
+              1.0339395607971817
+            ],
+            "volumeRatio": 0.9999896604173484,
+            "nonPositiveElements": 0,
+            "extrema": [
+              {
+                "kind": "minJ",
+                "tetId": 546,
+                "J": 0.9516136046096595,
+                "sourceCentroidAtlasMm": [
+                  -39.939574241638184,
+                  -84.39830017089844,
+                  1474.97998046875
+                ],
+                "referenceVolumeMm3": 0.0009751211246070329,
+                "referenceCondition": 34.842869074967666,
+                "fixedLabels": [
+                  0,
+                  -1,
+                  -1,
+                  0
+                ],
+                "vertexIds": [
+                  8599,
+                  8729,
+                  8578,
+                  8697
+                ]
+              },
+              {
+                "kind": "maxJ",
+                "tetId": 10766,
+                "J": 1.0339395607971817,
+                "sourceCentroidAtlasMm": [
+                  -40.16300878751648,
+                  -82.72297574592014,
+                  1473.5080675460233
+                ],
+                "referenceVolumeMm3": 0.0009385641273448364,
+                "referenceCondition": 33.503699871746875,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  8457,
+                  8521,
+                  8424,
+                  15658
+                ]
+              }
+            ],
+            "fullyFixedElements": 2434,
+            "attachmentMaxMm": 0,
+            "maxAbsLogJ": 0.049596204092204936,
+            "maxVertexStepMm": 3.280945713575949,
+            "seconds": 10.685041184000056
+          },
+          {
+            "fromIndex": 16,
+            "index": 8,
+            "requestedIndex": 8,
+            "predictor": {
+              "method": "current coupled SPD strain/volume Dirichlet predictor",
+              "bulk": 1000,
+              "linearBackwardError": 1.1184912754382886e-16,
+              "matrixNonzeros": 1640916
+            },
+            "scalarPredictorJRange": [
+              0.4902115361428051,
+              1.3265260505179781
+            ],
+            "elev": 3,
+            "neck": 3,
+            "predictorMinJ": 0.9675468797593317,
+            "predictorMaxJ": 1.0394892359149326,
+            "fixedStepMm": 2.680219277788085,
+            "converged": true,
+            "reason": "residual-tolerance",
+            "iterations": 5,
+            "residualMaxMm": 0.0001244334696848502,
+            "energy": 0.00003666123965759894,
+            "cageJQuantiles": [
+              0.9768244896486252,
+              0.9984376028972713,
+              0.999999999999909,
+              1.0015745230973727,
+              1.016184967113623
+            ],
+            "cageNonPositive": 0,
+            "quadratureVolumeRatio": 0.9999977529514954,
+            "metric": {
+              "projection": "none; exact assembled global tangent, direction must be descent",
+              "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+              "linearBackwardError": 1.3846467289972222e-17
+            },
+            "bulkStages": [
+              {
+                "bulk": 1000,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 5,
+                "residualMm": 0.0001244334696848502,
+                "JRange": [
+                  0.9768244896486252,
+                  1.016184967113623
+                ]
+              }
+            ],
+            "tangentSteps": [
+              {
+                "iteration": 1,
+                "energy": 0.00017334250901463385,
+                "gain": 0.5,
+                "minJ": 0.9793248672117681,
+                "maxJ": 1.0173296898402608,
+                "previousResidualMm": 7.01416191864522,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 2,
+                "energy": 0.0000402940948978006,
+                "gain": 1,
+                "minJ": 0.9807105413884767,
+                "maxJ": 1.0136428423096293,
+                "previousResidualMm": 10.036930366938812,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 3,
+                "energy": 0.0000368103271793928,
+                "gain": 1,
+                "minJ": 0.9770603056803765,
+                "maxJ": 1.0162380397486932,
+                "previousResidualMm": 0.46985205747052583,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 4,
+                "energy": 0.00003666136299090148,
+                "gain": 1,
+                "minJ": 0.9768552895558199,
+                "maxJ": 1.0161988599087473,
+                "previousResidualMm": 0.5626449628112213,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 5,
+                "energy": 0.00003666123965759894,
+                "gain": 1,
+                "minJ": 0.9768244896486252,
+                "maxJ": 1.016184967113623,
+                "previousResidualMm": 0.0031044223356178065,
+                "projectedMetric": false
+              }
+            ],
+            "preconditionedGradientMaxMm": 0.0001244334696848502,
+            "residualToleranceMm": 0.001,
+            "minJ": 0.9768244896486252,
+            "maxJ": 1.016184967113623,
+            "JQuantiles": [
+              0.9768244896486252,
+              0.9984376028972713,
+              0.999999999999909,
+              1.0015745230973727,
+              1.016184967113623
+            ],
+            "volumeRatio": 0.9999977529514954,
+            "nonPositiveElements": 0,
+            "extrema": [
+              {
+                "kind": "minJ",
+                "tetId": 546,
+                "J": 0.9768244896486252,
+                "sourceCentroidAtlasMm": [
+                  -39.939574241638184,
+                  -84.39830017089844,
+                  1474.97998046875
+                ],
+                "referenceVolumeMm3": 0.0009751211246070329,
+                "referenceCondition": 34.842869074967666,
+                "fixedLabels": [
+                  0,
+                  -1,
+                  -1,
+                  0
+                ],
+                "vertexIds": [
+                  8599,
+                  8729,
+                  8578,
+                  8697
+                ]
+              },
+              {
+                "kind": "maxJ",
+                "tetId": 10766,
+                "J": 1.016184967113623,
+                "sourceCentroidAtlasMm": [
+                  -40.16300878751648,
+                  -82.72297574592014,
+                  1473.5080675460233
+                ],
+                "referenceVolumeMm3": 0.0009385641273448364,
+                "referenceCondition": 33.503699871746875,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  8457,
+                  8521,
+                  8424,
+                  15658
+                ]
+              }
+            ],
+            "fullyFixedElements": 2434,
+            "attachmentMaxMm": 0,
+            "maxAbsLogJ": 0.02344828519707061,
+            "maxVertexStepMm": 2.680219277788085,
+            "seconds": 9.681606998999996
+          },
+          {
+            "fromIndex": 8,
+            "index": 0,
+            "requestedIndex": 0,
+            "predictor": {
+              "method": "current coupled SPD strain/volume Dirichlet predictor",
+              "bulk": 1000,
+              "linearBackwardError": 6.258761577221516e-17,
+              "matrixNonzeros": 1640916
+            },
+            "scalarPredictorJRange": [
+              0.711993436768618,
+              1.2755651787679734
+            ],
+            "elev": 0,
+            "neck": 0,
+            "predictorMinJ": 0.9770295888598234,
+            "predictorMaxJ": 1.0360149675342099,
+            "fixedStepMm": 2.0706492139597428,
+            "converged": true,
+            "reason": "residual-tolerance",
+            "iterations": 4,
+            "residualMaxMm": 0.00046331698593673944,
+            "energy": 2.7774442367108365e-14,
+            "cageJQuantiles": [
+              0.99999108616758,
+              0.9999999978429769,
+              1.0000000000000224,
+              1.0000000028408207,
+              1.0000164883804603
+            ],
+            "cageNonPositive": 0,
+            "quadratureVolumeRatio": 1.000000000005221,
+            "metric": {
+              "projection": "none; exact assembled global tangent, direction must be descent",
+              "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+              "linearBackwardError": 1.9320711799341133e-18
+            },
+            "bulkStages": [
+              {
+                "bulk": 1000,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 4,
+                "residualMm": 0.00046331698593673944,
+                "JRange": [
+                  0.99999108616758,
+                  1.0000164883804603
+                ]
+              }
+            ],
+            "tangentSteps": [
+              {
+                "iteration": 1,
+                "energy": 0.0000013873257242456503,
+                "gain": 1,
+                "minJ": 0.9956523991957976,
+                "maxJ": 1.0086989214103972,
+                "previousResidualMm": 4.312265260404192,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 2,
+                "energy": 7.492935612632604e-9,
+                "gain": 1,
+                "minJ": 0.9985457548877547,
+                "maxJ": 1.001668184381248,
+                "previousResidualMm": 2.165256385675621,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 3,
+                "energy": 2.9771101612005034e-11,
+                "gain": 1,
+                "minJ": 0.9998165200964583,
+                "maxJ": 1.0005313427141567,
+                "previousResidualMm": 0.04365045672908649,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 4,
+                "energy": 2.7774442367108365e-14,
+                "gain": 1,
+                "minJ": 0.99999108616758,
+                "maxJ": 1.0000164883804603,
+                "previousResidualMm": 0.03956947719732187,
+                "projectedMetric": false
+              }
+            ],
+            "preconditionedGradientMaxMm": 0.00046331698593673944,
+            "residualToleranceMm": 0.001,
+            "minJ": 0.99999108616758,
+            "maxJ": 1.0000164883804603,
+            "JQuantiles": [
+              0.99999108616758,
+              0.9999999978429769,
+              1.0000000000000224,
+              1.0000000028408207,
+              1.0000164883804603
+            ],
+            "volumeRatio": 1.000000000005221,
+            "nonPositiveElements": 0,
+            "extrema": [
+              {
+                "kind": "minJ",
+                "tetId": 39504,
+                "J": 0.99999108616758,
+                "sourceCentroidAtlasMm": [
+                  -39.56125068664551,
+                  -82.05159759521484,
+                  1475.7250061035156
+                ],
+                "referenceVolumeMm3": 0.00010433004882000794,
+                "referenceCondition": 17.011735451575532,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  8845,
+                  8850,
+                  8897,
+                  8856
+                ]
+              },
+              {
+                "kind": "maxJ",
+                "tetId": 39505,
+                "J": 1.0000164883804603,
+                "sourceCentroidAtlasMm": [
+                  -39.562100410461426,
+                  -81.95187377929688,
+                  1475.7400207519531
+                ],
+                "referenceVolumeMm3": 0.00010417692836443371,
+                "referenceCondition": 15.585734846883597,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  8845,
+                  8856,
+                  8897,
+                  8844
+                ]
+              }
+            ],
+            "fullyFixedElements": 2434,
+            "attachmentMaxMm": 0,
+            "maxAbsLogJ": 0.000016488244528460186,
+            "maxVertexStepMm": 2.0706492139597428,
+            "seconds": 8.902672803999963
+          }
+        ],
+        "rejected": []
+      },
+      "neutralReturnMaxMm": 0.00004078019284045669,
+      "anatomicalAcceptance": false,
+      "physicalVolumeVerified": false,
+      "contactEvaluated": false,
+      "limitations": [
+        "principal source shell only",
+        "interior-refined tetrahedra; source boundary unchanged",
+        "near-surface masks not measured anatomical footprints",
+        "normalized passive energy; no active force or bone contact"
+      ]
+    },
+    {
+      "jobId": 140947177121,
+      "radiusMm": 1,
+      "counts": {
+        "C1": 171,
+        "C2": 114,
+        "C3": 132,
+        "C4": 252,
+        "scapula": 844
+      },
+      "fixed": 1513,
+      "nodes": 16653,
+      "tets": 59721,
+      "interiorNodes": 1040,
+      "sourceSha256": "4f3d8f0d4637815afcb228b1f3b1a8d74a606f5684a6a4ce59a967412d4d2a1c",
+      "productAccepted": false,
+      "solver": "exact-tangent",
+      "predictor": "bulk-homotopy",
+      "tetraInputSha256": "102cf693cb6c9db8311c03b8c447cf89ac09c73e4cf4d833061092b5da8968c5",
+      "bulkPenalty": 1000,
+      "requestedElevationsDeg": [
+        6,
+        9,
+        12,
+        15,
+        12,
+        9,
+        6,
+        3,
+        0
+      ],
+      "requestedNeckDeg": [
+        6,
+        9,
+        12,
+        15,
+        12,
+        9,
+        6,
+        3,
+        0
+      ],
+      "seedFile": "test-results/v076-levator-bulk-refined/bulk-1000.npz",
+      "experimentalLocalVolumeGuard": [
+        0.95,
+        1.05
+      ],
+      "allAcceptedWithinLocalVolumeGuard": false,
+      "path": {
+        "completed": true,
+        "index": 0,
+        "accepted": [
+          {
+            "fromIndex": 16,
+            "index": 24,
+            "requestedIndex": 24,
+            "predictor": {
+              "method": "current coupled SPD strain/volume Dirichlet predictor",
+              "bulk": 30,
+              "linearBackwardError": 8.833699147761596e-17,
+              "matrixNonzeros": 1640916
+            },
+            "scalarPredictorJRange": [
+              0.5538253678240634,
+              1.6285057768552251
+            ],
+            "elev": 9,
+            "neck": 9,
+            "predictorMinJ": 0.7812783574480011,
+            "predictorMaxJ": 1.2207464719069212,
+            "fixedStepMm": 3.280945713575949,
+            "converged": true,
+            "reason": "residual-tolerance",
+            "iterations": 4,
+            "residualMaxMm": 0.00007485308369876895,
+            "energy": 0.0010839711231335949,
+            "cageJQuantiles": [
+              0.9252773855933619,
+              0.9933274346290791,
+              0.9999999999997435,
+              1.0067511615406732,
+              1.0523924296936202
+            ],
+            "cageNonPositive": 0,
+            "quadratureVolumeRatio": 0.999980797635124,
+            "metric": {
+              "projection": "none; exact assembled global tangent, direction must be descent",
+              "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+              "linearBackwardError": 1.0489619473370273e-17
+            },
+            "bulkStages": [
+              {
+                "bulk": 30,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 9,
+                "residualMm": 0.00006981139332937871,
+                "JRange": [
+                  0.7092115637284769,
+                  1.1668130478598746
+                ]
+              },
+              {
+                "bulk": 100,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 6,
+                "residualMm": 0.0000522446957699017,
+                "JRange": [
+                  0.8577941816328026,
+                  1.1054403336710779
+                ]
+              },
+              {
+                "bulk": 300,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 4,
+                "residualMm": 0.000013947869440229341,
+                "JRange": [
+                  0.9143916639209977,
+                  1.0708738301079286
+                ]
+              },
+              {
+                "bulk": 1000,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 4,
+                "residualMm": 0.00007485308369876895,
+                "JRange": [
+                  0.9252773855933619,
+                  1.0523924296936202
+                ]
+              }
+            ],
+            "tangentSteps": [
+              {
+                "iteration": 1,
+                "energy": 0.0010936460828785272,
+                "gain": 1,
+                "minJ": 0.9245835447921765,
+                "maxJ": 1.0526906829993892,
+                "previousResidualMm": 1.0277225244556403,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 2,
+                "energy": 0.0010840291111185098,
+                "gain": 1,
+                "minJ": 0.9249582063868896,
+                "maxJ": 1.0525619231252348,
+                "previousResidualMm": 6.437488327706935,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 3,
+                "energy": 0.0010839712764346126,
+                "gain": 1,
+                "minJ": 0.9252762663630162,
+                "maxJ": 1.052393146730182,
+                "previousResidualMm": 0.03694598003757428,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 4,
+                "energy": 0.0010839711231335949,
+                "gain": 1,
+                "minJ": 0.9252773855933619,
+                "maxJ": 1.0523924296936202,
+                "previousResidualMm": 0.03437433158703347,
+                "projectedMetric": false
+              }
+            ],
+            "preconditionedGradientMaxMm": 0.00007485308369876895,
+            "residualToleranceMm": 0.001,
+            "minJ": 0.9252773855933619,
+            "maxJ": 1.0523924296936202,
+            "JQuantiles": [
+              0.9252773855933619,
+              0.9933274346290791,
+              0.9999999999997435,
+              1.0067511615406732,
+              1.0523924296936202
+            ],
+            "volumeRatio": 0.999980797635124,
+            "nonPositiveElements": 0,
+            "extrema": [
+              {
+                "kind": "minJ",
+                "tetId": 546,
+                "J": 0.9252773855933619,
+                "sourceCentroidAtlasMm": [
+                  -39.939574241638184,
+                  -84.39830017089844,
+                  1474.97998046875
+                ],
+                "referenceVolumeMm3": 0.0009751211246070329,
+                "referenceCondition": 34.842869074967666,
+                "fixedLabels": [
+                  0,
+                  -1,
+                  -1,
+                  0
+                ],
+                "vertexIds": [
+                  8599,
+                  8729,
+                  8578,
+                  8697
+                ]
+              },
+              {
+                "kind": "maxJ",
+                "tetId": 10766,
+                "J": 1.0523924296936202,
+                "sourceCentroidAtlasMm": [
+                  -40.16300878751648,
+                  -82.72297574592014,
+                  1473.5080675460233
+                ],
+                "referenceVolumeMm3": 0.0009385641273448364,
+                "referenceCondition": 33.503699871746875,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  8457,
+                  8521,
+                  8424,
+                  15658
+                ]
+              }
+            ],
+            "fullyFixedElements": 2434,
+            "attachmentMaxMm": 0,
+            "maxAbsLogJ": 0.07766171010647978,
+            "maxVertexStepMm": 3.280945713575949,
+            "seconds": 30.453470432000017
+          },
+          {
+            "fromIndex": 24,
+            "index": 32,
+            "requestedIndex": 32,
+            "predictor": {
+              "method": "current coupled SPD strain/volume Dirichlet predictor",
+              "bulk": 30,
+              "linearBackwardError": 7.706638896941497e-17,
+              "matrixNonzeros": 1640916
+            },
+            "scalarPredictorJRange": [
+              0.5311573372564439,
+              1.5727441465820857
+            ],
+            "elev": 12,
+            "neck": 12,
+            "predictorMinJ": 0.7814438338463219,
+            "predictorMaxJ": 1.2054342164107088,
+            "fixedStepMm": 2.960511909599509,
+            "converged": true,
+            "reason": "residual-tolerance",
+            "iterations": 4,
+            "residualMaxMm": 0.0007020761360795389,
+            "energy": 0.0019717117869046475,
+            "cageJQuantiles": [
+              0.8986232200484925,
+              0.9907676600562487,
+              0.999999999999785,
+              1.0093309917834625,
+              1.0727851361746814
+            ],
+            "cageNonPositive": 0,
+            "quadratureVolumeRatio": 0.9999756343650704,
+            "metric": {
+              "projection": "none; exact assembled global tangent, direction must be descent",
+              "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+              "linearBackwardError": 1.3633883323365974e-17
+            },
+            "bulkStages": [
+              {
+                "bulk": 30,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 6,
+                "residualMm": 0.00009785206401052359,
+                "JRange": [
+                  0.6474327102319192,
+                  1.2103778870312818
+                ]
+              },
+              {
+                "bulk": 100,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 6,
+                "residualMm": 3.258780257120549e-7,
+                "JRange": [
+                  0.8167809811782126,
+                  1.1373657715157053
+                ]
+              },
+              {
+                "bulk": 300,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 4,
+                "residualMm": 0.0007781582117061046,
+                "JRange": [
+                  0.8882671492929765,
+                  1.0989155931394474
+                ]
+              },
+              {
+                "bulk": 1000,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 4,
+                "residualMm": 0.0007020761360795389,
+                "JRange": [
+                  0.8986232200484925,
+                  1.0727851361746814
+                ]
+              }
+            ],
+            "tangentSteps": [
+              {
+                "iteration": 1,
+                "energy": 0.002016845067011384,
+                "gain": 1,
+                "minJ": 0.8972486811942583,
+                "maxJ": 1.0711437025584152,
+                "previousResidualMm": 1.3648655123471114,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 2,
+                "energy": 0.0019730714745545236,
+                "gain": 1,
+                "minJ": 0.8988840476812273,
+                "maxJ": 1.0724018509179625,
+                "previousResidualMm": 14.132858222749485,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 3,
+                "energy": 0.0019717198760874953,
+                "gain": 1,
+                "minJ": 0.8986791250126387,
+                "maxJ": 1.0727894720836855,
+                "previousResidualMm": 0.28203698532987087,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 4,
+                "energy": 0.0019717117869046475,
+                "gain": 1,
+                "minJ": 0.8986232200484925,
+                "maxJ": 1.0727851361746814,
+                "previousResidualMm": 0.17618687688759693,
+                "projectedMetric": false
+              }
+            ],
+            "preconditionedGradientMaxMm": 0.0007020761360795389,
+            "residualToleranceMm": 0.001,
+            "minJ": 0.8986232200484925,
+            "maxJ": 1.0727851361746814,
+            "JQuantiles": [
+              0.8986232200484925,
+              0.9907676600562487,
+              0.999999999999785,
+              1.0093309917834625,
+              1.0727851361746814
+            ],
+            "volumeRatio": 0.9999756343650704,
+            "nonPositiveElements": 0,
+            "extrema": [
+              {
+                "kind": "minJ",
+                "tetId": 546,
+                "J": 0.8986232200484925,
+                "sourceCentroidAtlasMm": [
+                  -39.939574241638184,
+                  -84.39830017089844,
+                  1474.97998046875
+                ],
+                "referenceVolumeMm3": 0.0009751211246070329,
+                "referenceCondition": 34.842869074967666,
+                "fixedLabels": [
+                  0,
+                  -1,
+                  -1,
+                  0
+                ],
+                "vertexIds": [
+                  8599,
+                  8729,
+                  8578,
+                  8697
+                ]
+              },
+              {
+                "kind": "maxJ",
+                "tetId": 53462,
+                "J": 1.0727851361746814,
+                "sourceCentroidAtlasMm": [
+                  -43.38457489013672,
+                  -31.889099597930908,
+                  1379.4525146484375
+                ],
+                "referenceVolumeMm3": 0.0022985194253178545,
+                "referenceCondition": 19.178938720922382,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  7341,
+                  7467,
+                  7414,
+                  7398
+                ]
+              }
+            ],
+            "fullyFixedElements": 2434,
+            "attachmentMaxMm": 0,
+            "maxAbsLogJ": 0.10689144243010627,
+            "maxVertexStepMm": 2.960511909599509,
+            "seconds": 26.07117714300003
+          },
+          {
+            "fromIndex": 32,
+            "index": 40,
+            "requestedIndex": 40,
+            "predictor": {
+              "method": "current coupled SPD strain/volume Dirichlet predictor",
+              "bulk": 30,
+              "linearBackwardError": 7.571616260493787e-17,
+              "matrixNonzeros": 1640916
+            },
+            "scalarPredictorJRange": [
+              0.5910015592971897,
+              1.5126292647127941
+            ],
+            "elev": 15,
+            "neck": 15,
+            "predictorMinJ": 0.8200803339387344,
+            "predictorMaxJ": 1.1757667128309854,
+            "fixedStepMm": 2.0745230330946427,
+            "converged": true,
+            "reason": "residual-tolerance",
+            "iterations": 5,
+            "residualMaxMm": 0.0002441513425251767,
+            "energy": 0.002375836014837591,
+            "cageJQuantiles": [
+              0.8722498108128572,
+              0.9889543398317243,
+              0.9999999999998754,
+              1.0111498163553527,
+              1.0931676136777273
+            ],
+            "cageNonPositive": 0,
+            "quadratureVolumeRatio": 0.9999779196857094,
+            "metric": {
+              "projection": "none; exact assembled global tangent, direction must be descent",
+              "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+              "linearBackwardError": 1.0238125059240543e-17
+            },
+            "bulkStages": [
+              {
+                "bulk": 30,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 5,
+                "residualMm": 0.0002961563886790042,
+                "JRange": [
+                  0.6500739603319798,
+                  1.2235961966932882
+                ]
+              },
+              {
+                "bulk": 100,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 6,
+                "residualMm": 0.00011804949856223137,
+                "JRange": [
+                  0.8138497963359754,
+                  1.1736144138800448
+                ]
+              },
+              {
+                "bulk": 300,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 4,
+                "residualMm": 0.0005874018510014452,
+                "JRange": [
+                  0.8590861256781971,
+                  1.1241385500384813
+                ]
+              },
+              {
+                "bulk": 1000,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 5,
+                "residualMm": 0.0002441513425251767,
+                "JRange": [
+                  0.8722498108128572,
+                  1.0931676136777273
+                ]
+              }
+            ],
+            "tangentSteps": [
+              {
+                "iteration": 1,
+                "energy": 0.0024504371569607983,
+                "gain": 1,
+                "minJ": 0.8709536643692704,
+                "maxJ": 1.0906319994034754,
+                "previousResidualMm": 1.4839552446947732,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 2,
+                "energy": 0.002381989755357133,
+                "gain": 1,
+                "minJ": 0.870378915463904,
+                "maxJ": 1.0923983115893499,
+                "previousResidualMm": 18.1239411048563,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 3,
+                "energy": 0.0023759766749043014,
+                "gain": 1,
+                "minJ": 0.8724591058179433,
+                "maxJ": 1.0932012172714574,
+                "previousResidualMm": 1.343535887708268,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 4,
+                "energy": 0.002375836416471828,
+                "gain": 1,
+                "minJ": 0.8722389298645873,
+                "maxJ": 1.0931674316286244,
+                "previousResidualMm": 0.635428472680898,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 5,
+                "energy": 0.002375836014837591,
+                "gain": 1,
+                "minJ": 0.8722498108128572,
+                "maxJ": 1.0931676136777273,
+                "previousResidualMm": 0.026688739936975348,
+                "projectedMetric": false
+              }
+            ],
+            "preconditionedGradientMaxMm": 0.0002441513425251767,
+            "residualToleranceMm": 0.001,
+            "minJ": 0.8722498108128572,
+            "maxJ": 1.0931676136777273,
+            "JQuantiles": [
+              0.8722498108128572,
+              0.9889543398317243,
+              0.9999999999998754,
+              1.0111498163553527,
+              1.0931676136777273
+            ],
+            "volumeRatio": 0.9999779196857094,
+            "nonPositiveElements": 0,
+            "extrema": [
+              {
+                "kind": "minJ",
+                "tetId": 546,
+                "J": 0.8722498108128572,
+                "sourceCentroidAtlasMm": [
+                  -39.939574241638184,
+                  -84.39830017089844,
+                  1474.97998046875
+                ],
+                "referenceVolumeMm3": 0.0009751211246070329,
+                "referenceCondition": 34.842869074967666,
+                "fixedLabels": [
+                  0,
+                  -1,
+                  -1,
+                  0
+                ],
+                "vertexIds": [
+                  8599,
+                  8729,
+                  8578,
+                  8697
+                ]
+              },
+              {
+                "kind": "maxJ",
+                "tetId": 53462,
+                "J": 1.0931676136777273,
+                "sourceCentroidAtlasMm": [
+                  -43.38457489013672,
+                  -31.889099597930908,
+                  1379.4525146484375
+                ],
+                "referenceVolumeMm3": 0.0022985194253178545,
+                "referenceCondition": 19.178938720922382,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  7341,
+                  7467,
+                  7414,
+                  7398
+                ]
+              }
+            ],
+            "fullyFixedElements": 2434,
+            "attachmentMaxMm": 0,
+            "maxAbsLogJ": 0.13667941581082624,
+            "maxVertexStepMm": 2.0745230330946427,
+            "seconds": 26.089007887000037
+          },
+          {
+            "fromIndex": 40,
+            "index": 32,
+            "requestedIndex": 32,
+            "predictor": {
+              "method": "current coupled SPD strain/volume Dirichlet predictor",
+              "bulk": 30,
+              "linearBackwardError": 6.68789196343618e-17,
+              "matrixNonzeros": 1640916
+            },
+            "scalarPredictorJRange": [
+              0.41022719015127745,
+              1.3798382662039541
+            ],
+            "elev": 12,
+            "neck": 12,
+            "predictorMinJ": 0.8415700260601184,
+            "predictorMaxJ": 1.1394066442872246,
+            "fixedStepMm": 2.0745230330946427,
+            "converged": true,
+            "reason": "residual-tolerance",
+            "iterations": 4,
+            "residualMaxMm": 0.0007020760549118901,
+            "energy": 0.001971711786904648,
+            "cageJQuantiles": [
+              0.8986232200485765,
+              0.990767660056249,
+              0.999999999999785,
+              1.0093309917834963,
+              1.0727851361747165
+            ],
+            "cageNonPositive": 0,
+            "quadratureVolumeRatio": 0.9999756343650703,
+            "metric": {
+              "projection": "none; exact assembled global tangent, direction must be descent",
+              "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+              "linearBackwardError": 1.9133316093223377e-17
+            },
+            "bulkStages": [
+              {
+                "bulk": 30,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 5,
+                "residualMm": 0.0001333664110487186,
+                "JRange": [
+                  0.6475478638366752,
+                  1.2103778568114063
+                ]
+              },
+              {
+                "bulk": 100,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 6,
+                "residualMm": 3.2391296819562465e-7,
+                "JRange": [
+                  0.8167809809699448,
+                  1.137365771603284
+                ]
+              },
+              {
+                "bulk": 300,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 4,
+                "residualMm": 0.000778158170362951,
+                "JRange": [
+                  0.8882671492916129,
+                  1.09891559314198
+                ]
+              },
+              {
+                "bulk": 1000,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 4,
+                "residualMm": 0.0007020760549118901,
+                "JRange": [
+                  0.8986232200485765,
+                  1.0727851361747165
+                ]
+              }
+            ],
+            "tangentSteps": [
+              {
+                "iteration": 1,
+                "energy": 0.0020168450670752227,
+                "gain": 1,
+                "minJ": 0.8972486811910291,
+                "maxJ": 1.0711437025597228,
+                "previousResidualMm": 1.3648655122701692,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 2,
+                "energy": 0.00197307147450354,
+                "gain": 1,
+                "minJ": 0.8988840476551515,
+                "maxJ": 1.0724018509139064,
+                "previousResidualMm": 14.132858228227223,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 3,
+                "energy": 0.0019717198760872134,
+                "gain": 1,
+                "minJ": 0.898679125008922,
+                "maxJ": 1.0727894720831506,
+                "previousResidualMm": 0.28203697495705143,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 4,
+                "energy": 0.001971711786904648,
+                "gain": 1,
+                "minJ": 0.8986232200485765,
+                "maxJ": 1.0727851361747165,
+                "previousResidualMm": 0.1761868694579739,
+                "projectedMetric": false
+              }
+            ],
+            "preconditionedGradientMaxMm": 0.0007020760549118901,
+            "residualToleranceMm": 0.001,
+            "minJ": 0.8986232200485765,
+            "maxJ": 1.0727851361747165,
+            "JQuantiles": [
+              0.8986232200485765,
+              0.990767660056249,
+              0.999999999999785,
+              1.0093309917834963,
+              1.0727851361747165
+            ],
+            "volumeRatio": 0.9999756343650703,
+            "nonPositiveElements": 0,
+            "extrema": [
+              {
+                "kind": "minJ",
+                "tetId": 546,
+                "J": 0.8986232200485765,
+                "sourceCentroidAtlasMm": [
+                  -39.939574241638184,
+                  -84.39830017089844,
+                  1474.97998046875
+                ],
+                "referenceVolumeMm3": 0.0009751211246070329,
+                "referenceCondition": 34.842869074967666,
+                "fixedLabels": [
+                  0,
+                  -1,
+                  -1,
+                  0
+                ],
+                "vertexIds": [
+                  8599,
+                  8729,
+                  8578,
+                  8697
+                ]
+              },
+              {
+                "kind": "maxJ",
+                "tetId": 53462,
+                "J": 1.0727851361747165,
+                "sourceCentroidAtlasMm": [
+                  -43.38457489013672,
+                  -31.889099597930908,
+                  1379.4525146484375
+                ],
+                "referenceVolumeMm3": 0.0022985194253178545,
+                "referenceCondition": 19.178938720922382,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  7341,
+                  7467,
+                  7414,
+                  7398
+                ]
+              }
+            ],
+            "fullyFixedElements": 2434,
+            "attachmentMaxMm": 0,
+            "maxAbsLogJ": 0.10689144243001274,
+            "maxVertexStepMm": 2.0745230330946427,
+            "seconds": 25.13417110299997
+          },
+          {
+            "fromIndex": 32,
+            "index": 24,
+            "requestedIndex": 24,
+            "predictor": {
+              "method": "current coupled SPD strain/volume Dirichlet predictor",
+              "bulk": 30,
+              "linearBackwardError": 1.1227745813390435e-16,
+              "matrixNonzeros": 1640916
+            },
+            "scalarPredictorJRange": [
+              0.4023905852504654,
+              1.4404452536892551
+            ],
+            "elev": 9,
+            "neck": 9,
+            "predictorMinJ": 0.8113073667795162,
+            "predictorMaxJ": 1.1885849272444073,
+            "fixedStepMm": 2.960511909599509,
+            "converged": true,
+            "reason": "residual-tolerance",
+            "iterations": 4,
+            "residualMaxMm": 0.00007485308510117467,
+            "energy": 0.001083971123133593,
+            "cageJQuantiles": [
+              0.9252773855933619,
+              0.9933274346291554,
+              0.9999999999997435,
+              1.0067511615406592,
+              1.0523924296936014
+            ],
+            "cageNonPositive": 0,
+            "quadratureVolumeRatio": 0.9999807976351242,
+            "metric": {
+              "projection": "none; exact assembled global tangent, direction must be descent",
+              "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+              "linearBackwardError": 7.470238802432393e-18
+            },
+            "bulkStages": [
+              {
+                "bulk": 30,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 6,
+                "residualMm": 7.651475648119153e-7,
+                "JRange": [
+                  0.7092135482714723,
+                  1.1668118206220213
+                ]
+              },
+              {
+                "bulk": 100,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 6,
+                "residualMm": 0.000052455165340402406,
+                "JRange": [
+                  0.8577941828467748,
+                  1.1054403332387868
+                ]
+              },
+              {
+                "bulk": 300,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 4,
+                "residualMm": 0.000013947812379687013,
+                "JRange": [
+                  0.9143916639206692,
+                  1.0708738301072913
+                ]
+              },
+              {
+                "bulk": 1000,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 4,
+                "residualMm": 0.00007485308510117467,
+                "JRange": [
+                  0.9252773855933619,
+                  1.0523924296936014
+                ]
+              }
+            ],
+            "tangentSteps": [
+              {
+                "iteration": 1,
+                "energy": 0.0010936460828866977,
+                "gain": 1,
+                "minJ": 0.9245835447909313,
+                "maxJ": 1.0526906829998524,
+                "previousResidualMm": 1.0277225245174608,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 2,
+                "energy": 0.001084029111118663,
+                "gain": 1,
+                "minJ": 0.9249582063864599,
+                "maxJ": 1.0525619231254784,
+                "previousResidualMm": 6.437488330388691,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 3,
+                "energy": 0.001083971276434615,
+                "gain": 1,
+                "minJ": 0.9252762663630232,
+                "maxJ": 1.0523931467305498,
+                "previousResidualMm": 0.03694598010113569,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 4,
+                "energy": 0.001083971123133593,
+                "gain": 1,
+                "minJ": 0.9252773855933619,
+                "maxJ": 1.0523924296936014,
+                "previousResidualMm": 0.03437433164281343,
+                "projectedMetric": false
+              }
+            ],
+            "preconditionedGradientMaxMm": 0.00007485308510117467,
+            "residualToleranceMm": 0.001,
+            "minJ": 0.9252773855933619,
+            "maxJ": 1.0523924296936014,
+            "JQuantiles": [
+              0.9252773855933619,
+              0.9933274346291554,
+              0.9999999999997435,
+              1.0067511615406592,
+              1.0523924296936014
+            ],
+            "volumeRatio": 0.9999807976351242,
+            "nonPositiveElements": 0,
+            "extrema": [
+              {
+                "kind": "minJ",
+                "tetId": 546,
+                "J": 0.9252773855933619,
+                "sourceCentroidAtlasMm": [
+                  -39.939574241638184,
+                  -84.39830017089844,
+                  1474.97998046875
+                ],
+                "referenceVolumeMm3": 0.0009751211246070329,
+                "referenceCondition": 34.842869074967666,
+                "fixedLabels": [
+                  0,
+                  -1,
+                  -1,
+                  0
+                ],
+                "vertexIds": [
+                  8599,
+                  8729,
+                  8578,
+                  8697
+                ]
+              },
+              {
+                "kind": "maxJ",
+                "tetId": 10766,
+                "J": 1.0523924296936014,
+                "sourceCentroidAtlasMm": [
+                  -40.16300878751648,
+                  -82.72297574592014,
+                  1473.5080675460233
+                ],
+                "referenceVolumeMm3": 0.0009385641273448364,
+                "referenceCondition": 33.503699871746875,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  8457,
+                  8521,
+                  8424,
+                  15658
+                ]
+              }
+            ],
+            "fullyFixedElements": 2434,
+            "attachmentMaxMm": 0,
+            "maxAbsLogJ": 0.07766171010647978,
+            "maxVertexStepMm": 2.960511909599509,
+            "seconds": 25.421186465000005
+          },
+          {
+            "fromIndex": 24,
+            "index": 16,
+            "requestedIndex": 16,
+            "predictor": {
+              "method": "current coupled SPD strain/volume Dirichlet predictor",
+              "bulk": 30,
+              "linearBackwardError": 1.1898023510997453e-16,
+              "matrixNonzeros": 1640916
+            },
+            "scalarPredictorJRange": [
+              0.3685128509565626,
+              1.4241233434708174
+            ],
+            "elev": 6,
+            "neck": 6,
+            "predictorMinJ": 0.7897159684936715,
+            "predictorMaxJ": 1.2041628741510515,
+            "fixedStepMm": 3.280945713575949,
+            "converged": true,
+            "reason": "residual-tolerance",
+            "iterations": 3,
+            "residualMaxMm": 0.0003310653282186109,
+            "energy": 0.0003383205177750948,
+            "cageJQuantiles": [
+              0.9516135713666632,
+              0.9961060578067393,
+              0.9999999999997664,
+              1.0039744173993879,
+              1.0339395762316683
+            ],
+            "cageNonPositive": 0,
+            "quadratureVolumeRatio": 0.9999896624860188,
+            "metric": {
+              "projection": "none; exact assembled global tangent, direction must be descent",
+              "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+              "linearBackwardError": 3.5437240935138656e-17
+            },
+            "bulkStages": [
+              {
+                "bulk": 30,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 4,
+                "residualMm": 0.0002081807856499415,
+                "JRange": [
+                  0.8228341026019312,
+                  1.0959933785965281
+                ]
+              },
+              {
+                "bulk": 100,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 4,
+                "residualMm": 0.000004851270409726285,
+                "JRange": [
+                  0.9204957357664012,
+                  1.0586278503180446
+                ]
+              },
+              {
+                "bulk": 300,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 3,
+                "residualMm": 0.0004447593868271067,
+                "JRange": [
+                  0.9460160520776462,
+                  1.0384258238871837
+                ]
+              },
+              {
+                "bulk": 1000,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 3,
+                "residualMm": 0.0003310653282186109,
+                "JRange": [
+                  0.9516135713666632,
+                  1.0339395762316683
+                ]
+              }
+            ],
+            "tangentSteps": [
+              {
+                "iteration": 1,
+                "energy": 0.0003389573581013152,
+                "gain": 1,
+                "minJ": 0.9514298420244469,
+                "maxJ": 1.033981765267532,
+                "previousResidualMm": 0.5876322848629665,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 2,
+                "energy": 0.0003383211600678211,
+                "gain": 1,
+                "minJ": 0.9515771177339581,
+                "maxJ": 1.0339589450213402,
+                "previousResidualMm": 1.6348552602157134,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 3,
+                "energy": 0.0003383205177750948,
+                "gain": 1,
+                "minJ": 0.9516135713666632,
+                "maxJ": 1.0339395762316683,
+                "previousResidualMm": 0.00243805457828656,
+                "projectedMetric": false
+              }
+            ],
+            "preconditionedGradientMaxMm": 0.0003310653282186109,
+            "residualToleranceMm": 0.001,
+            "minJ": 0.9516135713666632,
+            "maxJ": 1.0339395762316683,
+            "JQuantiles": [
+              0.9516135713666632,
+              0.9961060578067393,
+              0.9999999999997664,
+              1.0039744173993879,
+              1.0339395762316683
+            ],
+            "volumeRatio": 0.9999896624860188,
+            "nonPositiveElements": 0,
+            "extrema": [
+              {
+                "kind": "minJ",
+                "tetId": 546,
+                "J": 0.9516135713666632,
+                "sourceCentroidAtlasMm": [
+                  -39.939574241638184,
+                  -84.39830017089844,
+                  1474.97998046875
+                ],
+                "referenceVolumeMm3": 0.0009751211246070329,
+                "referenceCondition": 34.842869074967666,
+                "fixedLabels": [
+                  0,
+                  -1,
+                  -1,
+                  0
+                ],
+                "vertexIds": [
+                  8599,
+                  8729,
+                  8578,
+                  8697
+                ]
+              },
+              {
+                "kind": "maxJ",
+                "tetId": 10766,
+                "J": 1.0339395762316683,
+                "sourceCentroidAtlasMm": [
+                  -40.16300878751648,
+                  -82.72297574592014,
+                  1473.5080675460233
+                ],
+                "referenceVolumeMm3": 0.0009385641273448364,
+                "referenceCondition": 33.503699871746875,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  8457,
+                  8521,
+                  8424,
+                  15658
+                ]
+              }
+            ],
+            "fullyFixedElements": 2434,
+            "attachmentMaxMm": 0,
+            "maxAbsLogJ": 0.04959623902549789,
+            "maxVertexStepMm": 3.280945713575949,
+            "seconds": 19.084671189000005
+          },
+          {
+            "fromIndex": 16,
+            "index": 8,
+            "requestedIndex": 8,
+            "predictor": {
+              "method": "current coupled SPD strain/volume Dirichlet predictor",
+              "bulk": 30,
+              "linearBackwardError": 1.4010750592743722e-16,
+              "matrixNonzeros": 1640916
+            },
+            "scalarPredictorJRange": [
+              0.49021153429043984,
+              1.3265260589907086
+            ],
+            "elev": 3,
+            "neck": 3,
+            "predictorMinJ": 0.8274071220399377,
+            "predictorMaxJ": 1.1684883743988834,
+            "fixedStepMm": 2.680219277788085,
+            "converged": true,
+            "reason": "residual-tolerance",
+            "iterations": 2,
+            "residualMaxMm": 0.00004152758006051135,
+            "energy": 0.00003666123976127397,
+            "cageJQuantiles": [
+              0.9768242409161229,
+              0.9984376264355092,
+              0.999999999999909,
+              1.0015745586585876,
+              1.0161852188591496
+            ],
+            "cageNonPositive": 0,
+            "quadratureVolumeRatio": 0.9999977533218645,
+            "metric": {
+              "projection": "none; exact assembled global tangent, direction must be descent",
+              "factorization": "symmetric ordering, zero diagonal pivot threshold; checked solve, descent and line-search safeguards",
+              "linearBackwardError": 1.4757530035299968e-16
+            },
+            "bulkStages": [
+              {
+                "bulk": 30,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 4,
+                "residualMm": 1.3844909019822372e-7,
+                "JRange": [
+                  0.9493253499765686,
+                  1.0339691774920132
+                ]
+              },
+              {
+                "bulk": 100,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 2,
+                "residualMm": 0.00014152211256391594,
+                "JRange": [
+                  0.9725228995937587,
+                  1.0259439838797018
+                ]
+              },
+              {
+                "bulk": 300,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 2,
+                "residualMm": 0.000044413908186062456,
+                "JRange": [
+                  0.9735234832868567,
+                  1.0185918814576447
+                ]
+              },
+              {
+                "bulk": 1000,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 2,
+                "residualMm": 0.00004152758006051135,
+                "JRange": [
+                  0.9768242409161229,
+                  1.0161852188591496
+                ]
+              }
+            ],
+            "tangentSteps": [
+              {
+                "iteration": 1,
+                "energy": 0.00003666826186374442,
+                "gain": 1,
+                "minJ": 0.97681392027706,
+                "maxJ": 1.016164619696543,
+                "previousResidualMm": 0.2011536874422823,
+                "projectedMetric": false
+              },
+              {
+                "iteration": 2,
+                "energy": 0.00003666123976127397,
+                "gain": 1,
+                "minJ": 0.9768242409161229,
+                "maxJ": 1.0161852188591496,
+                "previousResidualMm": 0.15493676049609964,
+                "projectedMetric": false
+              }
+            ],
+            "preconditionedGradientMaxMm": 0.00004152758006051135,
+            "residualToleranceMm": 0.001,
+            "minJ": 0.9768242409161229,
+            "maxJ": 1.0161852188591496,
+            "JQuantiles": [
+              0.9768242409161229,
+              0.9984376264355092,
+              0.999999999999909,
+              1.0015745586585876,
+              1.0161852188591496
+            ],
+            "volumeRatio": 0.9999977533218645,
+            "nonPositiveElements": 0,
+            "extrema": [
+              {
+                "kind": "minJ",
+                "tetId": 546,
+                "J": 0.9768242409161229,
+                "sourceCentroidAtlasMm": [
+                  -39.939574241638184,
+                  -84.39830017089844,
+                  1474.97998046875
+                ],
+                "referenceVolumeMm3": 0.0009751211246070329,
+                "referenceCondition": 34.842869074967666,
+                "fixedLabels": [
+                  0,
+                  -1,
+                  -1,
+                  0
+                ],
+                "vertexIds": [
+                  8599,
+                  8729,
+                  8578,
+                  8697
+                ]
+              },
+              {
+                "kind": "maxJ",
+                "tetId": 10766,
+                "J": 1.0161852188591496,
+                "sourceCentroidAtlasMm": [
+                  -40.16300878751648,
+                  -82.72297574592014,
+                  1473.5080675460233
+                ],
+                "referenceVolumeMm3": 0.0009385641273448364,
+                "referenceCondition": 33.503699871746875,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  8457,
+                  8521,
+                  8424,
+                  15658
+                ]
+              }
+            ],
+            "fullyFixedElements": 2434,
+            "attachmentMaxMm": 0,
+            "maxAbsLogJ": 0.023448539830872972,
+            "maxVertexStepMm": 2.680219277788085,
+            "seconds": 15.094651972999998
+          },
+          {
+            "fromIndex": 8,
+            "index": 0,
+            "requestedIndex": 0,
+            "predictor": {
+              "method": "current coupled SPD strain/volume Dirichlet predictor",
+              "bulk": 30,
+              "linearBackwardError": 7.78468548345812e-17,
+              "matrixNonzeros": 1640916
+            },
+            "scalarPredictorJRange": [
+              0.7119935130854643,
+              1.2755655068246863
+            ],
+            "elev": 0,
+            "neck": 0,
+            "predictorMinJ": 0.9300532790266894,
+            "predictorMaxJ": 1.0932722244456385,
+            "fixedStepMm": 2.0706492139597428,
+            "converged": true,
+            "reason": "residual-tolerance",
+            "iterations": 0,
+            "residualMaxMm": 0.00002481465941035291,
+            "energy": 2.574851960930007e-15,
+            "cageJQuantiles": [
+              0.9999994210984182,
+              0.9999999850847195,
+              1.000000000000015,
+              1.0000000214743674,
+              1.0000002152077094
+            ],
+            "cageNonPositive": 0,
+            "quadratureVolumeRatio": 1.000000000078493,
+            "metric": null,
+            "bulkStages": [
+              {
+                "bulk": 30,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 3,
+                "residualMm": 0.0009121890044730276,
+                "JRange": [
+                  0.9999228577636088,
+                  1.0000339533830194
+                ]
+              },
+              {
+                "bulk": 100,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 1,
+                "residualMm": 0.000002468997464218575,
+                "JRange": [
+                  0.9999994210984182,
+                  1.0000002152077094
+                ]
+              },
+              {
+                "bulk": 300,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 0,
+                "residualMm": 0.0000074335018004335596,
+                "JRange": [
+                  0.9999994210984182,
+                  1.0000002152077094
+                ]
+              },
+              {
+                "bulk": 1000,
+                "converged": true,
+                "reason": "residual-tolerance",
+                "iterations": 0,
+                "residualMm": 0.00002481465941035291,
+                "JRange": [
+                  0.9999994210984182,
+                  1.0000002152077094
+                ]
+              }
+            ],
+            "tangentSteps": [],
+            "preconditionedGradientMaxMm": 0.00002481465941035291,
+            "residualToleranceMm": 0.001,
+            "minJ": 0.9999994210984182,
+            "maxJ": 1.0000002152077094,
+            "JQuantiles": [
+              0.9999994210984182,
+              0.9999999850847195,
+              1.000000000000015,
+              1.0000000214743674,
+              1.0000002152077094
+            ],
+            "volumeRatio": 1.000000000078493,
+            "nonPositiveElements": 0,
+            "extrema": [
+              {
+                "kind": "minJ",
+                "tetId": 39564,
+                "J": 0.9999994210984182,
+                "sourceCentroidAtlasMm": [
+                  -39.7495002746582,
+                  -82.01799964904785,
+                  1473.7124938964844
+                ],
+                "referenceVolumeMm3": 0.0001754078107083502,
+                "referenceCondition": 68.76979550443579,
+                "fixedLabels": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "vertexIds": [
+                  8757,
+                  8795,
+                  8774,
+                  8747
+                ]
+              },
+              {
+                "kind": "maxJ",
+                "tetId": 546,
+                "J": 1.0000002152077094,
+                "sourceCentroidAtlasMm": [
+                  -39.939574241638184,
+                  -84.39830017089844,
+                  1474.97998046875
+                ],
+                "referenceVolumeMm3": 0.0009751211246070329,
+                "referenceCondition": 34.842869074967666,
+                "fixedLabels": [
+                  0,
+                  -1,
+                  -1,
+                  0
+                ],
+                "vertexIds": [
+                  8599,
+                  8729,
+                  8578,
+                  8697
+                ]
+              }
+            ],
+            "fullyFixedElements": 2434,
+            "attachmentMaxMm": 0,
+            "maxAbsLogJ": 5.78901749346117e-7,
+            "maxVertexStepMm": 2.0706492139597428,
+            "seconds": 8.680865150999978
+          }
+        ],
+        "rejected": []
+      },
+      "neutralReturnMaxMm": 0.0000024817735903654323,
+      "anatomicalAcceptance": false,
+      "physicalVolumeVerified": false,
+      "contactEvaluated": false,
+      "limitations": [
+        "principal source shell only",
+        "interior-refined tetrahedra; source boundary unchanged",
+        "near-surface masks not measured anatomical footprints",
+        "normalized passive energy; no active force or bone contact"
+      ]
+    }
+  ],
+  "productAccepted": false
+}
