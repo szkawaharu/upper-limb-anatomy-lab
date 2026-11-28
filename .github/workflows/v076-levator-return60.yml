@@ -1,0 +1,383 @@
+name: v0.76 levator 60-degree segmented return and shape audit
+on:
+  push:
+    branches: [redesign/v076-shoulder]
+    paths:
+      - '.github/workflows/v076-levator-return60.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  return1:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      QA_INPUT: test-results/v076-levator-constrained30
+      QA_OUTPUT: test-results/v076-levator-return1
+      QA_FRAME_FILE: test-results/v076-levator-60-frames/levator-solid-frames.json
+      QA_MAX_INDEX: '160'
+      QA_DESTINATIONS: '152,144'
+      QA_WARM_MULTIPLIERS: '1'
+      QA_CONSTRAINED_SEED: test-results/v076-levator-prior/segment-end.npz
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-constrained30
+          path: test-results/v076-levator-constrained30/
+          run-id: 46135851243
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-60-frames
+          path: test-results/v076-levator-60-frames/
+          run-id: 46137764819
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-segment4
+          path: test-results/v076-levator-prior/
+          run-id: 46145537791
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/run-levator-constrained-path.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-return1
+          path: test-results/v076-levator-return1/
+  return2:
+    needs: return1
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      QA_INPUT: test-results/v076-levator-constrained30
+      QA_OUTPUT: test-results/v076-levator-return2
+      QA_FRAME_FILE: test-results/v076-levator-60-frames/levator-solid-frames.json
+      QA_MAX_INDEX: '160'
+      QA_DESTINATIONS: '136,128'
+      QA_WARM_MULTIPLIERS: '1'
+      QA_CONSTRAINED_SEED: test-results/v076-levator-prior/segment-end.npz
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-constrained30
+          path: test-results/v076-levator-constrained30/
+          run-id: 46135851243
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-60-frames
+          path: test-results/v076-levator-60-frames/
+          run-id: 46137764819
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-return1
+          path: test-results/v076-levator-prior/
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/run-levator-constrained-path.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-return2
+          path: test-results/v076-levator-return2/
+  return3:
+    needs: return2
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      QA_INPUT: test-results/v076-levator-constrained30
+      QA_OUTPUT: test-results/v076-levator-return3
+      QA_FRAME_FILE: test-results/v076-levator-60-frames/levator-solid-frames.json
+      QA_MAX_INDEX: '160'
+      QA_DESTINATIONS: '120,112,104'
+      QA_WARM_MULTIPLIERS: '1'
+      QA_CONSTRAINED_SEED: test-results/v076-levator-prior/segment-end.npz
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-constrained30
+          path: test-results/v076-levator-constrained30/
+          run-id: 46135851243
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-60-frames
+          path: test-results/v076-levator-60-frames/
+          run-id: 46137764819
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-return2
+          path: test-results/v076-levator-prior/
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/run-levator-constrained-path.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-return3
+          path: test-results/v076-levator-return3/
+  return4:
+    needs: return3
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      QA_INPUT: test-results/v076-levator-constrained30
+      QA_OUTPUT: test-results/v076-levator-return4
+      QA_FRAME_FILE: test-results/v076-levator-60-frames/levator-solid-frames.json
+      QA_MAX_INDEX: '160'
+      QA_DESTINATIONS: '96,88,80'
+      QA_WARM_MULTIPLIERS: '1'
+      QA_CONSTRAINED_SEED: test-results/v076-levator-prior/segment-end.npz
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-constrained30
+          path: test-results/v076-levator-constrained30/
+          run-id: 46135851243
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-60-frames
+          path: test-results/v076-levator-60-frames/
+          run-id: 46137764819
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-return3
+          path: test-results/v076-levator-prior/
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/run-levator-constrained-path.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-return4
+          path: test-results/v076-levator-return4/
+  return5:
+    needs: return4
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      QA_INPUT: test-results/v076-levator-constrained30
+      QA_OUTPUT: test-results/v076-levator-return5
+      QA_FRAME_FILE: test-results/v076-levator-60-frames/levator-solid-frames.json
+      QA_MAX_INDEX: '160'
+      QA_DESTINATIONS: '72,64,56,48,40'
+      QA_WARM_MULTIPLIERS: '1'
+      QA_CONSTRAINED_SEED: test-results/v076-levator-prior/segment-end.npz
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-constrained30
+          path: test-results/v076-levator-constrained30/
+          run-id: 46135851243
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-60-frames
+          path: test-results/v076-levator-60-frames/
+          run-id: 46137764819
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-return4
+          path: test-results/v076-levator-prior/
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/run-levator-constrained-path.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-return5
+          path: test-results/v076-levator-return5/
+  return6:
+    needs: return5
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      QA_INPUT: test-results/v076-levator-constrained30
+      QA_OUTPUT: test-results/v076-levator-return6
+      QA_FRAME_FILE: test-results/v076-levator-60-frames/levator-solid-frames.json
+      QA_MAX_INDEX: '160'
+      QA_DESTINATIONS: '32,24,16,8,0'
+      QA_WARM_MULTIPLIERS: '1'
+      QA_CONSTRAINED_SEED: test-results/v076-levator-prior/segment-end.npz
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-constrained30
+          path: test-results/v076-levator-constrained30/
+          run-id: 46135851243
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-60-frames
+          path: test-results/v076-levator-60-frames/
+          run-id: 46137764819
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-return5
+          path: test-results/v076-levator-prior/
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/run-levator-constrained-path.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-return6
+          path: test-results/v076-levator-return6/
+  collect-forward:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: levator-segment*
+          path: test-results/v076-levator-segments/
+          run-id: 46145537791
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install numpy==2.5.5
+      - run: |
+          python - <<'PY'
+          import shutil,json
+          import numpy as np
+          from pathlib import Path
+          root=Path('test-results/v076-levator-segments')
+          out=Path('test-results/v076-levator-forward60');out.mkdir(parents=True,exist_ok=True)
+          poses={}
+          for i in range(1,5):
+              p=root/f'levator-segment{i}'
+              report=json.loads((p/'report.json').read_text())
+              assert report['path']['completed'] and report['allAcceptedLocalGuardPassed']
+              for f in sorted(p.glob('accepted-*-index-*.npz')):
+                  index=int(np.load(f)['index'])
+                  if index in poses:
+                      assert np.array_equal(np.load(poses[index])['nodes'],np.load(f)['nodes'])
+                  poses[index]=f
+          assert sorted(poses)==list(range(80,161,8)),sorted(poses)
+          for k,index in enumerate(sorted(poses)):
+              shutil.copyfile(poses[index],out/f'accepted-{k:03d}-index-{index:03d}.npz')
+          shutil.copyfile(root/'levator-segment4'/'levator-solid-frames.json',out/'levator-solid-frames.json')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: levator-forward60
+          path: test-results/v076-levator-forward60/
+  shape:
+    needs: collect-forward
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      QA_INPUT: test-results/v076-levator-forward60
+      QA_OUTPUT: test-results/v076-levator-shape60
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-forward60
+          path: test-results/v076-levator-forward60/
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/audit-levator-shape-extrema.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-shape60
+          path: test-results/v076-levator-shape60/
+  contact:
+    needs: collect-forward
+    strategy:
+      fail-fast: false
+      matrix:
+        bone: [C1, C2, C3, C4, scapula]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      QA_INPUT: test-results/v076-levator-forward60
+      QA_OUTPUT: test-results/v076-levator-contact60-${{ matrix.bone }}
+      QA_BONE: ${{ matrix.bone }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-forward60
+          path: test-results/v076-levator-forward60/
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/audit-levator-bone-contact.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-contact60-${{ matrix.bone }}
+          path: test-results/v076-levator-contact60-${{ matrix.bone }}/
+  crossing:
+    needs: collect-forward
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      QA_INPUT: test-results/v076-levator-forward60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-forward60
+          path: test-results/v076-levator-forward60/
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: |
+          for file in "$QA_INPUT"/accepted-*-index-*.npz; do
+            export QA_CROSSING_CHECKPOINT="$(basename "$file")"
+            export QA_OUTPUT="test-results/v076-levator-crossings60/${QA_CROSSING_CHECKPOINT%.npz}"
+            python scripts/experimental/audit-levator-surface-crossings.py
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-crossings60
+          path: test-results/v076-levator-crossings60/
