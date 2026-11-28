@@ -1,0 +1,171 @@
+{
+  "runId": 46113787286,
+  "jobId": 140882934195,
+  "headSha": "b1fa42e6712e4b133d9a1b24c72cf1841abb6d46",
+  "preparation": {
+    "sourceSha256": "4f3d8f0d4637815afcb228b1f3b1a8d74a606f5684a6a4ce59a967412d4d2a1c",
+    "sourceVertices": 15702,
+    "sourceFaces": 31336,
+    "removedOppositePairs": 9,
+    "removedIndexDegenerateFaces": 0,
+    "retainedVertices": 15675,
+    "retainedFaces": 31318,
+    "components": [
+      {
+        "id": 0,
+        "vertices": 15613,
+        "faces": 31230,
+        "closed": true,
+        "oriented": true,
+        "signedVolumeMm3": 12319.95098587992,
+        "minAreaMm2": 0.000009949460945790634,
+        "euler": -2
+      },
+      {
+        "id": 1,
+        "vertices": 5,
+        "faces": 6,
+        "closed": true,
+        "oriented": true,
+        "signedVolumeMm3": 0.0017197565691301857,
+        "minAreaMm2": 0.014955416219000851,
+        "euler": 2
+      },
+      {
+        "id": 2,
+        "vertices": 5,
+        "faces": 6,
+        "closed": true,
+        "oriented": true,
+        "signedVolumeMm3": 0.0001251366175326988,
+        "minAreaMm2": 0.0013887211515241505,
+        "euler": 2
+      },
+      {
+        "id": 3,
+        "vertices": 6,
+        "faces": 8,
+        "closed": true,
+        "oriented": true,
+        "signedVolumeMm3": 0.0009103405279565399,
+        "minAreaMm2": 0.002932133553989975,
+        "euler": 2
+      },
+      {
+        "id": 4,
+        "vertices": 6,
+        "faces": 8,
+        "closed": true,
+        "oriented": true,
+        "signedVolumeMm3": 0,
+        "minAreaMm2": 0.0000011287484085187316,
+        "euler": 2
+      },
+      {
+        "id": 5,
+        "vertices": 6,
+        "faces": 8,
+        "closed": true,
+        "oriented": true,
+        "signedVolumeMm3": 0,
+        "minAreaMm2": 0.0000011174088285770267,
+        "euler": 2
+      },
+      {
+        "id": 6,
+        "vertices": 6,
+        "faces": 8,
+        "closed": true,
+        "oriented": true,
+        "signedVolumeMm3": 0.000001738101125544252,
+        "minAreaMm2": 0.00009837883119624954,
+        "euler": 2
+      },
+      {
+        "id": 7,
+        "vertices": 6,
+        "faces": 8,
+        "closed": true,
+        "oriented": true,
+        "signedVolumeMm3": 0.000019305657358970052,
+        "minAreaMm2": 0.00042744506693074153,
+        "euler": 2
+      },
+      {
+        "id": 8,
+        "vertices": 5,
+        "faces": 6,
+        "closed": true,
+        "oriented": true,
+        "signedVolumeMm3": 0.0008994223065883489,
+        "minAreaMm2": 0.006532480902133263,
+        "euler": 2
+      },
+      {
+        "id": 9,
+        "vertices": 17,
+        "faces": 30,
+        "closed": true,
+        "oriented": true,
+        "signedVolumeMm3": 0.018304093918321957,
+        "minAreaMm2": 0.0026853154926668264,
+        "euler": 2
+      }
+    ],
+    "mainShell": {
+      "id": 0,
+      "vertices": 15613,
+      "faces": 31230,
+      "closed": true,
+      "oriented": true,
+      "signedVolumeMm3": 12319.95098587992,
+      "minAreaMm2": 0.000009949460945790634,
+      "euler": -2
+    },
+    "otherShellsPreserved": true,
+    "mainIsExperimentalSubset": true,
+    "sourcePointMovementMm": 0,
+    "productAccepted": false
+  },
+  "tetrahedralization": {
+    "id": "v58Levator",
+    "inputSha256": "102cf693cb6c9db8311c03b8c447cf89ac09c73e4cf4d833061092b5da8968c5",
+    "source": {
+      "atlas": "BodyParts3D",
+      "worldUnitsPerMm": 1,
+      "coordinateSystem": "original atlas mm",
+      "file": "FMA32540.stl"
+    },
+    "sourceSha256": "4f3d8f0d4637815afcb228b1f3b1a8d74a606f5684a6a4ce59a967412d4d2a1c",
+    "tetgenWrapperVersion": "0.8.4",
+    "runtimeDependencyAdded": false,
+    "qualityRequested": false,
+    "minRadiusEdgeRatio": 2,
+    "steinerLimit": 20000,
+    "sourceVertices": 15613,
+    "nodes": 15613,
+    "tets": 55317,
+    "boundaryFaces": 31230,
+    "sourceBoundaryExact": true,
+    "sourcePrefixMaxError": 0,
+    "referenceTetSignCounts": {
+      "positive": 55317,
+      "negative": 0,
+      "zero": 0
+    },
+    "tetVolumeSum": 12319.95098587992,
+    "sourceSurfaceVolume": 12319.950985879832,
+    "relativeVolumeDifference": 7.086999897180658e-15,
+    "conditionNumberQuantiles": [
+      1.3299678235351773,
+      14.589365271482876,
+      90.5585391619454,
+      216.32009028544977,
+      1906.6469426748145
+    ],
+    "unreferencedGeneratedNodes": [],
+    "seconds": 0.8456511497497559
+  },
+  "productAccepted": false,
+  "anatomicalAcceptance": false
+}
