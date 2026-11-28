@@ -1,0 +1,1225 @@
+{
+  "runId": 46110783277,
+  "jobId": 140873612870,
+  "headSha": "05b1112d4efecc6e0c6bae6338abc2db5fb3845e",
+  "rows": [
+    {
+      "name": "neutral",
+      "side": "right",
+      "baseline": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 1.0002009230857266e-14,
+            "rmsDeformedErrorMm": 8.946069020710904e-15
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "candidate": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 1.0002009230857266e-14,
+            "rmsDeformedErrorMm": 8.946069020710904e-15
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      }
+    },
+    {
+      "name": "neutral",
+      "side": "left",
+      "baseline": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 1.0002009230857266e-14,
+            "rmsDeformedErrorMm": 8.946069020710904e-15
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "candidate": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 1.0002009230857266e-14,
+            "rmsDeformedErrorMm": 8.946069020710904e-15
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      }
+    },
+    {
+      "name": "low40",
+      "side": "right",
+      "baseline": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.0008892452281494457,
+            "rmsDeformedErrorMm": 0.0006044031469536009
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.027402588462971035,
+            "rmsDeformedErrorMm": 0.025862728064512612
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.25145118687982804,
+            "rmsDeformedErrorMm": 0.2426203997614676
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.21793922246721714,
+            "rmsDeformedErrorMm": 0.19593661730265935
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 18.023047572042234,
+            "rmsDeformedErrorMm": 9.125137613296243
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "candidate": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011021211335962681,
+            "rmsDeformedErrorMm": 0.000006680845897643645
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      }
+    },
+    {
+      "name": "low40",
+      "side": "left",
+      "baseline": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000581594523954467,
+            "rmsDeformedErrorMm": 0.0003946200025693967
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.01866308797140035,
+            "rmsDeformedErrorMm": 0.017314542903722936
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.16830018518090123,
+            "rmsDeformedErrorMm": 0.16248441345914916
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.19273884192002022,
+            "rmsDeformedErrorMm": 0.178848021275617
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 7.735509379582201,
+            "rmsDeformedErrorMm": 3.7798551959066615
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "candidate": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011078493406906449,
+            "rmsDeformedErrorMm": 0.000006766261779796423
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      }
+    },
+    {
+      "name": "recording70",
+      "side": "right",
+      "baseline": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.0015583276512454564,
+            "rmsDeformedErrorMm": 0.0010597468270576393
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.04852415661091629,
+            "rmsDeformedErrorMm": 0.045986440095046696
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.4475950255201232,
+            "rmsDeformedErrorMm": 0.4316053378085613
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.4327675017550181,
+            "rmsDeformedErrorMm": 0.3893077144349997
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 18.899334573933633,
+            "rmsDeformedErrorMm": 10.881506372477737
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "candidate": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011040067032761075,
+            "rmsDeformedErrorMm": 0.000006572302501494888
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      }
+    },
+    {
+      "name": "recording70",
+      "side": "left",
+      "baseline": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 1.0002009230857266e-14,
+            "rmsDeformedErrorMm": 8.946069020710904e-15
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "candidate": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 1.0002009230857266e-14,
+            "rmsDeformedErrorMm": 8.946069020710904e-15
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      }
+    },
+    {
+      "name": "side90",
+      "side": "right",
+      "baseline": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.0022718235662150476,
+            "rmsDeformedErrorMm": 0.0015412026137804466
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.07061132234674411,
+            "rmsDeformedErrorMm": 0.06648425648465138
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.6535596675663362,
+            "rmsDeformedErrorMm": 0.6241173747085365
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.5724077593847279,
+            "rmsDeformedErrorMm": 0.49916285502035856
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 20.429020774205433,
+            "rmsDeformedErrorMm": 12.873112421411756
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "candidate": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011389705604418853,
+            "rmsDeformedErrorMm": 0.000006812491012037149
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      }
+    },
+    {
+      "name": "side90",
+      "side": "left",
+      "baseline": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.0022718235662150476,
+            "rmsDeformedErrorMm": 0.0015412026137804466
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.07061132234674411,
+            "rmsDeformedErrorMm": 0.06648425648465138
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.6535596675663362,
+            "rmsDeformedErrorMm": 0.6241173747085365
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.5724077593847279,
+            "rmsDeformedErrorMm": 0.49916285502035856
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 20.429020774205433,
+            "rmsDeformedErrorMm": 12.873112421411756
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "candidate": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011389705604418853,
+            "rmsDeformedErrorMm": 0.000006812491012037149
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      }
+    },
+    {
+      "name": "high120",
+      "side": "right",
+      "baseline": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.0025603472015740167,
+            "rmsDeformedErrorMm": 0.0017368733060290629
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.08104543649391306,
+            "rmsDeformedErrorMm": 0.07609491170417072
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.7421086920883103,
+            "rmsDeformedErrorMm": 0.7101413682850325
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.8349047747311344,
+            "rmsDeformedErrorMm": 0.7126983290864528
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 18.549646895846227,
+            "rmsDeformedErrorMm": 12.45149220310502
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "candidate": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011574797553549633,
+            "rmsDeformedErrorMm": 0.000006674118783590776
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      }
+    },
+    {
+      "name": "high120",
+      "side": "left",
+      "baseline": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.0026816801929139852,
+            "rmsDeformedErrorMm": 0.001810633701554064
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.0855890114716932,
+            "rmsDeformedErrorMm": 0.08026259868999987
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 0.7831123813643438,
+            "rmsDeformedErrorMm": 0.7483901332740682
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 1.0080771250514924,
+            "rmsDeformedErrorMm": 0.8962875448902936
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 26.051136747613004,
+            "rmsDeformedErrorMm": 13.524570419696092
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "candidate": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000010987333483003163,
+            "rmsDeformedErrorMm": 0.000006160025117623028
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      }
+    },
+    {
+      "name": "recording180",
+      "side": "right",
+      "baseline": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 5.77893890195925,
+            "maxDeformedErrorMm": 5.7801860317423905,
+            "rmsDeformedErrorMm": 4.282532834670661
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 3.3669599163543076,
+            "maxDeformedErrorMm": 3.3378001613132384,
+            "rmsDeformedErrorMm": 2.329342950353335
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 0.6092196507824068,
+            "maxDeformedErrorMm": 0.7704677564301005,
+            "rmsDeformedErrorMm": 0.7371534142091952
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 0.6806608904370027,
+            "maxDeformedErrorMm": 1.0624482146000631,
+            "rmsDeformedErrorMm": 0.8072706878197219
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 20.656497907089193,
+            "rmsDeformedErrorMm": 12.828848842660088
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "candidate": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 5.77893890195925,
+            "maxDeformedErrorMm": 5.778938577327731,
+            "rmsDeformedErrorMm": 4.281653822320448
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 3.3669599163543076,
+            "maxDeformedErrorMm": 3.366960199387095,
+            "rmsDeformedErrorMm": 2.3560119976160934
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 0.6092196507824068,
+            "maxDeformedErrorMm": 0.6092193351593355,
+            "rmsDeformedErrorMm": 0.4108559365660766
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 0.6806608904370027,
+            "maxDeformedErrorMm": 0.6806611231269917,
+            "rmsDeformedErrorMm": 0.3962552877182752
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011752829471005531,
+            "rmsDeformedErrorMm": 0.000006882517238868472
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      }
+    },
+    {
+      "name": "recording180",
+      "side": "left",
+      "baseline": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 5.778938901959252,
+            "maxDeformedErrorMm": 5.776840291784524,
+            "rmsDeformedErrorMm": 4.280279120648793
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 3.366959916354308,
+            "maxDeformedErrorMm": 3.4461022532541774,
+            "rmsDeformedErrorMm": 2.4291588276175857
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 0.6092196507824065,
+            "maxDeformedErrorMm": 1.4061365247569548,
+            "rmsDeformedErrorMm": 1.195293934831356
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 0.6806608904370034,
+            "maxDeformedErrorMm": 2.064110984937904,
+            "rmsDeformedErrorMm": 1.6434421322326125
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 43.167515861075024,
+            "rmsDeformedErrorMm": 15.471026612546598
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "candidate": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 5.778938901959252,
+            "maxDeformedErrorMm": 5.778938453502546,
+            "rmsDeformedErrorMm": 4.2816537650925275
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 3.366959916354308,
+            "maxDeformedErrorMm": 3.366959920954643,
+            "rmsDeformedErrorMm": 2.356012022437065
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 0.6092196507824065,
+            "maxDeformedErrorMm": 0.6092196616981669,
+            "rmsDeformedErrorMm": 0.41085589578530785
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 0.6806608904370034,
+            "maxDeformedErrorMm": 0.6806608638845445,
+            "rmsDeformedErrorMm": 0.39625528134711396
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011124344297786847,
+            "rmsDeformedErrorMm": 0.0000066002738454755065
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      }
+    },
+    {
+      "name": "asymmetric",
+      "side": "right",
+      "baseline": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 5.778938901959252,
+            "maxDeformedErrorMm": 5.77721536096674,
+            "rmsDeformedErrorMm": 4.280525946844916
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 3.366959916354308,
+            "maxDeformedErrorMm": 3.4335743771690117,
+            "rmsDeformedErrorMm": 2.417959070819441
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 0.6092196507824065,
+            "maxDeformedErrorMm": 1.2359000474318214,
+            "rmsDeformedErrorMm": 1.0430069299034213
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 0.6806608904370034,
+            "maxDeformedErrorMm": 1.5377715989778322,
+            "rmsDeformedErrorMm": 1.1700104475054693
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 27.107207401956153,
+            "rmsDeformedErrorMm": 13.944099292969504
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "candidate": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 5.778938901959252,
+            "maxDeformedErrorMm": 5.778938453502546,
+            "rmsDeformedErrorMm": 4.2816537650925275
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 3.366959916354308,
+            "maxDeformedErrorMm": 3.366959920954643,
+            "rmsDeformedErrorMm": 2.356012022437065
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 0.6092196507824065,
+            "maxDeformedErrorMm": 0.6092196616981669,
+            "rmsDeformedErrorMm": 0.41085589578530785
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 0.6806608904370034,
+            "maxDeformedErrorMm": 0.6806608638845445,
+            "rmsDeformedErrorMm": 0.39625528134711396
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011574797553549633,
+            "rmsDeformedErrorMm": 0.000006674118783590776
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      }
+    },
+    {
+      "name": "asymmetric",
+      "side": "left",
+      "baseline": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 5.77893890195925,
+            "maxDeformedErrorMm": 5.780058701197498,
+            "rmsDeformedErrorMm": 4.282440188015774
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 3.3669599163543076,
+            "maxDeformedErrorMm": 3.3406752603072563,
+            "rmsDeformedErrorMm": 2.33203392989518
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 0.6092196507824068,
+            "maxDeformedErrorMm": 0.4528714784502822,
+            "rmsDeformedErrorMm": 0.42186115455237394
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 0.6806608904370027,
+            "maxDeformedErrorMm": 0.4305044560979465,
+            "rmsDeformedErrorMm": 0.2751293237937066
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 17.244523306698976,
+            "rmsDeformedErrorMm": 10.336556321069532
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "candidate": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 5.77893890195925,
+            "maxDeformedErrorMm": 5.778938577327731,
+            "rmsDeformedErrorMm": 4.281653822320448
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 3.3669599163543076,
+            "maxDeformedErrorMm": 3.366960199387095,
+            "rmsDeformedErrorMm": 2.3560119976160934
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 0.6092196507824068,
+            "maxDeformedErrorMm": 0.6092193351593355,
+            "rmsDeformedErrorMm": 0.4108559365660766
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 0.6806608904370027,
+            "maxDeformedErrorMm": 0.6806611231269917,
+            "rmsDeformedErrorMm": 0.3962552877182752
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000010927555369485928,
+            "rmsDeformedErrorMm": 0.000006399311901749599
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      }
+    },
+    {
+      "name": "return-neutral",
+      "side": "right",
+      "baseline": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 1.0002009230857266e-14,
+            "rmsDeformedErrorMm": 8.946069020710904e-15
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "candidate": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 1.0002009230857266e-14,
+            "rmsDeformedErrorMm": 8.946069020710904e-15
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      }
+    },
+    {
+      "name": "return-neutral",
+      "side": "left",
+      "baseline": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 1.0002009230857266e-14,
+            "rmsDeformedErrorMm": 8.946069020710904e-15
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "candidate": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 1.0002009230857266e-14,
+            "rmsDeformedErrorMm": 8.946069020710904e-15
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      }
+    }
+  ],
+  "productAccepted": false,
+  "anatomicalAcceptance": false
+}
