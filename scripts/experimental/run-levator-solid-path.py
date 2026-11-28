@@ -11,6 +11,7 @@ from scipy.spatial.transform import Rotation
 from volumetric_reference import Solid
 from joint_path import follow
 from volumetric_gauss_newton import minimize as minimize_gn
+from cage_solver import minimize as minimize_tangent
 from volumetric_preconditioner import factor_rest_metric
 from scipy.sparse.linalg import LinearOperator
 
@@ -65,7 +66,7 @@ solid=Solid(rest,tets,fixed)
 bulk=float(os.environ.get('QA_LEVATOR_BULK','30'))
 iterations=int(os.environ.get('QA_LEVATOR_ITERATIONS','150'))
 solver=os.environ.get('QA_LEVATOR_SOLVER','lbfgs')
-assert solver in ('lbfgs','coupled-gn')
+assert solver in ('lbfgs','coupled-gn','exact-tangent')
 preconditioner=None;preconditioner_info=None
 if solver=='coupled-gn':
     start=time.monotonic();factor,preconditioner_info=factor_rest_metric(solid,bulk)
@@ -86,15 +87,26 @@ def solve_at(x,previous,index):
     if solver=='coupled-gn':
         z,info=minimize_gn(solid,initial,bulk=bulk,iterations=iterations,residual_tolerance_mm=.001,preconditioner=preconditioner,preconditioner_info=preconditioner_info,cg_iterations=150,cg_rtol=1e-3)
         info['linearIterationsTotal']=sum(row['cgIterations'] for row in info.pop('rows'))
+    elif solver=='exact-tangent':
+        z,info=minimize_tangent(solid,initial,bulk=bulk,iterations=iterations,tolerance_mm=.001)
+        info['tangentSteps']=info.pop('rows')
+        info['preconditionedGradientMaxMm']=info['residualMaxMm']
+        info['residualToleranceMm']=.001
     else:
         z,info=solid.minimize(initial,bulk=bulk,iterations=iterations,residual_tolerance_mm=.001)
     _,_,J=solid.evaluate(z,bulk,False)
-    info={**base,**info,'attachmentMaxMm':float(np.linalg.norm(z[fixed]-target,axis=1).max()),'maxAbsLogJ':float(np.max(np.abs(np.log(J)))),'maxVertexStepMm':float(np.linalg.norm(z-x,axis=1).max()),'seconds':time.monotonic()-t}
+    if not np.isfinite(J).all() or np.min(J)<=1e-9:raise RuntimeError('Solver returned invalid material state')
+    extrema=[]
+    for label,k in [('minJ',int(J.argmin())),('maxJ',int(J.argmax()))]:
+        ids=tets[k];extrema.append({'kind':label,'tetId':k,'J':float(J[k]),'sourceCentroidAtlasMm':nodes[ids].mean(axis=0).tolist(),'referenceVolumeMm3':float(solid.volumes[k]),'referenceCondition':float(np.linalg.cond(solid.Dm[k])),'fixedLabels':classes[ids].tolist(),'vertexIds':ids.tolist()})
+    info={**base,**info,'minJ':float(J.min()),'maxJ':float(J.max()),'JQuantiles':np.quantile(J,[0,.01,.5,.99,1]).tolist(),'volumeRatio':float(np.dot(solid.weights,J)),'nonPositiveElements':int((J<=0).sum()),'extrema':extrema,'fullyFixedElements':int(np.all(classes[tets]>=0,axis=1).sum()),'attachmentMaxMm':float(np.linalg.norm(z[fixed]-target,axis=1).max()),'maxAbsLogJ':float(np.max(np.abs(np.log(J)))),'maxVertexStepMm':float(np.linalg.norm(z-x,axis=1).max()),'seconds':time.monotonic()-t}
     assert info['attachmentMaxMm']<1e-9
     print('LEVATOR_SOLID_TRIAL '+json.dumps(info),flush=True)
     return z,info
 def accepted(x,index,records,rejected):
     np.savez_compressed(out/'last-accepted.npz',nodes=x,rest=rest,tets=tets,faces=faces,fixed=fixed,classes=classes,index=index,center=center)
+    if index in (0,8,16):
+        np.savez_compressed(out/f'accepted-{len(records):03d}-index-{index:02d}.npz',nodes=x,rest=rest,tets=tets,faces=faces,fixed=fixed,classes=classes,index=index,center=center)
     (out/'path-progress.json').write_text(json.dumps({'index':index,'accepted':records,'rejected':rejected},indent=2)+'\n')
 x,path=follow(rest,0,[8,16,8,0],solve_at,accepted)
 summary={**report,'solver':solver,'tetraInputSha256':meta['inputSha256'],'bulkPenalty':bulk,'requestedElevationsDeg':[0,3,6,3,0],'requestedNeckDeg':[0,3,6,3,0],'path':path,'neutralReturnMaxMm':float(np.linalg.norm(x-rest,axis=1).max()) if path['completed'] else None,'anatomicalAcceptance':False,'physicalVolumeVerified':False,'contactEvaluated':False,'limitations':['principal source shell only','unrefined tetrahedra; all source nodes on boundary' if report['interiorNodes']==0 else 'interior-refined tetrahedra; source boundary unchanged','near-surface masks not measured anatomical footprints','normalized passive energy; no active force or bone contact']}
