@@ -1,0 +1,54 @@
+name: v0.76 levator explicit self-separation comparison
+on:
+  push:
+    branches: [redesign/v076-shoulder]
+    paths:
+      - '.github/workflows/v076-levator-self-separation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  separate:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - index: 88
+            strength: 100
+          - index: 160
+            strength: 1
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      QA_INPUT: test-results/v076-levator-stretch-${{ matrix.index }}/strength-${{ matrix.strength }}
+      QA_OUTPUT: test-results/v076-levator-separation-${{ matrix.index }}
+      QA_REFERENCE: test-results/v076-levator-forward60/accepted-000-index-080.npz
+      QA_STRETCH_STRENGTH: '${{ matrix.strength }}'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-stretch-${{ matrix.index }}
+          path: test-results/v076-levator-stretch-${{ matrix.index }}/
+          run-id: 46152948133
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-forward60
+          path: test-results/v076-levator-forward60/
+          run-id: 46147865629
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python tests/reference-levator-self-separation.py
+      - run: python scripts/experimental/run-levator-self-separation.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-separation-${{ matrix.index }}
+          path: test-results/v076-levator-separation-${{ matrix.index }}/
