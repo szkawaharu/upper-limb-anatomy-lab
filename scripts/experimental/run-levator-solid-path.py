@@ -47,7 +47,7 @@ np.savez_compressed(out/'attachments.npz',classes=classes,sourceDistancesMm=d,fi
 report={'radiusMm':1,'counts':dict(zip(keys,counts.tolist())),'fixed':len(fixed),'nodes':len(nodes),'tets':len(tets),'interiorNodes':int(len(nodes)-len(np.unique(faces))),'sourceSha256':meta['sourceSha256'],'productAccepted':False}
 print('LEVATOR_SOLID_ATTACHMENTS '+json.dumps(report),flush=True)
 frames=json.loads((out/'levator-solid-frames.json').read_text())['frames']
-assert len(frames)==17 and all(x['index']==i and x['elev']==i*.375 and x['neck']==i*.375 for i,x in enumerate(frames))
+assert 17<=len(frames)<=107 and all(x['index']==i and x['elev']==i*.375 and x['neck']==i*.375 and x['plane']==40 and x['backend']=='validated-field' for i,x in enumerate(frames))
 # Work in centered atlas millimetres, not browser units. World chart x=-atlasX,
 # y=atlasZ, z=atlasY; origin offsets are accounted for explicitly.
 center=nodes.mean(axis=0);rest=nodes-center
@@ -75,6 +75,24 @@ if solver=='coupled-gn':
     preconditioner_info['setupSeconds']=time.monotonic()-start
     print('LEVATOR_SOLID_PRECONDITIONER '+json.dumps(preconditioner_info),flush=True)
 _,_,J=solid.evaluate(rest,bulk);assert np.max(abs(J-1))<1e-9
+start_index=0;start_nodes=rest.copy()
+destinations=[8,16,8,0]
+seed_file=os.environ.get('QA_LEVATOR_SEED')
+if seed_file:
+    seed=np.load(seed_file)
+    assert np.array_equal(seed['rest'],rest) and np.array_equal(seed['tets'],tets) and np.array_equal(seed['faces'],faces)
+    assert np.array_equal(seed['fixed'],fixed) and np.array_equal(seed['classes'],classes) and np.array_equal(seed['center'],center)
+    start_index=int(seed['index']);assert start_index==16
+    start_nodes=seed['nodes'].copy()
+    assert np.max(np.linalg.norm(start_nodes[fixed]-targets[start_index],axis=1))<1e-9
+    E,g,J=solid.evaluate(start_nodes,bulk)
+    residual=float(np.linalg.norm(solid.factor.solve(g[solid.free]),axis=1).max())
+    assert np.isfinite(E) and J.min()>1e-9 and residual<.001
+    assert J.min()>=.95 and J.max()<=1.05,'Seed fails experimental local volume guard'
+    destinations=[24,32,40,32,24,16,8,0]
+    assert len(frames)>max(destinations)
+    np.savez_compressed(out/'accepted-000-index-16.npz',nodes=start_nodes,rest=rest,tets=tets,faces=faces,fixed=fixed,classes=classes,index=start_index,center=center)
+    print('LEVATOR_EXTENDED_SEED '+json.dumps({'index':start_index,'residualMm':residual,'JRange':[float(J.min()),float(J.max())],'bulk':bulk}),flush=True)
 rows=[]
 def solve_at(x,previous,index):
     t=time.monotonic();target=targets[index]
@@ -105,11 +123,11 @@ def solve_at(x,previous,index):
     return z,info
 def accepted(x,index,records,rejected):
     np.savez_compressed(out/'last-accepted.npz',nodes=x,rest=rest,tets=tets,faces=faces,fixed=fixed,classes=classes,index=index,center=center)
-    if index in (0,8,16):
+    if index in (0,8,16,24,32,40):
         np.savez_compressed(out/f'accepted-{len(records):03d}-index-{index:02d}.npz',nodes=x,rest=rest,tets=tets,faces=faces,fixed=fixed,classes=classes,index=index,center=center)
     (out/'path-progress.json').write_text(json.dumps({'index':index,'accepted':records,'rejected':rejected},indent=2)+'\n')
-x,path=follow(rest,0,[8,16,8,0],solve_at,accepted)
-summary={**report,'solver':solver,'tetraInputSha256':meta['inputSha256'],'bulkPenalty':bulk,'requestedElevationsDeg':[0,3,6,3,0],'requestedNeckDeg':[0,3,6,3,0],'path':path,'neutralReturnMaxMm':float(np.linalg.norm(x-rest,axis=1).max()) if path['completed'] else None,'anatomicalAcceptance':False,'physicalVolumeVerified':False,'contactEvaluated':False,'limitations':['principal source shell only','unrefined tetrahedra; all source nodes on boundary' if report['interiorNodes']==0 else 'interior-refined tetrahedra; source boundary unchanged','near-surface masks not measured anatomical footprints','normalized passive energy; no active force or bone contact']}
+x,path=follow(start_nodes,start_index,destinations,solve_at,accepted)
+summary={**report,'solver':solver,'tetraInputSha256':meta['inputSha256'],'bulkPenalty':bulk,'requestedElevationsDeg':[i*.375 for i in [start_index,*destinations]],'requestedNeckDeg':[i*.375 for i in [start_index,*destinations]],'seedFile':seed_file,'experimentalLocalVolumeGuard':[.95,1.05],'allAcceptedWithinLocalVolumeGuard':bool(path['accepted']) and all(v['minJ']>=.95 and v['maxJ']<=1.05 for v in path['accepted']),'path':path,'neutralReturnMaxMm':float(np.linalg.norm(x-rest,axis=1).max()) if path['completed'] else None,'anatomicalAcceptance':False,'physicalVolumeVerified':False,'contactEvaluated':False,'limitations':['principal source shell only','unrefined tetrahedra; all source nodes on boundary' if report['interiorNodes']==0 else 'interior-refined tetrahedra; source boundary unchanged','near-surface masks not measured anatomical footprints','normalized passive energy; no active force or bone contact']}
 (out/'report.json').write_text(json.dumps(summary,indent=2)+'\n')
 print('LEVATOR_SOLID_PATH '+json.dumps(summary),flush=True)
 # A nonconverged attempt remains a measured failure, never a completed path.
