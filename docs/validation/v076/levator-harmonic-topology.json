@@ -1,0 +1,1671 @@
+{
+  "runId": 46111174091,
+  "topology": {
+    "sourceSha256": "4f3d8f0d4637815afcb228b1f3b1a8d74a606f5684a6a4ce59a967412d4d2a1c",
+    "sourceExactCoordinateWeld": {
+      "vertices": 15702,
+      "faces": 31336,
+      "components": [
+        {
+          "id": 0,
+          "vertices": 15613,
+          "faces": 31230,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -84.52780151367188,
+              -88.72200012207031,
+              1329.3900146484375
+            ],
+            [
+              -25.017499923706055,
+              -5.5831499099731445,
+              1477.3699951171875
+            ]
+          ]
+        },
+        {
+          "id": 16,
+          "vertices": 17,
+          "faces": 30,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -35.47129821777344,
+              -79.26029968261719,
+              1458.0999755859375
+            ],
+            [
+              -35.18330001831055,
+              -78.90299987792969,
+              1458.81005859375
+            ]
+          ]
+        },
+        {
+          "id": 5,
+          "vertices": 6,
+          "faces": 8,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -80.04290008544922,
+              -21.795900344848633,
+              1351.8199462890625
+            ],
+            [
+              -79.74849700927734,
+              -21.704200744628906,
+              1352
+            ]
+          ]
+        },
+        {
+          "id": 6,
+          "vertices": 6,
+          "faces": 8,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -68.2427978515625,
+              -9.993209838867188,
+              1336.219970703125
+            ],
+            [
+              -68.2396011352539,
+              -9.990070343017578,
+              1336.219970703125
+            ]
+          ]
+        },
+        {
+          "id": 9,
+          "vertices": 6,
+          "faces": 8,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -67.88289642333984,
+              -10.02910041809082,
+              1336.6600341796875
+            ],
+            [
+              -67.87960052490234,
+              -10.025899887084961,
+              1336.6600341796875
+            ]
+          ]
+        },
+        {
+          "id": 10,
+          "vertices": 6,
+          "faces": 8,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -67.84429931640625,
+              -9.826459884643555,
+              1336.260009765625
+            ],
+            [
+              -67.82050323486328,
+              -9.80463981628418,
+              1336.280029296875
+            ]
+          ]
+        },
+        {
+          "id": 11,
+          "vertices": 6,
+          "faces": 8,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -66.9229965209961,
+              -9.053950309753418,
+              1335.3499755859375
+            ],
+            [
+              -66.8677978515625,
+              -9.013090133666992,
+              1335.4000244140625
+            ]
+          ]
+        },
+        {
+          "id": 1,
+          "vertices": 5,
+          "faces": 6,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -83.99819946289062,
+              -25.865699768066406,
+              1350.1400146484375
+            ],
+            [
+              -83.9021987915039,
+              -25.259899139404297,
+              1350.469970703125
+            ]
+          ]
+        },
+        {
+          "id": 3,
+          "vertices": 5,
+          "faces": 6,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -80.53160095214844,
+              -22.319499969482422,
+              1351.9300537109375
+            ],
+            [
+              -80.31340026855469,
+              -22.266700744628906,
+              1352.010009765625
+            ]
+          ]
+        },
+        {
+          "id": 14,
+          "vertices": 5,
+          "faces": 6,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -39.74850082397461,
+              -82.31340026855469,
+              1476.3699951171875
+            ],
+            [
+              -39.581199645996094,
+              -82.15689849853516,
+              1476.5799560546875
+            ]
+          ]
+        },
+        {
+          "id": 2,
+          "vertices": 3,
+          "faces": 2,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -83.56819915771484,
+              -24.930099487304688,
+              1350.7900390625
+            ],
+            [
+              -83.55460357666016,
+              -24.901100158691406,
+              1350.8299560546875
+            ]
+          ]
+        },
+        {
+          "id": 4,
+          "vertices": 3,
+          "faces": 2,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -80.25360107421875,
+              -21.94420051574707,
+              1351.800048828125
+            ],
+            [
+              -80.21859741210938,
+              -21.91629981994629,
+              1351.8299560546875
+            ]
+          ]
+        },
+        {
+          "id": 7,
+          "vertices": 3,
+          "faces": 2,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -68.01329803466797,
+              -9.805419921875,
+              1336.050048828125
+            ],
+            [
+              -68.00420379638672,
+              -9.797889709472656,
+              1336.06005859375
+            ]
+          ]
+        },
+        {
+          "id": 8,
+          "vertices": 3,
+          "faces": 2,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -67.89019775390625,
+              -11.102700233459473,
+              1338.22998046875
+            ],
+            [
+              -67.87229919433594,
+              -11.086899757385254,
+              1338.25
+            ]
+          ]
+        },
+        {
+          "id": 12,
+          "vertices": 3,
+          "faces": 2,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -65.74800109863281,
+              -11.66450023651123,
+              1334.199951171875
+            ],
+            [
+              -65.69059753417969,
+              -11.627699851989746,
+              1334.31005859375
+            ]
+          ]
+        },
+        {
+          "id": 13,
+          "vertices": 3,
+          "faces": 2,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -64.23989868164062,
+              -6.668379783630371,
+              1332.0699462890625
+            ],
+            [
+              -64.22319793701172,
+              -6.656050205230713,
+              1332.0799560546875
+            ]
+          ]
+        },
+        {
+          "id": 15,
+          "vertices": 3,
+          "faces": 2,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -39.619998931884766,
+              -82.0718002319336,
+              1476.1099853515625
+            ],
+            [
+              -39.41830062866211,
+              -82.01280212402344,
+              1476.199951171875
+            ]
+          ]
+        },
+        {
+          "id": 17,
+          "vertices": 3,
+          "faces": 2,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -32.189701080322266,
+              -78.93090057373047,
+              1445.6300048828125
+            ],
+            [
+              -32.170101165771484,
+              -78.91310119628906,
+              1445.6300048828125
+            ]
+          ]
+        },
+        {
+          "id": 18,
+          "vertices": 3,
+          "faces": 2,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -26.09160041809082,
+              -83.34850311279297,
+              1457.530029296875
+            ],
+            [
+              -26.0580997467041,
+              -83.29409790039062,
+              1457.56005859375
+            ]
+          ]
+        }
+      ]
+    },
+    "runtimeClustered": {
+      "vertices": 6250,
+      "faces": 13005,
+      "components": [
+        {
+          "id": 0,
+          "vertices": 6243,
+          "faces": 13005,
+          "boundaryEdges": 414,
+          "nonmanifoldEdges": 740,
+          "boundsMm": [
+            [
+              -84.52780271650434,
+              -88.59847442228515,
+              1329.619989103025
+            ],
+            [
+              -25.207126416601575,
+              -5.748328793156261,
+              1477.2868128596126
+            ]
+          ],
+          "nearestSourceComponents": [
+            {
+              "id": 0,
+              "vertices": 6239
+            },
+            {
+              "id": 5,
+              "vertices": 1
+            },
+            {
+              "id": 11,
+              "vertices": 1
+            },
+            {
+              "id": 16,
+              "vertices": 2
+            }
+          ],
+          "nearestSourceDistanceMaxMm": 0.6276038597703965
+        },
+        {
+          "id": 1,
+          "vertices": 1,
+          "faces": 0,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -83.90220095660236,
+              -25.259898520804747,
+              1350.1400103526073
+            ],
+            [
+              -83.90220095660236,
+              -25.259898520804747,
+              1350.1400103526073
+            ]
+          ],
+          "nearestSourceComponents": [
+            {
+              "id": 1,
+              "vertices": 1
+            }
+          ],
+          "nearestSourceDistanceMaxMm": 0.000004850203476814389
+        },
+        {
+          "id": 2,
+          "vertices": 1,
+          "faces": 0,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -83.63705157374476,
+              -24.86637362059173,
+              1350.5950032139683
+            ],
+            [
+              -83.63705157374476,
+              -24.86637362059173,
+              1350.5950032139683
+            ]
+          ],
+          "nearestSourceComponents": [
+            {
+              "id": 2,
+              "vertices": 1
+            }
+          ],
+          "nearestSourceDistanceMaxMm": 0.20972737030254315
+        },
+        {
+          "id": 3,
+          "vertices": 1,
+          "faces": 0,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -68.06123560828132,
+              -10.009556134541832,
+              1336.4400062561035
+            ],
+            [
+              -68.06123560828132,
+              -10.009556134541832,
+              1336.4400062561035
+            ]
+          ],
+          "nearestSourceComponents": [
+            {
+              "id": 9,
+              "vertices": 1
+            }
+          ],
+          "nearestSourceDistanceMaxMm": 0.2837878717911791
+        },
+        {
+          "id": 4,
+          "vertices": 1,
+          "faces": 0,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -68.010136707409,
+              -9.800478076075656,
+              1336.0533815332362
+            ],
+            [
+              -68.010136707409,
+              -9.800478076075656,
+              1336.0533815332362
+            ]
+          ],
+          "nearestSourceComponents": [
+            {
+              "id": 7,
+              "vertices": 1
+            }
+          ],
+          "nearestSourceDistanceMaxMm": 0.006570522770268404
+        },
+        {
+          "id": 5,
+          "vertices": 1,
+          "faces": 0,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -67.83246653788798,
+              -9.815551070479664,
+              1336.2700202529495
+            ],
+            [
+              -67.83246653788798,
+              -9.815551070479664,
+              1336.2700202529495
+            ]
+          ],
+          "nearestSourceComponents": [
+            {
+              "id": 10,
+              "vertices": 1
+            }
+          ],
+          "nearestSourceDistanceMaxMm": 0.010073815171875002
+        },
+        {
+          "id": 6,
+          "vertices": 1,
+          "faces": 0,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -39.4183014233907,
+              -82.03150164007067,
+              1476.1999678053298
+            ],
+            [
+              -39.4183014233907,
+              -82.03150164007067,
+              1476.1999678053298
+            ]
+          ],
+          "nearestSourceComponents": [
+            {
+              "id": 15,
+              "vertices": 1
+            }
+          ],
+          "nearestSourceDistanceMaxMm": 0.000016652936676570612
+        },
+        {
+          "id": 7,
+          "vertices": 1,
+          "faces": 0,
+          "boundaryEdges": 0,
+          "nonmanifoldEdges": 0,
+          "boundsMm": [
+            [
+              -33.44690003051414,
+              -67.70950360985489,
+              1431.5899614901157
+            ],
+            [
+              -33.44690003051414,
+              -67.70950360985489,
+              1431.5899614901157
+            ]
+          ],
+          "nearestSourceComponents": [
+            {
+              "id": 0,
+              "vertices": 1
+            }
+          ],
+          "nearestSourceDistanceMaxMm": 0.0000043955359670145345
+        }
+      ]
+    },
+    "productAccepted": false,
+    "limitations": [
+      "Vertex-connected components, not measured muscle fascicles",
+      "Nearest source vertex correspondence is approximate; not a provenance proof",
+      "No deletion, repair, self-intersection check or solid generation"
+    ]
+  },
+  "preparation": {
+    "components": [
+      {
+        "vertices": 6243,
+        "pins": 331,
+        "labels": [
+          "scapula",
+          "C4",
+          "C3",
+          "C2",
+          "C1"
+        ],
+        "iterations": [
+          324,
+          316,
+          327,
+          327,
+          321
+        ],
+        "maxRelativeResidual": 9.951076662570213e-11
+      },
+      {
+        "vertices": 1,
+        "pins": 1,
+        "labels": [
+          "scapula"
+        ],
+        "iterations": [],
+        "maxRelativeResidual": 0
+      },
+      {
+        "vertices": 1,
+        "pins": 1,
+        "labels": [
+          "scapula"
+        ],
+        "iterations": [],
+        "maxRelativeResidual": 0
+      },
+      {
+        "vertices": 1,
+        "pins": 1,
+        "labels": [
+          "scapula"
+        ],
+        "iterations": [],
+        "maxRelativeResidual": 0
+      },
+      {
+        "vertices": 1,
+        "pins": 1,
+        "labels": [
+          "scapula"
+        ],
+        "iterations": [],
+        "maxRelativeResidual": 0
+      },
+      {
+        "vertices": 1,
+        "pins": 1,
+        "labels": [
+          "scapula"
+        ],
+        "iterations": [],
+        "maxRelativeResidual": 0
+      },
+      {
+        "vertices": 1,
+        "pins": 0,
+        "labels": [],
+        "iterations": [],
+        "maxRelativeResidual": 0
+      },
+      {
+        "vertices": 1,
+        "pins": 0,
+        "labels": [],
+        "iterations": [],
+        "maxRelativeResidual": 0
+      }
+    ],
+    "unanchoredVertices": 2,
+    "partitionError": 7.184595141040973e-10,
+    "min": 0,
+    "max": 1,
+    "physicalVolumeVerified": false
+  },
+  "rows": [
+    {
+      "name": "neutral",
+      "side": "right",
+      "edge": [
+        1,
+        1
+      ],
+      "area": [
+        1,
+        1
+      ],
+      "topology": {
+        "closed": false,
+        "boundary": 414,
+        "nonmanifold": 740,
+        "inconsistent": 20,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "degenerate": 0,
+      "volumeStatus": "not-evaluable",
+      "registry": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 1.0002009230857266e-14,
+            "rmsDeformedErrorMm": 8.946069020710904e-15
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "neutral",
+      "side": "left",
+      "edge": [
+        1,
+        1
+      ],
+      "area": [
+        1,
+        1
+      ],
+      "topology": {
+        "closed": false,
+        "boundary": 414,
+        "nonmanifold": 740,
+        "inconsistent": 20,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "degenerate": 0,
+      "volumeStatus": "not-evaluable",
+      "registry": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 1.0002009230857266e-14,
+            "rmsDeformedErrorMm": 8.946069020710904e-15
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "low40",
+      "side": "right",
+      "edge": [
+        0.535671974213419,
+        1.5515197034690227
+      ],
+      "area": [
+        0.061077913872818,
+        26.456774455165903
+      ],
+      "topology": {
+        "closed": false,
+        "boundary": 414,
+        "nonmanifold": 740,
+        "inconsistent": 20,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "degenerate": 0,
+      "volumeStatus": "not-evaluable",
+      "registry": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011021211335962681,
+            "rmsDeformedErrorMm": 0.000006680845897643645
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "low40",
+      "side": "left",
+      "edge": [
+        0.7279779764273443,
+        1.3318022366717819
+      ],
+      "area": [
+        0.13351943546786413,
+        10.628266449881538
+      ],
+      "topology": {
+        "closed": false,
+        "boundary": 414,
+        "nonmanifold": 740,
+        "inconsistent": 20,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "degenerate": 0,
+      "volumeStatus": "not-evaluable",
+      "registry": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011078493406906449,
+            "rmsDeformedErrorMm": 0.000006766261779796423
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "recording70",
+      "side": "right",
+      "edge": [
+        0.3525606837203637,
+        2.134695585575028
+      ],
+      "area": [
+        0.03332336195842458,
+        38.81395252286477
+      ],
+      "topology": {
+        "closed": false,
+        "boundary": 414,
+        "nonmanifold": 740,
+        "inconsistent": 20,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "degenerate": 0,
+      "volumeStatus": "not-evaluable",
+      "registry": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011040067032761075,
+            "rmsDeformedErrorMm": 0.000006572302501494888
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "recording70",
+      "side": "left",
+      "edge": [
+        1,
+        1
+      ],
+      "area": [
+        1,
+        1
+      ],
+      "topology": {
+        "closed": false,
+        "boundary": 414,
+        "nonmanifold": 740,
+        "inconsistent": 20,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "degenerate": 0,
+      "volumeStatus": "not-evaluable",
+      "registry": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 1.0002009230857266e-14,
+            "rmsDeformedErrorMm": 8.946069020710904e-15
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "side90",
+      "side": "right",
+      "edge": [
+        0.21458410184374732,
+        2.876634150921873
+      ],
+      "area": [
+        0.0646458906213009,
+        63.542321097353074
+      ],
+      "topology": {
+        "closed": false,
+        "boundary": 414,
+        "nonmanifold": 740,
+        "inconsistent": 20,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "degenerate": 0,
+      "volumeStatus": "not-evaluable",
+      "registry": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011389705604418853,
+            "rmsDeformedErrorMm": 0.000006812491012037149
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "side90",
+      "side": "left",
+      "edge": [
+        0.21458410184374732,
+        2.876634150921873
+      ],
+      "area": [
+        0.0646458906213009,
+        63.542321097353074
+      ],
+      "topology": {
+        "closed": false,
+        "boundary": 414,
+        "nonmanifold": 740,
+        "inconsistent": 20,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "degenerate": 0,
+      "volumeStatus": "not-evaluable",
+      "registry": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011389705604418853,
+            "rmsDeformedErrorMm": 0.000006812491012037149
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "high120",
+      "side": "right",
+      "edge": [
+        0.29979641961999615,
+        3.4317290385415067
+      ],
+      "area": [
+        0.07967102192403108,
+        56.19420481937816
+      ],
+      "topology": {
+        "closed": false,
+        "boundary": 414,
+        "nonmanifold": 740,
+        "inconsistent": 20,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "degenerate": 0,
+      "volumeStatus": "not-evaluable",
+      "registry": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011574797553549633,
+            "rmsDeformedErrorMm": 0.000006674118783590776
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "high120",
+      "side": "left",
+      "edge": [
+        0.22768795189648985,
+        3.7599724356128372
+      ],
+      "area": [
+        0.03449835234892018,
+        45.95487293619061
+      ],
+      "topology": {
+        "closed": false,
+        "boundary": 414,
+        "nonmanifold": 740,
+        "inconsistent": 20,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "degenerate": 0,
+      "volumeStatus": "not-evaluable",
+      "registry": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000010987333483003163,
+            "rmsDeformedErrorMm": 0.000006160025117623028
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "recording180",
+      "side": "right",
+      "edge": [
+        0.18201484626494724,
+        4.130315661298057
+      ],
+      "area": [
+        0.03787848953898916,
+        99.88617288329047
+      ],
+      "topology": {
+        "closed": false,
+        "boundary": 414,
+        "nonmanifold": 740,
+        "inconsistent": 20,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "degenerate": 0,
+      "volumeStatus": "not-evaluable",
+      "registry": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 5.77893890195925,
+            "maxDeformedErrorMm": 0.0000012554142662729938,
+            "rmsDeformedErrorMm": 7.001765615743936e-7
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 3.3669599163543076,
+            "maxDeformedErrorMm": 4.467252304598516e-7,
+            "rmsDeformedErrorMm": 3.02166685630048e-7
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 0.6092196507824068,
+            "maxDeformedErrorMm": 3.9158367319581893e-7,
+            "rmsDeformedErrorMm": 2.683404228655358e-7
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 0.6806608904370027,
+            "maxDeformedErrorMm": 6.836526389139869e-7,
+            "rmsDeformedErrorMm": 3.6131962509288206e-7
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011752829471005531,
+            "rmsDeformedErrorMm": 0.000006882517238868472
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "recording180",
+      "side": "left",
+      "edge": [
+        0.24838439811074978,
+        4.675270888204005
+      ],
+      "area": [
+        0.09039092345002506,
+        55.573776971667236
+      ],
+      "topology": {
+        "closed": false,
+        "boundary": 414,
+        "nonmanifold": 740,
+        "inconsistent": 20,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "degenerate": 0,
+      "volumeStatus": "not-evaluable",
+      "registry": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 5.778938901959252,
+            "maxDeformedErrorMm": 0.0000012627626702311594,
+            "rmsDeformedErrorMm": 7.788975033943552e-7
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 3.366959916354308,
+            "maxDeformedErrorMm": 7.15928811332846e-7,
+            "rmsDeformedErrorMm": 4.017259872851607e-7
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 0.6092196507824065,
+            "maxDeformedErrorMm": 6.981320488858176e-7,
+            "rmsDeformedErrorMm": 4.2237820519974615e-7
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 0.6806608904370034,
+            "maxDeformedErrorMm": 6.729206738322311e-7,
+            "rmsDeformedErrorMm": 3.8105357457955353e-7
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011124344297786847,
+            "rmsDeformedErrorMm": 0.0000066002738454755065
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "asymmetric",
+      "side": "right",
+      "edge": [
+        0.37586845122355,
+        3.6850244366932583
+      ],
+      "area": [
+        0.040750672468864886,
+        45.51383819219482
+      ],
+      "topology": {
+        "closed": false,
+        "boundary": 414,
+        "nonmanifold": 740,
+        "inconsistent": 20,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "degenerate": 0,
+      "volumeStatus": "not-evaluable",
+      "registry": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 5.778938901959252,
+            "maxDeformedErrorMm": 0.0000012627626702311594,
+            "rmsDeformedErrorMm": 7.788975033943552e-7
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 3.366959916354308,
+            "maxDeformedErrorMm": 7.15928811332846e-7,
+            "rmsDeformedErrorMm": 4.017259872851607e-7
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 0.6092196507824065,
+            "maxDeformedErrorMm": 6.981320488858176e-7,
+            "rmsDeformedErrorMm": 4.2237820519974615e-7
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 0.6806608904370034,
+            "maxDeformedErrorMm": 6.729206738322311e-7,
+            "rmsDeformedErrorMm": 3.8105357457955353e-7
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000011574797553549633,
+            "rmsDeformedErrorMm": 0.000006674118783590776
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "asymmetric",
+      "side": "left",
+      "edge": [
+        0.26127415564320483,
+        2.8741783254044555
+      ],
+      "area": [
+        0.02739704992381588,
+        64.4230979221408
+      ],
+      "topology": {
+        "closed": false,
+        "boundary": 414,
+        "nonmanifold": 740,
+        "inconsistent": 20,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "degenerate": 0,
+      "volumeStatus": "not-evaluable",
+      "registry": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 5.77893890195925,
+            "maxDeformedErrorMm": 0.0000012554142662729938,
+            "rmsDeformedErrorMm": 7.001765615743936e-7
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 3.3669599163543076,
+            "maxDeformedErrorMm": 4.467252304598516e-7,
+            "rmsDeformedErrorMm": 3.02166685630048e-7
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 0.6092196507824068,
+            "maxDeformedErrorMm": 3.9158367319581893e-7,
+            "rmsDeformedErrorMm": 2.683404228655358e-7
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 0.6806608904370027,
+            "maxDeformedErrorMm": 6.836526389139869e-7,
+            "rmsDeformedErrorMm": 3.6131962509288206e-7
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0.000010927555369485928,
+            "rmsDeformedErrorMm": 0.000006399311901749599
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "return-neutral",
+      "side": "right",
+      "edge": [
+        1,
+        1
+      ],
+      "area": [
+        1,
+        1
+      ],
+      "topology": {
+        "closed": false,
+        "boundary": 414,
+        "nonmanifold": 740,
+        "inconsistent": 20,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "degenerate": 0,
+      "volumeStatus": "not-evaluable",
+      "registry": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 1.0002009230857266e-14,
+            "rmsDeformedErrorMm": 8.946069020710904e-15
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "productAccepted": false
+    },
+    {
+      "name": "return-neutral",
+      "side": "left",
+      "edge": [
+        1,
+        1
+      ],
+      "area": [
+        1,
+        1
+      ],
+      "topology": {
+        "closed": false,
+        "boundary": 414,
+        "nonmanifold": 740,
+        "inconsistent": 20,
+        "degenerate": 0,
+        "smallAbsoluteAreaFaces": 0,
+        "precisionPolicy": "cross-product roundoff bound; unresolved triangles conservatively rejected",
+        "legacySmallAreaCutoffWorld2": 1e-12
+      },
+      "degenerate": 0,
+      "volumeStatus": "not-evaluable",
+      "registry": {
+        "byBone": {
+          "C1": {
+            "count": 18,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 0,
+            "rmsDeformedErrorMm": 0
+          },
+          "C2": {
+            "count": 16,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.500502307714316e-15
+          },
+          "C3": {
+            "count": 19,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143164e-15
+          },
+          "C4": {
+            "count": 48,
+            "maxLegacyOriginErrorMm": 2.5005023077143164e-15,
+            "maxDeformedErrorMm": 2.5005023077143164e-15,
+            "rmsDeformedErrorMm": 2.5005023077143156e-15
+          },
+          "scapula": {
+            "count": 235,
+            "maxLegacyOriginErrorMm": 0,
+            "maxDeformedErrorMm": 1.0002009230857266e-14,
+            "rmsDeformedErrorMm": 8.946069020710904e-15
+          }
+        },
+        "productAccepted": false,
+        "anatomicalAcceptance": false
+      },
+      "productAccepted": false
+    }
+  ],
+  "productAccepted": false
+}
