@@ -1,0 +1,2243 @@
+{
+  "runId": 46131050332,
+  "headSha": "284f37916cafd0ebd0e53f1553ae5d1110496c01",
+  "results": [
+    {
+      "jobId": 140936040675,
+      "job": "volume (refined)",
+      "sourceCheckpoint": "accepted-003-index-16.npz",
+      "rows": [
+        {
+          "converged": true,
+          "bulk": 30,
+          "JRange": [
+            0.8227354323785712,
+            1.0960030089583392
+          ],
+          "maxAbsLogJ": 0.1951205973275089,
+          "volumeRatio": 0.9997822268469349,
+          "volumeWeightedRmsLogJ": 0.0012555933504264337,
+          "volumeFractionOutside5Percent": 0.000007027892408799168,
+          "byFreeVertices": {
+            "0": {
+              "count": 2434,
+              "maxAbsLogJ": 5.87896398212478e-11,
+              "weightedMeanAbsLogJ": 1.7039570590467558e-13
+            },
+            "1": {
+              "count": 1413,
+              "maxAbsLogJ": 0.1951205973275089,
+              "weightedMeanAbsLogJ": 0.0016898982005033028
+            },
+            "2": {
+              "count": 956,
+              "maxAbsLogJ": 0.061896797353644006,
+              "weightedMeanAbsLogJ": 0.0013749459111740618
+            },
+            "3": {
+              "count": 727,
+              "maxAbsLogJ": 0.02777449880084945,
+              "weightedMeanAbsLogJ": 0.000823097583730928
+            },
+            "4": {
+              "count": 54191,
+              "maxAbsLogJ": 0.06992163617153503,
+              "weightedMeanAbsLogJ": 0.0006676519437347213
+            }
+          },
+          "fullyFixedMixedBoneElements": 0,
+          "surfaceAreaRatioRange": [
+            0.8916473662514784,
+            1.139039560299858
+          ],
+          "residualMm": 0.0005381472583662405,
+          "attachmentMaxMm": 0,
+          "worstElements": [
+            {
+              "tetId": 4760,
+              "J": 0.8227354323785712,
+              "referenceVolumeMm3": 0.0017852895961307143,
+              "fixedLabels": [
+                -1,
+                2,
+                2,
+                2
+              ],
+              "condition": 223.99998554293649,
+              "centroidAtlasMm": [
+                -27.188075065612793,
+                -86.50347518920898,
+                1442.4499816894531
+              ]
+            },
+            {
+              "tetId": 2883,
+              "J": 0.9029317670193446,
+              "referenceVolumeMm3": 0.011497856475178198,
+              "fixedLabels": [
+                3,
+                -1,
+                3,
+                3
+              ],
+              "condition": 26.564157974583008,
+              "centroidAtlasMm": [
+                -29.036849975585938,
+                -85.84612655639648,
+                1429.6950378417969
+              ]
+            },
+            {
+              "tetId": 28137,
+              "J": 0.9085503339787546,
+              "referenceVolumeMm3": 0.0075876252951060695,
+              "fixedLabels": [
+                -1,
+                3,
+                3,
+                3
+              ],
+              "condition": 10.926179294541324,
+              "centroidAtlasMm": [
+                -27.72695016860962,
+                -87.27737236022949,
+                1428.2999877929688
+              ]
+            },
+            {
+              "tetId": 37764,
+              "J": 1.0960030089583392,
+              "referenceVolumeMm3": 0.002070173493313138,
+              "fixedLabels": [
+                2,
+                -1,
+                2,
+                2
+              ],
+              "condition": 85.30075402407124,
+              "centroidAtlasMm": [
+                -27.773550033569336,
+                -85.73519897460938,
+                1445.9550170898438
+              ]
+            },
+            {
+              "tetId": 53692,
+              "J": 0.932022120081831,
+              "referenceVolumeMm3": 0.0004153413515496731,
+              "fixedLabels": [
+                -1,
+                4,
+                4,
+                4
+              ],
+              "condition": 72.38016602003074,
+              "centroidAtlasMm": [
+                -73.14999771118164,
+                -19.991124629974365,
+                1345.8875122070312
+              ]
+            },
+            {
+              "tetId": 40913,
+              "J": 0.9324668887182517,
+              "referenceVolumeMm3": 0.0003108556978741465,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 101.45935154398637,
+              "centroidAtlasMm": [
+                -36.59630012512207,
+                -44.0070743560791,
+                1392.2799987792969
+              ]
+            },
+            {
+              "tetId": 38094,
+              "J": 0.9343778044895233,
+              "referenceVolumeMm3": 0.002810525026797052,
+              "fixedLabels": [
+                1,
+                1,
+                1,
+                -1
+              ],
+              "condition": 4.6765305050043,
+              "centroidAtlasMm": [
+                -27.063474655151367,
+                -83.81587600708008,
+                1456.8625183105469
+              ]
+            },
+            {
+              "tetId": 37145,
+              "J": 1.0691107046435337,
+              "referenceVolumeMm3": 0.015223474439400713,
+              "fixedLabels": [
+                2,
+                2,
+                -1,
+                2
+              ],
+              "condition": 16.81484064165762,
+              "centroidAtlasMm": [
+                -28.300625324249268,
+                -86.86714935302734,
+                1445.27001953125
+              ]
+            },
+            {
+              "tetId": 6180,
+              "J": 1.0644205901767123,
+              "referenceVolumeMm3": 0.018098569039720108,
+              "fixedLabels": [
+                3,
+                -1,
+                3,
+                3
+              ],
+              "condition": 24.95500528816621,
+              "centroidAtlasMm": [
+                -27.92692518234253,
+                -88.55550003051758,
+                1430.1050109863281
+              ]
+            },
+            {
+              "tetId": 39163,
+              "J": 1.0638525466642574,
+              "referenceVolumeMm3": 0.0011485045625659474,
+              "fixedLabels": [
+                -1,
+                0,
+                0,
+                -1
+              ],
+              "condition": 264.8485434772681,
+              "centroidAtlasMm": [
+                -39.61397457122803,
+                -84.78172492980957,
+                1474.4924926757812
+              ]
+            }
+          ]
+        },
+        {
+          "bulk": 100,
+          "JRange": [
+            0.9204957395115116,
+            1.0586278493953816
+          ],
+          "maxAbsLogJ": 0.08284290677000192,
+          "volumeRatio": 0.9999241699892295,
+          "volumeWeightedRmsLogJ": 0.0008342089786404741,
+          "volumeFractionOutside5Percent": 0.0000014939496032533296,
+          "byFreeVertices": {
+            "0": {
+              "count": 2434,
+              "maxAbsLogJ": 5.87896398212478e-11,
+              "weightedMeanAbsLogJ": 1.7039570590467558e-13
+            },
+            "1": {
+              "count": 1413,
+              "maxAbsLogJ": 0.08284290677000192,
+              "weightedMeanAbsLogJ": 0.0010452335588172908
+            },
+            "2": {
+              "count": 956,
+              "maxAbsLogJ": 0.05670444345744225,
+              "weightedMeanAbsLogJ": 0.0008683161518562527
+            },
+            "3": {
+              "count": 727,
+              "maxAbsLogJ": 0.020292922856914135,
+              "weightedMeanAbsLogJ": 0.0005658291427903629
+            },
+            "4": {
+              "count": 54191,
+              "maxAbsLogJ": 0.052099438689175784,
+              "weightedMeanAbsLogJ": 0.00042970957608164773
+            }
+          },
+          "fullyFixedMixedBoneElements": 0,
+          "surfaceAreaRatioRange": [
+            0.9000395025025869,
+            1.1171911038591427
+          ],
+          "residualMm": 0.000004756712653807705,
+          "attachmentMaxMm": 0,
+          "worstElements": [
+            {
+              "tetId": 4760,
+              "J": 0.9204957395115116,
+              "referenceVolumeMm3": 0.0017852895961307143,
+              "fixedLabels": [
+                -1,
+                2,
+                2,
+                2
+              ],
+              "condition": 223.99998554293649,
+              "centroidAtlasMm": [
+                -27.188075065612793,
+                -86.50347518920898,
+                1442.4499816894531
+              ]
+            },
+            {
+              "tetId": 53692,
+              "J": 0.9424529699879255,
+              "referenceVolumeMm3": 0.0004153413515496731,
+              "fixedLabels": [
+                -1,
+                4,
+                4,
+                4
+              ],
+              "condition": 72.38016602003074,
+              "centroidAtlasMm": [
+                -73.14999771118164,
+                -19.991124629974365,
+                1345.8875122070312
+              ]
+            },
+            {
+              "tetId": 37764,
+              "J": 1.0586278493953816,
+              "referenceVolumeMm3": 0.002070173493313138,
+              "fixedLabels": [
+                2,
+                -1,
+                2,
+                2
+              ],
+              "condition": 85.30075402407124,
+              "centroidAtlasMm": [
+                -27.773550033569336,
+                -85.73519897460938,
+                1445.9550170898438
+              ]
+            },
+            {
+              "tetId": 546,
+              "J": 0.94487329158473,
+              "referenceVolumeMm3": 0.0009751211246070329,
+              "fixedLabels": [
+                0,
+                -1,
+                -1,
+                0
+              ],
+              "condition": 34.84286907496763,
+              "centroidAtlasMm": [
+                -39.939574241638184,
+                -84.39830017089844,
+                1474.97998046875
+              ]
+            },
+            {
+              "tetId": 28137,
+              "J": 0.9459130258477575,
+              "referenceVolumeMm3": 0.0075876252951060695,
+              "fixedLabels": [
+                -1,
+                3,
+                3,
+                3
+              ],
+              "condition": 10.926179294541324,
+              "centroidAtlasMm": [
+                -27.72695016860962,
+                -87.27737236022949,
+                1428.2999877929688
+              ]
+            },
+            {
+              "tetId": 38094,
+              "J": 0.9471873292000202,
+              "referenceVolumeMm3": 0.002810525026797052,
+              "fixedLabels": [
+                1,
+                1,
+                1,
+                -1
+              ],
+              "condition": 4.6765305050043,
+              "centroidAtlasMm": [
+                -27.063474655151367,
+                -83.81587600708008,
+                1456.8625183105469
+              ]
+            },
+            {
+              "tetId": 3783,
+              "J": 0.9492344715181255,
+              "referenceVolumeMm3": 0.0016128054373861405,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 35.1775655164891,
+              "centroidAtlasMm": [
+                -32.02125024795532,
+                -83.65552520751953,
+                1434.6099853515625
+              ]
+            },
+            {
+              "tetId": 39163,
+              "J": 1.0515210244748454,
+              "referenceVolumeMm3": 0.0011485045625659474,
+              "fixedLabels": [
+                -1,
+                0,
+                0,
+                -1
+              ],
+              "condition": 264.8485434772681,
+              "centroidAtlasMm": [
+                -39.61397457122803,
+                -84.78172492980957,
+                1474.4924926757812
+              ]
+            },
+            {
+              "tetId": 2883,
+              "J": 0.9559770461572353,
+              "referenceVolumeMm3": 0.011497856475178198,
+              "fixedLabels": [
+                3,
+                -1,
+                3,
+                3
+              ],
+              "condition": 26.564157974583008,
+              "centroidAtlasMm": [
+                -29.036849975585938,
+                -85.84612655639648,
+                1429.6950378417969
+              ]
+            },
+            {
+              "tetId": 29750,
+              "J": 1.0444686853163117,
+              "referenceVolumeMm3": 0.0024808402937240488,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 29.221087348618816,
+              "centroidAtlasMm": [
+                -36.49997520446777,
+                -83.0727481842041,
+                1423.8374938964844
+              ]
+            }
+          ],
+          "converged": true,
+          "reason": "residual-tolerance",
+          "iterations": 4,
+          "seconds": 3.608358537000001
+        },
+        {
+          "bulk": 300,
+          "JRange": [
+            0.9460160520743339,
+            1.0384258238895445
+          ],
+          "maxAbsLogJ": 0.05549574170811636,
+          "volumeRatio": 0.9999710239526102,
+          "volumeWeightedRmsLogJ": 0.0006223929706049062,
+          "volumeFractionOutside5Percent": 7.91497568232726e-8,
+          "byFreeVertices": {
+            "0": {
+              "count": 2434,
+              "maxAbsLogJ": 5.87896398212478e-11,
+              "weightedMeanAbsLogJ": 1.7039570590467558e-13
+            },
+            "1": {
+              "count": 1413,
+              "maxAbsLogJ": 0.04882064896636023,
+              "weightedMeanAbsLogJ": 0.0006741155163366388
+            },
+            "2": {
+              "count": 956,
+              "maxAbsLogJ": 0.05549574170811636,
+              "weightedMeanAbsLogJ": 0.0005870478839802705
+            },
+            "3": {
+              "count": 727,
+              "maxAbsLogJ": 0.013855130046772985,
+              "weightedMeanAbsLogJ": 0.00041219946585986585
+            },
+            "4": {
+              "count": 54191,
+              "maxAbsLogJ": 0.041151811330659545,
+              "weightedMeanAbsLogJ": 0.0003177856848803813
+            }
+          },
+          "fullyFixedMixedBoneElements": 0,
+          "surfaceAreaRatioRange": [
+            0.8861574550508459,
+            1.1118642019945946
+          ],
+          "residualMm": 0.00044476426591164627,
+          "attachmentMaxMm": 0,
+          "worstElements": [
+            {
+              "tetId": 546,
+              "J": 0.9460160520743339,
+              "referenceVolumeMm3": 0.0009751211246070329,
+              "fixedLabels": [
+                0,
+                -1,
+                -1,
+                0
+              ],
+              "condition": 34.84286907496763,
+              "centroidAtlasMm": [
+                -39.939574241638184,
+                -84.39830017089844,
+                1474.97998046875
+              ]
+            },
+            {
+              "tetId": 53692,
+              "J": 0.9523519196835509,
+              "referenceVolumeMm3": 0.0004153413515496731,
+              "fixedLabels": [
+                -1,
+                4,
+                4,
+                4
+              ],
+              "condition": 72.38016602003074,
+              "centroidAtlasMm": [
+                -73.14999771118164,
+                -19.991124629974365,
+                1345.8875122070312
+              ]
+            },
+            {
+              "tetId": 3783,
+              "J": 0.9596834280702535,
+              "referenceVolumeMm3": 0.0016128054373861405,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 35.1775655164891,
+              "centroidAtlasMm": [
+                -32.02125024795532,
+                -83.65552520751953,
+                1434.6099853515625
+              ]
+            },
+            {
+              "tetId": 39163,
+              "J": 1.0384258238895445,
+              "referenceVolumeMm3": 0.0011485045625659474,
+              "fixedLabels": [
+                -1,
+                0,
+                0,
+                -1
+              ],
+              "condition": 264.8485434772681,
+              "centroidAtlasMm": [
+                -39.61397457122803,
+                -84.78172492980957,
+                1474.4924926757812
+              ]
+            },
+            {
+              "tetId": 38094,
+              "J": 0.9633999377421875,
+              "referenceVolumeMm3": 0.002810525026797052,
+              "fixedLabels": [
+                1,
+                1,
+                1,
+                -1
+              ],
+              "condition": 4.6765305050043,
+              "centroidAtlasMm": [
+                -27.063474655151367,
+                -83.81587600708008,
+                1456.8625183105469
+              ]
+            },
+            {
+              "tetId": 29750,
+              "J": 1.0376172521625606,
+              "referenceVolumeMm3": 0.0024808402937240488,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 29.221087348618816,
+              "centroidAtlasMm": [
+                -36.49997520446777,
+                -83.0727481842041,
+                1423.8374938964844
+              ]
+            },
+            {
+              "tetId": 4760,
+              "J": 0.964127858460161,
+              "referenceVolumeMm3": 0.0017852895961307143,
+              "fixedLabels": [
+                -1,
+                2,
+                2,
+                2
+              ],
+              "condition": 223.99998554293649,
+              "centroidAtlasMm": [
+                -27.188075065612793,
+                -86.50347518920898,
+                1442.4499816894531
+              ]
+            },
+            {
+              "tetId": 37764,
+              "J": 1.0364624272400578,
+              "referenceVolumeMm3": 0.002070173493313138,
+              "fixedLabels": [
+                2,
+                -1,
+                2,
+                2
+              ],
+              "condition": 85.30075402407124,
+              "centroidAtlasMm": [
+                -27.773550033569336,
+                -85.73519897460938,
+                1445.9550170898438
+              ]
+            },
+            {
+              "tetId": 53462,
+              "J": 1.0325239646750037,
+              "referenceVolumeMm3": 0.0022985194253178545,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 19.178938720922375,
+              "centroidAtlasMm": [
+                -43.38457489013672,
+                -31.889099597930908,
+                1379.4525146484375
+              ]
+            },
+            {
+              "tetId": 28137,
+              "J": 0.9709591173713416,
+              "referenceVolumeMm3": 0.0075876252951060695,
+              "fixedLabels": [
+                -1,
+                3,
+                3,
+                3
+              ],
+              "condition": 10.926179294541324,
+              "centroidAtlasMm": [
+                -27.72695016860962,
+                -87.27737236022949,
+                1428.2999877929688
+              ]
+            }
+          ],
+          "converged": true,
+          "reason": "residual-tolerance",
+          "iterations": 3,
+          "seconds": 2.813148039000005
+        },
+        {
+          "bulk": 1000,
+          "JRange": [
+            0.9516135713666531,
+            1.0339395762316455
+          ],
+          "maxAbsLogJ": 0.049596239025508505,
+          "volumeRatio": 0.9999896624860186,
+          "volumeWeightedRmsLogJ": 0.0004888770878241623,
+          "volumeFractionOutside5Percent": 0,
+          "byFreeVertices": {
+            "0": {
+              "count": 2434,
+              "maxAbsLogJ": 5.87896398212478e-11,
+              "weightedMeanAbsLogJ": 1.7039570590467558e-13
+            },
+            "1": {
+              "count": 1413,
+              "maxAbsLogJ": 0.037051854089529226,
+              "weightedMeanAbsLogJ": 0.0004258641662320371
+            },
+            "2": {
+              "count": 956,
+              "maxAbsLogJ": 0.049596239025508505,
+              "weightedMeanAbsLogJ": 0.00039531563248064526
+            },
+            "3": {
+              "count": 727,
+              "maxAbsLogJ": 0.012394333866888655,
+              "weightedMeanAbsLogJ": 0.0002880965670117319
+            },
+            "4": {
+              "count": 54191,
+              "maxAbsLogJ": 0.03337633746543218,
+              "weightedMeanAbsLogJ": 0.000247905656458546
+            }
+          },
+          "fullyFixedMixedBoneElements": 0,
+          "surfaceAreaRatioRange": [
+            0.8633647619259778,
+            1.1296093243595988
+          ],
+          "residualMm": 0.00033106528324368454,
+          "attachmentMaxMm": 0,
+          "worstElements": [
+            {
+              "tetId": 546,
+              "J": 0.9516135713666531,
+              "referenceVolumeMm3": 0.0009751211246070329,
+              "fixedLabels": [
+                0,
+                -1,
+                -1,
+                0
+              ],
+              "condition": 34.84286907496763,
+              "centroidAtlasMm": [
+                -39.939574241638184,
+                -84.39830017089844,
+                1474.97998046875
+              ]
+            },
+            {
+              "tetId": 53692,
+              "J": 0.9636261660960201,
+              "referenceVolumeMm3": 0.0004153413515496731,
+              "fixedLabels": [
+                -1,
+                4,
+                4,
+                4
+              ],
+              "condition": 72.38016602003074,
+              "centroidAtlasMm": [
+                -73.14999771118164,
+                -19.991124629974365,
+                1345.8875122070312
+              ]
+            },
+            {
+              "tetId": 10766,
+              "J": 1.0339395762316455,
+              "referenceVolumeMm3": 0.0009385641273448364,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 33.50369987174689,
+              "centroidAtlasMm": [
+                -40.16300878751648,
+                -82.72297574592014,
+                1473.5080675460233
+              ]
+            },
+            {
+              "tetId": 30626,
+              "J": 0.9699889537293381,
+              "referenceVolumeMm3": 0.003942928015351065,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 15.7144675668259,
+              "centroidAtlasMm": [
+                -31.169483655091742,
+                -87.2982029489868,
+                1428.961220611439
+              ]
+            },
+            {
+              "tetId": 3783,
+              "J": 0.9706845383196532,
+              "referenceVolumeMm3": 0.0016128054373861405,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 35.1775655164891,
+              "centroidAtlasMm": [
+                -32.02125024795532,
+                -83.65552520751953,
+                1434.6099853515625
+              ]
+            },
+            {
+              "tetId": 8511,
+              "J": 0.9717525304921233,
+              "referenceVolumeMm3": 0.0004373585768666643,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 52.44653356158976,
+              "centroidAtlasMm": [
+                -60.811723709106445,
+                -28.4308500289917,
+                1365.8275146484375
+              ]
+            },
+            {
+              "tetId": 39163,
+              "J": 1.0276329464310126,
+              "referenceVolumeMm3": 0.0011485045625659474,
+              "fixedLabels": [
+                -1,
+                0,
+                0,
+                -1
+              ],
+              "condition": 264.8485434772681,
+              "centroidAtlasMm": [
+                -39.61397457122803,
+                -84.78172492980957,
+                1474.4924926757812
+              ]
+            },
+            {
+              "tetId": 38843,
+              "J": 0.9746602871196752,
+              "referenceVolumeMm3": 0.0025219174427970606,
+              "fixedLabels": [
+                0,
+                -1,
+                0,
+                -1
+              ],
+              "condition": 139.87972622625676,
+              "centroidAtlasMm": [
+                -39.35767459869385,
+                -84.94742584228516,
+                1474.3625183105469
+              ]
+            },
+            {
+              "tetId": 29750,
+              "J": 1.0257453544246042,
+              "referenceVolumeMm3": 0.0024808402937240488,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 29.221087348618816,
+              "centroidAtlasMm": [
+                -36.49997520446777,
+                -83.0727481842041,
+                1423.8374938964844
+              ]
+            },
+            {
+              "tetId": 19542,
+              "J": 0.9762587593023924,
+              "referenceVolumeMm3": 0.0005698530702259084,
+              "fixedLabels": [
+                -1,
+                0,
+                0,
+                -1
+              ],
+              "condition": 6.970153560665277,
+              "centroidAtlasMm": [
+                -40.156524658203125,
+                -82.4887523651123,
+                1476.2024841308594
+              ]
+            }
+          ],
+          "converged": true,
+          "reason": "residual-tolerance",
+          "iterations": 3,
+          "seconds": 2.798783175000004
+        }
+      ],
+      "productAccepted": false,
+      "anatomicalAcceptance": false,
+      "contactEvaluated": false,
+      "selfIntersectionEvaluated": false,
+      "physicalMaterialCalibrated": false
+    },
+    {
+      "jobId": 140936040723,
+      "job": "contact (C1)",
+      "bone": "C1",
+      "boneSHA256": "cc959122b7875a65d78597d89134fdb2f59a7c0f60d2e781c399db4010208f81",
+      "rows": [
+        {
+          "checkpoint": "accepted-001-index-08.npz",
+          "elev": 3,
+          "neck": 3,
+          "bone": "C1",
+          "samples": 93688,
+          "baselineInside": 117,
+          "inside": 117,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.21429015987988256,
+          "maxDepthMm": 0.21429015987988256,
+          "maxIncreaseMm": 1.913493235389252e-13,
+          "worstSample": 40143,
+          "worstKind": "edge-midpoint",
+          "fixedSampleMaxIncreaseMm": 1.913493235389252e-13,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        },
+        {
+          "checkpoint": "accepted-003-index-16.npz",
+          "elev": 6,
+          "neck": 6,
+          "bone": "C1",
+          "samples": 93688,
+          "baselineInside": 117,
+          "inside": 117,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.21429015987988256,
+          "maxDepthMm": 0.21429015987988256,
+          "maxIncreaseMm": 1.9433760156672975e-13,
+          "worstSample": 8121,
+          "worstKind": "vertex",
+          "fixedSampleMaxIncreaseMm": 1.9433760156672975e-13,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        },
+        {
+          "checkpoint": "accepted-006-index-08.npz",
+          "elev": 3,
+          "neck": 3,
+          "bone": "C1",
+          "samples": 93688,
+          "baselineInside": 117,
+          "inside": 117,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.21429015987988256,
+          "maxDepthMm": 0.21429015987988256,
+          "maxIncreaseMm": 1.913493235389252e-13,
+          "worstSample": 40143,
+          "worstKind": "edge-midpoint",
+          "fixedSampleMaxIncreaseMm": 1.913493235389252e-13,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        },
+        {
+          "checkpoint": "accepted-007-index-00.npz",
+          "elev": 0,
+          "neck": 0,
+          "bone": "C1",
+          "samples": 93688,
+          "baselineInside": 117,
+          "inside": 117,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.21429015987988256,
+          "maxDepthMm": 0.21429015987988256,
+          "maxIncreaseMm": 1.1867243299157337e-14,
+          "worstSample": 85810,
+          "worstKind": "triangle-centroid",
+          "fixedSampleMaxIncreaseMm": 1.1867243299157337e-14,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        }
+      ],
+      "sampleCounts": {
+        "vertices": 15613,
+        "edgeMidpoints": 46845,
+        "centroids": 31230
+      },
+      "engineeringDepthIncreaseGuardMm": 0.1,
+      "allSamplesWithinGuard": true,
+      "productAccepted": false,
+      "continuousContactCertified": false,
+      "selfIntersectionEvaluated": false
+    },
+    {
+      "jobId": 140936040744,
+      "job": "contact (C2)",
+      "bone": "C2",
+      "boneSHA256": "9e2a940db7b4bf921f97b63ed5aa549f675effe55af2cc81ad8589331309f896",
+      "rows": [
+        {
+          "checkpoint": "accepted-001-index-08.npz",
+          "elev": 3,
+          "neck": 3,
+          "bone": "C2",
+          "samples": 93688,
+          "baselineInside": 333,
+          "inside": 333,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.8358064405573113,
+          "maxDepthMm": 0.8358064405573029,
+          "maxIncreaseMm": 7.30526750203353e-14,
+          "worstSample": 93502,
+          "worstKind": "triangle-centroid",
+          "fixedSampleMaxIncreaseMm": 7.30526750203353e-14,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        },
+        {
+          "checkpoint": "accepted-003-index-16.npz",
+          "elev": 6,
+          "neck": 6,
+          "bone": "C2",
+          "samples": 93688,
+          "baselineInside": 333,
+          "inside": 333,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.8358064405573113,
+          "maxDepthMm": 0.8358064405573085,
+          "maxIncreaseMm": 8.326672684688674e-14,
+          "worstSample": 62431,
+          "worstKind": "edge-midpoint",
+          "fixedSampleMaxIncreaseMm": 8.326672684688674e-14,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        },
+        {
+          "checkpoint": "accepted-006-index-08.npz",
+          "elev": 3,
+          "neck": 3,
+          "bone": "C2",
+          "samples": 93688,
+          "baselineInside": 333,
+          "inside": 333,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.8358064405573113,
+          "maxDepthMm": 0.8358064405573029,
+          "maxIncreaseMm": 7.30526750203353e-14,
+          "worstSample": 93502,
+          "worstKind": "triangle-centroid",
+          "fixedSampleMaxIncreaseMm": 7.30526750203353e-14,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        },
+        {
+          "checkpoint": "accepted-007-index-00.npz",
+          "elev": 0,
+          "neck": 0,
+          "bone": "C2",
+          "samples": 93688,
+          "baselineInside": 333,
+          "inside": 333,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.8358064405573113,
+          "maxDepthMm": 0.8358064405573113,
+          "maxIncreaseMm": 1.4752088439706768e-14,
+          "worstSample": 62238,
+          "worstKind": "edge-midpoint",
+          "fixedSampleMaxIncreaseMm": 1.4752088439706768e-14,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        }
+      ],
+      "sampleCounts": {
+        "vertices": 15613,
+        "edgeMidpoints": 46845,
+        "centroids": 31230
+      },
+      "engineeringDepthIncreaseGuardMm": 0.1,
+      "allSamplesWithinGuard": true,
+      "productAccepted": false,
+      "continuousContactCertified": false,
+      "selfIntersectionEvaluated": false
+    },
+    {
+      "jobId": 140936040809,
+      "job": "volume (original)",
+      "sourceCheckpoint": "accepted-003-index-16.npz",
+      "rows": [
+        {
+          "converged": true,
+          "bulk": 30,
+          "JRange": [
+            0.8241563066932206,
+            1.0868332598841686
+          ],
+          "maxAbsLogJ": 0.19339507447316961,
+          "volumeRatio": 0.9997637839803359,
+          "volumeWeightedRmsLogJ": 0.0013975278339224027,
+          "volumeFractionOutside5Percent": 0.000005706152383514857,
+          "byFreeVertices": {
+            "0": {
+              "count": 3327,
+              "maxAbsLogJ": 5.87896398212478e-11,
+              "weightedMeanAbsLogJ": 1.2983016497130664e-13
+            },
+            "1": {
+              "count": 775,
+              "maxAbsLogJ": 0.19339507447316961,
+              "weightedMeanAbsLogJ": 0.002141958024455488
+            },
+            "2": {
+              "count": 778,
+              "maxAbsLogJ": 0.08213712979422763,
+              "weightedMeanAbsLogJ": 0.0014366598857015027
+            },
+            "3": {
+              "count": 699,
+              "maxAbsLogJ": 0.02598048144693074,
+              "weightedMeanAbsLogJ": 0.0008177278696200408
+            },
+            "4": {
+              "count": 49738,
+              "maxAbsLogJ": 0.0732679648993253,
+              "weightedMeanAbsLogJ": 0.0007406764665424004
+            }
+          },
+          "fullyFixedMixedBoneElements": 0,
+          "surfaceAreaRatioRange": [
+            0.8877561422332295,
+            1.139363048691022
+          ],
+          "residualMm": 0.00014239633229398926,
+          "attachmentMaxMm": 0,
+          "worstElements": [
+            {
+              "tetId": 4457,
+              "J": 0.8241563066932206,
+              "referenceVolumeMm3": 0.0017852895961307143,
+              "fixedLabels": [
+                -1,
+                2,
+                2,
+                2
+              ],
+              "condition": 223.99998554293649,
+              "centroidAtlasMm": [
+                -27.188075065612793,
+                -86.50347518920898,
+                1442.4499816894531
+              ]
+            },
+            {
+              "tetId": 35289,
+              "J": 1.0868332598841686,
+              "referenceVolumeMm3": 0.002070173493313138,
+              "fixedLabels": [
+                2,
+                -1,
+                2,
+                2
+              ],
+              "condition": 85.30075402407124,
+              "centroidAtlasMm": [
+                -27.773550033569336,
+                -85.73519897460938,
+                1445.9550170898438
+              ]
+            },
+            {
+              "tetId": 36698,
+              "J": 1.0856046683676313,
+              "referenceVolumeMm3": 0.0011485045625659474,
+              "fixedLabels": [
+                -1,
+                0,
+                0,
+                -1
+              ],
+              "condition": 264.8485434772681,
+              "centroidAtlasMm": [
+                -39.61397457122803,
+                -84.78172492980957,
+                1474.4924926757812
+              ]
+            },
+            {
+              "tetId": 26693,
+              "J": 0.9293517630050621,
+              "referenceVolumeMm3": 0.003157489165831842,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 37.36561423905177,
+              "centroidAtlasMm": [
+                -32.13807439804077,
+                -81.34695053100586,
+                1437.16748046875
+              ]
+            },
+            {
+              "tetId": 26551,
+              "J": 0.9301526510506751,
+              "referenceVolumeMm3": 0.00029761319517203794,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 51.810175360021724,
+              "centroidAtlasMm": [
+                -32.47045040130615,
+                -84.79830169677734,
+                1439.5299987792969
+              ]
+            },
+            {
+              "tetId": 26416,
+              "J": 0.9315116769404361,
+              "referenceVolumeMm3": 0.0075876252951060695,
+              "fixedLabels": [
+                -1,
+                3,
+                3,
+                3
+              ],
+              "condition": 10.926179294541324,
+              "centroidAtlasMm": [
+                -27.72695016860962,
+                -87.27737236022949,
+                1428.2999877929688
+              ]
+            },
+            {
+              "tetId": 35557,
+              "J": 1.0694312087171796,
+              "referenceVolumeMm3": 0.002747661530232351,
+              "fixedLabels": [
+                1,
+                1,
+                -1,
+                1
+              ],
+              "condition": 9.179638419509761,
+              "centroidAtlasMm": [
+                -27.288599491119385,
+                -84.79500007629395,
+                1458.1224975585938
+              ]
+            },
+            {
+              "tetId": 34677,
+              "J": 1.0688670670906202,
+              "referenceVolumeMm3": 0.015223474439400713,
+              "fixedLabels": [
+                2,
+                2,
+                -1,
+                2
+              ],
+              "condition": 16.81484064165762,
+              "centroidAtlasMm": [
+                -28.300625324249268,
+                -86.86714935302734,
+                1445.27001953125
+              ]
+            },
+            {
+              "tetId": 536,
+              "J": 0.936320032221707,
+              "referenceVolumeMm3": 0.0009751211246070329,
+              "fixedLabels": [
+                0,
+                -1,
+                -1,
+                0
+              ],
+              "condition": 34.84286907496763,
+              "centroidAtlasMm": [
+                -39.939574241638184,
+                -84.39830017089844,
+                1474.97998046875
+              ]
+            },
+            {
+              "tetId": 38444,
+              "J": 0.9366644455105939,
+              "referenceVolumeMm3": 0.0003108556978741465,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 101.45935154398637,
+              "centroidAtlasMm": [
+                -36.59630012512207,
+                -44.0070743560791,
+                1392.2799987792969
+              ]
+            }
+          ]
+        },
+        {
+          "bulk": 100,
+          "JRange": [
+            0.9134776561057699,
+            1.0794926569357708
+          ],
+          "maxAbsLogJ": 0.09049636311754745,
+          "volumeRatio": 0.9999182645608437,
+          "volumeWeightedRmsLogJ": 0.0009601874827826983,
+          "volumeFractionOutside5Percent": 8.954153089221919e-7,
+          "byFreeVertices": {
+            "0": {
+              "count": 3327,
+              "maxAbsLogJ": 5.87896398212478e-11,
+              "weightedMeanAbsLogJ": 1.2983016497130664e-13
+            },
+            "1": {
+              "count": 775,
+              "maxAbsLogJ": 0.09049636311754745,
+              "weightedMeanAbsLogJ": 0.001334823832038658
+            },
+            "2": {
+              "count": 778,
+              "maxAbsLogJ": 0.07649116866683882,
+              "weightedMeanAbsLogJ": 0.0009412091537860354
+            },
+            "3": {
+              "count": 699,
+              "maxAbsLogJ": 0.02302434302468602,
+              "weightedMeanAbsLogJ": 0.0005794636684171591
+            },
+            "4": {
+              "count": 49738,
+              "maxAbsLogJ": 0.07213008535095937,
+              "weightedMeanAbsLogJ": 0.0004901054779985408
+            }
+          },
+          "fullyFixedMixedBoneElements": 0,
+          "surfaceAreaRatioRange": [
+            0.9033451023306849,
+            1.1115978042894161
+          ],
+          "residualMm": 0.00012035082893588114,
+          "attachmentMaxMm": 0,
+          "worstElements": [
+            {
+              "tetId": 4457,
+              "J": 0.9134776561057699,
+              "referenceVolumeMm3": 0.0017852895961307143,
+              "fixedLabels": [
+                -1,
+                2,
+                2,
+                2
+              ],
+              "condition": 223.99998554293649,
+              "centroidAtlasMm": [
+                -27.188075065612793,
+                -86.50347518920898,
+                1442.4499816894531
+              ]
+            },
+            {
+              "tetId": 36698,
+              "J": 1.0794926569357708,
+              "referenceVolumeMm3": 0.0011485045625659474,
+              "fixedLabels": [
+                -1,
+                0,
+                0,
+                -1
+              ],
+              "condition": 264.8485434772681,
+              "centroidAtlasMm": [
+                -39.61397457122803,
+                -84.78172492980957,
+                1474.4924926757812
+              ]
+            },
+            {
+              "tetId": 26551,
+              "J": 0.9304098552460185,
+              "referenceVolumeMm3": 0.00029761319517203794,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 51.810175360021724,
+              "centroidAtlasMm": [
+                -32.47045040130615,
+                -84.79830169677734,
+                1439.5299987792969
+              ]
+            },
+            {
+              "tetId": 536,
+              "J": 0.9363567215068089,
+              "referenceVolumeMm3": 0.0009751211246070329,
+              "fixedLabels": [
+                0,
+                -1,
+                -1,
+                0
+              ],
+              "condition": 34.84286907496763,
+              "centroidAtlasMm": [
+                -39.939574241638184,
+                -84.39830017089844,
+                1474.97998046875
+              ]
+            },
+            {
+              "tetId": 26693,
+              "J": 0.9422104557970943,
+              "referenceVolumeMm3": 0.003157489165831842,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 37.36561423905177,
+              "centroidAtlasMm": [
+                -32.13807439804077,
+                -81.34695053100586,
+                1437.16748046875
+              ]
+            },
+            {
+              "tetId": 2305,
+              "J": 0.9473208752777567,
+              "referenceVolumeMm3": 0.0009368880937046237,
+              "fixedLabels": [
+                0,
+                -1,
+                0,
+                0
+              ],
+              "condition": 16.66156489416072,
+              "centroidAtlasMm": [
+                -40.01992416381836,
+                -84.40947532653809,
+                1475.1224975585938
+              ]
+            },
+            {
+              "tetId": 36347,
+              "J": 0.9480838881499083,
+              "referenceVolumeMm3": 0.002089591062475193,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 9.528133708462768,
+              "centroidAtlasMm": [
+                -38.14579963684082,
+                -82.92197608947754,
+                1472.2274780273438
+              ]
+            },
+            {
+              "tetId": 36837,
+              "J": 0.9490789771241834,
+              "referenceVolumeMm3": 0.0006409759174405375,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 9.807288225640196,
+              "centroidAtlasMm": [
+                -39.03487586975098,
+                -82.74072456359863,
+                1470.4374694824219
+              ]
+            },
+            {
+              "tetId": 35289,
+              "J": 1.0467003569787308,
+              "referenceVolumeMm3": 0.002070173493313138,
+              "fixedLabels": [
+                2,
+                -1,
+                2,
+                2
+              ],
+              "condition": 85.30075402407124,
+              "centroidAtlasMm": [
+                -27.773550033569336,
+                -85.73519897460938,
+                1445.9550170898438
+              ]
+            },
+            {
+              "tetId": 35557,
+              "J": 1.0464425263503354,
+              "referenceVolumeMm3": 0.002747661530232351,
+              "fixedLabels": [
+                1,
+                1,
+                -1,
+                1
+              ],
+              "condition": 9.179638419509761,
+              "centroidAtlasMm": [
+                -27.288599491119385,
+                -84.79500007629395,
+                1458.1224975585938
+              ]
+            }
+          ],
+          "converged": true,
+          "reason": "residual-tolerance",
+          "iterations": 3,
+          "seconds": 1.827827483
+        },
+        {
+          "bulk": 300,
+          "JRange": [
+            0.9405561667197294,
+            1.0660712168647986
+          ],
+          "maxAbsLogJ": 0.06398013107760385,
+          "volumeRatio": 0.9999687378493564,
+          "volumeWeightedRmsLogJ": 0.000731328768440364,
+          "volumeFractionOutside5Percent": 5.110506972119454e-7,
+          "byFreeVertices": {
+            "0": {
+              "count": 3327,
+              "maxAbsLogJ": 5.87896398212478e-11,
+              "weightedMeanAbsLogJ": 1.2983016497130664e-13
+            },
+            "1": {
+              "count": 775,
+              "maxAbsLogJ": 0.05158395335799592,
+              "weightedMeanAbsLogJ": 0.0009128029979981649
+            },
+            "2": {
+              "count": 778,
+              "maxAbsLogJ": 0.06398013107760385,
+              "weightedMeanAbsLogJ": 0.0006666894715873992
+            },
+            "3": {
+              "count": 699,
+              "maxAbsLogJ": 0.021371432511194742,
+              "weightedMeanAbsLogJ": 0.00045511259283532806
+            },
+            "4": {
+              "count": 49738,
+              "maxAbsLogJ": 0.06128391196071582,
+              "weightedMeanAbsLogJ": 0.00036791094406227984
+            }
+          },
+          "fullyFixedMixedBoneElements": 0,
+          "surfaceAreaRatioRange": [
+            0.8757798015551727,
+            1.1600945305355665
+          ],
+          "residualMm": 0.00002137831227422139,
+          "attachmentMaxMm": 0,
+          "worstElements": [
+            {
+              "tetId": 36698,
+              "J": 1.0660712168647986,
+              "referenceVolumeMm3": 0.0011485045625659474,
+              "fixedLabels": [
+                -1,
+                0,
+                0,
+                -1
+              ],
+              "condition": 264.8485434772681,
+              "centroidAtlasMm": [
+                -39.61397457122803,
+                -84.78172492980957,
+                1474.4924926757812
+              ]
+            },
+            {
+              "tetId": 26551,
+              "J": 0.9405561667197294,
+              "referenceVolumeMm3": 0.00029761319517203794,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 51.810175360021724,
+              "centroidAtlasMm": [
+                -32.47045040130615,
+                -84.79830169677734,
+                1439.5299987792969
+              ]
+            },
+            {
+              "tetId": 536,
+              "J": 0.9419135847671746,
+              "referenceVolumeMm3": 0.0009751211246070329,
+              "fixedLabels": [
+                0,
+                -1,
+                -1,
+                0
+              ],
+              "condition": 34.84286907496763,
+              "centroidAtlasMm": [
+                -39.939574241638184,
+                -84.39830017089844,
+                1474.97998046875
+              ]
+            },
+            {
+              "tetId": 36347,
+              "J": 0.9441014520269901,
+              "referenceVolumeMm3": 0.002089591062475193,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 9.528133708462768,
+              "centroidAtlasMm": [
+                -38.14579963684082,
+                -82.92197608947754,
+                1472.2274780273438
+              ]
+            },
+            {
+              "tetId": 4457,
+              "J": 0.9497239141034418,
+              "referenceVolumeMm3": 0.0017852895961307143,
+              "fixedLabels": [
+                -1,
+                2,
+                2,
+                2
+              ],
+              "condition": 223.99998554293649,
+              "centroidAtlasMm": [
+                -27.188075065612793,
+                -86.50347518920898,
+                1442.4499816894531
+              ]
+            },
+            {
+              "tetId": 36837,
+              "J": 0.9515393633015201,
+              "referenceVolumeMm3": 0.0006409759174405375,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 9.807288225640196,
+              "centroidAtlasMm": [
+                -39.03487586975098,
+                -82.74072456359863,
+                1470.4374694824219
+              ]
+            },
+            {
+              "tetId": 26693,
+              "J": 0.9550469949422921,
+              "referenceVolumeMm3": 0.003157489165831842,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 37.36561423905177,
+              "centroidAtlasMm": [
+                -32.13807439804077,
+                -81.34695053100586,
+                1437.16748046875
+              ]
+            },
+            {
+              "tetId": 2305,
+              "J": 0.9556532794919376,
+              "referenceVolumeMm3": 0.0009368880937046237,
+              "fixedLabels": [
+                0,
+                -1,
+                0,
+                0
+              ],
+              "condition": 16.66156489416072,
+              "centroidAtlasMm": [
+                -40.01992416381836,
+                -84.40947532653809,
+                1475.1224975585938
+              ]
+            },
+            {
+              "tetId": 36165,
+              "J": 1.0360304092540076,
+              "referenceVolumeMm3": 0.0003410733560353187,
+              "fixedLabels": [
+                0,
+                -1,
+                0,
+                0
+              ],
+              "condition": 77.51931044321512,
+              "centroidAtlasMm": [
+                -37.69559860229492,
+                -84.98202514648438,
+                1474.2049865722656
+              ]
+            },
+            {
+              "tetId": 28451,
+              "J": 0.965460457331763,
+              "referenceVolumeMm3": 0.0006289016412850404,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 66.13721541770842,
+              "centroidAtlasMm": [
+                -36.00860023498535,
+                -77.38000106811523,
+                1424.3125
+              ]
+            }
+          ],
+          "converged": true,
+          "reason": "residual-tolerance",
+          "iterations": 3,
+          "seconds": 1.8003351629999997
+        },
+        {
+          "bulk": 1000,
+          "JRange": [
+            0.9494482403216088,
+            1.0525253852389236
+          ],
+          "maxAbsLogJ": 0.05187426277847351,
+          "volumeRatio": 0.9999887762265897,
+          "volumeWeightedRmsLogJ": 0.0005701189679907814,
+          "volumeFractionOutside5Percent": 3.419832395824468e-7,
+          "byFreeVertices": {
+            "0": {
+              "count": 3327,
+              "maxAbsLogJ": 5.87896398212478e-11,
+              "weightedMeanAbsLogJ": 1.2983016497130664e-13
+            },
+            "1": {
+              "count": 775,
+              "maxAbsLogJ": 0.03619002858609405,
+              "weightedMeanAbsLogJ": 0.0006033830165102535
+            },
+            "2": {
+              "count": 778,
+              "maxAbsLogJ": 0.05187426277847351,
+              "weightedMeanAbsLogJ": 0.0004709837302125706
+            },
+            "3": {
+              "count": 699,
+              "maxAbsLogJ": 0.017926994881555955,
+              "weightedMeanAbsLogJ": 0.0003367462101713803
+            },
+            "4": {
+              "count": 49738,
+              "maxAbsLogJ": 0.05156252600791756,
+              "weightedMeanAbsLogJ": 0.00028564870859042353
+            }
+          },
+          "fullyFixedMixedBoneElements": 0,
+          "surfaceAreaRatioRange": [
+            0.8484635337589485,
+            1.2290722508385512
+          ],
+          "residualMm": 0.000013289155018600076,
+          "attachmentMaxMm": 0,
+          "worstElements": [
+            {
+              "tetId": 536,
+              "J": 0.9494482403216088,
+              "referenceVolumeMm3": 0.0009751211246070329,
+              "fixedLabels": [
+                0,
+                -1,
+                -1,
+                0
+              ],
+              "condition": 34.84286907496763,
+              "centroidAtlasMm": [
+                -39.939574241638184,
+                -84.39830017089844,
+                1474.97998046875
+              ]
+            },
+            {
+              "tetId": 36347,
+              "J": 0.9497442643882527,
+              "referenceVolumeMm3": 0.002089591062475193,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 9.528133708462768,
+              "centroidAtlasMm": [
+                -38.14579963684082,
+                -82.92197608947754,
+                1472.2274780273438
+              ]
+            },
+            {
+              "tetId": 36698,
+              "J": 1.0525253852389236,
+              "referenceVolumeMm3": 0.0011485045625659474,
+              "fixedLabels": [
+                -1,
+                0,
+                0,
+                -1
+              ],
+              "condition": 264.8485434772681,
+              "centroidAtlasMm": [
+                -39.61397457122803,
+                -84.78172492980957,
+                1474.4924926757812
+              ]
+            },
+            {
+              "tetId": 36837,
+              "J": 0.9572805169581141,
+              "referenceVolumeMm3": 0.0006409759174405375,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 9.807288225640196,
+              "centroidAtlasMm": [
+                -39.03487586975098,
+                -82.74072456359863,
+                1470.4374694824219
+              ]
+            },
+            {
+              "tetId": 26551,
+              "J": 0.9597156673491433,
+              "referenceVolumeMm3": 0.00029761319517203794,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 51.810175360021724,
+              "centroidAtlasMm": [
+                -32.47045040130615,
+                -84.79830169677734,
+                1439.5299987792969
+              ]
+            },
+            {
+              "tetId": 24862,
+              "J": 1.0392555891601236,
+              "referenceVolumeMm3": 0.0003103674417523906,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 13.439020449114349,
+              "centroidAtlasMm": [
+                -35.460625648498535,
+                -80.10684967041016,
+                1420.0599975585938
+              ]
+            },
+            {
+              "tetId": 28451,
+              "J": 0.962585012538473,
+              "referenceVolumeMm3": 0.0006289016412850404,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 66.13721541770842,
+              "centroidAtlasMm": [
+                -36.00860023498535,
+                -77.38000106811523,
+                1424.3125
+              ]
+            },
+            {
+              "tetId": 25986,
+              "J": 1.0378613522426805,
+              "referenceVolumeMm3": 0.0003695742191750877,
+              "fixedLabels": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "condition": 17.304478048127528,
+              "centroidAtlasMm": [
+                -31.192399978637695,
+                -87.72784996032715,
+                1428.6749877929688
+              ]
+            },
+            {
+              "tetId": 2305,
+              "J": 0.9644570016679569,
+              "referenceVolumeMm3": 0.0009368880937046237,
+              "fixedLabels": [
+                0,
+                -1,
+                0,
+                0
+              ],
+              "condition": 16.66156489416072,
+              "centroidAtlasMm": [
+                -40.01992416381836,
+                -84.40947532653809,
+                1475.1224975585938
+              ]
+            },
+            {
+              "tetId": 36165,
+              "J": 1.0343757916624277,
+              "referenceVolumeMm3": 0.0003410733560353187,
+              "fixedLabels": [
+                0,
+                -1,
+                0,
+                0
+              ],
+              "condition": 77.51931044321512,
+              "centroidAtlasMm": [
+                -37.69559860229492,
+                -84.98202514648438,
+                1474.2049865722656
+              ]
+            }
+          ],
+          "converged": true,
+          "reason": "residual-tolerance",
+          "iterations": 3,
+          "seconds": 1.7983255670000062
+        }
+      ],
+      "productAccepted": false,
+      "anatomicalAcceptance": false,
+      "contactEvaluated": false,
+      "selfIntersectionEvaluated": false,
+      "physicalMaterialCalibrated": false
+    },
+    {
+      "jobId": 140936040825,
+      "job": "contact (C4)",
+      "bone": "C4",
+      "boneSHA256": "34ea19b8f1c42e91c96f1ce19c520c2f72cda372c5373b15f85dc102e8da8208",
+      "rows": [
+        {
+          "checkpoint": "accepted-001-index-08.npz",
+          "elev": 3,
+          "neck": 3,
+          "bone": "C4",
+          "samples": 93688,
+          "baselineInside": 510,
+          "inside": 510,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.9277384244612601,
+          "maxDepthMm": 0.9277384244612601,
+          "maxIncreaseMm": 1.7091276310887693e-13,
+          "worstSample": 92659,
+          "worstKind": "triangle-centroid",
+          "fixedSampleMaxIncreaseMm": 1.7091276310887693e-13,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        },
+        {
+          "checkpoint": "accepted-003-index-16.npz",
+          "elev": 6,
+          "neck": 6,
+          "bone": "C4",
+          "samples": 93688,
+          "baselineInside": 510,
+          "inside": 510,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.9277384244612601,
+          "maxDepthMm": 0.9277384244612601,
+          "maxIncreaseMm": 1.1479706074624119e-13,
+          "worstSample": 92986,
+          "worstKind": "triangle-centroid",
+          "fixedSampleMaxIncreaseMm": 1.1479706074624119e-13,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        },
+        {
+          "checkpoint": "accepted-006-index-08.npz",
+          "elev": 3,
+          "neck": 3,
+          "bone": "C4",
+          "samples": 93688,
+          "baselineInside": 510,
+          "inside": 510,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.9277384244612601,
+          "maxDepthMm": 0.9277384244612601,
+          "maxIncreaseMm": 1.7091276310887693e-13,
+          "worstSample": 92659,
+          "worstKind": "triangle-centroid",
+          "fixedSampleMaxIncreaseMm": 1.7091276310887693e-13,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        },
+        {
+          "checkpoint": "accepted-007-index-00.npz",
+          "elev": 0,
+          "neck": 0,
+          "bone": "C4",
+          "samples": 93688,
+          "baselineInside": 510,
+          "inside": 510,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.9277384244612601,
+          "maxDepthMm": 0.9277384244612601,
+          "maxIncreaseMm": 1.3558685424408523e-13,
+          "worstSample": 61849,
+          "worstKind": "edge-midpoint",
+          "fixedSampleMaxIncreaseMm": 1.3558685424408523e-13,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        }
+      ],
+      "sampleCounts": {
+        "vertices": 15613,
+        "edgeMidpoints": 46845,
+        "centroids": 31230
+      },
+      "engineeringDepthIncreaseGuardMm": 0.1,
+      "allSamplesWithinGuard": true,
+      "productAccepted": false,
+      "continuousContactCertified": false,
+      "selfIntersectionEvaluated": false
+    },
+    {
+      "jobId": 140936040851,
+      "job": "contact (scapula)",
+      "bone": "scapula",
+      "boneSHA256": "c0a3afd469db1fec9527bb81ec1f0956876d3d64d3acbf3a083619d4e7ce297b",
+      "rows": [
+        {
+          "checkpoint": "accepted-001-index-08.npz",
+          "elev": 3,
+          "neck": 3,
+          "bone": "scapula",
+          "samples": 93688,
+          "baselineInside": 1087,
+          "inside": 1087,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.06568651654668127,
+          "maxDepthMm": 0.06568651654673811,
+          "maxIncreaseMm": 2.622763117798854e-13,
+          "worstSample": 15824,
+          "worstKind": "edge-midpoint",
+          "fixedSampleMaxIncreaseMm": 2.622763117798854e-13,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        },
+        {
+          "checkpoint": "accepted-003-index-16.npz",
+          "elev": 6,
+          "neck": 6,
+          "bone": "scapula",
+          "samples": 93688,
+          "baselineInside": 1087,
+          "inside": 1087,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.06568651654668127,
+          "maxDepthMm": 0.06568651654668127,
+          "maxIncreaseMm": 4.122292784902726e-13,
+          "worstSample": 63681,
+          "worstKind": "triangle-centroid",
+          "fixedSampleMaxIncreaseMm": 4.122292784902726e-13,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        },
+        {
+          "checkpoint": "accepted-006-index-08.npz",
+          "elev": 3,
+          "neck": 3,
+          "bone": "scapula",
+          "samples": 93688,
+          "baselineInside": 1087,
+          "inside": 1087,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.06568651654668127,
+          "maxDepthMm": 0.06568651654673811,
+          "maxIncreaseMm": 2.622763117798854e-13,
+          "worstSample": 15824,
+          "worstKind": "edge-midpoint",
+          "fixedSampleMaxIncreaseMm": 2.622763117798854e-13,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        },
+        {
+          "checkpoint": "accepted-007-index-00.npz",
+          "elev": 0,
+          "neck": 0,
+          "bone": "scapula",
+          "samples": 93688,
+          "baselineInside": 1087,
+          "inside": 1087,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.06568651654668127,
+          "maxDepthMm": 0.06568651654667032,
+          "maxIncreaseMm": 1.962111029207847e-13,
+          "worstSample": 63666,
+          "worstKind": "triangle-centroid",
+          "fixedSampleMaxIncreaseMm": 1.962111029207847e-13,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        }
+      ],
+      "sampleCounts": {
+        "vertices": 15613,
+        "edgeMidpoints": 46845,
+        "centroids": 31230
+      },
+      "engineeringDepthIncreaseGuardMm": 0.1,
+      "allSamplesWithinGuard": true,
+      "productAccepted": false,
+      "continuousContactCertified": false,
+      "selfIntersectionEvaluated": false
+    },
+    {
+      "jobId": 140936040853,
+      "job": "contact (C3)",
+      "bone": "C3",
+      "boneSHA256": "1147f621766b9dce37b21a827f552c5669afaaf49531aab8d7b0df6f374233d1",
+      "rows": [
+        {
+          "checkpoint": "accepted-001-index-08.npz",
+          "elev": 3,
+          "neck": 3,
+          "bone": "C3",
+          "samples": 93688,
+          "baselineInside": 432,
+          "inside": 432,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.8002792975799221,
+          "maxDepthMm": 0.8002792975799284,
+          "maxIncreaseMm": 9.797718192317006e-14,
+          "worstSample": 61956,
+          "worstKind": "edge-midpoint",
+          "fixedSampleMaxIncreaseMm": 9.797718192317006e-14,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        },
+        {
+          "checkpoint": "accepted-003-index-16.npz",
+          "elev": 6,
+          "neck": 6,
+          "bone": "C3",
+          "samples": 93688,
+          "baselineInside": 432,
+          "inside": 432,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.8002792975799221,
+          "maxDepthMm": 0.8002792975799221,
+          "maxIncreaseMm": 9.900760766790029e-14,
+          "worstSample": 15266,
+          "worstKind": "vertex",
+          "fixedSampleMaxIncreaseMm": 9.900760766790029e-14,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        },
+        {
+          "checkpoint": "accepted-006-index-08.npz",
+          "elev": 3,
+          "neck": 3,
+          "bone": "C3",
+          "samples": 93688,
+          "baselineInside": 432,
+          "inside": 432,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.8002792975799221,
+          "maxDepthMm": 0.8002792975799284,
+          "maxIncreaseMm": 9.797718192317006e-14,
+          "worstSample": 61956,
+          "worstKind": "edge-midpoint",
+          "fixedSampleMaxIncreaseMm": 9.797718192317006e-14,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        },
+        {
+          "checkpoint": "accepted-007-index-00.npz",
+          "elev": 0,
+          "neck": 0,
+          "bone": "C3",
+          "samples": 93688,
+          "baselineInside": 432,
+          "inside": 432,
+          "newInside": 0,
+          "baselineMaxDepthMm": 0.8002792975799221,
+          "maxDepthMm": 0.8002792975799221,
+          "maxIncreaseMm": 1.0769163338864018e-14,
+          "worstSample": 93169,
+          "worstKind": "triangle-centroid",
+          "fixedSampleMaxIncreaseMm": 1.0769163338864018e-14,
+          "samplesIncreaseOverPointOneMm": 0,
+          "fixedSamplesIncreaseOverPointOneMm": 0
+        }
+      ],
+      "sampleCounts": {
+        "vertices": 15613,
+        "edgeMidpoints": 46845,
+        "centroids": 31230
+      },
+      "engineeringDepthIncreaseGuardMm": 0.1,
+      "allSamplesWithinGuard": true,
+      "productAccepted": false,
+      "continuousContactCertified": false,
+      "selfIntersectionEvaluated": false
+    }
+  ],
+  "productAccepted": false
+}
