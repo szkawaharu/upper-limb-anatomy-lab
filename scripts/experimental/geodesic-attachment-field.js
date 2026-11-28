@@ -48,5 +48,42 @@ function rebuild(B){
  for(let i=0;i<B.weights.length;i++)if((B.weights[i]===0||B.weights[i]===1)&&next.weights[i]!==B.weights[i])throw Error('Existing exact pin changed');
  return {binding:next,diagnostics:{minSpanMm:g.minSpan/B.definition.source.worldUnitsPerMm,maxGradientPerMm:g.maxGradient*B.definition.source.worldUnitsPerMm,fixedOppositeEdges:g.fixedOppositeEdges,fieldMethod:next.fieldMethod,productAccepted:false}};
 }
-root.GeodesicAttachmentField=Object.freeze({field,rebuild});
+// Explicit anatomical-mask revision experiment, distinct from rebuild(), which
+// preserves legacy pins. Coordinates and topology must match the audited mesh.
+function rebindSurface(B,data){
+ if(data.rest.length!==B.rest.length||data.faces.length!==B.faces.length||
+    data.rest.some((x,i)=>x!==B.rest[i])||data.faces.some((x,i)=>x!==B.faces[i]))throw Error('Audited mesh mismatch');
+ const vertices=Array.from({length:B.weights.length},(_,i)=>Array.from(B.rest.subarray(3*i,3*i+3)));
+ const origin=data.origin,insertion=data.insertion;
+ if(!origin.length||!insertion.length)throw Error('Missing audited attachment candidate');
+ const pin=new Int8Array(vertices.length).fill(-1);
+ for(const [k,ids] of [[0,origin],[1,insertion]])for(const i of ids){
+  if(!Number.isInteger(i)||i<0||i>=vertices.length||pin[i]>=0)throw Error('Invalid audited mask');
+  pin[i]=k;
+ }
+ let g,method='intrinsic-edge-distance',geodesicRejected=null;
+ try{g=field(vertices,B.faces,origin,insertion)}
+ catch(e){
+  // Disconnected fragments cannot be interpolated along a connected path.
+  // Explicit separate candidate using true nearest-surface distances, not
+  // fictitious pins or discarded triangles.
+  if(!String(e).includes('Disconnected or conflicting attachment domain'))throw e;
+  geodesicRejected=String(e);method='source-triangle-distance-ratio';
+  if(data.originDistances.length!==vertices.length||data.insertionDistances.length!==vertices.length)throw Error('Distance size mismatch');
+  const weights=Float32Array.from(vertices,(_,i)=>{
+   if(pin[i]>=0)return pin[i];
+   const a=data.originDistances[i],b=data.insertionDistances[i];
+   if(!(a>=0&&b>=0&&a+b>0&&Number.isFinite(a+b)))throw Error('Invalid source distances');
+   return a/(a+b);
+  });
+  g={weights,minSpan:null,maxGradient:null,fixedOppositeEdges:null};
+ }
+ const attachments=[origin,insertion].map((ids,k)=>({...B.definition.attachments[k],indices:Uint32Array.from(ids),boneLocal:null,confidence:'source-near-surface-experimental'}));
+ const def={...B.definition,attachments,attachmentFieldSource:{method,radiusMm:data.radiusMm,confidence:'near-surface candidate, not measured footprint'},restMesh:{vertices,faces:Array.from(B.faces)}};
+ const next=root.MuscleDeformation.bind(def,g.weights);
+ if(next.rest.some((x,i)=>x!==B.rest[i])||next.faces.some((x,i)=>x!==B.faces[i]))throw Error('Source changed');
+ for(let i=0;i<pin.length;i++)if(pin[i]>=0&&next.weights[i]!==pin[i])throw Error('Revised pin changed');
+ return {binding:next,diagnostics:{method,geodesicRejected,radiusMm:data.radiusMm,originCount:origin.length,insertionCount:insertion.length,originPerNearestC:data.originPerNearestC,oldPinCounts:B.definition.attachments.map(x=>x.indices.length),minSpanMm:g.minSpan===null?null:g.minSpan/B.definition.source.worldUnitsPerMm,maxGradientPerMm:g.maxGradient===null?null:g.maxGradient*B.definition.source.worldUnitsPerMm,fixedOppositeEdges:g.fixedOppositeEdges,fieldMethod:next.fieldMethod,productAccepted:false,neckMapping:'unchanged legacy mapping, not per-vertebra validated'}};
+}
+root.GeodesicAttachmentField=Object.freeze({field,rebuild,rebindSurface});
 })(globalThis);
