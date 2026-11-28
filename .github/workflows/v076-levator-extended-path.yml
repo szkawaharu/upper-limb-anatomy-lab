@@ -1,0 +1,110 @@
+name: v0.76 levator high-bulk actual-frame extended path
+on:
+  push:
+    branches: [redesign/v076-shoulder]
+    paths:
+      - '.github/workflows/v076-levator-extended-path.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  extended:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      QA_OUTPUT: test-results/v076-levator-extended
+      QA_LEVATOR_SOLID_FRAMES: '1'
+      QA_LEVATOR_SOLID_MAX_INDEX: '40'
+      QA_SHOULDER_PREVIEW: '1'
+      QA_NUMERIC_ONLY: '1'
+      QA_LEVATOR_TETRA_DIR: test-results/v076-levator-refined-solid
+      QA_LEVATOR_SOLVER: exact-tangent
+      QA_LEVATOR_ITERATIONS: '30'
+      QA_LEVATOR_BULK: '1000'
+      QA_LEVATOR_SEED: test-results/v076-levator-bulk-refined/bulk-1000.npz
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-exact-source-solid
+          path: test-results/v076-levator-solid/
+          run-id: 46113787286
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-refined-solid
+          path: test-results/v076-levator-refined-solid/
+          run-id: 46113984173
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-bulk-refined
+          path: test-results/v076-levator-bulk-refined/
+          run-id: 46131050332
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: shoulder-preview-field
+          path: test-results/v076-blend-preview/
+          run-id: 46082847918
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: |
+          export CHROME_PATH="$(node -e 'console.log(require("playwright").chromium.executablePath())')"
+          node tests/browser-v073.mjs
+      - run: python scripts/experimental/run-levator-solid-path.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-extended-path
+          path: test-results/v076-levator-extended/
+  high-bulk-contact:
+    strategy:
+      fail-fast: false
+      matrix:
+        bone: [C1, C2, C3, C4, scapula]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      QA_INPUT: test-results/v076-levator-high-bulk-contact
+      QA_OUTPUT: test-results/v076-levator-contact-bulk1000-${{ matrix.bone }}
+      QA_BONE: ${{ matrix.bone }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-tangent-refined
+          path: test-results/v076-levator-tangent/
+          run-id: 46122390087
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-bulk-refined
+          path: test-results/v076-levator-bulk-refined/
+          run-id: 46131050332
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          mkdir -p "$QA_INPUT"
+          cp test-results/v076-levator-tangent/levator-solid-frames.json "$QA_INPUT/"
+          cp test-results/v076-levator-bulk-refined/bulk-1000.npz "$QA_INPUT/accepted-000-index-16.npz"
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/audit-levator-bone-contact.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-contact-bulk1000-${{ matrix.bone }}
+          path: test-results/v076-levator-contact-bulk1000-${{ matrix.bone }}/
