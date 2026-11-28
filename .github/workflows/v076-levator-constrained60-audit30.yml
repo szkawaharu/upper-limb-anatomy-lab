@@ -4,6 +4,7 @@ on:
     branches: [redesign/v076-shoulder]
     paths:
       - '.github/workflows/v076-levator-constrained60-audit30.yml'
+      # Explicit 40-degree preview backend transition verified in exporter and solver.
   workflow_dispatch:
 permissions:
   contents: read
