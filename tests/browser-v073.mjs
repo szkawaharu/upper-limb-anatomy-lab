@@ -10,7 +10,8 @@ const numericOnly = process.env.QA_NUMERIC_ONLY === "1";
 const levatorExperiment=process.env.QA_LEVATOR_EXPERIMENT==="1";
 const levatorMaskFile=process.env.QA_LEVATOR_MASK_FILE;
 const levatorMasks=levatorMaskFile?JSON.parse(readFileSync(levatorMaskFile,"utf8")):null;
-const shoulderCompare=process.env.QA_SHOULDER_MUSCLE_COMPARE==="1"||levatorExperiment;
+const levatorSolidFrames=process.env.QA_LEVATOR_SOLID_FRAMES==="1";
+const shoulderCompare=process.env.QA_SHOULDER_MUSCLE_COMPARE==="1"||levatorExperiment||levatorSolidFrames;
 const shoulderPreview=process.env.QA_SHOULDER_PREVIEW==="1";
 const previewFile=process.env.QA_PREVIEW_FILE||"test-results/v076-blend-preview/field.json";
 const preview=shoulderPreview?JSON.parse(readFileSync(previewFile,"utf8")):null;
@@ -89,6 +90,15 @@ const qaContactCurrent=v73Contact;let qaLegacyHead=false;
 v73Contact=(spec,b)=>{const c=qaContactCurrent(spec,b);return qaLegacyHead&&c?.unilateral?{...c,unilateral:false}:c};
 const qaExport=(f,id)=>{const B=f.binding,samples=[];for(let i=0;i<B.weights.length;i+=Math.max(1,Math.floor(B.weights.length/80))){const p=Array.from(B.rest.slice(i*3,i*3+3)),t=B.weights[i],l=B.lane[i],materialT=B.material[i],q=MuscleDeformation.point(f,p,t,l,materialT);samples.push({vertexId:i,p,t,l,materialT,q,originBlend:B.originBlend?.[i]||0})}return {id,name:B.definition.name,input:{side:v56Side,elev:settings.elev,plane:settings.plane,axial:settings.axial,elbow:settings.elbow,pronation:settings.pronation,sync:settings.sync},samples,state:{a:f.a,b:f.b,rest:Array.from(f.restFlat),now:Array.from(f.nowFlat),sheet:B.sheet,blendRange:B.blendRange,lanes:B.field.controls.length,tendonStart:B.definition.tissues.tendonStart,reference:B.reference,contact:f.contact,multiBone:!!f.originAt,originMix:f.originMix}}};
 window.__qa={
+ levatorSolidFrames(){
+  const spec=V60_ALL.find(s=>s.id==='v58Levator'),m=v58Meshes.get(spec.id);
+  const side=v56Side;
+  if(side!=='right')throw Error('Solid frame export requires canonical right');
+  const f=v73MuscleState(spec,m,side);
+  const bones=Object.fromEntries(['C1','C2','C3','C4'].map(id=>[id,v73NeckPose.transforms[id]]));
+  bones.scapula=f.b;
+  return {bones,sourceOrigin:SOURCE_ORIGIN,scale:atlasScale,backend:window.__labShoulderV076().poseCanonicalRight.diagnostics.backend};
+ },
  exportLevator(){
   const B=v58Meshes.get('v58Levator').common;
   return {rest:Array.from(B.rest),faces:Array.from(B.faces),weights:Array.from(B.weights),sourceOrigin:SOURCE_ORIGIN,scale:atlasScale,pins:B.definition.attachments.map(a=>Array.from(a.indices))};
@@ -184,6 +194,24 @@ try {
     .click({ timeout: 1000 })
     .catch(() => {});
   console.log("Actual atlas loaded");
+  if(levatorSolidFrames){
+    await page.evaluate(()=>window.__qa.skipRender(true));
+    const frames=[];
+    for(let i=0;i<=16;i++){
+      const elev=i*.375,plane=40,neck=elev;
+      const frame=await page.evaluate(({elev,plane,neck})=>{
+        window.__qa.both({elev,plane,axial:0,elbow:0,pronation:0},{elev:0,plane:0,axial:0,elbow:0,pronation:0});
+        window.__qa.neck(neck);
+        return window.__qa.levatorSolidFrames();
+      },{elev,plane,neck});
+      assert.equal(frame.backend,'validated-field');
+      frames.push({index:i,elev,plane,neck,...frame});
+    }
+    assert.deepEqual(errors,[]);
+    writeFileSync(join(out,'levator-solid-frames.json'),JSON.stringify({frames,sourceHashes,side:'right',stepDeg:.375,productAccepted:false},null,2));
+    console.log('LEVATOR_SOLID_FRAMES '+JSON.stringify({count:frames.length,first:frames[0],last:frames.at(-1)}));
+    await browser.close();if(server)await server.close();process.exit(0);
+  }
   if(process.env.QA_EXPORT_LEVATOR==="1"){writeFileSync(join(out,"levator-binding.json"),JSON.stringify(await page.evaluate(()=>window.__qa.exportLevator())));await browser.close();if(server)await server.close();process.exit(0)}
   if(process.env.QA_EXPORT_BINDINGS==="1"){writeFileSync(join(out,"bindings.json"),JSON.stringify(await page.evaluate(()=>window.__qa.exportBindings()))); await browser.close(); if(server)await server.close(); process.exit(0)}
   await page.evaluate(() => window.__qa.ensureGPU());
