@@ -1,0 +1,174 @@
+name: v0.76 levator segmented warm continuation
+on:
+  push:
+    branches: [redesign/v076-shoulder]
+    paths:
+      - '.github/workflows/v076-levator-segmented-warm.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  segment1:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      QA_INPUT: test-results/v076-levator-constrained30
+      QA_OUTPUT: test-results/v076-levator-segment1
+      QA_FRAME_FILE: test-results/v076-levator-60-frames/levator-solid-frames.json
+      QA_MAX_INDEX: '160'
+      QA_DESTINATIONS: '88,96,104'
+      QA_WARM_MULTIPLIERS: '1'
+      QA_CONSTRAINED_SEED: test-results/v076-levator-constrained30/accepted-010-index-80.npz
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-constrained30
+          path: test-results/v076-levator-constrained30/
+          run-id: 46135851243
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-60-frames
+          path: test-results/v076-levator-60-frames/
+          run-id: 46137764819
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/run-levator-constrained-path.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-segment1
+          path: test-results/v076-levator-segment1/
+  segment2:
+    needs: segment1
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      QA_INPUT: test-results/v076-levator-constrained30
+      QA_OUTPUT: test-results/v076-levator-segment2
+      QA_FRAME_FILE: test-results/v076-levator-60-frames/levator-solid-frames.json
+      QA_MAX_INDEX: '160'
+      QA_DESTINATIONS: '112,120,128'
+      QA_WARM_MULTIPLIERS: '1'
+      QA_CONSTRAINED_SEED: test-results/v076-levator-prior/segment-end.npz
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-constrained30
+          path: test-results/v076-levator-constrained30/
+          run-id: 46135851243
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-60-frames
+          path: test-results/v076-levator-60-frames/
+          run-id: 46137764819
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-segment1
+          path: test-results/v076-levator-prior/
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/run-levator-constrained-path.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-segment2
+          path: test-results/v076-levator-segment2/
+  segment3:
+    needs: segment2
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      QA_INPUT: test-results/v076-levator-constrained30
+      QA_OUTPUT: test-results/v076-levator-segment3
+      QA_FRAME_FILE: test-results/v076-levator-60-frames/levator-solid-frames.json
+      QA_MAX_INDEX: '160'
+      QA_DESTINATIONS: '136,144'
+      QA_WARM_MULTIPLIERS: '1'
+      QA_CONSTRAINED_SEED: test-results/v076-levator-prior/segment-end.npz
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-constrained30
+          path: test-results/v076-levator-constrained30/
+          run-id: 46135851243
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-60-frames
+          path: test-results/v076-levator-60-frames/
+          run-id: 46137764819
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-segment2
+          path: test-results/v076-levator-prior/
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/run-levator-constrained-path.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-segment3
+          path: test-results/v076-levator-segment3/
+  segment4:
+    needs: segment3
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      QA_INPUT: test-results/v076-levator-constrained30
+      QA_OUTPUT: test-results/v076-levator-segment4
+      QA_FRAME_FILE: test-results/v076-levator-60-frames/levator-solid-frames.json
+      QA_MAX_INDEX: '160'
+      QA_DESTINATIONS: '152,160'
+      QA_WARM_MULTIPLIERS: '1'
+      QA_CONSTRAINED_SEED: test-results/v076-levator-prior/segment-end.npz
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-constrained30
+          path: test-results/v076-levator-constrained30/
+          run-id: 46135851243
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-60-frames
+          path: test-results/v076-levator-60-frames/
+          run-id: 46137764819
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-segment3
+          path: test-results/v076-levator-prior/
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/run-levator-constrained-path.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-segment4
+          path: test-results/v076-levator-segment4/
