@@ -99,7 +99,18 @@ window.__qa={
   if(!window.__qaLevatorCandidate)window.__qaLevatorCandidate=attempt();
   const {candidate,rejected}=window.__qaLevatorCandidate;
   function audit(side){
-   const run=()=>{const f=v73MuscleState(spec,m,side),report=DeformationAudit.audit(f,MuscleDeformation.deform(f));return {report,trace:MuscleOutlierTrace.trace(f,report)}};
+   const run=()=>{
+    const f=v73MuscleState(spec,m,side),now=MuscleDeformation.deform(f),report=DeformationAudit.audit(f,now);
+    const data=window.__qaLevatorMasks;
+    let registryAudit=null;
+    if(data){
+     const reg=LevatorBoundaryRegistry.registry(data);
+     const bones=Object.fromEntries(['C1','C2','C3','C4'].map(id=>{const a=v73NeckPose.transforms[id];return [id,side==='left'?{q:[a.q[0],-a.q[1],-a.q[2],a.q[3]],p:v56Reflect(a.p),rest:v56Reflect(a.rest)}:a]}));
+     bones.scapula=f.b;
+     registryAudit=LevatorBoundaryRegistry.audit(f,data,reg,bones,now);
+    }
+    return {report,trace:MuscleOutlierTrace.trace(f,report),registryAudit}
+   };
    const baseline=run();
    if(!candidate)return {side,baseline,rejected};
    try{m.common=candidate.binding;return {side,baseline,candidate:run(),bindingDiagnostics:candidate.diagnostics}}finally{m.common=B}
@@ -183,6 +194,7 @@ try {
     if(levatorMasks)await page.evaluate(m=>{window.__qaLevatorMasks=m},levatorMasks);
     await page.addScriptTag({content:readFileSync('scripts/experimental/geodesic-attachment-field.js','utf8')});
     await page.addScriptTag({content:readFileSync('scripts/experimental/trace-muscle-outliers.js','utf8')});
+    await page.addScriptTag({content:readFileSync('scripts/experimental/levator-boundary-registry.js','utf8')});
     await page.evaluate(()=>window.__qa.skipRender(true));
     const results=[];
     for(const [name,r,l,n] of [
@@ -195,7 +207,7 @@ try {
       results.push({name,right:pose(r),left:pose(l),neck:n,sides});
       writeFileSync(join(out,'levator-experiment.json'),JSON.stringify({results,preview:shoulderPreview,errors,productAccepted:false,anatomicalAcceptance:false},null,2));
       for(const s of sides){
-       const compact=x=>x?{edge:x.report.edgeRatio,area:x.report.areaRatio,attachmentMm:x.report.attachmentMaxMm,degenerate:x.report.newDegenerateFaces,invalidFrames:x.report.invalidFrames,worstEdge:x.trace.worstEdge,worstArea:x.trace.worstArea,vertices:x.trace.vertices.map(v=>({i:v.i,weight:v.weight,lane:v.lane,materialT:v.materialT,restWidthMm:v.restWidthMm,restOffsetMm:v.restOffsetMm}))}:null;
+       const compact=x=>x?{edge:x.report.edgeRatio,area:x.report.areaRatio,attachmentMm:x.report.attachmentMaxMm,registryAudit:x.registryAudit,degenerate:x.report.newDegenerateFaces,invalidFrames:x.report.invalidFrames,worstEdge:x.trace.worstEdge,worstArea:x.trace.worstArea,vertices:x.trace.vertices.map(v=>({i:v.i,weight:v.weight,lane:v.lane,materialT:v.materialT,restWidthMm:v.restWidthMm,restOffsetMm:v.restOffsetMm}))}:null;
        console.log('LEVATOR_TRACE '+JSON.stringify({name,side:s.side,baseline:compact(s.baseline),candidate:compact(s.candidate),binding:s.bindingDiagnostics,rejected:s.rejected,productAccepted:false}));
       }
     }
