@@ -1,0 +1,60 @@
+name: v0.76 levator coupled material convergence comparison
+on:
+  push:
+    branches: [redesign/v076-shoulder]
+    paths:
+      - '.github/workflows/v076-levator-coupled-gn.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  material:
+    strategy:
+      fail-fast: false
+      matrix:
+        mesh: [original, refined]
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      QA_OUTPUT: test-results/v076-levator-coupled-${{ matrix.mesh }}
+      QA_LEVATOR_TETRA_DIR: ${{ matrix.mesh == 'refined' && 'test-results/v076-levator-refined-solid' || 'test-results/v076-levator-solid/tetra' }}
+      QA_LEVATOR_SOLVER: coupled-gn
+      QA_LEVATOR_BULK: '30'
+      QA_LEVATOR_ITERATIONS: '30'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-exact-source-solid
+          path: test-results/v076-levator-solid/
+          run-id: 46113787286
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        if: matrix.mesh == 'refined'
+        with:
+          name: levator-refined-solid
+          path: test-results/v076-levator-refined-solid/
+          run-id: 46113984173
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-solid-path
+          path: test-results/v076-levator-initial-path/
+          run-id: 46113954286
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          mkdir -p "$QA_OUTPUT"
+          cp test-results/v076-levator-initial-path/levator-solid-frames.json "$QA_OUTPUT/"
+      - run: python -m pip install -r scripts/calibration/requirements.txt
+      - run: python scripts/experimental/run-levator-solid-path.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-coupled-${{ matrix.mesh }}
+          path: test-results/v076-levator-coupled-${{ matrix.mesh }}/
