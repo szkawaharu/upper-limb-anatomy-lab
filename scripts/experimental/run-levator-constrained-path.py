@@ -27,7 +27,7 @@ framefile=Path(os.environ.get('QA_FRAME_FILE',str(src/'levator-solid-frames.json
 frames=json.loads(framefile.read_text())['frames']
 maximum=int(os.environ.get('QA_MAX_INDEX','40'))
 assert maximum in (40,80,160) and len(frames)>maximum
-assert all(f['index']==i and f['elev']==i*.375 and f['neck']==i*.375 and f['plane']==40 and f['backend']=='validated-field' for i,f in enumerate(frames))
+assert all(f['index']==i and f['elev']==i*.375 and f['neck']==i*.375 and f['plane']==40 and f['backend']==('qa-additive-preview' if f['elev']>40 else 'validated-field') for i,f in enumerate(frames))
 # Verify extended grid against the exact original frames on the shared region.
 old=json.loads((src/'levator-solid-frames.json').read_text())['frames']
 for i,f in enumerate(old):
