@@ -26,7 +26,7 @@ bulk=1000.
 framefile=Path(os.environ.get('QA_FRAME_FILE',str(src/'levator-solid-frames.json')))
 frames=json.loads(framefile.read_text())['frames']
 maximum=int(os.environ.get('QA_MAX_INDEX','40'))
-assert maximum in (40,80) and len(frames)>maximum
+assert maximum in (40,80,160) and len(frames)>maximum
 assert all(f['index']==i and f['elev']==i*.375 and f['neck']==i*.375 and f['plane']==40 and f['backend']=='validated-field' for i,f in enumerate(frames))
 # Verify extended grid against the exact original frames on the shared region.
 old=json.loads((src/'levator-solid-frames.json').read_text())['frames']
@@ -58,7 +58,27 @@ def metrics(z):
     er=np.linalg.norm(z[edges[:,1]]-z[edges[:,0]],axis=1)/edge0
     return {'JRange':[float(J.min()),float(J.max())],'outsideCount':int(((J<.95)|(J>1.05)).sum()),'volumeRatio':float(solid.weights@J),'surfaceAreaRatioRange':[float(ar.min()),float(ar.max())],'edgeRatioRange':[float(er.min()),float(er.max())],'baseResidualMm':float(np.linalg.norm(solid.factor.solve(g[solid.free]),axis=1).max()),'nonPositiveElements':int((J<=0).sum())}
 destinations=list(range(8,maximum+1,8))+list(range(maximum-8,-1,-8))
+start_index=0;start_nodes=rest.copy()
 effective=None
+seed_file=os.environ.get('QA_CONSTRAINED_SEED')
+if seed_file:
+    seed=np.load(seed_file)
+    for k,v in [('rest',rest),('tets',tets),('fixed',fixed),('classes',classes),('faces',faces),('center',center)]:
+        assert np.array_equal(seed[k],v),k
+    start_index=int(seed['index']);assert start_index==80 and maximum==160
+    start_nodes=seed['nodes'].copy();effective=seed['multipliers'].copy()
+    assert effective.shape==(2,len(tets)) and np.isfinite(effective).all() and np.all(effective>=0)
+    assert np.max(np.linalg.norm(start_nodes[fixed]-targets[start_index],axis=1))<1e-9
+    E,g,J=solid.evaluate(start_nodes,bulk)
+    assert np.isfinite(E) and J.min()>=.95 and J.max()<=1.05
+    band=VolumeBand(solid,30)
+    _,A=log_volume_jacobian(solid,start_nodes,band.cells)
+    g+=(A.T@(band.weights*(effective[1]-effective[0]))).reshape(start_nodes.shape)
+    residual=float(np.linalg.norm(solid.factor.solve(g[solid.free]),axis=1).max())
+    assert residual<.001
+    destinations=list(range(start_index+8,maximum+1,8))+list(range(maximum-8,-1,-8))
+    np.savez_compressed(out/'accepted-000-index-80.npz',nodes=start_nodes,rest=rest,tets=tets,faces=faces,fixed=fixed,classes=classes,index=start_index,center=center,multipliers=effective)
+    print('LEVATOR_CONSTRAINED_SEED '+json.dumps({'index':start_index,'residualMm':residual,'JRange':[float(J.min()),float(J.max())]}),flush=True)
 def solve_at(x,previous,index):
     global effective
     start=time.monotonic();target=targets[index]
@@ -96,8 +116,8 @@ def accepted(x,index,records,rejected):
     np.savez_compressed(out/f'accepted-{len(records):03d}-index-{index:02d}.npz',nodes=x,rest=rest,tets=tets,faces=faces,fixed=fixed,classes=classes,index=index,center=center,multipliers=effective)
     (out/'path-progress.json').write_text(json.dumps({'index':index,'accepted':records,'rejected':rejected},indent=2)+'\n')
 (out/'levator-solid-frames.json').write_bytes(framefile.read_bytes())
-x,path=follow(rest,0,destinations,solve_at,accepted)
-report={'requestedElevationsDeg':[0,*[i*.375 for i in destinations]],'frameSHA256':hashlib.sha256(framefile.read_bytes()).hexdigest(),'bulk':bulk,'path':path,'allAcceptedLocalGuardPassed':all(v['outsideCount']==0 for v in path['accepted']),'neutralReturnMaxMm':float(np.linalg.norm(x-rest,axis=1).max()) if path['completed'] else None,'productAccepted':False,'contactEvaluated':False,'continuousCollisionCertified':False,'physicalMaterialCalibrated':False}
+x,path=follow(start_nodes,start_index,destinations,solve_at,accepted)
+report={'requestedElevationsDeg':[start_index*.375,*[i*.375 for i in destinations]],'seedFile':seed_file,'frameSHA256':hashlib.sha256(framefile.read_bytes()).hexdigest(),'bulk':bulk,'path':path,'allAcceptedLocalGuardPassed':bool(path['accepted']) and all(v['outsideCount']==0 for v in path['accepted']),'neutralReturnMaxMm':float(np.linalg.norm(x-rest,axis=1).max()) if path['completed'] else None,'productAccepted':False,'contactEvaluated':False,'continuousCollisionCertified':False,'physicalMaterialCalibrated':False}
 (out/'report.json').write_text(json.dumps(report,indent=2)+'\n')
 print('LEVATOR_CONSTRAINED_PATH '+json.dumps(report),flush=True)
 if not path['completed']:raise SystemExit(2)
