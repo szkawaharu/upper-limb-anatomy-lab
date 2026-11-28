@@ -1,0 +1,48 @@
+name: v0.76 levator interior quality refinement control
+on:
+  push:
+    branches: [redesign/v076-shoulder]
+    paths:
+      - '.github/workflows/v076-levator-solid-quality.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  refined-solid:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: levator-exact-source-solid
+          path: test-results/v076-levator-solid/
+          run-id: 46113787286
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: python -m pip install -r scripts/calibration/requirements.txt tetgen==0.8.4
+      - name: Refine interior only; reject any source boundary change
+        run: python scripts/experimental/build-volumetric-reference.py test-results/v076-levator-solid/bindings.json v58Levator test-results/v076-levator-refined-solid quality 20000
+      - name: Compare with unrefined exact source
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.loads(Path('test-results/v076-levator-solid/tetra/reference-mesh-audit.json').read_text())
+          b=json.loads(Path('test-results/v076-levator-refined-solid/reference-mesh-audit.json').read_text())
+          assert a['inputSha256']==b['inputSha256']
+          assert a['sourceBoundaryExact'] and b['sourceBoundaryExact']
+          assert a['sourceVertices']==b['sourceVertices'] and a['boundaryFaces']==b['boundaryFaces']
+          assert abs(a['tetVolumeSum']-b['tetVolumeSum'])/a['tetVolumeSum']<1e-10
+          report={'control':a,'refined':b,'interiorNodesAdded':b['nodes']-a['nodes'],'conditionImproved':b['conditionNumberQuantiles'][-1]<a['conditionNumberQuantiles'][-1],'productAccepted':False}
+          Path('test-results/v076-levator-refined-solid/quality-comparison.json').write_text(json.dumps(report,indent=2))
+          print('LEVATOR_SOLID_QUALITY '+json.dumps(report))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: levator-refined-solid
+          path: test-results/v076-levator-refined-solid/
